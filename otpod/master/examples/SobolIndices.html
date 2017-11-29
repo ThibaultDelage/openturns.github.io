@@ -1,0 +1,855 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sobol Indices &#8212; otpod  documentation</title>
+    <link rel="stylesheet" href="../_static/openturns.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: ''
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Perturbation Law Indices" href="PLI.html" />
+    <link rel="prev" title="Adaptive Hit Miss POD" href="adaptiveHitMissPOD.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head>
+  <body>
+<div class="pageheader">
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../user_manual.html">Doc</a></li>
+    <li><a href="examples.html">Examples</a></li>
+    <li><a href="https://github.com/openturns/otpod">Code</a></li>
+  </ul>
+  <a href="../index.html">
+    <h1>
+      <img src="../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otpod
+    </h1>
+    <h2> A module to build Probability of Detection for Non Destructive Testing. </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="PLI.html" title="Perturbation Law Indices"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="adaptiveHitMissPOD.html" title="Adaptive Hit Miss POD"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">otpod  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="examples.html" accesskey="U">Examples of the API</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Sobol Indices</a><ul>
+<li><a class="reference internal" href="#Generate-data">Generate data</a></li>
+<li><a class="reference internal" href="#Build-POD-with-Kriging-model">Build POD with Kriging model</a><ul>
+<li><a class="reference internal" href="#Running-the-Kriging-based-POD">Running the Kriging based POD</a></li>
+<li><a class="reference internal" href="#Show-POD-graphs">Show POD graphs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Build-POD-with-polynomial-chaos-model">Build POD with polynomial chaos model</a><ul>
+<li><a class="reference internal" href="#Running-the-chaos-based-POD">Running the chaos based POD</a></li>
+<li><a class="reference internal" href="#Show-POD-graphs">Show POD graphs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Run-the-sensitivity-analysis">Run the sensitivity analysis</a></li>
+<li><a class="reference internal" href="#Using-the-kriging-model">Using the kriging model</a><ul>
+<li><a class="reference internal" href="#Draw-the-figure-with-given-labels">Draw the figure with given labels</a></li>
+<li><a class="reference internal" href="#Get-the-numerical-results">Get the numerical results</a></li>
+<li><a class="reference internal" href="#Change-the-defect-sizes-list">Change the defect sizes list</a></li>
+<li><a class="reference internal" href="#Change-the-method-to-compute-the-indices">Change the method to compute the indices</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Case-with-polynomial-chaos">Case with polynomial chaos</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="adaptiveHitMissPOD.html"
+                        title="previous chapter">Adaptive Hit Miss POD</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PLI.html"
+                        title="next chapter">Perturbation Law Indices</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/SobolIndices.ipynb"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 9ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="Sobol-Indices">
+<h1>Sobol Indices<a class="headerlink" href="#Sobol-Indices" title="Permalink to this headline">¶</a></h1>
+<p>It is required to first build a POD object based on the Kriging
+metamodel or on the polynomial chaos in order to compute the Sobol
+indices. It also can be used only if the input parameters dimension is
+greater than 2 (without counting the defect).</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="c1"># import relevant module</span>
+<span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
+<span class="kn">import</span> <span class="nn">otpod</span>
+<span class="c1"># enable display figure in notebook</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Generate-data">
+<h2>Generate data<a class="headerlink" href="#Generate-data" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="n">inputSample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">NumericalSample</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mf">4.59626812e+00</span><span class="p">,</span> <span class="mf">7.46143339e-02</span><span class="p">,</span> <span class="mf">1.02231538e+00</span><span class="p">,</span> <span class="mf">8.60042277e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.14315790e+00</span><span class="p">,</span> <span class="mf">4.20801346e-02</span><span class="p">,</span> <span class="mf">1.05874908e+00</span><span class="p">,</span> <span class="mf">2.65757364e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.76735111e+00</span><span class="p">,</span> <span class="mf">3.72414824e-02</span><span class="p">,</span> <span class="mf">1.05730385e+00</span><span class="p">,</span> <span class="mf">5.76058433e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.82811977e+00</span><span class="p">,</span> <span class="mf">2.49997658e-02</span><span class="p">,</span> <span class="mf">1.06954641e+00</span><span class="p">,</span> <span class="mf">2.54461380e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.48961094e+00</span><span class="p">,</span> <span class="mf">3.74562922e-02</span><span class="p">,</span> <span class="mf">1.04943946e+00</span><span class="p">,</span> <span class="mf">6.19483646e+00</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">5.05605334e+00</span><span class="p">,</span> <span class="mf">4.87599783e-02</span><span class="p">,</span> <span class="mf">1.06520409e+00</span><span class="p">,</span> <span class="mf">3.39024904e+00</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">5.69679328e+00</span><span class="p">,</span> <span class="mf">7.74915877e-02</span><span class="p">,</span> <span class="mf">1.04099514e+00</span><span class="p">,</span> <span class="mf">6.50990466e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">5.10193991e+00</span><span class="p">,</span> <span class="mf">4.35520544e-02</span><span class="p">,</span> <span class="mf">1.02502536e+00</span><span class="p">,</span> <span class="mf">5.51492592e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.04791970e+00</span><span class="p">,</span> <span class="mf">2.38565932e-02</span><span class="p">,</span> <span class="mf">1.01906882e+00</span><span class="p">,</span> <span class="mf">2.07875350e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.66238956e+00</span><span class="p">,</span> <span class="mf">5.49901237e-02</span><span class="p">,</span> <span class="mf">1.02427200e+00</span><span class="p">,</span> <span class="mf">1.45661275e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.86634219e+00</span><span class="p">,</span> <span class="mf">6.04693570e-02</span><span class="p">,</span> <span class="mf">1.08199374e+00</span><span class="p">,</span> <span class="mf">1.05104730e+00</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.13519347e+00</span><span class="p">,</span> <span class="mf">4.45225831e-02</span><span class="p">,</span> <span class="mf">1.01900124e+00</span><span class="p">,</span> <span class="mf">5.10117047e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.92541940e+00</span><span class="p">,</span> <span class="mf">7.87692335e-02</span><span class="p">,</span> <span class="mf">9.91868726e-01</span><span class="p">,</span> <span class="mf">8.32302238e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.70722074e+00</span><span class="p">,</span> <span class="mf">6.51799251e-02</span><span class="p">,</span> <span class="mf">1.10608515e+00</span><span class="p">,</span> <span class="mf">3.30181002e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.29040932e+00</span><span class="p">,</span> <span class="mf">1.75426222e-02</span><span class="p">,</span> <span class="mf">9.75678838e-01</span><span class="p">,</span> <span class="mf">2.28186756e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.89291400e+00</span><span class="p">,</span> <span class="mf">2.34997929e-02</span><span class="p">,</span> <span class="mf">1.07669835e+00</span><span class="p">,</span> <span class="mf">5.38926138e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.44653744e+00</span><span class="p">,</span> <span class="mf">7.63175936e-02</span><span class="p">,</span> <span class="mf">1.06979154e+00</span><span class="p">,</span> <span class="mf">5.19109415e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">3.99977452e+00</span><span class="p">,</span> <span class="mf">5.80430585e-02</span><span class="p">,</span> <span class="mf">1.01850716e+00</span><span class="p">,</span> <span class="mf">7.61988190e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">3.95491570e+00</span><span class="p">,</span> <span class="mf">1.09302814e-02</span><span class="p">,</span> <span class="mf">1.03687664e+00</span><span class="p">,</span> <span class="mf">6.09981789e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">5.16424368e+00</span><span class="p">,</span> <span class="mf">2.69026464e-02</span><span class="p">,</span> <span class="mf">1.06673711e+00</span><span class="p">,</span> <span class="mf">2.88708887e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">5.30491620e+00</span><span class="p">,</span> <span class="mf">4.53802273e-02</span><span class="p">,</span> <span class="mf">1.06254792e+00</span><span class="p">,</span> <span class="mf">3.03856837e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.92809155e+00</span><span class="p">,</span> <span class="mf">1.20616369e-02</span><span class="p">,</span> <span class="mf">1.00700410e+00</span><span class="p">,</span> <span class="mf">7.02512744e+00</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.68373805e+00</span><span class="p">,</span> <span class="mf">6.26028935e-02</span><span class="p">,</span> <span class="mf">1.05152117e+00</span><span class="p">,</span> <span class="mf">4.81271603e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">5.32381954e+00</span><span class="p">,</span> <span class="mf">4.33013582e-02</span><span class="p">,</span> <span class="mf">9.90522007e-01</span><span class="p">,</span> <span class="mf">6.56015973e+01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">4.35455857e+00</span><span class="p">,</span> <span class="mf">1.23814619e-02</span><span class="p">,</span> <span class="mf">1.01810539e+00</span><span class="p">,</span> <span class="mf">1.10769534e+01</span><span class="p">]])</span>
+
+<span class="n">signals</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">NumericalSample</span><span class="p">(</span>
+    <span class="p">[[</span> <span class="mf">37.305445</span><span class="p">],</span> <span class="p">[</span> <span class="mf">35.466919</span><span class="p">],</span> <span class="p">[</span> <span class="mf">43.187991</span><span class="p">],</span> <span class="p">[</span> <span class="mf">45.305165</span><span class="p">],</span> <span class="p">[</span> <span class="mf">40.121222</span><span class="p">],</span> <span class="p">[</span> <span class="mf">44.609524</span><span class="p">],</span>
+     <span class="p">[</span> <span class="mf">45.14552</span> <span class="p">],</span> <span class="p">[</span> <span class="mf">44.80595</span> <span class="p">],</span> <span class="p">[</span> <span class="mf">35.414039</span><span class="p">],</span> <span class="p">[</span> <span class="mf">39.851778</span><span class="p">],</span> <span class="p">[</span> <span class="mf">42.046049</span><span class="p">],</span> <span class="p">[</span> <span class="mf">34.73469</span> <span class="p">],</span>
+     <span class="p">[</span> <span class="mf">39.339349</span><span class="p">],</span> <span class="p">[</span> <span class="mf">40.384559</span><span class="p">],</span> <span class="p">[</span> <span class="mf">38.718623</span><span class="p">],</span> <span class="p">[</span> <span class="mf">46.189709</span><span class="p">],</span> <span class="p">[</span> <span class="mf">36.155737</span><span class="p">],</span> <span class="p">[</span> <span class="mf">31.768369</span><span class="p">],</span>
+     <span class="p">[</span> <span class="mf">35.384313</span><span class="p">],</span> <span class="p">[</span> <span class="mf">47.914584</span><span class="p">],</span> <span class="p">[</span> <span class="mf">46.758537</span><span class="p">],</span> <span class="p">[</span> <span class="mf">46.564428</span><span class="p">],</span> <span class="p">[</span> <span class="mf">39.698493</span><span class="p">],</span> <span class="p">[</span> <span class="mf">45.636588</span><span class="p">],</span>
+     <span class="p">[</span> <span class="mf">40.643948</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="c1"># signal detection threshold</span>
+<span class="n">detection</span> <span class="o">=</span> <span class="mf">38.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Build-POD-with-Kriging-model">
+<h2>Build POD with Kriging model<a class="headerlink" href="#Build-POD-with-Kriging-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Running-the-Kriging-based-POD">
+<h3>Running the Kriging based POD<a class="headerlink" href="#Running-the-Kriging-based-POD" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="n">krigingPOD</span> <span class="o">=</span> <span class="n">otpod</span><span class="o">.</span><span class="n">KrigingPOD</span><span class="p">(</span><span class="n">inputSample</span><span class="p">,</span> <span class="n">signals</span><span class="p">,</span> <span class="n">detection</span><span class="p">)</span>
+
+<span class="c1"># we can change all simulation size parameters as we are not interested in having an accurate POD curve</span>
+<span class="n">krigingPOD</span><span class="o">.</span><span class="n">setSamplingSize</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">krigingPOD</span><span class="o">.</span><span class="n">setSimulationSize</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">krigingPOD</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Start optimizing covariance model parameters...
+Kriging optimizer completed
+kriging validation Q2 (&gt;0.9): 1.0000
+Computing POD per defect: [==================================================] 100.00% Done
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Show-POD-graphs">
+<h3>Show POD graphs<a class="headerlink" href="#Show-POD-graphs" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">krigingPOD</span><span class="o">.</span><span class="n">drawPOD</span><span class="p">(</span><span class="n">probabilityLevel</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">confidenceLevel</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;figure/PODKriging.png&#39;</span><span class="p">)</span>
+<span class="c1"># The figure is saved in PODPolyChaos.png</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/home/dumas/anaconda2/lib/python2.7/site-packages/matplotlib/figure.py:397: UserWarning: matplotlib is currently using a non-GUI backend, so cannot show the figure
+  &#34;matplotlib is currently using a non-GUI backend, &#34;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_SobolIndices_8_1.png" src="../_images/examples_SobolIndices_8_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Build-POD-with-polynomial-chaos-model">
+<h2>Build POD with polynomial chaos model<a class="headerlink" href="#Build-POD-with-polynomial-chaos-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Running-the-chaos-based-POD">
+<h3>Running the chaos based POD<a class="headerlink" href="#Running-the-chaos-based-POD" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="n">chaosPOD</span> <span class="o">=</span> <span class="n">otpod</span><span class="o">.</span><span class="n">PolynomialChaosPOD</span><span class="p">(</span><span class="n">inputSample</span><span class="p">,</span> <span class="n">signals</span><span class="p">,</span> <span class="n">detection</span><span class="p">)</span>
+
+<span class="c1"># we can change all simulation size parameters as we are not interested in having an accurate POD curve</span>
+<span class="n">chaosPOD</span><span class="o">.</span><span class="n">setSamplingSize</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">chaosPOD</span><span class="o">.</span><span class="n">setSimulationSize</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">chaosPOD</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Start build polynomial chaos model...
+Polynomial chaos model completed
+Polynomial chaos validation R2 (&gt;0.8) : 0.9999
+Polynomial chaos validation Q2 (&gt;0.8) : 0.9987
+Computing POD per defect: [==================================================] 100.00% Done
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Show-POD-graphs">
+<h3>Show POD graphs<a class="headerlink" href="#Show-POD-graphs" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">chaosPOD</span><span class="o">.</span><span class="n">drawPOD</span><span class="p">(</span><span class="n">probabilityLevel</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">confidenceLevel</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;figure/PODChaos.png&#39;</span><span class="p">)</span>
+<span class="c1"># The figure is saved in PODPolyChaos.png</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_SobolIndices_12_0.png" src="../_images/examples_SobolIndices_12_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Run-the-sensitivity-analysis">
+<h2>Run the sensitivity analysis<a class="headerlink" href="#Run-the-sensitivity-analysis" title="Permalink to this headline">¶</a></h2>
+<p>The sensitivity analysis can only be performed with POD computed with a
+kriging metamodel or a polynomial chaos.</p>
+<p>The Sobol indices are aggregated indices computed for the defect sizes
+defined in the POD study.</p>
+</div>
+<div class="section" id="Using-the-kriging-model">
+<h2>Using the kriging model<a class="headerlink" href="#Using-the-kriging-model" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="c1"># number of simulations</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">sobol</span> <span class="o">=</span> <span class="n">otpod</span><span class="o">.</span><span class="n">SobolIndices</span><span class="p">(</span><span class="n">krigingPOD</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">sobol</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Draw-the-figure-with-given-labels">
+<h3>Draw the figure with given labels<a class="headerlink" href="#Draw-the-figure-with-given-labels" title="Permalink to this headline">¶</a></h3>
+<p>The default labels are <span class="math">\(Xi\)</span> but the user can specify its own input
+labels. Besides, the figure can be saved specifying the attribute
+<em>name</em>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="n">label</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span> <span class="s1">&#39;variable2&#39;</span><span class="p">,</span> <span class="s1">&#39;param3&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">sobol</span><span class="o">.</span><span class="n">drawAggregatedIndices</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;figure/Sobol.png&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_SobolIndices_17_0.png" src="../_images/examples_SobolIndices_17_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">sobol</span><span class="o">.</span><span class="n">drawFirstOrderIndices</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;figure/FirstOrderSobol.png&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_SobolIndices_18_0.png" src="../_images/examples_SobolIndices_18_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">sobol</span><span class="o">.</span><span class="n">drawTotalOrderIndices</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;figure/TotalOrderSobol.png&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_SobolIndices_19_0.png" src="../_images/examples_SobolIndices_19_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Get-the-numerical-results">
+<h3>Get the numerical results<a class="headerlink" href="#Get-the-numerical-results" title="Permalink to this headline">¶</a></h3>
+<p>The Sobol indices are given in the OpenTURNS object
+<a class="reference external" href="http://doc.openturns.org/openturns-latest/sphinx/user_manual/_generated/openturns.SobolIndicesAlgorithm.html">SobolIndicesAlgorithm</a>.
+The method <em>getSensitivityResult</em> allows the get this object and then
+get back all wanted results.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="c1"># get the OpenTURNS object</span>
+<span class="n">sobol_result</span> <span class="o">=</span> <span class="n">sobol</span><span class="o">.</span><span class="n">getSensitivityResult</span><span class="p">()</span>
+
+<span class="c1"># get aggregated indices</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Aggregated first order: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sobol_result</span><span class="o">.</span><span class="n">getAggregatedFirstOrderIndices</span><span class="p">()))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Aggregated total order: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sobol_result</span><span class="o">.</span><span class="n">getAggregatedTotalOrderIndices</span><span class="p">()))</span>
+
+<span class="c1"># get the confidence interval</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">First order confidence interval:&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sobol_result</span><span class="o">.</span><span class="n">getFirstOrderIndicesInterval</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Total order confidence interval:&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sobol_result</span><span class="o">.</span><span class="n">getTotalOrderIndicesInterval</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Aggregated first order: [0.772678,0.0317259,0.000271994]
+Aggregated total order: [0.968083,0.226075,0.00066017]
+
+First order confidence interval:
+[0.719211, 0.829002]
+[0.0158451, 0.0448602]
+[-0.000689527, 0.00120284]
+
+Total order confidence interval:
+[0.901833, 1.02883]
+[0.171566, 0.269238]
+[-0.0438167, 0.0374588]
+</pre></div></div>
+</div>
+<p>It is also possible to retreive the Sobol indices for one defect size
+among the list.</p>
+<p>As example, we want the indices for the 4th defect size in the list. It
+may <strong>return an error</strong> if the indices cannot be computed because no
+variability exists. It is the case when the POD is equal to 0 or 1.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Defect sizes: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sobol</span><span class="o">.</span><span class="n">getDefectSizes</span><span class="p">()))</span>
+<span class="c1"># get indices for a specific defect sizes</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># correspond with the 4th value.</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Indices for defect size {:.3f}: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sobol</span><span class="o">.</span><span class="n">getDefectSizes</span><span class="p">()[</span><span class="n">i</span><span class="p">],</span> <span class="n">sobol_result</span><span class="o">.</span><span class="n">getFirstOrderIndices</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Defect sizes: [ 3.9549157   4.04659347  4.13827123  4.229949    4.32162677  4.41330454
+  4.5049823   4.59666007  4.68833784  4.78001561  4.87169337  4.96337114
+  5.05504891  5.14672668  5.23840444  5.33008221  5.42175998  5.51343775
+  5.60511551  5.69679328]
+
+Indices for defect size 4.230: [0.727317,0.0140776,0.000158337]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Change-the-defect-sizes-list">
+<h3>Change the defect sizes list<a class="headerlink" href="#Change-the-defect-sizes-list" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to modify the list of the defect sizes either to reduce
+the range or to compute the indices for a specific defect value. If only
+one defect size is provided, then the aggregated indices correspond to
+the indices.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="n">sobol</span><span class="o">.</span><span class="n">setDefectSizes</span><span class="p">([</span><span class="mf">4.5</span><span class="p">])</span>
+<span class="n">sobol</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="c1"># get the OpenTURNS object</span>
+<span class="n">sobol_result</span> <span class="o">=</span> <span class="n">sobol</span><span class="o">.</span><span class="n">getSensitivityResult</span><span class="p">()</span>
+<span class="c1"># get aggregated indices</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Aggregated first order: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sobol_result</span><span class="o">.</span><span class="n">getAggregatedFirstOrderIndices</span><span class="p">()))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Aggregated total order: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sobol_result</span><span class="o">.</span><span class="n">getAggregatedTotalOrderIndices</span><span class="p">()))</span>
+<span class="c1"># get indices</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;First order: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sobol_result</span><span class="o">.</span><span class="n">getFirstOrderIndices</span><span class="p">()))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Total order: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sobol_result</span><span class="o">.</span><span class="n">getTotalOrderIndices</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Aggregated first order: [0.851168,0.0515212,0.000266685]
+Aggregated total order: [1.02607,0.159002,0.000775292]
+First order: [0.851168,0.0515212,0.000266685]
+Total order: [1.02607,0.159002,0.000775292]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Change-the-method-to-compute-the-indices">
+<h3>Change the method to compute the indices<a class="headerlink" href="#Change-the-method-to-compute-the-indices" title="Permalink to this headline">¶</a></h3>
+<p>OpenTURNS implements 4 methods : Saltelli, Martinez, Jansen and
+Mauntz-Kucherenko. These methods can be chosen using the method
+<em>setSensitivityMethod</em>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="n">sobol</span><span class="o">.</span><span class="n">setSensitivityMethod</span><span class="p">(</span><span class="s2">&quot;Martinez&quot;</span><span class="p">)</span>
+<span class="n">sobol</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="c1"># get the OpenTURNS object</span>
+<span class="n">sobol_result</span> <span class="o">=</span> <span class="n">sobol</span><span class="o">.</span><span class="n">getSensitivityResult</span><span class="p">()</span>
+<span class="c1"># get aggregated indices</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Aggregated first order: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sobol_result</span><span class="o">.</span><span class="n">getAggregatedFirstOrderIndices</span><span class="p">()))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Aggregated total order: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sobol_result</span><span class="o">.</span><span class="n">getAggregatedTotalOrderIndices</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Aggregated first order: [0.858261,0.0297892,-0.0040736]
+Aggregated total order: [0.982881,0.153882,0.000308148]
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Case-with-polynomial-chaos">
+<h2>Case with polynomial chaos<a class="headerlink" href="#Case-with-polynomial-chaos" title="Permalink to this headline">¶</a></h2>
+<p>With polynomial chaos, the POD is computed simulating several polynomial
+chaos coefficients. Then it requires more times than with Kriging. The
+number of simulations is initially set to 1000 but it can be changed
+using the method <em>setSimulationSize</em>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="c1"># number of simulations</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">sobol2</span> <span class="o">=</span> <span class="n">otpod</span><span class="o">.</span><span class="n">SobolIndices</span><span class="p">(</span><span class="n">chaosPOD</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="c1">#sobol2.setSimulationSize(500)</span>
+<span class="n">sobol2</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="c1"># get the OpenTURNS object</span>
+<span class="n">sobol_result2</span> <span class="o">=</span> <span class="n">sobol2</span><span class="o">.</span><span class="n">getSensitivityResult</span><span class="p">()</span>
+
+<span class="c1"># get aggregated indices</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Aggregated first order: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sobol_result2</span><span class="o">.</span><span class="n">getAggregatedFirstOrderIndices</span><span class="p">()))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Aggregated total order: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sobol_result2</span><span class="o">.</span><span class="n">getAggregatedTotalOrderIndices</span><span class="p">()))</span>
+
+<span class="c1"># get the confidence interval</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">First order confidence interval:&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sobol_result2</span><span class="o">.</span><span class="n">getFirstOrderIndicesInterval</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Total order confidence interval:&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sobol_result2</span><span class="o">.</span><span class="n">getTotalOrderIndicesInterval</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Aggregated first order: [0.733816,0.0303936,0.00202081]
+Aggregated total order: [0.912059,0.221395,0.0131351]
+
+First order confidence interval:
+[0.674632, 0.779876]
+[0.011269, 0.0475021]
+[-0.00224056, 0.00590774]
+
+Total order confidence interval:
+[0.860978, 0.966444]
+[0.176179, 0.263411]
+[-0.0289697, 0.0499621]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">sobol2</span><span class="o">.</span><span class="n">drawAggregatedIndices</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_SobolIndices_33_0.png" src="../_images/examples_SobolIndices_33_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="PLI.html" title="Perturbation Law Indices"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="adaptiveHitMissPOD.html" title="Adaptive Hit Miss POD"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">otpod  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="examples.html" >Examples of the API</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017.
+      Last updated on Nov 20, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>

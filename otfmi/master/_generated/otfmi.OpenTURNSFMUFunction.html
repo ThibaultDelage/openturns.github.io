@@ -1,0 +1,309 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OpenTURNSFMUFunction &#8212; otfmi  documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/Icon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="otfmi.fmi.load_fmu" href="otfmi.fmi.load_fmu.html" />
+    <link rel="prev" title="FMUFunction" href="otfmi.FMUFunction.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="otfmi.fmi.load_fmu.html" title="otfmi.fmi.load_fmu"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="otfmi.FMUFunction.html" title="FMUFunction"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">otfmi  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" accesskey="U">Documentation of the API</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="openturnsfmufunction">
+<h1>OpenTURNSFMUFunction<a class="headerlink" href="#openturnsfmufunction" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="otfmi.OpenTURNSFMUFunction">
+<em class="property">class </em><code class="descname">OpenTURNSFMUFunction</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.OpenTURNSFMUFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override Function from Python.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>path_fmu</strong> : String, path to the FMU file.</p>
+<p><strong>inputs_fmu</strong> : Sequence of strings</p>
+<blockquote>
+<div><p>Names of the variable from the fmu to be used as input variables.</p>
+</div></blockquote>
+<p><strong>outputs_fmu</strong> : Sequence of strings</p>
+<blockquote>
+<div><p>Names of the variable from the fmu to be used as output variables.</p>
+</div></blockquote>
+<p><strong>inputs</strong> : Sequence of strings</p>
+<blockquote>
+<div><p>Optional names to use as variables descriptions.</p>
+</div></blockquote>
+<p><strong>outputs</strong> : Sequence of strings</p>
+<blockquote>
+<div><p>Optional names to use as variables descriptions.</p>
+</div></blockquote>
+<p><strong>n_cpus</strong> :  Integer</p>
+<blockquote>
+<div><p>Number of cores to use for multiprocessing.</p>
+</div></blockquote>
+<p><strong>initialization_script</strong> : String (optional)</p>
+<blockquote>
+<div><p>Path to the initialization script.</p>
+</div></blockquote>
+<p><strong>kind</strong> : String, one of “ME” (model exchange) or “CS” (co-simulation)</p>
+<blockquote>
+<div><p>Select a kind of FMU if both are available.
+Note:
+Contrary to pyfmi, the default here is “CS” (co-simulation). The
+rationale behind this choice is is that co-simulation may be used to
+impose a solver not available in pyfmi.</p>
+</div></blockquote>
+<p><strong>expect_trajectory</strong> : Boolean</p>
+<blockquote class="last">
+<div><p>If True, the call inputs are assumed to be time dependent
+trajectories. Default is False</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">__call__</span></code>(X,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.OpenTURNSFMUFunction.getFMUInputDescription" title="otfmi.OpenTURNSFMUFunction.getFMUInputDescription"><code class="xref py py-obj docutils literal"><span class="pre">getFMUInputDescription</span></code></a>()</td>
+<td>Get the list of input variable names.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.OpenTURNSFMUFunction.getFMUOutputDescription" title="otfmi.OpenTURNSFMUFunction.getFMUOutputDescription"><code class="xref py py-obj docutils literal"><span class="pre">getFMUOutputDescription</span></code></a>()</td>
+<td>Get the list of output variable names.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">getInputDescription</span></code>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">getInputDimension</span></code>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">getOutputDescription</span></code>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">getOutputDimension</span></code>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.OpenTURNSFMUFunction.initialize" title="otfmi.OpenTURNSFMUFunction.initialize"><code class="xref py py-obj docutils literal"><span class="pre">initialize</span></code></a>([initialization_script])</td>
+<td>Initialize the FMU, using initialization script if available.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.OpenTURNSFMUFunction.load_fmu" title="otfmi.OpenTURNSFMUFunction.load_fmu"><code class="xref py py-obj docutils literal"><span class="pre">load_fmu</span></code></a>(path_fmu[,&nbsp;kind])</td>
+<td>Load an FMU.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">setInputDescription</span></code>(descIn)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">setOutputDescription</span></code>(descOut)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.OpenTURNSFMUFunction.simulate" title="otfmi.OpenTURNSFMUFunction.simulate"><code class="xref py py-obj docutils literal"><span class="pre">simulate</span></code></a>([value_input,&nbsp;reset])</td>
+<td>Simulate the fmu.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.OpenTURNSFMUFunction.simulate_sample" title="otfmi.OpenTURNSFMUFunction.simulate_sample"><code class="xref py py-obj docutils literal"><span class="pre">simulate_sample</span></code></a>(list_value_input[,&nbsp;n_cpus])</td>
+<td>Simulate the FMU multiple times.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="otfmi.OpenTURNSFMUFunction.getFMUInputDescription">
+<code class="descname">getFMUInputDescription</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.OpenTURNSFMUFunction.getFMUInputDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of input variable names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.OpenTURNSFMUFunction.getFMUOutputDescription">
+<code class="descname">getFMUOutputDescription</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.OpenTURNSFMUFunction.getFMUOutputDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of output variable names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.OpenTURNSFMUFunction.initialize">
+<code class="descname">initialize</code><span class="sig-paren">(</span><em>initialization_script=None</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.OpenTURNSFMUFunction.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the FMU, using initialization script if available.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>initialization_script</strong> : String (optional), path to the initialization</p>
+<p class="last"><strong>script.</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.OpenTURNSFMUFunction.load_fmu">
+<code class="descname">load_fmu</code><span class="sig-paren">(</span><em>path_fmu</em>, <em>kind=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.OpenTURNSFMUFunction.load_fmu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an FMU.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>path_fmu</strong> : String, path to the FMU file.</p>
+<p><strong>kind</strong> : String, one of “ME” (model exchange) or “CS” (co-simulation)</p>
+<blockquote>
+<div><p>Select a kind of FMU if both are available.
+Note:
+Contrary to pyfmi, the default here is “CS” (co-simulation). The
+rationale behind this choice is is that co-simulation may be used
+to impose a solver not available in pyfmi.</p>
+</div></blockquote>
+<p><strong>Additional keyword arguments are passed on to pyfmi’s ‘load_fmu’</strong></p>
+<p class="last"><strong>function.</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.OpenTURNSFMUFunction.simulate">
+<code class="descname">simulate</code><span class="sig-paren">(</span><em>value_input=None</em>, <em>reset=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.OpenTURNSFMUFunction.simulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate the fmu.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>value_input</strong> : Vector of input values.</p>
+<p><strong>reset</strong> : Boolean, toggle resetting the FMU prior to simulation. True by</p>
+<p><strong>default.</strong></p>
+<p><strong>time</strong> : Sequence of floats, time vector (optional).</p>
+<p><strong>timestep</strong> : Float, time step in seconds (optional).</p>
+<p><strong>Additional keyword arguments are passed on to the ‘simulate’ method of</strong></p>
+<p class="last"><strong>the underlying PyFMI model object.</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.OpenTURNSFMUFunction.simulate_sample">
+<code class="descname">simulate_sample</code><span class="sig-paren">(</span><em>list_value_input</em>, <em>n_cpus=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.OpenTURNSFMUFunction.simulate_sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate the FMU multiple times.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>list_value_input</strong> : Sequence of vectors of input values.</p>
+<p><strong>n_cpus</strong> :  Integer</p>
+<blockquote>
+<div><p>Number of cores to use for multiprocessing. Use the value of the
+‘n_cpus” attribute as default, or 1 (no multiprocessing) if not
+set.</p>
+</div></blockquote>
+<p><strong>Additional keyword arguments are passed on to the ‘simulate’ method of</strong></p>
+<p class="last"><strong>the underlying PyFMI model object.</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="otfmi.FMUFunction.html"
+                        title="previous chapter">FMUFunction</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="otfmi.fmi.load_fmu.html"
+                        title="next chapter">otfmi.fmi.load_fmu</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_generated/otfmi.OpenTURNSFMUFunction.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="otfmi.fmi.load_fmu.html" title="otfmi.fmi.load_fmu"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="otfmi.FMUFunction.html" title="FMUFunction"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">otfmi  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >Documentation of the API</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017 EDF.
+      Last updated on Nov 23, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>

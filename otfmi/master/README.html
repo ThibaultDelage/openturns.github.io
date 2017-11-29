@@ -1,0 +1,218 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Introduction &#8212; otfmi  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/Icon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Documentation of the API" href="api.html" />
+    <link rel="prev" title="Otfmi documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="api.html" title="Documentation of the API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Otfmi documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">otfmi  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<a class="reference external image-reference" href="https://travis-ci.org/openturns/otfmi"><img alt="https://travis-ci.org/openturns/otfmi.svg?branch=master" src="https://travis-ci.org/openturns/otfmi.svg?branch=master" /></a>
+<a class="reference external image-reference" href="https://ci.appveyor.com/project/openturns/otfmi"><img alt="https://ci.appveyor.com/api/projects/status/kqk2wuce65pcl3rh/branch/master?svg=true" src="https://ci.appveyor.com/api/projects/status/kqk2wuce65pcl3rh/branch/master?svg=true" /></a>
+<p>This is the source tree or distribution for the otfmi package for simulating
+functional mockup units (FMUs) from OpenTURNS.</p>
+<p>The functional mock-up interface (FMI) standard specifies a format for
+multipurpose, easy to build and reusable data interfaces to numerical models.
+A functional mock-up unit (FMU) is a black box defined by the FMI standard,
+akin to the wrappers familiar to the OpenTURNS’ community.</p>
+<p>The purpose of the otfmi Python module is to promote the use of the
+probabilistic approach with system models, in particular those written in
+Modelica, by enabling easy manipulation of FMUs with OpenTURNS. The otfmi
+module relies on one PyFMI, a module for manipulating FMUs within Python.</p>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>The otfmi module relies on PyFMI. It can be installed using the distutils
+mechanism (setup.py) or the windows installer. Alternatively, it can be used
+without installation by adding the package directory (‘otfmi’) to the
+PYTHONPATH.</p>
+<div class="section" id="installation-of-pyfmi">
+<h2>Installation of PyFMI<a class="headerlink" href="#installation-of-pyfmi" title="Permalink to this headline">¶</a></h2>
+<p>The otfmi module relies on PyFMI <a class="reference internal" href="#pyfmi" id="id1">[PYFMI]</a>.
+On windows, PyFMI can be installed using an installer program is available.</p>
+<p>Otherwise, relying on Anaconda <a class="reference internal" href="#anaconda" id="id2">[ANACONDA]</a> is recommended. Indeed, compiling
+PyFMI from sources and sorting out its dependencies can be troublesome. With
+Python installed from Anaconda, PyFMI is installed by the following command:</p>
+<blockquote>
+<div>conda install -c <a class="reference external" href="https://conda.binstar.org/chria">https://conda.binstar.org/chria</a> pyfmi</div></blockquote>
+</div>
+<div class="section" id="usage-without-installation">
+<h2>Usage without installation<a class="headerlink" href="#usage-without-installation" title="Permalink to this headline">¶</a></h2>
+<p>The module can be imported in a Python session as soon as
+the otfmi folder is listed in the PYTHONPATH environment variable. If you installed Python
+using Anaconda, the otfmi folder can be placed in any directory “monitored” by Anaconda,
+for instance C:\Users\username\Anaconda\lib\site-packages on Windows.</p>
+</div>
+<div class="section" id="installation-of-otfmi">
+<h2>Installation of otfmi<a class="headerlink" href="#installation-of-otfmi" title="Permalink to this headline">¶</a></h2>
+<p>The otfmi module can be installed from sources using the
+classical distutils procedure. From the main folder, run the following command:</p>
+<blockquote>
+<div>python setup.py install</div></blockquote>
+<p>On windows, it is possible to avoid resorting to command line interface by using the
+installer program otfmi-X.X.win32.exe ( X.X is the version number).</p>
+</div>
+<div class="section" id="removal-of-otfmi">
+<h2>Removal of otfmi<a class="headerlink" href="#removal-of-otfmi" title="Permalink to this headline">¶</a></h2>
+<p>Removing otfmi if you installed it from the command line is just
+a matter of removing all created files. Usually, it is a single file, otfmi-X.X-py2.7.egg
+(X.X is the version number) located in the default directory for external module. The
+path to this directory depends on your Python installation. On Windows with Anaconda, it
+is C:\Users\username\Anaconda\lib\site-packages.
+The list of all created file can be retrieved by the following command</p>
+<blockquote>
+<div>python setup.py install –record list_file.txt</div></blockquote>
+</div>
+</div>
+<div class="section" id="documentation">
+<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
+<p>See the “User documentation” <a class="reference internal" href="#userdoc" id="id3">[USERDOC]</a> for more usage instruction.</p>
+<p>See the “Project documentation” <a class="reference internal" href="#projectdoc" id="id4">[PROJECTDOC]</a> for information about the module architecture.</p>
+<p>Example scripts are given in the ‘example’ folder in the source tree.</p>
+</div>
+<div class="section" id="license">
+<h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
+<p>This package is licensed under the LGPL3.</p>
+</div>
+<div class="section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<table class="docutils citation" frame="void" id="pyfmi" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[PYFMI]</a></td><td>PyFMI Python module. url: <a class="reference external" href="http://www.jmodelica.org/page/4924">http://www.jmodelica.org/page/4924</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="anaconda" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[ANACONDA]</a></td><td>Anaconda, Python distribution. url: <a class="reference external" href="http://continuum.io/downloads">http://continuum.io/downloads</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="userdoc" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[USERDOC]</a></td><td>Girard, Sylvain (2017). otfmi: simulate FMUs from OpenTURNS: User documentation. Tech. rep. RT-PMFRE-00997-003. EDF. url: <a class="reference external" href="https://www.researchgate.net/publication/321184021_otfmi_simulate_FMUs_from_OpenTURNS_user_documentation">https://www.researchgate.net/publication/321184021_otfmi_simulate_FMUs_from_OpenTURNS_user_documentation</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="projectdoc" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[PROJECTDOC]</a></td><td>Girard, Sylvain (2017). otfmi: simulate FMUs from OpenTURNS: Project documentation. Tech. rep. RT-PMFRE-00997-002. EDF. url: <a class="reference external" href="https://www.researchgate.net/profile/Sylvain_Girard3/publication/321183987_otfmi_simulate_FMU_from_OpenTURNS_project_documentation">https://www.researchgate.net/profile/Sylvain_Girard3/publication/321183987_otfmi_simulate_FMU_from_OpenTURNS_project_documentation</a></td></tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Introduction</a></li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#installation-of-pyfmi">Installation of PyFMI</a></li>
+<li><a class="reference internal" href="#usage-without-installation">Usage without installation</a></li>
+<li><a class="reference internal" href="#installation-of-otfmi">Installation of otfmi</a></li>
+<li><a class="reference internal" href="#removal-of-otfmi">Removal of otfmi</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Otfmi documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="next chapter">Documentation of the API</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/README.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="api.html" title="Documentation of the API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Otfmi documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">otfmi  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017 EDF.
+      Last updated on Nov 23, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>

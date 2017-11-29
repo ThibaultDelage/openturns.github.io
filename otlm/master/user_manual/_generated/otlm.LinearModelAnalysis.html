@@ -1,0 +1,858 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>LinearModelAnalysis &#8212; otlm 0.5 documentation</title>
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LinearModelResult" href="otlm.LinearModelResult.html" />
+    <link rel="prev" title="MonomialFactory" href="otlm.MonomialFactory.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="otlm.LinearModelResult.html" title="LinearModelResult"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="otlm.MonomialFactory.html" title="MonomialFactory"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">otlm 0.5 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user_manual.html" accesskey="U">User manual</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="linearmodelanalysis">
+<h1>LinearModelAnalysis<a class="headerlink" href="#linearmodelanalysis" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="otlm.LinearModelAnalysis">
+<em class="property">class </em><code class="descclassname">otlm.</code><code class="descname">LinearModelAnalysis</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class used to analyse a linear model.</p>
+<p><strong>Available usages</strong>:</p>
+<blockquote>
+<div>LinearModelAnalysis(linearModelResult)</div></blockquote>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="otlm.LinearModelResult.html#otlm.LinearModelResult" title="otlm.LinearModelResult"><code class="xref py py-obj docutils literal"><span class="pre">LinearModelResult</span></code></a></p>
+</div>
+<p class="rubric">Notes</p>
+<p>This class is used in order to create a linear model from numerical samples. The
+linear regression model between the scalar variable <img class="math" src="../../_images/math/107a2558bec41a738d186af09dd02b964e85a7bb.svg" alt="Y"/> and the <img class="math" src="../../_images/math/1b0225b7503fe4eff0f55fa51dd86c29323e6280.svg" alt="n"/>
+-dimensional one <img class="math" src="../../_images/math/72768397c76a74a118411ef88d02696da6265fdf.svg" alt="\vect{X} = (X_i)_{i \leq n}"/> writes as follows:</p>
+<div class="math">
+<p><img src="../../_images/math/ecc791e3379408cdeaff5b71c9cb38686cc26790.svg" alt="\tilde{Y} = a_0 + \sum_{i=1}^n a_i X_i + \epsilon"/></p>
+</div><p>where <img class="math" src="../../_images/math/1d4fb4b23e6113b430a00d3091a84736a35dcced.svg" alt="\epsilon"/> is the residual, supposed to follow the standard Normal
+distribution.</p>
+<p>Each coefficient <img class="math" src="../../_images/math/628ee9289351270b6240944e5eb1ce2a3ba30e24.svg" alt="a_i"/> is evaluated from both samples <img class="math" src="../../_images/math/9ed0e7cf6263739a9fabcaac421282b362c953af.svg" alt="Ysample"/> and
+<img class="math" src="../../_images/math/4b36aa8d63be1bbf11e7179a59e17b182de357bc.svg" alt="Xsample"/> and is accompagnied by a confidence interval and a p-value (which
+tests if they are significantly different from 0.0).</p>
+<p>This class enables to test the quality of the model. It provides only numerical
+tests. If <img class="math" src="../../_images/math/72bb27e495afbd8b5f66fa2d0d216098a05972b3.svg" alt="X"/> is scalar, a graphical validation test exists, that draws
+the residual couples <img class="math" src="../../_images/math/64ecfd7af58da484680e426434b4ad2b89ead41b.svg" alt="(\epsilon_i, \epsilon_{i+1})"/>, where the residual
+<img class="math" src="../../_images/math/c6d6d82883bbdedb1923c945a1ed0e585b6c6bfd.svg" alt="\epsilon_i"/> is evaluated on the samples <img class="math" src="../../_images/math/b4f099c77062e460a0bfaecb0bbf6549a4d15069.svg" alt="(Xsample, Ysample)"/>:
+<img class="math" src="../../_images/math/66197b5fc3c6ef19e231fc835887d89333ee4a45.svg" alt="\epsilon_i  = Ysample_i - \tilde{Y}_i"/> with
+<img class="math" src="../../_images/math/ab21fb46ea8274ac2e6d6cdf82c75fccd796671c.svg" alt="\tilde{Y}_i = a_0 + \sum_{j=1}^{n} a_j \ (Xsample)_{ij}"/>. The OpenTURNS method is
+<code class="xref py py-class docutils literal"><span class="pre">VisualTest_DrawLinearModelResidual</span></code>.</p>
+<p>By default, labels of the 3 most significant points are displayed on graphs.
+This number can be changed by modifying the ResourceMap key
+(<code class="docutils literal"><span class="pre">LinearModelAnalysis-Identifiers</span></code>).</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">otlm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Xsample</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">func</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;2 * x + 1&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Ysample</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">Xsample</span><span class="p">)</span> <span class="o">+</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">algo</span> <span class="o">=</span> <span class="n">otlm</span><span class="o">.</span><span class="n">LinearModelAlgorithm</span><span class="p">(</span><span class="n">Ysample</span><span class="p">,</span> <span class="n">Xsample</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">analysis</span> <span class="o">=</span> <span class="n">otlm</span><span class="o">.</span><span class="n">LinearModelAnalysis</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.drawCookDistance" title="otlm.LinearModelAnalysis.drawCookDistance"><code class="xref py py-obj docutils literal"><span class="pre">drawCookDistance</span></code></a>()</td>
+<td>Accessor to plot of Cook’s distances versus row labels.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.drawCookVsLeverages" title="otlm.LinearModelAnalysis.drawCookVsLeverages"><code class="xref py py-obj docutils literal"><span class="pre">drawCookVsLeverages</span></code></a>()</td>
+<td>Accessor to plot of Cook’s distances versus leverage/(1-leverage).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.drawQQplot" title="otlm.LinearModelAnalysis.drawQQplot"><code class="xref py py-obj docutils literal"><span class="pre">drawQQplot</span></code></a>()</td>
+<td>Accessor to plot a Normal quantiles-quantiles plot of standardized residuals.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.drawResidualsVsFitted" title="otlm.LinearModelAnalysis.drawResidualsVsFitted"><code class="xref py py-obj docutils literal"><span class="pre">drawResidualsVsFitted</span></code></a>()</td>
+<td>Accessor to plot of residuals versus fitted values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.drawResidualsVsLeverages" title="otlm.LinearModelAnalysis.drawResidualsVsLeverages"><code class="xref py py-obj docutils literal"><span class="pre">drawResidualsVsLeverages</span></code></a>()</td>
+<td>Accessor to plot of residuals versus leverages that adds bands corresponding to Cook’s distances of 0.5 and 1.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.drawScaleLocation" title="otlm.LinearModelAnalysis.drawScaleLocation"><code class="xref py py-obj docutils literal"><span class="pre">drawScaleLocation</span></code></a>()</td>
+<td>Accessor to a Scale-Location plot of sqrt(abs(residuals)) versus fitted values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getAdjustedRSquared" title="otlm.LinearModelAnalysis.getAdjustedRSquared"><code class="xref py py-obj docutils literal"><span class="pre">getAdjustedRSquared</span></code></a>()</td>
+<td>Accessor to the Adjusted R-squared test.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getClassName" title="otlm.LinearModelAnalysis.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<td>Accessor to the object’s name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getCoefficientsEstimates" title="otlm.LinearModelAnalysis.getCoefficientsEstimates"><code class="xref py py-obj docutils literal"><span class="pre">getCoefficientsEstimates</span></code></a>()</td>
+<td>Accessor to the coefficients of the linear model of the trend.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getCoefficientsNames" title="otlm.LinearModelAnalysis.getCoefficientsNames"><code class="xref py py-obj docutils literal"><span class="pre">getCoefficientsNames</span></code></a>()</td>
+<td>Accessor to the coefficients names.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getCoefficientsPValues" title="otlm.LinearModelAnalysis.getCoefficientsPValues"><code class="xref py py-obj docutils literal"><span class="pre">getCoefficientsPValues</span></code></a>()</td>
+<td>Accessor to the coefficients of the p values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getCoefficientsStandardErrors" title="otlm.LinearModelAnalysis.getCoefficientsStandardErrors"><code class="xref py py-obj docutils literal"><span class="pre">getCoefficientsStandardErrors</span></code></a>()</td>
+<td>Accessor to the coefficients of standard error.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getCoefficientsTScores" title="otlm.LinearModelAnalysis.getCoefficientsTScores"><code class="xref py py-obj docutils literal"><span class="pre">getCoefficientsTScores</span></code></a>()</td>
+<td>Accessor to the coefficients of linear expansion over their standard error.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getCookDistances" title="otlm.LinearModelAnalysis.getCookDistances"><code class="xref py py-obj docutils literal"><span class="pre">getCookDistances</span></code></a>()</td>
+<td>Accessor to the cook’s distances.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getDegreesOfFreedom" title="otlm.LinearModelAnalysis.getDegreesOfFreedom"><code class="xref py py-obj docutils literal"><span class="pre">getDegreesOfFreedom</span></code></a>()</td>
+<td>Accessor to the number of degrees of freedom.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getFisherPValue" title="otlm.LinearModelAnalysis.getFisherPValue"><code class="xref py py-obj docutils literal"><span class="pre">getFisherPValue</span></code></a>()</td>
+<td>Accessor to the Fisher p value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getFisherScore" title="otlm.LinearModelAnalysis.getFisherScore"><code class="xref py py-obj docutils literal"><span class="pre">getFisherScore</span></code></a>()</td>
+<td>Accessor to the Fisher test.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getFormula" title="otlm.LinearModelAnalysis.getFormula"><code class="xref py py-obj docutils literal"><span class="pre">getFormula</span></code></a>()</td>
+<td>Accessor to the formula.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getId" title="otlm.LinearModelAnalysis.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<td>Accessor to the object’s id.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getLeverages" title="otlm.LinearModelAnalysis.getLeverages"><code class="xref py py-obj docutils literal"><span class="pre">getLeverages</span></code></a>()</td>
+<td>Accessor to the leverages.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getLinearModelResult" title="otlm.LinearModelAnalysis.getLinearModelResult"><code class="xref py py-obj docutils literal"><span class="pre">getLinearModelResult</span></code></a>()</td>
+<td>Accessor to the linear model result.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getName" title="otlm.LinearModelAnalysis.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<td>Accessor to the object’s name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getNormalityTestResultAndersonDarling" title="otlm.LinearModelAnalysis.getNormalityTestResultAndersonDarling"><code class="xref py py-obj docutils literal"><span class="pre">getNormalityTestResultAndersonDarling</span></code></a>()</td>
+<td>Performs Anderson-Darling test to check Gaussian assumption of the model (null hypothesis).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getNormalityTestResultChiSquared" title="otlm.LinearModelAnalysis.getNormalityTestResultChiSquared"><code class="xref py py-obj docutils literal"><span class="pre">getNormalityTestResultChiSquared</span></code></a>()</td>
+<td>Performs Pearson Chi-2 statistical test to check Gaussian assumption of the model</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getNormalityTestResultKolmogorovSmirnov" title="otlm.LinearModelAnalysis.getNormalityTestResultKolmogorovSmirnov"><code class="xref py py-obj docutils literal"><span class="pre">getNormalityTestResultKolmogorovSmirnov</span></code></a>()</td>
+<td>Performs Kolmogorov test to check Gaussian assumption of the model (null hypothesis).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getRSquared" title="otlm.LinearModelAnalysis.getRSquared"><code class="xref py py-obj docutils literal"><span class="pre">getRSquared</span></code></a>()</td>
+<td>Accessor to the R-squared test.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getResiduals" title="otlm.LinearModelAnalysis.getResiduals"><code class="xref py py-obj docutils literal"><span class="pre">getResiduals</span></code></a>()</td>
+<td>Accessor to the residuals.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getShadowedId" title="otlm.LinearModelAnalysis.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<td>Accessor to the object’s shadowed id.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getStandardizedResiduals" title="otlm.LinearModelAnalysis.getStandardizedResiduals"><code class="xref py py-obj docutils literal"><span class="pre">getStandardizedResiduals</span></code></a>()</td>
+<td>Accessor to the standardized residuals.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getVisibility" title="otlm.LinearModelAnalysis.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<td>Accessor to the object’s visibility state.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.hasName" title="otlm.LinearModelAnalysis.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<td>Test if the object is named.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.hasVisibleName" title="otlm.LinearModelAnalysis.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<td>Test if the object has a distinguishable name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.setName" title="otlm.LinearModelAnalysis.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(*args)</td>
+<td>Accessor to the object’s name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.setShadowedId" title="otlm.LinearModelAnalysis.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(*args)</td>
+<td>Accessor to the object’s shadowed id.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.setVisibility" title="otlm.LinearModelAnalysis.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(*args)</td>
+<td>Accessor to the object’s visibility state.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.drawCookDistance">
+<code class="descname">drawCookDistance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.drawCookDistance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to plot of Cook’s distances versus row labels.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>graph</strong> : <a class="reference external" href="http://openturns.github.io/user_manual/_generated/openturns.Graph.html#openturns.Graph" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.drawCookVsLeverages">
+<code class="descname">drawCookVsLeverages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.drawCookVsLeverages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to plot of Cook’s distances versus leverage/(1-leverage).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>graph</strong> : <a class="reference external" href="http://openturns.github.io/user_manual/_generated/openturns.Graph.html#openturns.Graph" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.drawQQplot">
+<code class="descname">drawQQplot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.drawQQplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to plot a Normal quantiles-quantiles plot of standardized residuals.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>graph</strong> : <a class="reference external" href="http://openturns.github.io/user_manual/_generated/openturns.Graph.html#openturns.Graph" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.drawResidualsVsFitted">
+<code class="descname">drawResidualsVsFitted</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.drawResidualsVsFitted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to plot of residuals versus fitted values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>graph</strong> : <a class="reference external" href="http://openturns.github.io/user_manual/_generated/openturns.Graph.html#openturns.Graph" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.drawResidualsVsLeverages">
+<code class="descname">drawResidualsVsLeverages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.drawResidualsVsLeverages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to plot of residuals versus leverages that adds bands corresponding to Cook’s distances of 0.5 and 1.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>graph</strong> : <a class="reference external" href="http://openturns.github.io/user_manual/_generated/openturns.Graph.html#openturns.Graph" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.drawScaleLocation">
+<code class="descname">drawScaleLocation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.drawScaleLocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to a Scale-Location plot of sqrt(abs(residuals)) versus fitted values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>graph</strong> : <a class="reference external" href="http://openturns.github.io/user_manual/_generated/openturns.Graph.html#openturns.Graph" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getAdjustedRSquared">
+<code class="descname">getAdjustedRSquared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getAdjustedRSquared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the Adjusted R-squared test.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>adjustedRSquared</strong> : <code class="xref py py-class docutils literal"><span class="pre">NumericalScalar</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getClassName">
+<code class="descname">getClassName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getClassName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
+<blockquote class="last">
+<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getCoefficientsEstimates">
+<code class="descname">getCoefficientsEstimates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getCoefficientsEstimates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the coefficients of the linear model of the trend.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>beta</strong> : <code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getCoefficientsNames">
+<code class="descname">getCoefficientsNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getCoefficientsNames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the coefficients names.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>coefficientsNames</strong> : <a class="reference external" href="http://openturns.github.io/user_manual/_generated/openturns.Description.html#openturns.Description" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getCoefficientsPValues">
+<code class="descname">getCoefficientsPValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getCoefficientsPValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the coefficients of the p values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>pValues</strong> : <code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getCoefficientsStandardErrors">
+<code class="descname">getCoefficientsStandardErrors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getCoefficientsStandardErrors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the coefficients of standard error.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>standardErrors</strong> : <code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getCoefficientsTScores">
+<code class="descname">getCoefficientsTScores</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getCoefficientsTScores" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the coefficients of linear expansion over their standard error.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>tScores</strong> : <code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getCookDistances">
+<code class="descname">getCookDistances</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getCookDistances" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the cook’s distances.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>cookDistances</strong> : <code class="xref py py-class docutils literal"><span class="pre">Point</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getDegreesOfFreedom">
+<code class="descname">getDegreesOfFreedom</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getDegreesOfFreedom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the number of degrees of freedom.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>dof</strong> : <code class="xref py py-class docutils literal"><span class="pre">UnsignedInteger</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getFisherPValue">
+<code class="descname">getFisherPValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getFisherPValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the Fisher p value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>fisherPValue</strong> : <code class="xref py py-class docutils literal"><span class="pre">NumericalScalar</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getFisherScore">
+<code class="descname">getFisherScore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getFisherScore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the Fisher test.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>fisherScore</strong> : <code class="xref py py-class docutils literal"><span class="pre">NumericalScalar</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getFormula">
+<code class="descname">getFormula</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getFormula" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the formula.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>condensedFormula</strong> : <code class="xref py py-class docutils literal"><span class="pre">String</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getId">
+<code class="descname">getId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s id.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
+<blockquote class="last">
+<div><p>Internal unique identifier.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getLeverages">
+<code class="descname">getLeverages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getLeverages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the leverages.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>leverages</strong> : <code class="xref py py-class docutils literal"><span class="pre">Point</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getLinearModelResult">
+<code class="descname">getLinearModelResult</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getLinearModelResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the linear model result.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>linearModelResult</strong> : <code class="xref py py-class docutils literal"><span class="pre">LinearModelResult</span></code></p>
+<blockquote class="last">
+<div><p>The  linear model result which had been passed to the constructor.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getName">
+<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote class="last">
+<div><p>The name of the object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getNormalityTestResultAndersonDarling">
+<code class="descname">getNormalityTestResultAndersonDarling</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getNormalityTestResultAndersonDarling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs Anderson-Darling test to check Gaussian assumption of the model (null hypothesis).
+It is accepted when p-value is low.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>testResult</strong> : <a class="reference external" href="http://openturns.github.io/user_manual/_generated/openturns.TestResult.html#openturns.TestResult" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">TestResult</span></code></a></p>
+<blockquote class="last">
+<div><p>Test result class.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>We check that the residual is Gaussian thanks to <code class="xref py py-class docutils literal"><span class="pre">NormalityTest::AndersonDarling</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getNormalityTestResultChiSquared">
+<code class="descname">getNormalityTestResultChiSquared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getNormalityTestResultChiSquared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs Pearson Chi-2 statistical test to check Gaussian assumption of the model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>testResult</strong> : <a class="reference external" href="http://openturns.github.io/user_manual/_generated/openturns.TestResult.html#openturns.TestResult" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">TestResult</span></code></a></p>
+<blockquote class="last">
+<div><p>Test result class.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The Chi-Square test is a goodness of fit test which objective is to check the normality assumption (null hypothesis) of residuals (and thus the model).
+It is accepted when p-value is low.</p>
+<p>From a dataset <img class="math" src="../../_images/math/7b6f5b1d50c92e9e5d28c0ac226ddc09dbb328db.svg" alt="\epsilon=(\epsilon_1,...,\epsilon_k)"/> of size <img class="math" src="../../_images/math/8f4408114890b13b6581b4b843f42e79a65e6026.svg" alt="k"/> (residual set), we define <img class="math" src="../../_images/math/267da13b38d352c5a41f57479e90b8191e4a032a.svg" alt="nClasses"/> classes
+where <img class="math" src="../../_images/math/9dbd0bb398e1b1df47b09ffb74b5d13befac310c.svg" alt="nClasses := 2\ k^{\frac{2}{5}}"/>.</p>
+<p>Under the normality hypothesis, we compute cumulative function of the <img class="math" src="../../_images/math/1d4fb4b23e6113b430a00d3091a84736a35dcced.svg" alt="\epsilon"/> set (mean and standard
+deviation of the underlying normal distribution derived from the dataset). The interval <img class="math" src="../../_images/math/e4dc380d93b724aed5234b5b149c829af88a993d.svg" alt="[0, 1]"/> is then splitted
+onto <img class="math" src="../../_images/math/267da13b38d352c5a41f57479e90b8191e4a032a.svg" alt="nClasses"/> intervals.</p>
+<p>For the Chi-Square test, two major elements are to be considered:</p>
+<blockquote>
+<div><ul class="simple">
+<li><img class="math" src="../../_images/math/6e57caeeda0cb0df4da78c976edf2d64146fd8b5.svg" alt="C_{i}"/> is the number of counted observations in the class <img class="math" src="../../_images/math/38caed9f1ca123135271cd7d911e8588015432ed.svg" alt="i"/></li>
+<li><img class="math" src="../../_images/math/806272fc83e0c9dfda20ccf28604be01af9b6160.svg" alt="E_{i}"/> is the number of expected observations in the class <img class="math" src="../../_images/math/38caed9f1ca123135271cd7d911e8588015432ed.svg" alt="i"/></li>
+</ul>
+</div></blockquote>
+<p>Using the cumulative information, we count number of elements in each class (<img class="math" src="../../_images/math/6e57caeeda0cb0df4da78c976edf2d64146fd8b5.svg" alt="C_{i}"/>).
+Also, under the null hypothesis, the different classes are equiprobable ( <img class="math" src="../../_images/math/bf3876a3836172cc177773fac88511a88f233ccb.svg" alt="E_{i}\ =\ E\ =\frac{k}{nClasses}"/>.</p>
+<p>From the previous values per class, we compute the Pearson test statistic <img class="math" src="../../_images/math/c5870bd48f2bf081e48d3da7fc1f291779982ce0.svg" alt="P=\sum_{i=1}^{nClasses} \frac{C_{i} - E_{i})^{2}}{E_{i}}"/>.</p>
+<p>Finally, the p-value is computed thanks to a chi-square distribution with <img class="math" src="../../_images/math/b12763247ff52acb69c30755be9a77741b3de3f0.svg" alt="dof"/> degrees of freedom, where
+<img class="math" src="../../_images/math/b12763247ff52acb69c30755be9a77741b3de3f0.svg" alt="dof"/> is adjusted thanks to the boolean ResourceMap key (<code class="docutils literal"><span class="pre">LinearModelAnalysis-ChiSquareAdjust</span></code>).
+If key is set to <em>True</em>, degree of freedom is <img class="math" src="../../_images/math/c66dc371c2646b43415f2920f72db6a3a252b164.svg" alt="nClasses - 3"/>. Otherwise it is <img class="math" src="../../_images/math/30814ea0efe75f219957ceccf899569490b414d9.svg" alt="nClasses - 1"/>
+It is recommended to test with both <em>True</em> and <em>False</em> values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getNormalityTestResultKolmogorovSmirnov">
+<code class="descname">getNormalityTestResultKolmogorovSmirnov</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getNormalityTestResultKolmogorovSmirnov" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs Kolmogorov test to check Gaussian assumption of the model (null hypothesis).
+It is accepted when p-value is low.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>testResult</strong> : <a class="reference external" href="http://openturns.github.io/user_manual/_generated/openturns.TestResult.html#openturns.TestResult" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">TestResult</span></code></a></p>
+<blockquote class="last">
+<div><p>Test result class.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>We check that the residual is Gaussian thanks to <code class="xref py py-class docutils literal"><span class="pre">FittingTest::Kolmogorov</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getRSquared">
+<code class="descname">getRSquared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getRSquared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the R-squared test.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>rSquared</strong> : <code class="xref py py-class docutils literal"><span class="pre">NumericalScalar</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getResiduals">
+<code class="descname">getResiduals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getResiduals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the residuals.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>sampleResiduals</strong> : <code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getShadowedId">
+<code class="descname">getShadowedId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getShadowedId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s shadowed id.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
+<blockquote class="last">
+<div><p>Internal unique identifier.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getStandardizedResiduals">
+<code class="descname">getStandardizedResiduals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getStandardizedResiduals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the standardized residuals.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>standardizedResiduals</strong> : <code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.getVisibility">
+<code class="descname">getVisibility</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getVisibility" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s visibility state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
+<blockquote class="last">
+<div><p>Visibility flag.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.hasName">
+<code class="descname">hasName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.hasName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if the object is named.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasName</strong> : bool</p>
+<blockquote class="last">
+<div><p>True if the name is not empty.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.hasVisibleName">
+<code class="descname">hasVisibleName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.hasVisibleName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if the object has a distinguishable name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasVisibleName</strong> : bool</p>
+<blockquote class="last">
+<div><p>True if the name is not empty and not the default one.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.setName">
+<code class="descname">setName</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.setName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote class="last">
+<div><p>The name of the object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.setShadowedId">
+<code class="descname">setShadowedId</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.setShadowedId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s shadowed id.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
+<blockquote class="last">
+<div><p>Internal unique identifier.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otlm.LinearModelAnalysis.setVisibility">
+<code class="descname">setVisibility</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.setVisibility" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s visibility state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
+<blockquote class="last">
+<div><p>Visibility flag.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="otlm.MonomialFactory.html"
+                        title="previous chapter">MonomialFactory</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="otlm.LinearModelResult.html"
+                        title="next chapter">LinearModelResult</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/user_manual/_generated/otlm.LinearModelAnalysis.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="otlm.LinearModelResult.html" title="LinearModelResult"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="otlm.MonomialFactory.html" title="MonomialFactory"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">otlm 0.5 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user_manual.html" >User manual</a> &#187;</li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>

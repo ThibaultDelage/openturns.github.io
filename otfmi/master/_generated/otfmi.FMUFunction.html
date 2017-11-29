@@ -1,0 +1,1294 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>FMUFunction &#8212; otfmi  documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/Icon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="OpenTURNSFMUFunction" href="otfmi.OpenTURNSFMUFunction.html" />
+    <link rel="prev" title="Documentation of the API" href="../api.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="otfmi.OpenTURNSFMUFunction.html" title="OpenTURNSFMUFunction"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../api.html" title="Documentation of the API"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">otfmi  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" accesskey="U">Documentation of the API</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="fmufunction">
+<h1>FMUFunction<a class="headerlink" href="#fmufunction" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="otfmi.FMUFunction">
+<em class="property">class </em><code class="descname">FMUFunction</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override Function from Python.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>path_fmu</strong> : String, path to the FMU file.</p>
+<p><strong>inputs_fmu</strong> : Sequence of strings</p>
+<blockquote>
+<div><p>Names of the variable from the fmu to be used as input variables.</p>
+</div></blockquote>
+<p><strong>outputs_fmu</strong> : Sequence of strings,</p>
+<blockquote>
+<div><p>Names of the variable from the fmu to be used as output variables.</p>
+</div></blockquote>
+<p><strong>inputs</strong> : Sequence of strings</p>
+<blockquote>
+<div><p>Optional names to use as variables descriptions.</p>
+</div></blockquote>
+<p><strong>outputs</strong> : Sequence of strings</p>
+<blockquote>
+<div><p>Optional names to use as variables descriptions.</p>
+</div></blockquote>
+<p><strong>n_cpus</strong> :  Integer</p>
+<blockquote>
+<div><p>Number of cores to use for multiprocessing.</p>
+</div></blockquote>
+<p><strong>initialization_script</strong> : String (optional)</p>
+<blockquote>
+<div><p>Path to the initialization script.</p>
+</div></blockquote>
+<p><strong>kind</strong> : String, one of “ME” (model exchange) or “CS” (co-simulation)</p>
+<blockquote class="last">
+<div><p>Select a kind of FMU if both are available.
+Note:
+Contrary to pyfmi, the default here is “CS” (co-simulation). The
+rationale behind this choice is is that co-simulation may be used to
+impose a solver not available in pyfmi.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">__call__</span></code>(*args)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.addCacheContent" title="otfmi.FMUFunction.addCacheContent"><code class="xref py py-obj docutils literal"><span class="pre">addCacheContent</span></code></a>(inSample,&nbsp;outSample)</td>
+<td>Add input numerical points and associated output to the cache.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.clearCache" title="otfmi.FMUFunction.clearCache"><code class="xref py py-obj docutils literal"><span class="pre">clearCache</span></code></a>()</td>
+<td>Empty the content of the cache.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.clearHistory" title="otfmi.FMUFunction.clearHistory"><code class="xref py py-obj docutils literal"><span class="pre">clearHistory</span></code></a>()</td>
+<td>Empty the content of the history.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.disableCache" title="otfmi.FMUFunction.disableCache"><code class="xref py py-obj docutils literal"><span class="pre">disableCache</span></code></a>()</td>
+<td>Disable the cache mechanism.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.disableHistory" title="otfmi.FMUFunction.disableHistory"><code class="xref py py-obj docutils literal"><span class="pre">disableHistory</span></code></a>()</td>
+<td>Disable the history mechanism.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.draw" title="otfmi.FMUFunction.draw"><code class="xref py py-obj docutils literal"><span class="pre">draw</span></code></a>(*args)</td>
+<td>Draw the output of function as a <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Graph.html#openturns.Graph" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.enableCache" title="otfmi.FMUFunction.enableCache"><code class="xref py py-obj docutils literal"><span class="pre">enableCache</span></code></a>()</td>
+<td>Enable the cache mechanism.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.enableHistory" title="otfmi.FMUFunction.enableHistory"><code class="xref py py-obj docutils literal"><span class="pre">enableHistory</span></code></a>()</td>
+<td>Enable the history mechanism.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.getCacheHits" title="otfmi.FMUFunction.getCacheHits"><code class="xref py py-obj docutils literal"><span class="pre">getCacheHits</span></code></a>()</td>
+<td>Accessor to the number of computations saved thanks to the cache mecanism.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.getCacheInput" title="otfmi.FMUFunction.getCacheInput"><code class="xref py py-obj docutils literal"><span class="pre">getCacheInput</span></code></a>()</td>
+<td>Accessor to all the input numerical points stored in the cache mecanism.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.getCacheOutput" title="otfmi.FMUFunction.getCacheOutput"><code class="xref py py-obj docutils literal"><span class="pre">getCacheOutput</span></code></a>()</td>
+<td>Accessor to all the output numerical points stored in the cache mecanism.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.getCallsNumber" title="otfmi.FMUFunction.getCallsNumber"><code class="xref py py-obj docutils literal"><span class="pre">getCallsNumber</span></code></a>()</td>
+<td>Accessor to the number of times the function has been called.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.getClassName" title="otfmi.FMUFunction.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<td>Accessor to the object’s name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.getDescription" title="otfmi.FMUFunction.getDescription"><code class="xref py py-obj docutils literal"><span class="pre">getDescription</span></code></a>()</td>
+<td>Accessor to the description of the inputs and outputs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.getEvaluation" title="otfmi.FMUFunction.getEvaluation"><code class="xref py py-obj docutils literal"><span class="pre">getEvaluation</span></code></a>()</td>
+<td>Accessor to the evaluation function.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.getEvaluationCallsNumber" title="otfmi.FMUFunction.getEvaluationCallsNumber"><code class="xref py py-obj docutils literal"><span class="pre">getEvaluationCallsNumber</span></code></a>()</td>
+<td>Accessor to the number of times the function has been called.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.getGradient" title="otfmi.FMUFunction.getGradient"><code class="xref py py-obj docutils literal"><span class="pre">getGradient</span></code></a>()</td>
+<td>Accessor to the gradient function.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.getGradientCallsNumber" title="otfmi.FMUFunction.getGradientCallsNumber"><code class="xref py py-obj docutils literal"><span class="pre">getGradientCallsNumber</span></code></a>()</td>
+<td>Accessor to the number of times the gradient of the function has been called.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.getHessian" title="otfmi.FMUFunction.getHessian"><code class="xref py py-obj docutils literal"><span class="pre">getHessian</span></code></a>()</td>
+<td>Accessor to the hessian function.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.getHessianCallsNumber" title="otfmi.FMUFunction.getHessianCallsNumber"><code class="xref py py-obj docutils literal"><span class="pre">getHessianCallsNumber</span></code></a>()</td>
+<td>Accessor to the number of times the hessian of the function has been called.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.getHistoryInput" title="otfmi.FMUFunction.getHistoryInput"><code class="xref py py-obj docutils literal"><span class="pre">getHistoryInput</span></code></a>()</td>
+<td>Accessor to the history of the input values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.getHistoryOutput" title="otfmi.FMUFunction.getHistoryOutput"><code class="xref py py-obj docutils literal"><span class="pre">getHistoryOutput</span></code></a>()</td>
+<td>Accessor to the history of the output values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.getId" title="otfmi.FMUFunction.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<td>Accessor to the object’s id.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.getImplementation" title="otfmi.FMUFunction.getImplementation"><code class="xref py py-obj docutils literal"><span class="pre">getImplementation</span></code></a>(*args)</td>
+<td>Accessor to the underlying implementation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.getInputDescription" title="otfmi.FMUFunction.getInputDescription"><code class="xref py py-obj docutils literal"><span class="pre">getInputDescription</span></code></a>()</td>
+<td>Accessor to the description of the input vector.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.getInputDimension" title="otfmi.FMUFunction.getInputDimension"><code class="xref py py-obj docutils literal"><span class="pre">getInputDimension</span></code></a>()</td>
+<td>Accessor to the dimension of the input vector.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.getInputParameterHistory" title="otfmi.FMUFunction.getInputParameterHistory"><code class="xref py py-obj docutils literal"><span class="pre">getInputParameterHistory</span></code></a>()</td>
+<td>Accessor to the history of the input parameter values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.getInputPointHistory" title="otfmi.FMUFunction.getInputPointHistory"><code class="xref py py-obj docutils literal"><span class="pre">getInputPointHistory</span></code></a>()</td>
+<td>Accessor to the history of the input point values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.getMarginal" title="otfmi.FMUFunction.getMarginal"><code class="xref py py-obj docutils literal"><span class="pre">getMarginal</span></code></a>(*args)</td>
+<td>Accessor to marginal.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.getName" title="otfmi.FMUFunction.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<td>Accessor to the object’s name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.getOutputDescription" title="otfmi.FMUFunction.getOutputDescription"><code class="xref py py-obj docutils literal"><span class="pre">getOutputDescription</span></code></a>()</td>
+<td>Accessor to the description of the output vector.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.getOutputDimension" title="otfmi.FMUFunction.getOutputDimension"><code class="xref py py-obj docutils literal"><span class="pre">getOutputDimension</span></code></a>()</td>
+<td>Accessor to the number of the outputs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.getParameter" title="otfmi.FMUFunction.getParameter"><code class="xref py py-obj docutils literal"><span class="pre">getParameter</span></code></a>()</td>
+<td>Accessor to the parameter values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.getParameterDescription" title="otfmi.FMUFunction.getParameterDescription"><code class="xref py py-obj docutils literal"><span class="pre">getParameterDescription</span></code></a>()</td>
+<td>Accessor to the parameter description.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.getParameterDimension" title="otfmi.FMUFunction.getParameterDimension"><code class="xref py py-obj docutils literal"><span class="pre">getParameterDimension</span></code></a>()</td>
+<td>Accessor to the dimension of the parameter.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.gradient" title="otfmi.FMUFunction.gradient"><code class="xref py py-obj docutils literal"><span class="pre">gradient</span></code></a>(*args)</td>
+<td>Return the Jacobian transposed matrix of the function at a point.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.hessian" title="otfmi.FMUFunction.hessian"><code class="xref py py-obj docutils literal"><span class="pre">hessian</span></code></a>(*args)</td>
+<td>Return the hessian of the function at a point.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.isCacheEnabled" title="otfmi.FMUFunction.isCacheEnabled"><code class="xref py py-obj docutils literal"><span class="pre">isCacheEnabled</span></code></a>()</td>
+<td>Test whether the cache mechanism is enabled or not.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.isHistoryEnabled" title="otfmi.FMUFunction.isHistoryEnabled"><code class="xref py py-obj docutils literal"><span class="pre">isHistoryEnabled</span></code></a>()</td>
+<td>Test whether the history mechanism is enabled or not.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.parameterGradient" title="otfmi.FMUFunction.parameterGradient"><code class="xref py py-obj docutils literal"><span class="pre">parameterGradient</span></code></a>(*args)</td>
+<td>Accessor to the gradient against the parameter.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.setDescription" title="otfmi.FMUFunction.setDescription"><code class="xref py py-obj docutils literal"><span class="pre">setDescription</span></code></a>(description)</td>
+<td>Accessor to the description of the inputs and outputs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.setEvaluation" title="otfmi.FMUFunction.setEvaluation"><code class="xref py py-obj docutils literal"><span class="pre">setEvaluation</span></code></a>(evaluation)</td>
+<td>Accessor to the evaluation function.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.setGradient" title="otfmi.FMUFunction.setGradient"><code class="xref py py-obj docutils literal"><span class="pre">setGradient</span></code></a>(gradient)</td>
+<td>Accessor to the gradient function.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.setHessian" title="otfmi.FMUFunction.setHessian"><code class="xref py py-obj docutils literal"><span class="pre">setHessian</span></code></a>(hessian)</td>
+<td>Accessor to the hessian function.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.setName" title="otfmi.FMUFunction.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<td>Accessor to the object’s name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otfmi.FMUFunction.setParameter" title="otfmi.FMUFunction.setParameter"><code class="xref py py-obj docutils literal"><span class="pre">setParameter</span></code></a>(parameter)</td>
+<td>Accessor to the parameter values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otfmi.FMUFunction.setParameterDescription" title="otfmi.FMUFunction.setParameterDescription"><code class="xref py py-obj docutils literal"><span class="pre">setParameterDescription</span></code></a>(description)</td>
+<td>Accessor to the parameter description.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="otfmi.FMUFunction.addCacheContent">
+<code class="descname">addCacheContent</code><span class="sig-paren">(</span><em>inSample</em>, <em>outSample</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.addCacheContent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add input numerical points and associated output to the cache.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>input_sample</strong> : 2-d sequence of float</p>
+<blockquote>
+<div><p>Input numerical points to be added to the cache.</p>
+</div></blockquote>
+<p><strong>output_sample</strong> : 2-d sequence of float</p>
+<blockquote class="last">
+<div><p>Output numerical points associated with the input_sample to be added to the
+cache.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.clearCache">
+<code class="descname">clearCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.clearCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Empty the content of the cache.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.clearHistory">
+<code class="descname">clearHistory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.clearHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Empty the content of the history.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.disableCache">
+<code class="descname">disableCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.disableCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable the cache mechanism.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.disableHistory">
+<code class="descname">disableHistory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.disableHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable the history mechanism.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the output of function as a <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Graph.html#openturns.Graph" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a>.</p>
+<dl class="docutils">
+<dt>Available usages:</dt>
+<dd><p class="first">draw(<em>inputMarg, outputMarg, CP, xiMin, xiMax, ptNb</em>)</p>
+<p>draw(<em>firstInputMarg, secondInputMarg, outputMarg, CP, xiMin_xjMin, xiMax_xjMax, ptNbs</em>)</p>
+<p>draw(<em>xiMin, xiMax, ptNb</em>)</p>
+<p class="last">draw(<em>xiMin_xjMin, xiMax_xjMax, ptNbs</em>)</p>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>outputMarg, inputMarg</strong> : int, <img class="math" src="../_images/math/6bf9d170a5513f832916a140b7001803c524e3e7.svg" alt="outputMarg, inputMarg \geq 0"/></p>
+<blockquote>
+<div><p><em>outputMarg</em> is the index of the marginal to draw as a function of the marginal
+with index <em>inputMarg</em>.</p>
+</div></blockquote>
+<p><strong>firstInputMarg, secondInputMarg</strong> : int, <img class="math" src="../_images/math/109613bdc879f6ebf34f5e4064e3f53083932d0d.svg" alt="firstInputMarg, secondInputMarg \geq 0"/></p>
+<blockquote>
+<div><p>In the 2D case, the marginal <em>outputMarg</em> is drawn as a function of the
+two marginals with indexes <em>firstInputMarg</em> and <em>secondInputMarg</em>.</p>
+</div></blockquote>
+<p><strong>CP</strong> : sequence of float</p>
+<blockquote>
+<div><p>Central point.</p>
+</div></blockquote>
+<p><strong>xiMin, xiMax</strong> : float</p>
+<blockquote>
+<div><p>Define the interval where the curve is plotted.</p>
+</div></blockquote>
+<p><strong>xiMin_xjMin, xiMax_xjMax</strong> : sequence of float of dimension 2.</p>
+<blockquote>
+<div><p>In the 2D case, define the intervals where the curves are plotted.</p>
+</div></blockquote>
+<p><strong>ptNb</strong> : int <img class="math" src="../_images/math/079c7ba37d39f47eb2a376a08755e69a84570825.svg" alt="ptNb &gt; 0"/> or list of ints of dimension 2 <img class="math" src="../_images/math/81c06d8a4a44d4c6c9042e8db59c46568ace08f4.svg" alt="ptNb_k &gt; 0, k=1,2"/></p>
+<blockquote class="last">
+<div><p>The number of points to draw the curves.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>We note <img class="math" src="../_images/math/755b879031a55e95ec7798a45940435e14f24ac9.svg" alt="f: \Rset^n \rightarrow \Rset^p"/>
+where <img class="math" src="../_images/math/4c1551eef8a5faff655f3a52dae614c7e56c500a.svg" alt="\vect{x} = (x_1, \dots, x_n)"/> and
+<img class="math" src="../_images/math/ed64213f43fef74bcacff7b5be9b33c334ee21e8.svg" alt="f(\vect{x}) = (f_1(\vect{x}), \dots,f_p(\vect{x}))"/>,
+with <img class="math" src="../_images/math/05bd3acb47b7ff7ed3e27c5d15402ce1e3f5ba06.svg" alt="n\geq 1"/> and <img class="math" src="../_images/math/fe3a95607a3de08a85a4d9ac5bfa54c23fe32dc9.svg" alt="p\geq 1"/>.</p>
+<ul class="simple">
+<li>In the first usage:</li>
+</ul>
+<p>Draws graph of the given 1D <em>outputMarg</em> marginal
+<img class="math" src="../_images/math/cec37b92c3e2ff75a5b60aa2c5a9d345ce9411c5.svg" alt="f_k: \Rset^n \rightarrow \Rset"/> as a function of the given 1D <em>inputMarg</em>
+marginal with respect to the variation of <img class="math" src="../_images/math/ce30efd9ce92a192554515a666a918d3614528f3.svg" alt="x_i"/> in the interval
+<img class="math" src="../_images/math/6929f8abc391ca217487e6045d66bae0c38f3456.svg" alt="[x_i^{min}, x_i^{max}]"/>, when all the other components of
+<img class="math" src="../_images/math/b24b859a2f5b258690ccb14bed0847113dd40539.svg" alt="\vect{x}"/> are fixed to the corresponding ones of the central point <em>CP</em>.
+Then OpenTURNS draws the graph:
+<img class="math" src="../_images/math/d493dc19b502f78b871b0a53b38cb2621f449437.svg" alt="t\in [x_i^{min}, x_i^{max}] \mapsto f_k(CP_1, \dots, CP_{i-1}, t,  CP_{i+1} \dots, CP_n)"/>.</p>
+<ul class="simple">
+<li>In the second usage:</li>
+</ul>
+<p>Draws the iso-curves of the given <em>outputMarg</em> marginal <img class="math" src="../_images/math/0592fe577929b235d2b45760f6d1e7cfe7e685b2.svg" alt="f_k"/> as a
+function of the given 2D <em>firstInputMarg</em> and <em>secondInputMarg</em> marginals
+with respect to the variation of <img class="math" src="../_images/math/7845bbacb2b4196c740fbb7383ca95a18e4d6b8d.svg" alt="(x_i, x_j)"/> in the interval
+<img class="math" src="../_images/math/bea8d3e40659e6f605902ded999b48a5f7ce3bb5.svg" alt="[x_i^{min}, x_i^{max}] \times [x_j^{min}, x_j^{max}]"/>, when all the
+other components of <img class="math" src="../_images/math/b24b859a2f5b258690ccb14bed0847113dd40539.svg" alt="\vect{x}"/> are fixed to the corresponding ones of the
+central point <em>CP</em>. Then OpenTURNS draws the graph:
+<img class="math" src="../_images/math/3849d5605b7b8a1785bfa46b440f840ef511b895.svg" alt="(t,u) \in [x_i^{min}, x_i^{max}] \times [x_j^{min}, x_j^{max}] \mapsto f_k(CP_1, \dots, CP_{i-1}, t, CP_{i+1}, \dots, CP_{j-1}, u,  CP_{j+1} \dots, CP_n)"/>.</p>
+<ul class="simple">
+<li>In the third usage:</li>
+</ul>
+<p>The same as the first usage but only for function <img class="math" src="../_images/math/335872e231c7ed0c1802d0697cc9de4968ee0288.svg" alt="f: \Rset \rightarrow \Rset"/>.</p>
+<ul class="simple">
+<li>In the fourth usage:</li>
+</ul>
+<p>The same as the second usage but only for function <img class="math" src="../_images/math/612799a302e8755dc9687dcfa7a67b51b618b3aa.svg" alt="f: \Rset^2 \rightarrow \Rset"/>.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">openturns.viewer</span> <span class="k">import</span> <span class="n">View</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;sin(2*_pi*x)*exp(-x^2/2)&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">View</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.enableCache">
+<code class="descname">enableCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.enableCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable the cache mechanism.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.enableHistory">
+<code class="descname">enableHistory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.enableHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable the history mechanism.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getCacheHits">
+<code class="descname">getCacheHits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getCacheHits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the number of computations saved thanks to the cache mecanism.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cacheHits</strong> : int</p>
+<blockquote class="last">
+<div><p>Integer that counts the number of computations saved thanks to the cache
+mecanism.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getCacheInput">
+<code class="descname">getCacheInput</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getCacheInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to all the input numerical points stored in the cache mecanism.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cacheInput</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<blockquote class="last">
+<div><p>All the input numerical points stored in the cache mecanism.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getCacheOutput">
+<code class="descname">getCacheOutput</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getCacheOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to all the output numerical points stored in the cache mecanism.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cacheInput</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<blockquote class="last">
+<div><p>All the output numerical points stored in the cache mecanism.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getCallsNumber">
+<code class="descname">getCallsNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getCallsNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the number of times the function has been called.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>calls_number</strong> : int</p>
+<blockquote class="last">
+<div><p>Integer that counts the number of times the function has been called
+since its creation.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getClassName">
+<code class="descname">getClassName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getClassName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
+<blockquote class="last">
+<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getDescription">
+<code class="descname">getDescription</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the description of the inputs and outputs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Description.html#openturns.Description" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<blockquote class="last">
+<div><p>Description of the inputs and the outputs.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getDescription</span><span class="p">())</span>
+<span class="go">[x1,x2,y0]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getEvaluation">
+<code class="descname">getEvaluation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getEvaluation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the evaluation function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.EvaluationImplementation.html#openturns.EvaluationImplementation" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">EvaluationImplementation</span></code></a></p>
+<blockquote class="last">
+<div><p>The evaluation function.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getEvaluation</span><span class="p">())</span>
+<span class="go">[x1,x2]-&gt;[2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getEvaluationCallsNumber">
+<code class="descname">getEvaluationCallsNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getEvaluationCallsNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the number of times the function has been called.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>evaluation_calls_number</strong> : int</p>
+<blockquote class="last">
+<div><p>Integer that counts the number of times the function has been called
+since its creation.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getGradient">
+<code class="descname">getGradient</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getGradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the gradient function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gradient</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.GradientImplementation.html#openturns.GradientImplementation" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">GradientImplementation</span></code></a></p>
+<blockquote class="last">
+<div><p>The gradient function.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getGradientCallsNumber">
+<code class="descname">getGradientCallsNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getGradientCallsNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the number of times the gradient of the function has been called.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gradient_calls_number</strong> : int</p>
+<blockquote class="last">
+<div><p>Integer that counts the number of times the gradient of the
+Function has been called since its creation.
+Note that if the gradient is implemented by a finite difference method,
+the gradient calls number is equal to 0 and the different calls are
+counted in the evaluation calls number.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getHessian">
+<code class="descname">getHessian</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getHessian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the hessian function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hessian</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.HessianImplementation.html#openturns.HessianImplementation" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">HessianImplementation</span></code></a></p>
+<blockquote class="last">
+<div><p>The hessian function.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getHessianCallsNumber">
+<code class="descname">getHessianCallsNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getHessianCallsNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the number of times the hessian of the function has been called.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hessian_calls_number</strong> : int</p>
+<blockquote class="last">
+<div><p>Integer that counts the number of times the hessian of the
+Function has been called since its creation.
+Note that if the hessian is implemented by a finite difference method,
+the hessian calls number is equal to 0 and the different calls are counted
+in the evaluation calls number.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getHistoryInput">
+<code class="descname">getHistoryInput</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getHistoryInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the history of the input values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>input_history</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<blockquote class="last">
+<div><p>All the input numerical points stored in the history mecanism.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getHistoryOutput">
+<code class="descname">getHistoryOutput</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getHistoryOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the history of the output values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output_history</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<blockquote class="last">
+<div><p>All the output numerical points stored in the history mecanism.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getId">
+<code class="descname">getId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s id.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
+<blockquote class="last">
+<div><p>Internal unique identifier.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getImplementation">
+<code class="descname">getImplementation</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getImplementation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the underlying implementation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>impl</strong> : Implementation</p>
+<blockquote class="last">
+<div><p>The implementation class.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getInputDescription">
+<code class="descname">getInputDescription</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getInputDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the description of the input vector.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Description.html#openturns.Description" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<blockquote class="last">
+<div><p>Description of the input vector.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                         <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getInputDescription</span><span class="p">())</span>
+<span class="go">[x1,x2]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getInputDimension">
+<code class="descname">getInputDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getInputDimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the dimension of the input vector.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>inputDim</strong> : int</p>
+<blockquote class="last">
+<div><p>Dimension of the input vector <img class="math" src="../_images/math/69347bd73c951387e166a2cc7aac585bdc194940.svg" alt="d"/>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                         <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getInputDimension</span><span class="p">())</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getInputParameterHistory">
+<code class="descname">getInputParameterHistory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getInputParameterHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the history of the input parameter values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>history</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<blockquote class="last">
+<div><p>All the input parameters stored in the history mecanism.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getInputPointHistory">
+<code class="descname">getInputPointHistory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getInputPointHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the history of the input point values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>history</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<blockquote class="last">
+<div><p>All the input points stored in the history mecanism.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getMarginal">
+<code class="descname">getMarginal</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getMarginal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to marginal.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>indices</strong> : int or list of ints</p>
+<blockquote>
+<div><p>Set of indices for which the marginal is extracted.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>marginal</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<blockquote class="last">
+<div><p>Function corresponding to either <img class="math" src="../_images/math/1c7c65449351adfb7b8d47414616ba382cc42f0d.svg" alt="f_i"/> or
+<img class="math" src="../_images/math/555bc676330608f7095999970f7d8fe3498c7cc8.svg" alt="(f_i)_{i \in indices}"/>, with <img class="math" src="../_images/math/1775b23112e4b3fbd20b6bb441b291d4a52c76ee.svg" alt="f:\Rset^n \rightarrow \Rset^p"/>
+and <img class="math" src="../_images/math/850de950412794a4fb3c45972e92684e2cb12705.svg" alt="f=(f_0 , \dots, f_{p-1})"/>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getName">
+<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote class="last">
+<div><p>The name of the object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getOutputDescription">
+<code class="descname">getOutputDescription</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getOutputDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the description of the output vector.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Description.html#openturns.Description" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<blockquote class="last">
+<div><p>Description of the output vector.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                         <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getOutputDescription</span><span class="p">())</span>
+<span class="go">[y0]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getOutputDimension">
+<code class="descname">getOutputDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getOutputDimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the number of the outputs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>number_outputs</strong> : int</p>
+<blockquote class="last">
+<div><p>Dimension of the output vector <img class="math" src="../_images/math/467aa5b75f9ca228ee639a84e0e9393dbdc24eb9.svg" alt="d'"/>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                         <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getOutputDimension</span><span class="p">())</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getParameter">
+<code class="descname">getParameter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getParameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the parameter values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<blockquote class="last">
+<div><p>The parameter values.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getParameterDescription">
+<code class="descname">getParameterDescription</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getParameterDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the parameter description.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Description.html#openturns.Description" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<blockquote class="last">
+<div><p>The parameter description.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.getParameterDimension">
+<code class="descname">getParameterDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.getParameterDimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the dimension of the parameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameterDimension</strong> : int</p>
+<blockquote class="last">
+<div><p>Dimension of the parameter.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.gradient">
+<code class="descname">gradient</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.gradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Jacobian transposed matrix of the function at a point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float</p>
+<blockquote>
+<div><p>Point where the Jacobian transposed matrix is calculated.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gradient</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Matrix.html#openturns.Matrix" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a></p>
+<blockquote class="last">
+<div><p>The Jacobian transposed matrix of the function at <em>point</em>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>               <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">,</span><span class="s1">&#39;x1 + x2&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">gradient</span><span class="p">([</span><span class="mf">3.14</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+<span class="go">[[ 13.5345   1       ]</span>
+<span class="go"> [  4.00001  1       ]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.hessian">
+<code class="descname">hessian</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.hessian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the hessian of the function at a point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float</p>
+<blockquote>
+<div><p>Point where the hessian of the function is calculated.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hessian</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.SymmetricTensor.html#openturns.SymmetricTensor" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">SymmetricTensor</span></code></a></p>
+<blockquote class="last">
+<div><p>Hessian of the function at <em>point</em>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>               <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">,</span><span class="s1">&#39;x1 + x2&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">hessian</span><span class="p">([</span><span class="mf">3.14</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+<span class="go">sheet #0</span>
+<span class="go">[[ 20          -0.00637061 ]</span>
+<span class="go"> [ -0.00637061  0          ]]</span>
+<span class="go">sheet #1</span>
+<span class="go">[[  0           0          ]</span>
+<span class="go"> [  0           0          ]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.isCacheEnabled">
+<code class="descname">isCacheEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.isCacheEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test whether the cache mechanism is enabled or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isCacheEnabled</strong> : bool</p>
+<blockquote class="last">
+<div><p>Flag telling whether the cache mechanism is enabled.
+It is disabled by default.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.isHistoryEnabled">
+<code class="descname">isHistoryEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.isHistoryEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test whether the history mechanism is enabled or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isHistoryEnabled</strong> : bool</p>
+<blockquote class="last">
+<div><p>Flag telling whether the history mechanism is enabled.
+It is disabled by default.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.parameterGradient">
+<code class="descname">parameterGradient</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.parameterGradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the gradient against the parameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gradient</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Matrix.html#openturns.Matrix" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a></p>
+<blockquote class="last">
+<div><p>The gradient.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.setDescription">
+<code class="descname">setDescription</code><span class="sig-paren">(</span><em>description</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.setDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the description of the inputs and outputs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>description</strong> : sequence of str</p>
+<blockquote class="last">
+<div><p>Description of the inputs and the outputs.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                         <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getDescription</span><span class="p">())</span>
+<span class="go">[x1,x2,y0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">setDescription</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getDescription</span><span class="p">())</span>
+<span class="go">[a,b,y]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.setEvaluation">
+<code class="descname">setEvaluation</code><span class="sig-paren">(</span><em>evaluation</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.setEvaluation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the evaluation function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.EvaluationImplementation.html#openturns.EvaluationImplementation" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">EvaluationImplementation</span></code></a></p>
+<blockquote class="last">
+<div><p>The evaluation function.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.setGradient">
+<code class="descname">setGradient</code><span class="sig-paren">(</span><em>gradient</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.setGradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the gradient function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>gradient_function</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.GradientImplementation.html#openturns.GradientImplementation" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">GradientImplementation</span></code></a></p>
+<blockquote class="last">
+<div><p>The gradient function.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                         <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">setGradient</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">CenteredFiniteDifferenceGradient</span><span class="p">(</span>
+<span class="gp">... </span> <span class="n">ot</span><span class="o">.</span><span class="n">ResourceMap</span><span class="o">.</span><span class="n">GetAsScalar</span><span class="p">(</span><span class="s1">&#39;CenteredFiniteDifferenceGradient-DefaultEpsilon&#39;</span><span class="p">),</span>
+<span class="gp">... </span> <span class="n">f</span><span class="o">.</span><span class="n">getEvaluation</span><span class="p">()))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.setHessian">
+<code class="descname">setHessian</code><span class="sig-paren">(</span><em>hessian</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.setHessian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the hessian function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>hessian_function</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.HessianImplementation.html#openturns.HessianImplementation" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">HessianImplementation</span></code></a></p>
+<blockquote class="last">
+<div><p>The hessian function.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                        <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">setHessian</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">CenteredFiniteDifferenceHessian</span><span class="p">(</span>
+<span class="gp">... </span> <span class="n">ot</span><span class="o">.</span><span class="n">ResourceMap</span><span class="o">.</span><span class="n">GetAsScalar</span><span class="p">(</span><span class="s1">&#39;CenteredFiniteDifferenceHessian-DefaultEpsilon&#39;</span><span class="p">),</span>
+<span class="gp">... </span> <span class="n">f</span><span class="o">.</span><span class="n">getEvaluation</span><span class="p">()))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.setName">
+<code class="descname">setName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.setName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote class="last">
+<div><p>The name of the object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.setParameter">
+<code class="descname">setParameter</code><span class="sig-paren">(</span><em>parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.setParameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the parameter values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parameter</strong> : sequence of float</p>
+<blockquote class="last">
+<div><p>The parameter values.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otfmi.FMUFunction.setParameterDescription">
+<code class="descname">setParameterDescription</code><span class="sig-paren">(</span><em>description</em><span class="sig-paren">)</span><a class="headerlink" href="#otfmi.FMUFunction.setParameterDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the parameter description.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Description.html#openturns.Description" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<blockquote class="last">
+<div><p>The parameter description.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../api.html"
+                        title="previous chapter">Documentation of the API</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="otfmi.OpenTURNSFMUFunction.html"
+                        title="next chapter">OpenTURNSFMUFunction</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_generated/otfmi.FMUFunction.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="otfmi.OpenTURNSFMUFunction.html" title="OpenTURNSFMUFunction"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../api.html" title="Documentation of the API"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">otfmi  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >Documentation of the API</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017 EDF.
+      Last updated on Nov 23, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>

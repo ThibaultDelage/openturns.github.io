@@ -1,0 +1,436 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Logistic growth model &#8212; OpenTURNS  documentation</title>
+    <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: ''
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Axial stressed beam" href="../axial_stressed_beam.html" />
+    <link rel="prev" title="Control algorithm termination" href="control_termination.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="http://www.openturns.org/">Home</a></li>
+    <li><a href="../../install.html">Get it</a></li>
+    <li><a href="../../contents.html">Doc</a></li>
+    <li><a href="https://github.com/openturns">Code</a></li>
+    <li><a href="http://trac.openturns.org">Bugs</a></li>
+  </ul>
+  <a href="../../index.html">
+    <h1>
+      <img src="../../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      OpenTURNS
+    </h1>
+    <h2> An Open source initiative for the Treatment of Uncertainties, Risks'N Statistics</h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../axial_stressed_beam.html" title="Axial stressed beam"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="control_termination.html" title="Control algorithm termination"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../examples.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="numerical_methods.html" accesskey="U">Numerical methods</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="control_termination.html"
+                        title="previous chapter">Control algorithm termination</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../axial_stressed_beam.html"
+                        title="next chapter">Axial stressed beam</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/examples/numerical_methods/logistic_growth_model.ipynb"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 9ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="section" id="Logistic-growth-model">
+<h1>Logistic growth model<a class="headerlink" href="#Logistic-growth-model" title="Permalink to this headline">¶</a></h1>
+<p>In the following example we consider the logistic growth model that can
+be used to modelize the population growth:</p>
+<div class="math">
+<p><img src="../../_images/math/0b2c69156a5c5305f54c249133f269fe3e476dcf.svg" alt="\dot{y} = a y(t) - b y(t)^2 \hspace{5mm} \forall t \in [t_0, t_{max}] \hspace{5mm}"/></p>
+</div><p>With: - <img class="math" src="../../_images/math/7d6e847feb6881553c2125060d239ccfb1db7eac.svg" alt="a&gt;0"/> the growth rate - <img class="math" src="../../_images/math/61bbea7c166a840e67b58c0e99e46667f8c97b71.svg" alt="b&gt;0"/> limiting term -
+<img class="math" src="../../_images/math/d4e00aefc0de5543cd97a3c8ff1c6cdc9b77603d.svg" alt="y(t)"/> the population size - <img class="math" src="../../_images/math/35fcb039de1fdef9f5cddbc6e7a62669c0d901a0.svg" alt="y_0 = y(t_0)"/> the initial
+population - <img class="math" src="../../_images/math/af076d7291160ad12bc0443b4d4a44011ade4d0b.svg" alt="t_0"/> the initial time - <img class="math" src="../../_images/math/80c019eac9fee7eb68affad6ea37ae118b759559.svg" alt="t_{max}"/> the final
+time</p>
+<p>R. Pearl and L. Reed (1920) determined the parameters to be
+<img class="math" src="../../_images/math/ef77a08ea08310606158df804b1a5ac0e68ceef1.svg" alt="a=0.03134"/> and <img class="math" src="../../_images/math/995cb7957840001c5426ee194cefbbd5e8e92d59.svg" alt="b=1.5887\times10^{-10}"/> for the US
+population between 1790 and 1910.</p>
+<p>We’re going to use the same <img class="math" src="../../_images/math/187443d2b0e1131ba8aa9350333d281cecf033f2.svg" alt="a,b"/> parameters with even more data
+until the year 2000.</p>
+<p>We will study the influence of the <img class="math" src="../../_images/math/a3c215605b3ba5eabcc3408c63240dbe4aa56adc.svg" alt="y_0"/>, <img class="math" src="../../_images/math/0460ce98b9c6d86ed8d8de8d294b54b83fe96dd4.svg" alt="a"/>, <img class="math" src="../../_images/math/cd0fa2d322966393c52d05ee6dc653b6cc97a986.svg" alt="b"/>
+parameters modelized by random variables: - <img class="math" src="../../_images/math/752c8d38138083e3b53aef92a2c0d228554d6fa5.svg" alt="y_0 \sim \mathcal{N}"/>
+- <img class="math" src="../../_images/math/011d5bd3674e65f05c00b9bb4e230baf618244f4.svg" alt="a \sim \mathcal{N}"/> - <img class="math" src="../../_images/math/0341ab2d7db48b7ecf9755c5aacef99aae39a0e3.svg" alt="b \sim \mathcal{N}"/></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linspace</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">maximum</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Some data</span>
+<span class="n">ustime</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1790</span><span class="p">,</span><span class="mi">2001</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">uspop</span><span class="o">=</span><span class="p">[</span><span class="mf">3.9</span><span class="p">,</span><span class="mf">5.3</span><span class="p">,</span><span class="mf">7.2</span><span class="p">,</span><span class="mf">9.6</span><span class="p">,</span><span class="mf">13.</span><span class="p">,</span><span class="mf">17.</span><span class="p">,</span><span class="mf">23.</span><span class="p">,</span><span class="mf">31.</span><span class="p">,</span><span class="mf">39.</span><span class="p">,</span> <span class="mf">50.</span><span class="p">,</span><span class="mf">62.</span><span class="p">,</span><span class="mf">76.</span><span class="p">,</span><span class="mf">92.</span><span class="p">,</span><span class="mf">106.</span><span class="p">,</span><span class="mf">123.</span><span class="p">,</span><span class="mf">132.</span><span class="p">,</span><span class="mf">151.</span><span class="p">,</span><span class="mf">179.</span><span class="p">,</span> <span class="mf">203.</span><span class="p">,</span><span class="mf">221.</span><span class="p">,</span><span class="mf">250.</span><span class="p">,</span><span class="mf">281.</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Creation of the input distribution</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mf">3.9e6</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.03134</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1.5887e-10</span>
+<span class="n">distY0</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y0</span><span class="p">)</span>
+<span class="n">distA</span>  <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">distB</span>  <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">distX</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComposedDistribution</span><span class="p">([</span><span class="n">distY0</span><span class="p">,</span> <span class="n">distA</span><span class="p">,</span> <span class="n">distB</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># The model</span>
+<span class="k">class</span> <span class="nc">Popu</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">OpenTURNSPythonPointToFieldFunction</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t0</span> <span class="o">=</span> <span class="mf">1790.0</span><span class="p">,</span> <span class="n">tfinal</span> <span class="o">=</span> <span class="mf">2000.0</span><span class="p">,</span> <span class="n">nt</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Popu</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setInputDescription</span><span class="p">([</span><span class="s1">&#39;y0&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setOutputDescription</span><span class="p">([</span><span class="s1">&#39;N&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid_</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RegularGrid</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="p">(</span><span class="n">tfinal</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">nt</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nt</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ticks_</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_</span><span class="o">.</span><span class="n">getVertices</span><span class="p">()]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">phi_</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a*y - b*y^2&#39;</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">_exec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="n">y0</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">a</span>  <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">b</span>  <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VertexValueFunction</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">ParametricFunction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phi_</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]),</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">solver</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RungeKutta</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+        <span class="n">initialState</span> <span class="o">=</span> <span class="p">[</span><span class="n">y0</span><span class="p">]</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">initialState</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ticks_</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ot</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid_</span><span class="p">,</span> <span class="n">values</span> <span class="o">*</span> <span class="p">[</span><span class="mf">1.0e-6</span><span class="p">])</span>
+
+<span class="n">F</span> <span class="o">=</span> <span class="n">Popu</span><span class="p">(</span><span class="mf">1790.0</span><span class="p">,</span> <span class="mf">2000.0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">popu</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PointToFieldFunction</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Sample the model</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">inputSample</span> <span class="o">=</span> <span class="n">distX</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+<span class="n">outputSample</span> <span class="o">=</span> <span class="n">popu</span><span class="p">(</span><span class="n">inputSample</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Draw some curves</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">outputSample</span><span class="o">.</span><span class="n">drawMarginal</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s1">&#39;US population&#39;</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">setXTitle</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$ (years)&#39;</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">setYTitle</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$N$ (millions)&#39;</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">setColors</span><span class="p">([</span><span class="n">ot</span><span class="o">.</span><span class="n">Drawable</span><span class="o">.</span><span class="n">ConvertFromHSV</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="mf">360.0</span><span class="o">/</span><span class="n">size</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">getDrawables</span><span class="p">()))])</span>
+<span class="n">cloud</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Cloud</span><span class="p">(</span><span class="n">ustime</span><span class="p">,</span> <span class="n">uspop</span><span class="p">)</span>
+<span class="n">cloud</span><span class="o">.</span><span class="n">setPointStyle</span><span class="p">(</span><span class="s1">&#39;circle&#39;</span><span class="p">)</span>
+<span class="n">cloud</span><span class="o">.</span><span class="n">setLegend</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cloud</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">setLegendPosition</span><span class="p">(</span><span class="s1">&#39;topleft&#39;</span><span class="p">)</span>
+<span class="n">graph</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[36]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/examples_numerical_methods_logistic_growth_model_7_0.svg" src="../../_images/examples_numerical_methods_logistic_growth_model_7_0.svg" /></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../axial_stressed_beam.html" title="Axial stressed beam"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="control_termination.html" title="Control algorithm termination"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../examples.html" >Examples</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="numerical_methods.html" >Numerical methods</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
+      Last updated on Nov 27, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+    </div>
+  </body>
+</html>

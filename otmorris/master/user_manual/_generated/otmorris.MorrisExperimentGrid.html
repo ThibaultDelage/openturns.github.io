@@ -1,0 +1,602 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MorrisExperimentGrid &#8212; OTMORRIS 0.2 documentation</title>
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MorrisExperimentLHS" href="otmorris.MorrisExperimentLHS.html" />
+    <link rel="prev" title="MorrisExperiment" href="otmorris.MorrisExperiment.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="otmorris.MorrisExperimentLHS.html" title="MorrisExperimentLHS"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="otmorris.MorrisExperiment.html" title="MorrisExperiment"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OTMORRIS 0.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user_manual.html" accesskey="U">User manual</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="morrisexperimentgrid">
+<h1>MorrisExperimentGrid<a class="headerlink" href="#morrisexperimentgrid" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="otmorris.MorrisExperimentGrid">
+<em class="property">class </em><code class="descclassname">otmorris.</code><code class="descname">MorrisExperimentGrid</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>MorrisExperimentGrid builds experiments for the Morris method starting from full p-levels grid experiments.</p>
+<p>Available constructors:</p>
+<blockquote>
+<div><p>MorrisExperimentGrid(levels, N)</p>
+<p>MorrisExperimentGrid(levels, interval, N)</p>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>levels</strong> : <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.Indices.html#openturns.Indices" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">openturns.Indices</span></code></a></p>
+<blockquote>
+<div><p>Number of levels for a regular grid</p>
+</div></blockquote>
+<p><strong>N</strong> : int</p>
+<blockquote>
+<div><p>Number of trajectories</p>
+</div></blockquote>
+<p><strong>interval</strong> : <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.Interval.html#openturns.Interval" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">openturns.Interval</span></code></a></p>
+<blockquote class="last">
+<div><p>Bounds of the domain</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>With first constructor, we consider that initial experiment is a regular grid defined in <img class="math" src="../../_images/math/263b9527bfe451701cfdf36280d7e9f520bf402a.svg" alt="[0,1]^d"/>.
+With second constructor, we consider that initial distribution model is uniform with bounds given by the interval argument. Also, the initial experiment is of type regular.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.generate" title="otmorris.MorrisExperimentGrid.generate"><code class="xref py py-obj docutils literal"><span class="pre">generate</span></code></a>()</td>
+<td>Generate points according to the type of the experiment.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.generateWithWeights" title="otmorris.MorrisExperimentGrid.generateWithWeights"><code class="xref py py-obj docutils literal"><span class="pre">generateWithWeights</span></code></a>()</td>
+<td>Generate points and their associated weight according to the type of the experiment.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.getClassName" title="otmorris.MorrisExperimentGrid.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<td>Accessor to the object’s name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.getDistribution" title="otmorris.MorrisExperimentGrid.getDistribution"><code class="xref py py-obj docutils literal"><span class="pre">getDistribution</span></code></a>()</td>
+<td>Accessor to the distribution.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.getId" title="otmorris.MorrisExperimentGrid.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<td>Accessor to the object’s id.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.getJumpStep" title="otmorris.MorrisExperimentGrid.getJumpStep"><code class="xref py py-obj docutils literal"><span class="pre">getJumpStep</span></code></a>()</td>
+<td>Get the jump step,  specifying the number of levels for each factor that are increased/decreased for computing the elementary effects.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.getName" title="otmorris.MorrisExperimentGrid.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<td>Accessor to the object’s name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.getShadowedId" title="otmorris.MorrisExperimentGrid.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<td>Accessor to the object’s shadowed id.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.getSize" title="otmorris.MorrisExperimentGrid.getSize"><code class="xref py py-obj docutils literal"><span class="pre">getSize</span></code></a>()</td>
+<td>Accessor to the size of the generated sample.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.getVisibility" title="otmorris.MorrisExperimentGrid.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<td>Accessor to the object’s visibility state.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.hasName" title="otmorris.MorrisExperimentGrid.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<td>Test if the object is named.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.hasUniformWeights" title="otmorris.MorrisExperimentGrid.hasUniformWeights"><code class="xref py py-obj docutils literal"><span class="pre">hasUniformWeights</span></code></a>()</td>
+<td>Ask whether the experiment has uniform weights.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.hasVisibleName" title="otmorris.MorrisExperimentGrid.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<td>Test if the object has a distinguishable name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.setDistribution" title="otmorris.MorrisExperimentGrid.setDistribution"><code class="xref py py-obj docutils literal"><span class="pre">setDistribution</span></code></a>(*args)</td>
+<td>Accessor to the distribution.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.setJumpStep" title="otmorris.MorrisExperimentGrid.setJumpStep"><code class="xref py py-obj docutils literal"><span class="pre">setJumpStep</span></code></a>(*args)</td>
+<td>Set the jump step,  specifying the number of levels for each factor that are increased/decreased for computing the elementary effects.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.setName" title="otmorris.MorrisExperimentGrid.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(*args)</td>
+<td>Accessor to the object’s name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.setShadowedId" title="otmorris.MorrisExperimentGrid.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(*args)</td>
+<td>Accessor to the object’s shadowed id.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.setSize" title="otmorris.MorrisExperimentGrid.setSize"><code class="xref py py-obj docutils literal"><span class="pre">setSize</span></code></a>(*args)</td>
+<td>Accessor to the size of the generated sample.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.setVisibility" title="otmorris.MorrisExperimentGrid.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(*args)</td>
+<td>Accessor to the object’s visibility state.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate points according to the type of the experiment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sample</strong> : <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">openturns.Sample</span></code></a></p>
+<blockquote class="last">
+<div><p>Points that constitute the design of experiment, of size <img class="math" src="../../_images/math/c9c930d5d0ecad7a14823d3a35e4edf8b1679e1d.svg" alt="N \times (p+1)"/></p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">otmorris</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define experiments in [0,1]^2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">morris_experiment</span> <span class="o">=</span> <span class="n">otmorris</span><span class="o">.</span><span class="n">MorrisExperiment</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">r</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">morris_experiment</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.generateWithWeights">
+<code class="descname">generateWithWeights</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.generateWithWeights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate points and their associated weight according to the type of the experiment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sample</strong> : <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<blockquote>
+<div><p>The points which constitute the design of experiments. The sampling method
+is defined by the nature of the experiment.</p>
+</div></blockquote>
+<p><strong>weights</strong> : <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> of size <img class="math" src="../../_images/math/eb343c27a4885f70240f50c27c12e533b92bdfcf.svg" alt="cardI"/></p>
+<blockquote class="last">
+<div><p>Weights <img class="math" src="../../_images/math/4f80215132eaabb4383ff62d806f8e20bf196018.svg" alt="(\omega_i)_{i \in I}"/> associated with the points. By default,
+all the weights are equal to <img class="math" src="../../_images/math/23149aa6f9ea4297b038f9cd924d324562dabcd4.svg" alt="1/cardI"/>.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myExperiment</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MonteCarloExperiment</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="p">,</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">myExperiment</span><span class="o">.</span><span class="n">generateWithWeights</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span class="go">    [ X0        X1        ]</span>
+<span class="go">0 : [  0.608202 -1.26617  ]</span>
+<span class="go">1 : [ -0.438266  1.20548  ]</span>
+<span class="go">2 : [ -2.18139   0.350042 ]</span>
+<span class="go">3 : [ -0.355007  1.43725  ]</span>
+<span class="go">4 : [  0.810668  0.793156 ]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+<span class="go">[0.2,0.2,0.2,0.2,0.2]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.getClassName">
+<code class="descname">getClassName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.getClassName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
+<blockquote class="last">
+<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.getDistribution">
+<code class="descname">getDistribution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.getDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the distribution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a></p>
+<blockquote class="last">
+<div><p>Distribution used to generate the set of input data.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.getId">
+<code class="descname">getId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.getId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s id.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
+<blockquote class="last">
+<div><p>Internal unique identifier.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.getJumpStep">
+<code class="descname">getJumpStep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.getJumpStep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the jump step,  specifying the number of levels for each factor that are increased/decreased for computing the
+elementary effects. If not given, it is set to 1 for each factor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>humpStep</strong> : <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.Indices.html#openturns.Indices" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">openturns.Indices</span></code></a></p>
+<blockquote class="last">
+<div><p>Number of levels for each factot that are increased/decreased for computating the EE.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.getName">
+<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.getName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote class="last">
+<div><p>The name of the object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.getShadowedId">
+<code class="descname">getShadowedId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.getShadowedId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s shadowed id.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
+<blockquote class="last">
+<div><p>Internal unique identifier.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.getSize">
+<code class="descname">getSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.getSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the size of the generated sample.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>size</strong> : positive int</p>
+<blockquote class="last">
+<div><p>Number <img class="math" src="../../_images/math/eb343c27a4885f70240f50c27c12e533b92bdfcf.svg" alt="cardI"/> of points constituting the design of experiments.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.getVisibility">
+<code class="descname">getVisibility</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.getVisibility" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s visibility state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
+<blockquote class="last">
+<div><p>Visibility flag.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.hasName">
+<code class="descname">hasName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.hasName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if the object is named.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasName</strong> : bool</p>
+<blockquote class="last">
+<div><p>True if the name is not empty.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.hasUniformWeights">
+<code class="descname">hasUniformWeights</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.hasUniformWeights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask whether the experiment has uniform weights.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasUniformWeights</strong> : bool</p>
+<blockquote class="last">
+<div><p>Whether the experiment has uniform weights.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.hasVisibleName">
+<code class="descname">hasVisibleName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.hasVisibleName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if the object has a distinguishable name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasVisibleName</strong> : bool</p>
+<blockquote class="last">
+<div><p>True if the name is not empty and not the default one.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.setDistribution">
+<code class="descname">setDistribution</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.setDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the distribution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a></p>
+<blockquote class="last">
+<div><p>Distribution used to generate the set of input data.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.setJumpStep">
+<code class="descname">setJumpStep</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.setJumpStep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the jump step,  specifying the number of levels for each factor that are increased/decreased for computing the
+elementary effects. If not given, it is set to 1 for each factor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>humpStep</strong> : <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.Indices.html#openturns.Indices" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">openturns.Indices</span></code></a></p>
+<blockquote class="last">
+<div><p>Number of levels for each factot that are increased/decreased for computating the EE.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The final jump step contains only integers, so the parameter argument is converted into a list of integer thanks to the
+floor operator.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.setName">
+<code class="descname">setName</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.setName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
+<blockquote class="last">
+<div><p>The name of the object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.setShadowedId">
+<code class="descname">setShadowedId</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.setShadowedId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s shadowed id.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
+<blockquote class="last">
+<div><p>Internal unique identifier.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.setSize">
+<code class="descname">setSize</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.setSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the size of the generated sample.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>size</strong> : positive int</p>
+<blockquote class="last">
+<div><p>Number <img class="math" src="../../_images/math/eb343c27a4885f70240f50c27c12e533b92bdfcf.svg" alt="cardI"/> of points constituting the design of experiments.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otmorris.MorrisExperimentGrid.setVisibility">
+<code class="descname">setVisibility</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.setVisibility" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s visibility state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
+<blockquote class="last">
+<div><p>Visibility flag.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="otmorris.MorrisExperiment.html"
+                        title="previous chapter">MorrisExperiment</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="otmorris.MorrisExperimentLHS.html"
+                        title="next chapter">MorrisExperimentLHS</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/user_manual/_generated/otmorris.MorrisExperimentGrid.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="otmorris.MorrisExperimentLHS.html" title="MorrisExperimentLHS"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="otmorris.MorrisExperiment.html" title="MorrisExperiment"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OTMORRIS 0.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../user_manual.html" >User manual</a> &#187;</li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>

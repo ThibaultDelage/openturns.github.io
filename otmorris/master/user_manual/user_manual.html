@@ -1,0 +1,227 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>User manual &#8212; OTMORRIS 0.2 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MorrisExperiment" href="_generated/otmorris.MorrisExperiment.html" />
+    <link rel="prev" title="OTMorris documentation" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="_generated/otmorris.MorrisExperiment.html" title="MorrisExperiment"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="OTMorris documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">OTMORRIS 0.2 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="user-manual">
+<h1>User manual<a class="headerlink" href="#user-manual" title="Permalink to this headline">¶</a></h1>
+<p>In the context of sensitivity analysis, we often have to deal with high dimensional inputs and heavy CPU time codes.
+Thus usual sensitivity techniques based on ANOVA reach their limits as they require to discretize conditional variance, which needs several samples
+to get an accurate approximation.</p>
+<p>To tackle this kind of problems, screening methods could be applied in order to get a qualitative sensitivity estimate.
+The Morris method address the needs.</p>
+<p>The method focuses on the notion of elementary effects and is known to require very few simulations to get an <cite>accurate estimate</cite>
+of the influent factors.</p>
+<dl class="docutils">
+<dt>Roughly speeking, the method relies on One At Time designs (OAT) and acts as follows:</dt>
+<dd><ul class="first simple">
+<li>The input design space is discretized (in a p-levels grid), of step <img class="math" src="../_images/math/132a2580ae869d417b5d73fc68877cdd20e9d6bf.svg" alt="\Delta"/>;</li>
+<li>We randomly choose a starting <cite>point</cite> in this grid;</li>
+<li>We randomly select a direction and thus we get the new point,</li>
+<li>We iterate the previous process on the <img class="math" src="../_images/math/c4ee8818d70577bfec085ce1ee98e7175ea9583c.svg" alt="p-1"/> remaining directions to get a full <cite>path</cite>, where <img class="math" src="../_images/math/1427a085393d970a60e08a928bccae7848e85d92.svg" alt="p"/> is the input dimension.
+Note that <img class="math" src="../_images/math/3f0e959d552efb6f70876f59a1edb347b0ded7ba.svg" alt="p+1"/> experiments are needed to define this <cite>path</cite>. (See hereafter an example in case <img class="math" src="../_images/math/961889ab4a6dddb1ed56a1c01a7ec2dee4b1742b.svg" alt="p=2"/>)</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/scheme-path-morris.png"><img alt="../_images/scheme-path-morris.png" class="align-center" src="../_images/scheme-path-morris.png" style="width: 600px; height: 350px;" /></a>
+<ul class="simple">
+<li>From this path (<img class="math" src="../_images/math/7fe022fa324faa6765b3e44e314a628365dc5a2b.svg" alt="X_p"/>), we compute the response answer <img class="math" src="../_images/math/c947ca388517d08315efd67ef1d0796264d10af1.svg" alt="Y_p=f(X_p)"/>;</li>
+<li>It is easy to see that the difference between two consecutive points of this <cite>path</cite> represents the elementary effect relative to the choosen direction. Indeed
+we compute both <img class="math" src="../_images/math/be1e39505e4106a0adebe52228746fe772012546.svg" alt="dX_p"/> and <img class="math" src="../_images/math/4166e810d0d5d5a3e5effe1212bc736a064b5253.svg" alt="dY_p"/> where <img class="math" src="../_images/math/be1e39505e4106a0adebe52228746fe772012546.svg" alt="dX_p"/> represents the difference between two consecutive elements of <img class="math" src="../_images/math/7fe022fa324faa6765b3e44e314a628365dc5a2b.svg" alt="X_p"/>. We deduce elementary
+effects from these vectors of size <img class="math" src="../_images/math/1427a085393d970a60e08a928bccae7848e85d92.svg" alt="p"/> by solving the linear system <img class="math" src="../_images/math/95d64a6705d7dc5cb2d37341a73ca37b7513b9c5.svg" alt="X_p\ ee = Y_p"/> (<img class="math" src="../_images/math/f7a3b18f06ea539687365af7069040f7cdc289f4.svg" alt="ee"/> are the elementary effects)</li>
+<li>We iterate the steps 2-5 <img class="math" src="../_images/math/6037b3ee97332f82bc81ee8775dacb8af84e89a7.svg" alt="r"/> times in order to get <cite>r</cite> replicates of the elementary effects. Here after an illustration  in case <img class="math" src="../_images/math/57403c5ea4b0526c0ee5d9e43d336a7b357d997a.svg" alt="p=2, r=5"/>.</li>
+</ul>
+<a class="last reference internal image-reference" href="../_images/scheme-path-examples.png"><img alt="../_images/scheme-path-examples.png" class="align-center" src="../_images/scheme-path-examples.png" style="width: 400px; height: 350px;" /></a>
+</dd>
+</dl>
+<p>If we note <img class="math" src="../_images/math/9154f37c949626d031d5aaad88ebfa109df63c3a.svg" alt="ee_i^k"/> the k-th computed elementary effects associated to the i-th input marginal, it follows that from the r-sample of elementary effects,
+we get <img class="math" src="../_images/math/cc4fbffa8c23e9e80ac5c74c12c3be653e00e5eb.svg" alt="\mu_i^*, \sigma_i"/> respectively the absolute mean and the standard deviation of the elementary effects:</p>
+<div class="math">
+<p><img src="../_images/math/d7b484043a485e3f53cb3db7281e4b18be0da197.svg" alt="\mu_i^* = \frac{1}{r} \sum_{k=1}^{r} |ee_i^k|
+
+\sigma_i = \sqrt{ \frac{1}{r} \left(\sum_{k=1}^{r} ee_i^k - \mu_i \right)^2 }"/></p>
+</div><dl class="docutils">
+<dt>These are the measure used to get a qualitative approch of the sensitivity. In the original Morris implementation, the mean of elementary effects <img class="math" src="../_images/math/85796eeb664ca2c4b0a51bfcf2136ae2b5f6d358.svg" alt="\mu_i = \frac{1}{r} \sum_{k=1}^{r} ee_i^k"/> was used but it lacks of precision due to some potential sign changes. The previous values could be interpreted as follows:</dt>
+<dd><ul class="first last simple">
+<li><img class="math" src="../_images/math/2c85b9b20d1be104540d1acb55bd55662dc555db.svg" alt="\mu_i^*"/> measures sensitivity. Important values highlight important effects and thus that model is sensitive to input variations,</li>
+<li><img class="math" src="../_images/math/a5c316ccbe2cb59ddc74ed612a2a26e513870c1d.svg" alt="\sigma_i"/> measures the interactions and non linearity effects. Important values could explains non linear effects or interactions but it is impossible to make the distinction between the two cases.</li>
+</ul>
+</dd>
+<dt>In engineering application litterature, other interpretations could be found based on the quantity <img class="math" src="../_images/math/0d333a95ab5ef642d78ec095169f0f73d2483720.svg" alt="\rho_i = \frac{\mu_i^*}{\sigma_i}"/>:</dt>
+<dd><ul class="first last simple">
+<li>If <img class="math" src="../_images/math/1555d2748bb3bddd6fef87e1bc670b261eec2eb0.svg" alt="\rho_i \leq 0.1"/> the i-th variable has almost linear effects,</li>
+<li>If <img class="math" src="../_images/math/fe573aaca38215ca117381162d9484c0c9253cf2.svg" alt="0.1 \leq \rho_i \leq 0.5"/> the i-th variable has monotonic effects,</li>
+<li>If <img class="math" src="../_images/math/34ecefc5a451ced8ea21959839855a059d530d36.svg" alt="0.5 \leq \rho_i \leq 1"/> the i-th variable has quasi-monotonic effects,</li>
+<li>If <img class="math" src="../_images/math/9d5c2c999a8fc052059a38b335968392063f7d9c.svg" alt="\rho_i \geq 1"/> the i-th variable has non-linear and non-monotonic effects</li>
+</ul>
+</dd>
+</dl>
+<p>To conclude, this module allows to estimate the previous sensitivity measures (both <img class="math" src="../_images/math/75843776de3b01be77a96cb16915ac6a9948d4fa.svg" alt="\mu, \mu^*, \sigma"/>) starting both from a <cite>p-level</cite> grid or an <cite>LHS</cite> experiment. It allows also to get response model outside the library and finally plot the sensitivity to get a qualitative estimate.</p>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Campolongo, F., S. Tarantola and A. Saltelli. (1999). “Tackling quantitatively
+large dimensionality problems.”. Computer Physics Communication 1999: 75–85.</li>
+<li>Morris, M.D. (1991). “Factorial Sampling Plans for Preliminary Computational
+Experiments” (PDF). Technometrics 33: 161–174.</li>
+<li>Campolongo, Cariboni, Saltelli, F., J.and A. (2003). “Sensitivity analysis: the
+Morris method versus the variance based measures. Submitted to Technometrics”
+(PDF).</li>
+<li>Andrea Saltelli, Stefano Tarantola,Francesca Campolongo and Marco Ratto
+(2004). “Sensitivity analysis in practice a guide to assessing scientific
+models”. John Willy &amp; sons</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="experiments-for-morris">
+<h2>Experiments for Morris<a class="headerlink" href="#experiments-for-morris" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="_generated/otmorris.MorrisExperiment.html#otmorris.MorrisExperiment" title="otmorris.MorrisExperiment"><code class="xref py py-obj docutils literal"><span class="pre">MorrisExperiment</span></code></a>(*args)</td>
+<td>MorrisExperiment builds experiments for the Morris method.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="_generated/otmorris.MorrisExperimentGrid.html#otmorris.MorrisExperimentGrid" title="otmorris.MorrisExperimentGrid"><code class="xref py py-obj docutils literal"><span class="pre">MorrisExperimentGrid</span></code></a>(*args)</td>
+<td>MorrisExperimentGrid builds experiments for the Morris method starting from full p-levels grid experiments.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="_generated/otmorris.MorrisExperimentLHS.html#otmorris.MorrisExperimentLHS" title="otmorris.MorrisExperimentLHS"><code class="xref py py-obj docutils literal"><span class="pre">MorrisExperimentLHS</span></code></a>(*args)</td>
+<td>MorrisExperimentLHS builds experiments for the Morris method using a centered LHS design as input starting.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="morris-screening-method">
+<h2>Morris screening method<a class="headerlink" href="#morris-screening-method" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="_generated/otmorris.Morris.html#otmorris.Morris" title="otmorris.Morris"><code class="xref py py-obj docutils literal"><span class="pre">Morris</span></code></a>(*args)</td>
+<td>Morris method.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">User manual</a><ul>
+<li><a class="reference internal" href="#reference">Reference</a></li>
+<li><a class="reference internal" href="#experiments-for-morris">Experiments for Morris</a></li>
+<li><a class="reference internal" href="#morris-screening-method">Morris screening method</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">OTMorris documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_generated/otmorris.MorrisExperiment.html"
+                        title="next chapter">MorrisExperiment</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/user_manual/user_manual.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="_generated/otmorris.MorrisExperiment.html" title="MorrisExperiment"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="OTMorris documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">OTMORRIS 0.2 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>
