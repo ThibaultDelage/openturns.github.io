@@ -157,19 +157,19 @@ b_{n,1} &amp; b_{1,2} &amp; \cdots &amp; b_{n, n_X}
 </div><p>Each line is a realization of the random vector. The purpose is to mix these two samples to get an estimate of the sensitivities.</p>
 <p><cite>Sobol</cite> method require respectively <img class="math" src="../../_images/math/722f739de642d7ea787488a11c862cba757f668e.svg" alt="C^i"/> and <img class="math" src="../../_images/math/cb2dd94d666129c9055d448260342ca34c3d43aa.svg" alt="D^{i,j}"/> sample designs for the evaluation of first order (respectively second order) sensitivity indices. These are defined as hereafter:</p>
 <div class="math">
-<p><img src="../../_images/math/95afadf482fc7979304ec073be7151309eb123bf.svg" alt="C^i = \left(
-\begin{array}{ccccc}
-b_{1,1} &amp; b_{1,2} &amp; a_{1,i} &amp; \cdots &amp; b_{1, n_X} \\
-b_{2,1} &amp; b_{2,2} &amp; a_{2,i} &amp; \cdots &amp; b_{2, n_X} \\
-\vdots  &amp; \vdots  &amp; \vdots  &amp; \ddots  &amp; \vdots \\
-b_{n,1} &amp; b_{1,2} &amp; a_{n,i} &amp; \cdots &amp; b_{n, n_X}
+<p><img src="../../_images/math/eb079abe1bcd32b02ffd1c26518891c9508668ff.svg" alt="C^i = \left(
+\begin{array}{cccccc}
+b_{1,1} &amp; b_{1,2} &amp; \cdots &amp; a_{1,i} &amp; \cdots &amp; b_{1, n_X} \\
+b_{2,1} &amp; b_{2,2} &amp; \cdots &amp; a_{2,i} &amp; \cdots &amp; b_{2, n_X} \\
+\vdots  &amp; \vdots  &amp;        &amp; \vdots  &amp; \ddots  &amp; \vdots \\
+b_{n,1} &amp; b_{1,2} &amp; \cdots &amp; a_{n,i} &amp; \cdots &amp; b_{n, n_X}
 \end{array}
 \right), \ D^{i,j} = \left(
-\begin{array}{ccccccc}
-b_{1,1} &amp; b_{1,2} &amp; a_{1,i} &amp; \cdots &amp; a_{1,j} &amp; \cdots &amp; b_{1, n_X} \\
-b_{2,1} &amp; b_{2,2} &amp; a_{2,i} &amp; \cdots &amp; a_{2,j} &amp; \cdots &amp; b_{2, n_X} \\
-\vdots  &amp; \vdots  &amp; \vdots  &amp; \vdots &amp; \vdots  &amp; \ddots &amp; \vdots \\
-b_{n,1} &amp; b_{n,2} &amp; a_{n,i} &amp; \cdots &amp; a_{n,j} &amp; \cdots &amp; b_{n, n_X} \\
+\begin{array}{cccccccc}
+b_{1,1} &amp; b_{1,2} &amp; \cdots &amp; a_{1,i} &amp; \cdots &amp; a_{1,j} &amp; \cdots &amp; b_{1, n_X} \\
+b_{2,1} &amp; b_{2,2} &amp; \cdots &amp; a_{2,i} &amp; \cdots &amp; a_{2,j} &amp; \cdots &amp; b_{2, n_X} \\
+\vdots  &amp; \vdots  &amp;        &amp; \vdots  &amp;        &amp; \vdots  &amp; \ddots &amp; \vdots \\
+b_{n,1} &amp; b_{n,2} &amp; \cdots &amp; a_{n,i} &amp; \cdots &amp; a_{n,j} &amp; \cdots &amp; b_{n, n_X} \\
 \end{array}
 \right)"/></p>
 </div><p>It follows that <img class="math" src="../../_images/math/a04a2adea22c76b97500204e7f44a80b96ca553c.svg" alt="V_{i}"/> and <img class="math" src="../../_images/math/2a307d6436710aada6e2ed348f66de07d4f9ce68.svg" alt="V_{i,j}"/> terms are defined as follow:</p>
@@ -182,12 +182,12 @@ b_{n,1} &amp; b_{n,2} &amp; a_{n,i} &amp; \cdots &amp; a_{n,j} &amp; \cdots &amp
 </div><p>The implemented second order indices use this formula.</p>
 <p>The major methods (<cite>Saltelli</cite>, <cite>Jansen</cite>, <cite>Mauntz-Kucherenko</cite>, <cite>Martinez</cite>) use the <img class="math" src="../../_images/math/a24ee0177a634a9c8cffae72194d9b064e5805a4.svg" alt="E^i"/> matrix to compute the indices (first order and total order). This matrix is defined as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/93bfce8854621aadaa1f212b7ce91b9c4434efb1.svg" alt="E^i = \left(
-\begin{array}{ccccc}
-a_{1,1} &amp; a_{1,2} &amp; b_{1,i} &amp; \cdots &amp; a_{1, n_X} \\
-a_{2,1} &amp; a_{2,2} &amp; b_{2,i} &amp; \cdots &amp; a_{2, n_X} \\
-\vdots  &amp; \vdots  &amp; \vdots  &amp; \ddots  &amp; \vdots \\
-a_{n,1} &amp; a_{1,2} &amp; b_{n,i} &amp; \cdots &amp; a_{n, n_X}
+<p><img src="../../_images/math/868c9a93bc9eaa7b64f9b49db78f13eedf12fa9f.svg" alt="E^i = \left(
+\begin{array}{cccccc}
+a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; b_{1,i} &amp; \cdots &amp; a_{1, n_X} \\
+a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; b_{2,i} &amp; \cdots &amp; a_{2, n_X} \\
+\vdots  &amp; \vdots  &amp;        &amp; \vdots  &amp; \ddots &amp; \vdots \\
+a_{n,1} &amp; a_{1,2} &amp; \cdots &amp; b_{n,i} &amp; \cdots &amp; a_{n, n_X}
 \end{array}
 \right)"/></p>
 </div><dl class="docutils">
@@ -657,7 +657,7 @@ the graph includes confidence interval plots in the first usage.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 04, 2017.
+      Last updated on Dec 05, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
     </div>
   </body>
