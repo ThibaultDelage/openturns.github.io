@@ -59,10 +59,7 @@
 <p>Available constructors:</p>
 <blockquote>
 <div><p>Morris(inputSample, outputSample)</p>
-<p>Morris(levels, N, model, interval)</p>
-<p>Morris(levels, N, model)</p>
-<p>Morris(lhsDesign, N, model, interval)</p>
-<p>Morris(lhsDesign, interval, N)</p>
+<p>Morris(experiment, model)</p>
 </div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -76,21 +73,9 @@
 <blockquote>
 <div><p>Response model applied on <cite>inputSample</cite></p>
 </div></blockquote>
-<p><strong>levels</strong> : <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.Indices.html#openturns.Indices" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">openturns.Indices</span></code></a></p>
+<p><strong>experiment</strong> : <a class="reference internal" href="otmorris.MorrisExperiment.html#otmorris.MorrisExperiment" title="otmorris.MorrisExperiment"><code class="xref py py-class docutils literal"><span class="pre">otmorris.MorrisExperiment</span></code></a></p>
 <blockquote>
-<div><p>Number of levels for a regular grid</p>
-</div></blockquote>
-<p><strong>N</strong> : int</p>
-<blockquote>
-<div><p>Number of trajectories</p>
-</div></blockquote>
-<p><strong>interval</strong> : <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.Interval.html#openturns.Interval" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">openturns.Interval</span></code></a></p>
-<blockquote>
-<div><p>Bounds of the domain</p>
-</div></blockquote>
-<p><strong>lhsDesign</strong> : <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">openturns.Sample</span></code></a></p>
-<blockquote>
-<div><p>Initial design</p>
+<div><p>Morris experiment</p>
 </div></blockquote>
 <p><strong>model</strong> : <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.Function.html#openturns.Function" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">openturns.Function</span></code></a></p>
 <blockquote class="last">
@@ -138,7 +123,7 @@ With fifth constructor, we fix the initial design which could be an LHS, an opti
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define a k-grid level (so delta = 1/(k-1))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">morris_experiment</span> <span class="o">=</span> <span class="n">otmorris</span><span class="o">.</span><span class="n">MorrisExperiment</span><span class="p">([</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">morris_experiment</span> <span class="o">=</span> <span class="n">otmorris</span><span class="o">.</span><span class="n">MorrisExperimentGrid</span><span class="p">([</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">morris_experiment</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Evaluation of the model on the design: evaluation outside OT</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Y</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>

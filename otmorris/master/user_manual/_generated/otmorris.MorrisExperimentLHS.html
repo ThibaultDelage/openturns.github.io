@@ -83,10 +83,27 @@
 </table>
 <p class="rubric">Notes</p>
 <p>With the first constructor, we fix the initial design which could be an LHS, an optimal LHS defined using uniform marginals.
-With the second constructor LHS design and bounds are required.</p>
+With the second constructor LHS design and bounds are required.
+The lhs sample must be centered, ie from <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.LHSExperiment.html#openturns.LHSExperiment" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">openturns.LHSExperiment</span></code></a> with randomShift=False.</p>
 <p>The method consists in generating trajectories (paths) by randomly selecting their initial points from the lhs design.
 If number of trajectories is lesser than the lhsDesign’s size, we enforce the selection of the starting point using
 <a class="reference external" href="http://openturns.github.io/openturns/master/user_manual/_generated/openturns.KPermutationsDistribution.html#openturns.KPermutationsDistribution" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal"><span class="pre">openturns.KPermutationsDistribution</span></code></a> which ensure full different trajectories.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">otmorris</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define experiments in [0,1]^2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">size</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Generate an LHS design</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dist</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComposedDistribution</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># should be centered so randomShift=False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lhs_experiment</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LHSExperiment</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lhsDesign</span> <span class="o">=</span> <span class="n">lhs_experiment</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">experiment</span> <span class="o">=</span> <span class="n">otmorris</span><span class="o">.</span><span class="n">MorrisExperimentLHS</span><span class="p">(</span><span class="n">lhsDesign</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">experiment</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
+</pre></div>
+</div>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -97,7 +114,7 @@ If number of trajectories is lesser than the lhsDesign’s size, we enforce the 
 <tr class="row-odd"><td><a class="reference internal" href="#otmorris.MorrisExperimentLHS.generate" title="otmorris.MorrisExperimentLHS.generate"><code class="xref py py-obj docutils literal"><span class="pre">generate</span></code></a>()</td>
 <td>Generate points according to the type of the experiment.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otmorris.MorrisExperimentLHS.generateWithWeights" title="otmorris.MorrisExperimentLHS.generateWithWeights"><code class="xref py py-obj docutils literal"><span class="pre">generateWithWeights</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otmorris.MorrisExperimentLHS.generateWithWeights" title="otmorris.MorrisExperimentLHS.generateWithWeights"><code class="xref py py-obj docutils literal"><span class="pre">generateWithWeights</span></code></a>(*args)</td>
 <td>Generate points and their associated weight according to the type of the experiment.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#otmorris.MorrisExperimentLHS.getClassName" title="otmorris.MorrisExperimentLHS.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
@@ -168,21 +185,11 @@ If number of trajectories is lesser than the lhsDesign’s size, we enforce the 
 </tr>
 </tbody>
 </table>
-<p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">otmorris</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define experiments in [0,1]^2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">morris_experiment</span> <span class="o">=</span> <span class="n">otmorris</span><span class="o">.</span><span class="n">MorrisExperiment</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">r</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">morris_experiment</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
-</pre></div>
-</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="otmorris.MorrisExperimentLHS.generateWithWeights">
-<code class="descname">generateWithWeights</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentLHS.generateWithWeights" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generateWithWeights</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentLHS.generateWithWeights" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate points and their associated weight according to the type of the experiment.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />

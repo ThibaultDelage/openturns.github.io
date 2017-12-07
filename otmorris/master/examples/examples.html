@@ -65,7 +65,7 @@
 <span class="c1"># Define experiments in [0,1]^20</span>
 <span class="c1"># p-levels</span>
 <span class="n">p</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">morris_experiment</span> <span class="o">=</span> <span class="n">otmorris</span><span class="o">.</span><span class="n">MorrisExperiment</span><span class="p">([</span><span class="n">p</span><span class="p">]</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="n">morris_experiment</span> <span class="o">=</span> <span class="n">otmorris</span><span class="o">.</span><span class="n">MorrisExperimentGrid</span><span class="p">([</span><span class="n">p</span><span class="p">]</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">morris_experiment</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">otmorris</span><span class="o">.</span><span class="n">MorrisFunction</span><span class="p">())</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
@@ -95,7 +95,7 @@
 <span class="n">lhsSize</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">bounds</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">lhsDesign</span> <span class="o">=</span> <span class="n">otmorris</span><span class="o">.</span><span class="n">MorrisExperimentLHS</span><span class="o">.</span><span class="n">GenerateLHS</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">lhsSize</span><span class="p">)</span>
-<span class="n">morris_experiment</span> <span class="o">=</span> <span class="n">otmorris</span><span class="o">.</span><span class="n">MorrisExperiment</span><span class="p">(</span><span class="n">lhsDesign</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="n">morris_experiment</span> <span class="o">=</span> <span class="n">otmorris</span><span class="o">.</span><span class="n">MorrisExperimentLHS</span><span class="p">(</span><span class="n">lhsDesign</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">morris_experiment</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">otmorris</span><span class="o">.</span><span class="n">MorrisFunction</span><span class="p">())</span>

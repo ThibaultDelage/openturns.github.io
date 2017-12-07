@@ -84,6 +84,18 @@
 <p class="rubric">Notes</p>
 <p>With first constructor, we consider that initial experiment is a regular grid defined in <img class="math" src="../../_images/math/263b9527bfe451701cfdf36280d7e9f520bf402a.svg" alt="[0,1]^d"/>.
 With second constructor, we consider that initial distribution model is uniform with bounds given by the interval argument. Also, the initial experiment is of type regular.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">otmorris</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Number of trajectories</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define a k-grid level (so delta = 1/(k-1))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dim</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">experiment</span> <span class="o">=</span> <span class="n">otmorris</span><span class="o">.</span><span class="n">MorrisExperimentGrid</span><span class="p">([</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">dim</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">experiment</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
+</pre></div>
+</div>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -94,7 +106,7 @@ With second constructor, we consider that initial distribution model is uniform 
 <tr class="row-odd"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.generate" title="otmorris.MorrisExperimentGrid.generate"><code class="xref py py-obj docutils literal"><span class="pre">generate</span></code></a>()</td>
 <td>Generate points according to the type of the experiment.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.generateWithWeights" title="otmorris.MorrisExperimentGrid.generateWithWeights"><code class="xref py py-obj docutils literal"><span class="pre">generateWithWeights</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.generateWithWeights" title="otmorris.MorrisExperimentGrid.generateWithWeights"><code class="xref py py-obj docutils literal"><span class="pre">generateWithWeights</span></code></a>(*args)</td>
 <td>Generate points and their associated weight according to the type of the experiment.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#otmorris.MorrisExperimentGrid.getClassName" title="otmorris.MorrisExperimentGrid.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
@@ -171,21 +183,11 @@ With second constructor, we consider that initial distribution model is uniform 
 </tr>
 </tbody>
 </table>
-<p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">otmorris</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define experiments in [0,1]^2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">morris_experiment</span> <span class="o">=</span> <span class="n">otmorris</span><span class="o">.</span><span class="n">MorrisExperiment</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">r</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">morris_experiment</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
-</pre></div>
-</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="otmorris.MorrisExperimentGrid.generateWithWeights">
-<code class="descname">generateWithWeights</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.generateWithWeights" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generateWithWeights</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otmorris.MorrisExperimentGrid.generateWithWeights" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate points and their associated weight according to the type of the experiment.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
