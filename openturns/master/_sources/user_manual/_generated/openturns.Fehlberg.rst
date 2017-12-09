@@ -1,5 +1,5 @@
-RungeKutta
-====================
+Fehlberg
+==================
 
 .. plot::
     :include-source: False
@@ -17,7 +17,7 @@ RungeKutta
 
     phi_func = ot.PythonFunction(2, 2, flow)
     phi = ot.ValueFunction(phi_func)
-    solver = ot.RungeKutta(phi)
+    solver = ot.Fehlberg(phi)
 
     initialState = [2.0, 2.0]
     nt = 47
@@ -49,7 +49,7 @@ RungeKutta
 
 .. currentmodule:: openturns
 
-.. autoclass:: RungeKutta
+.. autoclass:: Fehlberg
 
    
    .. automethod:: __init__
