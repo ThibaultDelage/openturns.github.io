@@ -26,8 +26,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Mixture of experts" href="expert_mixture.html" />
-    <link rel="prev" title="Create a linear taylor model" href="create_linear_taylor_model.html" />
+    <link rel="next" title="Advanced polynomial chaos construction" href="functional_chaos_advanced_ctors.html" />
+    <link rel="prev" title="Taylor approximations" href="taylor_approximation.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -57,10 +57,10 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="expert_mixture.html" title="Mixture of experts"
+          <a href="functional_chaos_advanced_ctors.html" title="Advanced polynomial chaos construction"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="create_linear_taylor_model.html" title="Create a linear taylor model"
+          <a href="taylor_approximation.html" title="Taylor approximations"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
@@ -71,11 +71,11 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="create_linear_taylor_model.html"
-                        title="previous chapter">Create a linear taylor model</a></p>
+  <p class="topless"><a href="taylor_approximation.html"
+                        title="previous chapter">Taylor approximations</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="expert_mixture.html"
-                        title="next chapter">Mixture of experts</a></p>
+  <p class="topless"><a href="functional_chaos_advanced_ctors.html"
+                        title="next chapter">Advanced polynomial chaos construction</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -348,7 +348,7 @@ model response using functional chaos.</p>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># draw Sobol&#39; indices</span>
 <span class="n">sensitivityAnalysis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FunctionalChaosRandomVector</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="n">first_order</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">sensitivityAnalysis</span><span class="o">.</span><span class="n">getSobolIndex</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">)))</span>
+<span class="n">first_order</span> <span class="o">=</span> <span class="p">[</span><span class="n">sensitivityAnalysis</span><span class="o">.</span><span class="n">getSobolIndex</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">)]</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">SaltelliSensitivityAlgorithm</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">first_order</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;1st order Sobol</span><span class="se">\&#39;</span><span class="s1"> indices&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -376,10 +376,10 @@ model response using functional chaos.</p>
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="expert_mixture.html" title="Mixture of experts"
+          <a href="functional_chaos_advanced_ctors.html" title="Advanced polynomial chaos construction"
              >next</a> |</li>
         <li class="right" >
-          <a href="create_linear_taylor_model.html" title="Create a linear taylor model"
+          <a href="taylor_approximation.html" title="Taylor approximations"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>

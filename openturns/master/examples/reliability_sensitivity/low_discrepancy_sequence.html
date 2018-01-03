@@ -270,10 +270,21 @@ div.nboutput div.output_area.stderr {
 <div class="section" id="Generate-low-discrepancy-sequences">
 <h1>Generate low discrepancy sequences<a class="headerlink" href="#Generate-low-discrepancy-sequences" title="Permalink to this headline">¶</a></h1>
 <p>In this examples we are going to expose the available low discrepancy
-sequences that allow to approximate some integrals.</p>
+sequences in order to approximate some integrals.</p>
+<p>The following low-discrepancy sequences are available:</p>
+<ul class="simple">
+<li>Sobol</li>
+<li>Faure</li>
+<li>Halton</li>
+<li>reverse Halton</li>
+<li>Haselgrove</li>
+</ul>
+<p>To illustrate these sequences we generate their first 1024 points and
+compare with the sequence obtained from the pseudo random generator
+(Merse Twister) as the latter has a higher discrepancy.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [2]:
+<span></span>In [1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -285,16 +296,41 @@ sequences that allow to approximate some integrals.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [3]:
+<span></span>In [2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># 1. Sobol sequence</span>
 <span class="n">dimension</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">size</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mi">1024</span>
 <span class="n">sequence</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SobolSequence</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">sample</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
 <span class="n">graph</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="s2">&quot;Sobol&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">cloud</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Cloud</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cloud</span><span class="p">)</span>
+<span class="n">graph</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/examples_reliability_sensitivity_low_discrepancy_sequence_3_0.svg" src="../../_images/examples_reliability_sensitivity_low_discrepancy_sequence_3_0.svg" /></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># 2. Halton sequence</span>
+<span class="n">dimension</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">sequence</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HaltonSequence</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="s2">&quot;Halton&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="n">cloud</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Cloud</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 <span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cloud</span><span class="p">)</span>
 <span class="n">graph</span>
@@ -307,37 +343,11 @@ sequences that allow to approximate some integrals.</p>
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_reliability_sensitivity_low_discrepancy_sequence_3_0.svg" src="../../_images/examples_reliability_sensitivity_low_discrepancy_sequence_3_0.svg" /></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [6]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span><span class="c1"># 2. Halton sequence</span>
-<span class="n">dimension</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">size</span> <span class="o">=</span> <span class="mi">300</span>
-<span class="n">sequence</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HaltonSequence</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">sample</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
-<span class="n">graph</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="s2">&quot;Halton&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="n">cloud</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Cloud</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
-<span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cloud</span><span class="p">)</span>
-<span class="n">graph</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[6]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
 <img alt="../../_images/examples_reliability_sensitivity_low_discrepancy_sequence_4_0.svg" src="../../_images/examples_reliability_sensitivity_low_discrepancy_sequence_4_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [7]:
+<span></span>In [4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -357,12 +367,12 @@ sequences that allow to approximate some integrals.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-discrepancy= 0.015537551440329311
+discrepancy= 0.0035074981424325635
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[7]:
+<span></span>Out[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -370,7 +380,7 @@ discrepancy= 0.015537551440329311
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [10]:
+<span></span>In [5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -386,7 +396,7 @@ discrepancy= 0.015537551440329311
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[10]:
+<span></span>Out[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -394,7 +404,7 @@ discrepancy= 0.015537551440329311
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [8]:
+<span></span>In [6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -414,12 +424,12 @@ discrepancy= 0.015537551440329311
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-discrepancy= 0.035482887438952115
+discrepancy= 0.03685516518292309
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[8]:
+<span></span>Out[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">

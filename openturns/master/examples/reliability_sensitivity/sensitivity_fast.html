@@ -26,7 +26,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Functional modeling" href="../functional_modeling/functional_modeling.html" />
+    <link rel="next" title="Cobweb graph as sensitivity tool" href="sensitivity_cobweb.html" />
     <link rel="prev" title="ANCOVA sensitivity indices" href="sensitivity_ancova.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
@@ -57,7 +57,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../functional_modeling/functional_modeling.html" title="Functional modeling"
+          <a href="sensitivity_cobweb.html" title="Cobweb graph as sensitivity tool"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="sensitivity_ancova.html" title="ANCOVA sensitivity indices"
@@ -74,8 +74,8 @@
   <p class="topless"><a href="sensitivity_ancova.html"
                         title="previous chapter">ANCOVA sensitivity indices</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../functional_modeling/functional_modeling.html"
-                        title="next chapter">Functional modeling</a></p>
+  <p class="topless"><a href="sensitivity_cobweb.html"
+                        title="next chapter">Cobweb graph as sensitivity tool</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -269,8 +269,21 @@ div.nboutput div.output_area.stderr {
 </style>
 <div class="section" id="FAST-sensitivity-indices">
 <h1>FAST sensitivity indices<a class="headerlink" href="#FAST-sensitivity-indices" title="Permalink to this headline">¶</a></h1>
-<p>In this example we are going to use the FAST method (based on a Fourier
-decomposition) to estimate sensitivity indices of a model.</p>
+<p>This example will demonstrate how to quantify the correlation between
+the input variables and the output variable of a model using the FAST
+method, based upon the Fourier decomposition of the model response,
+which is a relevant alternative to the classical simulation approach for
+computing Sobol sensitivity indices.</p>
+<p>The FAST indices, like the Sobol indices, allow to evaluate the
+importance of a single variable or a specific set of variables.</p>
+<p>In theory, FAST indices range is <img class="math" src="../../_images/math/72f88500327724e2c8121061189a1c8e5fc52976.svg" alt="\left[0; 1\right]"/> ; the closer
+to 1 the index is, the greater the model response sensitivity to the
+variable is.</p>
+<p>The FAST method compute the first and total order indices. The first
+order indices evaluate the importance of one variable at a time
+(<img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> indices, with <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> the input dimension of the model).</p>
+<p>The <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> total indices give the relative importance of every
+variables except the variable <img class="math" src="../../_images/math/138f39d0c7d18f6de494e85102efc4d65d3c5f0d.svg" alt="X_i"/>, for every variable.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [12]:
@@ -393,7 +406,7 @@ Total order FAST indices: [0.554247,0.487101,0.239464]
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../functional_modeling/functional_modeling.html" title="Functional modeling"
+          <a href="sensitivity_cobweb.html" title="Cobweb graph as sensitivity tool"
              >next</a> |</li>
         <li class="right" >
           <a href="sensitivity_ancova.html" title="ANCOVA sensitivity indices"

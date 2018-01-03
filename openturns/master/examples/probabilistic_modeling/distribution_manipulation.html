@@ -269,8 +269,29 @@ div.nboutput div.output_area.stderr {
 </style>
 <div class="section" id="Distribution-manipulation">
 <h1>Distribution manipulation<a class="headerlink" href="#Distribution-manipulation" title="Permalink to this headline">¶</a></h1>
-<p>In this example we are going to exhibit some of the main distribution
-methods.</p>
+<p>In this example we are going to exhibit some of the services exposed by
+the distribution objects:</p>
+<ul class="simple">
+<li>ask for the dimension, with the method getDimension</li>
+<li>extract the marginal distributions, with the method getMarginal</li>
+<li>to ask for some properties, with isContinuous, isDiscrete,
+isElliptical</li>
+<li>to get the copula, with the method getCopula*</li>
+<li>to ask for some properties on the copula, with the methods
+hasIndependentCopula, hasEllipticalCopula</li>
+<li>to evaluate some moments, with getMean, getStandardDeviation,
+getCovariance, getSkewness, getKurtosis</li>
+<li>to evaluate the roughness, with the method getRoughness</li>
+<li>to get one realization or simultaneously <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> realizations, with
+the method getRealization, getSample</li>
+<li>to evaluate the probability content of a given interval, with the
+method computeProbability</li>
+<li>to evaluate a quantile or a complementary quantile, with the method
+computeQuantile</li>
+<li>to evaluate the characteristic function of the distribution</li>
+<li>to evaluate the derivative of the CDF or PDF</li>
+<li>to draw some curves</li>
+</ul>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [1]:
@@ -360,6 +381,27 @@ methods.</p>
 </div>
 <div class="output_area highlight-none"><div class="highlight"><pre>
 <span></span>2
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Ask some properties of the distribution</span>
+<span class="n">dist_1</span><span class="o">.</span><span class="n">isContinuous</span><span class="p">(),</span> <span class="n">dist_1</span><span class="o">.</span><span class="n">isDiscrete</span><span class="p">(),</span> <span class="n">dist_1</span><span class="o">.</span><span class="n">isElliptical</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[36]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>(True, False, True)
 </pre></div>
 </div>
 </div>
@@ -502,8 +544,8 @@ methods.</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span><span class="c1"># Get one realization</span>
-<span class="n">dist_2</span><span class="o">.</span><span class="n">getRealization</span><span class="p">()</span>
+<span></span><span class="c1"># roughness of the distribution</span>
+<span class="n">dist_1</span><span class="o">.</span><span class="n">getRoughness</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -512,13 +554,34 @@ methods.</p>
 <span></span>Out[13]:
 </pre></div>
 </div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>0.28209479177387814
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Get one realization</span>
+<span class="n">dist_2</span><span class="o">.</span><span class="n">getRealization</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[14]:
+</pre></div>
+</div>
 <div class="output_area docutils container">
 <p>[0.331526,2.46203]<br>
 </p></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [14]:
+<span></span>In [15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -529,15 +592,21 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[14]:
+<span></span>Out[15]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<TABLE><TR><TD></TD><TH>X0</TH><TH>X1</TH></TR><TR><TH>0</TH><TD>-1.1017906374564086</TD><TD>0.5472872724320169</TD></TR><TR><TH>1</TH><TD>-0.39327811223191167</TD><TD>2.4737517398167226</TD></TR><TR><TH>2</TH><TD>1.4096575894246632</TD><TD>2.197672325819002</TD></TR><TR><TH>3</TH><TD>-1.5284044404305355</TD><TD>0.5763846906987611</TD></TR><TR><TH>4</TH><TD>0.5662321090952396</TD><TD>1.9206917098077156</TD></TR></TABLE></div>
+<TABLE><TR><TD></TD><TH>X0</TH><TH>X1</TH></TR>
+<TR><TD>0</TD><TD>-1.1017906374564086</TD><TD>0.5472872724320169</TD></TR>
+<TR><TD>1</TD><TD>-0.39327811223191167</TD><TD>2.4737517398167226</TD></TR>
+<TR><TD>2</TD><TD>1.4096575894246632</TD><TD>2.197672325819002</TD></TR>
+<TR><TD>3</TD><TD>-1.5284044404305355</TD><TD>0.5763846906987611</TD></TR>
+<TR><TD>4</TD><TD>0.5662321090952396</TD><TD>1.9206917098077156</TD></TR>
+</TABLE></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [15]:
+<span></span>In [16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -548,7 +617,7 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[15]:
+<span></span>Out[16]:
 </pre></div>
 </div>
 <div class="output_area highlight-none"><div class="highlight"><pre>
@@ -558,7 +627,7 @@ methods.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [16]:
+<span></span>In [17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -569,7 +638,7 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[16]:
+<span></span>Out[17]:
 </pre></div>
 </div>
 <div class="output_area highlight-none"><div class="highlight"><pre>
@@ -579,7 +648,7 @@ methods.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [17]:
+<span></span>In [18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -590,7 +659,7 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[17]:
+<span></span>Out[18]:
 </pre></div>
 </div>
 <div class="output_area highlight-none"><div class="highlight"><pre>
@@ -600,7 +669,7 @@ methods.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [18]:
+<span></span>In [19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -611,7 +680,7 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[18]:
+<span></span>Out[19]:
 </pre></div>
 </div>
 <div class="output_area highlight-none"><div class="highlight"><pre>
@@ -621,7 +690,7 @@ methods.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [19]:
+<span></span>In [20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -632,15 +701,21 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[19]:
+<span></span>Out[20]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<TABLE><TR><TD></TD><TH>v0</TH></TR><TR><TH>0</TH><TD>0.2683016240010336</TD></TR><TR><TH>1</TH><TD>0.17392737029277802</TD></TR><TR><TH>2</TH><TD>0.10284483252878787</TD></TR><TR><TH>3</TH><TD>0.21442208687749553</TD></TR><TR><TH>4</TH><TD>0.06667853570634241</TD></TR></TABLE></div>
+<TABLE><TR><TD></TD><TH>v0</TH></TR>
+<TR><TD>0</TD><TD>0.2683016240010336</TD></TR>
+<TR><TD>1</TD><TD>0.17392737029277802</TD></TR>
+<TR><TD>2</TD><TD>0.10284483252878787</TD></TR>
+<TR><TD>3</TD><TD>0.21442208687749553</TD></TR>
+<TR><TD>4</TD><TD>0.06667853570634241</TD></TR>
+</TABLE></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [20]:
+<span></span>In [21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -651,15 +726,21 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[20]:
+<span></span>Out[21]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<TABLE><TR><TD></TD><TH>v0</TH></TR><TR><TH>0</TH><TD>0.3512684322211507</TD></TR><TR><TH>1</TH><TD>0.07566107356086288</TD></TR><TR><TH>2</TH><TD>0.15773710557863138</TD></TR><TR><TH>3</TH><TD>0.01886743345417667</TD></TR><TR><TH>4</TH><TD>0.9561218547537261</TD></TR></TABLE></div>
+<TABLE><TR><TD></TD><TH>v0</TH></TR>
+<TR><TD>0</TD><TD>0.3512684322211507</TD></TR>
+<TR><TD>1</TD><TD>0.07566107356086288</TD></TR>
+<TR><TD>2</TD><TD>0.15773710557863138</TD></TR>
+<TR><TD>3</TD><TD>0.01886743345417667</TD></TR>
+<TR><TD>4</TD><TD>0.9561218547537261</TD></TR>
+</TABLE></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [21]:
+<span></span>In [22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -671,7 +752,7 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[21]:
+<span></span>Out[22]:
 </pre></div>
 </div>
 <div class="output_area highlight-none"><div class="highlight"><pre>
@@ -681,7 +762,7 @@ methods.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [22]:
+<span></span>In [23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -693,7 +774,7 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[22]:
+<span></span>Out[23]:
 </pre></div>
 </div>
 <div class="output_area highlight-none"><div class="highlight"><pre>
@@ -703,7 +784,7 @@ methods.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [23]:
+<span></span>In [24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -714,7 +795,7 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[23]:
+<span></span>Out[24]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -723,7 +804,7 @@ methods.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [24]:
+<span></span>In [25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -734,7 +815,7 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[24]:
+<span></span>Out[25]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -743,7 +824,7 @@ methods.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [25]:
+<span></span>In [26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -755,15 +836,18 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[25]:
+<span></span>Out[26]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<TABLE><TR><TD></TD><TH>v0</TH></TR><TR><TH>0</TH><TD>1.2815515655446004</TD></TR><TR><TH>1</TH><TD>1.6448536269514715</TD></TR></TABLE></div>
+<TABLE><TR><TD></TD><TH>v0</TH></TR>
+<TR><TD>0</TD><TD>1.2815515655446004</TD></TR>
+<TR><TD>1</TD><TD>1.6448536269514715</TD></TR>
+</TABLE></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [26]:
+<span></span>In [27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -774,15 +858,18 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[26]:
+<span></span>Out[27]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<TABLE><TR><TD></TD><TH>v0</TH></TR><TR><TH>0</TH><TD>-1.2815515655446004</TD></TR><TR><TH>1</TH><TD>-1.6448536269514715</TD></TR></TABLE></div>
+<TABLE><TR><TD></TD><TH>v0</TH></TR>
+<TR><TD>0</TD><TD>-1.2815515655446004</TD></TR>
+<TR><TD>1</TD><TD>-1.6448536269514715</TD></TR>
+</TABLE></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [27]:
+<span></span>In [28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -793,7 +880,7 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[27]:
+<span></span>Out[28]:
 </pre></div>
 </div>
 <div class="output_area highlight-none"><div class="highlight"><pre>
@@ -803,7 +890,7 @@ methods.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [28]:
+<span></span>In [29]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -814,7 +901,7 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[28]:
+<span></span>Out[29]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -823,7 +910,7 @@ methods.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [29]:
+<span></span>In [30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -834,7 +921,7 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[29]:
+<span></span>Out[30]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -843,7 +930,45 @@ methods.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [30]:
+<span></span>In [31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># draw PDF</span>
+<span class="n">dist_1</span><span class="o">.</span><span class="n">drawPDF</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[31]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/examples_probabilistic_modeling_distribution_manipulation_33_0.svg" src="../../_images/examples_probabilistic_modeling_distribution_manipulation_33_0.svg" /></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># draw CDF</span>
+<span class="n">dist_1</span><span class="o">.</span><span class="n">drawCDF</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[32]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/examples_probabilistic_modeling_distribution_manipulation_34_0.svg" src="../../_images/examples_probabilistic_modeling_distribution_manipulation_34_0.svg" /></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [33]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -860,15 +985,15 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[30]:
+<span></span>Out[33]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_probabilistic_modeling_distribution_manipulation_31_0.svg" src="../../_images/examples_probabilistic_modeling_distribution_manipulation_31_0.svg" /></div>
+<img alt="../../_images/examples_probabilistic_modeling_distribution_manipulation_35_0.svg" src="../../_images/examples_probabilistic_modeling_distribution_manipulation_35_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [31]:
+<span></span>In [34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -885,11 +1010,11 @@ methods.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[31]:
+<span></span>Out[34]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_probabilistic_modeling_distribution_manipulation_32_0.svg" src="../../_images/examples_probabilistic_modeling_distribution_manipulation_32_0.svg" /></div>
+<img alt="../../_images/examples_probabilistic_modeling_distribution_manipulation_36_0.svg" src="../../_images/examples_probabilistic_modeling_distribution_manipulation_36_0.svg" /></div>
 </div>
 </div>
 

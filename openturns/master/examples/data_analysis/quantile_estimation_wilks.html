@@ -272,6 +272,43 @@ div.nboutput div.output_area.stderr {
 <p>In this example we want to evaluate a particular quantile, with the
 empirical estimator or the Wilks one, from a sample of a random
 variable.</p>
+<p>Let’s suppose we want to estimate the quantile <img class="math" src="../../_images/math/9f061ebe39a33e9032ec1e8b366a18661977bc53.svg" alt="q_{\alpha}"/> of
+order <img class="math" src="../../_images/math/7b7ebf7e62696ba8c12562a84512553143e94b56.svg" alt="\alpha"/> of the variable <img class="math" src="../../_images/math/33370fc688190ccba52888ac09200225067b2610.svg" alt="Y"/>:
+<img class="math" src="../../_images/math/9e2f79ca2fccaab103855f91b11c5ce5bdfb162a.svg" alt="P(Y \leq q_{\alpha}) = \alpha"/>, from the sample
+<img class="math" src="../../_images/math/d9cb3aa2c29e821eb0ec6d50a6e4958402cb30bc.svg" alt="(Y_1, ..., Y_n)"/> of size <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/>, with a confidence level equal
+to <img class="math" src="../../_images/math/14af7a5e31ce522938ba14519ad11a0412b02516.svg" alt="\beta"/>.</p>
+<p>We note <img class="math" src="../../_images/math/ae459924474a6651f83c014b174ba6b33e8ced10.svg" alt="(Y^{(1)}, ..., Y^{(n)})"/> the sample where the values are
+sorted in ascending order. The empirical estimator, noted
+<img class="math" src="../../_images/math/667d057ec44e928dda04b2c21aed8c0d38b3192f.svg" alt="q_{\alpha}^{emp}"/>, and its confidence interval, is defined by the
+expressions:</p>
+<div class="math">
+<p><img src="../../_images/math/ee9d62b3f4a47c2f37ee6ada8a2d3f3125683ed9.svg" alt="\left\{
+  \begin{array}{lcl}
+    q_{\alpha}^{emp} &amp; = &amp; Y^{(E[n\alpha])} \\
+    P(q_{\alpha} \in [Y^{(i_n)}, Y^{(j_n)}]) &amp; = &amp; \beta \\
+    i_n &amp; = &amp; E[n\alpha - a_{\alpha}\sqrt{n\alpha(1-\alpha)}] \\
+    i_n &amp; = &amp; E[n\alpha + a_{\alpha}\sqrt{n\alpha(1-\alpha)}]
+  \end{array}
+  \right."/></p>
+</div><p>The Wilks estimator, noted <img class="math" src="../../_images/math/5f7822005fa8d91d76645182aa0d4339f76be866.svg" alt="q_{\alpha, \beta}^{Wilks}"/>, and its
+confidence interval, is defined by the expressions:</p>
+<div class="math">
+<p><img src="../../_images/math/2950a2ead07b5847dfcbf5a4af50f985ae5fc58f.svg" alt="\left\{
+  \begin{array}{lcl}
+    q_{\alpha, \beta}^{Wilks} &amp; = &amp; Y^{(n-i)} \\
+    P(q_{\alpha}  \leq q_{\alpha, \beta}^{Wilks}) &amp; \geq &amp; \beta \\
+    i\geq 0 \, \, /  \, \, n \geq N_{Wilks}(\alpha, \beta,i)
+  \end{array}
+  \right."/></p>
+</div><p>Once the order <img class="math" src="../../_images/math/a3df85ab260449b6b4eca20eb30e8f01a26cb550.svg" alt="i"/> has been chosen, the Wilks number
+<img class="math" src="../../_images/math/144290eeecf8a7c9b5b8304a6f1a0a069b45f9c0.svg" alt="N_{Wilks}(\alpha, \beta,i)"/> is evaluated, thanks to the static
+method <img class="math" src="../../_images/math/0e04ca099edb0ef0e4454e21ced97596477530d3.svg" alt="ComputeSampleSize(\alpha, \beta, i)"/> of the Wilks object.</p>
+<p>In the example, we want to evaluate a quantile <img class="math" src="../../_images/math/f3cdc3e9257d4ebe93a2d424e6a6489cdada701c.svg" alt="\alpha = 95\%"/>,
+with a confidence level of <img class="math" src="../../_images/math/8d017861d51a6cd401caa15604e36360ee3f613a.svg" alt="\beta = 90\%"/> thanks to the
+<img class="math" src="../../_images/math/5215b049b06ee7303ae3da08e44f2c448713b41b.svg" alt="4"/>th maximum of the ordered sample (associated to the order
+<img class="math" src="../../_images/math/d0775d62f541f592b6e5885548515d0b0f5dd0f0.svg" alt="i = 3"/>).</p>
+<p>Be careful: <img class="math" src="../../_images/math/3d80b379a5eae8c34b685bd1b3e260d4e3e5e24f.svg" alt="i=0"/> means that the Wilks estimator is the maximum of
+the sample: it corresponds to the first maximum of the sample.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [30]:

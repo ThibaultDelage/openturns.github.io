@@ -27,7 +27,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Cramer-Von Mises normality test" href="cramer_vonmises_test.html" />
-    <link rel="prev" title="Test samples independence using regression test" href="regression_test.html" />
+    <link rel="prev" title="Test samples independence using regression" href="regression_test.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -60,7 +60,7 @@
           <a href="cramer_vonmises_test.html" title="Cramer-Von Mises normality test"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="regression_test.html" title="Test samples independence using regression test"
+          <a href="regression_test.html" title="Test samples independence using regression"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
@@ -72,7 +72,7 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="regression_test.html"
-                        title="previous chapter">Test samples independence using regression test</a></p>
+                        title="previous chapter">Test samples independence using regression</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="cramer_vonmises_test.html"
                         title="next chapter">Cramer-Von Mises normality test</a></p>
@@ -270,10 +270,11 @@ div.nboutput div.output_area.stderr {
 <div class="section" id="Normal-fitting-test-using-the-Henry-line">
 <h1>Normal fitting test using the Henry line<a class="headerlink" href="#Normal-fitting-test-using-the-Henry-line" title="Permalink to this headline">¶</a></h1>
 <p>In this example we are going to perform a visual goodness-of-fit test
-for an univariate normal distribution.</p>
+for an univariate normal distribution using the Henry line test, which
+is the QQ plot adapted for Gaussian distirbutions.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [14]:
+<span></span>In [23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -284,35 +285,55 @@ for an univariate normal distribution.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [15]:
+<span></span>In [24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># Create data</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-<span class="n">sample</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">sample1</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [16]:
+<span></span>In [25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span><span class="c1"># Draw Henry line plot</span>
-<span class="n">ot</span><span class="o">.</span><span class="n">VisualTest_DrawHenryLine</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span></span><span class="c1"># Draw Henry line plot (good)</span>
+<span class="n">ot</span><span class="o">.</span><span class="n">VisualTest_DrawHenryLine</span><span class="p">(</span><span class="n">sample1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[16]:
+<span></span>Out[25]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <img alt="../../_images/examples_data_analysis_henry_line_graph_4_0.svg" src="../../_images/examples_data_analysis_henry_line_graph_4_0.svg" /></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Draw Henry line plot for a Beta (bad)</span>
+<span class="n">sample2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Beta</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ot</span><span class="o">.</span><span class="n">VisualTest_DrawHenryLine</span><span class="p">(</span><span class="n">sample2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[26]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/examples_data_analysis_henry_line_graph_5_0.svg" src="../../_images/examples_data_analysis_henry_line_graph_5_0.svg" /></div>
 </div>
 </div>
 
@@ -332,7 +353,7 @@ for an univariate normal distribution.</p>
           <a href="cramer_vonmises_test.html" title="Cramer-Von Mises normality test"
              >next</a> |</li>
         <li class="right" >
-          <a href="regression_test.html" title="Test samples independence using regression test"
+          <a href="regression_test.html" title="Test samples independence using regression"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>

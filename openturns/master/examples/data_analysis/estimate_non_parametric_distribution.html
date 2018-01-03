@@ -27,7 +27,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Test distribution fitting using Kolmogorov" href="kolmogorov_test.html" />
-    <link rel="prev" title="Estimate a distribution by maximum likelihood" href="maximumlikelihood_estimator.html" />
+    <link rel="prev" title="Fit a distribution by maximum likelihood" href="maximumlikelihood_estimator.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -60,7 +60,7 @@
           <a href="kolmogorov_test.html" title="Test distribution fitting using Kolmogorov"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="maximumlikelihood_estimator.html" title="Estimate a distribution by maximum likelihood"
+          <a href="maximumlikelihood_estimator.html" title="Fit a distribution by maximum likelihood"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
@@ -72,7 +72,7 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="maximumlikelihood_estimator.html"
-                        title="previous chapter">Estimate a distribution by maximum likelihood</a></p>
+                        title="previous chapter">Fit a distribution by maximum likelihood</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="kolmogorov_test.html"
                         title="next chapter">Test distribution fitting using Kolmogorov</a></p>
@@ -273,7 +273,7 @@ div.nboutput div.output_area.stderr {
 using the kernel smoothing method.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [1]:
+<span></span>In [22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -284,11 +284,12 @@ using the kernel smoothing method.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [2]:
+<span></span>In [23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># Create data</span>
+<span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Gamma</span><span class="p">(</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 <span class="n">sample</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">800</span><span class="p">)</span>
 </pre></div>
@@ -296,20 +297,19 @@ using the kernel smoothing method.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [3]:
+<span></span>In [24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># Estimate the Spearman correlation</span>
 <span class="n">kernel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">KernelSmoothing</span><span class="p">()</span>
 <span class="n">estimated</span> <span class="o">=</span> <span class="n">kernel</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
-
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [4]:
+<span></span>In [25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -328,11 +328,90 @@ using the kernel smoothing method.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[4]:
+<span></span>Out[25]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <img alt="../../_images/examples_data_analysis_estimate_non_parametric_distribution_5_0.svg" src="../../_images/examples_data_analysis_estimate_non_parametric_distribution_5_0.svg" /></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># access the bandwidth</span>
+<span class="n">kernel</span><span class="o">.</span><span class="n">getBandwidth</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[26]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<p>[0.484017]<br>
+</p></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Compute bandwitdh with the Silverman rule</span>
+<span class="n">bandwidth</span> <span class="o">=</span> <span class="n">kernel</span><span class="o">.</span><span class="n">computeSilvermanBandwidth</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span class="n">bandwidth</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<p>[0.639633]<br>
+</p></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Regenerate with another bandwidth rule</span>
+<span class="n">estimated</span> <span class="o">=</span> <span class="n">kernel</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">bandwidth</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Plot original distribution vs kernel smoothing</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s1">&#39;Kernel smoothing vs original&#39;</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">distribution</span><span class="o">.</span><span class="n">drawPDF</span><span class="p">())</span>
+<span class="n">kernel_plot</span> <span class="o">=</span> <span class="n">estimated</span><span class="o">.</span><span class="n">drawPDF</span><span class="p">()</span><span class="o">.</span><span class="n">getDrawable</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">kernel_plot</span><span class="o">.</span><span class="n">setColor</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">kernel_plot</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">setLegends</span><span class="p">([</span><span class="s1">&#39;original&#39;</span><span class="p">,</span> <span class="s1">&#39;KS&#39;</span><span class="p">])</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">setLegendPosition</span><span class="p">(</span><span class="s1">&#39;topright&#39;</span><span class="p">)</span>
+<span class="n">graph</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[29]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/examples_data_analysis_estimate_non_parametric_distribution_9_0.svg" src="../../_images/examples_data_analysis_estimate_non_parametric_distribution_9_0.svg" /></div>
 </div>
 </div>
 
@@ -352,7 +431,7 @@ using the kernel smoothing method.</p>
           <a href="kolmogorov_test.html" title="Test distribution fitting using Kolmogorov"
              >next</a> |</li>
         <li class="right" >
-          <a href="maximumlikelihood_estimator.html" title="Estimate a distribution by maximum likelihood"
+          <a href="maximumlikelihood_estimator.html" title="Fit a distribution by maximum likelihood"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>

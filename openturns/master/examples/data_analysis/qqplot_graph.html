@@ -273,7 +273,7 @@ div.nboutput div.output_area.stderr {
 for an 1-d distribution with the QQ plot.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [25]:
+<span></span>In [17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -284,21 +284,21 @@ for an 1-d distribution with the QQ plot.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [26]:
+<span></span>In [18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># Create data</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Gumbel</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-<span class="n">sample</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">sample</span><span class="o">.</span><span class="n">setDescription</span><span class="p">([</span><span class="s1">&#39;Sample&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [27]:
+<span></span>In [19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -309,7 +309,7 @@ for an 1-d distribution with the QQ plot.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [28]:
+<span></span>In [20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -320,11 +320,30 @@ for an 1-d distribution with the QQ plot.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[28]:
+<span></span>Out[20]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <img alt="../../_images/examples_data_analysis_qqplot_graph_5_0.svg" src="../../_images/examples_data_analysis_qqplot_graph_5_0.svg" /></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Incorrect proposition</span>
+<span class="n">ot</span><span class="o">.</span><span class="n">VisualTest</span><span class="o">.</span><span class="n">DrawQQplot</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">Weibull</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/examples_data_analysis_qqplot_graph_6_0.svg" src="../../_images/examples_data_analysis_qqplot_graph_6_0.svg" /></div>
 </div>
 </div>
 

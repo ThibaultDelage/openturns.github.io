@@ -269,10 +269,21 @@ div.nboutput div.output_area.stderr {
 </style>
 <div class="section" id="Create-a-truncated-distribution">
 <h1>Create a truncated distribution<a class="headerlink" href="#Create-a-truncated-distribution" title="Permalink to this headline">¶</a></h1>
-<p>In this basic example we are going to truncate a distribution.</p>
+<p>In this example we are going to define truncated distributions.</p>
+<p>It is possible to truncate a distribution in its lower area, or its
+upper area or in both lower and upper areas.</p>
+<p>In 1-d, assuming a and b bounds, its probability density function is
+defined as:</p>
+<div class="math">
+<p><img src="../../_images/math/376addb974a474c4ff06845747cbe47f303a0d4e.svg" alt="\forall y \in \mathbb{R}, p_Y(y) =
+      \begin{array}{|ll}
+        0 &amp;  \mbox{for } y \geq b  \mbox{ or }  y \leq a\\
+        \displaystyle \frac{1}{F_X(b) - F_X(a)}\, p_X(y) &amp; \mbox{for } y\in[a,b]
+      \end{array}"/></p>
+</div><p>Is is also possible to truncate a multivariate distribution.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [29]:
+<span></span>In [1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -287,7 +298,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[29]:
+<span></span>Out[1]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -295,7 +306,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [30]:
+<span></span>In [2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -307,7 +318,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[30]:
+<span></span>Out[2]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -315,7 +326,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [31]:
+<span></span>In [3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -327,7 +338,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[31]:
+<span></span>Out[3]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -335,7 +346,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [32]:
+<span></span>In [4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -347,7 +358,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[32]:
+<span></span>Out[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -355,49 +366,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [33]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span><span class="c1"># Custom class to truncate a multivariate distribution</span>
-<span class="k">class</span> <span class="nc">TruncatedNDDistribution</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">PythonDistribution</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distribution</span><span class="p">,</span> <span class="n">bounds</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">TruncatedNDDistribution</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">distribution</span><span class="o">.</span><span class="n">getDimension</span><span class="p">())</span>
-        <span class="k">if</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getDimension</span><span class="p">()</span> <span class="o">!=</span> <span class="n">bounds</span><span class="o">.</span><span class="n">getDimension</span><span class="p">():</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Distribution and bounds have incompatible dimension&#39;</span><span class="p">)</span>
-        <span class="n">bounds</span> <span class="o">=</span> <span class="n">bounds</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">distribution</span><span class="o">.</span><span class="n">getRange</span><span class="p">())</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">distribution_</span> <span class="o">=</span> <span class="n">distribution</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">bounds_</span> <span class="o">=</span> <span class="n">bounds</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">lowerBound_</span> <span class="o">=</span> <span class="n">bounds</span><span class="o">.</span><span class="n">getLowerBound</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">upperBound_</span> <span class="o">=</span> <span class="n">bounds</span><span class="o">.</span><span class="n">getUpperBound</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">normalization_</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">computeProbability</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">normalization_</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;The truncation bounds have a zero probability&#39;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">getRange</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounds_</span>
-
-    <span class="k">def</span> <span class="nf">computePDF</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounds_</span><span class="o">.</span><span class="n">numericallyContains</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">False</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">distribution_</span><span class="o">.</span><span class="n">computePDF</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">normalization_</span>
-
-    <span class="k">def</span> <span class="nf">computeCDF</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
-        <span class="n">interval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounds_</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="o">-</span><span class="n">ot</span><span class="o">.</span><span class="n">SpecFunc</span><span class="o">.</span><span class="n">MaxScalar</span><span class="p">]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">distribution_</span><span class="o">.</span><span class="n">getDimension</span><span class="p">(),</span> <span class="n">X</span><span class="p">))</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">distribution_</span><span class="o">.</span><span class="n">computeProbability</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">normalization_</span>
-
-    <span class="k">def</span> <span class="nf">getRealization</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">stop</span> <span class="o">=</span> <span class="bp">False</span>
-        <span class="k">while</span> <span class="ow">not</span> <span class="n">stop</span><span class="p">:</span>
-            <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">distribution_</span><span class="o">.</span><span class="n">getRealization</span><span class="p">()</span>
-            <span class="n">stop</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounds_</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">X</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [34]:
+<span></span>In [5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -411,19 +380,19 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [35]:
+<span></span>In [6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># Truncate it between (-2;2)^n</span>
 <span class="n">bounds</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="o">-</span><span class="mf">2.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">dimension</span><span class="p">,</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">dimension</span><span class="p">)</span>
-<span class="n">truncatedKS</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Distribution</span><span class="p">(</span><span class="n">TruncatedNDDistribution</span><span class="p">(</span><span class="n">ks</span><span class="p">,</span> <span class="n">bounds</span><span class="p">))</span>
+<span class="n">truncatedKS</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Distribution</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">TruncatedDistribution</span><span class="p">(</span><span class="n">ks</span><span class="p">,</span> <span class="n">bounds</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [36]:
+<span></span>In [7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -437,11 +406,11 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[36]:
+<span></span>Out[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_probabilistic_modeling_truncated_distribution_9_0.svg" src="../../_images/examples_probabilistic_modeling_truncated_distribution_9_0.svg" /></div>
+<img alt="../../_images/examples_probabilistic_modeling_truncated_distribution_8_0.svg" src="../../_images/examples_probabilistic_modeling_truncated_distribution_8_0.svg" /></div>
 </div>
 </div>
 

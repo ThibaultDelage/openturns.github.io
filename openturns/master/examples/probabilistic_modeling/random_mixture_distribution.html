@@ -26,7 +26,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Create a random mixture of discrete distributions" href="random_mixture_distribution_discrete.html" />
+    <link rel="next" title="Create a discrete random mixture" href="random_mixture_distribution_discrete.html" />
     <link rel="prev" title="Create a mixture of PDFs" href="mixture_distribution.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
@@ -57,7 +57,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="random_mixture_distribution_discrete.html" title="Create a random mixture of discrete distributions"
+          <a href="random_mixture_distribution_discrete.html" title="Create a discrete random mixture"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="mixture_distribution.html" title="Create a mixture of PDFs"
@@ -75,7 +75,7 @@
                         title="previous chapter">Create a mixture of PDFs</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="random_mixture_distribution_discrete.html"
-                        title="next chapter">Create a random mixture of discrete distributions</a></p>
+                        title="next chapter">Create a discrete random mixture</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -273,12 +273,17 @@ div.nboutput div.output_area.stderr {
 random variables.</p>
 <div class="math">
 <p><img src="../../_images/math/add39f9b06b4c4b3b60313f78f80874b1a725c9a.svg" alt="Y = 2 + 5 X_1 + X_2"/></p>
-</div><p>This notion is different from the Mixture where the combination is made
+</div><p>where:</p>
+<ul class="simple">
+<li><img class="math" src="../../_images/math/6ba4ac5ca26ea79c2848b21ec9dd35da4a45d895.svg" alt="X1 \sim \mathcal{E}(\lambda=1.5)"/></li>
+<li><img class="math" src="../../_images/math/8b7b6d600b2b34deb633293f247f99e750ad5e89.svg" alt="X2 \sim \mathcal{N}(\mu=4, \sigma=1)"/></li>
+</ul>
+<p>This notion is different from the Mixture where the combination is made
 on the probability density functions and not on the univariate random
 variable.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [8]:
+<span></span>In [3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -289,7 +294,7 @@ variable.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [15]:
+<span></span>In [4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -301,7 +306,7 @@ variable.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [10]:
+<span></span>In [5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -312,7 +317,7 @@ variable.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [11]:
+<span></span>In [6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -323,7 +328,7 @@ variable.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [16]:
+<span></span>In [7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -335,7 +340,7 @@ variable.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[16]:
+<span></span>Out[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -344,7 +349,89 @@ variable.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># ask its mean</span>
+<span class="n">distribution</span><span class="o">.</span><span class="n">getMean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<p>[9.33333]<br>
+</p></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># ask its variance</span>
+<span class="n">distribution</span><span class="o">.</span><span class="n">getCovariance</span><span class="p">()[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[11]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>12.11111111111111
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># ask the 90% quantile</span>
+<span class="n">distribution</span><span class="o">.</span><span class="n">computeQuantile</span><span class="p">(</span><span class="mf">0.9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<p>[13.8253]<br>
+</p></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># ask its probability to exceeds 3</span>
+<span class="n">distribution</span><span class="o">.</span><span class="n">computeSurvivalFunction</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[17]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>0.9998938618593294
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -355,15 +442,15 @@ variable.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[13]:
+<span></span>Out[9]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_probabilistic_modeling_random_mixture_distribution_7_0.svg" src="../../_images/examples_probabilistic_modeling_random_mixture_distribution_7_0.svg" /></div>
+<img alt="../../_images/examples_probabilistic_modeling_random_mixture_distribution_11_0.svg" src="../../_images/examples_probabilistic_modeling_random_mixture_distribution_11_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [14]:
+<span></span>In [10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -374,11 +461,11 @@ variable.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[14]:
+<span></span>Out[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_probabilistic_modeling_random_mixture_distribution_8_0.svg" src="../../_images/examples_probabilistic_modeling_random_mixture_distribution_8_0.svg" /></div>
+<img alt="../../_images/examples_probabilistic_modeling_random_mixture_distribution_12_0.svg" src="../../_images/examples_probabilistic_modeling_random_mixture_distribution_12_0.svg" /></div>
 </div>
 </div>
 
@@ -395,7 +482,7 @@ variable.</p>
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="random_mixture_distribution_discrete.html" title="Create a random mixture of discrete distributions"
+          <a href="random_mixture_distribution_discrete.html" title="Create a discrete random mixture"
              >next</a> |</li>
         <li class="right" >
           <a href="mixture_distribution.html" title="Create a mixture of PDFs"

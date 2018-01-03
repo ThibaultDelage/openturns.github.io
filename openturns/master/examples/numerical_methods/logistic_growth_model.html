@@ -26,7 +26,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Axial stressed beam" href="../axial_stressed_beam.html" />
+    <link rel="next" title="Save/load a study" href="study_save_load.html" />
     <link rel="prev" title="Control algorithm termination" href="control_termination.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
@@ -57,7 +57,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../axial_stressed_beam.html" title="Axial stressed beam"
+          <a href="study_save_load.html" title="Save/load a study"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="control_termination.html" title="Control algorithm termination"
@@ -74,8 +74,8 @@
   <p class="topless"><a href="control_termination.html"
                         title="previous chapter">Control algorithm termination</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../axial_stressed_beam.html"
-                        title="next chapter">Axial stressed beam</a></p>
+  <p class="topless"><a href="study_save_load.html"
+                        title="next chapter">Save/load a study</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -273,18 +273,27 @@ div.nboutput div.output_area.stderr {
 be used to modelize the population growth:</p>
 <div class="math">
 <p><img src="../../_images/math/0b2c69156a5c5305f54c249133f269fe3e476dcf.svg" alt="\dot{y} = a y(t) - b y(t)^2 \hspace{5mm} \forall t \in [t_0, t_{max}] \hspace{5mm}"/></p>
-</div><p>With: - <img class="math" src="../../_images/math/7d6e847feb6881553c2125060d239ccfb1db7eac.svg" alt="a&gt;0"/> the growth rate - <img class="math" src="../../_images/math/61bbea7c166a840e67b58c0e99e46667f8c97b71.svg" alt="b&gt;0"/> limiting term -
-<img class="math" src="../../_images/math/d4e00aefc0de5543cd97a3c8ff1c6cdc9b77603d.svg" alt="y(t)"/> the population size - <img class="math" src="../../_images/math/35fcb039de1fdef9f5cddbc6e7a62669c0d901a0.svg" alt="y_0 = y(t_0)"/> the initial
-population - <img class="math" src="../../_images/math/af076d7291160ad12bc0443b4d4a44011ade4d0b.svg" alt="t_0"/> the initial time - <img class="math" src="../../_images/math/80c019eac9fee7eb68affad6ea37ae118b759559.svg" alt="t_{max}"/> the final
-time</p>
+</div><p>With:</p>
+<ul class="simple">
+<li><img class="math" src="../../_images/math/7d6e847feb6881553c2125060d239ccfb1db7eac.svg" alt="a&gt;0"/> the growth rate</li>
+<li><img class="math" src="../../_images/math/61bbea7c166a840e67b58c0e99e46667f8c97b71.svg" alt="b&gt;0"/> limiting term</li>
+<li><img class="math" src="../../_images/math/d4e00aefc0de5543cd97a3c8ff1c6cdc9b77603d.svg" alt="y(t)"/> the population size</li>
+<li><img class="math" src="../../_images/math/35fcb039de1fdef9f5cddbc6e7a62669c0d901a0.svg" alt="y_0 = y(t_0)"/> the initial population</li>
+<li><img class="math" src="../../_images/math/af076d7291160ad12bc0443b4d4a44011ade4d0b.svg" alt="t_0"/> the initial time</li>
+<li><img class="math" src="../../_images/math/80c019eac9fee7eb68affad6ea37ae118b759559.svg" alt="t_{max}"/> the final time</li>
+</ul>
 <p>R. Pearl and L. Reed (1920) determined the parameters to be
 <img class="math" src="../../_images/math/ef77a08ea08310606158df804b1a5ac0e68ceef1.svg" alt="a=0.03134"/> and <img class="math" src="../../_images/math/995cb7957840001c5426ee194cefbbd5e8e92d59.svg" alt="b=1.5887\times10^{-10}"/> for the US
 population between 1790 and 1910.</p>
 <p>We’re going to use the same <img class="math" src="../../_images/math/187443d2b0e1131ba8aa9350333d281cecf033f2.svg" alt="a,b"/> parameters with even more data
 until the year 2000.</p>
 <p>We will study the influence of the <img class="math" src="../../_images/math/a3c215605b3ba5eabcc3408c63240dbe4aa56adc.svg" alt="y_0"/>, <img class="math" src="../../_images/math/0460ce98b9c6d86ed8d8de8d294b54b83fe96dd4.svg" alt="a"/>, <img class="math" src="../../_images/math/cd0fa2d322966393c52d05ee6dc653b6cc97a986.svg" alt="b"/>
-parameters modelized by random variables: - <img class="math" src="../../_images/math/752c8d38138083e3b53aef92a2c0d228554d6fa5.svg" alt="y_0 \sim \mathcal{N}"/>
-- <img class="math" src="../../_images/math/011d5bd3674e65f05c00b9bb4e230baf618244f4.svg" alt="a \sim \mathcal{N}"/> - <img class="math" src="../../_images/math/0341ab2d7db48b7ecf9755c5aacef99aae39a0e3.svg" alt="b \sim \mathcal{N}"/></p>
+parameters modelized by random variables:</p>
+<ul class="simple">
+<li><img class="math" src="../../_images/math/752c8d38138083e3b53aef92a2c0d228554d6fa5.svg" alt="y_0 \sim \mathcal{N}"/></li>
+<li><img class="math" src="../../_images/math/011d5bd3674e65f05c00b9bb4e230baf618244f4.svg" alt="a \sim \mathcal{N}"/></li>
+<li><img class="math" src="../../_images/math/0341ab2d7db48b7ecf9755c5aacef99aae39a0e3.svg" alt="b \sim \mathcal{N}"/></li>
+</ul>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [31]:
@@ -416,7 +425,7 @@ parameters modelized by random variables: - <img class="math" src="../../_images
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../axial_stressed_beam.html" title="Axial stressed beam"
+          <a href="study_save_load.html" title="Save/load a study"
              >next</a> |</li>
         <li class="right" >
           <a href="control_termination.html" title="Control algorithm termination"

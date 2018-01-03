@@ -269,11 +269,15 @@ div.nboutput div.output_area.stderr {
 </style>
 <div class="section" id="Random-generator-parametrization">
 <h1>Random generator parametrization<a class="headerlink" href="#Random-generator-parametrization" title="Permalink to this headline">¶</a></h1>
-<p>The seed of the random generator is initialized to 0 when the module is
-imported.</p>
+<p>The seed of the pseudo random generator is initialized to 0 when the
+module is imported.</p>
 <p>It means the same script will yield the same results across several
 replications.</p>
-<p>It is also possible to initialize the random generator differently.</p>
+<p>It is also possible to initialize the random generator differently:</p>
+<ul class="simple">
+<li>by setting a seed</li>
+<li>by setting the complete generator state</li>
+</ul>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [1]:
@@ -293,7 +297,7 @@ replications.</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span><span class="c1"># Example 0 : using a fixed seed</span>
+<span></span><span class="c1"># Example 0: using a fixed seed</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">77</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -304,7 +308,7 @@ replications.</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span><span class="c1"># Example 1 : using the python process id</span>
+<span></span><span class="c1"># Example 1: using the python process id</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -315,7 +319,7 @@ replications.</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span><span class="c1"># Example 2 : using the time in milliseconds</span>
+<span></span><span class="c1"># Example 2: using the time in milliseconds</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">1000</span><span class="o">*</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span>
 </pre></div>
 </div>
@@ -326,28 +330,45 @@ replications.</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span><span class="c1"># Example 3 : using a previously saved generator state</span>
+<span></span><span class="c1"># Example 3: using a previously saved generator state</span>
 
 <span class="c1"># use the random generator</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="c1"># save the generator state</span>
 <span class="n">particularState</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">GetState</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span><span class="o">.</span><span class="n">getRealization</span><span class="p">())</span>
-
-<span class="c1"># load the generator state</span>
-<span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetState</span><span class="p">(</span><span class="n">particularState</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span><span class="o">.</span><span class="n">getRealization</span><span class="p">())</span>
+<span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span><span class="o">.</span><span class="n">getRealization</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[5]:
+</pre></div>
 </div>
 <div class="output_area docutils container">
-<div class="highlight"><pre>
-[0.210584]
-[0.210584]
-</pre></div></div>
+<p>[-0.69419]<br>
+</p></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># load the generator state</span>
+<span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetState</span><span class="p">(</span><span class="n">particularState</span><span class="p">)</span>
+<span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span><span class="o">.</span><span class="n">getRealization</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<p>[-0.69419]<br>
+</p></div>
 </div>
 </div>
 

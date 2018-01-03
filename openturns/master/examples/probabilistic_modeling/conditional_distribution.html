@@ -278,7 +278,7 @@ random vector X conditioned by the random variable Theta</p>
 <p><img src="../../_images/math/a2e6eac608576c4ecc4a3392abd2f86f6484fcbd.svg" alt="\underline{\Theta}=f(\underline{Y})"/></p>
 </div><div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [1]:
+<span></span>In [6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -289,40 +289,40 @@ random vector X conditioned by the random variable Theta</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [2]:
+<span></span>In [7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># create the Y distribution</span>
-<span class="n">YDist</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">YDist</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [3]:
+<span></span>In [8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># create Theta=f(y)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1+y^2&#39;</span><span class="p">])</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;1+y^2&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [4]:
+<span></span>In [9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># create the X|Theta distribution</span>
-<span class="n">XgivenThetaDist</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span>
+<span class="n">XgivenThetaDist</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [5]:
+<span></span>In [10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -335,16 +335,16 @@ random vector X conditioned by the random variable Theta</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[5]:
+<span></span>Out[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<p>ConditionalDistribution(X with X|Theta~Normal(Theta), Theta=f(Y), f=[y]->[y,0.1+y^2], Y~Normal(mu = 0, sigma = 1))<br>
+<p>ConditionalDistribution(X with X|Theta~Uniform(Theta), Theta=f(Y), f=[y]->[y,1+y^2], Y~Uniform(a = -1, b = 1))<br>
 </p></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [6]:
+<span></span>In [11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -355,15 +355,21 @@ random vector X conditioned by the random variable Theta</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[6]:
+<span></span>Out[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<TABLE><TR><TD></TD><TH>X|Theta=f(y)</TH></TR><TR><TH>0</TH><TD>0.01321520022795053</TD></TR><TR><TH>1</TH><TD>-0.08617346047947638</TD></TR><TR><TH>2</TH><TD>-0.48072622003836907</TD></TR><TR><TH>3</TH><TD>-0.03014558046921334</TD></TR><TR><TH>4</TH><TD>1.4112318958250651</TD></TR></TABLE></div>
+<TABLE><TR><TD></TD><TH>X|Theta=f(y)</TH></TR>
+<TR><TD>0</TD><TD>0.9728112831135585</TD></TR>
+<TR><TD>1</TD><TD>-0.6559410049696013</TD></TR>
+<TR><TD>2</TD><TD>1.0507751769138765</TD></TR>
+<TR><TD>3</TD><TD>1.2772566044528357</TD></TR>
+<TR><TD>4</TD><TD>-0.1016629888293733</TD></TR>
+</TABLE></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [7]:
+<span></span>In [12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -374,7 +380,7 @@ random vector X conditioned by the random variable Theta</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[7]:
+<span></span>Out[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">

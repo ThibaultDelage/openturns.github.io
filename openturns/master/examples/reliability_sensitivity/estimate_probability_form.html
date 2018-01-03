@@ -27,7 +27,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Strong Maximum Test design point validation" href="strong_maximum_test.html" />
-    <link rel="prev" title="Estimate a probability using randomized quasi Monte Carlo" href="estimate_probability_randomized_qmc.html" />
+    <link rel="prev" title="Exploitation of simulation algorithm results" href="probability_simulation_results.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -60,7 +60,7 @@
           <a href="strong_maximum_test.html" title="Strong Maximum Test design point validation"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="estimate_probability_randomized_qmc.html" title="Estimate a probability using randomized quasi Monte Carlo"
+          <a href="probability_simulation_results.html" title="Exploitation of simulation algorithm results"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
@@ -71,8 +71,8 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="estimate_probability_randomized_qmc.html"
-                        title="previous chapter">Estimate a probability using randomized quasi Monte Carlo</a></p>
+  <p class="topless"><a href="probability_simulation_results.html"
+                        title="previous chapter">Exploitation of simulation algorithm results</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="strong_maximum_test.html"
                         title="next chapter">Strong Maximum Test design point validation</a></p>
@@ -269,7 +269,23 @@ div.nboutput div.output_area.stderr {
 </style>
 <div class="section" id="Estimate-a-probability-with-FORM">
 <h1>Estimate a probability with FORM<a class="headerlink" href="#Estimate-a-probability-with-FORM" title="Permalink to this headline">¶</a></h1>
-<p>In this basic example we are going to estimate a failure probability.</p>
+<p>In this basic example we are going to estimate a failure probability
+with the FORM algorithm and exploit all the associated results:</p>
+<ul class="simple">
+<li>the design point in both physical and standard space,</li>
+<li>the probability estimation accoding to the FORM approximation, and
+the following SORM ones: Tvedt, Hohen-Bichler and Breitung,</li>
+<li>the Hasofer reliability index and the generalized ones evaluated from
+the Breitung, Tvedt and Hohen-Bichler approximations,</li>
+<li>the importance factors defined as the normalized director factors of
+the design point in the <img class="math" src="../../_images/math/46e4976b0a8bb19240cc0aee12b44a9729803131.svg" alt="U"/>-space</li>
+<li>the sensitivity factors of the Hasofer reliability index and the FORM
+probability.</li>
+<li>the coordinates of the mean point in the standard event space:
+<img class="math" src="../../_images/math/e6b23ec67d64d1cef93889cb45451dd5e9d2e9a3.svg" alt="\displaystyle \frac{1}{E_1(-\beta)}\int_{\beta}^{\infty} u_1 p_1(u_1)du_1"/>
+where <img class="math" src="../../_images/math/ebc1bd72b61b72f41b51d78c60801d46712c2c9d.svg" alt="E_1"/> is the spheric univariate distribution of the
+standard space and <img class="math" src="../../_images/math/14af7a5e31ce522938ba14519ad11a0412b02516.svg" alt="\beta"/> the reliability index.</li>
+</ul>
 <p>Let’s consider the following analytical example of a cantilever beam, of
 Young’s modulus E, length L, section modulus I.</p>
 <p>One end is built in a wall and we apply a concentrated bending load F at
@@ -722,7 +738,7 @@ important:</p>
           <a href="strong_maximum_test.html" title="Strong Maximum Test design point validation"
              >next</a> |</li>
         <li class="right" >
-          <a href="estimate_probability_randomized_qmc.html" title="Estimate a probability using randomized quasi Monte Carlo"
+          <a href="probability_simulation_results.html" title="Exploitation of simulation algorithm results"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>

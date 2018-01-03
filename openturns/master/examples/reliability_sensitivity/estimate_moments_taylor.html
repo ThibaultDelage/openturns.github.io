@@ -26,7 +26,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Estimate Sobol indices" href="estimate_sobol.html" />
+    <link rel="next" title="Sobol sensitivity indices" href="sensitivity_sobol.html" />
     <link rel="prev" title="Generate low discrepancy sequences" href="low_discrepancy_sequence.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
@@ -57,7 +57,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="estimate_sobol.html" title="Estimate Sobol indices"
+          <a href="sensitivity_sobol.html" title="Sobol sensitivity indices"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="low_discrepancy_sequence.html" title="Generate low discrepancy sequences"
@@ -74,8 +74,8 @@
   <p class="topless"><a href="low_discrepancy_sequence.html"
                         title="previous chapter">Generate low discrepancy sequences</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="estimate_sobol.html"
-                        title="next chapter">Estimate Sobol indices</a></p>
+  <p class="topless"><a href="sensitivity_sobol.html"
+                        title="next chapter">Sobol sensitivity indices</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -270,10 +270,11 @@ div.nboutput div.output_area.stderr {
 <div class="section" id="Estimate-moments-from-Taylor-expansions">
 <h1>Estimate moments from Taylor expansions<a class="headerlink" href="#Estimate-moments-from-Taylor-expansions" title="Permalink to this headline">¶</a></h1>
 <p>In this basic example we are going to estimate mean and standard
-deviation of a composite random vector.</p>
+deviation of an output variable of interest thanks to the Taylor
+variance decomposition method of order 1 or 2.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [24]:
+<span></span>In [14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -284,7 +285,7 @@ deviation of a composite random vector.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [25]:
+<span></span>In [15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -307,23 +308,23 @@ deviation of a composite random vector.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [26]:
+<span></span>In [16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># We create a Taylor expansion method to approximate moments</span>
-<span class="n">myTaylorExpansionMoments</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">TaylorExpansionMoments</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+<span class="n">taylor</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">TaylorExpansionMoments</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [27]:
+<span></span>In [17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span><span class="c1"># get mean</span>
-<span class="k">print</span><span class="p">(</span><span class="n">myTaylorExpansionMoments</span><span class="o">.</span><span class="n">getMeanFirstOrder</span><span class="p">())</span>
+<span></span><span class="c1"># get 1st order mean</span>
+<span class="k">print</span><span class="p">(</span><span class="n">taylor</span><span class="o">.</span><span class="n">getMeanFirstOrder</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -337,12 +338,31 @@ deviation of a composite random vector.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [28]:
+<span></span>In [18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># get 2nd order mean</span>
+<span class="k">print</span><span class="p">(</span><span class="n">taylor</span><span class="o">.</span><span class="n">getMeanSecondOrder</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[0.820295]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
 <span></span><span class="c1"># get covariance</span>
-<span class="k">print</span><span class="p">(</span><span class="n">myTaylorExpansionMoments</span><span class="o">.</span><span class="n">getCovariance</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">taylor</span><span class="o">.</span><span class="n">getCovariance</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -356,21 +376,109 @@ deviation of a composite random vector.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [29]:
+<span></span>In [20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span><span class="n">myTaylorExpansionMoments</span><span class="o">.</span><span class="n">drawImportanceFactors</span><span class="p">()</span>
+<span></span><span class="c1"># draw importance factors</span>
+<span class="n">taylor</span><span class="o">.</span><span class="n">getImportanceFactors</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[29]:
+<span></span>Out[20]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_reliability_sensitivity_estimate_moments_taylor_7_0.svg" src="../../_images/examples_reliability_sensitivity_estimate_moments_taylor_7_0.svg" /></div>
+<p>[x1 : 0.181718, x2 : 0.0430356, x3 : 0.0248297, x4 : 0.750417]<br>
+</p></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># draw importance factors</span>
+<span class="n">taylor</span><span class="o">.</span><span class="n">drawImportanceFactors</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/examples_reliability_sensitivity_estimate_moments_taylor_9_0.svg" src="../../_images/examples_reliability_sensitivity_estimate_moments_taylor_9_0.svg" /></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Get the value of the output at the mean point</span>
+<span class="n">taylor</span><span class="o">.</span><span class="n">getValueAtMean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<p>[0.932544]<br>
+</p></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Get the gradient value of the output at the mean point</span>
+<span class="n">taylor</span><span class="o">.</span><span class="n">getGradientAtMean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[23]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<p>[[ -0.35812   ]<br>
+ [ -0.0912837 ]<br>
+ [ -0.0286496 ]<br>
+ [ -0.228209  ]]<br>
+</p></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Get the hessian value of the output at the mean point</span>
+<span class="n">taylor</span><span class="o">.</span><span class="n">getHessianAtMean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[24]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<p>sheet #0<br>
+[[ -1.51555     0.0350552   0.0220043   0.0876379  ]<br>
+ [  0.0350552  -0.605625    0.00280441 -0.373018   ]<br>
+ [  0.0220043   0.00280441 -0.427983    0.00701103 ]<br>
+ [  0.0876379  -0.373018    0.00701103 -0.932544   ]]<br>
+</p></div>
 </div>
 </div>
 
@@ -387,7 +495,7 @@ deviation of a composite random vector.</p>
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="estimate_sobol.html" title="Estimate Sobol indices"
+          <a href="sensitivity_sobol.html" title="Sobol sensitivity indices"
              >next</a> |</li>
         <li class="right" >
           <a href="low_discrepancy_sequence.html" title="Generate low discrepancy sequences"

@@ -6,7 +6,7 @@
   <head>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Test sample normality using Anderson-Darling test &#8212; OpenTURNS  documentation</title>
+    <title>Test sample normality using Anderson-Darling &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -26,7 +26,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Fit a normal copula" href="estimate_copula.html" />
+    <link rel="next" title="Fit a parametric copula" href="estimate_copula.html" />
     <link rel="prev" title="Cramer-Von Mises normality test" href="cramer_vonmises_test.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
@@ -57,7 +57,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="estimate_copula.html" title="Fit a normal copula"
+          <a href="estimate_copula.html" title="Fit a parametric copula"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="cramer_vonmises_test.html" title="Cramer-Von Mises normality test"
@@ -75,7 +75,7 @@
                         title="previous chapter">Cramer-Von Mises normality test</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="estimate_copula.html"
-                        title="next chapter">Fit a normal copula</a></p>
+                        title="next chapter">Fit a parametric copula</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -267,8 +267,8 @@ div.nboutput div.output_area.stderr {
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
 </style>
-<div class="section" id="Test-sample-normality-using-Anderson-Darling-test">
-<h1>Test sample normality using Anderson-Darling test<a class="headerlink" href="#Test-sample-normality-using-Anderson-Darling-test" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Test-sample-normality-using-Anderson-Darling">
+<h1>Test sample normality using Anderson-Darling<a class="headerlink" href="#Test-sample-normality-using-Anderson-Darling" title="Permalink to this headline">¶</a></h1>
 <p>In this example we are going to evaluate whether a sample follows a
 normal distribution.</p>
 <div class="nbinput nblast docutils container">
@@ -315,6 +315,48 @@ normal distribution.</p>
 Component is normal? True p-value=0.829806 threshold=0.05
 </pre></div></div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># Test succeeded ?</span>
+<span class="n">test_result</span><span class="o">.</span><span class="n">getBinaryQualityMeasure</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[5]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>True
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span><span class="c1"># P-Value</span>
+<span class="n">test_result</span><span class="o">.</span><span class="n">getPValue</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[7]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>0.8298062868104503
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -330,7 +372,7 @@ Component is normal? True p-value=0.829806 threshold=0.05
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="estimate_copula.html" title="Fit a normal copula"
+          <a href="estimate_copula.html" title="Fit a parametric copula"
              >next</a> |</li>
         <li class="right" >
           <a href="cramer_vonmises_test.html" title="Cramer-Von Mises normality test"

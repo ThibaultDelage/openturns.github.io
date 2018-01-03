@@ -271,6 +271,40 @@ div.nboutput div.output_area.stderr {
 <h1>Build and validate a linear model<a class="headerlink" href="#Build-and-validate-a-linear-model" title="Permalink to this headline">¶</a></h1>
 <p>In this example we are going to build a linear regression model and
 validate it numerically and graphically.</p>
+<p>The linear model between links a scalar variable <img class="math" src="../../_images/math/33370fc688190ccba52888ac09200225067b2610.svg" alt="Y"/> and to an
+n-dimensional one <img class="math" src="../../_images/math/5b93a24d1256e2e752fe3a26b0edee29adbcf39b.svg" alt="\underline{X} = (X_i)_{i \leq n}"/>, as follows:</p>
+<div class="math">
+<p><img src="../../_images/math/5bf4af0b7f70816c75ad4cf65ca559204cf64444.svg" alt="\tilde{Y} = a_0 + \sum_{i=1}^n a_i X_i + \varepsilon"/></p>
+</div><p>where <img class="math" src="../../_images/math/36f8b807183680d9b644839cf648cc289a9fc9dc.svg" alt="\varepsilon"/> is the residual, supposed to follow the
+Normal(0.0, 1.0) distribution.</p>
+<p>The linear model may be validated graphically if <img class="math" src="../../_images/math/abaf3583f4447868ee35c83099a6e1ccdb65f4c7.svg" alt="\underline{X}"/>
+is of dimension 1, by drawing on the same graph the cloud $(X_i, Y_i).</p>
+<p>The linear model also be validate numerically with several tests:</p>
+<ul class="simple">
+<li>LinearModelRSquared: tests the quality of the linear regression
+model. It evaluates the indicator <img class="math" src="../../_images/math/b765361bde7e9bf821bba2d48a52403f4a823efd.svg" alt="R^2"/> (regression variance
+analysis) and compares it to a level,</li>
+<li>LinearModelRAdjustedSquared: tests the quality of the linear
+regression model. It evaluates the indicator <img class="math" src="../../_images/math/b765361bde7e9bf821bba2d48a52403f4a823efd.svg" alt="R^2"/> adjusted
+(regression variance analysis) and compares it to a level,</li>
+<li>LinearModelFisher: tests the nullity of the regression linear model
+coefficients (Fisher distribution used),</li>
+<li>LinearModelResidualMean: tests, under the hypothesis of a gaussian
+sample, if the mean of the residual is equal to zero. It is based on
+the Student test (equality of mean for two gaussian samples).</li>
+</ul>
+<p>The hypothesis on the residuals (centered gaussian distribution) may be
+validated:</p>
+<ul class="simple">
+<li>graphically if <img class="math" src="../../_images/math/abaf3583f4447868ee35c83099a6e1ccdb65f4c7.svg" alt="\underline{X}"/> is of dimension 1, by drawing
+the residual couples (<img class="math" src="../../_images/math/9deea0b4e1a8fa25446ed7831a1ae3471145d711.svg" alt="\varepsilon_i, \varepsilon_{i+1}"/>),
+where the residual <img class="math" src="../../_images/math/99e1bca3e269b59feef12cff83a7dbbee5b8beab.svg" alt="\varepsilon_i"/> is evaluated on the samples
+<img class="math" src="../../_images/math/7b387a155d207780388842f238ca776915d21e91.svg" alt="(X, Y)"/>.</li>
+<li>numerically with the LinearModelResidualMean Test which tests, under
+the hypothesis of a gaussian sample, if the mean of the residual is
+equal to zero. It is based on the Student test (equality of mean for
+two gaussian samples).</li>
+</ul>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [1]:

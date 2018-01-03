@@ -334,25 +334,28 @@ points in a sample)</p>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.rank" title="openturns.Sample.rank"><code class="xref py py-obj docutils literal"><span class="pre">rank</span></code></a>(*args)</td>
 <td>Compute the sample (componentwise) ranks.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.setDescription" title="openturns.Sample.setDescription"><code class="xref py py-obj docutils literal"><span class="pre">setDescription</span></code></a>(description)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.select" title="openturns.Sample.select"><code class="xref py py-obj docutils literal"><span class="pre">select</span></code></a>(indices)</td>
+<td>Select points in a sample.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.setDescription" title="openturns.Sample.setDescription"><code class="xref py py-obj docutils literal"><span class="pre">setDescription</span></code></a>(description)</td>
 <td>Accessor to the componentwise description.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.setName" title="openturns.Sample.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.setName" title="openturns.Sample.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.sort" title="openturns.Sample.sort"><code class="xref py py-obj docutils literal"><span class="pre">sort</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.sort" title="openturns.Sample.sort"><code class="xref py py-obj docutils literal"><span class="pre">sort</span></code></a>(*args)</td>
 <td>Sort the sample.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.sortAccordingToAComponent" title="openturns.Sample.sortAccordingToAComponent"><code class="xref py py-obj docutils literal"><span class="pre">sortAccordingToAComponent</span></code></a>(index)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.sortAccordingToAComponent" title="openturns.Sample.sortAccordingToAComponent"><code class="xref py py-obj docutils literal"><span class="pre">sortAccordingToAComponent</span></code></a>(index)</td>
 <td>Sort the sample according to the given component.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.sortUnique" title="openturns.Sample.sortUnique"><code class="xref py py-obj docutils literal"><span class="pre">sortUnique</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.sortUnique" title="openturns.Sample.sortUnique"><code class="xref py py-obj docutils literal"><span class="pre">sortUnique</span></code></a>()</td>
 <td>Sort the sample and remove duplicate points.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.split" title="openturns.Sample.split"><code class="xref py py-obj docutils literal"><span class="pre">split</span></code></a>(index)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.split" title="openturns.Sample.split"><code class="xref py py-obj docutils literal"><span class="pre">split</span></code></a>(index)</td>
 <td>Trunk the sample.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.stack" title="openturns.Sample.stack"><code class="xref py py-obj docutils literal"><span class="pre">stack</span></code></a>(sample)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.stack" title="openturns.Sample.stack"><code class="xref py py-obj docutils literal"><span class="pre">stack</span></code></a>(sample)</td>
 <td>Stack (horizontally) the given sample to the current one (in-place).</td>
 </tr>
 </tbody>
@@ -1534,6 +1537,48 @@ ascending order. Ties (equal points) are averaged.</p>
 <span class="go">0 : [ 2  0  ]</span>
 <span class="go">1 : [ 1  2  ]</span>
 <span class="go">2 : [ 0  1  ]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.Sample.select">
+<code class="descname">select</code><span class="sig-paren">(</span><em>indices</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select points in a sample.</p>
+<p>It selects the points at given locations and returns them as a new sample.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>indices</strong> : sequence of int, <img class="math" src="../../_images/math/bd16437621f98ad367875f186154316181212002.svg" alt="0 \leq i &lt; m"/></p>
+<blockquote>
+<div><p>The selected indices.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>selected_sample</strong> : <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<blockquote class="last">
+<div><p>The selected points as a sample.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span class="go">    [ X0        X1        ]</span>
+<span class="go">0 : [  0.608202 -1.26617  ]</span>
+<span class="go">1 : [ -0.438266  1.20548  ]</span>
+<span class="go">2 : [ -2.18139   0.350042 ]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">selected_sample</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">selected_sample</span><span class="p">)</span>
+<span class="go">    [ X0        X1        ]</span>
+<span class="go">0 : [ -0.438266  1.20548  ]</span>
+<span class="go">1 : [  0.608202 -1.26617  ]</span>
+<span class="go">2 : [ -0.438266  1.20548  ]</span>
 </pre></div>
 </div>
 </dd></dl>

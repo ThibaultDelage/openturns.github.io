@@ -278,7 +278,7 @@ the model prediction, <img class="math" src="../../_images/math/305d9b8a32b7027b
 observation <img class="math" src="../../_images/math/08f38bf886365ac2a02da24bbb515fd88366d96e.svg" alt="y"/> conditional on model prediction <img class="math" src="../../_images/math/e5baa4b8e299b1edafd5bd19893d914e429f3b0d.svg" alt="z"/>, and
 <img class="math" src="../../_images/math/291c682ae1bb0dfda88fd217f3cf40c1d376918a.svg" alt="\underline{\theta} \in \mathbb{R}^p"/> the calibration parameters
 we wish to estimate.</p>
-<p>The posterior distribution is given by Bayes’ theorem :</p>
+<p>The posterior distribution is given by Bayes theorem:</p>
 <div class="math">
 <p><img src="../../_images/math/0587f4a2a77462c2a6e8e1f9c53fdb33a1cb6fbe.svg" alt="\pi(\underline{\theta} | \underline y) \quad \substack{~\\[0.5em]\displaystyle\propto\\\scriptstyle\underline{\theta}} \quad L\left(\underline y | \underline{\theta}\right) \times \pi(\underline{\theta})"/></p>
 </div><p>(where
@@ -298,7 +298,34 @@ linear regression, where</p>
 we use a normal prior on <img class="math" src="../../_images/math/2b8918f83dc4479eb05d37d11301a0ccf84338cb.svg" alt="\underline{\theta}"/>:</p>
 <div class="math">
 <p><img src="../../_images/math/4095441b492dd8e6701f554ff0971eb3c8c7ff20.svg" alt="\pi(\underline{\theta}) = \mathcal N(0 ; 100 I_3)."/></p>
-</div><div class="nbinput nblast docutils container">
+</div><p>The following objects need to be defined in order to perform Bayesian
+calibration:</p>
+<ul class="simple">
+<li>The conditional density <img class="math" src="../../_images/math/383af87bccbf84855e164259042f0479ff271bdc.svg" alt="p(y|z)"/> must be defined as a
+probability distribution</li>
+<li>The computer model must be implemented thanks to the
+ParametricFunction class. This takes a value of
+<img class="math" src="../../_images/math/2b8918f83dc4479eb05d37d11301a0ccf84338cb.svg" alt="\underline{\theta}"/> as input, and outputs the vector of model
+predictions <img class="math" src="../../_images/math/d4894b926af9c501ea4a54821c9c29b495533e2f.svg" alt="\underline z"/>, as defined above (the vector of
+covariates <img class="math" src="../../_images/math/ba47a1cc75e193c1d0de9481e520b39daf5b001c.svg" alt="\underline x = (x_1, \ldots, x_n)"/> is treated as a
+known constant). When doing that, we have to keep in mind that
+<img class="math" src="../../_images/math/e5baa4b8e299b1edafd5bd19893d914e429f3b0d.svg" alt="z"/> will be used as the vector of parameters corresponding to
+the distribution specified for <img class="math" src="../../_images/math/305d9b8a32b7027b16c7cef1a396755ca0034849.svg" alt="p(y |z)"/>. For instance, if
+<img class="math" src="../../_images/math/383af87bccbf84855e164259042f0479ff271bdc.svg" alt="p(y|z)"/> is normal, this means that <img class="math" src="../../_images/math/e5baa4b8e299b1edafd5bd19893d914e429f3b0d.svg" alt="z"/> must be a vector
+containing the mean and variance of <img class="math" src="../../_images/math/08f38bf886365ac2a02da24bbb515fd88366d96e.svg" alt="y"/></li>
+<li>The prior density <img class="math" src="../../_images/math/62992b97669a3d99271c977757ede4863a6b7143.svg" alt="\pi(\underline{\theta})"/> encoding the set of
+possible values for the calibration parameters, each value being
+weighted by its a priori probability, reflecting the beliefs about
+the possible values of <img class="math" src="../../_images/math/2b8918f83dc4479eb05d37d11301a0ccf84338cb.svg" alt="\underline{\theta}"/> before
+consideration of the experimental data. Again, this is implemented as
+a probability distribution</li>
+<li>The Metropolis-Hastings algorithm that samples from the posterior
+distribution of the calibration parameters requires a vector
+<img class="math" src="../../_images/math/fc3107eda060f2991ea01c63824bc96b4a3cf89e.svg" alt="\underline{\theta}_0"/> initial values for the calibration
+parameters, as well as the proposal laws used to update each
+parameter sequentially.</li>
+</ul>
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [1]:
 </pre></div>
@@ -349,7 +376,18 @@ we use a normal prior on <img class="math" src="../../_images/math/2b8918f83dc44
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<TABLE><TR><TD></TD><TH>v0</TH></TR><TR><TH>0</TH><TD>-2.0</TD></TR><TR><TH>1</TH><TD>-1.4444444444444444</TD></TR><TR><TH>2</TH><TD>-0.8888888888888888</TD></TR><TR><TH>3</TH><TD>-0.33333333333333326</TD></TR><TR><TH>4</TH><TD>0.22222222222222232</TD></TR><TR><TH>5</TH><TD>0.7777777777777777</TD></TR><TR><TH>6</TH><TD>1.3333333333333335</TD></TR><TR><TH>7</TH><TD>1.8888888888888888</TD></TR><TR><TH>8</TH><TD>2.4444444444444446</TD></TR><TR><TH>9</TH><TD>3.0</TD></TR></TABLE></div>
+<TABLE><TR><TD></TD><TH>v0</TH></TR>
+<TR><TD>0</TD><TD>-2.0</TD></TR>
+<TR><TD>1</TD><TD>-1.4444444444444444</TD></TR>
+<TR><TD>2</TD><TD>-0.8888888888888888</TD></TR>
+<TR><TD>3</TD><TD>-0.33333333333333326</TD></TR>
+<TR><TD>4</TD><TD>0.22222222222222232</TD></TR>
+<TR><TD>5</TD><TD>0.7777777777777777</TD></TR>
+<TR><TD>6</TD><TD>1.3333333333333335</TD></TR>
+<TR><TD>7</TD><TD>1.8888888888888888</TD></TR>
+<TR><TD>8</TD><TD>2.4444444444444446</TD></TR>
+<TR><TD>9</TD><TD>3.0</TD></TR>
+</TABLE></div>
 </div>
 <ul class="simple">
 <li>Define the vector of observations <img class="math" src="../../_images/math/2a147561fda98cf7ec76331624d33d1653421fa5.svg" alt="y_i"/></li>
@@ -381,7 +419,18 @@ we use a normal prior on <img class="math" src="../../_images/math/2b8918f83dc44
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<TABLE><TR><TD></TD><TH>v0</TH></TR><TR><TH>0</TH><TD>-9.50794871493506</TD></TR><TR><TH>1</TH><TD>-3.83296694500105</TD></TR><TR><TH>2</TH><TD>-2.44545713047953</TD></TR><TR><TH>3</TH><TD>0.0803625289211318</TD></TR><TR><TH>4</TH><TD>1.01898069723583</TD></TR><TR><TH>5</TH><TD>0.661725805623086</TD></TR><TR><TH>6</TH><TD>-1.57581204592385</TD></TR><TR><TH>7</TH><TD>-2.95308465670895</TD></TR><TR><TH>8</TH><TD>-8.8878164296758</TD></TR><TR><TH>9</TH><TD>-13.0812290405651</TD></TR></TABLE></div>
+<TABLE><TR><TD></TD><TH>v0</TH></TR>
+<TR><TD>0</TD><TD>-9.50794871493506</TD></TR>
+<TR><TD>1</TD><TD>-3.83296694500105</TD></TR>
+<TR><TD>2</TD><TD>-2.44545713047953</TD></TR>
+<TR><TD>3</TD><TD>0.0803625289211318</TD></TR>
+<TR><TD>4</TD><TD>1.01898069723583</TD></TR>
+<TR><TD>5</TD><TD>0.661725805623086</TD></TR>
+<TR><TD>6</TD><TD>-1.57581204592385</TD></TR>
+<TR><TD>7</TD><TD>-2.95308465670895</TD></TR>
+<TR><TD>8</TD><TD>-8.8878164296758</TD></TR>
+<TR><TD>9</TD><TD>-13.0812290405651</TD></TR>
+</TABLE></div>
 </div>
 <ul class="simple">
 <li>Define the vector of parameters matching each observation
@@ -407,7 +456,18 @@ we use a normal prior on <img class="math" src="../../_images/math/2b8918f83dc44
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<TABLE><TR><TD></TD><TH>v0</TH><TH>v1</TH><TH>v2</TH></TR><TR><TH>0</TH><TD>1.0</TD><TD>-2.0</TD><TD>4.0</TD></TR><TR><TH>1</TH><TD>1.0</TD><TD>-1.4444444444444444</TD><TD>2.0864197530864197</TD></TR><TR><TH>2</TH><TD>1.0</TD><TD>-0.8888888888888888</TD><TD>0.7901234567901234</TD></TR><TR><TH>3</TH><TD>1.0</TD><TD>-0.33333333333333326</TD><TD>0.11111111111111106</TD></TR><TR><TH>4</TH><TD>1.0</TD><TD>0.22222222222222232</TD><TD>0.04938271604938276</TD></TR><TR><TH>5</TH><TD>1.0</TD><TD>0.7777777777777777</TD><TD>0.6049382716049381</TD></TR><TR><TH>6</TH><TD>1.0</TD><TD>1.3333333333333335</TD><TD>1.7777777777777781</TD></TR><TR><TH>7</TH><TD>1.0</TD><TD>1.8888888888888888</TD><TD>3.567901234567901</TD></TR><TR><TH>8</TH><TD>1.0</TD><TD>2.4444444444444446</TD><TD>5.975308641975309</TD></TR><TR><TH>9</TH><TD>1.0</TD><TD>3.0</TD><TD>9.0</TD></TR></TABLE></div>
+<TABLE><TR><TD></TD><TH>v0</TH><TH>v1</TH><TH>v2</TH></TR>
+<TR><TD>0</TD><TD>1.0</TD><TD>-2.0</TD><TD>4.0</TD></TR>
+<TR><TD>1</TD><TD>1.0</TD><TD>-1.4444444444444444</TD><TD>2.0864197530864197</TD></TR>
+<TR><TD>2</TD><TD>1.0</TD><TD>-0.8888888888888888</TD><TD>0.7901234567901234</TD></TR>
+<TR><TD>3</TD><TD>1.0</TD><TD>-0.33333333333333326</TD><TD>0.11111111111111106</TD></TR>
+<TR><TD>4</TD><TD>1.0</TD><TD>0.22222222222222232</TD><TD>0.04938271604938276</TD></TR>
+<TR><TD>5</TD><TD>1.0</TD><TD>0.7777777777777777</TD><TD>0.6049382716049381</TD></TR>
+<TR><TD>6</TD><TD>1.0</TD><TD>1.3333333333333335</TD><TD>1.7777777777777781</TD></TR>
+<TR><TD>7</TD><TD>1.0</TD><TD>1.8888888888888888</TD><TD>3.567901234567901</TD></TR>
+<TR><TD>8</TD><TD>1.0</TD><TD>2.4444444444444446</TD><TD>5.975308641975309</TD></TR>
+<TR><TD>9</TD><TD>1.0</TD><TD>3.0</TD><TD>9.0</TD></TR>
+</TABLE></div>
 </div>
 <ul class="simple">
 <li>Define the parametric model <img class="math" src="../../_images/math/4e2a42c9efc2ed8c6a12766a8dda544ce7451a6d.svg" alt="z = f(x,\theta)"/> that associates
@@ -549,7 +609,7 @@ acceptance rate= [0.455417,0.292583,0.13425]
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [12]:
+<span></span>In [11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -562,7 +622,7 @@ acceptance rate= [0.455417,0.292583,0.13425]
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [13]:
+<span></span>In [12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3"><div class="highlight"><pre>
@@ -580,7 +640,7 @@ acceptance rate= [0.455417,0.292583,0.13425]
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>Out[13]:
+<span></span>Out[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
