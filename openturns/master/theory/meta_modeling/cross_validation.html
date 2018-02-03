@@ -9,16 +9,7 @@
     <title>Cross validation assessment of PC models &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -197,36 +190,36 @@ residual is defined as the difference between the model evaluation at
 <img class="math" src="../../_images/math/af594dd464b95f01042806765cf8a075d66d9eac.svg" alt="\widehat{h}^{(-i)}"/>:</div>
 </div>
 <blockquote>
-<div><div class="math" id="equation-4.3:5">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-4.3:5" title="Permalink to this equation">¶</a></span><img src="../../_images/math/82018993382f0b36821e358aac2a311bc3510f15.svg" alt="\Delta^{(i)} \, \, = \, \,  h(\underline{x}^{(i)}) - \widehat{h}^{(-i)}(\underline{x}^{(i)})"/></p>
+<div><div class="math" id="equation-4-3-5">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-4-3-5" title="Permalink to this equation">¶</a></span><img src="../../_images/math/82018993382f0b36821e358aac2a311bc3510f15.svg" alt="\Delta^{(i)} \, \, = \, \,  h(\underline{x}^{(i)}) - \widehat{h}^{(-i)}(\underline{x}^{(i)})"/></p>
 </div><p>By repeating this process for all observations in the experimental
 design, one obtains the predicted residuals
 <img class="math" src="../../_images/math/71cd7edb9bb3d88a26b817f0bbe996b6cb68b29e.svg" alt="\Delta^{(i)}, i = 1, \dots , N"/>. Finally, the LOO error is
 estimated as follows:</p>
-<div class="math" id="equation-4.3:6">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-4.3:6" title="Permalink to this equation">¶</a></span><img src="../../_images/math/347ed3727e3b61b336ea7ba008e645973d766135.svg" alt="Err_{LOO} \, \, = \, \, \frac{1}{N} \sum_{i=1}^{N} {\Delta^{(i)}}^{2}"/></p>
+<div class="math" id="equation-4-3-6">
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-4-3-6" title="Permalink to this equation">¶</a></span><img src="../../_images/math/347ed3727e3b61b336ea7ba008e645973d766135.svg" alt="Err_{LOO} \, \, = \, \, \frac{1}{N} \sum_{i=1}^{N} {\Delta^{(i)}}^{2}"/></p>
 </div><p>Due to the linear-in-parameters form of the polynomial chaos
 expansion, the quantity <img class="math" src="../../_images/math/89cc1e15b10855bd3d2b41e204878d19fe590a4f.svg" alt="Err_{LOO}"/> may be computed without
 performing further regression calculations when the PC coefficients
 have been estimated using the entire experimental design <img class="math" src="../../_images/math/2f7c5fef81d75fe05cd32f338960c91deddc1a33.svg" alt="\cX"/>.
 Indeed, the predicted residuals can be obtained analytically as
 follows:</p>
-<div class="math" id="equation-4.3:7">
-<p><span class="eqno">(3)<a class="headerlink" href="#equation-4.3:7" title="Permalink to this equation">¶</a></span><img src="../../_images/math/563ebe85672428166603fc0d6c389e8dd32cf65c.svg" alt="\Delta^{(i)} \, = \,
+<div class="math" id="equation-4-3-7">
+<p><span class="eqno">(3)<a class="headerlink" href="#equation-4-3-7" title="Permalink to this equation">¶</a></span><img src="../../_images/math/563ebe85672428166603fc0d6c389e8dd32cf65c.svg" alt="\Delta^{(i)} \, = \,
      \frac{h(\underline{x}^{(i)}) - \widehat{h}(\underline{x}^{(i)})}{1 - h_i}"/></p>
 </div><p>where <img class="math" src="../../_images/math/0e0354d3abe697918fdac3ccbbaabc6b66b17287.svg" alt="h_i"/> is the <img class="math" src="../../_images/math/a3df85ab260449b6b4eca20eb30e8f01a26cb550.svg" alt="i"/>-th diagonal term of the matrix
 <img class="math" src="../../_images/math/ddb4632e3beaa33c2f0f5173df729540cfb27117.svg" alt="\underline{\underline{\Psi}} (\underline{\underline{\Psi}}^{\textsf{T}}\underline{\underline{\Psi}})^{-1} \underline{\underline{\Psi}}^{\textsf{T}}"/>
 with <img class="math" src="../../_images/math/72af540ad984ee00b78249594f792d66b5fbf671.svg" alt="\underline{\underline{\Psi}}"/> being the information
 matrix:</p>
-<div class="math" id="equation-4.3:7bis">
-<p><span class="eqno">(4)<a class="headerlink" href="#equation-4.3:7bis" title="Permalink to this equation">¶</a></span><img src="../../_images/math/613c51c9fab2eae8979e018018093629be9c81c7.svg" alt="\underline{\underline{\Psi}} \, \, = \, \, \left\{ \psi_{j}(\underline{x}^{(i)}) \; , \; i=1,\dots,N \; , \; j = 0,\dots,P-1 \right\}"/></p>
+<div class="math" id="equation-4-3-7bis">
+<p><span class="eqno">(4)<a class="headerlink" href="#equation-4-3-7bis" title="Permalink to this equation">¶</a></span><img src="../../_images/math/613c51c9fab2eae8979e018018093629be9c81c7.svg" alt="\underline{\underline{\Psi}} \, \, = \, \, \left\{ \psi_{j}(\underline{x}^{(i)}) \; , \; i=1,\dots,N \; , \; j = 0,\dots,P-1 \right\}"/></p>
 </div><p>In practice, one often computes the following normalized LOO error:</p>
-<div class="math" id="equation-4.3:8bis">
-<p><span class="eqno">(5)<a class="headerlink" href="#equation-4.3:8bis" title="Permalink to this equation">¶</a></span><img src="../../_images/math/faf9881fc2e60aabcb334647d679b8e04ad99a16.svg" alt="\varepsilon_{LOO} \, \, \equiv \, \, \frac{Err_{LOO}}{\hat{\Cov{\cY}}}"/></p>
+<div class="math" id="equation-4-3-8bis">
+<p><span class="eqno">(5)<a class="headerlink" href="#equation-4-3-8bis" title="Permalink to this equation">¶</a></span><img src="../../_images/math/faf9881fc2e60aabcb334647d679b8e04ad99a16.svg" alt="\varepsilon_{LOO} \, \, \equiv \, \, \frac{Err_{LOO}}{\hat{\Cov{\cY}}}"/></p>
 </div><p>where <img class="math" src="../../_images/math/441db86e7303d95cdda0d7037cebc97201a56afc.svg" alt="\hat{\Cov{\mathcal{Y}}}"/> denotes the empirical
 covariance of the response sample <img class="math" src="../../_images/math/db3ce1b85e8663d185224a7b75adedf262d7dca0.svg" alt="\cY"/>:</p>
-<div class="math" id="equation-4.3:4bis">
-<p><span class="eqno">(6)<a class="headerlink" href="#equation-4.3:4bis" title="Permalink to this equation">¶</a></span><img src="../../_images/math/81177fa66ddc4e3cbc2136e55830c42e4a194b22.svg" alt="\hat{\Cov{\mathcal{Y}}} \, \, \equiv \, \, \frac{1}{N-1} \; \sum_{i=1}^{N} \; \left( y^{(i)} \; - \;   \bar{\mathcal{Y}}  \right)^{2} \quad  \quad , \quad \quad   \bar{\mathcal{Y}} \, \, \equiv \, \, \frac{1}{N} \; \sum_{i=1}^{N} \; y^{(i)}"/></p>
+<div class="math" id="equation-4-3-4bis">
+<p><span class="eqno">(6)<a class="headerlink" href="#equation-4-3-4bis" title="Permalink to this equation">¶</a></span><img src="../../_images/math/81177fa66ddc4e3cbc2136e55830c42e4a194b22.svg" alt="\hat{\Cov{\mathcal{Y}}} \, \, \equiv \, \, \frac{1}{N-1} \; \sum_{i=1}^{N} \; \left( y^{(i)} \; - \;   \bar{\mathcal{Y}}  \right)^{2} \quad  \quad , \quad \quad   \bar{\mathcal{Y}} \, \, \equiv \, \, \frac{1}{N} \; \sum_{i=1}^{N} \; y^{(i)}"/></p>
 </div></div></blockquote>
 <p><strong>Corrected leave-one-out error estimate</strong></p>
 <p>A penalized variant of <img class="math" src="../../_images/math/33ce12d09f318eadd84623a8d3cc55232b98fb81.svg" alt="\varepsilon_{LOO}"/> may be used in order to
@@ -239,14 +232,14 @@ experimental design:</p>
 <div class="math">
 <p><img src="../../_images/math/f8ee90d633798dbe04f4645fd977c83105f34f24.svg" alt="T(P,N) \, \, = \, \,   \frac{N}{N-P}  \; \left(1 \; + \; \frac{\mbox{tr} \left( \underline{\underline{C}}_{emp}^{-1}  \right) }{N} \right)"/></p>
 </div><p>where:</p>
-<div class="math" id="equation-4.3:10bis">
-<p><span class="eqno">(7)<a class="headerlink" href="#equation-4.3:10bis" title="Permalink to this equation">¶</a></span><img src="../../_images/math/4a0b823890eb317307291b08f4ebcfe91a8cfe87.svg" alt="\underline{\underline{C}}_{emp} \, \, \equiv \, \, \frac{1}{N}\underline{\underline{\Psi}}^{\textsf{T}}\; \underline{\underline{\Psi}} \quad \quad , \quad \quad
+<div class="math" id="equation-4-3-10bis">
+<p><span class="eqno">(7)<a class="headerlink" href="#equation-4-3-10bis" title="Permalink to this equation">¶</a></span><img src="../../_images/math/4a0b823890eb317307291b08f4ebcfe91a8cfe87.svg" alt="\underline{\underline{C}}_{emp} \, \, \equiv \, \, \frac{1}{N}\underline{\underline{\Psi}}^{\textsf{T}}\; \underline{\underline{\Psi}} \quad \quad , \quad \quad
   \underline{\underline{\Psi}} \, \, = \, \, \left\{ \psi_{j}(\underline{x}^{(i)}) \, \, , \, \, i=1,\dots,N \, \, , \, \, j=0,\dots,P-1 \right\}"/></p>
 </div><p>Leave-one-out cross validation is also known as jackknife in statistics.</p>
 <div class="topic">
 <p class="topic-title first">API:</p>
 <ul class="simple">
-<li>See <a class="reference internal" href="../../user_manual/response_surface/_generated/openturns.MetaModelValidation.html#openturns.MetaModelValidation" title="openturns.MetaModelValidation"><code class="xref py py-class docutils literal"><span class="pre">MetaModelValidation</span></code></a></li>
+<li>See <a class="reference internal" href="../../user_manual/response_surface/_generated/openturns.MetaModelValidation.html#openturns.MetaModelValidation" title="openturns.MetaModelValidation"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetaModelValidation</span></code></a></li>
 </ul>
 </div>
 <div class="topic">
@@ -284,7 +277,7 @@ experimental design:</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

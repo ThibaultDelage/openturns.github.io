@@ -9,16 +9,7 @@
     <title>Rosenblatt Transformation &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -118,8 +111,8 @@ the event considered here and g(,) = 0 its boundary.</div>
 <img class="math" src="../../_images/math/6a290d21416df992d1e72ea4eff12e18846e60ea.svg" alt="\cD_f"/>:</div>
 </div>
 <blockquote>
-<div><div class="math" id="equation-PfX2">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-PfX2" title="Permalink to this equation">¶</a></span><img src="../../_images/math/d4479673751c95eb8062cf58f4284301a76e23a2.svg" alt="P_f = \Prob{g(\vect{X}\,,\,\vect{d})\leq 0}=   \int_{\cD_f}  \pdf\, d\vect{x}"/></p>
+<div><div class="math" id="equation-pfx2">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-pfx2" title="Permalink to this equation">¶</a></span><img src="../../_images/math/d4479673751c95eb8062cf58f4284301a76e23a2.svg" alt="P_f = \Prob{g(\vect{X}\,,\,\vect{d})\leq 0}=   \int_{\cD_f}  \pdf\, d\vect{x}"/></p>
 </div><p>is to use the Rosenblatt transformation <img class="math" src="../../_images/math/40833f0c689da6962c9dce1102bca4f02b2a5410.svg" alt="T"/> which is a
 diffeomorphism from <img class="math" src="../../_images/math/8ccbd953f18dba22bf367f6800ab05bfdced1cf6.svg" alt="\supp{\vect{X}}"/> into the standard space
 <img class="math" src="../../_images/math/68f1abcd965891af6bf660d2486d375f95b82462.svg" alt="\Rset^n"/>, where distributions are normal, with zero mean, unit
@@ -138,8 +131,8 @@ defined by its marginal distributions <img class="math" src="../../_images/math/
 <p><img src="../../_images/math/60799dc3ba87aea16172fdcc2a713de3c1c0fd5f.svg" alt="F_{1,k}(x_1,\dots, x_k) = C_{1,k}(F_1(x_1),\dots, F_k(x_k))
 
 with"/></p>
-</div><div class="math" id="equation-subCopula">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-subCopula" title="Permalink to this equation">¶</a></span><img src="../../_images/math/be81fb121a1a340a8550d0ace427f5243380ff41.svg" alt="C_{1,k}(u_1, \dots, u_k) = C(u_1, \dots, u_k, 1, \dots, 1)"/></p>
+</div><div class="math" id="equation-subcopula">
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-subcopula" title="Permalink to this equation">¶</a></span><img src="../../_images/math/be81fb121a1a340a8550d0ace427f5243380ff41.svg" alt="C_{1,k}(u_1, \dots, u_k) = C(u_1, \dots, u_k, 1, \dots, 1)"/></p>
 </div></div></blockquote>
 <p>The <em>cumulative distribution function</em> of the conditional variable
 <img class="math" src="../../_images/math/02221c2399c58627b8ecfe721fb10519e851e90c.svg" alt="X_k|X_1, \dots, X_{k-1}"/> is defined by:</p>
@@ -150,11 +143,11 @@ be a continuous random vector defined by its marginal cumulative
 distribution functions <img class="math" src="../../_images/math/c3b3f26fbabdf7a20cc6d11764a9fc4be3242070.svg" alt="F_i"/> and its copula <img class="math" src="../../_images/math/cc97f9382a9b766edaef6224b2a18e88824ad2c0.svg" alt="C"/>. The
 <em>Rosenblatt transformation</em> <img class="math" src="../../_images/math/298658358d5b6878a9799f37886054b4a4db673c.svg" alt="T_{Ros}"/> of <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/> is
 defined by:</p>
-<div class="math" id="equation-usualRos">
-<p><span class="eqno">(3)<a class="headerlink" href="#equation-usualRos" title="Permalink to this equation">¶</a></span><img src="../../_images/math/0e372c01e2b3dad4126c89580ef92d503ea4bfca.svg" alt="\vect{U} = T_{Ros}(\vect{X})=T_2\circ T_1(\vect{X})"/></p>
+<div class="math" id="equation-usualros">
+<p><span class="eqno">(3)<a class="headerlink" href="#equation-usualros" title="Permalink to this equation">¶</a></span><img src="../../_images/math/0e372c01e2b3dad4126c89580ef92d503ea4bfca.svg" alt="\vect{U} = T_{Ros}(\vect{X})=T_2\circ T_1(\vect{X})"/></p>
 </div><p>where both transformations <img class="math" src="../../_images/math/bd35d3dcda7f01f2cbea77481e9902227fdca658.svg" alt="T_1"/>, and <img class="math" src="../../_images/math/e63857e3b4ae2592455c573c5ef6ac9fc1482e5e.svg" alt="T_2"/> are given by:</p>
-<div class="math" id="equation-usualRosDetailed">
-<p><span class="eqno">(4)<a class="headerlink" href="#equation-usualRosDetailed" title="Permalink to this equation">¶</a></span><img src="../../_images/math/35aaeab16767d9a4be4681717847f5726dd0049f.svg" alt="\begin{array}{rcl}
+<div class="math" id="equation-usualrosdetailed">
+<p><span class="eqno">(4)<a class="headerlink" href="#equation-usualrosdetailed" title="Permalink to this equation">¶</a></span><img src="../../_images/math/35aaeab16767d9a4be4681717847f5726dd0049f.svg" alt="\begin{array}{rcl}
        T_1 : \Rset^n &amp; \rightarrow &amp; \Rset^n\\
        \vect{X} &amp; \mapsto &amp; \vect{Y}=
        \left(
@@ -167,8 +160,8 @@ defined by:</p>
        \end{array}
        \right)
      \end{array}"/></p>
-</div><div class="math" id="equation-usualRosDetailed2">
-<p><span class="eqno">(5)<a class="headerlink" href="#equation-usualRosDetailed2" title="Permalink to this equation">¶</a></span><img src="../../_images/math/8ec3005634630df6984223622267cbdfd7518ae3.svg" alt="\begin{array}{rcl}
+</div><div class="math" id="equation-usualrosdetailed2">
+<p><span class="eqno">(5)<a class="headerlink" href="#equation-usualrosdetailed2" title="Permalink to this equation">¶</a></span><img src="../../_images/math/8ec3005634630df6984223622267cbdfd7518ae3.svg" alt="\begin{array}{rcl}
        T_2 : \Rset^n &amp; \rightarrow &amp; \Rset^n\\
        \vect{Y} &amp; \mapsto &amp; \vect{U}=
        \left(
@@ -247,7 +240,7 @@ distribution.</div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

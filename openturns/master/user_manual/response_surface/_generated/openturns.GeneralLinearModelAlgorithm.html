@@ -9,16 +9,7 @@
     <title>GeneralLinearModelAlgorithm &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../response_surface.html" >Response surface</a> &#187;</li>
           <li class="nav-item nav-item-4"><a href="../glm.html" accesskey="U">Response surface: Generalized Linear Model</a> &#187;</li> 
       </ul>
@@ -86,12 +77,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -120,26 +113,26 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>inputSample, outputSample</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a> or 2d-array</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>inputSample, outputSample</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a> or 2d-array</p>
 <blockquote>
 <div><p>The samples <img class="math" src="../../../_images/math/d80a2cac24441e7f24859e8f682259bba878b9cf.svg" alt="(\vect{x}_k)_{1 \leq k \leq N} \in \Rset^n"/> and <img class="math" src="../../../_images/math/550fb3c595cd67181c33c96d3c8a88a423f11a8b.svg" alt="(\vect{y}_k)_{1 \leq k \leq N}\in \Rset^d"/>.</p>
 </div></blockquote>
-<p><strong>inputTransformation</strong> : <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<p><strong>inputTransformation</strong> : <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote>
 <div><p>Function <img class="math" src="../../../_images/math/40833f0c689da6962c9dce1102bca4f02b2a5410.svg" alt="T"/> used to normalize the input sample.</p>
 <p>If used, the meta model is built on the transformed data.</p>
 </div></blockquote>
-<p><strong>basis</strong> : <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal"><span class="pre">Basis</span></code></a></p>
+<p><strong>basis</strong> : <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></p>
 <blockquote>
 <div><p>Functional basis to estimate the trend: <img class="math" src="../../../_images/math/1d3d0e2d09b26fa935ea046ecc0972173c13c7ed.svg" alt="(\varphi_j)_{1 \leq j \leq n_1}: \Rset^n \rightarrow \Rset"/>.</p>
 <p>If <img class="math" src="../../../_images/math/26f27712c48d14a1e5b1e45952c6d1c777e415e7.svg" alt="d&gt;1"/>, the same basis is used for each marginal output.</p>
 </div></blockquote>
-<p><strong>basisCollection</strong> : collection of <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal"><span class="pre">Basis</span></code></a></p>
+<p><strong>basisCollection</strong> : collection of <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></p>
 <blockquote>
 <div><p>Collection of <img class="math" src="../../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> functional basis: one basis for each marginal output.</p>
 <p>An empty collection means that no trend is estimated.</p>
 </div></blockquote>
-<p><strong>covarianceModel</strong> : <a class="reference internal" href="../../_generated/openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal"><span class="pre">CovarianceModel</span></code></a></p>
+<p><strong>covarianceModel</strong> : <a class="reference internal" href="../../_generated/openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></p>
 <blockquote>
 <div><p>Covariance model of the Gaussian process. See notes for the details.</p>
 </div></blockquote>
@@ -173,7 +166,7 @@ Default is set in resource map key <cite>GeneralLinearModelAlgorithm-KeepCovaria
    \end{array}
  \right)"/></p>
 </div><p>with <img class="math" src="../../../_images/math/26424205521e3726cc9b8538f98e28203103a505.svg" alt="\mu_\ell(\vect{x}) = \sum_{j=1}^{n_\ell} \beta_j^\ell \varphi_j^\ell(\vect{x})"/> and <img class="math" src="../../../_images/math/8cac8e361443c521b69d24d5d8b48a3e0212efcd.svg" alt="\varphi_j^\ell: \Rset^n \rightarrow \Rset"/> the trend functions.</p>
-<p><img class="math" src="../../../_images/math/ff3509587017da5018d734206dd3cd583537ecad.svg" alt="\vect{W}"/> is a Gaussian process of dimension <img class="math" src="../../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> with zero mean and covariance function <img class="math" src="../../../_images/math/4f9af1d46603e0374299ee37e759c1dc790d733a.svg" alt="C = C(\vect{\theta}, \vect{\sigma}, \mat{R}, \vect{\lambda})"/> (see <a class="reference internal" href="../../_generated/openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal"><span class="pre">CovarianceModel</span></code></a> for the notations).</p>
+<p><img class="math" src="../../../_images/math/ff3509587017da5018d734206dd3cd583537ecad.svg" alt="\vect{W}"/> is a Gaussian process of dimension <img class="math" src="../../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> with zero mean and covariance function <img class="math" src="../../../_images/math/4f9af1d46603e0374299ee37e759c1dc790d733a.svg" alt="C = C(\vect{\theta}, \vect{\sigma}, \mat{R}, \vect{\lambda})"/> (see <a class="reference internal" href="../../_generated/openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a> for the notations).</p>
 <p>We note:</p>
 <div class="math">
 <p><img src="../../../_images/math/1c6ec84d8f6dba948c299e7f7fb9d97825510dec.svg" alt="\vect{\beta}^\ell = \left(
@@ -227,12 +220,12 @@ and"/></p>
 <div class="math">
 <p><img src="../../../_images/math/55ce1408d17121bb2fd659253b095a75ef47aa0e.svg" alt="\cL(\vect{\beta}, \vect{p};(\vect{x}_k, \vect{y}_k)_{1 \leq k \leq N}) = \dfrac{1}{(2\pi)^{dN/2} |\det \mat{C}_{\vect{p}}|^{1/2}} \exp\left[ -\dfrac{1}{2}\Tr{\left( \vect{y}-\vect{m} \right)} \mat{C}_{\vect{p}}^{-1}  \left( \vect{y}-\vect{m} \right)  \right]"/></p>
 </div><p>If <img class="math" src="../../../_images/math/255b822fdf5241745587c9d5456af590c95b0e80.svg" alt="\mat{L}"/> is the Cholesky factor of <img class="math" src="../../../_images/math/35e8b28c9e739afb2744d22919e71bf6c55816e1.svg" alt="\mat{C}"/>, ie the lower triangular matrix with positive diagonal such that <img class="math" src="../../../_images/math/99fffc5795ddde39dea2874e6851f61db0ece188.svg" alt="\mat{L}\,\Tr{\mat{L}} = \mat{C}"/>, then:</p>
-<div class="math" id="equation-logLikelihood">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-logLikelihood" title="Permalink to this equation">¶</a></span><img src="../../../_images/math/6dc6bfff94e361bed0a22f6798c4571c1851811e.svg" alt="\log \cL(\vect{\beta}, \vect{p};(\vect{x}_k, \vect{y}_k)_{1 \leq k \leq N}) = cste - \log \det \mat{L}_{\vect{p}} -\dfrac{1}{2}  \| \mat{L}_{\vect{p}}^{-1}(\vect{y}-\vect{m}_{\vect{\beta}}) \|^2"/></p>
-</div><p>The maximization of <a class="reference internal" href="#equation-logLikelihood">(1)</a> leads to the following optimality condition for <img class="math" src="../../../_images/math/c9f9a416dd7ee48531b642cd968c0e86d79719bc.svg" alt="\vect{\beta}"/>:</p>
+<div class="math" id="equation-loglikelihood">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-loglikelihood" title="Permalink to this equation">¶</a></span><img src="../../../_images/math/6dc6bfff94e361bed0a22f6798c4571c1851811e.svg" alt="\log \cL(\vect{\beta}, \vect{p};(\vect{x}_k, \vect{y}_k)_{1 \leq k \leq N}) = cste - \log \det \mat{L}_{\vect{p}} -\dfrac{1}{2}  \| \mat{L}_{\vect{p}}^{-1}(\vect{y}-\vect{m}_{\vect{\beta}}) \|^2"/></p>
+</div><p>The maximization of <a class="reference internal" href="#equation-loglikelihood">(1)</a> leads to the following optimality condition for <img class="math" src="../../../_images/math/c9f9a416dd7ee48531b642cd968c0e86d79719bc.svg" alt="\vect{\beta}"/>:</p>
 <div class="math">
 <p><img src="../../../_images/math/42c2df898528c41cd90059518fbfebdd848a6cb8.svg" alt="\vect{\beta}^*(\vect{p}^*)=\argmin_{\vect{\beta}} \| \mat{L}_{\vect{p}^*}^{-1}(\vect{y}-\vect{m}_{\vect{\beta}}) \|^2"/></p>
-</div><p>This expression of <img class="math" src="../../../_images/math/885ee0a19266bffd4aa28185a2fe693b93457282.svg" alt="\vect{\beta}^*"/> as a function of <img class="math" src="../../../_images/math/84ff405aaf0aca04c393943b3cb674aa1ecd15f2.svg" alt="\vect{p}^*"/> is taken as a general relation between <img class="math" src="../../../_images/math/c9f9a416dd7ee48531b642cd968c0e86d79719bc.svg" alt="\vect{\beta}"/> and <img class="math" src="../../../_images/math/471f5645633bde5b95882872ea85c35af72e7c36.svg" alt="\vect{p}"/> and is substituted into <a class="reference internal" href="#equation-logLikelihood">(1)</a>, leading to a <em>reduced log-likelihood</em> function depending solely on <img class="math" src="../../../_images/math/471f5645633bde5b95882872ea85c35af72e7c36.svg" alt="\vect{p}"/>.</p>
+</div><p>This expression of <img class="math" src="../../../_images/math/885ee0a19266bffd4aa28185a2fe693b93457282.svg" alt="\vect{\beta}^*"/> as a function of <img class="math" src="../../../_images/math/84ff405aaf0aca04c393943b3cb674aa1ecd15f2.svg" alt="\vect{p}^*"/> is taken as a general relation between <img class="math" src="../../../_images/math/c9f9a416dd7ee48531b642cd968c0e86d79719bc.svg" alt="\vect{\beta}"/> and <img class="math" src="../../../_images/math/471f5645633bde5b95882872ea85c35af72e7c36.svg" alt="\vect{p}"/> and is substituted into <a class="reference internal" href="#equation-loglikelihood">(1)</a>, leading to a <em>reduced log-likelihood</em> function depending solely on <img class="math" src="../../../_images/math/471f5645633bde5b95882872ea85c35af72e7c36.svg" alt="\vect{p}"/>.</p>
 <p>In the particular case where <img class="math" src="../../../_images/math/04629c56e14b59e9515191a1d4f3aa6810821a45.svg" alt="d=\dim(\vect{\sigma})=1"/> and <img class="math" src="../../../_images/math/476018cb68902d0f661dca411cd3f93cde6b4539.svg" alt="\sigma"/> is a part of <img class="math" src="../../../_images/math/471f5645633bde5b95882872ea85c35af72e7c36.svg" alt="\vect{p}"/>, then a further reduction is possible. In this case, if <img class="math" src="../../../_images/math/f11f9e6921a9127674116ae13000264f2cada880.svg" alt="\vect{q}"/> is the vector <img class="math" src="../../../_images/math/471f5645633bde5b95882872ea85c35af72e7c36.svg" alt="\vect{p}"/> in which <img class="math" src="../../../_images/math/476018cb68902d0f661dca411cd3f93cde6b4539.svg" alt="\sigma"/> has been substituted by 1, then:</p>
 <div class="math">
 <p><img src="../../../_images/math/37dec60a38fe68e4b4122f7a2435a7bbd4bd7131.svg" alt="\| \mat{L}_{\vect{p}}^{-1}(\vect{y}-\vect{m}_{\vect{\beta}}) \|^2=\| \mat{L}_{\vect{q}}^{-1}(\vect{y}-\vect{m}_{\vect{\beta}}) \|^2/\sigma^2"/></p>
@@ -240,8 +233,8 @@ and"/></p>
 <div class="math">
 <p><img src="../../../_images/math/1b7697011cc1d2999dc745eeca818e837a1be54c.svg" alt="\vect{\sigma}^*(\vect{q}^*)=\dfrac{1}{N}\| \mat{L}_{\vect{q}^*}^{-1}(\vect{y}-\vect{m}_{\vect{\beta}^*(\vect{q}^*)}) \|^2"/></p>
 </div><p>which leads to a further reduction of the log-likelihood function where both <img class="math" src="../../../_images/math/c9f9a416dd7ee48531b642cd968c0e86d79719bc.svg" alt="\vect{\beta}"/> and <img class="math" src="../../../_images/math/476018cb68902d0f661dca411cd3f93cde6b4539.svg" alt="\sigma"/> are replaced by their expression in terms of <img class="math" src="../../../_images/math/f11f9e6921a9127674116ae13000264f2cada880.svg" alt="\vect{q}"/>.</p>
-<p>The default optimizer is <a class="reference internal" href="../../_generated/openturns.TNC.html#openturns.TNC" title="openturns.TNC"><code class="xref py py-class docutils literal"><span class="pre">TNC</span></code></a> and can be changed thanks to the <em>setOptimizationAlgorithm</em> method.
-User could also change the default optimization solver by setting the <cite>GeneralLinearModelAlgorithm-DefaultOptimizationAlgorithm</cite> resource map key to one of the <a class="reference internal" href="../../_generated/openturns.NLopt.html#openturns.NLopt" title="openturns.NLopt"><code class="xref py py-class docutils literal"><span class="pre">NLopt</span></code></a> solver names.</p>
+<p>The default optimizer is <a class="reference internal" href="../../_generated/openturns.TNC.html#openturns.TNC" title="openturns.TNC"><code class="xref py py-class docutils literal notranslate"><span class="pre">TNC</span></code></a> and can be changed thanks to the <em>setOptimizationAlgorithm</em> method.
+User could also change the default optimization solver by setting the <cite>GeneralLinearModelAlgorithm-DefaultOptimizationAlgorithm</cite> resource map key to one of the <a class="reference internal" href="../../_generated/openturns.NLopt.html#openturns.NLopt" title="openturns.NLopt"><code class="xref py py-class docutils literal notranslate"><span class="pre">NLopt</span></code></a> solver names.</p>
 <p>It is also possible to proceed as follows:</p>
 <blockquote>
 <div><ul class="simple">
@@ -252,7 +245,7 @@ User could also change the default optimization solver by setting the <cite>Gene
 </ul>
 </div></blockquote>
 <dl class="docutils">
-<dt>The behaviour of the reduction is controlled by the following keys in <a class="reference internal" href="../../_generated/openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>:</dt>
+<dt>The behaviour of the reduction is controlled by the following keys in <a class="reference internal" href="../../_generated/openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>:</dt>
 <dd><ul class="first last simple">
 <li><em>ResourceMap.SetAsBool(‘GeneralLinearModelAlgorithm-UseAnalyticalAmplitudeEstimate’, true)</em> to use the reduction associated to <img class="math" src="../../../_images/math/476018cb68902d0f661dca411cd3f93cde6b4539.svg" alt="\sigma"/>. It has no effect if <img class="math" src="../../../_images/math/26f27712c48d14a1e5b1e45952c6d1c777e415e7.svg" alt="d&gt;1"/> or if <img class="math" src="../../../_images/math/f8ae70d9a6fa4dbd1cd28ab34289111d80a6e064.svg" alt="d=1"/> and <img class="math" src="../../../_images/math/476018cb68902d0f661dca411cd3f93cde6b4539.svg" alt="\sigma"/> is not part of <img class="math" src="../../../_images/math/471f5645633bde5b95882872ea85c35af72e7c36.svg" alt="\vect{p}"/></li>
 <li><em>ResourceMap.SetAsBool(‘GeneralLinearModelAlgorithm-UnbiasedVariance’, true)</em> allows to use the <em>unbiased</em> estimate of <img class="math" src="../../../_images/math/59347eba1f5ba4f74278095a34cc388bac2e0364.svg" alt="sigma"/> where <img class="math" src="../../../_images/math/666ccca11c6716a51f92480fa2b71eebbbfb681d.svg" alt="\dfrac{1}{N}"/> is replaced by <img class="math" src="../../../_images/math/c05f1236c8a8cad14b26c8fc7d6a950c80cc8cfa.svg" alt="\dfrac{1}{N-p}"/> in the optimality condition for <img class="math" src="../../../_images/math/476018cb68902d0f661dca411cd3f93cde6b4539.svg" alt="\sigma"/>.</li>
@@ -262,26 +255,26 @@ User could also change the default optimization solver by setting the <cite>Gene
 <p>With huge samples, the <a class="reference external" href="http://en.wikipedia.org/wiki/Hierarchical_matrix">hierarchical matrix</a>  implementation could be used if OpenTURNS had been compiled with <cite>hmat-oss</cite> support.</p>
 <p>This implementation, which is based on a compressed representation of an approximated covariance matrix (and its Cholesky factor), has a better complexity both in terms of memory requirements and floating point operations. To use it, the <cite>GeneralLinearModelAlgorithm-LinearAlgebra</cite> resource map key should be instancied to <cite>HMAT</cite>. Default value of the key is <cite>LAPACK</cite>.</p>
 <p>A known centered gaussian observation noise <img class="math" src="../../../_images/math/48b1d62121a586bf9d44d3ffe81249567895188d.svg" alt="\epsilon_k"/> can be taken into account
-with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setNoise" title="openturns.GeneralLinearModelAlgorithm.setNoise"><code class="xref py py-func docutils literal"><span class="pre">setNoise()</span></code></a>:</p>
+with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setNoise" title="openturns.GeneralLinearModelAlgorithm.setNoise"><code class="xref py py-func docutils literal notranslate"><span class="pre">setNoise()</span></code></a>:</p>
 <div class="math">
 <p><img src="../../../_images/math/96d6adb8209c4aeda3d4be1054106eb9c452eb73.svg" alt="\hat{\vect{y}}_k = \vect{y}_k + \epsilon_k, \epsilon_k \sim \mathcal{N}(0, \tau_k^2)"/></p>
 </div><p class="rubric">Examples</p>
 <p>Create the model <img class="math" src="../../../_images/math/8bee20bc538f68df2cdaf0e92540522954540e91.svg" alt="\cM: \Rset \mapsto \Rset"/> and the samples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x * sin(x)&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">inputSample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">8.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">outputSample</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">inputSample</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Create the algorithm:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">basis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ConstantBasisFactory</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">basis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ConstantBasisFactory</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">covarianceModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquaredExponential</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">algo</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GeneralLinearModelAlgorithm</span><span class="p">(</span><span class="n">inputSample</span><span class="p">,</span> <span class="n">outputSample</span><span class="p">,</span> <span class="n">covarianceModel</span><span class="p">,</span> <span class="n">basis</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">algo</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Get the resulting meta model:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">metamodel</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">getMetaModel</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -292,85 +285,85 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getClassName" title="openturns.GeneralLinearModelAlgorithm.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getClassName" title="openturns.GeneralLinearModelAlgorithm.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getDistribution" title="openturns.GeneralLinearModelAlgorithm.getDistribution"><code class="xref py py-obj docutils literal"><span class="pre">getDistribution</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getDistribution" title="openturns.GeneralLinearModelAlgorithm.getDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDistribution</span></code></a>()</td>
 <td>Accessor to the joint probability density function of the physical input vector.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getId" title="openturns.GeneralLinearModelAlgorithm.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getId" title="openturns.GeneralLinearModelAlgorithm.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getInputSample" title="openturns.GeneralLinearModelAlgorithm.getInputSample"><code class="xref py py-obj docutils literal"><span class="pre">getInputSample</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getInputSample" title="openturns.GeneralLinearModelAlgorithm.getInputSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputSample</span></code></a>()</td>
 <td>Accessor to the input sample.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getInputTransformation" title="openturns.GeneralLinearModelAlgorithm.getInputTransformation"><code class="xref py py-obj docutils literal"><span class="pre">getInputTransformation</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getInputTransformation" title="openturns.GeneralLinearModelAlgorithm.getInputTransformation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputTransformation</span></code></a>()</td>
 <td>Get the function normalizing the input.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getName" title="openturns.GeneralLinearModelAlgorithm.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getName" title="openturns.GeneralLinearModelAlgorithm.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getNoise" title="openturns.GeneralLinearModelAlgorithm.getNoise"><code class="xref py py-obj docutils literal"><span class="pre">getNoise</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getNoise" title="openturns.GeneralLinearModelAlgorithm.getNoise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNoise</span></code></a>()</td>
 <td>Observation noise variance accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getObjectiveFunction" title="openturns.GeneralLinearModelAlgorithm.getObjectiveFunction"><code class="xref py py-obj docutils literal"><span class="pre">getObjectiveFunction</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getObjectiveFunction" title="openturns.GeneralLinearModelAlgorithm.getObjectiveFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getObjectiveFunction</span></code></a>()</td>
 <td>Accessor to the log-likelihood function that writes as argument of the covariance’s model parameters.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getOptimizationAlgorithm" title="openturns.GeneralLinearModelAlgorithm.getOptimizationAlgorithm"><code class="xref py py-obj docutils literal"><span class="pre">getOptimizationAlgorithm</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getOptimizationAlgorithm" title="openturns.GeneralLinearModelAlgorithm.getOptimizationAlgorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOptimizationAlgorithm</span></code></a>()</td>
 <td>Accessor to solver used to optimize the covariance model parameters.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getOptimizationBounds" title="openturns.GeneralLinearModelAlgorithm.getOptimizationBounds"><code class="xref py py-obj docutils literal"><span class="pre">getOptimizationBounds</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getOptimizationBounds" title="openturns.GeneralLinearModelAlgorithm.getOptimizationBounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOptimizationBounds</span></code></a>()</td>
 <td>Optimization bounds accessor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getOptimizeParameters" title="openturns.GeneralLinearModelAlgorithm.getOptimizeParameters"><code class="xref py py-obj docutils literal"><span class="pre">getOptimizeParameters</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getOptimizeParameters" title="openturns.GeneralLinearModelAlgorithm.getOptimizeParameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOptimizeParameters</span></code></a>()</td>
 <td>Accessor to the covariance model parameters optimization flag.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getOutputSample" title="openturns.GeneralLinearModelAlgorithm.getOutputSample"><code class="xref py py-obj docutils literal"><span class="pre">getOutputSample</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getOutputSample" title="openturns.GeneralLinearModelAlgorithm.getOutputSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputSample</span></code></a>()</td>
 <td>Accessor to the output sample.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getResult" title="openturns.GeneralLinearModelAlgorithm.getResult"><code class="xref py py-obj docutils literal"><span class="pre">getResult</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getResult" title="openturns.GeneralLinearModelAlgorithm.getResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResult</span></code></a>()</td>
 <td>Get the results of the metamodel computation.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getShadowedId" title="openturns.GeneralLinearModelAlgorithm.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getShadowedId" title="openturns.GeneralLinearModelAlgorithm.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getVisibility" title="openturns.GeneralLinearModelAlgorithm.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.getVisibility" title="openturns.GeneralLinearModelAlgorithm.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.hasName" title="openturns.GeneralLinearModelAlgorithm.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.hasName" title="openturns.GeneralLinearModelAlgorithm.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.hasVisibleName" title="openturns.GeneralLinearModelAlgorithm.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.hasVisibleName" title="openturns.GeneralLinearModelAlgorithm.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.run" title="openturns.GeneralLinearModelAlgorithm.run"><code class="xref py py-obj docutils literal"><span class="pre">run</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.run" title="openturns.GeneralLinearModelAlgorithm.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>()</td>
 <td>Compute the response surface.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setDistribution" title="openturns.GeneralLinearModelAlgorithm.setDistribution"><code class="xref py py-obj docutils literal"><span class="pre">setDistribution</span></code></a>(distribution)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setDistribution" title="openturns.GeneralLinearModelAlgorithm.setDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDistribution</span></code></a>(distribution)</td>
 <td>Accessor to the joint probability density function of the physical input vector.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setInputTransformation" title="openturns.GeneralLinearModelAlgorithm.setInputTransformation"><code class="xref py py-obj docutils literal"><span class="pre">setInputTransformation</span></code></a>(inputTransformation)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setInputTransformation" title="openturns.GeneralLinearModelAlgorithm.setInputTransformation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInputTransformation</span></code></a>(inputTransformation)</td>
 <td>Set the function normalizing the input.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setName" title="openturns.GeneralLinearModelAlgorithm.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setName" title="openturns.GeneralLinearModelAlgorithm.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setNoise" title="openturns.GeneralLinearModelAlgorithm.setNoise"><code class="xref py py-obj docutils literal"><span class="pre">setNoise</span></code></a>(noise)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setNoise" title="openturns.GeneralLinearModelAlgorithm.setNoise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setNoise</span></code></a>(noise)</td>
 <td>Observation noise variance accessor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setOptimizationAlgorithm" title="openturns.GeneralLinearModelAlgorithm.setOptimizationAlgorithm"><code class="xref py py-obj docutils literal"><span class="pre">setOptimizationAlgorithm</span></code></a>(solver)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setOptimizationAlgorithm" title="openturns.GeneralLinearModelAlgorithm.setOptimizationAlgorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOptimizationAlgorithm</span></code></a>(solver)</td>
 <td>Accessor to the solver used to optimize the covariance model parameters.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setOptimizationBounds" title="openturns.GeneralLinearModelAlgorithm.setOptimizationBounds"><code class="xref py py-obj docutils literal"><span class="pre">setOptimizationBounds</span></code></a>(optimizationBounds)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setOptimizationBounds" title="openturns.GeneralLinearModelAlgorithm.setOptimizationBounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOptimizationBounds</span></code></a>(optimizationBounds)</td>
 <td>Optimization bounds accessor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setOptimizeParameters" title="openturns.GeneralLinearModelAlgorithm.setOptimizeParameters"><code class="xref py py-obj docutils literal"><span class="pre">setOptimizeParameters</span></code></a>(optimizeParameters)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setOptimizeParameters" title="openturns.GeneralLinearModelAlgorithm.setOptimizeParameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOptimizeParameters</span></code></a>(optimizeParameters)</td>
 <td>Accessor to the covariance model parameters optimization flag.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setShadowedId" title="openturns.GeneralLinearModelAlgorithm.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setShadowedId" title="openturns.GeneralLinearModelAlgorithm.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setVisibility" title="openturns.GeneralLinearModelAlgorithm.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.setVisibility" title="openturns.GeneralLinearModelAlgorithm.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -407,7 +400,7 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="../../_generated/openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="../../_generated/openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
 <blockquote class="last">
 <div><p>Joint probability density function of the physical input vector.</p>
 </div></blockquote>
@@ -443,7 +436,7 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>inputSample</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>inputSample</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>The input sample <img class="math" src="../../../_images/math/cb180a0dde0f5a9c93245e280d6a875da6382edf.svg" alt="(\vect{x}_k)_{1 \leq k \leq N}"/>.</p>
 </div></blockquote>
@@ -461,7 +454,7 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>transformation</strong> : <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>transformation</strong> : <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Function <em>T</em> that normalizes the input.</p>
 </div></blockquote>
@@ -515,9 +508,9 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>logLikelihood</strong> : <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>logLikelihood</strong> : <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
-<div><p>The log-likelihood function degined in <a class="reference internal" href="#equation-logLikelihood">(1)</a> as a function of <img class="math" src="../../../_images/math/a57e1523b18a306650d633dba47e171387d919e3.svg" alt="(\vect{\theta}, \vect{\sigma})"/>.</p>
+<div><p>The log-likelihood function degined in <a class="reference internal" href="#equation-loglikelihood">(1)</a> as a function of <img class="math" src="../../../_images/math/a57e1523b18a306650d633dba47e171387d919e3.svg" alt="(\vect{\theta}, \vect{\sigma})"/>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -527,21 +520,21 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <p>The log-likelihood function may be useful for some postprocessing: maximization using external optimizers for example.</p>
 <p class="rubric">Examples</p>
 <p>Create the model <img class="math" src="../../../_images/math/8bee20bc538f68df2cdaf0e92540522954540e91.svg" alt="\cM: \Rset \mapsto \Rset"/> and the samples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x0&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x0 * sin(x0)&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">inputSample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">8.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">outputSample</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">inputSample</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Create the algorithm:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">basis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ConstantBasisFactory</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">basis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ConstantBasisFactory</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">covarianceModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquaredExponential</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">algo</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GeneralLinearModelAlgorithm</span><span class="p">(</span><span class="n">inputSample</span><span class="p">,</span> <span class="n">outputSample</span><span class="p">,</span> <span class="n">covarianceModel</span><span class="p">,</span> <span class="n">basis</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">algo</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Get the log-likelihood function:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">likelihoodFunction</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">getObjectiveFunction</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">likelihoodFunction</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">getObjectiveFunction</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -554,10 +547,10 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>algorithm</strong> : <a class="reference internal" href="../../_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">OptimizationAlgorithm</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>algorithm</strong> : <a class="reference internal" href="../../_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationAlgorithm</span></code></a></p>
 <blockquote class="last">
 <div><p>Solver used to optimize the covariance model parameters.
-Default optimizer is <a class="reference internal" href="../../_generated/openturns.TNC.html#openturns.TNC" title="openturns.TNC"><code class="xref py py-class docutils literal"><span class="pre">TNC</span></code></a></p>
+Default optimizer is <a class="reference internal" href="../../_generated/openturns.TNC.html#openturns.TNC" title="openturns.TNC"><code class="xref py py-class docutils literal notranslate"><span class="pre">TNC</span></code></a></p>
 </div></blockquote>
 </td>
 </tr>
@@ -573,7 +566,7 @@ Default optimizer is <a class="reference internal" href="../../_generated/opentu
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>bounds</strong> : <a class="reference internal" href="../../_generated/openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal"><span class="pre">Interval</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>bounds</strong> : <a class="reference internal" href="../../_generated/openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
 <blockquote class="last">
 <div><p>Bounds for covariance model parameter optimization.</p>
 </div></blockquote>
@@ -609,7 +602,7 @@ Default optimizer is <a class="reference internal" href="../../_generated/opentu
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>outputSample</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>outputSample</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>The output sample <img class="math" src="../../../_images/math/246b08cbc2d11721a2aa13bfe3b27620fbe3194d.svg" alt="(\vect{y}_k)_{1 \leq k \leq N}"/> .</p>
 </div></blockquote>
@@ -627,10 +620,10 @@ Default optimizer is <a class="reference internal" href="../../_generated/opentu
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="openturns.GeneralLinearModelResult.html#openturns.GeneralLinearModelResult" title="openturns.GeneralLinearModelResult"><code class="xref py py-class docutils literal"><span class="pre">GeneralLinearModelResult</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="openturns.GeneralLinearModelResult.html#openturns.GeneralLinearModelResult" title="openturns.GeneralLinearModelResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralLinearModelResult</span></code></a></p>
 <blockquote class="last">
 <div><p>Structure containing all the results obtained after computation
-and created by the method <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.run" title="openturns.GeneralLinearModelAlgorithm.run"><code class="xref py py-meth docutils literal"><span class="pre">run()</span></code></a>.</p>
+and created by the method <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.run" title="openturns.GeneralLinearModelAlgorithm.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -716,7 +709,7 @@ and created by the method <a class="reference internal" href="#openturns.General
 <dd><p>Compute the response surface.</p>
 <p class="rubric">Notes</p>
 <p>It computes the response surface and creates a
-<a class="reference internal" href="openturns.GeneralLinearModelResult.html#openturns.GeneralLinearModelResult" title="openturns.GeneralLinearModelResult"><code class="xref py py-class docutils literal"><span class="pre">GeneralLinearModelResult</span></code></a> structure containing all the results.</p>
+<a class="reference internal" href="openturns.GeneralLinearModelResult.html#openturns.GeneralLinearModelResult" title="openturns.GeneralLinearModelResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralLinearModelResult</span></code></a> structure containing all the results.</p>
 </dd></dl>
 
 <dl class="method">
@@ -727,7 +720,7 @@ and created by the method <a class="reference internal" href="#openturns.General
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="../../_generated/openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="../../_generated/openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
 <blockquote class="last">
 <div><p>Joint probability density function of the physical input vector.</p>
 </div></blockquote>
@@ -745,7 +738,7 @@ and created by the method <a class="reference internal" href="#openturns.General
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>transformation</strong> : <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>transformation</strong> : <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Function that normalizes the input.
 The input dimension should be the same as input’s sample dimension, output dimension
@@ -801,7 +794,7 @@ should be output sample’s dimension</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>algorithm</strong> : <a class="reference internal" href="../../_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">OptimizationAlgorithm</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>algorithm</strong> : <a class="reference internal" href="../../_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationAlgorithm</span></code></a></p>
 <blockquote class="last">
 <div><p>Solver used to optimize the covariance model parameters.</p>
 </div></blockquote>
@@ -819,7 +812,7 @@ should be output sample’s dimension</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>bounds</strong> : <a class="reference internal" href="../../_generated/openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal"><span class="pre">Interval</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>bounds</strong> : <a class="reference internal" href="../../_generated/openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
 <blockquote class="last">
 <div><p>Bounds for covariance model parameter optimization.</p>
 </div></blockquote>
@@ -907,7 +900,7 @@ should be output sample’s dimension</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../response_surface.html" >Response surface</a> &#187;</li>
           <li class="nav-item nav-item-4"><a href="../glm.html" >Response surface: Generalized Linear Model</a> &#187;</li> 
       </ul>
@@ -915,7 +908,7 @@ should be output sample’s dimension</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

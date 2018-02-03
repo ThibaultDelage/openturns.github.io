@@ -9,16 +9,7 @@
     <title>Estimate a multivariate distribution &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -279,11 +272,11 @@ estimation of the dependency structure takes several steps:</p>
 <li>assemble the estimated copulas</li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 <span class="kn">import</span> <span class="nn">math</span> <span class="kn">as</span> <span class="nn">m</span>
@@ -291,11 +284,11 @@ estimation of the dependency structure takes several steps:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># generate some multivariate data to estimate, with correlation</span>
 <span class="n">cop1</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AliMikhailHaqCopula</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
 <span class="n">cop2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ClaytonCopula</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
@@ -307,11 +300,11 @@ estimation of the dependency structure takes several steps:</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># estimate marginals</span>
 <span class="n">dimension</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">getDimension</span><span class="p">()</span>
 <span class="n">marginalFactories</span> <span class="o">=</span> <span class="p">[]</span>
@@ -326,11 +319,11 @@ estimation of the dependency structure takes several steps:</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[3]:
 </pre></div>
 </div>
-<div class="output_area highlight-none"><div class="highlight"><pre>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
 <span></span>[class=Uniform name=Uniform dimension=1 a=5.00008 b=6,
  class=Normal name=Normal dimension=1 mean=class=Point name=Unnamed dimension=1 values=[-39.9413] sigma=class=Point name=Unnamed dimension=1 values=[3.04363] correlationMatrix=class=CorrelationMatrix dimension=1 implementation=class=MatrixImplementation name=Unnamed rows=1 columns=1 values=[1],
  class=Trapezoidal name=Trapezoidal dimension=1 a=99.9716 b=149.173 c=152.366 d=299.9 h=0.00984637,
@@ -339,11 +332,11 @@ estimation of the dependency structure takes several steps:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># find connected components of a graph defined from its adjacency matrix</span>
 
 <span class="k">def</span> <span class="nf">find_neighbours</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">covariance</span><span class="p">,</span> <span class="n">to_visit</span><span class="p">,</span> <span class="n">visited</span><span class="p">):</span>
@@ -373,11 +366,11 @@ estimation of the dependency structure takes several steps:</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># estimate copula</span>
 
 <span class="c1"># 1. find dependent components</span>
@@ -413,21 +406,21 @@ estimation of the dependency structure takes several steps:</p>
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[10]:
 </pre></div>
 </div>
-<div class="output_area highlight-none"><div class="highlight"><pre>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
 <span></span>[[0, 3], [1, 2]]
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># 2. estimate the copulas on each dependent blocs</span>
 <span class="n">copulaFactories</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">factory</span> <span class="ow">in</span> <span class="n">ot</span><span class="o">.</span><span class="n">DistributionFactory</span><span class="o">.</span><span class="n">GetContinuousMultiVariateFactories</span><span class="p">():</span>
@@ -440,22 +433,22 @@ estimation of the dependency structure takes several steps:</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[6]:
 </pre></div>
 </div>
-<div class="output_area highlight-none"><div class="highlight"><pre>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
 <span></span>[class=AliMikhailHaqCopula name=AliMikhailHaqCopula dimension=2 theta=0.601685,
  class=ClaytonCopula name=ClaytonCopula dimension=2 theta=2.45478]
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># 3. assemble the copula</span>
 <span class="n">estimated_copula_perm</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComposedCopula</span><span class="p">(</span><span class="n">estimated_copulas</span><span class="p">)</span>
 <span class="c1"># take care of the order of each bloc vs the order of original components</span>
@@ -471,21 +464,21 @@ estimation of the dependency structure takes several steps:</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[7]:
 </pre></div>
 </div>
-<div class="output_area highlight-none"><div class="highlight"><pre>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
 <span></span>class=MarginalDistribution name=MarginalDistribution dimension=4 distribution=class=ComposedCopula name=ComposedCopula dimension=4 copula[0]=class=AliMikhailHaqCopula name=AliMikhailHaqCopula dimension=2 theta=0.601685 copula[1]=class=ClaytonCopula name=ClaytonCopula dimension=2 theta=2.45478 indices=[0,2,3,1]
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Build joint distribution from marginal distributions and dependency structure</span>
 <span class="n">estimated_distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComposedDistribution</span><span class="p">(</span><span class="n">estimated_marginals</span><span class="p">,</span> <span class="n">estimated_copula</span><span class="p">)</span>
 <span class="n">estimated_distribution</span>
@@ -493,7 +486,7 @@ estimation of the dependency structure takes several steps:</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[8]:
 </pre></div>
 </div>
@@ -530,7 +523,7 @@ estimation of the dependency structure takes several steps:</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

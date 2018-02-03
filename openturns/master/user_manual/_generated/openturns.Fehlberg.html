@@ -9,16 +9,7 @@
     <title>Fehlberg &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../functions.html" accesskey="U">Functions</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -115,7 +108,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>transitionFunction</strong> : <a class="reference internal" href="openturns.FieldFunction.html#openturns.FieldFunction" title="openturns.FieldFunction"><code class="xref py py-class docutils literal"><span class="pre">FieldFunction</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>transitionFunction</strong> : <a class="reference internal" href="openturns.FieldFunction.html#openturns.FieldFunction" title="openturns.FieldFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">FieldFunction</span></code></a></p>
 <blockquote>
 <div><p>The function defining the flow of the ordinary differential equation.</p>
 </div></blockquote>
@@ -134,7 +127,7 @@ local error for a step of size <img class="math" src="../../_images/math/7bc3c3b
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.ODESolver.html#openturns.ODESolver" title="openturns.ODESolver"><code class="xref py py-obj docutils literal"><span class="pre">ODESolver</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.ODESolver.html#openturns.ODESolver" title="openturns.ODESolver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ODESolver</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The Fehlberg method of order <img class="math" src="../../_images/math/8a5230a8ce8f76ecbeb8b2f71bc020b3ff95e6bc.svg" alt="p\in\Nset"/> is a <em>one-step</em> <em>explicit</em> method
@@ -147,7 +140,7 @@ approximation over an adapted grid <img class="math" src="../../_images/math/1fb
 number of points <img class="math" src="../../_images/math/063911fe0928b5aa7856e498e1e5b3a2bb89ed5a.svg" alt="M"/> not necessarily equal to the number of locations
 <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> and internal nodes not necessarily part of the set of locations. Then,
 the solution <img class="math" src="../../_images/math/3c458b4f8a1ca74e372bc3e92c88e896136784b2.svg" alt="\vect{y}"/> is approximated by a smooth piecewise polynomial
-function using <a class="reference internal" href="openturns.PiecewiseHermiteEvaluation.html#openturns.PiecewiseHermiteEvaluation" title="openturns.PiecewiseHermiteEvaluation"><code class="xref py py-class docutils literal"><span class="pre">PiecewiseHermiteEvaluation</span></code></a>, which is evaluated
+function using <a class="reference internal" href="openturns.PiecewiseHermiteEvaluation.html#openturns.PiecewiseHermiteEvaluation" title="openturns.PiecewiseHermiteEvaluation"><code class="xref py py-class docutils literal notranslate"><span class="pre">PiecewiseHermiteEvaluation</span></code></a>, which is evaluated
 over the set of locations.</p>
 <p>The method proceeds as follows. Knowing the solution at location
 <img class="math" src="../../_images/math/7ca92cd931ecca25e28d4a7e6309006dc1ad8341.svg" alt="\vect{y}_i=\vect{y}(\tau_i)"/> and a current time step <img class="math" src="../../_images/math/0e0354d3abe697918fdac3ccbbaabc6b66b17287.svg" alt="h_i"/>, two
@@ -308,7 +301,7 @@ coefficients <img class="math" src="../../_images/math/d6d8b81e801de9c5037c44f10
 <p>For <img class="math" src="../../_images/math/be8bba526bf9e0f9365c4abfef8cae117db51f10.svg" alt="p&gt;2"/> the coefficients can be found eg in the C++ source code. For
 additional theory on these methods see <a class="reference internal" href="../../bibliography.html#stoer1993" id="id1">[Stoer1993]</a>, chapter 7.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;y0&#39;</span><span class="p">,</span> <span class="s1">&#39;y1&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;t - y0&#39;</span><span class="p">,</span> <span class="s1">&#39;y1 + t^2&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">phi</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VertexValueFunction</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Fehlberg</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
@@ -325,43 +318,43 @@ additional theory on these methods see <a class="reference internal" href="../..
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Fehlberg.getClassName" title="openturns.Fehlberg.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Fehlberg.getClassName" title="openturns.Fehlberg.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Fehlberg.getId" title="openturns.Fehlberg.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Fehlberg.getId" title="openturns.Fehlberg.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Fehlberg.getName" title="openturns.Fehlberg.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Fehlberg.getName" title="openturns.Fehlberg.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Fehlberg.getShadowedId" title="openturns.Fehlberg.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Fehlberg.getShadowedId" title="openturns.Fehlberg.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Fehlberg.getTransitionFunction" title="openturns.Fehlberg.getTransitionFunction"><code class="xref py py-obj docutils literal"><span class="pre">getTransitionFunction</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Fehlberg.getTransitionFunction" title="openturns.Fehlberg.getTransitionFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTransitionFunction</span></code></a>()</td>
 <td>Transition function accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Fehlberg.getVisibility" title="openturns.Fehlberg.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Fehlberg.getVisibility" title="openturns.Fehlberg.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Fehlberg.hasName" title="openturns.Fehlberg.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Fehlberg.hasName" title="openturns.Fehlberg.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Fehlberg.hasVisibleName" title="openturns.Fehlberg.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Fehlberg.hasVisibleName" title="openturns.Fehlberg.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Fehlberg.setName" title="openturns.Fehlberg.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Fehlberg.setName" title="openturns.Fehlberg.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Fehlberg.setShadowedId" title="openturns.Fehlberg.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Fehlberg.setShadowedId" title="openturns.Fehlberg.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Fehlberg.setTransitionFunction" title="openturns.Fehlberg.setTransitionFunction"><code class="xref py py-obj docutils literal"><span class="pre">setTransitionFunction</span></code></a>(transitionFunction)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Fehlberg.setTransitionFunction" title="openturns.Fehlberg.setTransitionFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTransitionFunction</span></code></a>(transitionFunction)</td>
 <td>Transition function accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Fehlberg.setVisibility" title="openturns.Fehlberg.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Fehlberg.setVisibility" title="openturns.Fehlberg.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Fehlberg.solve" title="openturns.Fehlberg.solve"><code class="xref py py-obj docutils literal"><span class="pre">solve</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Fehlberg.solve" title="openturns.Fehlberg.solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code></a>(*args)</td>
 <td>Solve ODE.</td>
 </tr>
 </tbody>
@@ -452,7 +445,7 @@ additional theory on these methods see <a class="reference internal" href="../..
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>transitionFunction</strong> : <a class="reference internal" href="openturns.FieldFunction.html#openturns.FieldFunction" title="openturns.FieldFunction"><code class="xref py py-class docutils literal"><span class="pre">FieldFunction</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>transitionFunction</strong> : <a class="reference internal" href="openturns.FieldFunction.html#openturns.FieldFunction" title="openturns.FieldFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">FieldFunction</span></code></a></p>
 <blockquote class="last">
 <div><p>Transition function.</p>
 </div></blockquote>
@@ -560,7 +553,7 @@ additional theory on these methods see <a class="reference internal" href="../..
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>transitionFunction</strong> : <a class="reference internal" href="openturns.FieldFunction.html#openturns.FieldFunction" title="openturns.FieldFunction"><code class="xref py py-class docutils literal"><span class="pre">FieldFunction</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>transitionFunction</strong> : <a class="reference internal" href="openturns.FieldFunction.html#openturns.FieldFunction" title="openturns.FieldFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">FieldFunction</span></code></a></p>
 <blockquote class="last">
 <div><p>Transition function.</p>
 </div></blockquote>
@@ -600,13 +593,13 @@ additional theory on these methods see <a class="reference internal" href="../..
 <blockquote>
 <div><p>Initial value of the equation</p>
 </div></blockquote>
-<p><strong>timeGrid</strong> : sequence of float or <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal"><span class="pre">Mesh</span></code></a> of dimension 1</p>
+<p><strong>timeGrid</strong> : sequence of float or <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a> of dimension 1</p>
 <blockquote>
 <div><p>Time stamps, ie values of <img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/> at which the solution is computed.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>values</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>values</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>The solution of the equation at grid points.</p>
 </div></blockquote>
@@ -640,14 +633,14 @@ additional theory on these methods see <a class="reference internal" href="../..
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../functions.html" >Functions</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

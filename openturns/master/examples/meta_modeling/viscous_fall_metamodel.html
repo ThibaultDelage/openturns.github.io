@@ -9,16 +9,7 @@
     <title>Viscous free-fall metamodel &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -297,11 +290,11 @@ probabilistic:</p>
 <li><img class="math" src="../../_images/math/8094f67a9590101386e9460cb130eef3a5140371.svg" alt="c \sim \mathcal{U}(0, 30)"/></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linspace</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">maximum</span>
@@ -309,11 +302,11 @@ probabilistic:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Some parameters</span>
 <span class="n">tmin</span><span class="o">=</span><span class="mf">0.0</span> <span class="c1"># Date minimale</span>
 <span class="n">tmax</span><span class="o">=</span><span class="mf">12.</span> <span class="c1"># Date maximale</span>
@@ -323,11 +316,11 @@ probabilistic:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># model function</span>
 <span class="k">def</span> <span class="nf">AltiFunc</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
     <span class="n">g</span>  <span class="o">=</span> <span class="mf">9.81</span>
@@ -347,11 +340,11 @@ probabilistic:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Creation of the input distribution</span>
 <span class="n">distZ0</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">150.0</span><span class="p">)</span>
 <span class="n">distV0</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mf">55.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>
@@ -363,11 +356,11 @@ probabilistic:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Sample the model</span>
 <span class="n">size</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">inputSample</span> <span class="o">=</span> <span class="n">distX</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
@@ -376,11 +369,11 @@ probabilistic:</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Draw some curves</span>
 <span class="n">graph</span> <span class="o">=</span> <span class="n">outputSample</span><span class="o">.</span><span class="n">drawMarginal</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">graph</span><span class="o">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s1">&#39;Viscous free-fall&#39;</span><span class="p">)</span>
@@ -392,7 +385,7 @@ probabilistic:</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[16]:
 </pre></div>
 </div>
@@ -400,11 +393,11 @@ probabilistic:</p>
 <img alt="../../_images/examples_meta_modeling_viscous_fall_metamodel_7_0.svg" src="../../_images/examples_meta_modeling_viscous_fall_metamodel_7_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Compute the KL decomposition of the output</span>
 <span class="n">size</span> <span class="o">=</span> <span class="mi">2000</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -423,7 +416,7 @@ probabilistic:</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[17]:
 </pre></div>
 </div>
@@ -431,11 +424,11 @@ probabilistic:</p>
 <img alt="../../_images/examples_meta_modeling_viscous_fall_metamodel_8_0.svg" src="../../_images/examples_meta_modeling_viscous_fall_metamodel_8_0.svg" /></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Meta-model</span>
 <span class="c1"># Here we have to suppress the Dirac component</span>
 <span class="n">alti</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PointToFieldConnection</span><span class="p">(</span><span class="n">alti</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s2">&quot;z0&quot;</span><span class="p">,</span> <span class="s2">&quot;v0&quot;</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;z0&quot;</span><span class="p">,</span> <span class="s2">&quot;v0&quot;</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;0.0&quot;</span><span class="p">]))</span>
@@ -451,11 +444,11 @@ probabilistic:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># First, using the most basic interface</span>
 <span class="n">algo</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FunctionalChaosAlgorithm</span><span class="p">(</span><span class="n">inputSampleChaos</span><span class="p">,</span> <span class="n">outputSampleChaos</span><span class="p">)</span>
 <span class="n">algo</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
@@ -464,11 +457,11 @@ probabilistic:</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">graph</span> <span class="o">=</span> <span class="n">validationOutputSample</span><span class="o">.</span><span class="n">drawMarginal</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">graph</span><span class="o">.</span><span class="n">setColors</span><span class="p">([</span><span class="s1">&#39;red&#39;</span><span class="p">])</span>
 <span class="n">graph2</span> <span class="o">=</span> <span class="n">metaModel</span><span class="p">(</span><span class="n">validationInputSample</span><span class="p">)</span><span class="o">.</span><span class="n">drawMarginal</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -482,7 +475,7 @@ probabilistic:</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[20]:
 </pre></div>
 </div>
@@ -518,7 +511,7 @@ probabilistic:</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

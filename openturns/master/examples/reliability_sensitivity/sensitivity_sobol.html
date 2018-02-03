@@ -9,16 +9,7 @@
     <title>Sobol sensitivity indices &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -288,22 +281,22 @@ indices).</p>
 <p>The <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> total indices give the relative importance of every
 variables except the variable <img class="math" src="../../_images/math/138f39d0c7d18f6de494e85102efc4d65d3c5f0d.svg" alt="X_i"/>, for every variable.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [33]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [34]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create the model and input distribution</span>
 <span class="n">formula</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sin(_pi*X1)+7*sin(X2)*sin(_pi*X2)+&#39;</span> <span class="o">+</span> \
            <span class="s1">&#39;1.1*((_pi*X3)*(_pi*X2))*sin(_pi*X1)&#39;</span><span class="p">]</span>
@@ -316,11 +309,11 @@ variables except the variable <img class="math" src="../../_images/math/138f39d0
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [35]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create X/Y data</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">size</span> <span class="o">=</span> <span class="mi">10000</span>
@@ -330,11 +323,11 @@ variables except the variable <img class="math" src="../../_images/math/138f39d0
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [36]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Compute first order indices using the Saltelli estimator</span>
 <span class="n">sensitivityAnalysis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SaltelliSensitivityAlgorithm</span><span class="p">(</span><span class="n">inputDesign</span><span class="p">,</span> <span class="n">outputDesign</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
 <span class="n">first_order</span> <span class="o">=</span> <span class="n">sensitivityAnalysis</span><span class="o">.</span><span class="n">getFirstOrderIndices</span><span class="p">()</span>
@@ -351,18 +344,18 @@ variables except the variable <img class="math" src="../../_images/math/138f39d0
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [37]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Draw first order indices (normalized)</span>
 <span class="n">sensitivityAnalysis</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">first_order</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;First order indices&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[37]:
 </pre></div>
 </div>
@@ -370,11 +363,11 @@ variables except the variable <img class="math" src="../../_images/math/138f39d0
 <img alt="../../_images/examples_reliability_sensitivity_sensitivity_sobol_6_0.svg" src="../../_images/examples_reliability_sensitivity_sensitivity_sobol_6_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [38]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">total_order</span> <span class="o">=</span> <span class="n">sensitivityAnalysis</span><span class="o">.</span><span class="n">getTotalOrderIndices</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">total_order</span><span class="p">)</span>
 </pre></div>
@@ -389,18 +382,18 @@ variables except the variable <img class="math" src="../../_images/math/138f39d0
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [39]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Draw total indices (normalized)</span>
 <span class="n">sensitivityAnalysis</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">total_order</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;Total indices&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[39]:
 </pre></div>
 </div>
@@ -408,11 +401,11 @@ variables except the variable <img class="math" src="../../_images/math/138f39d0
 <img alt="../../_images/examples_reliability_sensitivity_sensitivity_sobol_8_0.svg" src="../../_images/examples_reliability_sensitivity_sensitivity_sobol_8_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [40]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># second order indices</span>
 <span class="n">second_order</span> <span class="o">=</span> <span class="n">sensitivityAnalysis</span><span class="o">.</span><span class="n">getSecondOrderIndices</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">):</span>
@@ -460,7 +453,7 @@ variables except the variable <img class="math" src="../../_images/math/138f39d0
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

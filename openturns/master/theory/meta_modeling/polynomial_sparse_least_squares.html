@@ -9,16 +9,7 @@
     <title>Sparse least squares polynomial metamodel &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -132,8 +125,8 @@ on <img class="math" src="../../_images/math/75d84d6b32882c83756bbdd4f879c5aa689
 <img class="math" src="../../_images/math/7d77579c7fab3e9b5759e6272b34f969c954ccae.svg" alt="\underline{x} = (x_{1},\dots,x_{n_X})^{\textsf{T}}"/>. Note that
 these input variables are assumed to be deterministic in this section.
 The model response may be approximated by a polynomial as follows:</p>
-<div class="math" id="equation-5-2.1">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-5-2.1" title="Permalink to this equation">¶</a></span><img src="../../_images/math/90df217699bea62ce04c2de188dfc0534f3196e1.svg" alt="h(\underline{X}) \, \, \approx \, \, \widehat{h}(\underline{x}) \, \, = \, \, \sum_{j=0}^{P-1} \; a_{j} \; \psi_{j}(\underline{x})"/></p>
+<div class="math" id="equation-5-2-1">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-5-2-1" title="Permalink to this equation">¶</a></span><img src="../../_images/math/90df217699bea62ce04c2de188dfc0534f3196e1.svg" alt="h(\underline{X}) \, \, \approx \, \, \widehat{h}(\underline{x}) \, \, = \, \, \sum_{j=0}^{P-1} \; a_{j} \; \psi_{j}(\underline{x})"/></p>
 </div><div class="line-block">
 <div class="line">Let us consider a set of values taken by the input vector (i.e. an
 experimental design)
@@ -155,8 +148,8 @@ operator</em>) method is based on a <img class="math" src="../../_images/math/ee
 as follows:</div>
 </div>
 <blockquote>
-<div><div class="math" id="equation-5-2.5">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-5-2.5" title="Permalink to this equation">¶</a></span><img src="../../_images/math/fcb096f35763936c995103c9adb64b02964d1dc1.svg" alt="\textrm{Minimize} \quad \quad \sum_{i=1}^{N} \; \left( h(\underline{x}^{(i)}) \; - \; \underline{a}^{\textsf{T}} \underline{\psi}(\underline{x}^{(i)})  \right)^{2}
+<div><div class="math" id="equation-5-2-5">
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-5-2-5" title="Permalink to this equation">¶</a></span><img src="../../_images/math/fcb096f35763936c995103c9adb64b02964d1dc1.svg" alt="\textrm{Minimize} \quad \quad \sum_{i=1}^{N} \; \left( h(\underline{x}^{(i)}) \; - \; \underline{a}^{\textsf{T}} \underline{\psi}(\underline{x}^{(i)})  \right)^{2}
      \, + \,  C \; \|\underline{a}\|_{1}^{2}"/></p>
 </div><p>where <img class="math" src="../../_images/math/bf1db899c8505dc989032405d6d2fbb0bbfecb77.svg" alt="\|\underline{a}\|_{1} = \sum_{j=0}^{P-1} |a_{j}|"/> and
 <img class="math" src="../../_images/math/cc97f9382a9b766edaef6224b2a18e88824ad2c0.svg" alt="C"/> is a non negative constant. A nice feature of LASSO is that
@@ -273,8 +266,8 @@ lowest error estimate is retained.</p>
 <div class="topic">
 <p class="topic-title first">API:</p>
 <ul class="simple">
-<li>See <a class="reference internal" href="../../user_manual/response_surface/_generated/openturns.LARS.html#openturns.LARS" title="openturns.LARS"><code class="xref py py-class docutils literal"><span class="pre">LARS</span></code></a></li>
-<li>See <a class="reference internal" href="../../user_manual/response_surface/_generated/openturns.FunctionalChaosAlgorithm.html#openturns.FunctionalChaosAlgorithm" title="openturns.FunctionalChaosAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">FunctionalChaosAlgorithm</span></code></a></li>
+<li>See <a class="reference internal" href="../../user_manual/response_surface/_generated/openturns.LARS.html#openturns.LARS" title="openturns.LARS"><code class="xref py py-class docutils literal notranslate"><span class="pre">LARS</span></code></a></li>
+<li>See <a class="reference internal" href="../../user_manual/response_surface/_generated/openturns.FunctionalChaosAlgorithm.html#openturns.FunctionalChaosAlgorithm" title="openturns.FunctionalChaosAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">FunctionalChaosAlgorithm</span></code></a></li>
 </ul>
 </div>
 <div class="topic">
@@ -325,7 +318,7 @@ lowest error estimate is retained.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

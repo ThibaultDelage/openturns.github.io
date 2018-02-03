@@ -9,16 +9,7 @@
     <title>WelchFactory &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../stochastic_process.html" accesskey="U">Stochastic process</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -115,7 +108,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>window</strong> : <a class="reference internal" href="openturns.FilteringWindows.html#openturns.FilteringWindows" title="openturns.FilteringWindows"><code class="xref py py-class docutils literal"><span class="pre">FilteringWindows</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>window</strong> : <a class="reference internal" href="openturns.FilteringWindows.html#openturns.FilteringWindows" title="openturns.FilteringWindows"><code class="xref py py-class docutils literal notranslate"><span class="pre">FilteringWindows</span></code></a></p>
 <blockquote>
 <div><p>The filtering window model.</p>
 <p>By default, the filtering window model is the Hanning model.</p>
@@ -144,7 +137,7 @@
 <p>The Welch estimator is a non parametric estimator based on the segmentation of the time series into <em>blockNumber</em> segments  possibly overlapping (size of overlap <em>overlap</em>). The length of each segment is deduced.</p>
 <p class="rubric">Examples</p>
 <p>Create a time series from a stationary second order process:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myTimeGrid</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RegularGrid</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">8</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ExponentialCauchy</span><span class="p">([</span><span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gp</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SpectralGaussianProcess</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">myTimeGrid</span><span class="p">)</span>
@@ -152,14 +145,14 @@
 </pre></div>
 </div>
 <p>Estimate the spectral model with WelchFactory:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mySegmentNumber</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mySegmentNumber</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myOverlapSize</span> <span class="o">=</span> <span class="mf">0.3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myFactory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">WelchFactory</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Hanning</span><span class="p">(),</span> <span class="n">mySegmentNumber</span> <span class="p">,</span> <span class="n">myOverlapSize</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myEstimatedModel_TS</span> <span class="o">=</span> <span class="n">myFactory</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">myTimeSeries</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Change the filtering window:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myFactory</span><span class="o">.</span><span class="n">setFilteringWindows</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Hamming</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myFactory</span><span class="o">.</span><span class="n">setFilteringWindows</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Hamming</span><span class="p">())</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
@@ -169,64 +162,64 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.build" title="openturns.WelchFactory.build"><code class="xref py py-obj docutils literal"><span class="pre">build</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.build" title="openturns.WelchFactory.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>(*args)</td>
 <td>Estimate the spetral model.</td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">buildAsUserDefinedSpectralModel</span></code>(*args)</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildAsUserDefinedSpectralModel</span></code>(*args)</td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.getBlockNumber" title="openturns.WelchFactory.getBlockNumber"><code class="xref py py-obj docutils literal"><span class="pre">getBlockNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.getBlockNumber" title="openturns.WelchFactory.getBlockNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBlockNumber</span></code></a>()</td>
 <td>Accessor to the block number.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.getClassName" title="openturns.WelchFactory.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.getClassName" title="openturns.WelchFactory.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.getFFTAlgorithm" title="openturns.WelchFactory.getFFTAlgorithm"><code class="xref py py-obj docutils literal"><span class="pre">getFFTAlgorithm</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.getFFTAlgorithm" title="openturns.WelchFactory.getFFTAlgorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFFTAlgorithm</span></code></a>()</td>
 <td>Accessor to the FFT algorithm used for the Fourier transform.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.getFilteringWindows" title="openturns.WelchFactory.getFilteringWindows"><code class="xref py py-obj docutils literal"><span class="pre">getFilteringWindows</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.getFilteringWindows" title="openturns.WelchFactory.getFilteringWindows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFilteringWindows</span></code></a>()</td>
 <td>Accessor to the filtering window.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.getId" title="openturns.WelchFactory.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.getId" title="openturns.WelchFactory.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.getName" title="openturns.WelchFactory.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.getName" title="openturns.WelchFactory.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.getOverlap" title="openturns.WelchFactory.getOverlap"><code class="xref py py-obj docutils literal"><span class="pre">getOverlap</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.getOverlap" title="openturns.WelchFactory.getOverlap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOverlap</span></code></a>()</td>
 <td>Accessor to the overlap rate.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.getShadowedId" title="openturns.WelchFactory.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.getShadowedId" title="openturns.WelchFactory.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.getVisibility" title="openturns.WelchFactory.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.getVisibility" title="openturns.WelchFactory.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.hasName" title="openturns.WelchFactory.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.hasName" title="openturns.WelchFactory.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.hasVisibleName" title="openturns.WelchFactory.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.hasVisibleName" title="openturns.WelchFactory.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.setBlockNumber" title="openturns.WelchFactory.setBlockNumber"><code class="xref py py-obj docutils literal"><span class="pre">setBlockNumber</span></code></a>(blockNumber)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.setBlockNumber" title="openturns.WelchFactory.setBlockNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBlockNumber</span></code></a>(blockNumber)</td>
 <td>Accessor to the block number.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.setFFTAlgorithm" title="openturns.WelchFactory.setFFTAlgorithm"><code class="xref py py-obj docutils literal"><span class="pre">setFFTAlgorithm</span></code></a>(fft)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.setFFTAlgorithm" title="openturns.WelchFactory.setFFTAlgorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setFFTAlgorithm</span></code></a>(fft)</td>
 <td>Accessor to the FFT algorithm used for the Fourier transform.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.setFilteringWindows" title="openturns.WelchFactory.setFilteringWindows"><code class="xref py py-obj docutils literal"><span class="pre">setFilteringWindows</span></code></a>(window)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.setFilteringWindows" title="openturns.WelchFactory.setFilteringWindows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setFilteringWindows</span></code></a>(window)</td>
 <td>Accessor to the filtering window.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.setName" title="openturns.WelchFactory.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.setName" title="openturns.WelchFactory.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.setOverlap" title="openturns.WelchFactory.setOverlap"><code class="xref py py-obj docutils literal"><span class="pre">setOverlap</span></code></a>(overlap)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.setOverlap" title="openturns.WelchFactory.setOverlap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOverlap</span></code></a>(overlap)</td>
 <td>Accessor to the block number.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.setShadowedId" title="openturns.WelchFactory.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WelchFactory.setShadowedId" title="openturns.WelchFactory.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.setVisibility" title="openturns.WelchFactory.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WelchFactory.setVisibility" title="openturns.WelchFactory.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -251,17 +244,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>myTimeSeries</strong> : <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal"><span class="pre">TimeSeries</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>myTimeSeries</strong> : <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSeries</span></code></a></p>
 <blockquote>
 <div><p>One realization of the  process.</p>
 </div></blockquote>
-<p><strong>myProcessSample</strong> : <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal"><span class="pre">ProcessSample</span></code></a></p>
+<p><strong>myProcessSample</strong> : <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a></p>
 <blockquote>
 <div><p>Several realizations of the  process.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mySpectralModel</strong> : <a class="reference internal" href="openturns.UserDefinedSpectralModel.html#openturns.UserDefinedSpectralModel" title="openturns.UserDefinedSpectralModel"><code class="xref py py-class docutils literal"><span class="pre">UserDefinedSpectralModel</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mySpectralModel</strong> : <a class="reference internal" href="openturns.UserDefinedSpectralModel.html#openturns.UserDefinedSpectralModel" title="openturns.UserDefinedSpectralModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserDefinedSpectralModel</span></code></a></p>
 <blockquote class="last">
 <div><p>The  spectral model estimated with the Welch estimator.</p>
 </div></blockquote>
@@ -316,7 +309,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>fftAlgo</strong> : <a class="reference internal" href="openturns.FFT.html#openturns.FFT" title="openturns.FFT"><code class="xref py py-class docutils literal"><span class="pre">FFT</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>fftAlgo</strong> : <a class="reference internal" href="openturns.FFT.html#openturns.FFT" title="openturns.FFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFT</span></code></a></p>
 <blockquote class="last">
 <div><p>The FFT algorithm used for the Fourier transform.</p>
 </div></blockquote>
@@ -334,10 +327,10 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>filteringWindow</strong> : <a class="reference internal" href="openturns.FilteringWindows.html#openturns.FilteringWindows" title="openturns.FilteringWindows"><code class="xref py py-class docutils literal"><span class="pre">FilteringWindows</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>filteringWindow</strong> : <a class="reference internal" href="openturns.FilteringWindows.html#openturns.FilteringWindows" title="openturns.FilteringWindows"><code class="xref py py-class docutils literal notranslate"><span class="pre">FilteringWindows</span></code></a></p>
 <blockquote class="last">
 <div><p>The filtering window used.</p>
-<p>By default, the <a class="reference internal" href="openturns.Hanning.html#openturns.Hanning" title="openturns.Hanning"><code class="xref py py-class docutils literal"><span class="pre">Hanning</span></code></a> one.</p>
+<p>By default, the <a class="reference internal" href="openturns.Hanning.html#openturns.Hanning" title="openturns.Hanning"><code class="xref py py-class docutils literal notranslate"><span class="pre">Hanning</span></code></a> one.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -498,7 +491,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fftAlgo</strong> : <a class="reference internal" href="openturns.FFT.html#openturns.FFT" title="openturns.FFT"><code class="xref py py-class docutils literal"><span class="pre">FFT</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fftAlgo</strong> : <a class="reference internal" href="openturns.FFT.html#openturns.FFT" title="openturns.FFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFT</span></code></a></p>
 <blockquote class="last">
 <div><p>The FFT algorithm used for the Fourier transform.</p>
 </div></blockquote>
@@ -516,7 +509,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filteringWindow</strong> : <a class="reference internal" href="openturns.FilteringWindows.html#openturns.FilteringWindows" title="openturns.FilteringWindows"><code class="xref py py-class docutils literal"><span class="pre">FilteringWindows</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filteringWindow</strong> : <a class="reference internal" href="openturns.FilteringWindows.html#openturns.FilteringWindows" title="openturns.FilteringWindows"><code class="xref py py-class docutils literal notranslate"><span class="pre">FilteringWindows</span></code></a></p>
 <blockquote class="last">
 <div><p>The filtering window used.</p>
 </div></blockquote>
@@ -622,14 +615,14 @@
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../stochastic_process.html" >Stochastic process</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

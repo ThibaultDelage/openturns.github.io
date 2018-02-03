@@ -9,16 +9,7 @@
     <title>PointWithDescription &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" accesskey="U">Base objects</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -134,11 +127,11 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 <p>Use the first constructor:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">PointWithDescription</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">PointWithDescription</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="go">[ : 0,  : 0]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PointWithDescription</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
@@ -149,7 +142,7 @@
 </pre></div>
 </div>
 <p>Use the second constructor:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PointWithDescription</span><span class="p">([(</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C3&#39;</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PointWithDescription</span><span class="p">([(</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C3&#39;</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
 <span class="go">[C1 : 2, C2 : 3, C3 : 4.5]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">vector</span><span class="o">.</span><span class="n">getDescription</span><span class="p">())</span>
@@ -157,7 +150,7 @@
 </pre></div>
 </div>
 <p>Use some functionalities:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">7.1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">7.1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
 <span class="go">[C1 : 2, C2 : 7.1, C3 : 4.5]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mf">6.2</span><span class="p">)</span>
@@ -172,97 +165,97 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.add" title="openturns.PointWithDescription.add"><code class="xref py py-obj docutils literal"><span class="pre">add</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.add" title="openturns.PointWithDescription.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(*args)</td>
 <td>Append a component (in-place).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.at" title="openturns.PointWithDescription.at"><code class="xref py py-obj docutils literal"><span class="pre">at</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.at" title="openturns.PointWithDescription.at"><code class="xref py py-obj docutils literal notranslate"><span class="pre">at</span></code></a>(*args)</td>
 <td>Access to an element of the collection.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">clean</span></code>(threshold)</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean</span></code>(threshold)</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.clear" title="openturns.PointWithDescription.clear"><code class="xref py py-obj docutils literal"><span class="pre">clear</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.clear" title="openturns.PointWithDescription.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</td>
 <td>Reset the collection to zero dimension.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.getClassName" title="openturns.PointWithDescription.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.getClassName" title="openturns.PointWithDescription.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.getDescription" title="openturns.PointWithDescription.getDescription"><code class="xref py py-obj docutils literal"><span class="pre">getDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.getDescription" title="openturns.PointWithDescription.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a>()</td>
 <td>Accessor to the componentwise description.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.getDimension" title="openturns.PointWithDescription.getDimension"><code class="xref py py-obj docutils literal"><span class="pre">getDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.getDimension" title="openturns.PointWithDescription.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
 <td>Accessor to the vector’s dimension.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.getId" title="openturns.PointWithDescription.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.getId" title="openturns.PointWithDescription.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.getName" title="openturns.PointWithDescription.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.getName" title="openturns.PointWithDescription.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.getShadowedId" title="openturns.PointWithDescription.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.getShadowedId" title="openturns.PointWithDescription.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.getSize" title="openturns.PointWithDescription.getSize"><code class="xref py py-obj docutils literal"><span class="pre">getSize</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.getSize" title="openturns.PointWithDescription.getSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSize</span></code></a>()</td>
 <td>Accessor to the vector’s dimension (or size).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.getVisibility" title="openturns.PointWithDescription.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.getVisibility" title="openturns.PointWithDescription.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.hasName" title="openturns.PointWithDescription.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.hasName" title="openturns.PointWithDescription.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.hasVisibleName" title="openturns.PointWithDescription.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.hasVisibleName" title="openturns.PointWithDescription.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.isDecreasing" title="openturns.PointWithDescription.isDecreasing"><code class="xref py py-obj docutils literal"><span class="pre">isDecreasing</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.isDecreasing" title="openturns.PointWithDescription.isDecreasing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isDecreasing</span></code></a>()</td>
 <td>Check if the components are in decreasing order.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.isEmpty" title="openturns.PointWithDescription.isEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isEmpty</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.isEmpty" title="openturns.PointWithDescription.isEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEmpty</span></code></a>()</td>
 <td>Tell if the collection is empty.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.isIncreasing" title="openturns.PointWithDescription.isIncreasing"><code class="xref py py-obj docutils literal"><span class="pre">isIncreasing</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.isIncreasing" title="openturns.PointWithDescription.isIncreasing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isIncreasing</span></code></a>()</td>
 <td>Check if the components are in increasing order.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.isMonotonic" title="openturns.PointWithDescription.isMonotonic"><code class="xref py py-obj docutils literal"><span class="pre">isMonotonic</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.isMonotonic" title="openturns.PointWithDescription.isMonotonic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isMonotonic</span></code></a>()</td>
 <td>Check if the components are in nonincreasing or nondecreasing order.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.isNonDecreasing" title="openturns.PointWithDescription.isNonDecreasing"><code class="xref py py-obj docutils literal"><span class="pre">isNonDecreasing</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.isNonDecreasing" title="openturns.PointWithDescription.isNonDecreasing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isNonDecreasing</span></code></a>()</td>
 <td>Check if the components are in nondecreasing order.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.isNonIncreasing" title="openturns.PointWithDescription.isNonIncreasing"><code class="xref py py-obj docutils literal"><span class="pre">isNonIncreasing</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.isNonIncreasing" title="openturns.PointWithDescription.isNonIncreasing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isNonIncreasing</span></code></a>()</td>
 <td>Check if the components are in nonincreasing order.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.norm" title="openturns.PointWithDescription.norm"><code class="xref py py-obj docutils literal"><span class="pre">norm</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.norm" title="openturns.PointWithDescription.norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code></a>()</td>
 <td>Compute the Euclidean (<img class="math" src="../../_images/math/678e0ce2206232779f6e7e48772f085e6c6233ea.svg" alt="L^2"/>) norm.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.norm1" title="openturns.PointWithDescription.norm1"><code class="xref py py-obj docutils literal"><span class="pre">norm1</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.norm1" title="openturns.PointWithDescription.norm1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm1</span></code></a>()</td>
 <td>Compute the <img class="math" src="../../_images/math/2bfa2565df78c7033af7726feeb55de6bd378ae2.svg" alt="L^1"/> norm.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.normInf" title="openturns.PointWithDescription.normInf"><code class="xref py py-obj docutils literal"><span class="pre">normInf</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.normInf" title="openturns.PointWithDescription.normInf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normInf</span></code></a>()</td>
 <td>Compute the <img class="math" src="../../_images/math/60ca45bc502221546c80a31e1eefe2c5b987b474.svg" alt="L^{\inf}"/> norm.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.normSquare" title="openturns.PointWithDescription.normSquare"><code class="xref py py-obj docutils literal"><span class="pre">normSquare</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.normSquare" title="openturns.PointWithDescription.normSquare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normSquare</span></code></a>()</td>
 <td>Compute the squared Euclidean norm.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.normalize" title="openturns.PointWithDescription.normalize"><code class="xref py py-obj docutils literal"><span class="pre">normalize</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.normalize" title="openturns.PointWithDescription.normalize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize</span></code></a>()</td>
 <td>Compute the normalized vector with respect to its Euclidean norm.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.normalizeSquare" title="openturns.PointWithDescription.normalizeSquare"><code class="xref py py-obj docutils literal"><span class="pre">normalizeSquare</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.normalizeSquare" title="openturns.PointWithDescription.normalizeSquare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalizeSquare</span></code></a>()</td>
 <td>Compute the normalized vector with respect to its squared Euclidean norm.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.resize" title="openturns.PointWithDescription.resize"><code class="xref py py-obj docutils literal"><span class="pre">resize</span></code></a>(newSize)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.resize" title="openturns.PointWithDescription.resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resize</span></code></a>(newSize)</td>
 <td>Change the size of the collection.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.setDescription" title="openturns.PointWithDescription.setDescription"><code class="xref py py-obj docutils literal"><span class="pre">setDescription</span></code></a>(description)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.setDescription" title="openturns.PointWithDescription.setDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDescription</span></code></a>(description)</td>
 <td>Accessor to the componentwise description.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.setName" title="openturns.PointWithDescription.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.setName" title="openturns.PointWithDescription.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.setShadowedId" title="openturns.PointWithDescription.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.PointWithDescription.setShadowedId" title="openturns.PointWithDescription.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.setVisibility" title="openturns.PointWithDescription.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.PointWithDescription.setVisibility" title="openturns.PointWithDescription.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -290,7 +283,7 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -328,7 +321,7 @@
 <code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.PointWithDescription.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset the collection to zero dimension.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
@@ -363,7 +356,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Description of the components.</p>
 </div></blockquote>
@@ -373,7 +366,7 @@
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.PointWithDescription.setDescription" title="openturns.PointWithDescription.setDescription"><code class="xref py py-obj docutils literal"><span class="pre">setDescription</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.PointWithDescription.setDescription" title="openturns.PointWithDescription.setDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDescription</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -526,7 +519,7 @@
 <code class="descname">isDecreasing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.PointWithDescription.isDecreasing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the components are in decreasing order.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">isDecreasing</span><span class="p">()</span>
 <span class="go">True</span>
@@ -557,7 +550,7 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">()</span>
 <span class="go">False</span>
@@ -573,7 +566,7 @@
 <code class="descname">isIncreasing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.PointWithDescription.isIncreasing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the components are in increasing order.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">isIncreasing</span><span class="p">()</span>
 <span class="go">True</span>
@@ -592,7 +585,7 @@
 <code class="descname">isMonotonic</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.PointWithDescription.isMonotonic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the components are in nonincreasing or nondecreasing order.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">isMonotonic</span><span class="p">()</span>
 <span class="go">True</span>
@@ -611,7 +604,7 @@
 <code class="descname">isNonDecreasing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.PointWithDescription.isNonDecreasing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the components are in nondecreasing order.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">isNonDecreasing</span><span class="p">()</span>
 <span class="go">True</span>
@@ -630,7 +623,7 @@
 <code class="descname">isNonIncreasing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.PointWithDescription.isNonIncreasing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the components are in nonincreasing order.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">isNonIncreasing</span><span class="p">()</span>
 <span class="go">True</span>
@@ -665,7 +658,7 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>
 <span class="go">3.741657...</span>
@@ -693,7 +686,7 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">norm1</span><span class="p">()</span>
 <span class="go">6.0</span>
@@ -721,7 +714,7 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">normInf</span><span class="p">()</span>
 <span class="go">3.0</span>
@@ -747,10 +740,10 @@
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.PointWithDescription.norm" title="openturns.PointWithDescription.norm"><code class="xref py py-obj docutils literal"><span class="pre">norm</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.PointWithDescription.norm" title="openturns.PointWithDescription.norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">normSquare</span><span class="p">()</span>
 <span class="go">14.0</span>
@@ -766,7 +759,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>normalized_vector</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>normalized_vector</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote>
 <div><p>The normalized vector with respect to its Euclidean norm.</p>
 </div></blockquote>
@@ -779,10 +772,10 @@
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.PointWithDescription.norm" title="openturns.PointWithDescription.norm"><code class="xref py py-obj docutils literal"><span class="pre">norm</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.PointWithDescription.norm" title="openturns.PointWithDescription.norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">normalize</span><span class="p">())</span>
 <span class="go">[0.267261,0.534522,0.801784]</span>
@@ -811,10 +804,10 @@
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.PointWithDescription.normSquare" title="openturns.PointWithDescription.normSquare"><code class="xref py py-obj docutils literal"><span class="pre">normSquare</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.PointWithDescription.normSquare" title="openturns.PointWithDescription.normSquare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normSquare</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">normalizeSquare</span><span class="p">())</span>
 <span class="go">[0.0714286,0.285714,0.642857]</span>
@@ -842,7 +835,7 @@
 <p>If the new size is smaller than the older one, the last elements are thrown
 away, else the new elements are set to the default value of the element type.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">[4,4]</span>
@@ -952,14 +945,14 @@ away, else the new elements are set to the default value of the element type.</p
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" >Base objects</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

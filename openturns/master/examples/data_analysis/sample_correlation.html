@@ -9,16 +9,7 @@
     <title>Correlation analysis on samples &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -280,22 +273,22 @@ output sample Y and the corresponding inputs using various estimators:</p>
 <li>SRRC: Standard Rank Regression Coefficient</li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create X/Y data</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">formula</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X3+sin(_pi*X1)+7*sin(X2)*sin(_pi*X2)+&#39;</span> <span class="o">+</span> \
@@ -311,11 +304,11 @@ output sample Y and the corresponding inputs using various estimators:</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># PCC</span>
 <span class="n">indices</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationAnalysis</span><span class="o">.</span><span class="n">PCC</span><span class="p">(</span><span class="n">inputDesign</span><span class="p">,</span> <span class="n">outputDesign</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
@@ -331,17 +324,17 @@ output sample Y and the corresponding inputs using various estimators:</p>
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">ot</span><span class="o">.</span><span class="n">SaltelliSensitivityAlgorithm</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;PCC coefficients&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[17]:
 </pre></div>
 </div>
@@ -349,11 +342,11 @@ output sample Y and the corresponding inputs using various estimators:</p>
 <img alt="../../_images/examples_data_analysis_sample_correlation_5_0.svg" src="../../_images/examples_data_analysis_sample_correlation_5_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># PRCC</span>
 <span class="n">indices</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationAnalysis</span><span class="o">.</span><span class="n">PRCC</span><span class="p">(</span><span class="n">inputDesign</span><span class="p">,</span> <span class="n">outputDesign</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
@@ -369,17 +362,17 @@ output sample Y and the corresponding inputs using various estimators:</p>
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">ot</span><span class="o">.</span><span class="n">SaltelliSensitivityAlgorithm</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;PRCC coefficients&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[19]:
 </pre></div>
 </div>
@@ -387,11 +380,11 @@ output sample Y and the corresponding inputs using various estimators:</p>
 <img alt="../../_images/examples_data_analysis_sample_correlation_7_0.svg" src="../../_images/examples_data_analysis_sample_correlation_7_0.svg" /></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># SRC</span>
 <span class="n">indices</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationAnalysis</span><span class="o">.</span><span class="n">SRC</span><span class="p">(</span><span class="n">inputDesign</span><span class="p">,</span> <span class="n">outputDesign</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
@@ -399,17 +392,17 @@ output sample Y and the corresponding inputs using various estimators:</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">ot</span><span class="o">.</span><span class="n">SaltelliSensitivityAlgorithm</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;SRC coefficients&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[20]:
 </pre></div>
 </div>
@@ -417,11 +410,11 @@ output sample Y and the corresponding inputs using various estimators:</p>
 <img alt="../../_images/examples_data_analysis_sample_correlation_9_0.svg" src="../../_images/examples_data_analysis_sample_correlation_9_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># SRRC</span>
 <span class="n">indices</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationAnalysis</span><span class="o">.</span><span class="n">SRC</span><span class="p">(</span><span class="n">inputDesign</span><span class="p">,</span> <span class="n">outputDesign</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
@@ -437,17 +430,17 @@ output sample Y and the corresponding inputs using various estimators:</p>
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">ot</span><span class="o">.</span><span class="n">SaltelliSensitivityAlgorithm</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;SRRC coefficients&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[22]:
 </pre></div>
 </div>
@@ -455,11 +448,11 @@ output sample Y and the corresponding inputs using various estimators:</p>
 <img alt="../../_images/examples_data_analysis_sample_correlation_11_0.svg" src="../../_images/examples_data_analysis_sample_correlation_11_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Pearson</span>
 <span class="n">indices</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationAnalysis</span><span class="o">.</span><span class="n">PearsonCorrelation</span><span class="p">(</span><span class="n">inputDesign</span><span class="p">,</span> <span class="n">outputDesign</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
@@ -467,27 +460,27 @@ output sample Y and the corresponding inputs using various estimators:</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[25]:
 </pre></div>
 </div>
-<div class="output_area highlight-none"><div class="highlight"><pre>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
 <span></span>[0.19407781325146287, 0.021056409483931532, 0.1714764078381607]
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [26]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">ot</span><span class="o">.</span><span class="n">SaltelliSensitivityAlgorithm</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;Pearson&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[26]:
 </pre></div>
 </div>
@@ -495,11 +488,11 @@ output sample Y and the corresponding inputs using various estimators:</p>
 <img alt="../../_images/examples_data_analysis_sample_correlation_13_0.svg" src="../../_images/examples_data_analysis_sample_correlation_13_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [27]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Pearson</span>
 <span class="n">indices</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationAnalysis</span><span class="o">.</span><span class="n">SpearmanCorrelation</span><span class="p">(</span><span class="n">inputDesign</span><span class="p">,</span> <span class="n">outputDesign</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
@@ -515,17 +508,17 @@ output sample Y and the corresponding inputs using various estimators:</p>
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [28]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">ot</span><span class="o">.</span><span class="n">SaltelliSensitivityAlgorithm</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;Spearman&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[28]:
 </pre></div>
 </div>
@@ -561,7 +554,7 @@ output sample Y and the corresponding inputs using various estimators:</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

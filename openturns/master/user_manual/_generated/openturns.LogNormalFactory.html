@@ -9,16 +9,7 @@
     <title>LogNormalFactory &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../statistics_on_sample.html" accesskey="U">Statistics on sample</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -117,7 +110,7 @@
 </dl>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-obj docutils literal"><span class="pre">DistributionFactory</span></code></a>, <a class="reference internal" href="openturns.LogNormal.html#openturns.LogNormal" title="openturns.LogNormal"><code class="xref py py-obj docutils literal"><span class="pre">LogNormal</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DistributionFactory</span></code></a>, <a class="reference internal" href="openturns.LogNormal.html#openturns.LogNormal" title="openturns.LogNormal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LogNormal</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>OpenTURNS proposes several estimators to build a LogNormal distribution
@@ -134,33 +127,33 @@ its empirical skewness.</li>
 </ul>
 <p>We note <img class="math" src="../../_images/math/308e57bbead7e46e5749c41d89e823df535bd361.svg" alt="\omega = e^{\sigma_l^2}"/>. The estimator <img class="math" src="../../_images/math/5cd015abe56dc0f06dbf79f1da2ae50056a31307.svg" alt="\hat{\omega}_n"/> of
 <img class="math" src="../../_images/math/ab0b46bdaaad91b32a75097b61ca492b76e550ce.svg" alt="\omega"/> is the positive root of the relation:</p>
-<div class="math" id="equation-omega_moment_relation">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-omega_moment_relation" title="Permalink to this equation">¶</a></span><img src="../../_images/math/178d5e7c4b6fc47c8de8080f622f7f95a20a206d.svg" alt="\omega^3 + 3 \omega^2 - (4 + a_{3,n}^2) = 0"/></p>
+<div class="math" id="equation-omega-moment-relation">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-omega-moment-relation" title="Permalink to this equation">¶</a></span><img src="../../_images/math/178d5e7c4b6fc47c8de8080f622f7f95a20a206d.svg" alt="\omega^3 + 3 \omega^2 - (4 + a_{3,n}^2) = 0"/></p>
 </div><p>Then we estimate <img class="math" src="../../_images/math/a7a4d68d4319519cb17f1789d20f70caab022345.svg" alt="(\hat{\mu}_{ln}, \hat{\sigma}_{ln}, \hat{\gamma}_{n})"/>
 using:</p>
-<div class="math" id="equation-moment_estimator">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-moment_estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/23fba068d1c6d33ad7feab7cdf4218056364748e.svg" alt="\hat{\mu}_{ln} &amp;= \log \hat{\beta}_{n} \\
+<div class="math" id="equation-moment-estimator">
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-moment-estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/23fba068d1c6d33ad7feab7cdf4218056364748e.svg" alt="\hat{\mu}_{ln} &amp;= \log \hat{\beta}_{n} \\
 \hat{\sigma}_{ln} &amp;= \sqrt{ \log \hat{\omega}_{n} } \\
 \hat{\gamma}_{ln} &amp;= \overline{x}_n - \hat{\beta}_{n} \sqrt{ \hat{\omega}_{n} }"/></p>
 </div><p>where <img class="math" src="../../_images/math/e9aba7fed5c51307c93b026d1d93bad796edfb7e.svg" alt="\displaystyle \hat{\beta}_{n} = \frac{s_n}{\hat{\omega}_{n} (\hat{\omega}_{n} - 1)}"/>.</p>
 <p><strong>Modified moments based estimator:</strong></p>
 <p>Using <img class="math" src="../../_images/math/70e591a21c188d2136590536c8894a12695dca2c.svg" alt="\overline{x}_n"/> and <img class="math" src="../../_images/math/e70db3b1637b4a6d54037a7fb661a6f4ea59fc6c.svg" alt="s_n^2"/> previously defined, the third
 equation is:</p>
-<div class="math" id="equation-expected_modified_moment">
-<p><span class="eqno">(3)<a class="headerlink" href="#equation-expected_modified_moment" title="Permalink to this equation">¶</a></span><img src="../../_images/math/467e994580280690ba28e1d8449956ac5d82793e.svg" alt="\Eset[ \log (X_{(1)} - \gamma)] = \log (x_{(1)} - \gamma)"/></p>
+<div class="math" id="equation-expected-modified-moment">
+<p><span class="eqno">(3)<a class="headerlink" href="#equation-expected-modified-moment" title="Permalink to this equation">¶</a></span><img src="../../_images/math/467e994580280690ba28e1d8449956ac5d82793e.svg" alt="\Eset[ \log (X_{(1)} - \gamma)] = \log (x_{(1)} - \gamma)"/></p>
 </div><p>The quantity <img class="math" src="../../_images/math/06e4a5fb3f5aabc7234ee3a9dcc0286074adff47.svg" alt="\displaystyle EZ_1 (n) = \frac{\Eset[ \log (X_{(1)} - \gamma)] - \mu_l}{\sigma_l}"/>
 is the mean of the first order statistics of a standard normal sample of size
 <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/>. We have:</p>
-<div class="math" id="equation-EZ1_equation">
-<p><span class="eqno">(4)<a class="headerlink" href="#equation-EZ1_equation" title="Permalink to this equation">¶</a></span><img src="../../_images/math/48ed3b73fb9d919769f438ab87c035a95955de3e.svg" alt="EZ_1(n) = \int_\Rset nz\phi(z) (1 - \Phi(z))^{n-1}\di{z}"/></p>
+<div class="math" id="equation-ez1-equation">
+<p><span class="eqno">(4)<a class="headerlink" href="#equation-ez1-equation" title="Permalink to this equation">¶</a></span><img src="../../_images/math/48ed3b73fb9d919769f438ab87c035a95955de3e.svg" alt="EZ_1(n) = \int_\Rset nz\phi(z) (1 - \Phi(z))^{n-1}\di{z}"/></p>
 </div><p>where <img class="math" src="../../_images/math/7325cf4b844730c2c2cfdc9b4e972a1d74d782b7.svg" alt="\varphi"/> and <img class="math" src="../../_images/math/7761d30f08dceb85f7129166af1cd74cd75f8c7c.svg" alt="\Phi"/> are the PDF and CDF of the standard
 normal distribution. The estimator <img class="math" src="../../_images/math/f6767d396bc193a4663e918793c50a0d59351895.svg" alt="\hat{\omega}_{n}"/> of <img class="math" src="../../_images/math/ab0b46bdaaad91b32a75097b61ca492b76e550ce.svg" alt="\omega"/> is
 obtained as the solution of:</p>
-<div class="math" id="equation-omega_modified_moment_relation">
-<p><span class="eqno">(5)<a class="headerlink" href="#equation-omega_modified_moment_relation" title="Permalink to this equation">¶</a></span><img src="../../_images/math/f0db749f4cd911b009141ea3d838799b86374b25.svg" alt="\omega (\omega - 1) - \kappa_n \left[ \sqrt{\omega} - e^{EZ_1(n)\sqrt{\log \omega}} \right]^2 = 0"/></p>
+<div class="math" id="equation-omega-modified-moment-relation">
+<p><span class="eqno">(5)<a class="headerlink" href="#equation-omega-modified-moment-relation" title="Permalink to this equation">¶</a></span><img src="../../_images/math/f0db749f4cd911b009141ea3d838799b86374b25.svg" alt="\omega (\omega - 1) - \kappa_n \left[ \sqrt{\omega} - e^{EZ_1(n)\sqrt{\log \omega}} \right]^2 = 0"/></p>
 </div><p>where <img class="math" src="../../_images/math/34c52985f7ddbda437abc72b54b027f758506b90.svg" alt="\displaystyle \kappa_n = \frac{s_n^2}{(\overline{x}_n - x_{(1)})^2}"/>.
 Then we have <img class="math" src="../../_images/math/a7a4d68d4319519cb17f1789d20f70caab022345.svg" alt="(\hat{\mu}_{ln}, \hat{\sigma}_{ln}, \hat{\gamma}_{n})"/> using
-the relations defined for the moments based estimator <a class="reference internal" href="#equation-moment_estimator">(2)</a>.</p>
+the relations defined for the moments based estimator <a class="reference internal" href="#equation-moment-estimator">(2)</a>.</p>
 <p><strong>Local maximum likelihood estimator:</strong></p>
 <p>The following sums are defined:</p>
 <div class="math">
@@ -170,12 +163,12 @@ S_2 &amp;= \sum_{i=1}^n \log^2 (x_i - \gamma) \\
 S_3 &amp;= \sum_{i=1}^n \frac{\log (x_i - \gamma)}{x_i - \gamma}"/></p>
 </div><p>The Maximum Likelihood estimator of <img class="math" src="../../_images/math/4254a1e3e7e8217609ce0949ddbd956f9f36a7d9.svg" alt="(\mu_{l}, \sigma_{l}, \gamma)"/> is 
 defined by:</p>
-<div class="math" id="equation-mll_estimator">
-<p><span class="eqno">(6)<a class="headerlink" href="#equation-mll_estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/d1ee44617ac47e8efb523552108c603af8b46953.svg" alt="\hat{\mu}_{l,n} &amp;= \frac{S_1(\hat{\gamma})}{n} \\
+<div class="math" id="equation-mll-estimator">
+<p><span class="eqno">(6)<a class="headerlink" href="#equation-mll-estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/d1ee44617ac47e8efb523552108c603af8b46953.svg" alt="\hat{\mu}_{l,n} &amp;= \frac{S_1(\hat{\gamma})}{n} \\
 \hat{\sigma}_{l,n}^2 &amp;= \frac{S_2(\hat{\gamma})}{n} - \hat{\mu}_{l,n}^2"/></p>
 </div><p>Thus, <img class="math" src="../../_images/math/85904812b68ca5b385e36733cb6a0bc9dbe3b48d.svg" alt="\hat{\gamma}_n"/> satisfies the relation:</p>
-<div class="math" id="equation-mll_relation">
-<p><span class="eqno">(7)<a class="headerlink" href="#equation-mll_relation" title="Permalink to this equation">¶</a></span><img src="../../_images/math/8c63a54d556d7091ea33928a5623493de3816250.svg" alt="S_0 (\gamma) \left(S_2(\gamma) - S_1(\gamma) \left( 1 + \frac{S_1(\gamma)}{n} \right) \right) + n S_4(\gamma) = 0"/></p>
+<div class="math" id="equation-mll-relation">
+<p><span class="eqno">(7)<a class="headerlink" href="#equation-mll-relation" title="Permalink to this equation">¶</a></span><img src="../../_images/math/8c63a54d556d7091ea33928a5623493de3816250.svg" alt="S_0 (\gamma) \left(S_2(\gamma) - S_1(\gamma) \left( 1 + \frac{S_1(\gamma)}{n} \right) \right) + n S_4(\gamma) = 0"/></p>
 </div><p>under the constraint <img class="math" src="../../_images/math/56e67c3f20ec6702887d0da1733e0a7c8eb079a2.svg" alt="\gamma \leq \min x_i"/>.</p>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
@@ -184,58 +177,58 @@ defined by:</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.build" title="openturns.LogNormalFactory.build"><code class="xref py py-obj docutils literal"><span class="pre">build</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.build" title="openturns.LogNormalFactory.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>(*args)</td>
 <td>Build the distribution.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.buildAsLogNormal" title="openturns.LogNormalFactory.buildAsLogNormal"><code class="xref py py-obj docutils literal"><span class="pre">buildAsLogNormal</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.buildAsLogNormal" title="openturns.LogNormalFactory.buildAsLogNormal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildAsLogNormal</span></code></a>(*args)</td>
 <td>Build the distribution as a LogNormal type.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.buildEstimator" title="openturns.LogNormalFactory.buildEstimator"><code class="xref py py-obj docutils literal"><span class="pre">buildEstimator</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.buildEstimator" title="openturns.LogNormalFactory.buildEstimator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildEstimator</span></code></a>(*args)</td>
 <td>Build the distribution and the parameter distribution.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.buildMethodOfLocalLikelihoodMaximization" title="openturns.LogNormalFactory.buildMethodOfLocalLikelihoodMaximization"><code class="xref py py-obj docutils literal"><span class="pre">buildMethodOfLocalLikelihoodMaximization</span></code></a>(sample)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.buildMethodOfLocalLikelihoodMaximization" title="openturns.LogNormalFactory.buildMethodOfLocalLikelihoodMaximization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildMethodOfLocalLikelihoodMaximization</span></code></a>(sample)</td>
 <td>Build the distribution based on the local likelihood maximum estimator.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.buildMethodOfModifiedMoments" title="openturns.LogNormalFactory.buildMethodOfModifiedMoments"><code class="xref py py-obj docutils literal"><span class="pre">buildMethodOfModifiedMoments</span></code></a>(sample)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.buildMethodOfModifiedMoments" title="openturns.LogNormalFactory.buildMethodOfModifiedMoments"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildMethodOfModifiedMoments</span></code></a>(sample)</td>
 <td>Build the distribution based on the modified moments estimator.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.buildMethodOfMoments" title="openturns.LogNormalFactory.buildMethodOfMoments"><code class="xref py py-obj docutils literal"><span class="pre">buildMethodOfMoments</span></code></a>(sample)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.buildMethodOfMoments" title="openturns.LogNormalFactory.buildMethodOfMoments"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildMethodOfMoments</span></code></a>(sample)</td>
 <td>Build the distribution based on the method of moments estimator.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.getBootstrapSize" title="openturns.LogNormalFactory.getBootstrapSize"><code class="xref py py-obj docutils literal"><span class="pre">getBootstrapSize</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.getBootstrapSize" title="openturns.LogNormalFactory.getBootstrapSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBootstrapSize</span></code></a>()</td>
 <td>Accessor to the bootstrap size.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.getClassName" title="openturns.LogNormalFactory.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.getClassName" title="openturns.LogNormalFactory.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.getId" title="openturns.LogNormalFactory.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.getId" title="openturns.LogNormalFactory.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.getName" title="openturns.LogNormalFactory.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.getName" title="openturns.LogNormalFactory.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.getShadowedId" title="openturns.LogNormalFactory.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.getShadowedId" title="openturns.LogNormalFactory.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.getVisibility" title="openturns.LogNormalFactory.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.getVisibility" title="openturns.LogNormalFactory.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.hasName" title="openturns.LogNormalFactory.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.hasName" title="openturns.LogNormalFactory.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.hasVisibleName" title="openturns.LogNormalFactory.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.hasVisibleName" title="openturns.LogNormalFactory.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.setBootstrapSize" title="openturns.LogNormalFactory.setBootstrapSize"><code class="xref py py-obj docutils literal"><span class="pre">setBootstrapSize</span></code></a>(bootstrapSize)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.setBootstrapSize" title="openturns.LogNormalFactory.setBootstrapSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBootstrapSize</span></code></a>(bootstrapSize)</td>
 <td>Accessor to the bootstrap size.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.setName" title="openturns.LogNormalFactory.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.setName" title="openturns.LogNormalFactory.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.setShadowedId" title="openturns.LogNormalFactory.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LogNormalFactory.setShadowedId" title="openturns.LogNormalFactory.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.setVisibility" title="openturns.LogNormalFactory.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LogNormalFactory.setVisibility" title="openturns.LogNormalFactory.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -272,7 +265,7 @@ defined by:</p>
 - 1 : Modified moment estimator
 - 2 : method of moment estimator.</p>
 </div></blockquote>
-<p><strong>param</strong> : Collection of <a class="reference internal" href="openturns.PointWithDescription.html#openturns.PointWithDescription" title="openturns.PointWithDescription"><code class="xref py py-class docutils literal"><span class="pre">PointWithDescription</span></code></a></p>
+<p><strong>param</strong> : Collection of <a class="reference internal" href="openturns.PointWithDescription.html#openturns.PointWithDescription" title="openturns.PointWithDescription"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointWithDescription</span></code></a></p>
 <blockquote class="last">
 <div><p>A vector of parameters of the distribution.</p>
 </div></blockquote>
@@ -310,7 +303,7 @@ defined by:</p>
 - 1 : Modified moment estimator
 - 2 : method of moment estimator.</p>
 </div></blockquote>
-<p><strong>param</strong> : Collection of <a class="reference internal" href="openturns.PointWithDescription.html#openturns.PointWithDescription" title="openturns.PointWithDescription"><code class="xref py py-class docutils literal"><span class="pre">PointWithDescription</span></code></a></p>
+<p><strong>param</strong> : Collection of <a class="reference internal" href="openturns.PointWithDescription.html#openturns.PointWithDescription" title="openturns.PointWithDescription"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointWithDescription</span></code></a></p>
 <blockquote class="last">
 <div><p>A vector of parameters of the distribution.</p>
 </div></blockquote>
@@ -319,17 +312,17 @@ defined by:</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>In the first usage, the default <a class="reference internal" href="openturns.LogNormal.html#openturns.LogNormal" title="openturns.LogNormal"><code class="xref py py-class docutils literal"><span class="pre">LogNormal</span></code></a> distribution is built.</p>
+<p>In the first usage, the default <a class="reference internal" href="openturns.LogNormal.html#openturns.LogNormal" title="openturns.LogNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogNormal</span></code></a> distribution is built.</p>
 <p>In the second usage, the parameters are evaluated according the following strategy:</p>
 <ul class="simple">
 <li>OpenTURNS first uses the local likelihood maximum based estimator.</li>
 <li>OpenTURNS uses the modified moments based estimator if the resolution of
-<a class="reference internal" href="#equation-mll_relation">(7)</a> is not possible.</li>
+<a class="reference internal" href="#equation-mll-relation">(7)</a> is not possible.</li>
 <li>OpenTURNS uses the moments based estimator, which are always defined, if
-the resolution of <a class="reference internal" href="#equation-omega_modified_moment_relation">(5)</a> is not possible.</li>
+the resolution of <a class="reference internal" href="#equation-omega-modified-moment-relation">(5)</a> is not possible.</li>
 </ul>
-<p>In the third usage, the parameters of the <a class="reference internal" href="openturns.LogNormal.html#openturns.LogNormal" title="openturns.LogNormal"><code class="xref py py-class docutils literal"><span class="pre">LogNormal</span></code></a> are estimated using the given method.</p>
-<p>In the fourth usage, a <a class="reference internal" href="openturns.LogNormal.html#openturns.LogNormal" title="openturns.LogNormal"><code class="xref py py-class docutils literal"><span class="pre">LogNormal</span></code></a> distribution corresponding to the given parameters is built.</p>
+<p>In the third usage, the parameters of the <a class="reference internal" href="openturns.LogNormal.html#openturns.LogNormal" title="openturns.LogNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogNormal</span></code></a> are estimated using the given method.</p>
+<p>In the fourth usage, a <a class="reference internal" href="openturns.LogNormal.html#openturns.LogNormal" title="openturns.LogNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogNormal</span></code></a> distribution corresponding to the given parameters is built.</p>
 </dd></dl>
 
 <dl class="method">
@@ -344,13 +337,13 @@ the resolution of <a class="reference internal" href="#equation-omega_modified_m
 <blockquote>
 <div><p>Sample from which the distribution parameters are estimated.</p>
 </div></blockquote>
-<p><strong>parameters</strong> : <a class="reference internal" href="openturns.DistributionParameters.html#openturns.DistributionParameters" title="openturns.DistributionParameters"><code class="xref py py-class docutils literal"><span class="pre">DistributionParameters</span></code></a></p>
+<p><strong>parameters</strong> : <a class="reference internal" href="openturns.DistributionParameters.html#openturns.DistributionParameters" title="openturns.DistributionParameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">DistributionParameters</span></code></a></p>
 <blockquote>
 <div><p>Optional, the parametrization.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>resDist</strong> : <a class="reference internal" href="openturns.DistributionFactoryResult.html#openturns.DistributionFactoryResult" title="openturns.DistributionFactoryResult"><code class="xref py py-class docutils literal"><span class="pre">DistributionFactoryResult</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>resDist</strong> : <a class="reference internal" href="openturns.DistributionFactoryResult.html#openturns.DistributionFactoryResult" title="openturns.DistributionFactoryResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">DistributionFactoryResult</span></code></a></p>
 <blockquote class="last">
 <div><p>The results.</p>
 </div></blockquote>
@@ -364,7 +357,7 @@ the resolution of <a class="reference internal" href="#equation-omega_modified_m
 <div><ul class="simple">
 <li>Moments method: the asymptotic parameters distribution is normal and estimated by Bootstrap on the initial data;</li>
 <li>Maximum likelihood method with a regular model: the asymptotic parameters distribution is normal and its covariance matrix is the inverse Fisher information matrix;</li>
-<li>Other methods: the asymptotic parameters distribution is estimated by Bootstrap on the initial data and kernel fitting (see <a class="reference internal" href="openturns.KernelSmoothing.html#openturns.KernelSmoothing" title="openturns.KernelSmoothing"><code class="xref py py-class docutils literal"><span class="pre">KernelSmoothing</span></code></a>).</li>
+<li>Other methods: the asymptotic parameters distribution is estimated by Bootstrap on the initial data and kernel fitting (see <a class="reference internal" href="openturns.KernelSmoothing.html#openturns.KernelSmoothing" title="openturns.KernelSmoothing"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelSmoothing</span></code></a>).</li>
 </ul>
 </div></blockquote>
 <p>If another set of parameters is specified, the native parameters distribution is first estimated and the new distribution is determined from it:</p>
@@ -376,17 +369,17 @@ the resolution of <a class="reference internal" href="#equation-omega_modified_m
 </div></blockquote>
 <p class="rubric">Examples</p>
 <p>Create a sample from a Beta distribution:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Beta</span><span class="p">()</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">ResourceMap</span><span class="o">.</span><span class="n">SetAsUnsignedInteger</span><span class="p">(</span><span class="s1">&#39;DistributionFactory-DefaultBootstrapSize&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Fit a Beta distribution in the native parameters and create a <a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-class docutils literal"><span class="pre">DistributionFactory</span></code></a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<p>Fit a Beta distribution in the native parameters and create a <a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">DistributionFactory</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/73d1520885911cd9f121c0cedc7d91e11efafea8.svg" alt="(\mu, \sigma, a, b)"/>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaMuSigma</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaMuSigma</span><span class="p">())</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -685,14 +678,14 @@ the resolution of <a class="reference internal" href="#equation-omega_modified_m
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../statistics_on_sample.html" >Statistics on sample</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

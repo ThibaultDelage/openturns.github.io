@@ -9,16 +9,7 @@
     <title>HypothesisTest_FullSpearman &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../statistics_on_sample.html" accesskey="U">Statistics on sample</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -131,7 +124,7 @@
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>testResult</strong> : <a class="reference internal" href="openturns.TestResult.html#openturns.TestResult" title="openturns.TestResult"><code class="xref py py-class docutils literal"><span class="pre">TestResult</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>testResult</strong> : <a class="reference internal" href="openturns.TestResult.html#openturns.TestResult" title="openturns.TestResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">TestResult</span></code></a></p>
 <blockquote class="last">
 <div><p>Structure containing the result of the test.</p>
 </div></blockquote>
@@ -141,7 +134,7 @@
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.HypothesisTest_Spearman.html#openturns.HypothesisTest_Spearman" title="openturns.HypothesisTest_Spearman"><code class="xref py py-obj docutils literal"><span class="pre">HypothesisTest_Spearman</span></code></a>, <a class="reference internal" href="openturns.HypothesisTest_PartialSpearman.html#openturns.HypothesisTest_PartialSpearman" title="openturns.HypothesisTest_PartialSpearman"><code class="xref py py-obj docutils literal"><span class="pre">HypothesisTest_PartialSpearman</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.HypothesisTest_Spearman.html#openturns.HypothesisTest_Spearman" title="openturns.HypothesisTest_Spearman"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HypothesisTest_Spearman</span></code></a>, <a class="reference internal" href="openturns.HypothesisTest_PartialSpearman.html#openturns.HypothesisTest_PartialSpearman" title="openturns.HypothesisTest_PartialSpearman"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HypothesisTest_PartialSpearman</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The Full Spearman Test is used to check hypothesis of non monotonous relation
@@ -151,7 +144,7 @@ dimension 1. If <em>firstSample[i]</em> is the numerical sample extracted from
 FullSpearman performs the independence Spearman test simultaneously on all
 <em>firstSample[i]</em> and <em>secondSample</em>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
@@ -186,14 +179,14 @@ FullSpearman performs the independence Spearman test simultaneously on all
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../statistics_on_sample.html" >Statistics on sample</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

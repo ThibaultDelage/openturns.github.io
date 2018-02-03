@@ -9,16 +9,7 @@
     <title>TrendTransform &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../transformations.html" accesskey="U">Transformations</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -111,7 +104,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>myTrendFunc</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>myTrendFunc</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>The trend function <img class="math" src="../../_images/math/74ebdfa02b124990b78083a25a7fc3d1dacea04e.svg" alt="f_{trend}"/> of a process.</p>
 </div></blockquote>
@@ -128,13 +121,13 @@
 <p><img src="../../_images/math/2b7c3e7a69a1d08283dce47e3d3ad16bf7cd8e07.svg" alt="\vect{x}^{stat}_i = \vect{x}_i - f_{trend}(\vect{t}_i)"/></p>
 </div><p class="rubric">Examples</p>
 <p>Create a trend function: <img class="math" src="../../_images/math/e08139eb180bdcb179a4a3bb2054f627faf2b0d8.svg" alt="f_{trend} : \Rset \mapsto \Rset"/> where <img class="math" src="../../_images/math/5a028c52c892490caacff209fb09a6d3f71fda35.svg" alt="f_{trend}(t)=1+2t+t^2"/>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;1+2*t+t^2&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fTrend</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">TrendTransform</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Add it to a process:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myGrid</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RegularGrid</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myGrid</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RegularGrid</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">amplitude</span><span class="o">=</span><span class="p">[</span><span class="mf">5.0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">scale</span><span class="o">=</span><span class="p">[</span><span class="mf">0.2</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myCovModel</span><span class="o">=</span><span class="n">ot</span><span class="o">.</span><span class="n">ExponentialModel</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">)</span>
@@ -143,12 +136,12 @@
 </pre></div>
 </div>
 <p>Remove it from a field:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myField</span> <span class="o">=</span> <span class="n">myYProcess</span><span class="o">.</span><span class="n">getRealization</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myField</span> <span class="o">=</span> <span class="n">myYProcess</span><span class="o">.</span><span class="n">getRealization</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myStatField</span> <span class="o">=</span> <span class="n">fTrend</span><span class="o">.</span><span class="n">getInverse</span><span class="p">()(</span><span class="n">myField</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Then re-add it:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myInitialField</span> <span class="o">=</span> <span class="n">fTrend</span><span class="p">(</span><span class="n">myStatField</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myInitialField</span> <span class="o">=</span> <span class="n">fTrend</span><span class="p">(</span><span class="n">myStatField</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
@@ -158,76 +151,76 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">__call__</span></code>(…)&nbsp;&lt;==&gt;&nbsp;x(…)</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(…)&nbsp;&lt;==&gt;&nbsp;x(…)</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.getCallsNumber" title="openturns.TrendTransform.getCallsNumber"><code class="xref py py-obj docutils literal"><span class="pre">getCallsNumber</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.getCallsNumber" title="openturns.TrendTransform.getCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCallsNumber</span></code></a>()</td>
 <td>Get the number of calls of the function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getClassName" title="openturns.TrendTransform.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getClassName" title="openturns.TrendTransform.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.getFunction" title="openturns.TrendTransform.getFunction"><code class="xref py py-obj docutils literal"><span class="pre">getFunction</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.getFunction" title="openturns.TrendTransform.getFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFunction</span></code></a>()</td>
 <td>Get the function of <img class="math" src="../../_images/math/ea90f634b2090a7bbc7af377a06d5078bb59d5ab.svg" alt="\ell"/>.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getId" title="openturns.TrendTransform.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getId" title="openturns.TrendTransform.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.getInputDescription" title="openturns.TrendTransform.getInputDescription"><code class="xref py py-obj docutils literal"><span class="pre">getInputDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.getInputDescription" title="openturns.TrendTransform.getInputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDescription</span></code></a>()</td>
 <td>Get the description of the input field values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getInputDimension" title="openturns.TrendTransform.getInputDimension"><code class="xref py py-obj docutils literal"><span class="pre">getInputDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getInputDimension" title="openturns.TrendTransform.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
 <td>Get the dimension of the input field values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.getInverse" title="openturns.TrendTransform.getInverse"><code class="xref py py-obj docutils literal"><span class="pre">getInverse</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.getInverse" title="openturns.TrendTransform.getInverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInverse</span></code></a>()</td>
 <td>Accessor to the inverse trend function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getMarginal" title="openturns.TrendTransform.getMarginal"><code class="xref py py-obj docutils literal"><span class="pre">getMarginal</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getMarginal" title="openturns.TrendTransform.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
 <td>Get the marginal(s) at given indice(s).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.getName" title="openturns.TrendTransform.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.getName" title="openturns.TrendTransform.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getOutputDescription" title="openturns.TrendTransform.getOutputDescription"><code class="xref py py-obj docutils literal"><span class="pre">getOutputDescription</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getOutputDescription" title="openturns.TrendTransform.getOutputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDescription</span></code></a>()</td>
 <td>Get the description of the output field values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.getOutputDimension" title="openturns.TrendTransform.getOutputDimension"><code class="xref py py-obj docutils literal"><span class="pre">getOutputDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.getOutputDimension" title="openturns.TrendTransform.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
 <td>Get the dimension of the output field values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getOutputMesh" title="openturns.TrendTransform.getOutputMesh"><code class="xref py py-obj docutils literal"><span class="pre">getOutputMesh</span></code></a>(inputMesh)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getOutputMesh" title="openturns.TrendTransform.getOutputMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputMesh</span></code></a>(inputMesh)</td>
 <td>Get the mesh associated to the output domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.getShadowedId" title="openturns.TrendTransform.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.getShadowedId" title="openturns.TrendTransform.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getSpatialDimension" title="openturns.TrendTransform.getSpatialDimension"><code class="xref py py-obj docutils literal"><span class="pre">getSpatialDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getSpatialDimension" title="openturns.TrendTransform.getSpatialDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSpatialDimension</span></code></a>()</td>
 <td>Get the dimension of the input domain.</td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">getTrendFunction</span></code>()</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTrendFunction</span></code>()</td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getVisibility" title="openturns.TrendTransform.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.getVisibility" title="openturns.TrendTransform.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.hasName" title="openturns.TrendTransform.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.hasName" title="openturns.TrendTransform.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.hasVisibleName" title="openturns.TrendTransform.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.hasVisibleName" title="openturns.TrendTransform.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.setInputDescription" title="openturns.TrendTransform.setInputDescription"><code class="xref py py-obj docutils literal"><span class="pre">setInputDescription</span></code></a>(inputDescription)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.setInputDescription" title="openturns.TrendTransform.setInputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInputDescription</span></code></a>(inputDescription)</td>
 <td>Set the description of the input field values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.setName" title="openturns.TrendTransform.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.setName" title="openturns.TrendTransform.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.setOutputDescription" title="openturns.TrendTransform.setOutputDescription"><code class="xref py py-obj docutils literal"><span class="pre">setOutputDescription</span></code></a>(outputDescription)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.setOutputDescription" title="openturns.TrendTransform.setOutputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOutputDescription</span></code></a>(outputDescription)</td>
 <td>Set the description of the output field values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.setShadowedId" title="openturns.TrendTransform.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TrendTransform.setShadowedId" title="openturns.TrendTransform.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.setVisibility" title="openturns.TrendTransform.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TrendTransform.setVisibility" title="openturns.TrendTransform.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -283,7 +276,7 @@ creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>l</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>l</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Function <img class="math" src="../../_images/math/6c03363e3af3f0a34ecdc0466e386d8805347c1d.svg" alt="\ell: \Rset^n \times \Rset^d \rightarrow \Rset^{d'}"/>.</p>
 </div></blockquote>
@@ -292,7 +285,7 @@ creation.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x + t^2&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myVertexValueFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ValueFunction</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
@@ -328,7 +321,7 @@ creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>inputDescription</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>inputDescription</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Description of the input field values.</p>
 </div></blockquote>
@@ -364,7 +357,7 @@ creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>myInverseTrendTransform</strong> : <a class="reference internal" href="openturns.InverseTrendTransform.html#openturns.InverseTrendTransform" title="openturns.InverseTrendTransform"><code class="xref py py-class docutils literal"><span class="pre">InverseTrendTransform</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>myInverseTrendTransform</strong> : <a class="reference internal" href="openturns.InverseTrendTransform.html#openturns.InverseTrendTransform" title="openturns.InverseTrendTransform"><code class="xref py py-class docutils literal notranslate"><span class="pre">InverseTrendTransform</span></code></a></p>
 <blockquote class="last">
 <div><p>The <img class="math" src="../../_images/math/15254a9db47c9f9b268a94a75e61da046e22aa33.svg" alt="f_{trend}^{-1}"/> function.</p>
 </div></blockquote>
@@ -388,7 +381,7 @@ creation.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.VertexValueFunction.html#openturns.VertexValueFunction" title="openturns.VertexValueFunction"><code class="xref py py-class docutils literal"><span class="pre">VertexValueFunction</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.VertexValueFunction.html#openturns.VertexValueFunction" title="openturns.VertexValueFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">VertexValueFunction</span></code></a></p>
 <blockquote class="last">
 <div><p>The initial function restricted to the concerned marginal(s) at the indice(s)
 <img class="math" src="../../_images/math/a3df85ab260449b6b4eca20eb30e8f01a26cb550.svg" alt="i"/>.</p>
@@ -425,7 +418,7 @@ creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>outputDescription</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>outputDescription</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Description of the output field values.</p>
 </div></blockquote>
@@ -461,7 +454,7 @@ creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>outputMesh</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal"><span class="pre">Mesh</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>outputMesh</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></p>
 <blockquote class="last">
 <div><p>The output mesh <img class="math" src="../../_images/math/26fd0931920c2084d09589f38dbda2bf946c37a5.svg" alt="\cM_{N'}"/>.</p>
 </div></blockquote>
@@ -675,14 +668,14 @@ creation.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../transformations.html" >Transformations</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

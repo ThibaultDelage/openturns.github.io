@@ -9,16 +9,7 @@
     <title>AbsoluteExponential &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../stochastic_process.html" accesskey="U">Stochastic process</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -145,7 +138,7 @@ By default, equal to <img class="math" src="../../_images/math/4d4f8f6d6f362932b
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-obj docutils literal"><span class="pre">CovarianceModel</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The <em>absolute exponential</em> function is a stationary covariance function whith dimension <img class="math" src="../../_images/math/f8ae70d9a6fa4dbd1cd28ab34289111d80a6e064.svg" alt="d=1"/>.</p>
@@ -158,7 +151,7 @@ By default, equal to <img class="math" src="../../_images/math/4d4f8f6d6f362932b
 <p><img src="../../_images/math/a5da18a802b1b453140049a811187fdfb4275f75.svg" alt="\rho(\vect{s}, \vect{t}) = e^{- \left\| \vect{s}- \vect{t} \right\|_{1}}, \quad \forall (\vect{s}, \vect{t}) \in \cD"/></p>
 </div><p class="rubric">Examples</p>
 <p>Create a standard absolute exponential covariance function:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">covModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AbsoluteExponential</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">]</span>
@@ -170,12 +163,12 @@ By default, equal to <img class="math" src="../../_images/math/4d4f8f6d6f362932b
 </pre></div>
 </div>
 <p>Create an absolute exponential covariance function specifying only the scale vector (amplitude is fixed to 1):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">covModel2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AbsoluteExponential</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">covModel2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AbsoluteExponential</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">covModel2bis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AbsoluteExponential</span><span class="p">([</span><span class="mf">1.5</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Create an absolute exponential covariance function specifying the scale vector and the amplitude :</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">covModel3</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AbsoluteExponential</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.5</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">covModel3</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AbsoluteExponential</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.5</span><span class="p">])</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
@@ -185,142 +178,142 @@ By default, equal to <img class="math" src="../../_images/math/4d4f8f6d6f362932b
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">__call__</span></code>(*args)</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args)</td>
 <td>Evaluate the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.computeAsScalar" title="openturns.AbsoluteExponential.computeAsScalar"><code class="xref py py-obj docutils literal"><span class="pre">computeAsScalar</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.computeAsScalar" title="openturns.AbsoluteExponential.computeAsScalar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeAsScalar</span></code></a>(*args)</td>
 <td>Compute the covariance function for scalar model.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.computeStandardRepresentative" title="openturns.AbsoluteExponential.computeStandardRepresentative"><code class="xref py py-obj docutils literal"><span class="pre">computeStandardRepresentative</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.computeStandardRepresentative" title="openturns.AbsoluteExponential.computeStandardRepresentative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeStandardRepresentative</span></code></a>(*args)</td>
 <td>Compute the standard representative function of the covariance model.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.discretize" title="openturns.AbsoluteExponential.discretize"><code class="xref py py-obj docutils literal"><span class="pre">discretize</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.discretize" title="openturns.AbsoluteExponential.discretize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discretize</span></code></a>(*args)</td>
 <td>Discretize the covariance function on a given mesh.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.discretizeAndFactorize" title="openturns.AbsoluteExponential.discretizeAndFactorize"><code class="xref py py-obj docutils literal"><span class="pre">discretizeAndFactorize</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.discretizeAndFactorize" title="openturns.AbsoluteExponential.discretizeAndFactorize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discretizeAndFactorize</span></code></a>(*args)</td>
 <td>Discretize and factorize the covariance function on a given mesh.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.discretizeAndFactorizeHMatrix" title="openturns.AbsoluteExponential.discretizeAndFactorizeHMatrix"><code class="xref py py-obj docutils literal"><span class="pre">discretizeAndFactorizeHMatrix</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.discretizeAndFactorizeHMatrix" title="openturns.AbsoluteExponential.discretizeAndFactorizeHMatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discretizeAndFactorizeHMatrix</span></code></a>(*args)</td>
 <td>Discretize and factorize the covariance function on a given mesh.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.discretizeHMatrix" title="openturns.AbsoluteExponential.discretizeHMatrix"><code class="xref py py-obj docutils literal"><span class="pre">discretizeHMatrix</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.discretizeHMatrix" title="openturns.AbsoluteExponential.discretizeHMatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discretizeHMatrix</span></code></a>(*args)</td>
 <td>Discretize the covariance function on a given mesh using HMatrix result.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.discretizeRow" title="openturns.AbsoluteExponential.discretizeRow"><code class="xref py py-obj docutils literal"><span class="pre">discretizeRow</span></code></a>(vertices,&nbsp;p)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.discretizeRow" title="openturns.AbsoluteExponential.discretizeRow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discretizeRow</span></code></a>(vertices,&nbsp;p)</td>
 <td><strong>(TODO)</strong></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.draw" title="openturns.AbsoluteExponential.draw"><code class="xref py py-obj docutils literal"><span class="pre">draw</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.draw" title="openturns.AbsoluteExponential.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>(*args)</td>
 <td>Draw a specific component of the covariance model with spatial dimension 1.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getActiveParameter" title="openturns.AbsoluteExponential.getActiveParameter"><code class="xref py py-obj docutils literal"><span class="pre">getActiveParameter</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getActiveParameter" title="openturns.AbsoluteExponential.getActiveParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getActiveParameter</span></code></a>()</td>
 <td>Accessor to the active parameter set.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getAmplitude" title="openturns.AbsoluteExponential.getAmplitude"><code class="xref py py-obj docutils literal"><span class="pre">getAmplitude</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getAmplitude" title="openturns.AbsoluteExponential.getAmplitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAmplitude</span></code></a>()</td>
 <td>Get the amplitude parameter <img class="math" src="../../_images/math/f4b307fc9f58450c4288705e1aca00c9872677a5.svg" alt="\vect{\sigma}"/> of the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getClassName" title="openturns.AbsoluteExponential.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getClassName" title="openturns.AbsoluteExponential.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">getDimension</span></code>()</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code>()</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getFullParameter" title="openturns.AbsoluteExponential.getFullParameter"><code class="xref py py-obj docutils literal"><span class="pre">getFullParameter</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getFullParameter" title="openturns.AbsoluteExponential.getFullParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFullParameter</span></code></a>()</td>
 <td>Get the full parameters of the covariance function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getFullParameterDescription" title="openturns.AbsoluteExponential.getFullParameterDescription"><code class="xref py py-obj docutils literal"><span class="pre">getFullParameterDescription</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getFullParameterDescription" title="openturns.AbsoluteExponential.getFullParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFullParameterDescription</span></code></a>()</td>
 <td>Get the description full parameters of the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getId" title="openturns.AbsoluteExponential.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getId" title="openturns.AbsoluteExponential.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getInputDimension" title="openturns.AbsoluteExponential.getInputDimension"><code class="xref py py-obj docutils literal"><span class="pre">getInputDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getInputDimension" title="openturns.AbsoluteExponential.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
 <td>Get the spatial dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> of the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getMarginal" title="openturns.AbsoluteExponential.getMarginal"><code class="xref py py-obj docutils literal"><span class="pre">getMarginal</span></code></a>(index)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getMarginal" title="openturns.AbsoluteExponential.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(index)</td>
 <td>Get the ith marginal of the model.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getName" title="openturns.AbsoluteExponential.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getName" title="openturns.AbsoluteExponential.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getNuggetFactor" title="openturns.AbsoluteExponential.getNuggetFactor"><code class="xref py py-obj docutils literal"><span class="pre">getNuggetFactor</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getNuggetFactor" title="openturns.AbsoluteExponential.getNuggetFactor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNuggetFactor</span></code></a>()</td>
 <td>Accessor to the nugget factor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getOutputCorrelation" title="openturns.AbsoluteExponential.getOutputCorrelation"><code class="xref py py-obj docutils literal"><span class="pre">getOutputCorrelation</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getOutputCorrelation" title="openturns.AbsoluteExponential.getOutputCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputCorrelation</span></code></a>()</td>
 <td>Get the spatial correlation matrix <img class="math" src="../../_images/math/853a903877789e24c42e822e645f0c497920376c.svg" alt="\mat{R}"/> of the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getOutputDimension" title="openturns.AbsoluteExponential.getOutputDimension"><code class="xref py py-obj docutils literal"><span class="pre">getOutputDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getOutputDimension" title="openturns.AbsoluteExponential.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
 <td>Get the dimension <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> of the covariance function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getParameter" title="openturns.AbsoluteExponential.getParameter"><code class="xref py py-obj docutils literal"><span class="pre">getParameter</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getParameter" title="openturns.AbsoluteExponential.getParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameter</span></code></a>()</td>
 <td>Get the parameters of the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getParameterDescription" title="openturns.AbsoluteExponential.getParameterDescription"><code class="xref py py-obj docutils literal"><span class="pre">getParameterDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getParameterDescription" title="openturns.AbsoluteExponential.getParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDescription</span></code></a>()</td>
 <td>Get the description of the covariance function parameters.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getScale" title="openturns.AbsoluteExponential.getScale"><code class="xref py py-obj docutils literal"><span class="pre">getScale</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getScale" title="openturns.AbsoluteExponential.getScale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getScale</span></code></a>()</td>
 <td>Get the scale parameter <img class="math" src="../../_images/math/2b723f559e8298e535601bd58966d42fe7e1f7a2.svg" alt="\vect{\theta}"/> of the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getShadowedId" title="openturns.AbsoluteExponential.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getShadowedId" title="openturns.AbsoluteExponential.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">getSpatialCorrelation</span></code>()</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSpatialCorrelation</span></code>()</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">getSpatialDimension</span></code>()</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSpatialDimension</span></code>()</td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getVisibility" title="openturns.AbsoluteExponential.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.getVisibility" title="openturns.AbsoluteExponential.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.hasName" title="openturns.AbsoluteExponential.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.hasName" title="openturns.AbsoluteExponential.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.hasVisibleName" title="openturns.AbsoluteExponential.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.hasVisibleName" title="openturns.AbsoluteExponential.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.isDiagonal" title="openturns.AbsoluteExponential.isDiagonal"><code class="xref py py-obj docutils literal"><span class="pre">isDiagonal</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.isDiagonal" title="openturns.AbsoluteExponential.isDiagonal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isDiagonal</span></code></a>()</td>
 <td>Test whether the model is diagonal or not.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.isStationary" title="openturns.AbsoluteExponential.isStationary"><code class="xref py py-obj docutils literal"><span class="pre">isStationary</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.isStationary" title="openturns.AbsoluteExponential.isStationary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isStationary</span></code></a>()</td>
 <td>Test whether the model is stationary or not.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.parameterGradient" title="openturns.AbsoluteExponential.parameterGradient"><code class="xref py py-obj docutils literal"><span class="pre">parameterGradient</span></code></a>(s,&nbsp;t)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.parameterGradient" title="openturns.AbsoluteExponential.parameterGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameterGradient</span></code></a>(s,&nbsp;t)</td>
 <td>Compute the gradient according to the parameters.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.partialGradient" title="openturns.AbsoluteExponential.partialGradient"><code class="xref py py-obj docutils literal"><span class="pre">partialGradient</span></code></a>(s,&nbsp;t)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.partialGradient" title="openturns.AbsoluteExponential.partialGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partialGradient</span></code></a>(s,&nbsp;t)</td>
 <td>Compute the gradient of the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setActiveParameter" title="openturns.AbsoluteExponential.setActiveParameter"><code class="xref py py-obj docutils literal"><span class="pre">setActiveParameter</span></code></a>(active)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setActiveParameter" title="openturns.AbsoluteExponential.setActiveParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setActiveParameter</span></code></a>(active)</td>
 <td>Accessor to the active parameter set.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setAmplitude" title="openturns.AbsoluteExponential.setAmplitude"><code class="xref py py-obj docutils literal"><span class="pre">setAmplitude</span></code></a>(amplitude)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setAmplitude" title="openturns.AbsoluteExponential.setAmplitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAmplitude</span></code></a>(amplitude)</td>
 <td>Set the amplitude parameter <img class="math" src="../../_images/math/f4b307fc9f58450c4288705e1aca00c9872677a5.svg" alt="\vect{\sigma}"/> of the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setFullParameter" title="openturns.AbsoluteExponential.setFullParameter"><code class="xref py py-obj docutils literal"><span class="pre">setFullParameter</span></code></a>(parameter)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setFullParameter" title="openturns.AbsoluteExponential.setFullParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setFullParameter</span></code></a>(parameter)</td>
 <td>Set the full parameters of the covariance function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setName" title="openturns.AbsoluteExponential.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setName" title="openturns.AbsoluteExponential.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setNuggetFactor" title="openturns.AbsoluteExponential.setNuggetFactor"><code class="xref py py-obj docutils literal"><span class="pre">setNuggetFactor</span></code></a>(nuggetFactor)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setNuggetFactor" title="openturns.AbsoluteExponential.setNuggetFactor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setNuggetFactor</span></code></a>(nuggetFactor)</td>
 <td>Set the nugget factor for the regularization.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setOutputCorrelation" title="openturns.AbsoluteExponential.setOutputCorrelation"><code class="xref py py-obj docutils literal"><span class="pre">setOutputCorrelation</span></code></a>(correlation)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setOutputCorrelation" title="openturns.AbsoluteExponential.setOutputCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOutputCorrelation</span></code></a>(correlation)</td>
 <td>Set the spatial correlation matrix <img class="math" src="../../_images/math/853a903877789e24c42e822e645f0c497920376c.svg" alt="\mat{R}"/> of the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setParameter" title="openturns.AbsoluteExponential.setParameter"><code class="xref py py-obj docutils literal"><span class="pre">setParameter</span></code></a>(parameter)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setParameter" title="openturns.AbsoluteExponential.setParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameter</span></code></a>(parameter)</td>
 <td>Set the parameters of the covariance function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setScale" title="openturns.AbsoluteExponential.setScale"><code class="xref py py-obj docutils literal"><span class="pre">setScale</span></code></a>(scale)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setScale" title="openturns.AbsoluteExponential.setScale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setScale</span></code></a>(scale)</td>
 <td>Set the scale parameter <img class="math" src="../../_images/math/2b723f559e8298e535601bd58966d42fe7e1f7a2.svg" alt="\vect{\theta}"/> of the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setShadowedId" title="openturns.AbsoluteExponential.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setShadowedId" title="openturns.AbsoluteExponential.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">setSpatialCorrelation</span></code>(correlation)</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSpatialCorrelation</span></code>(correlation)</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setVisibility" title="openturns.AbsoluteExponential.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AbsoluteExponential.setVisibility" title="openturns.AbsoluteExponential.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -417,13 +410,13 @@ this quantity does not depend on <img class="math" src="../../_images/math/5cb5d
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>meshOrGrid</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal"><span class="pre">Mesh</span></code></a> or <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal"><span class="pre">RegularGrid</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>meshOrGrid</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a> or <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></p>
 <blockquote>
 <div><p>Mesh or time grid of size <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> associated with the process.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>covarianceMatrix</strong> : <a class="reference internal" href="openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="openturns.CovarianceMatrix"><code class="xref py py-class docutils literal"><span class="pre">CovarianceMatrix</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>covarianceMatrix</strong> : <a class="reference internal" href="openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="openturns.CovarianceMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceMatrix</span></code></a></p>
 <blockquote class="last">
 <div><p>Covariance matrix <img class="math" src="../../_images/math/74799348645cbb60c8ed1fb3a159c78610cf6257.svg" alt="\in \cS_{nd}^+(\Rset)"/> (if the process is of
 dimension <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/></p>
@@ -456,13 +449,13 @@ covariance matrix:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>meshOrGrid</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal"><span class="pre">Mesh</span></code></a> or <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal"><span class="pre">RegularGrid</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>meshOrGrid</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a> or <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></p>
 <blockquote>
 <div><p>Mesh or time grid of size <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> associated with the process.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>CholeskyMatrix</strong> : <a class="reference internal" href="openturns.TriangularMatrix.html#openturns.TriangularMatrix" title="openturns.TriangularMatrix"><code class="xref py py-class docutils literal"><span class="pre">TriangularMatrix</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>CholeskyMatrix</strong> : <a class="reference internal" href="openturns.TriangularMatrix.html#openturns.TriangularMatrix" title="openturns.TriangularMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">TriangularMatrix</span></code></a></p>
 <blockquote class="last">
 <div><p>Cholesky factor of the covariance matrix <img class="math" src="../../_images/math/ce086d4d08cc7c067b6956bc159a17e38394b35b.svg" alt="\in \cM_{nd\times nd}(\Rset)"/>
 (if the process is of dimension <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/>).</p>
@@ -486,7 +479,7 @@ the vertices <img class="math" src="../../_images/math/8f524f8a561833828d46dec14
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>meshOrGrid</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal"><span class="pre">Mesh</span></code></a> or <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal"><span class="pre">RegularGrid</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>meshOrGrid</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a> or <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></p>
 <blockquote>
 <div><p>Mesh or time grid of size <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> associated with the process.</p>
 </div></blockquote>
@@ -494,13 +487,13 @@ the vertices <img class="math" src="../../_images/math/8f524f8a561833828d46dec14
 <blockquote>
 <div><p>Nugget factor to be added to the discretized matrix</p>
 </div></blockquote>
-<p><strong>hmatParam</strong> : <a class="reference internal" href="openturns.HMatrixParameters.html#openturns.HMatrixParameters" title="openturns.HMatrixParameters"><code class="xref py py-class docutils literal"><span class="pre">HMatrixParameters</span></code></a></p>
+<p><strong>hmatParam</strong> : <a class="reference internal" href="openturns.HMatrixParameters.html#openturns.HMatrixParameters" title="openturns.HMatrixParameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">HMatrixParameters</span></code></a></p>
 <blockquote>
 <div><p>Parameter values for the HMatrix</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>HMatrix</strong> : <a class="reference internal" href="openturns.HMatrix.html#openturns.HMatrix" title="openturns.HMatrix"><code class="xref py py-class docutils literal"><span class="pre">HMatrix</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>HMatrix</strong> : <a class="reference internal" href="openturns.HMatrix.html#openturns.HMatrix" title="openturns.HMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">HMatrix</span></code></a></p>
 <blockquote class="last">
 <div><p>Cholesk matrix <img class="math" src="../../_images/math/74799348645cbb60c8ed1fb3a159c78610cf6257.svg" alt="\in \cS_{nd}^+(\Rset)"/> (if the process is of
 dimension <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/>), stored in hierarchical format (H-Matrix)</p>
@@ -524,7 +517,7 @@ as its compress data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>meshOrGrid</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal"><span class="pre">Mesh</span></code></a> or <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal"><span class="pre">RegularGrid</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>meshOrGrid</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a> or <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></p>
 <blockquote>
 <div><p>Mesh or time grid of size <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> associated with the process.</p>
 </div></blockquote>
@@ -532,13 +525,13 @@ as its compress data.</p>
 <blockquote>
 <div><p>Nugget factor to be added to the discretized matrix</p>
 </div></blockquote>
-<p><strong>hmatParam</strong> : <a class="reference internal" href="openturns.HMatrixParameters.html#openturns.HMatrixParameters" title="openturns.HMatrixParameters"><code class="xref py py-class docutils literal"><span class="pre">HMatrixParameters</span></code></a></p>
+<p><strong>hmatParam</strong> : <a class="reference internal" href="openturns.HMatrixParameters.html#openturns.HMatrixParameters" title="openturns.HMatrixParameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">HMatrixParameters</span></code></a></p>
 <blockquote>
 <div><p>Parameter values for the HMatrix</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>HMatrix</strong> : <a class="reference internal" href="openturns.HMatrix.html#openturns.HMatrix" title="openturns.HMatrix"><code class="xref py py-class docutils literal"><span class="pre">HMatrix</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>HMatrix</strong> : <a class="reference internal" href="openturns.HMatrix.html#openturns.HMatrix" title="openturns.HMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">HMatrix</span></code></a></p>
 <blockquote class="last">
 <div><p>Covariance matrix <img class="math" src="../../_images/math/08041007095eb431cc10d83bf7eca3d357ec8aaa.svg" alt="\in\cS_{nd}^+(\Rset)"/> (if the process is of
 dimension <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/>), stored in hierarchical format (H-Matrix)</p>
@@ -578,11 +571,11 @@ as its compress data.</p>
 </div></blockquote>
 <p><strong>tMin</strong> : float</p>
 <blockquote>
-<div><p>The lower bound of the range over which the model is plotted. Default value is <em>CovarianceModel-DefaultTMin</em> in <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>.</p>
+<div><p>The lower bound of the range over which the model is plotted. Default value is <em>CovarianceModel-DefaultTMin</em> in <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </div></blockquote>
 <p><strong>tMax</strong> : float</p>
 <blockquote>
-<div><p>The upper bound of the range over which the model is plotted. Default value is <em>CovarianceModel-DefaultTMax</em> in <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>.</p>
+<div><p>The upper bound of the range over which the model is plotted. Default value is <em>CovarianceModel-DefaultTMax</em> in <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </div></blockquote>
 <p><strong>pointNumber</strong> : int, <img class="math" src="../../_images/math/52b408bf3c4dcbd8c880794c5ccace53f0d2297f.svg" alt="pointNumber \geq 2"/></p>
 <blockquote>
@@ -598,7 +591,7 @@ as its compress data.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>graph</strong> : <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>graph</strong> : <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></p>
 <blockquote class="last">
 <div><p>A graph containing a unique curve if <em>asStationary=True</em> and if the model is actually a stationary model, or containing the iso-values of the model if <em>asStationary=False</em> or if the model is nonstationary.</p>
 </div></blockquote>
@@ -616,7 +609,7 @@ as its compress data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>active</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal"><span class="pre">Indices</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>active</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></p>
 <blockquote class="last">
 <div><p>Indices of the active parameters.</p>
 </div></blockquote>
@@ -634,7 +627,7 @@ as its compress data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>amplitude</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>amplitude</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The amplitude parameter <img class="math" src="../../_images/math/26f66021db27dc8ddcc009a6ea92450419303d86.svg" alt="\vect{\sigma} \in \Rset^d"/> of the covariance 
 function.</p>
@@ -671,7 +664,7 @@ function.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>List the full parameter of the covariance function i.e.
 scale parameter <img class="math" src="../../_images/math/d316d0cbf4ce2692733058d2db1f0e150b7de06d.svg" alt="\vect{\theta} \in \Rset^n"/>, the
@@ -693,7 +686,7 @@ and potential other parameter depending on the model;</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Description of the full parameter of the covariance function.</p>
 </div></blockquote>
@@ -806,7 +799,7 @@ matrix.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>spatialCorrelation</strong> : <a class="reference internal" href="openturns.CorrelationMatrix.html#openturns.CorrelationMatrix" title="openturns.CorrelationMatrix"><code class="xref py py-class docutils literal"><span class="pre">CorrelationMatrix</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>spatialCorrelation</strong> : <a class="reference internal" href="openturns.CorrelationMatrix.html#openturns.CorrelationMatrix" title="openturns.CorrelationMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">CorrelationMatrix</span></code></a></p>
 <blockquote class="last">
 <div><p>Correlation matrix <img class="math" src="../../_images/math/fbc484738e38941f60c2693cfad63a2738a4b38e.svg" alt="\mat{R} \in \cS_d^+(\Rset)"/>.</p>
 </div></blockquote>
@@ -843,7 +836,7 @@ This is the dimension of the process <img class="math" src="../../_images/math/f
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameters</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameters</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><blockquote>
 <div><p>List of the scale parameter <img class="math" src="../../_images/math/d316d0cbf4ce2692733058d2db1f0e150b7de06d.svg" alt="\vect{\theta} \in \Rset^n"/> and the
@@ -866,7 +859,7 @@ function.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>descriptionParam</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>descriptionParam</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Description of the components of the parameters obtained with the
 <em>getParameter</em> method..</p>
@@ -885,7 +878,7 @@ function.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>scale</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>scale</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The scale parameter <img class="math" src="../../_images/math/d316d0cbf4ce2692733058d2db1f0e150b7de06d.svg" alt="\vect{\theta} \in \Rset^n"/> used in the 
 covariance function.</p>
@@ -1025,7 +1018,7 @@ C(\vect{s}, \vect{s}+\vect{h}) = C(\vect{t}, \vect{t}+\vect{h})"/></p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gradient</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gradient</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 <blockquote class="last">
 <div><p>Gradient of the function according to the parameters.</p>
 </div></blockquote>
@@ -1049,7 +1042,7 @@ C(\vect{s}, \vect{s}+\vect{h}) = C(\vect{t}, \vect{t}+\vect{h})"/></p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gradient</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gradient</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 <blockquote class="last">
 <div><p>Gradient of the covariance function.</p>
 </div></blockquote>
@@ -1085,7 +1078,7 @@ C(\vect{s}, \vect{s}+\vect{h}) = C(\vect{t}, \vect{t}+\vect{h})"/></p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>amplitude</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>amplitude</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The amplitude parameter <img class="math" src="../../_images/math/26f66021db27dc8ddcc009a6ea92450419303d86.svg" alt="\vect{\sigma} \in \Rset^d"/> to be used in the
 covariance function. 
@@ -1105,7 +1098,7 @@ Its size must be equal to the dimension of the covariance function.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>List the full parameter of the covariance function i.e.
 scale parameter <img class="math" src="../../_images/math/d316d0cbf4ce2692733058d2db1f0e150b7de06d.svg" alt="\vect{\theta} \in \Rset^n"/>, the
@@ -1166,7 +1159,7 @@ covariance matrix.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>spatialCorrelation</strong> : <a class="reference internal" href="openturns.CorrelationMatrix.html#openturns.CorrelationMatrix" title="openturns.CorrelationMatrix"><code class="xref py py-class docutils literal"><span class="pre">CorrelationMatrix</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>spatialCorrelation</strong> : <a class="reference internal" href="openturns.CorrelationMatrix.html#openturns.CorrelationMatrix" title="openturns.CorrelationMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">CorrelationMatrix</span></code></a></p>
 <blockquote class="last">
 <div><p>Correlation matrix <img class="math" src="../../_images/math/2c8972fb30e580c68239a39fc2abab510d4aab7b.svg" alt="\mat{R} \in \cS_d^+([-1,1])"/>.</p>
 </div></blockquote>
@@ -1184,7 +1177,7 @@ covariance matrix.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parameters</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parameters</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>List of the scale parameter <img class="math" src="../../_images/math/d316d0cbf4ce2692733058d2db1f0e150b7de06d.svg" alt="\vect{\theta} \in \Rset^n"/> and the
 amplitude parameter <img class="math" src="../../_images/math/26f66021db27dc8ddcc009a6ea92450419303d86.svg" alt="\vect{\sigma} \in \Rset^d"/> of the covariance
@@ -1205,7 +1198,7 @@ function.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>scale</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>scale</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The scale parameter <img class="math" src="../../_images/math/d316d0cbf4ce2692733058d2db1f0e150b7de06d.svg" alt="\vect{\theta} \in \Rset^n"/> to be used in the
 covariance function.
@@ -1277,14 +1270,14 @@ Its size must be equal to the spatial dimension of the covariance function.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../stochastic_process.html" >Stochastic process</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

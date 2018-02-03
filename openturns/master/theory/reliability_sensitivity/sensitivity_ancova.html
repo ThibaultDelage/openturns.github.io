@@ -9,16 +9,7 @@
     <title>Sensivity analysis with correlated inputs &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -112,8 +105,8 @@ hypothesis on the dependence structure of
 random vector. The covariance decomposition requires a functional
 decomposition of the model. Thus the model response <img class="math" src="../../_images/math/33370fc688190ccba52888ac09200225067b2610.svg" alt="Y"/> is
 expanded as a sum of functions of increasing dimension as follows:</p>
-<div class="math" id="equation-Model">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-Model" title="Permalink to this equation">¶</a></span><img src="../../_images/math/bfb6672f46874c071c057a69cecd344824a84088.svg" alt="h(\vect{X}) = h_0 + \sum_{u\subseteq\{1,\dots,n_X\}} h_u(X_u)"/></p>
+<div class="math" id="equation-model">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-model" title="Permalink to this equation">¶</a></span><img src="../../_images/math/bfb6672f46874c071c057a69cecd344824a84088.svg" alt="h(\vect{X}) = h_0 + \sum_{u\subseteq\{1,\dots,n_X\}} h_u(X_u)"/></p>
 </div><p><img class="math" src="../../_images/math/4f7b116958be00af2acd86ac454e31fa85964cf7.svg" alt="h_0"/> is the mean of <img class="math" src="../../_images/math/33370fc688190ccba52888ac09200225067b2610.svg" alt="Y"/>. Each function <img class="math" src="../../_images/math/fcbb0a8734809eee23ec31d9f29e27e9d6bf3c29.svg" alt="h_u"/>
 represents, for any non empty set <img class="math" src="../../_images/math/abd027ea2aade9fa8108e289cafa65f1834f5475.svg" alt="u\subseteq\{1, \dots, n_X\}"/>,
 the combined contribution of the variables <img class="math" src="../../_images/math/0387e0a55ce911ae8a07fefdafb0416fea686ddb.svg" alt="X_u"/> to <img class="math" src="../../_images/math/33370fc688190ccba52888ac09200225067b2610.svg" alt="Y"/>.</p>
@@ -150,7 +143,7 @@ computational simplicity, the latter is constructed considering
 Thus the chaos basis is not orthogonal with respect to the correlated
 inputs under consideration, and it is only used as a metamodel to
 generate approximated evaluations of the model response and its summands
-in <a class="reference internal" href="#equation-Model">(1)</a>.</p>
+in <a class="reference internal" href="#equation-model">(1)</a>.</p>
 <div class="math">
 <p><img src="../../_images/math/3666f4f7af4665507639c1c699a94d649b40d916.svg" alt="Y \simeq \hat{h} = \sum_{j=0}^{P-1} \alpha_j \Psi_j(x)"/></p>
 </div><p>Then one may identify the component functions. For instance, for
@@ -167,7 +160,7 @@ chaos.</p>
 <div class="topic">
 <p class="topic-title first">API:</p>
 <ul class="simple">
-<li>See <a class="reference internal" href="../../user_manual/_generated/openturns.ANCOVA.html#openturns.ANCOVA" title="openturns.ANCOVA"><code class="xref py py-class docutils literal"><span class="pre">ANCOVA</span></code></a></li>
+<li>See <a class="reference internal" href="../../user_manual/_generated/openturns.ANCOVA.html#openturns.ANCOVA" title="openturns.ANCOVA"><code class="xref py py-class docutils literal notranslate"><span class="pre">ANCOVA</span></code></a></li>
 </ul>
 </div>
 <div class="topic">
@@ -211,7 +204,7 @@ chaos.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

@@ -9,16 +9,7 @@
     <title>Indices &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" accesskey="U">Base objects</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -134,24 +127,24 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 <p>Use the first constructor:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">Indices</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">Indices</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="go">[0,0,0]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">Indices</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="go">[4,4,4]</span>
 </pre></div>
 </div>
 <p>Use the second constructor:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Indices</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">70</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Indices</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">70</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span>
 <span class="go">[100,30,70]</span>
 </pre></div>
 </div>
 <p>Use some functionalities:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span>
 <span class="go">[100,20,70]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
@@ -166,61 +159,61 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.add" title="openturns.Indices.add"><code class="xref py py-obj docutils literal"><span class="pre">add</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.add" title="openturns.Indices.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(*args)</td>
 <td>Append a component (in-place).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.at" title="openturns.Indices.at"><code class="xref py py-obj docutils literal"><span class="pre">at</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.at" title="openturns.Indices.at"><code class="xref py py-obj docutils literal notranslate"><span class="pre">at</span></code></a>(*args)</td>
 <td>Access to an element of the collection.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.check" title="openturns.Indices.check"><code class="xref py py-obj docutils literal"><span class="pre">check</span></code></a>(bound)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.check" title="openturns.Indices.check"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check</span></code></a>(bound)</td>
 <td>Check that no value is repeated and no value exceeds the given bound.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.clear" title="openturns.Indices.clear"><code class="xref py py-obj docutils literal"><span class="pre">clear</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.clear" title="openturns.Indices.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</td>
 <td>Reset the collection to zero dimension.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.fill" title="openturns.Indices.fill"><code class="xref py py-obj docutils literal"><span class="pre">fill</span></code></a>([initialValue,&nbsp;stepSize])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.fill" title="openturns.Indices.fill"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill</span></code></a>([initialValue,&nbsp;stepSize])</td>
 <td>Fill the indices with a linear progression.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.getClassName" title="openturns.Indices.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.getClassName" title="openturns.Indices.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.getId" title="openturns.Indices.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.getId" title="openturns.Indices.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.getName" title="openturns.Indices.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.getName" title="openturns.Indices.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.getShadowedId" title="openturns.Indices.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.getShadowedId" title="openturns.Indices.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.getSize" title="openturns.Indices.getSize"><code class="xref py py-obj docutils literal"><span class="pre">getSize</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.getSize" title="openturns.Indices.getSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSize</span></code></a>()</td>
 <td>Get the collection’s dimension (or size).</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.getVisibility" title="openturns.Indices.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.getVisibility" title="openturns.Indices.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.hasName" title="openturns.Indices.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.hasName" title="openturns.Indices.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.hasVisibleName" title="openturns.Indices.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.hasVisibleName" title="openturns.Indices.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.isEmpty" title="openturns.Indices.isEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isEmpty</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.isEmpty" title="openturns.Indices.isEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEmpty</span></code></a>()</td>
 <td>Tell if the collection is empty.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.isIncreasing" title="openturns.Indices.isIncreasing"><code class="xref py py-obj docutils literal"><span class="pre">isIncreasing</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.isIncreasing" title="openturns.Indices.isIncreasing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isIncreasing</span></code></a>()</td>
 <td>Check if the indices are increasing.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.resize" title="openturns.Indices.resize"><code class="xref py py-obj docutils literal"><span class="pre">resize</span></code></a>(newSize)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.resize" title="openturns.Indices.resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resize</span></code></a>(newSize)</td>
 <td>Change the size of the collection.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.setName" title="openturns.Indices.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.setName" title="openturns.Indices.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.setShadowedId" title="openturns.Indices.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Indices.setShadowedId" title="openturns.Indices.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.setVisibility" title="openturns.Indices.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Indices.setVisibility" title="openturns.Indices.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -248,7 +241,7 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -310,7 +303,7 @@
 <code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Indices.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset the collection to zero dimension.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
@@ -341,7 +334,7 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">indices</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Indices</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">indices</span><span class="o">.</span><span class="n">fill</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
@@ -515,7 +508,7 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">()</span>
 <span class="go">False</span>
@@ -543,7 +536,7 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">indices</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Indices</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">indices</span><span class="o">.</span><span class="n">fill</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">indices</span><span class="o">.</span><span class="n">isIncreasing</span><span class="p">()</span>
@@ -572,7 +565,7 @@
 <p>If the new size is smaller than the older one, the last elements are thrown
 away, else the new elements are set to the default value of the element type.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">[4,4]</span>
@@ -664,14 +657,14 @@ away, else the new elements are set to the default value of the element type.</p
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" >Base objects</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

@@ -9,16 +9,7 @@
     <title>Create a maximum entropy order statistics distribution &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -274,33 +267,33 @@ distribution, which yields ordered realizations:</p>
 <div class="math">
 <p><img src="../../_images/math/52c937751645dd0e3510bb60bf51a56b12baf149.svg" alt="X_1 \leq \dots \leq X_n"/></p>
 </div><div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create a collection of distribution</span>
 <span class="n">coll</span> <span class="o">=</span> <span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">Beta</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>  <span class="n">ot</span><span class="o">.</span><span class="n">Beta</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create the distribution</span>
 <span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MaximumEntropyOrderStatisticsDistribution</span><span class="p">(</span><span class="n">coll</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">distribution</span><span class="p">)</span>
@@ -316,18 +309,18 @@ MaximumEntropyOrderStatisticsDistribution(collection = [Beta(r = 1.5, t = 3.2, a
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># draw a sample (ordered!)</span>
 <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[4]:
 </pre></div>
 </div>
@@ -335,18 +328,18 @@ MaximumEntropyOrderStatisticsDistribution(collection = [Beta(r = 1.5, t = 3.2, a
 <TABLE><TR><TD></TD><TH>X0</TH><TH>X1</TH></TR><TR><TH>0</TH><TD>0.5738016812811573</TD><TD>0.640331333512734</TD></TR><TR><TH>1</TH><TD>0.05614927034653086</TD><TD>1.0876500496604604</TD></TR><TR><TH>2</TH><TD>0.8609477684252856</TD><TD>0.871370278512005</TD></TR><TR><TH>3</TH><TD>0.30446376494922667</TD><TD>0.72287671649012</TD></TR><TR><TH>4</TH><TD>0.36927970200952354</TD><TD>0.9884771935681209</TD></TR><TR><TH>5</TH><TD>0.30628117978646735</TD><TD>0.9391618306818713</TD></TR><TR><TH>6</TH><TD>0.6202587092960264</TD><TD>0.7522133010565687</TD></TR><TR><TH>7</TH><TD>0.9087163222334095</TD><TD>0.9355207646820087</TD></TR><TR><TH>8</TH><TD>0.1186114351557339</TD><TD>0.6498097139211859</TD></TR><TR><TH>9</TH><TD>0.3791232064411425</TD><TD>0.7376445845601645</TD></TR></TABLE></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># draw PDF</span>
 <span class="n">distribution</span><span class="o">.</span><span class="n">drawPDF</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[5]:
 </pre></div>
 </div>
@@ -382,7 +375,7 @@ MaximumEntropyOrderStatisticsDistribution(collection = [Beta(r = 1.5, t = 3.2, a
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

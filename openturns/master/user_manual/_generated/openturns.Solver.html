@@ -9,16 +9,7 @@
     <title>Solver &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../threshold_probability_simulation_algorithms.html" accesskey="U">Threshold probability: Simulation algorithms</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -120,8 +113,8 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>solverImplementation</strong> : SolverImplementationImplementation</p>
 <blockquote>
-<div><p>The implementation of a particular solver which is <a class="reference internal" href="openturns.Bisection.html#openturns.Bisection" title="openturns.Bisection"><code class="xref py py-class docutils literal"><span class="pre">Bisection</span></code></a>,
-<a class="reference internal" href="openturns.Brent.html#openturns.Brent" title="openturns.Brent"><code class="xref py py-class docutils literal"><span class="pre">Brent</span></code></a> or <a class="reference internal" href="openturns.Secant.html#openturns.Secant" title="openturns.Secant"><code class="xref py py-class docutils literal"><span class="pre">Secant</span></code></a>.</p>
+<div><p>The implementation of a particular solver which is <a class="reference internal" href="openturns.Bisection.html#openturns.Bisection" title="openturns.Bisection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bisection</span></code></a>,
+<a class="reference internal" href="openturns.Brent.html#openturns.Brent" title="openturns.Brent"><code class="xref py py-class docutils literal notranslate"><span class="pre">Brent</span></code></a> or <a class="reference internal" href="openturns.Secant.html#openturns.Secant" title="openturns.Secant"><code class="xref py py-class docutils literal notranslate"><span class="pre">Secant</span></code></a>.</p>
 </div></blockquote>
 <p><strong>absError</strong> : positive float</p>
 <blockquote>
@@ -148,7 +141,7 @@ value. Default is <img class="math" src="../../_images/math/66dc0deb9c1261910506
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.Bisection.html#openturns.Bisection" title="openturns.Bisection"><code class="xref py py-obj docutils literal"><span class="pre">Bisection</span></code></a>, <a class="reference internal" href="openturns.Brent.html#openturns.Brent" title="openturns.Brent"><code class="xref py py-obj docutils literal"><span class="pre">Brent</span></code></a>, <a class="reference internal" href="openturns.Secant.html#openturns.Secant" title="openturns.Secant"><code class="xref py py-obj docutils literal"><span class="pre">Secant</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.Bisection.html#openturns.Bisection" title="openturns.Bisection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bisection</span></code></a>, <a class="reference internal" href="openturns.Brent.html#openturns.Brent" title="openturns.Brent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Brent</span></code></a>, <a class="reference internal" href="openturns.Secant.html#openturns.Secant" title="openturns.Secant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Secant</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>This class enables to solve 1D non linear equations :</p>
@@ -159,7 +152,7 @@ value. Default is <img class="math" src="../../_images/math/66dc0deb9c1261910506
 <img class="math" src="../../_images/math/4a9f76bd608347f9424994c67d50f74e8890e045.svg" alt="f(infPoint) \times f(supPoint) &lt; 0"/>, then <img class="math" src="../../_images/math/68690c6e741b6c06797c7e5bed2d9f89bf5b065a.svg" alt="f"/> has at least a zero
 in the interval <img class="math" src="../../_images/math/fa47ba91c42d28357660e205dc76ef49f8798672.svg" alt="[infPoint, supPoint]"/>. In particular, it is used in the
 root research of a 
-<a class="reference internal" href="openturns.DirectionalSampling.html#openturns.DirectionalSampling" title="openturns.DirectionalSampling"><code class="xref py py-class docutils literal"><span class="pre">Directional</span> <span class="pre">Sampling</span> <span class="pre">simulation</span></code></a>.</p>
+<a class="reference internal" href="openturns.DirectionalSampling.html#openturns.DirectionalSampling" title="openturns.DirectionalSampling"><code class="xref py py-class docutils literal notranslate"><span class="pre">Directional</span> <span class="pre">Sampling</span> <span class="pre">simulation</span></code></a>.</p>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -167,49 +160,49 @@ root research of a
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Solver.getAbsoluteError" title="openturns.Solver.getAbsoluteError"><code class="xref py py-obj docutils literal"><span class="pre">getAbsoluteError</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Solver.getAbsoluteError" title="openturns.Solver.getAbsoluteError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAbsoluteError</span></code></a>()</td>
 <td>Accessor to the absolute error.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Solver.getClassName" title="openturns.Solver.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Solver.getClassName" title="openturns.Solver.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Solver.getId" title="openturns.Solver.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Solver.getId" title="openturns.Solver.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Solver.getImplementation" title="openturns.Solver.getImplementation"><code class="xref py py-obj docutils literal"><span class="pre">getImplementation</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Solver.getImplementation" title="openturns.Solver.getImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getImplementation</span></code></a>(*args)</td>
 <td>Accessor to the underlying implementation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Solver.getMaximumFunctionEvaluation" title="openturns.Solver.getMaximumFunctionEvaluation"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumFunctionEvaluation</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Solver.getMaximumFunctionEvaluation" title="openturns.Solver.getMaximumFunctionEvaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumFunctionEvaluation</span></code></a>()</td>
 <td>Accessor to the maximum number of evaluations of the function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Solver.getName" title="openturns.Solver.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Solver.getName" title="openturns.Solver.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Solver.getRelativeError" title="openturns.Solver.getRelativeError"><code class="xref py py-obj docutils literal"><span class="pre">getRelativeError</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Solver.getRelativeError" title="openturns.Solver.getRelativeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRelativeError</span></code></a>()</td>
 <td>Accessor to the relative error.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Solver.getResidualError" title="openturns.Solver.getResidualError"><code class="xref py py-obj docutils literal"><span class="pre">getResidualError</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Solver.getResidualError" title="openturns.Solver.getResidualError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResidualError</span></code></a>()</td>
 <td>Accessor to the residual error.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Solver.getUsedFunctionEvaluation" title="openturns.Solver.getUsedFunctionEvaluation"><code class="xref py py-obj docutils literal"><span class="pre">getUsedFunctionEvaluation</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Solver.getUsedFunctionEvaluation" title="openturns.Solver.getUsedFunctionEvaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUsedFunctionEvaluation</span></code></a>()</td>
 <td>Accessor to the number of evaluations of the function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Solver.setAbsoluteError" title="openturns.Solver.setAbsoluteError"><code class="xref py py-obj docutils literal"><span class="pre">setAbsoluteError</span></code></a>(absoluteError)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Solver.setAbsoluteError" title="openturns.Solver.setAbsoluteError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAbsoluteError</span></code></a>(absoluteError)</td>
 <td>Accessor to the absolute error.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Solver.setMaximumFunctionEvaluation" title="openturns.Solver.setMaximumFunctionEvaluation"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumFunctionEvaluation</span></code></a>(…)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Solver.setMaximumFunctionEvaluation" title="openturns.Solver.setMaximumFunctionEvaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumFunctionEvaluation</span></code></a>(…)</td>
 <td>Accessor to the maximum number of evaluations of the function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Solver.setName" title="openturns.Solver.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Solver.setName" title="openturns.Solver.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Solver.setRelativeError" title="openturns.Solver.setRelativeError"><code class="xref py py-obj docutils literal"><span class="pre">setRelativeError</span></code></a>(relativeError)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Solver.setRelativeError" title="openturns.Solver.setRelativeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setRelativeError</span></code></a>(relativeError)</td>
 <td>Accessor to the relative error.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Solver.setResidualError" title="openturns.Solver.setResidualError"><code class="xref py py-obj docutils literal"><span class="pre">setResidualError</span></code></a>(residualError)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Solver.setResidualError" title="openturns.Solver.setResidualError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setResidualError</span></code></a>(residualError)</td>
 <td>Accessor to the residual error.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">solve</span></code>(*args)</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code>(*args)</td>
 <td></td>
 </tr>
 </tbody>
@@ -500,14 +493,14 @@ expected value.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../threshold_probability_simulation_algorithms.html" >Threshold probability: Simulation algorithms</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

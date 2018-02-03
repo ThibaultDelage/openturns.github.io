@@ -9,16 +9,7 @@
     <title>Library development &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -119,12 +110,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -151,29 +144,29 @@ consider reading our coding guidelines and contact us on the developer’s maili
 <h3>Download openturns<a class="headerlink" href="#download-openturns" title="Permalink to this headline">¶</a></h3>
 <p>You can retrieve the development master branch through the git
 repository by issuing the following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">openturns</span><span class="o">/</span><span class="n">openturns</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">openturns</span><span class="o">/</span><span class="n">openturns</span><span class="o">.</span><span class="n">git</span>
 <span class="n">cd</span> <span class="n">openturns</span>
 </pre></div>
 </div>
 <p>Or, you can pick up a stable version tarball:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">openturns</span><span class="o">/</span><span class="n">openturns</span><span class="o">/</span><span class="n">archive</span><span class="o">/</span><span class="n">v1</span><span class="o">.</span><span class="mf">7.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">openturns</span><span class="o">/</span><span class="n">openturns</span><span class="o">/</span><span class="n">archive</span><span class="o">/</span><span class="n">v1</span><span class="o">.</span><span class="mf">7.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
 <span class="n">tar</span> <span class="n">xjf</span> <span class="n">v1</span><span class="o">.</span><span class="mf">7.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
 <span class="n">cd</span> <span class="n">openturns</span><span class="o">-</span><span class="mf">1.7</span>
 </pre></div>
 </div>
 <p>You may want to install the provided R package enabling additional
 statistical capabilities:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="n">CMD</span> <span class="n">INSTALL</span> <span class="n">utils</span><span class="o">/</span><span class="n">rot_1</span><span class="o">.</span><span class="mf">4.6</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="n">CMD</span> <span class="n">INSTALL</span> <span class="n">utils</span><span class="o">/</span><span class="n">rot_1</span><span class="o">.</span><span class="mf">4.6</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
 </pre></div>
 </div>
 <p>You can verify it’s correct installation by typing:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">--</span><span class="n">vanilla</span> <span class="o">&lt;&lt;&lt;</span> <span class="s1">&#39;library(rot)&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">--</span><span class="n">vanilla</span> <span class="o">&lt;&lt;&lt;</span> <span class="s1">&#39;library(rot)&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="build-openturns">
 <h3>Build openturns<a class="headerlink" href="#build-openturns" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span>mkdir build
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=$PWD/install ..
 make install -j4
@@ -182,7 +175,7 @@ make install -j4
 </div>
 <div class="section" id="run-tests">
 <h3>Run tests<a class="headerlink" href="#run-tests" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">tests</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">tests</span>
 <span class="n">ctest</span> <span class="o">-</span><span class="n">j4</span>
 </pre></div>
 </div>
@@ -199,12 +192,12 @@ directory of the sources directories.</p>
 <div class="section" id="first-add-the-class-to-the-c-library">
 <h3>First, add the class to the C++ library<a class="headerlink" href="#first-add-the-class-to-the-c-library" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Create <code class="docutils literal"><span class="pre">openturns/MyClass.hxx</span></code> and <code class="docutils literal"><span class="pre">MyClass.cxx</span></code> in appropriate subdirectories of lib/src.
+<li><p class="first">Create <code class="docutils literal notranslate"><span class="pre">openturns/MyClass.hxx</span></code> and <code class="docutils literal notranslate"><span class="pre">MyClass.cxx</span></code> in appropriate subdirectories of lib/src.
 The files must have the standard header comment, with a brief description
 of the class in Doxygen form and the standard reference to the LGPL license.</p>
-<p>For the header file <code class="docutils literal"><span class="pre">MyClass.hxx</span></code>, the interface must be embraced
+<p>For the header file <code class="docutils literal notranslate"><span class="pre">MyClass.hxx</span></code>, the interface must be embraced
 between the preprocessing clauses:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#ifndef OPENTURNS_MYCLASS_HXX</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#ifndef OPENTURNS_MYCLASS_HXX</span>
 <span class="c1">#define OPENTURNS_MYCLASS_HXX</span>
 
 <span class="n">BEGIN_NAMESPACE_OPENTURNS</span>
@@ -230,28 +223,28 @@ document for the &nbsp;coding rules: case convention for the static
 methods, the methods and the attributes, trailing underscore for the
 attribute names for naming a few.</p>
 </li>
-<li><p class="first">Modify the <code class="docutils literal"><span class="pre">CMakeLists.txt</span></code> file in the directory containing
-<code class="docutils literal"><span class="pre">MyClass.hxx</span></code> and <code class="docutils literal"><span class="pre">MyClass.cxx</span></code>:</p>
+<li><p class="first">Modify the <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file in the directory containing
+<code class="docutils literal notranslate"><span class="pre">MyClass.hxx</span></code> and <code class="docutils literal notranslate"><span class="pre">MyClass.cxx</span></code>:</p>
 <ul class="simple">
-<li>add <code class="docutils literal"><span class="pre">MyClass.hxx</span></code> to the headers using
-<code class="docutils literal"><span class="pre">ot_install_header_file</span> <span class="pre">(</span> <span class="pre">MyClass.hxx</span> <span class="pre">)</span></code>.</li>
-<li>add <code class="docutils literal"><span class="pre">MyClass.cxx</span></code> to the sources using
-<code class="docutils literal"><span class="pre">ot_add_source_file</span> <span class="pre">(</span> <span class="pre">MyClass.cxx</span> <span class="pre">)</span></code>.</li>
+<li>add <code class="docutils literal notranslate"><span class="pre">MyClass.hxx</span></code> to the headers using
+<code class="docutils literal notranslate"><span class="pre">ot_install_header_file</span> <span class="pre">(</span> <span class="pre">MyClass.hxx</span> <span class="pre">)</span></code>.</li>
+<li>add <code class="docutils literal notranslate"><span class="pre">MyClass.cxx</span></code> to the sources using
+<code class="docutils literal notranslate"><span class="pre">ot_add_source_file</span> <span class="pre">(</span> <span class="pre">MyClass.cxx</span> <span class="pre">)</span></code>.</li>
 </ul>
 </li>
-<li><p class="first">Add <code class="docutils literal"><span class="pre">MyClass.hxx</span></code> to the file <code class="docutils literal"><span class="pre">OTXXXXXX.hxx</span></code>, where <code class="docutils literal"><span class="pre">XXXXXX</span></code> is
+<li><p class="first">Add <code class="docutils literal notranslate"><span class="pre">MyClass.hxx</span></code> to the file <code class="docutils literal notranslate"><span class="pre">OTXXXXXX.hxx</span></code>, where <code class="docutils literal notranslate"><span class="pre">XXXXXX</span></code> is
 the name of the current directory.</p>
 </li>
-<li><p class="first">Create a test file <code class="docutils literal"><span class="pre">t_MyClass_std.cxx</span></code> in the directory lib/test.
+<li><p class="first">Create a test file <code class="docutils literal notranslate"><span class="pre">t_MyClass_std.cxx</span></code> in the directory lib/test.
 This test file must use the standard functionalities of the class
 MyClass.</p>
 </li>
-<li><p class="first">Create an expected output file <code class="docutils literal"><span class="pre">t_MyClass_std.expout</span></code> that contains
+<li><p class="first">Create an expected output file <code class="docutils literal notranslate"><span class="pre">t_MyClass_std.expout</span></code> that contains
 a verbatim copy of the expected output (copy-paste the <em>validated</em>
 output of the test in this file).</p>
 </li>
-<li><p class="first">Modify the <code class="docutils literal"><span class="pre">CMakeLists.txt</span></code> file in lib/test: add
-<code class="docutils literal"><span class="pre">ot_check_test</span> <span class="pre">(</span> <span class="pre">MyClass_std</span> <span class="pre">)</span></code> in this file.</p>
+<li><p class="first">Modify the <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file in lib/test: add
+<code class="docutils literal notranslate"><span class="pre">ot_check_test</span> <span class="pre">(</span> <span class="pre">MyClass_std</span> <span class="pre">)</span></code> in this file.</p>
 </li>
 <li><p class="first">If the validation of your class involved advanced mathematics, or was
 a significant work using other tools, you can add this validation in
@@ -275,7 +268,7 @@ But nobody can use it!</p>
 <ol class="arabic">
 <li><p class="first">Create MyClass.i in the python/src directory. In most situations, it
 should be:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">SWIG</span> <span class="n">file</span> <span class="n">MyClass</span><span class="o">.</span><span class="n">i</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">SWIG</span> <span class="n">file</span> <span class="n">MyClass</span><span class="o">.</span><span class="n">i</span>
 
 <span class="o">%</span><span class="p">{</span>
 <span class="c1">#include &quot;openturns/MyClass.hxx&quot;</span>
@@ -301,7 +294,7 @@ should be:</p>
 directory. This will be part of the HTML documentation generated by
 sphinx. Document every method of your class that’s not inherited. In
 most situations, it should look like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>%feature(&quot;docstring&quot;) OT::MyClass
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%feature(&quot;docstring&quot;) OT::MyClass
 &quot;MyClass class.
 
 Available constructors:
@@ -344,7 +337,7 @@ Examples
 </div>
 </li>
 <li><p class="first">Modify the CMakeLists.txt file in python/src: add MyClass.i,
-MyClass_doc.i.in to the relevant <code class="docutils literal"><span class="pre">ot_add_python_module</span></code> clause.</p>
+MyClass_doc.i.in to the relevant <code class="docutils literal notranslate"><span class="pre">ot_add_python_module</span></code> clause.</p>
 </li>
 <li><p class="first">Locate and modify the file yyyy.i, where yyyy is the name of the
 python module related to MyClass, to include MyClass.i in the correct
@@ -352,14 +345,14 @@ set of .i files (see the comments in yyyy.i file). In order to
 identify the correct python module, remember that the modules map
 quite closely the source tree organization.</p>
 </li>
-<li><p class="first">Create a test file <code class="docutils literal"><span class="pre">t_MyClass_std.py</span></code> in the directory python/test.
-This test implements the same tests than <code class="docutils literal"><span class="pre">t_MyClass_std.cxx</span></code>, but
+<li><p class="first">Create a test file <code class="docutils literal notranslate"><span class="pre">t_MyClass_std.py</span></code> in the directory python/test.
+This test implements the same tests than <code class="docutils literal notranslate"><span class="pre">t_MyClass_std.cxx</span></code>, but
 using python.</p>
 </li>
 <li><p class="first">Modify the CMakeLists.txt file in python/test:</p>
 <ul class="simple">
-<li>add <code class="docutils literal"><span class="pre">t_MyClass_std.py</span></code> to the tests using
-<code class="docutils literal"><span class="pre">ot_pyinstallcheck_test</span> <span class="pre">(</span> <span class="pre">MyClass_std</span> <span class="pre">)</span></code>.</li>
+<li>add <code class="docutils literal notranslate"><span class="pre">t_MyClass_std.py</span></code> to the tests using
+<code class="docutils literal notranslate"><span class="pre">ot_pyinstallcheck_test</span> <span class="pre">(</span> <span class="pre">MyClass_std</span> <span class="pre">)</span></code>.</li>
 </ul>
 </li>
 </ol>
@@ -368,7 +361,7 @@ using python.</p>
 <h3>Document your contribution more thoroughly<a class="headerlink" href="#document-your-contribution-more-thoroughly" title="Permalink to this headline">¶</a></h3>
 <p>If your class introduces important mathematical concepts or impacts the
 library architecture it may be useful to add some more details in the
-latex documentation, see <a class="reference internal" href="latex_documentation.html#latex-doc"><span class="std std-ref">Latex documentation</span></a>.</p>
+documentation, see <a class="reference internal" href="sphinx_documentation.html#sphinx-doc"><span class="std std-ref">Sphinx documentation</span></a>.</p>
 <p>That’s all, folks!</p>
 <p>Some timings from an &nbsp;Guru: 2 days of work for the most trivial
 contribution (a copy-paste of a class with 5 methods, no mathematical or
@@ -398,7 +391,7 @@ to the subdirectories into the library associated to the parent
 directory:</p>
 <ol class="arabic">
 <li><p class="first">add NewDir subdirectory to the build:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">add_subdirectory</span> <span class="p">(</span><span class="n">NewDir</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">add_subdirectory</span> <span class="p">(</span><span class="n">NewDir</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -408,7 +401,7 @@ directory:</p>
 <h3>CMake infrastructure in the new subdirectory<a class="headerlink" href="#cmake-infrastructure-in-the-new-subdirectory" title="Permalink to this headline">¶</a></h3>
 <p>You have to create a CMakeLists.txt file. Its general structure is given
 by the following template:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#                                               -*- cmake -*-</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#                                               -*- cmake -*-</span>
 <span class="c1">#</span>
 <span class="c1">#  CMakeLists.txt</span>
 <span class="c1">#</span>
@@ -487,7 +480,7 @@ of a ticket:</p>
 named OT and aliased as OpenTURNS. It allows to insulate these classes
 from classes from another project that could share the same name. Macros
 are provided to enclose your code in the namespace as follow:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">BEGIN_NAMESPACE_OPENTURNS</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BEGIN_NAMESPACE_OPENTURNS</span>
 <span class="o">//</span> <span class="n">code</span>
 <span class="n">END_NAMESPACE_OPENTURNS</span>
 </pre></div>
@@ -550,7 +543,7 @@ mechanisms to handle and select objects.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

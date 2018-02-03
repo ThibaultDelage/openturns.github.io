@@ -9,16 +9,7 @@
     <title>Flood model &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -84,12 +75,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -290,22 +283,22 @@ dike height and the water level is positive:</p>
 <li>Zm ~ Uniform(a=54, b=56)</li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [52]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [53]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create the marginal distributions of the parameters</span>
 <span class="n">dist_Q</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">TruncatedDistribution</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Gumbel</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mf">558.</span><span class="p">,</span> <span class="mf">1013.</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">TruncatedDistribution</span><span class="o">.</span><span class="n">LOWER</span><span class="p">)</span>
 <span class="n">dist_Ks</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">TruncatedDistribution</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mf">30.0</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">TruncatedDistribution</span><span class="o">.</span><span class="n">LOWER</span><span class="p">)</span>
@@ -316,11 +309,11 @@ dike height and the water level is positive:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [54]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create the Copula</span>
 <span class="n">RS</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="c1">#RS[2, 3] = -0.2</span>
@@ -332,11 +325,11 @@ dike height and the water level is positive:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [55]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create the joint probability distribution</span>
 <span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComposedDistribution</span><span class="p">(</span><span class="n">marginals</span><span class="p">,</span> <span class="n">copula</span><span class="p">)</span>
 <span class="n">distribution</span><span class="o">.</span><span class="n">setDescription</span><span class="p">([</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;Ks&#39;</span><span class="p">,</span> <span class="s1">&#39;Zv&#39;</span><span class="p">,</span> <span class="s1">&#39;Zm&#39;</span><span class="p">])</span>
@@ -344,11 +337,11 @@ dike height and the water level is positive:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [62]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create the model</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;Ks&#39;</span><span class="p">,</span> <span class="s1">&#39;Zv&#39;</span><span class="p">,</span> <span class="s1">&#39;Zm&#39;</span><span class="p">],</span>
                             <span class="p">[</span><span class="s1">&#39;(Q/(Ks*300.*sqrt((Zm-Zv)/5000)))^(3.0/5.0)+Zv-55.5-3.&#39;</span><span class="p">])</span>
@@ -356,11 +349,11 @@ dike height and the water level is positive:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [57]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create the event we want to estimate the probability</span>
 <span class="n">vect</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">distribution</span><span class="p">)</span>
 <span class="n">G</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CompositeRandomVector</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">vect</span><span class="p">)</span>
@@ -370,11 +363,11 @@ dike height and the water level is positive:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [58]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Define a solver</span>
 <span class="n">optimAlgo</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Cobyla</span><span class="p">()</span>
 <span class="n">optimAlgo</span><span class="o">.</span><span class="n">setMaximumIterationNumber</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
@@ -386,11 +379,11 @@ dike height and the water level is positive:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [59]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Run FORM</span>
 <span class="n">startingPoint</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getMean</span><span class="p">()</span>
 <span class="n">algo</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FORM</span><span class="p">(</span><span class="n">optimAlgo</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">startingPoint</span><span class="p">)</span>
@@ -401,11 +394,11 @@ dike height and the water level is positive:</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [60]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># retrieve results</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span>
 <span class="n">probability</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">getEventProbability</span><span class="p">()</span>
@@ -422,18 +415,18 @@ Pf= 0.0005340887806480156
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [61]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Importance factors</span>
 <span class="n">result</span><span class="o">.</span><span class="n">drawImportanceFactors</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[61]:
 </pre></div>
 </div>
@@ -468,7 +461,7 @@ Pf= 0.0005340887806480156
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

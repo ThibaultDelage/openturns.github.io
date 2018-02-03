@@ -9,16 +9,7 @@
     <title>SquareMatrix &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" accesskey="U">Base objects</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -128,7 +121,7 @@ Default creates a zero matrix.</p>
 </table>
 <p class="rubric">Examples</p>
 <p>Create a matrix</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquareMatrix</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
 <span class="go">[[ 0 2 ]</span>
@@ -136,7 +129,7 @@ Default creates a zero matrix.</p>
 </pre></div>
 </div>
 <p>Get or set terms</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="go">0.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
@@ -148,17 +141,17 @@ Default creates a zero matrix.</p>
 </div>
 <p>Create an openturns matrix from a <strong>square</strong> numpy 2d-array (or matrix, or
 2d-list)…</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np_2d_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot_matrix</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquareMatrix</span><span class="p">(</span><span class="n">np_2d_array</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>and back</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">ot_matrix</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">ot_matrix</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Basic linear algebra operations (provided the dimensions are compatible)</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">]])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquareMatrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">B</span> <span class="o">-</span> <span class="n">C</span><span class="p">)</span>
@@ -178,70 +171,70 @@ Default creates a zero matrix.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.clean" title="openturns.SquareMatrix.clean"><code class="xref py py-obj docutils literal"><span class="pre">clean</span></code></a>(threshold)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.clean" title="openturns.SquareMatrix.clean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean</span></code></a>(threshold)</td>
 <td>Set elements smaller than a threshold to zero.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.computeDeterminant" title="openturns.SquareMatrix.computeDeterminant"><code class="xref py py-obj docutils literal"><span class="pre">computeDeterminant</span></code></a>([keepIntact])</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.computeDeterminant" title="openturns.SquareMatrix.computeDeterminant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeDeterminant</span></code></a>([keepIntact])</td>
 <td>Compute the determinant.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.computeEV" title="openturns.SquareMatrix.computeEV"><code class="xref py py-obj docutils literal"><span class="pre">computeEV</span></code></a>([keepIntact])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.computeEV" title="openturns.SquareMatrix.computeEV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeEV</span></code></a>([keepIntact])</td>
 <td>Compute the eigen values decomposition (EVD).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.computeEigenValues" title="openturns.SquareMatrix.computeEigenValues"><code class="xref py py-obj docutils literal"><span class="pre">computeEigenValues</span></code></a>([keepIntact])</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.computeEigenValues" title="openturns.SquareMatrix.computeEigenValues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeEigenValues</span></code></a>([keepIntact])</td>
 <td>Compute eigen values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.computeGram" title="openturns.SquareMatrix.computeGram"><code class="xref py py-obj docutils literal"><span class="pre">computeGram</span></code></a>([transpose])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.computeGram" title="openturns.SquareMatrix.computeGram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeGram</span></code></a>([transpose])</td>
 <td>Compute the associated Gram matrix.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.computeLogAbsoluteDeterminant" title="openturns.SquareMatrix.computeLogAbsoluteDeterminant"><code class="xref py py-obj docutils literal"><span class="pre">computeLogAbsoluteDeterminant</span></code></a>([keepIntact])</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.computeLogAbsoluteDeterminant" title="openturns.SquareMatrix.computeLogAbsoluteDeterminant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeLogAbsoluteDeterminant</span></code></a>([keepIntact])</td>
 <td>Compute the logarithm of the absolute value of the determinant.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.computeQR" title="openturns.SquareMatrix.computeQR"><code class="xref py py-obj docutils literal"><span class="pre">computeQR</span></code></a>([fullQR,&nbsp;keepIntact])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.computeQR" title="openturns.SquareMatrix.computeQR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeQR</span></code></a>([fullQR,&nbsp;keepIntact])</td>
 <td>Compute the QR factorization.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.computeSVD" title="openturns.SquareMatrix.computeSVD"><code class="xref py py-obj docutils literal"><span class="pre">computeSVD</span></code></a>([fullSVD,&nbsp;keepIntact])</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.computeSVD" title="openturns.SquareMatrix.computeSVD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSVD</span></code></a>([fullSVD,&nbsp;keepIntact])</td>
 <td>Compute the singular values decomposition (SVD).</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.computeSingularValues" title="openturns.SquareMatrix.computeSingularValues"><code class="xref py py-obj docutils literal"><span class="pre">computeSingularValues</span></code></a>([keepIntact])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.computeSingularValues" title="openturns.SquareMatrix.computeSingularValues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSingularValues</span></code></a>([keepIntact])</td>
 <td>Compute the singular values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.computeTrace" title="openturns.SquareMatrix.computeTrace"><code class="xref py py-obj docutils literal"><span class="pre">computeTrace</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.computeTrace" title="openturns.SquareMatrix.computeTrace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeTrace</span></code></a>()</td>
 <td>Compute the trace of the matrix.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.getClassName" title="openturns.SquareMatrix.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.getClassName" title="openturns.SquareMatrix.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.getDimension" title="openturns.SquareMatrix.getDimension"><code class="xref py py-obj docutils literal"><span class="pre">getDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.getDimension" title="openturns.SquareMatrix.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
 <td>Accessor to the dimension (the number of rows).</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.getId" title="openturns.SquareMatrix.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.getId" title="openturns.SquareMatrix.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.getImplementation" title="openturns.SquareMatrix.getImplementation"><code class="xref py py-obj docutils literal"><span class="pre">getImplementation</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.getImplementation" title="openturns.SquareMatrix.getImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getImplementation</span></code></a>(*args)</td>
 <td>Accessor to the underlying implementation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.getName" title="openturns.SquareMatrix.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.getName" title="openturns.SquareMatrix.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.getNbColumns" title="openturns.SquareMatrix.getNbColumns"><code class="xref py py-obj docutils literal"><span class="pre">getNbColumns</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.getNbColumns" title="openturns.SquareMatrix.getNbColumns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNbColumns</span></code></a>()</td>
 <td>Accessor to the number of columns.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.getNbRows" title="openturns.SquareMatrix.getNbRows"><code class="xref py py-obj docutils literal"><span class="pre">getNbRows</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.getNbRows" title="openturns.SquareMatrix.getNbRows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNbRows</span></code></a>()</td>
 <td>Accessor to the number of rows.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.isDiagonal" title="openturns.SquareMatrix.isDiagonal"><code class="xref py py-obj docutils literal"><span class="pre">isDiagonal</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.isDiagonal" title="openturns.SquareMatrix.isDiagonal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isDiagonal</span></code></a>()</td>
 <td>Test whether the matrix is diagonal or not.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.isEmpty" title="openturns.SquareMatrix.isEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isEmpty</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.isEmpty" title="openturns.SquareMatrix.isEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEmpty</span></code></a>()</td>
 <td>Tell if the matrix is empty.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.setName" title="openturns.SquareMatrix.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.setName" title="openturns.SquareMatrix.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.solveLinearSystem" title="openturns.SquareMatrix.solveLinearSystem"><code class="xref py py-obj docutils literal"><span class="pre">solveLinearSystem</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SquareMatrix.solveLinearSystem" title="openturns.SquareMatrix.solveLinearSystem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solveLinearSystem</span></code></a>(*args)</td>
 <td>Solve a square linear system whose the present matrix is the operator.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.transpose" title="openturns.SquareMatrix.transpose"><code class="xref py py-obj docutils literal"><span class="pre">transpose</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SquareMatrix.transpose" title="openturns.SquareMatrix.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>()</td>
 <td>Transpose the matrix.</td>
 </tr>
 </tbody>
@@ -266,7 +259,7 @@ Default creates a zero matrix.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cleaned_matrix</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cleaned_matrix</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 <blockquote class="last">
 <div><p>Input matrix with elements smaller than the threshold set to zero.</p>
 </div></blockquote>
@@ -300,7 +293,7 @@ Default is <em>True</em> and leaves the present matrix unchanged.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquareMatrix</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">computeDeterminant</span><span class="p">()</span>
 <span class="go">-2.0</span>
@@ -329,12 +322,12 @@ Default is <em>True</em> and leaves the present matrix unchanged.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>eigen_values</strong> : <a class="reference internal" href="openturns.ComplexCollection.html#openturns.ComplexCollection" title="openturns.ComplexCollection"><code class="xref py py-class docutils literal"><span class="pre">ComplexCollection</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>eigen_values</strong> : <a class="reference internal" href="openturns.ComplexCollection.html#openturns.ComplexCollection" title="openturns.ComplexCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">ComplexCollection</span></code></a></p>
 <blockquote>
 <div><p>The vector of eigen values with size <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> that form the diagonal of
 the <img class="math" src="../../_images/math/4fce45ac83630f188e08c280c3759ca292ceb5c3.svg" alt="n \times n"/> matrix <img class="math" src="../../_images/math/385b3adacabb51a9d3ff55e3d9c9c212721a0cee.svg" alt="\mat{\Lambda}"/> of the EVD.</p>
 </div></blockquote>
-<p><strong>Phi</strong> : <a class="reference internal" href="openturns.SquareComplexMatrix.html#openturns.SquareComplexMatrix" title="openturns.SquareComplexMatrix"><code class="xref py py-class docutils literal"><span class="pre">SquareComplexMatrix</span></code></a></p>
+<p><strong>Phi</strong> : <a class="reference internal" href="openturns.SquareComplexMatrix.html#openturns.SquareComplexMatrix" title="openturns.SquareComplexMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">SquareComplexMatrix</span></code></a></p>
 <blockquote class="last">
 <div><p>The left matrix of the EVD.</p>
 </div></blockquote>
@@ -345,7 +338,7 @@ the <img class="math" src="../../_images/math/4fce45ac83630f188e08c280c3759ca292
 <p class="rubric">Notes</p>
 <p>This uses LAPACK’S <a class="reference external" href="http://www.netlib.org/lapack/lapack-3.1.1/html/dgeev.f.html">DGEEV</a>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquareMatrix</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">eigen_values</span><span class="p">,</span> <span class="n">Phi</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">computeEV</span><span class="p">()</span>
@@ -374,7 +367,7 @@ Default is <em>True</em> and leaves the present matrix unchanged.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>eigenvalues</strong> : <a class="reference internal" href="openturns.ComplexCollection.html#openturns.ComplexCollection" title="openturns.ComplexCollection"><code class="xref py py-class docutils literal"><span class="pre">ComplexCollection</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>eigenvalues</strong> : <a class="reference internal" href="openturns.ComplexCollection.html#openturns.ComplexCollection" title="openturns.ComplexCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">ComplexCollection</span></code></a></p>
 <blockquote class="last">
 <div><p>Eigen values.</p>
 </div></blockquote>
@@ -384,10 +377,10 @@ Default is <em>True</em> and leaves the present matrix unchanged.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.SquareMatrix.computeEV" title="openturns.SquareMatrix.computeEV"><code class="xref py py-obj docutils literal"><span class="pre">computeEV</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.SquareMatrix.computeEV" title="openturns.SquareMatrix.computeEV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeEV</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquareMatrix</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="o">.</span><span class="n">computeEigenValues</span><span class="p">()</span>
 <span class="go">[(-0.372281,0),(5.37228,0)]</span>
@@ -410,7 +403,7 @@ Default value is True</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>MMT</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>MMT</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 <blockquote class="last">
 <div><p>The Gram matrix.</p>
 </div></blockquote>
@@ -422,7 +415,7 @@ Default value is True</p>
 <p>When transposed is set to <cite>True</cite>, the method computes <img class="math" src="../../_images/math/ee96dd00a8dcb6a40fbab71b07be88deef795932.svg" alt="cM^t \times \cM"/>.
 Otherwise it computes <img class="math" src="../../_images/math/0e8eb32bf6f0350823241a1ab31b98e9406941d7.svg" alt="\cM \ times \cM^t"/></p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">MtM</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">computeGram</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">MtM</span><span class="p">)</span>
@@ -465,7 +458,7 @@ Default is <em>True</em> and leaves the present matrix unchanged.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquareMatrix</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">computeLogAbsoluteDeterminant</span><span class="p">()</span>
 <span class="go">[0.693147..., -1.0]</span>
@@ -505,19 +498,19 @@ Default is <em>True</em> and leaves the present matrix unchanged.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>Q1</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>Q1</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 <blockquote>
 <div><p>The orthogonal matrix of the economic QR factorization.</p>
 </div></blockquote>
-<p><strong>R1</strong> : <a class="reference internal" href="openturns.TriangularMatrix.html#openturns.TriangularMatrix" title="openturns.TriangularMatrix"><code class="xref py py-class docutils literal"><span class="pre">TriangularMatrix</span></code></a></p>
+<p><strong>R1</strong> : <a class="reference internal" href="openturns.TriangularMatrix.html#openturns.TriangularMatrix" title="openturns.TriangularMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">TriangularMatrix</span></code></a></p>
 <blockquote>
 <div><p>The right (upper) triangular matrix of the economic QR factorization.</p>
 </div></blockquote>
-<p><strong>Q</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a></p>
+<p><strong>Q</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 <blockquote>
 <div><p>The orthogonal matrix of the full QR factorization.</p>
 </div></blockquote>
-<p><strong>R</strong> : <a class="reference internal" href="openturns.TriangularMatrix.html#openturns.TriangularMatrix" title="openturns.TriangularMatrix"><code class="xref py py-class docutils literal"><span class="pre">TriangularMatrix</span></code></a></p>
+<p><strong>R</strong> : <a class="reference internal" href="openturns.TriangularMatrix.html#openturns.TriangularMatrix" title="openturns.TriangularMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">TriangularMatrix</span></code></a></p>
 <blockquote class="last">
 <div><p>The right (upper) triangular matrix of the full QR factorization.</p>
 </div></blockquote>
@@ -535,7 +528,7 @@ least-square sense because it implies solving a (simple) triangular system:</p>
 </div><p>This uses LAPACK’s <a class="reference external" href="http://www.netlib.org/lapack/lapack-3.1.1/html/dgeqrf.f.html">DGEQRF</a>
 and <a class="reference external" href="http://www.netlib.org/lapack/lapack-3.1.1/html/dorgqr.f.html">DORGQR</a>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Q1</span><span class="p">,</span> <span class="n">R1</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">computeQR</span><span class="p">()</span>
@@ -572,17 +565,17 @@ Default is <em>True</em> and leaves the present matrix unchanged.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>singular_values</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>singular_values</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote>
 <div><p>The vector of singular values with size <img class="math" src="../../_images/math/6c51df8472f530ff744a7283bd59dd59f7a57da9.svg" alt="n = \min(n_r, n_c)"/> that
 form the diagonal of the <img class="math" src="../../_images/math/dc4a9fde5ab5e1aade5db8737919f6a16a807c45.svg" alt="n_r \times n_c"/> matrix
 <img class="math" src="../../_images/math/cddd68cb75a199db2538386fa6c81d0632416bb0.svg" alt="\mat{\Sigma}"/> of the SVD.</p>
 </div></blockquote>
-<p><strong>U</strong> : <a class="reference internal" href="#openturns.SquareMatrix" title="openturns.SquareMatrix"><code class="xref py py-class docutils literal"><span class="pre">SquareMatrix</span></code></a></p>
+<p><strong>U</strong> : <a class="reference internal" href="#openturns.SquareMatrix" title="openturns.SquareMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">SquareMatrix</span></code></a></p>
 <blockquote>
 <div><p>The left orthogonal matrix of the SVD.</p>
 </div></blockquote>
-<p><strong>VT</strong> : <a class="reference internal" href="#openturns.SquareMatrix" title="openturns.SquareMatrix"><code class="xref py py-class docutils literal"><span class="pre">SquareMatrix</span></code></a></p>
+<p><strong>VT</strong> : <a class="reference internal" href="#openturns.SquareMatrix" title="openturns.SquareMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">SquareMatrix</span></code></a></p>
 <blockquote class="last">
 <div><p>The transposed right orthogonal matrix of the SVD.</p>
 </div></blockquote>
@@ -593,7 +586,7 @@ form the diagonal of the <img class="math" src="../../_images/math/dc4a9fde5ab5e
 <p class="rubric">Notes</p>
 <p>This uses LAPACK’s <a class="reference external" href="http://www.netlib.org/lapack/lapack-3.1.1/html/dgesdd.f.html">DGESDD</a>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">singular_values</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">VT</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">computeSVD</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
@@ -626,7 +619,7 @@ Default is <em>True</em> and leaves the present matrix unchanged.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>singular_values</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>singular_values</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The vector of singular values with size <img class="math" src="../../_images/math/6c51df8472f530ff744a7283bd59dd59f7a57da9.svg" alt="n = \min(n_r, n_c)"/> that
 form the diagonal of the <img class="math" src="../../_images/math/dc4a9fde5ab5e1aade5db8737919f6a16a807c45.svg" alt="n_r \times n_c"/> matrix
@@ -638,10 +631,10 @@ form the diagonal of the <img class="math" src="../../_images/math/dc4a9fde5ab5e
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.SquareMatrix.computeSVD" title="openturns.SquareMatrix.computeSVD"><code class="xref py py-obj docutils literal"><span class="pre">computeSVD</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.SquareMatrix.computeSVD" title="openturns.SquareMatrix.computeSVD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSVD</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">computeSingularValues</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
 <span class="go">[9.52552,0.514301]</span>
@@ -666,7 +659,7 @@ form the diagonal of the <img class="math" src="../../_images/math/dc4a9fde5ab5e
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquareMatrix</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="o">.</span><span class="n">computeTrace</span><span class="p">()</span>
 <span class="go">5.0</span>
@@ -823,7 +816,7 @@ form the diagonal of the <img class="math" src="../../_images/math/dc4a9fde5ab5e
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">()</span>
 <span class="go">True</span>
@@ -857,7 +850,7 @@ form the diagonal of the <img class="math" src="../../_images/math/dc4a9fde5ab5e
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>rhs</strong> : sequence of float or <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a> with <img class="math" src="../../_images/math/a9312f7e4aab4e1a4e2334e3fba6a9a348f7bb47.svg" alt="n_r"/> values or rows, respectively</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>rhs</strong> : sequence of float or <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a> with <img class="math" src="../../_images/math/a9312f7e4aab4e1a4e2334e3fba6a9a348f7bb47.svg" alt="n_r"/> values or rows, respectively</p>
 <blockquote>
 <div><p>The right hand side member of the linear system.</p>
 </div></blockquote>
@@ -868,7 +861,7 @@ Default is <em>True</em> and leaves the present matrix unchanged.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>solution</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> or <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>solution</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> or <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 <blockquote class="last">
 <div><p>The solution of the square linear system.</p>
 </div></blockquote>
@@ -879,12 +872,12 @@ Default is <em>True</em> and leaves the present matrix unchanged.</p>
 <p class="rubric">Notes</p>
 <p>This will handle both matrices and vectors. Note that you’d better type
 explicitely the matrix if it has some properties that could simplify the
-resolution (see <a class="reference internal" href="openturns.TriangularMatrix.html#openturns.TriangularMatrix" title="openturns.TriangularMatrix"><code class="xref py py-class docutils literal"><span class="pre">TriangularMatrix</span></code></a>).</p>
+resolution (see <a class="reference internal" href="openturns.TriangularMatrix.html#openturns.TriangularMatrix" title="openturns.TriangularMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">TriangularMatrix</span></code></a>).</p>
 <p>This uses LAPACK’S <a class="reference external" href="http://www.netlib.org/lapack/lapack-3.1.1/html/dgesv.f.html">DGESV</a>
 for matrices and <a class="reference external" href="http://www.netlib.org/lapack/lapack-3.1.1/html/dgelsy.f.html">DGELSY</a>
 for vectors.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquareMatrix</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">([</span><span class="mf">1.0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
@@ -902,7 +895,7 @@ for vectors.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>MT</strong> : <a class="reference internal" href="#openturns.SquareMatrix" title="openturns.SquareMatrix"><code class="xref py py-class docutils literal"><span class="pre">SquareMatrix</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>MT</strong> : <a class="reference internal" href="#openturns.SquareMatrix" title="openturns.SquareMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">SquareMatrix</span></code></a></p>
 <blockquote class="last">
 <div><p>The transposed matrix.</p>
 </div></blockquote>
@@ -911,7 +904,7 @@ for vectors.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquareMatrix</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
 <span class="go">[[ 1 2 ]</span>
@@ -947,14 +940,14 @@ for vectors.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" >Base objects</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

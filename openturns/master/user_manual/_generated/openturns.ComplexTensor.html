@@ -9,16 +9,7 @@
     <title>ComplexTensor &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" accesskey="U">Base objects</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -146,7 +139,7 @@ If not mentioned, a zero tensor is created.</p>
 </table>
 <p class="rubric">Examples</p>
 <p>Create a tensor of complex values:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">T</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComplexTensor</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
 <span class="go">sheet #0</span>
@@ -158,7 +151,7 @@ If not mentioned, a zero tensor is created.</p>
 </pre></div>
 </div>
 <p>Get or set terms:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="go">0j</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
@@ -166,13 +159,13 @@ If not mentioned, a zero tensor is created.</p>
 </pre></div>
 </div>
 <p>Create an openturns tensor from a numpy 3d-array:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np_3d_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">]],</span> <span class="p">[[</span><span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">]]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot_tensor</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComplexTensor</span><span class="p">(</span><span class="n">np_3d_array</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>and back</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np_tensor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ot_tensor</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np_tensor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ot_tensor</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
@@ -182,40 +175,40 @@ If not mentioned, a zero tensor is created.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ComplexTensor.clean" title="openturns.ComplexTensor.clean"><code class="xref py py-obj docutils literal"><span class="pre">clean</span></code></a>(threshold)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ComplexTensor.clean" title="openturns.ComplexTensor.clean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean</span></code></a>(threshold)</td>
 <td>Set elements smaller than a threshold to zero.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ComplexTensor.getClassName" title="openturns.ComplexTensor.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ComplexTensor.getClassName" title="openturns.ComplexTensor.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ComplexTensor.getId" title="openturns.ComplexTensor.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ComplexTensor.getId" title="openturns.ComplexTensor.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ComplexTensor.getImplementation" title="openturns.ComplexTensor.getImplementation"><code class="xref py py-obj docutils literal"><span class="pre">getImplementation</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ComplexTensor.getImplementation" title="openturns.ComplexTensor.getImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getImplementation</span></code></a>(*args)</td>
 <td>Accessor to the underlying implementation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ComplexTensor.getName" title="openturns.ComplexTensor.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ComplexTensor.getName" title="openturns.ComplexTensor.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ComplexTensor.getNbColumns" title="openturns.ComplexTensor.getNbColumns"><code class="xref py py-obj docutils literal"><span class="pre">getNbColumns</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ComplexTensor.getNbColumns" title="openturns.ComplexTensor.getNbColumns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNbColumns</span></code></a>()</td>
 <td>Accessor to the number of columns.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ComplexTensor.getNbRows" title="openturns.ComplexTensor.getNbRows"><code class="xref py py-obj docutils literal"><span class="pre">getNbRows</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ComplexTensor.getNbRows" title="openturns.ComplexTensor.getNbRows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNbRows</span></code></a>()</td>
 <td>Accessor to the number of rows.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ComplexTensor.getNbSheets" title="openturns.ComplexTensor.getNbSheets"><code class="xref py py-obj docutils literal"><span class="pre">getNbSheets</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ComplexTensor.getNbSheets" title="openturns.ComplexTensor.getNbSheets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNbSheets</span></code></a>()</td>
 <td>Accessor to the number of sheets.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ComplexTensor.getSheet" title="openturns.ComplexTensor.getSheet"><code class="xref py py-obj docutils literal"><span class="pre">getSheet</span></code></a>(k)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ComplexTensor.getSheet" title="openturns.ComplexTensor.getSheet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSheet</span></code></a>(k)</td>
 <td>Get a sheet of the tensor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ComplexTensor.isEmpty" title="openturns.ComplexTensor.isEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isEmpty</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ComplexTensor.isEmpty" title="openturns.ComplexTensor.isEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEmpty</span></code></a>()</td>
 <td>Tell if the tensor is empty.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ComplexTensor.setName" title="openturns.ComplexTensor.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ComplexTensor.setName" title="openturns.ComplexTensor.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ComplexTensor.setSheet" title="openturns.ComplexTensor.setSheet"><code class="xref py py-obj docutils literal"><span class="pre">setSheet</span></code></a>(k,&nbsp;m)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ComplexTensor.setSheet" title="openturns.ComplexTensor.setSheet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSheet</span></code></a>(k,&nbsp;m)</td>
 <td>Set a matrix as a sheet of the complex tensor.</td>
 </tr>
 </tbody>
@@ -240,7 +233,7 @@ If not mentioned, a zero tensor is created.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cleaned_tensor</strong> : <a class="reference internal" href="#openturns.ComplexTensor" title="openturns.ComplexTensor"><code class="xref py py-class docutils literal"><span class="pre">ComplexTensor</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cleaned_tensor</strong> : <a class="reference internal" href="#openturns.ComplexTensor" title="openturns.ComplexTensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ComplexTensor</span></code></a></p>
 <blockquote class="last">
 <div><p>Input tensor with elements smaller than the threshold set to zero.</p>
 </div></blockquote>
@@ -378,7 +371,7 @@ If not mentioned, a zero tensor is created.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>M</strong> : <a class="reference internal" href="openturns.ComplexMatrix.html#openturns.ComplexMatrix" title="openturns.ComplexMatrix"><code class="xref py py-class docutils literal"><span class="pre">ComplexMatrix</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>M</strong> : <a class="reference internal" href="openturns.ComplexMatrix.html#openturns.ComplexMatrix" title="openturns.ComplexMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">ComplexMatrix</span></code></a></p>
 <blockquote class="last">
 <div><p>The sheet element.</p>
 </div></blockquote>
@@ -387,7 +380,7 @@ If not mentioned, a zero tensor is created.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">T</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComplexTensor</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
 <span class="go">sheet #0</span>
@@ -423,7 +416,7 @@ If not mentioned, a zero tensor is created.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">T</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComplexTensor</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">T</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">()</span>
 <span class="go">True</span>
@@ -461,7 +454,7 @@ If not mentioned, a zero tensor is created.</p>
 <blockquote>
 <div><p>Index of sheet element.</p>
 </div></blockquote>
-<p><strong>M</strong> : <a class="reference internal" href="openturns.ComplexMatrix.html#openturns.ComplexMatrix" title="openturns.ComplexMatrix"><code class="xref py py-class docutils literal"><span class="pre">ComplexMatrix</span></code></a></p>
+<p><strong>M</strong> : <a class="reference internal" href="openturns.ComplexMatrix.html#openturns.ComplexMatrix" title="openturns.ComplexMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">ComplexMatrix</span></code></a></p>
 <blockquote class="last">
 <div><p>The matrix.</p>
 </div></blockquote>
@@ -470,7 +463,7 @@ If not mentioned, a zero tensor is created.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">T</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComplexTensor</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
 <span class="go">sheet #0</span>
@@ -522,14 +515,14 @@ If not mentioned, a zero tensor is created.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" >Base objects</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

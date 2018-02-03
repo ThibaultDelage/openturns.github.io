@@ -9,16 +9,7 @@
     <title>GeneralizedParetoFactory &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../statistics_on_sample.html" accesskey="U">Statistics on sample</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -117,7 +110,7 @@
 </dl>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-obj docutils literal"><span class="pre">DistributionFactory</span></code></a>, <a class="reference internal" href="openturns.GeneralizedPareto.html#openturns.GeneralizedPareto" title="openturns.GeneralizedPareto"><code class="xref py py-obj docutils literal"><span class="pre">GeneralizedPareto</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DistributionFactory</span></code></a>, <a class="reference internal" href="openturns.GeneralizedPareto.html#openturns.GeneralizedPareto" title="openturns.GeneralizedPareto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeneralizedPareto</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>OpenTURNS proposes several estimators to build a GeneralizedPareto distribution
@@ -132,8 +125,8 @@ its empirical variance,</li>
 </ul>
 <p>Then we estimate <img class="math" src="../../_images/math/ac275c6aea12f22c58f4e48ef775d65e601bc362.svg" alt="(\hat{\sigma}, \hat{\xi})"/>
 using:</p>
-<div class="math" id="equation-gpd_moment_estimator">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-gpd_moment_estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/682e85853b9131c7a44de115c1dfe8dcbae63c09.svg" alt="\hat{\xi} &amp;= \dfrac{1}{2}\left(\dfrac{\overline{x}_n^2}{s_n^2}-1\right) \\
+<div class="math" id="equation-gpd-moment-estimator">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-gpd-moment-estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/682e85853b9131c7a44de115c1dfe8dcbae63c09.svg" alt="\hat{\xi} &amp;= \dfrac{1}{2}\left(\dfrac{\overline{x}_n^2}{s_n^2}-1\right) \\
 \hat{\sigma} &amp;= \dfrac{\overline{x}_n}{2}\left(\dfrac{\overline{x}_n^2}{s_n^2}+1\right)"/></p>
 </div><p>this estimator is well-defined only if <img class="math" src="../../_images/math/66355dbcacd4786699738c4f69e4ebfbbe0a4231.svg" alt="\hat{\xi}&gt;-1/4"/>, otherwise the second moment does not exist.</p>
 <p><strong>Probability weighted moments based estimator:</strong></p>
@@ -145,8 +138,8 @@ using:</p>
 </ul>
 <p>Then we estimate <img class="math" src="../../_images/math/ac275c6aea12f22c58f4e48ef775d65e601bc362.svg" alt="(\hat{\sigma}, \hat{\xi})"/>
 using:</p>
-<div class="math" id="equation-gpd_probability_weighted_moment_estimator">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-gpd_probability_weighted_moment_estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/1867ee3605ec64bc2f06c0003888f3bd02e625f3.svg" alt="\hat{\xi} &amp;= \dfrac{1-4\rho}{1-2\rho} \\
+<div class="math" id="equation-gpd-probability-weighted-moment-estimator">
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-gpd-probability-weighted-moment-estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/1867ee3605ec64bc2f06c0003888f3bd02e625f3.svg" alt="\hat{\xi} &amp;= \dfrac{1-4\rho}{1-2\rho} \\
 \hat{\sigma} &amp;= \dfrac{2\overline{x}_n}{1-2\rho}"/></p>
 </div><p>this estimator is well-defined only if <img class="math" src="../../_images/math/6a755196dd431e4f9a2a97aa895e6ee7e2f19eae.svg" alt="\hat{\xi}&gt;-1/2"/>, otherwise the first moment does not exist.</p>
 <p><strong>Exponential regression based estimator:</strong></p>
@@ -156,12 +149,12 @@ using:</p>
 </ul>
 <p>Then we estimate <img class="math" src="../../_images/math/ac275c6aea12f22c58f4e48ef775d65e601bc362.svg" alt="(\hat{\sigma}, \hat{\xi})"/>
 using:</p>
-<div class="math" id="equation-gpd_exponential_estimator">
-<p><span class="eqno">(3)<a class="headerlink" href="#equation-gpd_exponential_estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/15ad15552add99bbdb4f725a761d7ffa9c7d001a.svg" alt="\hat{\xi} &amp;= \xi^* \\
+<div class="math" id="equation-gpd-exponential-estimator">
+<p><span class="eqno">(3)<a class="headerlink" href="#equation-gpd-exponential-estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/15ad15552add99bbdb4f725a761d7ffa9c7d001a.svg" alt="\hat{\xi} &amp;= \xi^* \\
 \hat{\sigma} &amp;= \dfrac{2\overline{x}_n}{1-2\rho}"/></p>
 </div><p>Where <img class="math" src="../../_images/math/1dc26599d8cabf310b40d517358b601358c15ede.svg" alt="\xi^*"/> maximizes:</p>
-<div class="math" id="equation-gpd_xi_relation">
-<p><span class="eqno">(4)<a class="headerlink" href="#equation-gpd_xi_relation" title="Permalink to this equation">¶</a></span><img src="../../_images/math/1f9a296af057a97086e4ea9208472ff25fd61219.svg" alt="\sum_{i=1}^{n-2}\log\left(\dfrac{1-(j/n)^{\xi}}{\xi}\right)-\dfrac{1-(j/n)^{\xi}}{\xi}y_i"/></p>
+<div class="math" id="equation-gpd-xi-relation">
+<p><span class="eqno">(4)<a class="headerlink" href="#equation-gpd-xi-relation" title="Permalink to this equation">¶</a></span><img src="../../_images/math/1f9a296af057a97086e4ea9208472ff25fd61219.svg" alt="\sum_{i=1}^{n-2}\log\left(\dfrac{1-(j/n)^{\xi}}{\xi}\right)-\dfrac{1-(j/n)^{\xi}}{\xi}y_i"/></p>
 </div><p>under the constraint <img class="math" src="../../_images/math/91afb8f33cf71f517b128332b0450485dd18b5e8.svg" alt="-1 \leq \xi \leq 1"/>.</p>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
@@ -170,64 +163,64 @@ using:</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.build" title="openturns.GeneralizedParetoFactory.build"><code class="xref py py-obj docutils literal"><span class="pre">build</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.build" title="openturns.GeneralizedParetoFactory.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>(*args)</td>
 <td>Build the distribution.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.buildAsGeneralizedPareto" title="openturns.GeneralizedParetoFactory.buildAsGeneralizedPareto"><code class="xref py py-obj docutils literal"><span class="pre">buildAsGeneralizedPareto</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.buildAsGeneralizedPareto" title="openturns.GeneralizedParetoFactory.buildAsGeneralizedPareto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildAsGeneralizedPareto</span></code></a>(*args)</td>
 <td>Build the distribution as a GeneralizedPareto type.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.buildEstimator" title="openturns.GeneralizedParetoFactory.buildEstimator"><code class="xref py py-obj docutils literal"><span class="pre">buildEstimator</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.buildEstimator" title="openturns.GeneralizedParetoFactory.buildEstimator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildEstimator</span></code></a>(*args)</td>
 <td>Build the distribution and the parameter distribution.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.buildMethodOfExponentialRegression" title="openturns.GeneralizedParetoFactory.buildMethodOfExponentialRegression"><code class="xref py py-obj docutils literal"><span class="pre">buildMethodOfExponentialRegression</span></code></a>(sample)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.buildMethodOfExponentialRegression" title="openturns.GeneralizedParetoFactory.buildMethodOfExponentialRegression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildMethodOfExponentialRegression</span></code></a>(sample)</td>
 <td>Build the distribution based on the exponential regression estimator.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.buildMethodOfMoments" title="openturns.GeneralizedParetoFactory.buildMethodOfMoments"><code class="xref py py-obj docutils literal"><span class="pre">buildMethodOfMoments</span></code></a>(sample)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.buildMethodOfMoments" title="openturns.GeneralizedParetoFactory.buildMethodOfMoments"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildMethodOfMoments</span></code></a>(sample)</td>
 <td>Build the distribution based on the method of moments estimator.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.buildMethodOfProbabilityWeightedMoments" title="openturns.GeneralizedParetoFactory.buildMethodOfProbabilityWeightedMoments"><code class="xref py py-obj docutils literal"><span class="pre">buildMethodOfProbabilityWeightedMoments</span></code></a>(sample)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.buildMethodOfProbabilityWeightedMoments" title="openturns.GeneralizedParetoFactory.buildMethodOfProbabilityWeightedMoments"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildMethodOfProbabilityWeightedMoments</span></code></a>(sample)</td>
 <td>Build the distribution based on the probability weighted moments estimator.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.getBootstrapSize" title="openturns.GeneralizedParetoFactory.getBootstrapSize"><code class="xref py py-obj docutils literal"><span class="pre">getBootstrapSize</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.getBootstrapSize" title="openturns.GeneralizedParetoFactory.getBootstrapSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBootstrapSize</span></code></a>()</td>
 <td>Accessor to the bootstrap size.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.getClassName" title="openturns.GeneralizedParetoFactory.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.getClassName" title="openturns.GeneralizedParetoFactory.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.getId" title="openturns.GeneralizedParetoFactory.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.getId" title="openturns.GeneralizedParetoFactory.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.getName" title="openturns.GeneralizedParetoFactory.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.getName" title="openturns.GeneralizedParetoFactory.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.getOptimizationAlgorithm" title="openturns.GeneralizedParetoFactory.getOptimizationAlgorithm"><code class="xref py py-obj docutils literal"><span class="pre">getOptimizationAlgorithm</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.getOptimizationAlgorithm" title="openturns.GeneralizedParetoFactory.getOptimizationAlgorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOptimizationAlgorithm</span></code></a>()</td>
 <td>Accessor to the solver.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.getShadowedId" title="openturns.GeneralizedParetoFactory.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.getShadowedId" title="openturns.GeneralizedParetoFactory.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.getVisibility" title="openturns.GeneralizedParetoFactory.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.getVisibility" title="openturns.GeneralizedParetoFactory.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.hasName" title="openturns.GeneralizedParetoFactory.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.hasName" title="openturns.GeneralizedParetoFactory.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.hasVisibleName" title="openturns.GeneralizedParetoFactory.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.hasVisibleName" title="openturns.GeneralizedParetoFactory.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.setBootstrapSize" title="openturns.GeneralizedParetoFactory.setBootstrapSize"><code class="xref py py-obj docutils literal"><span class="pre">setBootstrapSize</span></code></a>(bootstrapSize)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.setBootstrapSize" title="openturns.GeneralizedParetoFactory.setBootstrapSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBootstrapSize</span></code></a>(bootstrapSize)</td>
 <td>Accessor to the bootstrap size.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.setName" title="openturns.GeneralizedParetoFactory.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.setName" title="openturns.GeneralizedParetoFactory.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.setOptimizationAlgorithm" title="openturns.GeneralizedParetoFactory.setOptimizationAlgorithm"><code class="xref py py-obj docutils literal"><span class="pre">setOptimizationAlgorithm</span></code></a>(solver)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.setOptimizationAlgorithm" title="openturns.GeneralizedParetoFactory.setOptimizationAlgorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOptimizationAlgorithm</span></code></a>(solver)</td>
 <td>Accessor to the solver.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.setShadowedId" title="openturns.GeneralizedParetoFactory.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.setShadowedId" title="openturns.GeneralizedParetoFactory.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.setVisibility" title="openturns.GeneralizedParetoFactory.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.GeneralizedParetoFactory.setVisibility" title="openturns.GeneralizedParetoFactory.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -256,7 +249,7 @@ using:</p>
 <blockquote>
 <div><p>The sample from which the distribution parameters are estimated.</p>
 </div></blockquote>
-<p><strong>param</strong> : Collection of <a class="reference internal" href="openturns.PointWithDescription.html#openturns.PointWithDescription" title="openturns.PointWithDescription"><code class="xref py py-class docutils literal"><span class="pre">PointWithDescription</span></code></a></p>
+<p><strong>param</strong> : Collection of <a class="reference internal" href="openturns.PointWithDescription.html#openturns.PointWithDescription" title="openturns.PointWithDescription"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointWithDescription</span></code></a></p>
 <blockquote class="last">
 <div><p>A vector of parameters of the distribution.</p>
 </div></blockquote>
@@ -265,13 +258,13 @@ using:</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>In the first usage, the default <a class="reference internal" href="openturns.GeneralizedPareto.html#openturns.GeneralizedPareto" title="openturns.GeneralizedPareto"><code class="xref py py-class docutils literal"><span class="pre">GeneralizedPareto</span></code></a> distribution is built.</p>
+<p>In the first usage, the default <a class="reference internal" href="openturns.GeneralizedPareto.html#openturns.GeneralizedPareto" title="openturns.GeneralizedPareto"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralizedPareto</span></code></a> distribution is built.</p>
 <p>In the second usage, the parameters are evaluated according the following strategy:</p>
 <ul class="simple">
-<li>If the sample size is less or equal to <cite>GeneralizedParetoFactory-SmallSize</cite> from <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>, then the method of probability weighted moments is used. If it fails, the method of exponential regression is used.</li>
+<li>If the sample size is less or equal to <cite>GeneralizedParetoFactory-SmallSize</cite> from <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>, then the method of probability weighted moments is used. If it fails, the method of exponential regression is used.</li>
 <li>Otherwise, the first method tried is the method of exponential regression, then the method of probability weighted moments if the first one fails.</li>
 </ul>
-<p>In the fourth usage, a <a class="reference internal" href="openturns.GeneralizedPareto.html#openturns.GeneralizedPareto" title="openturns.GeneralizedPareto"><code class="xref py py-class docutils literal"><span class="pre">GeneralizedPareto</span></code></a> distribution corresponding to the given parameters is built.</p>
+<p>In the fourth usage, a <a class="reference internal" href="openturns.GeneralizedPareto.html#openturns.GeneralizedPareto" title="openturns.GeneralizedPareto"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralizedPareto</span></code></a> distribution corresponding to the given parameters is built.</p>
 </dd></dl>
 
 <dl class="method">
@@ -314,13 +307,13 @@ using:</p>
 <blockquote>
 <div><p>Sample from which the distribution parameters are estimated.</p>
 </div></blockquote>
-<p><strong>parameters</strong> : <a class="reference internal" href="openturns.DistributionParameters.html#openturns.DistributionParameters" title="openturns.DistributionParameters"><code class="xref py py-class docutils literal"><span class="pre">DistributionParameters</span></code></a></p>
+<p><strong>parameters</strong> : <a class="reference internal" href="openturns.DistributionParameters.html#openturns.DistributionParameters" title="openturns.DistributionParameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">DistributionParameters</span></code></a></p>
 <blockquote>
 <div><p>Optional, the parametrization.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>resDist</strong> : <a class="reference internal" href="openturns.DistributionFactoryResult.html#openturns.DistributionFactoryResult" title="openturns.DistributionFactoryResult"><code class="xref py py-class docutils literal"><span class="pre">DistributionFactoryResult</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>resDist</strong> : <a class="reference internal" href="openturns.DistributionFactoryResult.html#openturns.DistributionFactoryResult" title="openturns.DistributionFactoryResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">DistributionFactoryResult</span></code></a></p>
 <blockquote class="last">
 <div><p>The results.</p>
 </div></blockquote>
@@ -334,7 +327,7 @@ using:</p>
 <div><ul class="simple">
 <li>Moments method: the asymptotic parameters distribution is normal and estimated by Bootstrap on the initial data;</li>
 <li>Maximum likelihood method with a regular model: the asymptotic parameters distribution is normal and its covariance matrix is the inverse Fisher information matrix;</li>
-<li>Other methods: the asymptotic parameters distribution is estimated by Bootstrap on the initial data and kernel fitting (see <a class="reference internal" href="openturns.KernelSmoothing.html#openturns.KernelSmoothing" title="openturns.KernelSmoothing"><code class="xref py py-class docutils literal"><span class="pre">KernelSmoothing</span></code></a>).</li>
+<li>Other methods: the asymptotic parameters distribution is estimated by Bootstrap on the initial data and kernel fitting (see <a class="reference internal" href="openturns.KernelSmoothing.html#openturns.KernelSmoothing" title="openturns.KernelSmoothing"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelSmoothing</span></code></a>).</li>
 </ul>
 </div></blockquote>
 <p>If another set of parameters is specified, the native parameters distribution is first estimated and the new distribution is determined from it:</p>
@@ -346,17 +339,17 @@ using:</p>
 </div></blockquote>
 <p class="rubric">Examples</p>
 <p>Create a sample from a Beta distribution:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Beta</span><span class="p">()</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">ResourceMap</span><span class="o">.</span><span class="n">SetAsUnsignedInteger</span><span class="p">(</span><span class="s1">&#39;DistributionFactory-DefaultBootstrapSize&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Fit a Beta distribution in the native parameters and create a <a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-class docutils literal"><span class="pre">DistributionFactory</span></code></a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<p>Fit a Beta distribution in the native parameters and create a <a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">DistributionFactory</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/73d1520885911cd9f121c0cedc7d91e11efafea8.svg" alt="(\mu, \sigma, a, b)"/>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaMuSigma</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaMuSigma</span><span class="p">())</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -495,7 +488,7 @@ using:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>solver</strong> : <a class="reference internal" href="openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">OptimizationAlgorithm</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>solver</strong> : <a class="reference internal" href="openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationAlgorithm</span></code></a></p>
 <blockquote class="last">
 <div><p>The solver used for numerical optimization of the likelihood.</p>
 </div></blockquote>
@@ -621,7 +614,7 @@ using:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>solver</strong> : <a class="reference internal" href="openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">OptimizationAlgorithm</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>solver</strong> : <a class="reference internal" href="openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationAlgorithm</span></code></a></p>
 <blockquote class="last">
 <div><p>The solver used for numerical optimization of the likelihood.</p>
 </div></blockquote>
@@ -691,14 +684,14 @@ using:</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../statistics_on_sample.html" >Statistics on sample</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

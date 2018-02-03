@@ -9,16 +9,7 @@
     <title>LHSExperiment &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../designs_of_experiments.html" accesskey="U">Designs of experiments</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -121,7 +114,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
 <blockquote>
 <div><p>Distribution <img class="math" src="../../_images/math/6a70e9f2b33beac2ab75d748e24c94afa23b7039.svg" alt="\mu"/> with an independent copula used to generate the
 set of input data.</p>
@@ -149,7 +142,7 @@ Default is <em>True</em>.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.WeightedExperiment.html#openturns.WeightedExperiment" title="openturns.WeightedExperiment"><code class="xref py py-obj docutils literal"><span class="pre">WeightedExperiment</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.WeightedExperiment.html#openturns.WeightedExperiment" title="openturns.WeightedExperiment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WeightedExperiment</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>LHSExperiment is a random weighted design of experiments.
@@ -158,17 +151,17 @@ distribution <img class="math" src="../../_images/math/6a70e9f2b33beac2ab75d748e
 with the same probabilistic content according to the distribution, each line
 and each column contains exactly one cell, then points are selected among these
 selected cells. The weights associated to the points are all equal to
-<img class="math" src="../../_images/math/7bf6bbd5fca488089e5e8a4cab2a64a017a26bdc.svg" alt="1/\mathrm{card}\,I"/>. When recalled, the <a class="reference internal" href="#openturns.LHSExperiment.generate" title="openturns.LHSExperiment.generate"><code class="xref py py-meth docutils literal"><span class="pre">generate()</span></code></a> method generates a new
+<img class="math" src="../../_images/math/7bf6bbd5fca488089e5e8a4cab2a64a017a26bdc.svg" alt="1/\mathrm{card}\,I"/>. When recalled, the <a class="reference internal" href="#openturns.LHSExperiment.generate" title="openturns.LHSExperiment.generate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">generate()</span></code></a> method generates a new
 sample: the point selection within the cells changes but not the cells
 selection. To change the cell selection, it is necessary to create a new LHS
 Experiment.</p>
 <p class="rubric">Examples</p>
 <p>Create an <em>LHSExperiment</em>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 <p>Generate the sample reusing the initial shuffle and using a random shift:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">experiment</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LHSExperiment</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">experiment</span><span class="o">.</span><span class="n">generate</span><span class="p">())</span>
 <span class="go">    [ X0        X1        ]</span>
@@ -187,7 +180,7 @@ Experiment.</p>
 </pre></div>
 </div>
 <p>Generate the sample using a new shuffle and a random shift:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">experiment</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LHSExperiment</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">experiment</span><span class="o">.</span><span class="n">generate</span><span class="p">())</span>
 <span class="go">    [ X0        X1        ]</span>
@@ -206,7 +199,7 @@ Experiment.</p>
 </pre></div>
 </div>
 <p>Generate the sample reusing the initial shuffle and using a constant shift:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">experiment</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LHSExperiment</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">experiment</span><span class="o">.</span><span class="n">generate</span><span class="p">())</span>
 <span class="go">    [ X0        X1        ]</span>
@@ -225,7 +218,7 @@ Experiment.</p>
 </pre></div>
 </div>
 <p>Generate the sample using a new shuffle and using a constant shift:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">experiment</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LHSExperiment</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">experiment</span><span class="o">.</span><span class="n">generate</span><span class="p">())</span>
 <span class="go">    [ X0        X1        ]</span>
@@ -250,73 +243,73 @@ Experiment.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.ComputeShuffle" title="openturns.LHSExperiment.ComputeShuffle"><code class="xref py py-obj docutils literal"><span class="pre">ComputeShuffle</span></code></a>(totalSize)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.ComputeShuffle" title="openturns.LHSExperiment.ComputeShuffle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComputeShuffle</span></code></a>(totalSize)</td>
 <td>Generate a new cell randomization for external use.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.generate" title="openturns.LHSExperiment.generate"><code class="xref py py-obj docutils literal"><span class="pre">generate</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.generate" title="openturns.LHSExperiment.generate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate</span></code></a>()</td>
 <td>Generate points according to the type of the experiment.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.generateWithWeights" title="openturns.LHSExperiment.generateWithWeights"><code class="xref py py-obj docutils literal"><span class="pre">generateWithWeights</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.generateWithWeights" title="openturns.LHSExperiment.generateWithWeights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generateWithWeights</span></code></a>()</td>
 <td>Generate points and their associated weight according to the type of the experiment.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.getAlwaysShuffle" title="openturns.LHSExperiment.getAlwaysShuffle"><code class="xref py py-obj docutils literal"><span class="pre">getAlwaysShuffle</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.getAlwaysShuffle" title="openturns.LHSExperiment.getAlwaysShuffle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAlwaysShuffle</span></code></a>()</td>
 <td>Cell randomization flag accessor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.getClassName" title="openturns.LHSExperiment.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.getClassName" title="openturns.LHSExperiment.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.getDistribution" title="openturns.LHSExperiment.getDistribution"><code class="xref py py-obj docutils literal"><span class="pre">getDistribution</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.getDistribution" title="openturns.LHSExperiment.getDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDistribution</span></code></a>()</td>
 <td>Accessor to the distribution.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.getId" title="openturns.LHSExperiment.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.getId" title="openturns.LHSExperiment.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.getName" title="openturns.LHSExperiment.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.getName" title="openturns.LHSExperiment.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.getRandomShift" title="openturns.LHSExperiment.getRandomShift"><code class="xref py py-obj docutils literal"><span class="pre">getRandomShift</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.getRandomShift" title="openturns.LHSExperiment.getRandomShift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRandomShift</span></code></a>()</td>
 <td>Randomization flag accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.getShadowedId" title="openturns.LHSExperiment.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.getShadowedId" title="openturns.LHSExperiment.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.getShuffle" title="openturns.LHSExperiment.getShuffle"><code class="xref py py-obj docutils literal"><span class="pre">getShuffle</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.getShuffle" title="openturns.LHSExperiment.getShuffle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShuffle</span></code></a>()</td>
 <td>Return the cell randomization.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.getSize" title="openturns.LHSExperiment.getSize"><code class="xref py py-obj docutils literal"><span class="pre">getSize</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.getSize" title="openturns.LHSExperiment.getSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSize</span></code></a>()</td>
 <td>Accessor to the size of the generated sample.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.getVisibility" title="openturns.LHSExperiment.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.getVisibility" title="openturns.LHSExperiment.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.hasName" title="openturns.LHSExperiment.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.hasName" title="openturns.LHSExperiment.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.hasUniformWeights" title="openturns.LHSExperiment.hasUniformWeights"><code class="xref py py-obj docutils literal"><span class="pre">hasUniformWeights</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.hasUniformWeights" title="openturns.LHSExperiment.hasUniformWeights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasUniformWeights</span></code></a>()</td>
 <td>Ask whether the experiment has uniform weights.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.hasVisibleName" title="openturns.LHSExperiment.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.hasVisibleName" title="openturns.LHSExperiment.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.setAlwaysShuffle" title="openturns.LHSExperiment.setAlwaysShuffle"><code class="xref py py-obj docutils literal"><span class="pre">setAlwaysShuffle</span></code></a>(alwaysShuffle)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.setAlwaysShuffle" title="openturns.LHSExperiment.setAlwaysShuffle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAlwaysShuffle</span></code></a>(alwaysShuffle)</td>
 <td>Cell randomization flag accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.setDistribution" title="openturns.LHSExperiment.setDistribution"><code class="xref py py-obj docutils literal"><span class="pre">setDistribution</span></code></a>(distribution)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.setDistribution" title="openturns.LHSExperiment.setDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDistribution</span></code></a>(distribution)</td>
 <td>Accessor to the distribution.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.setName" title="openturns.LHSExperiment.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.setName" title="openturns.LHSExperiment.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.setRandomShift" title="openturns.LHSExperiment.setRandomShift"><code class="xref py py-obj docutils literal"><span class="pre">setRandomShift</span></code></a>(randomShift)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.setRandomShift" title="openturns.LHSExperiment.setRandomShift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setRandomShift</span></code></a>(randomShift)</td>
 <td>Randomization flag accessor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.setShadowedId" title="openturns.LHSExperiment.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.setShadowedId" title="openturns.LHSExperiment.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.setSize" title="openturns.LHSExperiment.setSize"><code class="xref py py-obj docutils literal"><span class="pre">setSize</span></code></a>(size)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LHSExperiment.setSize" title="openturns.LHSExperiment.setSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSize</span></code></a>(size)</td>
 <td>Accessor to the size of the generated sample.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.setVisibility" title="openturns.LHSExperiment.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LHSExperiment.setVisibility" title="openturns.LHSExperiment.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -345,7 +338,7 @@ Experiment.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>shuffle</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>shuffle</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 <blockquote class="last">
 <div><p>For each point, the indices of the shuffled components.</p>
 </div></blockquote>
@@ -363,7 +356,7 @@ Experiment.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sample</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sample</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>Points <img class="math" src="../../_images/math/225748c493f7ce778ce60a9a50254a8755a1eecc.svg" alt="(\Xi_i)_{i \in I}"/> which constitute the design of experiments
 with <img class="math" src="../../_images/math/6f896ab0b53bed65c9eed53f91a3a92bc23075b3.svg" alt="card I = size"/>. The sampling method is defined by the nature of
@@ -374,7 +367,7 @@ the weighted experiment.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myExperiment</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MonteCarloExperiment</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">myExperiment</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
@@ -397,12 +390,12 @@ the weighted experiment.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sample</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sample</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote>
 <div><p>The points which constitute the design of experiments. The sampling method
 is defined by the nature of the experiment.</p>
 </div></blockquote>
-<p><strong>weights</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> of size <img class="math" src="../../_images/math/a5dbd54d12a268e1a5fd50d48adbade596f248fe.svg" alt="cardI"/></p>
+<p><strong>weights</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> of size <img class="math" src="../../_images/math/a5dbd54d12a268e1a5fd50d48adbade596f248fe.svg" alt="cardI"/></p>
 <blockquote class="last">
 <div><p>Weights <img class="math" src="../../_images/math/134b3afb4afea9c0dd2191c84bb13ec02e329557.svg" alt="(\omega_i)_{i \in I}"/> associated with the points. By default,
 all the weights are equal to <img class="math" src="../../_images/math/930a1db685b8201fbe9a186c23c657360e154380.svg" alt="1/cardI"/>.</p>
@@ -412,7 +405,7 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myExperiment</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MonteCarloExperiment</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="p">,</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">myExperiment</span><span class="o">.</span><span class="n">generateWithWeights</span><span class="p">()</span>
@@ -475,7 +468,7 @@ Default is <em>False</em>: the shuffle is generated once and for all.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
 <blockquote class="last">
 <div><p>Distribution used to generate the set of input data.</p>
 </div></blockquote>
@@ -568,7 +561,7 @@ Default is <em>True</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>shuffle</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>shuffle</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 <blockquote class="last">
 <div><p>For each point, the indices of the shuffled components.</p>
 </div></blockquote>
@@ -696,7 +689,7 @@ Default is <em>False</em>: the shuffle is generated once and for all.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
 <blockquote class="last">
 <div><p>Distribution used to generate the set of input data.</p>
 </div></blockquote>
@@ -823,14 +816,14 @@ Default is <em>True</em>.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../designs_of_experiments.html" >Designs of experiments</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

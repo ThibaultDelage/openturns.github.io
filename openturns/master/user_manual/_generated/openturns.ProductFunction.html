@@ -9,16 +9,7 @@
     <title>ProductFunction &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../functions.html" accesskey="U">Functions</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -116,7 +109,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f,g</strong> : two <code class="xref py py-class docutils literal"><span class="pre">FunctionImplementation</span></code></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f,g</strong> : two <code class="xref py py-class docutils literal notranslate"><span class="pre">FunctionImplementation</span></code></p>
 <blockquote class="last">
 <div><p>The functions to multiply.</p>
 </div></blockquote>
@@ -125,7 +118,7 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x1&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x2&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">product</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ProductFunction</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getImplementation</span><span class="p">(),</span> <span class="n">g</span><span class="o">.</span><span class="n">getImplementation</span><span class="p">())</span>
@@ -134,7 +127,7 @@
 </pre></div>
 </div>
 <p>Or, shorter:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">product</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">g</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">product</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">g</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
@@ -144,163 +137,163 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">__call__</span></code>(…)&nbsp;&lt;==&gt;&nbsp;x(…)</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(…)&nbsp;&lt;==&gt;&nbsp;x(…)</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.addCacheContent" title="openturns.ProductFunction.addCacheContent"><code class="xref py py-obj docutils literal"><span class="pre">addCacheContent</span></code></a>(inSample,&nbsp;outSample)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.addCacheContent" title="openturns.ProductFunction.addCacheContent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addCacheContent</span></code></a>(inSample,&nbsp;outSample)</td>
 <td>Add input numerical points and associated output to the cache.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.clearCache" title="openturns.ProductFunction.clearCache"><code class="xref py py-obj docutils literal"><span class="pre">clearCache</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.clearCache" title="openturns.ProductFunction.clearCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clearCache</span></code></a>()</td>
 <td>Empty the content of the cache.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.clearHistory" title="openturns.ProductFunction.clearHistory"><code class="xref py py-obj docutils literal"><span class="pre">clearHistory</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.clearHistory" title="openturns.ProductFunction.clearHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clearHistory</span></code></a>()</td>
 <td>Empty the content of the history.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.disableCache" title="openturns.ProductFunction.disableCache"><code class="xref py py-obj docutils literal"><span class="pre">disableCache</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.disableCache" title="openturns.ProductFunction.disableCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disableCache</span></code></a>()</td>
 <td>Disable the cache mechanism.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.disableHistory" title="openturns.ProductFunction.disableHistory"><code class="xref py py-obj docutils literal"><span class="pre">disableHistory</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.disableHistory" title="openturns.ProductFunction.disableHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disableHistory</span></code></a>()</td>
 <td>Disable the history mechanism.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.draw" title="openturns.ProductFunction.draw"><code class="xref py py-obj docutils literal"><span class="pre">draw</span></code></a>(*args)</td>
-<td>Draw the output of function as a <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a>.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.draw" title="openturns.ProductFunction.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>(*args)</td>
+<td>Draw the output of function as a <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.enableCache" title="openturns.ProductFunction.enableCache"><code class="xref py py-obj docutils literal"><span class="pre">enableCache</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.enableCache" title="openturns.ProductFunction.enableCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enableCache</span></code></a>()</td>
 <td>Enable the cache mechanism.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.enableHistory" title="openturns.ProductFunction.enableHistory"><code class="xref py py-obj docutils literal"><span class="pre">enableHistory</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.enableHistory" title="openturns.ProductFunction.enableHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enableHistory</span></code></a>()</td>
 <td>Enable the history mechanism.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getCacheHits" title="openturns.ProductFunction.getCacheHits"><code class="xref py py-obj docutils literal"><span class="pre">getCacheHits</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getCacheHits" title="openturns.ProductFunction.getCacheHits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheHits</span></code></a>()</td>
 <td>Accessor to the number of computations saved thanks to the cache mecanism.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getCacheInput" title="openturns.ProductFunction.getCacheInput"><code class="xref py py-obj docutils literal"><span class="pre">getCacheInput</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getCacheInput" title="openturns.ProductFunction.getCacheInput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheInput</span></code></a>()</td>
 <td>Accessor to all the input numerical points stored in the cache mecanism.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getCacheOutput" title="openturns.ProductFunction.getCacheOutput"><code class="xref py py-obj docutils literal"><span class="pre">getCacheOutput</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getCacheOutput" title="openturns.ProductFunction.getCacheOutput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheOutput</span></code></a>()</td>
 <td>Accessor to all the output numerical points stored in the cache mecanism.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getCallsNumber" title="openturns.ProductFunction.getCallsNumber"><code class="xref py py-obj docutils literal"><span class="pre">getCallsNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getCallsNumber" title="openturns.ProductFunction.getCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCallsNumber</span></code></a>()</td>
 <td>Accessor to the number of times the function has been called.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getClassName" title="openturns.ProductFunction.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getClassName" title="openturns.ProductFunction.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getDescription" title="openturns.ProductFunction.getDescription"><code class="xref py py-obj docutils literal"><span class="pre">getDescription</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getDescription" title="openturns.ProductFunction.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a>()</td>
 <td>Accessor to the description of the inputs and outputs.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getEvaluation" title="openturns.ProductFunction.getEvaluation"><code class="xref py py-obj docutils literal"><span class="pre">getEvaluation</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getEvaluation" title="openturns.ProductFunction.getEvaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvaluation</span></code></a>()</td>
 <td>Accessor to the evaluation function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getEvaluationCallsNumber" title="openturns.ProductFunction.getEvaluationCallsNumber"><code class="xref py py-obj docutils literal"><span class="pre">getEvaluationCallsNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getEvaluationCallsNumber" title="openturns.ProductFunction.getEvaluationCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvaluationCallsNumber</span></code></a>()</td>
 <td>Accessor to the number of times the function has been called.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getGradient" title="openturns.ProductFunction.getGradient"><code class="xref py py-obj docutils literal"><span class="pre">getGradient</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getGradient" title="openturns.ProductFunction.getGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGradient</span></code></a>()</td>
 <td>Accessor to the gradient function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getGradientCallsNumber" title="openturns.ProductFunction.getGradientCallsNumber"><code class="xref py py-obj docutils literal"><span class="pre">getGradientCallsNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getGradientCallsNumber" title="openturns.ProductFunction.getGradientCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGradientCallsNumber</span></code></a>()</td>
 <td>Accessor to the number of times the gradient of the function has been called.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getHessian" title="openturns.ProductFunction.getHessian"><code class="xref py py-obj docutils literal"><span class="pre">getHessian</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getHessian" title="openturns.ProductFunction.getHessian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHessian</span></code></a>()</td>
 <td>Accessor to the hessian function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getHessianCallsNumber" title="openturns.ProductFunction.getHessianCallsNumber"><code class="xref py py-obj docutils literal"><span class="pre">getHessianCallsNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getHessianCallsNumber" title="openturns.ProductFunction.getHessianCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHessianCallsNumber</span></code></a>()</td>
 <td>Accessor to the number of times the hessian of the function has been called.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getHistoryInput" title="openturns.ProductFunction.getHistoryInput"><code class="xref py py-obj docutils literal"><span class="pre">getHistoryInput</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getHistoryInput" title="openturns.ProductFunction.getHistoryInput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHistoryInput</span></code></a>()</td>
 <td>Accessor to the history of the input values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getHistoryOutput" title="openturns.ProductFunction.getHistoryOutput"><code class="xref py py-obj docutils literal"><span class="pre">getHistoryOutput</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getHistoryOutput" title="openturns.ProductFunction.getHistoryOutput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHistoryOutput</span></code></a>()</td>
 <td>Accessor to the history of the output values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getId" title="openturns.ProductFunction.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getId" title="openturns.ProductFunction.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getInputDescription" title="openturns.ProductFunction.getInputDescription"><code class="xref py py-obj docutils literal"><span class="pre">getInputDescription</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getInputDescription" title="openturns.ProductFunction.getInputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDescription</span></code></a>()</td>
 <td>Accessor to the description of the input vector.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getInputDimension" title="openturns.ProductFunction.getInputDimension"><code class="xref py py-obj docutils literal"><span class="pre">getInputDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getInputDimension" title="openturns.ProductFunction.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
 <td>Accessor to the dimension of the input vector.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getInputParameterHistory" title="openturns.ProductFunction.getInputParameterHistory"><code class="xref py py-obj docutils literal"><span class="pre">getInputParameterHistory</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getInputParameterHistory" title="openturns.ProductFunction.getInputParameterHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputParameterHistory</span></code></a>()</td>
 <td>Accessor to the history of the input parameter values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getInputPointHistory" title="openturns.ProductFunction.getInputPointHistory"><code class="xref py py-obj docutils literal"><span class="pre">getInputPointHistory</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getInputPointHistory" title="openturns.ProductFunction.getInputPointHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputPointHistory</span></code></a>()</td>
 <td>Accessor to the history of the input point values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getMarginal" title="openturns.ProductFunction.getMarginal"><code class="xref py py-obj docutils literal"><span class="pre">getMarginal</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getMarginal" title="openturns.ProductFunction.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
 <td>Accessor to marginal.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getName" title="openturns.ProductFunction.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getName" title="openturns.ProductFunction.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getOutputDescription" title="openturns.ProductFunction.getOutputDescription"><code class="xref py py-obj docutils literal"><span class="pre">getOutputDescription</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getOutputDescription" title="openturns.ProductFunction.getOutputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDescription</span></code></a>()</td>
 <td>Accessor to the description of the output vector.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getOutputDimension" title="openturns.ProductFunction.getOutputDimension"><code class="xref py py-obj docutils literal"><span class="pre">getOutputDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getOutputDimension" title="openturns.ProductFunction.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
 <td>Accessor to the number of the outputs.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getParameter" title="openturns.ProductFunction.getParameter"><code class="xref py py-obj docutils literal"><span class="pre">getParameter</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getParameter" title="openturns.ProductFunction.getParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameter</span></code></a>()</td>
 <td>Accessor to the parameter values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getParameterDescription" title="openturns.ProductFunction.getParameterDescription"><code class="xref py py-obj docutils literal"><span class="pre">getParameterDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getParameterDescription" title="openturns.ProductFunction.getParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDescription</span></code></a>()</td>
 <td>Accessor to the parameter description.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getParameterDimension" title="openturns.ProductFunction.getParameterDimension"><code class="xref py py-obj docutils literal"><span class="pre">getParameterDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getParameterDimension" title="openturns.ProductFunction.getParameterDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDimension</span></code></a>()</td>
 <td>Accessor to the dimension of the parameter.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getShadowedId" title="openturns.ProductFunction.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getShadowedId" title="openturns.ProductFunction.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getVisibility" title="openturns.ProductFunction.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getVisibility" title="openturns.ProductFunction.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.gradient" title="openturns.ProductFunction.gradient"><code class="xref py py-obj docutils literal"><span class="pre">gradient</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.gradient" title="openturns.ProductFunction.gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gradient</span></code></a>(*args)</td>
 <td>Return the Jacobian transposed matrix of the function at a point.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.hasName" title="openturns.ProductFunction.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.hasName" title="openturns.ProductFunction.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.hasVisibleName" title="openturns.ProductFunction.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.hasVisibleName" title="openturns.ProductFunction.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.hessian" title="openturns.ProductFunction.hessian"><code class="xref py py-obj docutils literal"><span class="pre">hessian</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.hessian" title="openturns.ProductFunction.hessian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hessian</span></code></a>(*args)</td>
 <td>Return the hessian of the function at a point.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.isCacheEnabled" title="openturns.ProductFunction.isCacheEnabled"><code class="xref py py-obj docutils literal"><span class="pre">isCacheEnabled</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.isCacheEnabled" title="openturns.ProductFunction.isCacheEnabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isCacheEnabled</span></code></a>()</td>
 <td>Test whether the cache mechanism is enabled or not.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.isHistoryEnabled" title="openturns.ProductFunction.isHistoryEnabled"><code class="xref py py-obj docutils literal"><span class="pre">isHistoryEnabled</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.isHistoryEnabled" title="openturns.ProductFunction.isHistoryEnabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isHistoryEnabled</span></code></a>()</td>
 <td>Test whether the history mechanism is enabled or not.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.parameterGradient" title="openturns.ProductFunction.parameterGradient"><code class="xref py py-obj docutils literal"><span class="pre">parameterGradient</span></code></a>(inP)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.parameterGradient" title="openturns.ProductFunction.parameterGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameterGradient</span></code></a>(inP)</td>
 <td>Accessor to the gradient against the parameter.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setDescription" title="openturns.ProductFunction.setDescription"><code class="xref py py-obj docutils literal"><span class="pre">setDescription</span></code></a>(description)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setDescription" title="openturns.ProductFunction.setDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDescription</span></code></a>(description)</td>
 <td>Accessor to the description of the inputs and outputs.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.setEvaluation" title="openturns.ProductFunction.setEvaluation"><code class="xref py py-obj docutils literal"><span class="pre">setEvaluation</span></code></a>(evaluation)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.setEvaluation" title="openturns.ProductFunction.setEvaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setEvaluation</span></code></a>(evaluation)</td>
 <td>Accessor to the evaluation function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setGradient" title="openturns.ProductFunction.setGradient"><code class="xref py py-obj docutils literal"><span class="pre">setGradient</span></code></a>(gradient)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setGradient" title="openturns.ProductFunction.setGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setGradient</span></code></a>(gradient)</td>
 <td>Accessor to the gradient function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.setHessian" title="openturns.ProductFunction.setHessian"><code class="xref py py-obj docutils literal"><span class="pre">setHessian</span></code></a>(hessian)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.setHessian" title="openturns.ProductFunction.setHessian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setHessian</span></code></a>(hessian)</td>
 <td>Accessor to the hessian function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setName" title="openturns.ProductFunction.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setName" title="openturns.ProductFunction.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.setParameter" title="openturns.ProductFunction.setParameter"><code class="xref py py-obj docutils literal"><span class="pre">setParameter</span></code></a>(parameter)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.setParameter" title="openturns.ProductFunction.setParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameter</span></code></a>(parameter)</td>
 <td>Accessor to the parameter values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setParameterDescription" title="openturns.ProductFunction.setParameterDescription"><code class="xref py py-obj docutils literal"><span class="pre">setParameterDescription</span></code></a>(description)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setParameterDescription" title="openturns.ProductFunction.setParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameterDescription</span></code></a>(description)</td>
 <td>Accessor to the parameter description.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.setShadowedId" title="openturns.ProductFunction.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.setShadowedId" title="openturns.ProductFunction.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setVisibility" title="openturns.ProductFunction.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setVisibility" title="openturns.ProductFunction.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -361,7 +354,7 @@ cache.</p>
 <dl class="method">
 <dt id="openturns.ProductFunction.draw">
 <code class="descname">draw</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.draw" title="Permalink to this definition">¶</a></dt>
-<dd><p>Draw the output of function as a <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a>.</p>
+<dd><p>Draw the output of function as a <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a>.</p>
 <dl class="docutils">
 <dt>Available usages:</dt>
 <dd><p class="first">draw(<em>inputMarg, outputMarg, CP, xiMin, xiMax, ptNb</em>)</p>
@@ -438,7 +431,7 @@ central point <em>CP</em>. Then OpenTURNS draws the graph:
 </ul>
 <p>The same as the second usage but only for function <img class="math" src="../../_images/math/e7236e8276af28ef4898b1da4719c187527cb8c5.svg" alt="f: \Rset^2 \rightarrow \Rset"/>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">openturns.viewer</span> <span class="k">import</span> <span class="n">View</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;sin(2*_pi*x)*exp(-x^2/2)&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -486,7 +479,7 @@ mecanism.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cacheInput</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cacheInput</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>All the input numerical points stored in the cache mecanism.</p>
 </div></blockquote>
@@ -504,7 +497,7 @@ mecanism.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cacheInput</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cacheInput</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>All the output numerical points stored in the cache mecanism.</p>
 </div></blockquote>
@@ -559,7 +552,7 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Description of the inputs and the outputs.</p>
 </div></blockquote>
@@ -568,7 +561,7 @@ since its creation.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                        <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getDescription</span><span class="p">())</span>
@@ -585,7 +578,7 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.EvaluationImplementation.html#openturns.EvaluationImplementation" title="openturns.EvaluationImplementation"><code class="xref py py-class docutils literal"><span class="pre">EvaluationImplementation</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.EvaluationImplementation.html#openturns.EvaluationImplementation" title="openturns.EvaluationImplementation"><code class="xref py py-class docutils literal notranslate"><span class="pre">EvaluationImplementation</span></code></a></p>
 <blockquote class="last">
 <div><p>The evaluation function.</p>
 </div></blockquote>
@@ -594,7 +587,7 @@ since its creation.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                        <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getEvaluation</span><span class="p">())</span>
@@ -630,7 +623,7 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gradient</strong> : <a class="reference internal" href="openturns.GradientImplementation.html#openturns.GradientImplementation" title="openturns.GradientImplementation"><code class="xref py py-class docutils literal"><span class="pre">GradientImplementation</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gradient</strong> : <a class="reference internal" href="openturns.GradientImplementation.html#openturns.GradientImplementation" title="openturns.GradientImplementation"><code class="xref py py-class docutils literal notranslate"><span class="pre">GradientImplementation</span></code></a></p>
 <blockquote class="last">
 <div><p>The gradient function.</p>
 </div></blockquote>
@@ -670,7 +663,7 @@ counted in the evaluation calls number.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hessian</strong> : <a class="reference internal" href="openturns.HessianImplementation.html#openturns.HessianImplementation" title="openturns.HessianImplementation"><code class="xref py py-class docutils literal"><span class="pre">HessianImplementation</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hessian</strong> : <a class="reference internal" href="openturns.HessianImplementation.html#openturns.HessianImplementation" title="openturns.HessianImplementation"><code class="xref py py-class docutils literal notranslate"><span class="pre">HessianImplementation</span></code></a></p>
 <blockquote class="last">
 <div><p>The hessian function.</p>
 </div></blockquote>
@@ -710,7 +703,7 @@ in the evaluation calls number.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>input_history</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>input_history</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>All the input numerical points stored in the history mecanism.</p>
 </div></blockquote>
@@ -728,7 +721,7 @@ in the evaluation calls number.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output_history</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output_history</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>All the output numerical points stored in the history mecanism.</p>
 </div></blockquote>
@@ -764,7 +757,7 @@ in the evaluation calls number.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Description of the input vector.</p>
 </div></blockquote>
@@ -773,7 +766,7 @@ in the evaluation calls number.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                         <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getInputDescription</span><span class="p">())</span>
@@ -799,7 +792,7 @@ in the evaluation calls number.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                         <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getInputDimension</span><span class="p">())</span>
@@ -816,7 +809,7 @@ in the evaluation calls number.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>history</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>history</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>All the input parameters stored in the history mecanism.</p>
 </div></blockquote>
@@ -834,7 +827,7 @@ in the evaluation calls number.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>history</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>history</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>All the input points stored in the history mecanism.</p>
 </div></blockquote>
@@ -858,7 +851,7 @@ in the evaluation calls number.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>marginal</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>marginal</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Function corresponding to either <img class="math" src="../../_images/math/83826dafd3081c1d1ce50c8fdc59d788f6efcefa.svg" alt="f_i"/> or
 <img class="math" src="../../_images/math/1df76ef8bb326ce8c363d6933706debaa7816de8.svg" alt="(f_i)_{i \in indices}"/>, with <img class="math" src="../../_images/math/46e82202988447c3efea6369dbfdb062daee96f8.svg" alt="f:\Rset^n \rightarrow \Rset^p"/>
@@ -896,7 +889,7 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Description of the output vector.</p>
 </div></blockquote>
@@ -905,7 +898,7 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                         <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getOutputDescription</span><span class="p">())</span>
@@ -931,7 +924,7 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                         <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getOutputDimension</span><span class="p">())</span>
@@ -948,7 +941,7 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The parameter values.</p>
 </div></blockquote>
@@ -966,7 +959,7 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>The parameter description.</p>
 </div></blockquote>
@@ -1044,7 +1037,7 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gradient</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gradient</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 <blockquote class="last">
 <div><p>The Jacobian transposed matrix of the function at <em>point</em>.</p>
 </div></blockquote>
@@ -1053,7 +1046,7 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">,</span><span class="s1">&#39;x1 + x2&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">gradient</span><span class="p">([</span><span class="mf">3.14</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
@@ -1113,7 +1106,7 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hessian</strong> : <a class="reference internal" href="openturns.SymmetricTensor.html#openturns.SymmetricTensor" title="openturns.SymmetricTensor"><code class="xref py py-class docutils literal"><span class="pre">SymmetricTensor</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hessian</strong> : <a class="reference internal" href="openturns.SymmetricTensor.html#openturns.SymmetricTensor" title="openturns.SymmetricTensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">SymmetricTensor</span></code></a></p>
 <blockquote class="last">
 <div><p>Hessian of the function at <em>point</em>.</p>
 </div></blockquote>
@@ -1122,7 +1115,7 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">,</span><span class="s1">&#39;x1 + x2&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">hessian</span><span class="p">([</span><span class="mf">3.14</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
@@ -1182,7 +1175,7 @@ It is disabled by default.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gradient</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gradient</strong> : <a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 <blockquote class="last">
 <div><p>The gradient.</p>
 </div></blockquote>
@@ -1209,7 +1202,7 @@ It is disabled by default.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                         <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getDescription</span><span class="p">())</span>
@@ -1229,7 +1222,7 @@ It is disabled by default.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.EvaluationImplementation.html#openturns.EvaluationImplementation" title="openturns.EvaluationImplementation"><code class="xref py py-class docutils literal"><span class="pre">EvaluationImplementation</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.EvaluationImplementation.html#openturns.EvaluationImplementation" title="openturns.EvaluationImplementation"><code class="xref py py-class docutils literal notranslate"><span class="pre">EvaluationImplementation</span></code></a></p>
 <blockquote class="last">
 <div><p>The evaluation function.</p>
 </div></blockquote>
@@ -1247,7 +1240,7 @@ It is disabled by default.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>gradient_function</strong> : <a class="reference internal" href="openturns.GradientImplementation.html#openturns.GradientImplementation" title="openturns.GradientImplementation"><code class="xref py py-class docutils literal"><span class="pre">GradientImplementation</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>gradient_function</strong> : <a class="reference internal" href="openturns.GradientImplementation.html#openturns.GradientImplementation" title="openturns.GradientImplementation"><code class="xref py py-class docutils literal notranslate"><span class="pre">GradientImplementation</span></code></a></p>
 <blockquote class="last">
 <div><p>The gradient function.</p>
 </div></blockquote>
@@ -1256,7 +1249,7 @@ It is disabled by default.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                         <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">setGradient</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">CenteredFiniteDifferenceGradient</span><span class="p">(</span>
@@ -1274,7 +1267,7 @@ It is disabled by default.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>hessian_function</strong> : <a class="reference internal" href="openturns.HessianImplementation.html#openturns.HessianImplementation" title="openturns.HessianImplementation"><code class="xref py py-class docutils literal"><span class="pre">HessianImplementation</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>hessian_function</strong> : <a class="reference internal" href="openturns.HessianImplementation.html#openturns.HessianImplementation" title="openturns.HessianImplementation"><code class="xref py py-class docutils literal notranslate"><span class="pre">HessianImplementation</span></code></a></p>
 <blockquote class="last">
 <div><p>The hessian function.</p>
 </div></blockquote>
@@ -1283,7 +1276,7 @@ It is disabled by default.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                        <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">setHessian</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">CenteredFiniteDifferenceHessian</span><span class="p">(</span>
@@ -1337,7 +1330,7 @@ It is disabled by default.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>The parameter description.</p>
 </div></blockquote>
@@ -1407,14 +1400,14 @@ It is disabled by default.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../functions.html" >Functions</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

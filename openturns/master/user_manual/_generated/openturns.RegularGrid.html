@@ -9,16 +9,7 @@
     <title>RegularGrid &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" accesskey="U">Base objects</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -129,7 +122,7 @@
 <blockquote>
 <div><p>The number of time stamps in the grid, including the start and the end time stamps.</p>
 </div></blockquote>
-<p><strong>mesh</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal"><span class="pre">Mesh</span></code></a></p>
+<p><strong>mesh</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></p>
 <blockquote class="last">
 <div><p>The mesh must be in <img class="math" src="../../_images/math/12ed436b6d8da4a70da0d3c7ec9d6ceb3046aec4.svg" alt="\Rset"/>, regular and sorted in the increasing order.</p>
 </div></blockquote>
@@ -139,12 +132,12 @@
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-obj docutils literal"><span class="pre">Mesh</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mesh</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The time stamps of the regular grid are: <img class="math" src="../../_images/math/d9ff8bc557d735d35b89cb2cac5dc5d46e8ffca3.svg" alt="(t_0, \dots, t_{n-1})"/> where <img class="math" src="../../_images/math/a3514c30e76641f45f3d36bb97e7dea7bd907067.svg" alt="t_{k} = t_0 + k \Delta"/> for <img class="math" src="../../_images/math/843073dc34ebdde84b860e2e14e9a41e9dadb79a.svg" alt="0 \leq k \leq n-1"/> and <img class="math" src="../../_images/math/ed646849c736d47696d33d01000b2061c5a89d6b.svg" alt="\Delta &gt;0"/> the step.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myRegularGrid</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RegularGrid</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -155,166 +148,169 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.ImportFromMSHFile" title="openturns.RegularGrid.ImportFromMSHFile"><code class="xref py py-obj docutils literal"><span class="pre">ImportFromMSHFile</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.ImportFromMSHFile" title="openturns.RegularGrid.ImportFromMSHFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImportFromMSHFile</span></code></a>()</td>
 <td>Import mesh from FreeFem 2-d mesh files.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.checkPointInSimplex" title="openturns.RegularGrid.checkPointInSimplex"><code class="xref py py-obj docutils literal"><span class="pre">checkPointInSimplex</span></code></a>(point,&nbsp;index)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.checkPointInSimplex" title="openturns.RegularGrid.checkPointInSimplex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">checkPointInSimplex</span></code></a>(point,&nbsp;index)</td>
 <td>Check if a point is inside a simplex.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.checkPointInSimplexWithCoordinates" title="openturns.RegularGrid.checkPointInSimplexWithCoordinates"><code class="xref py py-obj docutils literal"><span class="pre">checkPointInSimplexWithCoordinates</span></code></a>(point,&nbsp;index)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.checkPointInSimplexWithCoordinates" title="openturns.RegularGrid.checkPointInSimplexWithCoordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">checkPointInSimplexWithCoordinates</span></code></a>(point,&nbsp;index)</td>
 <td>Check if a point is inside a simplex and returns its barycentric coordinates.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.computeP1Gram" title="openturns.RegularGrid.computeP1Gram"><code class="xref py py-obj docutils literal"><span class="pre">computeP1Gram</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.computeKDTree" title="openturns.RegularGrid.computeKDTree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeKDTree</span></code></a>()</td>
+<td>Compute a KDTree to speed-up nearest vertex searches.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.computeP1Gram" title="openturns.RegularGrid.computeP1Gram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeP1Gram</span></code></a>()</td>
 <td>Compute the P1 Lagrange finite element gram matrix of the mesh.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.computeSimplexVolume" title="openturns.RegularGrid.computeSimplexVolume"><code class="xref py py-obj docutils literal"><span class="pre">computeSimplexVolume</span></code></a>(index)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.computeSimplexVolume" title="openturns.RegularGrid.computeSimplexVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSimplexVolume</span></code></a>(index)</td>
 <td>Compute the volume of a given simplex.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.computeWeights" title="openturns.RegularGrid.computeWeights"><code class="xref py py-obj docutils literal"><span class="pre">computeWeights</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.computeWeights" title="openturns.RegularGrid.computeWeights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeWeights</span></code></a>()</td>
 <td>Compute an approximation of an integral defined over the mesh.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.contains" title="openturns.RegularGrid.contains"><code class="xref py py-obj docutils literal"><span class="pre">contains</span></code></a>(point)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.contains" title="openturns.RegularGrid.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(point)</td>
 <td>Check if the given point is inside of the domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.draw" title="openturns.RegularGrid.draw"><code class="xref py py-obj docutils literal"><span class="pre">draw</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.draw" title="openturns.RegularGrid.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>()</td>
 <td>Draw the mesh.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.draw1D" title="openturns.RegularGrid.draw1D"><code class="xref py py-obj docutils literal"><span class="pre">draw1D</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.draw1D" title="openturns.RegularGrid.draw1D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw1D</span></code></a>()</td>
 <td>Draw the mesh of dimension 1.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.draw2D" title="openturns.RegularGrid.draw2D"><code class="xref py py-obj docutils literal"><span class="pre">draw2D</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.draw2D" title="openturns.RegularGrid.draw2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw2D</span></code></a>()</td>
 <td>Draw the mesh of dimension 2.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.draw3D" title="openturns.RegularGrid.draw3D"><code class="xref py py-obj docutils literal"><span class="pre">draw3D</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.draw3D" title="openturns.RegularGrid.draw3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw3D</span></code></a>(*args)</td>
 <td>Draw the bidimensional projection of the mesh.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.exportToVTKFile" title="openturns.RegularGrid.exportToVTKFile"><code class="xref py py-obj docutils literal"><span class="pre">exportToVTKFile</span></code></a>(fileName)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.exportToVTKFile" title="openturns.RegularGrid.exportToVTKFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exportToVTKFile</span></code></a>(fileName)</td>
 <td>Export the mesh to a VTK file.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.follows" title="openturns.RegularGrid.follows"><code class="xref py py-obj docutils literal"><span class="pre">follows</span></code></a>(starter)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.follows" title="openturns.RegularGrid.follows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">follows</span></code></a>(starter)</td>
 <td>Check if the given grid follows the current one.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getClassName" title="openturns.RegularGrid.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getClassName" title="openturns.RegularGrid.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getDescription" title="openturns.RegularGrid.getDescription"><code class="xref py py-obj docutils literal"><span class="pre">getDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getDescription" title="openturns.RegularGrid.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a>()</td>
 <td>Get the description of the vertices.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getDimension" title="openturns.RegularGrid.getDimension"><code class="xref py py-obj docutils literal"><span class="pre">getDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getDimension" title="openturns.RegularGrid.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
 <td>Get the dimension of the domain.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getEnd" title="openturns.RegularGrid.getEnd"><code class="xref py py-obj docutils literal"><span class="pre">getEnd</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getEnd" title="openturns.RegularGrid.getEnd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEnd</span></code></a>()</td>
 <td>Accessor to the first time stamp after the last time stamp of the grid.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getId" title="openturns.RegularGrid.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getId" title="openturns.RegularGrid.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getLowerBound" title="openturns.RegularGrid.getLowerBound"><code class="xref py py-obj docutils literal"><span class="pre">getLowerBound</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getLowerBound" title="openturns.RegularGrid.getLowerBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLowerBound</span></code></a>()</td>
 <td>Get the lower bound of the domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getN" title="openturns.RegularGrid.getN"><code class="xref py py-obj docutils literal"><span class="pre">getN</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getN" title="openturns.RegularGrid.getN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getN</span></code></a>()</td>
 <td>Accessor to the number of time stamps in the grid.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getName" title="openturns.RegularGrid.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getName" title="openturns.RegularGrid.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getNearestVertex" title="openturns.RegularGrid.getNearestVertex"><code class="xref py py-obj docutils literal"><span class="pre">getNearestVertex</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getNearestVertex" title="openturns.RegularGrid.getNearestVertex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNearestVertex</span></code></a>(*args)</td>
 <td>Get the nearest vertex of a given point.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getNearestVertexAndSimplexIndicesWithCoordinates" title="openturns.RegularGrid.getNearestVertexAndSimplexIndicesWithCoordinates"><code class="xref py py-obj docutils literal"><span class="pre">getNearestVertexAndSimplexIndicesWithCoordinates</span></code></a>(point)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getNearestVertexAndSimplexIndicesWithCoordinates" title="openturns.RegularGrid.getNearestVertexAndSimplexIndicesWithCoordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNearestVertexAndSimplexIndicesWithCoordinates</span></code></a>(point)</td>
 <td>Get the index of the nearest vertex of a given point and the containing simplex if any, and returns its barycentric coordinates.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getNearestVertexIndex" title="openturns.RegularGrid.getNearestVertexIndex"><code class="xref py py-obj docutils literal"><span class="pre">getNearestVertexIndex</span></code></a>(point)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getNearestVertexIndex" title="openturns.RegularGrid.getNearestVertexIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNearestVertexIndex</span></code></a>(point)</td>
 <td>Get the index of the nearest vertex of a given point.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getNumericalVolume" title="openturns.RegularGrid.getNumericalVolume"><code class="xref py py-obj docutils literal"><span class="pre">getNumericalVolume</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getNumericalVolume" title="openturns.RegularGrid.getNumericalVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNumericalVolume</span></code></a>()</td>
 <td>Get the volume of the domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getShadowedId" title="openturns.RegularGrid.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getShadowedId" title="openturns.RegularGrid.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getSimplex" title="openturns.RegularGrid.getSimplex"><code class="xref py py-obj docutils literal"><span class="pre">getSimplex</span></code></a>(index)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getSimplex" title="openturns.RegularGrid.getSimplex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSimplex</span></code></a>(index)</td>
 <td>Get the simplex of a given index.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getSimplices" title="openturns.RegularGrid.getSimplices"><code class="xref py py-obj docutils literal"><span class="pre">getSimplices</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getSimplices" title="openturns.RegularGrid.getSimplices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSimplices</span></code></a>()</td>
 <td>Get the simplices of the mesh.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getSimplicesNumber" title="openturns.RegularGrid.getSimplicesNumber"><code class="xref py py-obj docutils literal"><span class="pre">getSimplicesNumber</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getSimplicesNumber" title="openturns.RegularGrid.getSimplicesNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSimplicesNumber</span></code></a>()</td>
 <td>Get the number of simplices of the mesh.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getStart" title="openturns.RegularGrid.getStart"><code class="xref py py-obj docutils literal"><span class="pre">getStart</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getStart" title="openturns.RegularGrid.getStart"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStart</span></code></a>()</td>
 <td>Accessor to the start time stamp.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getStep" title="openturns.RegularGrid.getStep"><code class="xref py py-obj docutils literal"><span class="pre">getStep</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getStep" title="openturns.RegularGrid.getStep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStep</span></code></a>()</td>
 <td>Accessor to the step.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getUpperBound" title="openturns.RegularGrid.getUpperBound"><code class="xref py py-obj docutils literal"><span class="pre">getUpperBound</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getUpperBound" title="openturns.RegularGrid.getUpperBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUpperBound</span></code></a>()</td>
 <td>Get the upper bound of the domain.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getValue" title="openturns.RegularGrid.getValue"><code class="xref py py-obj docutils literal"><span class="pre">getValue</span></code></a>(i)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getValue" title="openturns.RegularGrid.getValue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getValue</span></code></a>(i)</td>
 <td>Accessor to the time stamps at a gien index.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getValues" title="openturns.RegularGrid.getValues"><code class="xref py py-obj docutils literal"><span class="pre">getValues</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getValues" title="openturns.RegularGrid.getValues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getValues</span></code></a>()</td>
 <td>Accessor to all the time stamps.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getVertex" title="openturns.RegularGrid.getVertex"><code class="xref py py-obj docutils literal"><span class="pre">getVertex</span></code></a>(index)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getVertex" title="openturns.RegularGrid.getVertex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVertex</span></code></a>(index)</td>
 <td>Get the vertex of a given index.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getVertices" title="openturns.RegularGrid.getVertices"><code class="xref py py-obj docutils literal"><span class="pre">getVertices</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getVertices" title="openturns.RegularGrid.getVertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVertices</span></code></a>()</td>
 <td>Get the vertices of the mesh.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getVerticesNumber" title="openturns.RegularGrid.getVerticesNumber"><code class="xref py py-obj docutils literal"><span class="pre">getVerticesNumber</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getVerticesNumber" title="openturns.RegularGrid.getVerticesNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVerticesNumber</span></code></a>()</td>
 <td>Get the number of vertices of the mesh.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getVerticesToSimplicesMap" title="openturns.RegularGrid.getVerticesToSimplicesMap"><code class="xref py py-obj docutils literal"><span class="pre">getVerticesToSimplicesMap</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getVerticesToSimplicesMap" title="openturns.RegularGrid.getVerticesToSimplicesMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVerticesToSimplicesMap</span></code></a>()</td>
 <td>Accessor to the map between vertices and simplices.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getVisibility" title="openturns.RegularGrid.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getVisibility" title="openturns.RegularGrid.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getVolume" title="openturns.RegularGrid.getVolume"><code class="xref py py-obj docutils literal"><span class="pre">getVolume</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getVolume" title="openturns.RegularGrid.getVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVolume</span></code></a>()</td>
 <td>Get the geometric volume of the domain.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.hasName" title="openturns.RegularGrid.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.hasName" title="openturns.RegularGrid.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.hasVisibleName" title="openturns.RegularGrid.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.hasVisibleName" title="openturns.RegularGrid.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.isEmpty" title="openturns.RegularGrid.isEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isEmpty</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.isEmpty" title="openturns.RegularGrid.isEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEmpty</span></code></a>()</td>
 <td>Test whether the domain is empty or not.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.isNumericallyEmpty" title="openturns.RegularGrid.isNumericallyEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isNumericallyEmpty</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.isNumericallyEmpty" title="openturns.RegularGrid.isNumericallyEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isNumericallyEmpty</span></code></a>()</td>
 <td>Check if the domain is numerically empty.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.isRegular" title="openturns.RegularGrid.isRegular"><code class="xref py py-obj docutils literal"><span class="pre">isRegular</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.isRegular" title="openturns.RegularGrid.isRegular"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isRegular</span></code></a>()</td>
 <td>Check if the mesh is regular (only for 1-d meshes).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.isValid" title="openturns.RegularGrid.isValid"><code class="xref py py-obj docutils literal"><span class="pre">isValid</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.isValid" title="openturns.RegularGrid.isValid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isValid</span></code></a>()</td>
 <td>Check the mesh validity.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.numericallyContains" title="openturns.RegularGrid.numericallyContains"><code class="xref py py-obj docutils literal"><span class="pre">numericallyContains</span></code></a>(point)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.numericallyContains" title="openturns.RegularGrid.numericallyContains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numericallyContains</span></code></a>(point)</td>
 <td>Check if the given point is inside of the discretization of the domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.setName" title="openturns.RegularGrid.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.setName" title="openturns.RegularGrid.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.setShadowedId" title="openturns.RegularGrid.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.setShadowedId" title="openturns.RegularGrid.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.setSimplices" title="openturns.RegularGrid.setSimplices"><code class="xref py py-obj docutils literal"><span class="pre">setSimplices</span></code></a>(simplices)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.setSimplices" title="openturns.RegularGrid.setSimplices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSimplices</span></code></a>(simplices)</td>
 <td>Set the simplices of the mesh.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.setVertex" title="openturns.RegularGrid.setVertex"><code class="xref py py-obj docutils literal"><span class="pre">setVertex</span></code></a>(index,&nbsp;vertex)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.setVertex" title="openturns.RegularGrid.setVertex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVertex</span></code></a>(index,&nbsp;vertex)</td>
 <td>Set a vertex of a given index.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.setVertices" title="openturns.RegularGrid.setVertices"><code class="xref py py-obj docutils literal"><span class="pre">setVertices</span></code></a>(vertices)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.setVertices" title="openturns.RegularGrid.setVertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVertices</span></code></a>(vertices)</td>
 <td>Set the vertices of the mesh.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.setVisibility" title="openturns.RegularGrid.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.setVisibility" title="openturns.RegularGrid.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.streamToVTKFormat" title="openturns.RegularGrid.streamToVTKFormat"><code class="xref py py-obj docutils literal"><span class="pre">streamToVTKFormat</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.streamToVTKFormat" title="openturns.RegularGrid.streamToVTKFormat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">streamToVTKFormat</span></code></a>()</td>
 <td>Give a VTK representation of the mesh.</td>
 </tr>
 </tbody>
@@ -325,9 +321,9 @@
 <dd><p>x.__init__(…) initializes x; see help(type(x)) for signature</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="openturns.RegularGrid.ImportFromMSHFile">
-<code class="descname">ImportFromMSHFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.ImportFromMSHFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">ImportFromMSHFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.ImportFromMSHFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Import mesh from FreeFem 2-d mesh files.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -339,7 +335,7 @@
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mesh</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal"><span class="pre">Mesh</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mesh</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></p>
 <blockquote class="last">
 <div><p>Mesh defined in the file <em>MSHFile</em>.</p>
 </div></blockquote>
@@ -376,7 +372,7 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplex</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplex</span><span class="p">)</span>
@@ -414,7 +410,7 @@
 <blockquote>
 <div><p>Flag telling whether <em>point</em> is inside the simplex of index <em>index</em>.</p>
 </div></blockquote>
-<p><strong>coordinates</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<p><strong>coordinates</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote>
 <div><p>The barycentric coordinates of the given point wrt the vertices of the simplex</p>
 </div></blockquote>
@@ -424,7 +420,7 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplex</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplex</span><span class="p">)</span>
@@ -441,6 +437,12 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.RegularGrid.computeKDTree">
+<code class="descname">computeKDTree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.computeKDTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute a KDTree to speed-up nearest vertex searches.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.RegularGrid.computeP1Gram">
 <code class="descname">computeP1Gram</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.computeP1Gram" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the P1 Lagrange finite element gram matrix of the mesh.</p>
@@ -448,7 +450,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gram</strong> : <a class="reference internal" href="openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="openturns.CovarianceMatrix"><code class="xref py py-class docutils literal"><span class="pre">CovarianceMatrix</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gram</strong> : <a class="reference internal" href="openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="openturns.CovarianceMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceMatrix</span></code></a></p>
 <blockquote class="last">
 <div><p>P1 Lagrange finite element gram matrix of the mesh.</p>
 </div></blockquote>
@@ -463,7 +465,7 @@
 <p><img src="../../_images/math/a9139c2216445a21a2a3639d2b2418f53e850e7b.svg" alt="\forall i,j=1,\hdots,n,\quad K_{i,j}=\int_{\cD}\phi_i(\vect{x})\phi_j(\vect{x})\di{\vect{x}}"/></p>
 </div><p>This method is used in several algorithms related to stochastic process representation such as the Karhunen-Loeve decomposition.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define the vertices of the mesh</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define the simplices of the mesh</span>
@@ -502,7 +504,7 @@
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplex</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplex</span><span class="p">)</span>
@@ -520,7 +522,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>weights</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>weights</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>Weights such that an integral of a function over the mesh
 is a weighted sum of its values at the vertices.</p>
@@ -563,13 +565,13 @@ is a weighted sum of its values at the vertices.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>graph</strong> : <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>graph</strong> : <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></p>
 <blockquote class="last">
 <div><p>If the dimension of the mesh is 1, it draws the corresponding interval,
-using the <a class="reference internal" href="#openturns.RegularGrid.draw1D" title="openturns.RegularGrid.draw1D"><code class="xref py py-meth docutils literal"><span class="pre">draw1D()</span></code></a> method; if the dimension is 2, it draws the
-triangular simplices, using the <a class="reference internal" href="#openturns.RegularGrid.draw2D" title="openturns.RegularGrid.draw2D"><code class="xref py py-meth docutils literal"><span class="pre">draw2D()</span></code></a> method; if the dimension is
+using the <a class="reference internal" href="#openturns.RegularGrid.draw1D" title="openturns.RegularGrid.draw1D"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw1D()</span></code></a> method; if the dimension is 2, it draws the
+triangular simplices, using the <a class="reference internal" href="#openturns.RegularGrid.draw2D" title="openturns.RegularGrid.draw2D"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw2D()</span></code></a> method; if the dimension is
 3, it projects the simplices on the plane of the two first components,
-using the <a class="reference internal" href="#openturns.RegularGrid.draw3D" title="openturns.RegularGrid.draw3D"><code class="xref py py-meth docutils literal"><span class="pre">draw3D()</span></code></a> method with its default parameters, superposing
+using the <a class="reference internal" href="#openturns.RegularGrid.draw3D" title="openturns.RegularGrid.draw3D"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw3D()</span></code></a> method with its default parameters, superposing
 the simplices.</p>
 </div></blockquote>
 </td>
@@ -586,7 +588,7 @@ the simplices.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>graph</strong> : <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>graph</strong> : <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></p>
 <blockquote class="last">
 <div><p>Draws the line linking the vertices of the mesh when the mesh is of
 dimension 1.</p>
@@ -596,7 +598,7 @@ dimension 1.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">openturns.viewer</span> <span class="k">import</span> <span class="n">View</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.1</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.7</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplices</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
@@ -617,7 +619,7 @@ dimension 1.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>graph</strong> : <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>graph</strong> : <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></p>
 <blockquote class="last">
 <div><p>Draws the edges of each simplex, when the mesh is of dimension 2.</p>
 </div></blockquote>
@@ -626,7 +628,7 @@ dimension 1.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">openturns.viewer</span> <span class="k">import</span> <span class="n">View</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplices</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
@@ -669,7 +671,7 @@ dimension 1.</p>
 <blockquote>
 <div><p>Gives the value of the rotation along the Z axis in radian.</p>
 </div></blockquote>
-<p><strong>rotation</strong> : <a class="reference internal" href="openturns.SquareMatrix.html#openturns.SquareMatrix" title="openturns.SquareMatrix"><code class="xref py py-class docutils literal"><span class="pre">SquareMatrix</span></code></a></p>
+<p><strong>rotation</strong> : <a class="reference internal" href="openturns.SquareMatrix.html#openturns.SquareMatrix" title="openturns.SquareMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">SquareMatrix</span></code></a></p>
 <blockquote>
 <div><p>Operates a rotation on the mesh before its projection of the plane of the
 two first components.</p>
@@ -688,7 +690,7 @@ simplex is reduced to its gravity center.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>graph</strong> : <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>graph</strong> : <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></p>
 <blockquote class="last">
 <div><p>Draws the bidimensional projection of the mesh on the <img class="math" src="../../_images/math/8acaca11acd0419d571c4020c076988a40da64c2.svg" alt="(x,y)"/> plane.</p>
 </div></blockquote>
@@ -697,7 +699,7 @@ simplex is reduced to its gravity center.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">openturns.viewer</span> <span class="k">import</span> <span class="n">View</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">pi</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
@@ -752,7 +754,7 @@ values that can be visualized with the open source software
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>newGrid</strong> : <a class="reference internal" href="#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal"><span class="pre">RegularGrid</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>newGrid</strong> : <a class="reference internal" href="#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></p>
 <blockquote>
 <div><p>A new regular grid.</p>
 </div></blockquote>
@@ -803,7 +805,7 @@ values that can be visualized with the open source software
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span><span class="o">.</span><span class="n">setDescription</span><span class="p">([</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">])</span>
@@ -876,7 +878,7 @@ values that can be visualized with the open source software
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>lower</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>lower</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The lower bound of an axes-aligned bounding box of the domain.</p>
 </div></blockquote>
@@ -936,7 +938,7 @@ values that can be visualized with the open source software
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vertex</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vertex</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>Coordinates of the nearest vertex of <em>point</em>.</p>
 </div></blockquote>
@@ -945,10 +947,11 @@ values that can be visualized with the open source software
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplices</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplices</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span><span class="o">.</span><span class="n">computeKDTree</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">point</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mesh2d</span><span class="o">.</span><span class="n">getNearestVertex</span><span class="p">(</span><span class="n">point</span><span class="p">))</span>
 <span class="go">[1,0]</span>
@@ -970,11 +973,11 @@ values that can be visualized with the open source software
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indices</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal"><span class="pre">Indices</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indices</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></p>
 <blockquote>
 <div><p>Collecton of 1 or 2 integers, the first one being the index of the vertex the closest to the given point and the second one the index of the containing simplex if the given point is inside of the mesh.</p>
 </div></blockquote>
-<p><strong>coordinates</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<p><strong>coordinates</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The barycentric coordinates of the given point wrt the vertices of the containing simplex. It is of dimension 0 if the point is not contained into the mesh.</p>
 </div></blockquote>
@@ -983,10 +986,11 @@ values that can be visualized with the open source software
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplex</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplex</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span><span class="o">.</span><span class="n">computeKDTree</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a point A inside the simplex</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pointA</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mesh2d</span><span class="o">.</span><span class="n">getNearestVertexAndSimplexIndicesWithCoordinates</span><span class="p">(</span><span class="n">pointA</span><span class="p">))</span>
@@ -1023,10 +1027,11 @@ norm.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplices</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplices</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span><span class="o">.</span><span class="n">computeKDTree</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">point</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mesh2d</span><span class="o">.</span><span class="n">getNearestVertexIndex</span><span class="p">(</span><span class="n">point</span><span class="p">))</span>
 <span class="go">1</span>
@@ -1085,7 +1090,7 @@ For now, by default, it is equal to the geometrical volume.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indices</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal"><span class="pre">Indices</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indices</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></p>
 <blockquote class="last">
 <div><p>Indices defining the simplex of index <em>index</em>. The simplex
 <img class="math" src="../../_images/math/c0725fd8eb3324dea6bec210ec45746d6109dd2a.svg" alt="[i_1, \dots, i_{n+1}]"/> relies the vertices of index
@@ -1098,7 +1103,7 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplices</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplices</span><span class="p">)</span>
@@ -1118,7 +1123,7 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indicesCollection</strong> : collection of <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal"><span class="pre">Indices</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indicesCollection</strong> : collection of <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></p>
 <blockquote class="last">
 <div><p>List of indices defining all the simplices. The simplex
 <img class="math" src="../../_images/math/c0725fd8eb3324dea6bec210ec45746d6109dd2a.svg" alt="[i_1, \dots, i_{n+1}]"/> relies the vertices of index
@@ -1131,7 +1136,7 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplices</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplices</span><span class="p">)</span>
@@ -1203,7 +1208,7 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>upper</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>upper</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The upper bound of an axes-aligned bounding box of the domain.</p>
 </div></blockquote>
@@ -1245,7 +1250,7 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>values</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>values</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The collection of the time stamps.</p>
 </div></blockquote>
@@ -1269,7 +1274,7 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vertex</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vertex</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>Coordinates in <img class="math" src="../../_images/math/acfb6adce26385bb77f0307200fc915d218e4f14.svg" alt="\Rset^{dim}"/> of the vertex of index <em>index</em>,
 where <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e243cb0f5f.svg" alt="dim"/> is the dimension of the vertices of the mesh.</p>
@@ -1279,7 +1284,7 @@ where <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e2
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplices</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplices</span><span class="p">)</span>
@@ -1299,7 +1304,7 @@ where <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e2
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vertices</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vertices</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>Coordinates in <img class="math" src="../../_images/math/acfb6adce26385bb77f0307200fc915d218e4f14.svg" alt="\Rset^{dim}"/> of the vertices,
 where <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e243cb0f5f.svg" alt="dim"/> is the dimension of the vertices of the mesh.</p>
@@ -1309,7 +1314,7 @@ where <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e2
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplices</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplices</span><span class="p">)</span>
@@ -1347,7 +1352,7 @@ where <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e2
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>verticesSimplicesMap</strong> : <code class="xref py py-class docutils literal"><span class="pre">IndicesCollection</span></code></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>verticesSimplicesMap</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">IndicesCollection</span></code></p>
 <blockquote class="last">
 <div><p>For each vertex, list the vertices indices it belongs to.</p>
 </div></blockquote>
@@ -1459,7 +1464,7 @@ where <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e2
 <blockquote class="last">
 <div><p>Flag telling whether the domain is numerically empty, i.e. if its numerical
 volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a7c25f8bb27be0c07c78bf5c323768d959.svg" alt="\epsilon"/> (defined in the
-<a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>:
+<a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>:
 <img class="math" src="../../_images/math/29d6c0a7c25f8bb27be0c07c78bf5c323768d959.svg" alt="\epsilon"/> = DomainImplementation-SmallVolume).</p>
 </div></blockquote>
 </td>
@@ -1467,7 +1472,7 @@ volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">domain</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Domain</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span> 
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">isNumericallyEmpty</span><span class="p">())</span>
 <span class="go">True</span>
@@ -1492,7 +1497,7 @@ volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.5</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplices</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh1d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplices</span><span class="p">)</span>
@@ -1609,7 +1614,7 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplices</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span><span class="o">.</span><span class="n">setSimplices</span><span class="p">(</span><span class="n">simplices</span><span class="p">)</span>
@@ -1639,7 +1644,7 @@ where <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e2
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplices</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplices</span><span class="p">)</span>
@@ -1671,7 +1676,7 @@ where <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e2
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span><span class="o">.</span><span class="n">setVertices</span><span class="p">(</span><span class="n">vertices</span><span class="p">)</span>
@@ -1739,14 +1744,14 @@ where <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e2
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" >Base objects</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

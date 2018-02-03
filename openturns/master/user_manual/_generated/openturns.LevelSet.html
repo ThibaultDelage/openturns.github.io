@@ -9,16 +9,7 @@
     <title>LevelSet &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" accesskey="U">Base objects</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -121,7 +114,7 @@
 <blockquote>
 <div><p>Dimension of the LevelSet.</p>
 </div></blockquote>
-<p><strong>function</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<p><strong>function</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote>
 <div><p>A function such that: <img class="math" src="../../_images/math/98fdef7d2c96171d328314b6ce5d4a8f14d86ce1.svg" alt="f: \Rset^{dim} \mapsto \Rset"/> defining the
 LevelSet.</p>
@@ -135,11 +128,11 @@ LevelSet.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>A LevelSet is a <a class="reference internal" href="openturns.Domain.html#openturns.Domain" title="openturns.Domain"><code class="xref py py-class docutils literal"><span class="pre">Domain</span></code></a> defined as follows:</p>
+<p>A LevelSet is a <a class="reference internal" href="openturns.Domain.html#openturns.Domain" title="openturns.Domain"><code class="xref py py-class docutils literal notranslate"><span class="pre">Domain</span></code></a> defined as follows:</p>
 <div class="math">
 <p><img src="../../_images/math/009cf71b0749f6c6a053fd8af3a7b4ae67088995.svg" alt="\{ \vect{x} \in \Rset^{dim} \, | \, f(\vect{x}) \leq s \}"/></p>
 </div><p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">function</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x1^4 + x2^4&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">levelSet</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LevelSet</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
@@ -152,85 +145,85 @@ LevelSet.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.contains" title="openturns.LevelSet.contains"><code class="xref py py-obj docutils literal"><span class="pre">contains</span></code></a>(point)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.contains" title="openturns.LevelSet.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(point)</td>
 <td>Check if the given point is inside of the domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.getClassName" title="openturns.LevelSet.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.getClassName" title="openturns.LevelSet.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.getDimension" title="openturns.LevelSet.getDimension"><code class="xref py py-obj docutils literal"><span class="pre">getDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.getDimension" title="openturns.LevelSet.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
 <td>Get the dimension of the domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.getFunction" title="openturns.LevelSet.getFunction"><code class="xref py py-obj docutils literal"><span class="pre">getFunction</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.getFunction" title="openturns.LevelSet.getFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFunction</span></code></a>()</td>
 <td>Get the function defining the level set.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.getId" title="openturns.LevelSet.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.getId" title="openturns.LevelSet.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.getLevel" title="openturns.LevelSet.getLevel"><code class="xref py py-obj docutils literal"><span class="pre">getLevel</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.getLevel" title="openturns.LevelSet.getLevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLevel</span></code></a>()</td>
 <td>Get the level defining the level set.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.getLowerBound" title="openturns.LevelSet.getLowerBound"><code class="xref py py-obj docutils literal"><span class="pre">getLowerBound</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.getLowerBound" title="openturns.LevelSet.getLowerBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLowerBound</span></code></a>()</td>
 <td>Get the lower bound of the domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.getName" title="openturns.LevelSet.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.getName" title="openturns.LevelSet.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.getNumericalVolume" title="openturns.LevelSet.getNumericalVolume"><code class="xref py py-obj docutils literal"><span class="pre">getNumericalVolume</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.getNumericalVolume" title="openturns.LevelSet.getNumericalVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNumericalVolume</span></code></a>()</td>
 <td>Get the volume of the domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.getShadowedId" title="openturns.LevelSet.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.getShadowedId" title="openturns.LevelSet.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.getUpperBound" title="openturns.LevelSet.getUpperBound"><code class="xref py py-obj docutils literal"><span class="pre">getUpperBound</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.getUpperBound" title="openturns.LevelSet.getUpperBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUpperBound</span></code></a>()</td>
 <td>Get the upper bound of the domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.getVisibility" title="openturns.LevelSet.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.getVisibility" title="openturns.LevelSet.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.getVolume" title="openturns.LevelSet.getVolume"><code class="xref py py-obj docutils literal"><span class="pre">getVolume</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.getVolume" title="openturns.LevelSet.getVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVolume</span></code></a>()</td>
 <td>Get the geometric volume of the domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.hasName" title="openturns.LevelSet.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.hasName" title="openturns.LevelSet.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.hasVisibleName" title="openturns.LevelSet.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.hasVisibleName" title="openturns.LevelSet.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.intersect" title="openturns.LevelSet.intersect"><code class="xref py py-obj docutils literal"><span class="pre">intersect</span></code></a>(other)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.intersect" title="openturns.LevelSet.intersect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intersect</span></code></a>(other)</td>
 <td>Return the levelSet equals to the intersection between the LevelSet and another one.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.isEmpty" title="openturns.LevelSet.isEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isEmpty</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.isEmpty" title="openturns.LevelSet.isEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEmpty</span></code></a>()</td>
 <td>Test whether the domain is empty or not.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.isNumericallyEmpty" title="openturns.LevelSet.isNumericallyEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isNumericallyEmpty</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.isNumericallyEmpty" title="openturns.LevelSet.isNumericallyEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isNumericallyEmpty</span></code></a>()</td>
 <td>Check if the domain is numerically empty.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.join" title="openturns.LevelSet.join"><code class="xref py py-obj docutils literal"><span class="pre">join</span></code></a>(other)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.join" title="openturns.LevelSet.join"><code class="xref py py-obj docutils literal notranslate"><span class="pre">join</span></code></a>(other)</td>
 <td>Return the levelSet equals to the union between the LevelSet and another one.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.numericallyContains" title="openturns.LevelSet.numericallyContains"><code class="xref py py-obj docutils literal"><span class="pre">numericallyContains</span></code></a>(point)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.numericallyContains" title="openturns.LevelSet.numericallyContains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numericallyContains</span></code></a>(point)</td>
 <td>Check if the given point is inside of the discretization of the domain.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.setFunction" title="openturns.LevelSet.setFunction"><code class="xref py py-obj docutils literal"><span class="pre">setFunction</span></code></a>(function)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.setFunction" title="openturns.LevelSet.setFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setFunction</span></code></a>(function)</td>
 <td>Set the function defining the level set.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.setLevel" title="openturns.LevelSet.setLevel"><code class="xref py py-obj docutils literal"><span class="pre">setLevel</span></code></a>(level)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.setLevel" title="openturns.LevelSet.setLevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLevel</span></code></a>(level)</td>
 <td>Set the level defining the level set.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.setLowerBound" title="openturns.LevelSet.setLowerBound"><code class="xref py py-obj docutils literal"><span class="pre">setLowerBound</span></code></a>(bound)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.setLowerBound" title="openturns.LevelSet.setLowerBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLowerBound</span></code></a>(bound)</td>
 <td>Set the lower bound of the bounding box.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.setName" title="openturns.LevelSet.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.setName" title="openturns.LevelSet.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.setShadowedId" title="openturns.LevelSet.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.setShadowedId" title="openturns.LevelSet.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.setUpperBound" title="openturns.LevelSet.setUpperBound"><code class="xref py py-obj docutils literal"><span class="pre">setUpperBound</span></code></a>(bound)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSet.setUpperBound" title="openturns.LevelSet.setUpperBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUpperBound</span></code></a>(bound)</td>
 <td>Set the upper bound of the bounding box.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.setVisibility" title="openturns.LevelSet.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSet.setVisibility" title="openturns.LevelSet.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -309,7 +302,7 @@ LevelSet.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>A function such that: <img class="math" src="../../_images/math/98fdef7d2c96171d328314b6ce5d4a8f14d86ce1.svg" alt="f: \Rset^{dim} \mapsto \Rset"/> defining the
 LevelSet.</p>
@@ -319,7 +312,7 @@ LevelSet.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">function</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;3*x-1&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">levelSet</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LevelSet</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">levelSet</span><span class="o">.</span><span class="n">getFunction</span><span class="p">()</span><span class="o">.</span><span class="n">getEvaluation</span><span class="p">())</span>
@@ -363,7 +356,7 @@ LevelSet.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">function</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;3*x-1&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">levelSet</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LevelSet</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">levelSet</span><span class="o">.</span><span class="n">getLevel</span><span class="p">())</span>
@@ -380,7 +373,7 @@ LevelSet.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>lower</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>lower</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The lower bound of an axes-aligned bounding box of the domain.</p>
 </div></blockquote>
@@ -453,7 +446,7 @@ For now, by default, it is equal to the geometrical volume.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>upper</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>upper</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The upper bound of an axes-aligned bounding box of the domain.</p>
 </div></blockquote>
@@ -549,7 +542,7 @@ For now, by default, it is equal to the geometrical volume.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>levelSet</strong> : <a class="reference internal" href="#openturns.LevelSet" title="openturns.LevelSet"><code class="xref py py-class docutils literal"><span class="pre">LevelSet</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>levelSet</strong> : <a class="reference internal" href="#openturns.LevelSet" title="openturns.LevelSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelSet</span></code></a></p>
 <blockquote class="last">
 <div><p><em>levelSet</em> equals to the intersection between the LevelSet and
 <em>otherLevelSet</em> i.e. <em>levelSet</em> is defined by:
@@ -560,7 +553,7 @@ For now, by default, it is equal to the geometrical volume.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># First level set</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">function</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;3*x-1&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">levelSet1</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LevelSet</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
@@ -608,7 +601,7 @@ For now, by default, it is equal to the geometrical volume.</p>
 <blockquote class="last">
 <div><p>Flag telling whether the domain is numerically empty, i.e. if its numerical
 volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a7c25f8bb27be0c07c78bf5c323768d959.svg" alt="\epsilon"/> (defined in the
-<a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>:
+<a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>:
 <img class="math" src="../../_images/math/29d6c0a7c25f8bb27be0c07c78bf5c323768d959.svg" alt="\epsilon"/> = DomainImplementation-SmallVolume).</p>
 </div></blockquote>
 </td>
@@ -616,7 +609,7 @@ volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">domain</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Domain</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span> 
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">isNumericallyEmpty</span><span class="p">())</span>
 <span class="go">True</span>
@@ -638,7 +631,7 @@ volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>levelSet</strong> : <a class="reference internal" href="#openturns.LevelSet" title="openturns.LevelSet"><code class="xref py py-class docutils literal"><span class="pre">LevelSet</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>levelSet</strong> : <a class="reference internal" href="#openturns.LevelSet" title="openturns.LevelSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelSet</span></code></a></p>
 <blockquote class="last">
 <div><p><em>levelSet</em> equals to the union between the LevelSet and <em>otherLevelSet</em>
 i.e. <em>levelSet</em> is defined by:
@@ -649,7 +642,7 @@ i.e. <em>levelSet</em> is defined by:
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># First level set</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">function</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;3*x-1&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">levelSet1</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LevelSet</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
@@ -701,7 +694,7 @@ geometrical domain.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>A function such that: <img class="math" src="../../_images/math/98fdef7d2c96171d328314b6ce5d4a8f14d86ce1.svg" alt="f: \Rset^{dim} \mapsto \Rset"/> defining the
 LevelSet.</p>
@@ -711,7 +704,7 @@ LevelSet.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">levelSet</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LevelSet</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">function</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;3*x-1&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">levelSet</span><span class="o">.</span><span class="n">setFunction</span><span class="p">(</span><span class="n">function</span><span class="p">)</span>
@@ -736,7 +729,7 @@ LevelSet.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">levelSet</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LevelSet</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">levelSet</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
 </pre></div>
@@ -857,14 +850,14 @@ LevelSet.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" >Base objects</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

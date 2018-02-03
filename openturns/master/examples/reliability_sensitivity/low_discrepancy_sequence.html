@@ -9,16 +9,7 @@
     <title>Generate low discrepancy sequences &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -283,11 +276,11 @@ sequences in order to approximate some integrals.</p>
 compare with the sequence obtained from the pseudo random generator
 (Merse Twister) as the latter has a higher discrepancy.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 <span class="kn">import</span> <span class="nn">math</span> <span class="kn">as</span> <span class="nn">m</span>
@@ -295,11 +288,11 @@ compare with the sequence obtained from the pseudo random generator
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># 1. Sobol sequence</span>
 <span class="n">dimension</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">size</span> <span class="o">=</span> <span class="mi">1024</span>
@@ -313,7 +306,7 @@ compare with the sequence obtained from the pseudo random generator
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[2]:
 </pre></div>
 </div>
@@ -321,11 +314,11 @@ compare with the sequence obtained from the pseudo random generator
 <img alt="../../_images/examples_reliability_sensitivity_low_discrepancy_sequence_3_0.svg" src="../../_images/examples_reliability_sensitivity_low_discrepancy_sequence_3_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># 2. Halton sequence</span>
 <span class="n">dimension</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">sequence</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HaltonSequence</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -338,7 +331,7 @@ compare with the sequence obtained from the pseudo random generator
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[3]:
 </pre></div>
 </div>
@@ -346,11 +339,11 @@ compare with the sequence obtained from the pseudo random generator
 <img alt="../../_images/examples_reliability_sensitivity_low_discrepancy_sequence_4_0.svg" src="../../_images/examples_reliability_sensitivity_low_discrepancy_sequence_4_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># 3. Reverse Halton sequence</span>
 <span class="n">sequence</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ReverseHaltonSequence</span><span class="p">(</span><span class="n">dimension</span><span class="p">)</span>
 <span class="n">sample</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
@@ -371,7 +364,7 @@ discrepancy= 0.0035074981424325635
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[4]:
 </pre></div>
 </div>
@@ -379,11 +372,11 @@ discrepancy= 0.0035074981424325635
 <img alt="../../_images/examples_reliability_sensitivity_low_discrepancy_sequence_5_1.svg" src="../../_images/examples_reliability_sensitivity_low_discrepancy_sequence_5_1.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># 4. Haselgrove sequence</span>
 <span class="n">sequence</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HaselgroveSequence</span><span class="p">(</span><span class="n">dimension</span><span class="p">)</span>
 <span class="n">sample</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
@@ -395,7 +388,7 @@ discrepancy= 0.0035074981424325635
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[5]:
 </pre></div>
 </div>
@@ -403,11 +396,11 @@ discrepancy= 0.0035074981424325635
 <img alt="../../_images/examples_reliability_sensitivity_low_discrepancy_sequence_6_0.svg" src="../../_images/examples_reliability_sensitivity_low_discrepancy_sequence_6_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Compare with uniform random sequence</span>
 <span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComposedDistribution</span><span class="p">([</span><span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">sample</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
@@ -428,7 +421,7 @@ discrepancy= 0.03685516518292309
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[6]:
 </pre></div>
 </div>
@@ -464,7 +457,7 @@ discrepancy= 0.03685516518292309
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>
