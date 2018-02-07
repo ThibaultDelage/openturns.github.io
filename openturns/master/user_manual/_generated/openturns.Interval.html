@@ -211,8 +211,8 @@ scalar.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Interval.getName" title="openturns.Interval.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Interval.getNumericalVolume" title="openturns.Interval.getNumericalVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNumericalVolume</span></code></a>()</td>
-<td>Get the volume of the domain.</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNumericalVolume</span></code>()</td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Interval.getShadowedId" title="openturns.Interval.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
@@ -224,7 +224,7 @@ scalar.</p>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.Interval.getVolume" title="openturns.Interval.getVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVolume</span></code></a>()</td>
-<td>Get the geometric volume of the domain.</td>
+<td>Get the volume of the interval.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Interval.hasName" title="openturns.Interval.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
@@ -236,16 +236,16 @@ scalar.</p>
 <td>Get the intersection with an other interval.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.Interval.isEmpty" title="openturns.Interval.isEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEmpty</span></code></a>()</td>
-<td>Test whether the domain is empty or not.</td>
+<td>Check if the interval is empty.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Interval.isNumericallyEmpty" title="openturns.Interval.isNumericallyEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isNumericallyEmpty</span></code></a>()</td>
-<td>Check if the domain is numerically empty.</td>
+<td>Check if the interval is numerically empty.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.Interval.join" title="openturns.Interval.join"><code class="xref py py-obj docutils literal notranslate"><span class="pre">join</span></code></a>(other)</td>
 <td>Get the smallest interval containing both the current interval and another one.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Interval.numericallyContains" title="openturns.Interval.numericallyContains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numericallyContains</span></code></a>(point)</td>
-<td>Check if the given point is inside of the discretization of the domain.</td>
+<td>Check if the given point is inside of the discretization of the interval.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.Interval.setFiniteLowerBound" title="openturns.Interval.setFiniteLowerBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setFiniteLowerBound</span></code></a>(finiteLowerBound)</td>
 <td>Tell for each component of the lower bound whether it is finite or not.</td>
@@ -474,25 +474,6 @@ the upper bound is infinite. Otherwise, it is finite.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.Interval.getNumericalVolume">
-<code class="descname">getNumericalVolume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Interval.getNumericalVolume" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the volume of the domain.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>volume</strong> : float</p>
-<blockquote class="last">
-<div><p>Volume of the underlying mesh which is the discretization of the domain.
-For now, by default, it is equal to the geometrical volume.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="openturns.Interval.getShadowedId">
 <code class="descname">getShadowedId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Interval.getShadowedId" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s shadowed id.</p>
@@ -556,19 +537,26 @@ For now, by default, it is equal to the geometrical volume.</p>
 <dl class="method">
 <dt id="openturns.Interval.getVolume">
 <code class="descname">getVolume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Interval.getVolume" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the geometric volume of the domain.</p>
+<dd><p>Get the volume of the interval.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>volume</strong> : float</p>
 <blockquote class="last">
-<div><p>Geometrical volume of the domain.</p>
+<div><p>Volume contained within interval bounds.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval</span><span class="o">.</span><span class="n">getVolume</span><span class="p">())</span>
+<span class="go">4.0</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -644,35 +632,14 @@ For now, by default, it is equal to the geometrical volume.</p>
 <dl class="method">
 <dt id="openturns.Interval.isEmpty">
 <code class="descname">isEmpty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Interval.isEmpty" title="Permalink to this definition">¶</a></dt>
-<dd><p>Test whether the domain is empty or not.</p>
+<dd><p>Check if the interval is empty.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isInside</strong> : bool</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isEmpty</strong> : bool</p>
 <blockquote class="last">
-<div><p><em>True</em> if the interior of the geometric domain is empty.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.Interval.isNumericallyEmpty">
-<code class="descname">isNumericallyEmpty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Interval.isNumericallyEmpty" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the domain is numerically empty.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isInside</strong> : bool</p>
-<blockquote class="last">
-<div><p>Flag telling whether the domain is numerically empty, i.e. if its numerical
-volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a7c25f8bb27be0c07c78bf5c323768d959.svg" alt="\epsilon"/> (defined in the
-<a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>:
-<img class="math" src="../../_images/math/29d6c0a7c25f8bb27be0c07c78bf5c323768d959.svg" alt="\epsilon"/> = DomainImplementation-SmallVolume).</p>
+<div><p><em>True</em> if the interior of the interval is empty.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -680,8 +647,37 @@ volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a
 </table>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">domain</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Domain</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span> 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">isNumericallyEmpty</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span><span class="o">.</span><span class="n">setFiniteLowerBound</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">())</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.Interval.isNumericallyEmpty">
+<code class="descname">isNumericallyEmpty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Interval.isNumericallyEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the interval is numerically empty.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isEmpty</strong> : bool</p>
+<blockquote class="last">
+<div><p>Flag telling whether the interval is numerically empty, i.e. if its numerical
+volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a7c25f8bb27be0c07c78bf5c323768d959.svg" alt="\epsilon"/> (defined in the
+<a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>:
+<img class="math" src="../../_images/math/29d6c0a7c25f8bb27be0c07c78bf5c323768d959.svg" alt="\epsilon"/> = Domain-SmallVolume).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">interval</span><span class="o">.</span><span class="n">isNumericallyEmpty</span><span class="p">())</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -724,7 +720,7 @@ volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a
 <dl class="method">
 <dt id="openturns.Interval.numericallyContains">
 <code class="descname">numericallyContains</code><span class="sig-paren">(</span><em>point</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Interval.numericallyContains" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the given point is inside of the discretization of the domain.</p>
+<dd><p>Check if the given point is inside of the discretization of the interval.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -737,9 +733,8 @@ volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isInside</strong> : bool</p>
 <blockquote class="last">
-<div><p>Flag telling whether the point is inside the discretized domain associated
-to the domain. For now, by default, the discretized domain is equal to the
-geometrical domain.</p>
+<div><p>Flag telling whether the point is inside the interval bounds, not taking
+into account whether bounds are finite or not.</p>
 </div></blockquote>
 </td>
 </tr>

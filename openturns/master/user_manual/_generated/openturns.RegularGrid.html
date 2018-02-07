@@ -223,8 +223,8 @@
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getNearestVertexIndex" title="openturns.RegularGrid.getNearestVertexIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNearestVertexIndex</span></code></a>(point)</td>
 <td>Get the index of the nearest vertex of a given point.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getNumericalVolume" title="openturns.RegularGrid.getNumericalVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNumericalVolume</span></code></a>()</td>
-<td>Get the volume of the domain.</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNumericalVolume</span></code>()</td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getShadowedId" title="openturns.RegularGrid.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
@@ -269,7 +269,7 @@
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getVolume" title="openturns.RegularGrid.getVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVolume</span></code></a>()</td>
-<td>Get the geometric volume of the domain.</td>
+<td>Get the volume of the mesh.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.hasName" title="openturns.RegularGrid.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
@@ -277,11 +277,11 @@
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.hasVisibleName" title="openturns.RegularGrid.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.isEmpty" title="openturns.RegularGrid.isEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEmpty</span></code></a>()</td>
-<td>Test whether the domain is empty or not.</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEmpty</span></code>()</td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.isNumericallyEmpty" title="openturns.RegularGrid.isNumericallyEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isNumericallyEmpty</span></code></a>()</td>
-<td>Check if the domain is numerically empty.</td>
+<td>Check if the mesh is numerically empty.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.isRegular" title="openturns.RegularGrid.isRegular"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isRegular</span></code></a>()</td>
 <td>Check if the mesh is regular (only for 1-d meshes).</td>
@@ -289,8 +289,8 @@
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.isValid" title="openturns.RegularGrid.isValid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isValid</span></code></a>()</td>
 <td>Check the mesh validity.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.numericallyContains" title="openturns.RegularGrid.numericallyContains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numericallyContains</span></code></a>(point)</td>
-<td>Check if the given point is inside of the discretization of the domain.</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">numericallyContains</span></code>(point)</td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.setName" title="openturns.RegularGrid.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
@@ -1040,25 +1040,6 @@ norm.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.RegularGrid.getNumericalVolume">
-<code class="descname">getNumericalVolume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.getNumericalVolume" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the volume of the domain.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>volume</strong> : float</p>
-<blockquote class="last">
-<div><p>Volume of the underlying mesh which is the discretization of the domain.
-For now, by default, it is equal to the geometrical volume.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="openturns.RegularGrid.getShadowedId">
 <code class="descname">getShadowedId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.getShadowedId" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s shadowed id.</p>
@@ -1383,19 +1364,28 @@ where <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e2
 <dl class="method">
 <dt id="openturns.RegularGrid.getVolume">
 <code class="descname">getVolume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.getVolume" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the geometric volume of the domain.</p>
+<dd><p>Get the volume of the mesh.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>volume</strong> : float</p>
 <blockquote class="last">
-<div><p>Geometrical volume of the domain.</p>
+<div><p>Geometrical volume of the mesh which is the sum of its simplices’ volumes.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplices</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplices</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span><span class="o">.</span><span class="n">getVolume</span><span class="p">()</span>
+<span class="go">0.75</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1435,37 +1425,19 @@ where <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e2
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.RegularGrid.isEmpty">
-<code class="descname">isEmpty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.isEmpty" title="Permalink to this definition">¶</a></dt>
-<dd><p>Test whether the domain is empty or not.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isInside</strong> : bool</p>
-<blockquote class="last">
-<div><p><em>True</em> if the interior of the geometric domain is empty.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="openturns.RegularGrid.isNumericallyEmpty">
 <code class="descname">isNumericallyEmpty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.isNumericallyEmpty" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the domain is numerically empty.</p>
+<dd><p>Check if the mesh is numerically empty.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isInside</strong> : bool</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isEmpty</strong> : bool</p>
 <blockquote class="last">
-<div><p>Flag telling whether the domain is numerically empty, i.e. if its numerical
+<div><p>Flag telling whether the mesh is numerically empty, i.e. if its numerical
 volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a7c25f8bb27be0c07c78bf5c323768d959.svg" alt="\epsilon"/> (defined in the
 <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>:
-<img class="math" src="../../_images/math/29d6c0a7c25f8bb27be0c07c78bf5c323768d959.svg" alt="\epsilon"/> = DomainImplementation-SmallVolume).</p>
+<img class="math" src="../../_images/math/29d6c0a7c25f8bb27be0c07c78bf5c323768d959.svg" alt="\epsilon"/> = Domain-SmallVolume).</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1473,9 +1445,11 @@ volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a
 </table>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">domain</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Domain</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span> 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">isNumericallyEmpty</span><span class="p">())</span>
-<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplex</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplex</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mesh2d</span><span class="o">.</span><span class="n">isNumericallyEmpty</span><span class="p">())</span>
+<span class="go">False</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1524,32 +1498,6 @@ volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a
 <div><p>Tells if the mesh is valid i.e. if there is non-overlaping simplices,
 no unused vertex, no simplices with duplicate vertices and no coincident
 vertices.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.RegularGrid.numericallyContains">
-<code class="descname">numericallyContains</code><span class="sig-paren">(</span><em>point</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.numericallyContains" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the given point is inside of the discretization of the domain.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float</p>
-<blockquote>
-<div><p>Point with the same dimension as the current domain’s dimension.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isInside</strong> : bool</p>
-<blockquote class="last">
-<div><p>Flag telling whether the point is inside the discretized domain associated
-to the domain. For now, by default, the discretized domain is equal to the
-geometrical domain.</p>
 </div></blockquote>
 </td>
 </tr>
