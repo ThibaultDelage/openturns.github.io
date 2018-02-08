@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Matrix" href="openturns.Matrix.html" />
-    <link rel="prev" title="IntervalMesher" href="openturns.IntervalMesher.html" />
+    <link rel="prev" title="DomainDifference" href="openturns.DomainDifference.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -51,7 +51,7 @@
           <a href="openturns.Matrix.html" title="Matrix"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="openturns.IntervalMesher.html" title="IntervalMesher"
+          <a href="openturns.DomainDifference.html" title="DomainDifference"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
@@ -62,8 +62,8 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="openturns.IntervalMesher.html"
-                        title="previous chapter">IntervalMesher</a></p>
+  <p class="topless"><a href="openturns.DomainDifference.html"
+                        title="previous chapter">DomainDifference</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="openturns.Matrix.html"
                         title="next chapter">Matrix</a></p>
@@ -178,7 +178,7 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.computeWeights" title="openturns.Mesh.computeWeights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeWeights</span></code></a>()</td>
 <td>Compute an approximation of an integral defined over the mesh.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.contains" title="openturns.Mesh.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(point)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.contains" title="openturns.Mesh.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(*args)</td>
 <td>Check if the given point is inside of the domain.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.draw" title="openturns.Mesh.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>()</td>
@@ -208,8 +208,8 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getId" title="openturns.Mesh.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getLowerBound" title="openturns.Mesh.getLowerBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLowerBound</span></code></a>()</td>
-<td>Get the lower bound of the domain.</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLowerBound</span></code>()</td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getName" title="openturns.Mesh.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
@@ -238,8 +238,8 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getSimplicesNumber" title="openturns.Mesh.getSimplicesNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSimplicesNumber</span></code></a>()</td>
 <td>Get the number of simplices of the mesh.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getUpperBound" title="openturns.Mesh.getUpperBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUpperBound</span></code></a>()</td>
-<td>Get the upper bound of the domain.</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUpperBound</span></code>()</td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getVertex" title="openturns.Mesh.getVertex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVertex</span></code></a>(index)</td>
 <td>Get the vertex of a given index.</td>
@@ -523,7 +523,7 @@ is a weighted sum of its values at the vertices.</p>
 
 <dl class="method">
 <dt id="openturns.Mesh.contains">
-<code class="descname">contains</code><span class="sig-paren">(</span><em>point</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.contains" title="Permalink to this definition">¶</a></dt>
+<code class="descname">contains</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.contains" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the given point is inside of the domain.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -817,24 +817,6 @@ values that can be visualized with the open source software
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.Mesh.getLowerBound">
-<code class="descname">getLowerBound</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.getLowerBound" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the lower bound of the domain.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>lower</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>The lower bound of an axes-aligned bounding box of the domain.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="openturns.Mesh.getName">
 <code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.getName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s name.</p>
@@ -1066,24 +1048,6 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>number</strong> : int</p>
 <blockquote class="last">
 <div><p>Number of simplices of the mesh.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.Mesh.getUpperBound">
-<code class="descname">getUpperBound</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.getUpperBound" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the upper bound of the domain.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>upper</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>The upper bound of an axes-aligned bounding box of the domain.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1538,7 +1502,7 @@ where <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e2
           <a href="openturns.Matrix.html" title="Matrix"
              >next</a> |</li>
         <li class="right" >
-          <a href="openturns.IntervalMesher.html" title="IntervalMesher"
+          <a href="openturns.DomainDifference.html" title="DomainDifference"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>

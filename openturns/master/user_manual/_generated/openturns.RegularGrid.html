@@ -169,7 +169,7 @@
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.computeWeights" title="openturns.RegularGrid.computeWeights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeWeights</span></code></a>()</td>
 <td>Compute an approximation of an integral defined over the mesh.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.contains" title="openturns.RegularGrid.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(point)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.contains" title="openturns.RegularGrid.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(*args)</td>
 <td>Check if the given point is inside of the domain.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.draw" title="openturns.RegularGrid.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>()</td>
@@ -205,8 +205,8 @@
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getId" title="openturns.RegularGrid.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getLowerBound" title="openturns.RegularGrid.getLowerBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLowerBound</span></code></a>()</td>
-<td>Get the lower bound of the domain.</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLowerBound</span></code>()</td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getN" title="openturns.RegularGrid.getN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getN</span></code></a>()</td>
 <td>Accessor to the number of time stamps in the grid.</td>
@@ -244,8 +244,8 @@
 <tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getStep" title="openturns.RegularGrid.getStep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStep</span></code></a>()</td>
 <td>Accessor to the step.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.RegularGrid.getUpperBound" title="openturns.RegularGrid.getUpperBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUpperBound</span></code></a>()</td>
-<td>Get the upper bound of the domain.</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUpperBound</span></code>()</td>
+<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.RegularGrid.getValue" title="openturns.RegularGrid.getValue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getValue</span></code></a>(i)</td>
 <td>Accessor to the time stamps at a gien index.</td>
@@ -535,7 +535,7 @@ is a weighted sum of its values at the vertices.</p>
 
 <dl class="method">
 <dt id="openturns.RegularGrid.contains">
-<code class="descname">contains</code><span class="sig-paren">(</span><em>point</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.contains" title="Permalink to this definition">¶</a></dt>
+<code class="descname">contains</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.contains" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the given point is inside of the domain.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -871,24 +871,6 @@ values that can be visualized with the open source software
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.RegularGrid.getLowerBound">
-<code class="descname">getLowerBound</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.getLowerBound" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the lower bound of the domain.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>lower</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>The lower bound of an axes-aligned bounding box of the domain.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="openturns.RegularGrid.getN">
 <code class="descname">getN</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.getN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the number of time stamps in the grid.</p>
@@ -1174,24 +1156,6 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>step</strong> : float</p>
 <blockquote class="last">
 <div><p>The step <img class="math" src="../../_images/math/d8a798a6fc5c4e897413ac76b27cb94c35e37642.svg" alt="\Delta"/> between two consecutive time stamps.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.RegularGrid.getUpperBound">
-<code class="descname">getUpperBound</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGrid.getUpperBound" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the upper bound of the domain.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>upper</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>The upper bound of an axes-aligned bounding box of the domain.</p>
 </div></blockquote>
 </td>
 </tr>

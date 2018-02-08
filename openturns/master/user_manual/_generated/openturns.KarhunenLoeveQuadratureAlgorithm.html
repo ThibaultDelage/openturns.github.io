@@ -106,8 +106,8 @@
 <dd><p>Computation of Karhunen-Loeve decomposition using Quadrature approximation.</p>
 <dl class="docutils">
 <dt>Available constructors:</dt>
-<dd><p class="first">KarhunenLoeveQuadratureAlgorithm(<em>domain, covariance, experiment, basis, basisSize, mustScale, s</em>)</p>
-<p class="last">KarhunenLoeveQuadratureAlgorithm(<em>domain, covariance, marginalDegree, s</em>)</p>
+<dd><p class="first">KarhunenLoeveQuadratureAlgorithm(<em>domain, bounds, covariance, experiment, basis, basisSize, mustScale, s</em>)</p>
+<p class="last">KarhunenLoeveQuadratureAlgorithm(<em>domain, bounds, covariance, marginalDegree, s</em>)</p>
 </dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
@@ -117,6 +117,10 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>domain</strong> : <a class="reference internal" href="openturns.Domain.html#openturns.Domain" title="openturns.Domain"><code class="xref py py-class docutils literal notranslate"><span class="pre">Domain</span></code></a></p>
 <blockquote>
 <div><p>The domain on which the covariance model and the Karhunen-Loeve eigenfunctions (modes) are discretized.</p>
+</div></blockquote>
+<p><strong>bounds</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
+<blockquote>
+<div><p>Numerical bounds of the domain.</p>
 </div></blockquote>
 <p><strong>covariance</strong> : <a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></p>
 <blockquote>
@@ -176,7 +180,8 @@
 <p class="rubric">Examples</p>
 <p>Discretize the domain <img class="math" src="../../_images/math/4502dceb2a4b3dbf38d044181ebe1d26ef89e030.svg" alt="\cD"/> and create a covariance model:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">domain</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">IntervalMesher</span><span class="p">([</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="o">-</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bounds</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="o">-</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">domain</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">IntervalMesher</span><span class="p">([</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AbsoluteExponential</span><span class="p">([</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
@@ -192,7 +197,7 @@
 </pre></div>
 </div>
 <p>Create the Karhunen-Loeve Quadrature algorithm:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">algorithm</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">KarhunenLoeveQuadratureAlgorithm</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">experiment</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">basisSize</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">algorithm</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">KarhunenLoeveQuadratureAlgorithm</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">experiment</span><span class="p">,</span> <span class="n">basis</span><span class="p">,</span> <span class="n">basisSize</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Run it!</p>
