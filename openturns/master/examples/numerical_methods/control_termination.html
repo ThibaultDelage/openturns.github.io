@@ -378,13 +378,7 @@ time.</p>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Define the stopping criterion</span>
-<span class="k">def</span> <span class="nf">TimerStop</span><span class="p">(</span><span class="n">duration</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
-        <span class="n">delta</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span> <span class="o">-</span> <span class="n">inner</span><span class="o">.</span><span class="n">t0</span>
-        <span class="k">return</span> <span class="n">delta</span> <span class="o">&gt;</span> <span class="n">duration</span>
-    <span class="n">inner</span><span class="o">.</span><span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">inner</span>
-<span class="n">myAlgo</span><span class="o">.</span><span class="n">setStopCallback</span><span class="p">(</span><span class="n">TimerStop</span><span class="p">(</span><span class="mf">0.01</span><span class="p">))</span>
+<span class="n">myAlgo</span><span class="o">.</span><span class="n">setStopCallback</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">TimerCallback</span><span class="p">(</span><span class="mf">0.01</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -407,8 +401,8 @@ time.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-event probability: 0.17045454545454541
-calls number: 190
+event probability: 0.1692307692307692
+calls number: 232
 </pre></div></div>
 </div>
 </div>
