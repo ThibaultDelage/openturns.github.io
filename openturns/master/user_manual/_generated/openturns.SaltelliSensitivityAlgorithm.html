@@ -158,8 +158,8 @@ of second order indices.</p>
 method for the evaluation of both first and total order indices.</p>
 <p>These last ones are respectively given as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/8b694c745057a68fd7e872dc4962ec479602a16c.svg" alt="\begin{array}{ccc}
-\hat{V_i} &amp; = &amp; \frac{1}{n}\sum_{k=1}^{n} G(B_k)  G(E_k) - G_0^2 \\
+<p><img src="../../_images/math/a664b91939c814d32120a71dc06e9ddd61b798d0.svg" alt="\begin{array}{ccc}
+\hat{V_i} &amp; = &amp; \frac{1}{n}\sum_{k=1}^{n} G(B_k)  G(E_k) - (\frac{1}{n} \sum_{k=1}^{n} G(A_k)) (\frac{1}{n} \sum_{k=1}^{n} G(B_k)) \\
 \hat{V_{-i}} &amp; = &amp; \frac{1}{n}\sum_{k=1}^{n} G(A_k)  G(E_k) - G_0^2
 \end{array}"/></p>
 </div><p class="rubric">Examples</p>
@@ -177,7 +177,7 @@ method for the evaluation of both first and total order indices.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># sensitivity analysis algorithm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sensitivityAnalysis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SaltelliSensitivityAlgorithm</span><span class="p">(</span><span class="n">inputDesign</span><span class="p">,</span> <span class="n">outputDesign</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sensitivityAnalysis</span><span class="o">.</span><span class="n">getFirstOrderIndices</span><span class="p">())</span>
-<span class="go">[0.182857,0.357745,-0.128457]</span>
+<span class="go">[0.249402,0.42429,-0.0619125]</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
