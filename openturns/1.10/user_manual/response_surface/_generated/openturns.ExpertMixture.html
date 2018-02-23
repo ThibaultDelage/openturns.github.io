@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>ExpertMixture &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -125,11 +118,11 @@ defined by the collection of functions <img class="math" src="../../../_images/m
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>basis</strong> : <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal"><span class="pre">Basis</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>basis</strong> : <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></p>
 <blockquote>
-<div><p>A basis which is a collection of <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a>.</p>
+<div><p>A basis which is a collection of <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>.</p>
 </div></blockquote>
-<p><strong>classifier</strong> : <a class="reference internal" href="openturns.Classifier.html#openturns.Classifier" title="openturns.Classifier"><code class="xref py py-class docutils literal"><span class="pre">Classifier</span></code></a></p>
+<p><strong>classifier</strong> : <a class="reference internal" href="openturns.Classifier.html#openturns.Classifier" title="openturns.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a></p>
 <blockquote>
 <div><p>A classifier</p>
 </div></blockquote>
@@ -145,12 +138,12 @@ classifier only partitions the input space.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.Classifier.html#openturns.Classifier" title="openturns.Classifier"><code class="xref py py-obj docutils literal"><span class="pre">Classifier</span></code></a>, <a class="reference internal" href="openturns.MixtureClassifier.html#openturns.MixtureClassifier" title="openturns.MixtureClassifier"><code class="xref py py-obj docutils literal"><span class="pre">MixtureClassifier</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.Classifier.html#openturns.Classifier" title="openturns.Classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Classifier</span></code></a>, <a class="reference internal" href="openturns.MixtureClassifier.html#openturns.MixtureClassifier" title="openturns.MixtureClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MixtureClassifier</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The number of experts must match the number of classes of the classifier.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.99</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d1</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">([</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">R</span><span class="p">)</span>
@@ -176,151 +169,151 @@ classifier only partitions the input space.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">__call__</span></code>(…)&nbsp;&lt;==&gt;&nbsp;x(…)</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(…)&nbsp;&lt;==&gt;&nbsp;x(…)</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.addCacheContent" title="openturns.ExpertMixture.addCacheContent"><code class="xref py py-obj docutils literal"><span class="pre">addCacheContent</span></code></a>(inSample,&nbsp;outSample)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.addCacheContent" title="openturns.ExpertMixture.addCacheContent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addCacheContent</span></code></a>(inSample,&nbsp;outSample)</td>
 <td>Add input numerical points and associated output to the cache.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.clearCache" title="openturns.ExpertMixture.clearCache"><code class="xref py py-obj docutils literal"><span class="pre">clearCache</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.clearCache" title="openturns.ExpertMixture.clearCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clearCache</span></code></a>()</td>
 <td>Empty the content of the cache.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.clearHistory" title="openturns.ExpertMixture.clearHistory"><code class="xref py py-obj docutils literal"><span class="pre">clearHistory</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.clearHistory" title="openturns.ExpertMixture.clearHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clearHistory</span></code></a>()</td>
 <td>Empty the content of the history.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.disableCache" title="openturns.ExpertMixture.disableCache"><code class="xref py py-obj docutils literal"><span class="pre">disableCache</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.disableCache" title="openturns.ExpertMixture.disableCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disableCache</span></code></a>()</td>
 <td>Disable the cache mechanism.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.disableHistory" title="openturns.ExpertMixture.disableHistory"><code class="xref py py-obj docutils literal"><span class="pre">disableHistory</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.disableHistory" title="openturns.ExpertMixture.disableHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disableHistory</span></code></a>()</td>
 <td>Disable the history mechanism.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.draw" title="openturns.ExpertMixture.draw"><code class="xref py py-obj docutils literal"><span class="pre">draw</span></code></a>(*args)</td>
-<td>Draw the output of function as a <a class="reference internal" href="../../_generated/openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a>.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.draw" title="openturns.ExpertMixture.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>(*args)</td>
+<td>Draw the output of function as a <a class="reference internal" href="../../_generated/openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.enableCache" title="openturns.ExpertMixture.enableCache"><code class="xref py py-obj docutils literal"><span class="pre">enableCache</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.enableCache" title="openturns.ExpertMixture.enableCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enableCache</span></code></a>()</td>
 <td>Enable the cache mechanism.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.enableHistory" title="openturns.ExpertMixture.enableHistory"><code class="xref py py-obj docutils literal"><span class="pre">enableHistory</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.enableHistory" title="openturns.ExpertMixture.enableHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enableHistory</span></code></a>()</td>
 <td>Enable the history mechanism.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getCacheHits" title="openturns.ExpertMixture.getCacheHits"><code class="xref py py-obj docutils literal"><span class="pre">getCacheHits</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getCacheHits" title="openturns.ExpertMixture.getCacheHits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheHits</span></code></a>()</td>
 <td>Accessor to the number of computations saved thanks to the cache mecanism.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getCacheInput" title="openturns.ExpertMixture.getCacheInput"><code class="xref py py-obj docutils literal"><span class="pre">getCacheInput</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getCacheInput" title="openturns.ExpertMixture.getCacheInput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheInput</span></code></a>()</td>
 <td>Accessor to all the input numerical points stored in the cache mecanism.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getCacheOutput" title="openturns.ExpertMixture.getCacheOutput"><code class="xref py py-obj docutils literal"><span class="pre">getCacheOutput</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getCacheOutput" title="openturns.ExpertMixture.getCacheOutput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheOutput</span></code></a>()</td>
 <td>Accessor to all the output numerical points stored in the cache mecanism.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getCallsNumber" title="openturns.ExpertMixture.getCallsNumber"><code class="xref py py-obj docutils literal"><span class="pre">getCallsNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getCallsNumber" title="openturns.ExpertMixture.getCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCallsNumber</span></code></a>()</td>
 <td>Accessor to the number of times the function has been called.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getClassName" title="openturns.ExpertMixture.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getClassName" title="openturns.ExpertMixture.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getClassifier" title="openturns.ExpertMixture.getClassifier"><code class="xref py py-obj docutils literal"><span class="pre">getClassifier</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getClassifier" title="openturns.ExpertMixture.getClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassifier</span></code></a>()</td>
 <td>Accessor the classifier.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getDescription" title="openturns.ExpertMixture.getDescription"><code class="xref py py-obj docutils literal"><span class="pre">getDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getDescription" title="openturns.ExpertMixture.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a>()</td>
 <td>Accessor to the description of the inputs and outputs.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getExperts" title="openturns.ExpertMixture.getExperts"><code class="xref py py-obj docutils literal"><span class="pre">getExperts</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getExperts" title="openturns.ExpertMixture.getExperts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getExperts</span></code></a>()</td>
 <td>Accessor the basis.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getHistoryInput" title="openturns.ExpertMixture.getHistoryInput"><code class="xref py py-obj docutils literal"><span class="pre">getHistoryInput</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getHistoryInput" title="openturns.ExpertMixture.getHistoryInput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHistoryInput</span></code></a>()</td>
 <td>Accessor to the history of the input values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getHistoryOutput" title="openturns.ExpertMixture.getHistoryOutput"><code class="xref py py-obj docutils literal"><span class="pre">getHistoryOutput</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getHistoryOutput" title="openturns.ExpertMixture.getHistoryOutput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHistoryOutput</span></code></a>()</td>
 <td>Accessor to the history of the output values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getId" title="openturns.ExpertMixture.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getId" title="openturns.ExpertMixture.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getInputDescription" title="openturns.ExpertMixture.getInputDescription"><code class="xref py py-obj docutils literal"><span class="pre">getInputDescription</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getInputDescription" title="openturns.ExpertMixture.getInputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDescription</span></code></a>()</td>
 <td>Accessor to the description of the inputs.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getInputDimension" title="openturns.ExpertMixture.getInputDimension"><code class="xref py py-obj docutils literal"><span class="pre">getInputDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getInputDimension" title="openturns.ExpertMixture.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
 <td>Accessor to the number of the inputs.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getInputParameterHistory" title="openturns.ExpertMixture.getInputParameterHistory"><code class="xref py py-obj docutils literal"><span class="pre">getInputParameterHistory</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getInputParameterHistory" title="openturns.ExpertMixture.getInputParameterHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputParameterHistory</span></code></a>()</td>
 <td>Accessor to the history of the input parameter values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getInputPointHistory" title="openturns.ExpertMixture.getInputPointHistory"><code class="xref py py-obj docutils literal"><span class="pre">getInputPointHistory</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getInputPointHistory" title="openturns.ExpertMixture.getInputPointHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputPointHistory</span></code></a>()</td>
 <td>Accessor to the history of the input points values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getMarginal" title="openturns.ExpertMixture.getMarginal"><code class="xref py py-obj docutils literal"><span class="pre">getMarginal</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getMarginal" title="openturns.ExpertMixture.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
 <td>Accessor to marginal.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getName" title="openturns.ExpertMixture.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getName" title="openturns.ExpertMixture.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getOutputDescription" title="openturns.ExpertMixture.getOutputDescription"><code class="xref py py-obj docutils literal"><span class="pre">getOutputDescription</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getOutputDescription" title="openturns.ExpertMixture.getOutputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDescription</span></code></a>()</td>
 <td>Accessor to the description of the outputs.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getOutputDimension" title="openturns.ExpertMixture.getOutputDimension"><code class="xref py py-obj docutils literal"><span class="pre">getOutputDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getOutputDimension" title="openturns.ExpertMixture.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
 <td>Accessor to the number of the outputs.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getParameter" title="openturns.ExpertMixture.getParameter"><code class="xref py py-obj docutils literal"><span class="pre">getParameter</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getParameter" title="openturns.ExpertMixture.getParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameter</span></code></a>()</td>
 <td>Accessor to the parameter values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getParameterDescription" title="openturns.ExpertMixture.getParameterDescription"><code class="xref py py-obj docutils literal"><span class="pre">getParameterDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getParameterDescription" title="openturns.ExpertMixture.getParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDescription</span></code></a>()</td>
 <td>Accessor to the parameter description.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getParameterDimension" title="openturns.ExpertMixture.getParameterDimension"><code class="xref py py-obj docutils literal"><span class="pre">getParameterDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getParameterDimension" title="openturns.ExpertMixture.getParameterDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDimension</span></code></a>()</td>
 <td>Accessor to the dimension of the parameter.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getShadowedId" title="openturns.ExpertMixture.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.getShadowedId" title="openturns.ExpertMixture.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getVisibility" title="openturns.ExpertMixture.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.getVisibility" title="openturns.ExpertMixture.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.hasName" title="openturns.ExpertMixture.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.hasName" title="openturns.ExpertMixture.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.hasVisibleName" title="openturns.ExpertMixture.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.hasVisibleName" title="openturns.ExpertMixture.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.isActualImplementation" title="openturns.ExpertMixture.isActualImplementation"><code class="xref py py-obj docutils literal"><span class="pre">isActualImplementation</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.isActualImplementation" title="openturns.ExpertMixture.isActualImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isActualImplementation</span></code></a>()</td>
 <td>Accessor to the validity flag.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.isCacheEnabled" title="openturns.ExpertMixture.isCacheEnabled"><code class="xref py py-obj docutils literal"><span class="pre">isCacheEnabled</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.isCacheEnabled" title="openturns.ExpertMixture.isCacheEnabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isCacheEnabled</span></code></a>()</td>
 <td>Test whether the cache mechanism is enabled or not.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.isHistoryEnabled" title="openturns.ExpertMixture.isHistoryEnabled"><code class="xref py py-obj docutils literal"><span class="pre">isHistoryEnabled</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.isHistoryEnabled" title="openturns.ExpertMixture.isHistoryEnabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isHistoryEnabled</span></code></a>()</td>
 <td>Test whether the history mechanism is enabled or not.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.parameterGradient" title="openturns.ExpertMixture.parameterGradient"><code class="xref py py-obj docutils literal"><span class="pre">parameterGradient</span></code></a>(inP)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.parameterGradient" title="openturns.ExpertMixture.parameterGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameterGradient</span></code></a>(inP)</td>
 <td>Gradient against the parameters.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.setClassifier" title="openturns.ExpertMixture.setClassifier"><code class="xref py py-obj docutils literal"><span class="pre">setClassifier</span></code></a>(classifier)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.setClassifier" title="openturns.ExpertMixture.setClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setClassifier</span></code></a>(classifier)</td>
 <td>Accessor the classifier.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.setDescription" title="openturns.ExpertMixture.setDescription"><code class="xref py py-obj docutils literal"><span class="pre">setDescription</span></code></a>(description)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.setDescription" title="openturns.ExpertMixture.setDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDescription</span></code></a>(description)</td>
 <td>Accessor to the description of the inputs and outputs.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.setExperts" title="openturns.ExpertMixture.setExperts"><code class="xref py py-obj docutils literal"><span class="pre">setExperts</span></code></a>(experts)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.setExperts" title="openturns.ExpertMixture.setExperts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setExperts</span></code></a>(experts)</td>
 <td>Accessor the basis.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.setInputDescription" title="openturns.ExpertMixture.setInputDescription"><code class="xref py py-obj docutils literal"><span class="pre">setInputDescription</span></code></a>(inputDescription)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.setInputDescription" title="openturns.ExpertMixture.setInputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInputDescription</span></code></a>(inputDescription)</td>
 <td>Accessor to the description of the inputs.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.setName" title="openturns.ExpertMixture.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.setName" title="openturns.ExpertMixture.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.setOutputDescription" title="openturns.ExpertMixture.setOutputDescription"><code class="xref py py-obj docutils literal"><span class="pre">setOutputDescription</span></code></a>(outputDescription)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.setOutputDescription" title="openturns.ExpertMixture.setOutputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOutputDescription</span></code></a>(outputDescription)</td>
 <td>Accessor to the description of the outputs.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.setParameter" title="openturns.ExpertMixture.setParameter"><code class="xref py py-obj docutils literal"><span class="pre">setParameter</span></code></a>(parameters)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.setParameter" title="openturns.ExpertMixture.setParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameter</span></code></a>(parameters)</td>
 <td>Accessor to the parameter values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.setParameterDescription" title="openturns.ExpertMixture.setParameterDescription"><code class="xref py py-obj docutils literal"><span class="pre">setParameterDescription</span></code></a>(description)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.setParameterDescription" title="openturns.ExpertMixture.setParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameterDescription</span></code></a>(description)</td>
 <td>Accessor to the parameter description.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.setShadowedId" title="openturns.ExpertMixture.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ExpertMixture.setShadowedId" title="openturns.ExpertMixture.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.setVisibility" title="openturns.ExpertMixture.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ExpertMixture.setVisibility" title="openturns.ExpertMixture.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -381,7 +374,7 @@ cache.</p>
 <dl class="method">
 <dt id="openturns.ExpertMixture.draw">
 <code class="descname">draw</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ExpertMixture.draw" title="Permalink to this definition">¶</a></dt>
-<dd><p>Draw the output of function as a <a class="reference internal" href="../../_generated/openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a>.</p>
+<dd><p>Draw the output of function as a <a class="reference internal" href="../../_generated/openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a>.</p>
 <dl class="docutils">
 <dt>Available usages:</dt>
 <dd><p class="first">draw(<em>inputMarg, outputMarg, CP, xiMin, xiMax, ptNb</em>)</p>
@@ -458,7 +451,7 @@ central point <em>CP</em>. Then OpenTURNS draws the graph:
 </ul>
 <p>The same as the second usage but only for function <img class="math" src="../../../_images/math/e7236e8276af28ef4898b1da4719c187527cb8c5.svg" alt="f: \Rset^2 \rightarrow \Rset"/>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">openturns.viewer</span> <span class="k">import</span> <span class="n">View</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;sin(2*_pi*x)*exp(-x^2/2)&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -506,7 +499,7 @@ mecanism.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cacheInput</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cacheInput</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>All the input numerical points stored in the cache mecanism.</p>
 </div></blockquote>
@@ -524,7 +517,7 @@ mecanism.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cacheInput</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cacheInput</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>All the output numerical points stored in the cache mecanism.</p>
 </div></blockquote>
@@ -579,7 +572,7 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>classifier</strong> : <a class="reference internal" href="openturns.Classifier.html#openturns.Classifier" title="openturns.Classifier"><code class="xref py py-class docutils literal"><span class="pre">Classifier</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>classifier</strong> : <a class="reference internal" href="openturns.Classifier.html#openturns.Classifier" title="openturns.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a></p>
 <blockquote class="last">
 <div><p>The classifier.</p>
 </div></blockquote>
@@ -597,7 +590,7 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="../../_generated/openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="../../_generated/openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Description of the inputs and the outputs.</p>
 </div></blockquote>
@@ -606,7 +599,7 @@ since its creation.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                        <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getDescription</span><span class="p">())</span>
@@ -623,7 +616,7 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>basis</strong> : <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal"><span class="pre">Basis</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>basis</strong> : <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></p>
 <blockquote class="last">
 <div><p>The collection of functions <img class="math" src="../../../_images/math/f62acfb6121ce9bd82986401eb18a4d6b94707d8.svg" alt="(f_i)_{i=1, \ldots, N}"/>.</p>
 </div></blockquote>
@@ -641,7 +634,7 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>input_history</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>input_history</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>All the input numerical points stored in the history mecanism.</p>
 </div></blockquote>
@@ -659,7 +652,7 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output_history</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output_history</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>All the output numerical points stored in the history mecanism.</p>
 </div></blockquote>
@@ -695,7 +688,7 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="../../_generated/openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="../../_generated/openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Description of the inputs.</p>
 </div></blockquote>
@@ -704,7 +697,7 @@ since its creation.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                        <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getInputDescription</span><span class="p">())</span>
@@ -730,7 +723,7 @@ since its creation.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                        <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getInputDimension</span><span class="p">())</span>
@@ -747,7 +740,7 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>history</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>history</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>All the input parameters stored in the history mecanism.</p>
 </div></blockquote>
@@ -765,7 +758,7 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>history</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>history</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>All the input points stored in the history mecanism.</p>
 </div></blockquote>
@@ -789,7 +782,7 @@ since its creation.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>marginal</strong> : <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>marginal</strong> : <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Function corresponding to either <img class="math" src="../../../_images/math/83826dafd3081c1d1ce50c8fdc59d788f6efcefa.svg" alt="f_i"/> or
 <img class="math" src="../../../_images/math/1df76ef8bb326ce8c363d6933706debaa7816de8.svg" alt="(f_i)_{i \in indices}"/>, with <img class="math" src="../../../_images/math/46e82202988447c3efea6369dbfdb062daee96f8.svg" alt="f:\Rset^n \rightarrow \Rset^p"/>
@@ -827,7 +820,7 @@ and <img class="math" src="../../../_images/math/47c85ba166ea3436340bfc171fcc706
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="../../_generated/openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="../../_generated/openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Description of the outputs.</p>
 </div></blockquote>
@@ -836,7 +829,7 @@ and <img class="math" src="../../../_images/math/47c85ba166ea3436340bfc171fcc706
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                        <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getOutputDescription</span><span class="p">())</span>
@@ -862,7 +855,7 @@ and <img class="math" src="../../../_images/math/47c85ba166ea3436340bfc171fcc706
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                        <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getOutputDimension</span><span class="p">())</span>
@@ -879,7 +872,7 @@ and <img class="math" src="../../../_images/math/47c85ba166ea3436340bfc171fcc706
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="../../_generated/openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="../../_generated/openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The parameter values.</p>
 </div></blockquote>
@@ -897,7 +890,7 @@ and <img class="math" src="../../../_images/math/47c85ba166ea3436340bfc171fcc706
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="../../_generated/openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="../../_generated/openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>The parameter description.</p>
 </div></blockquote>
@@ -1067,7 +1060,7 @@ It is disabled by default.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter_gradient</strong> : <a class="reference internal" href="../../_generated/openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal"><span class="pre">Matrix</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter_gradient</strong> : <a class="reference internal" href="../../_generated/openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></p>
 <blockquote class="last">
 <div><p>The parameters gradient computed at x.</p>
 </div></blockquote>
@@ -1085,7 +1078,7 @@ It is disabled by default.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>classifier</strong> : <a class="reference internal" href="openturns.Classifier.html#openturns.Classifier" title="openturns.Classifier"><code class="xref py py-class docutils literal"><span class="pre">Classifier</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>classifier</strong> : <a class="reference internal" href="openturns.Classifier.html#openturns.Classifier" title="openturns.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a></p>
 <blockquote class="last">
 <div><p>The classifier.</p>
 </div></blockquote>
@@ -1112,7 +1105,7 @@ It is disabled by default.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                        <span class="p">[</span><span class="s1">&#39;2 * x1^2 + x1 + 8 * x2 + 4 * cos(x1) * x2 + 6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getDescription</span><span class="p">())</span>
@@ -1132,7 +1125,7 @@ It is disabled by default.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>basis</strong> : <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal"><span class="pre">Basis</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>basis</strong> : <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></p>
 <blockquote class="last">
 <div><p>The collection of functions <img class="math" src="../../../_images/math/f62acfb6121ce9bd82986401eb18a4d6b94707d8.svg" alt="(f_i)_{i=1, \ldots, N}"/>.</p>
 </div></blockquote>
@@ -1150,7 +1143,7 @@ It is disabled by default.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="../../_generated/openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="../../_generated/openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Description of the inputs.</p>
 </div></blockquote>
@@ -1186,7 +1179,7 @@ It is disabled by default.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="../../_generated/openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="../../_generated/openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Description of the outputs.</p>
 </div></blockquote>
@@ -1222,7 +1215,7 @@ It is disabled by default.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="../../_generated/openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="../../_generated/openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>The parameter description.</p>
 </div></blockquote>
@@ -1298,8 +1291,8 @@ It is disabled by default.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

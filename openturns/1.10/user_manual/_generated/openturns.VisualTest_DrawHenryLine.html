@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>VisualTest_DrawHenryLine &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -119,11 +112,11 @@
 <blockquote>
 <div><p>Tested (univariate) sample.</p>
 </div></blockquote>
-<p><strong>normal_distribution</strong> : <a class="reference internal" href="openturns.Normal.html#openturns.Normal" title="openturns.Normal"><code class="xref py py-class docutils literal"><span class="pre">Normal</span></code></a>, optional</p>
+<p><strong>normal_distribution</strong> : <a class="reference internal" href="openturns.Normal.html#openturns.Normal" title="openturns.Normal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Normal</span></code></a>, optional</p>
 <blockquote>
 <div><p>Tested (univariate) normal distribution.</p>
-<p>If not given, this will build a <a class="reference internal" href="openturns.Normal.html#openturns.Normal" title="openturns.Normal"><code class="xref py py-class docutils literal"><span class="pre">Normal</span></code></a> distribution
-from the given sample using the <a class="reference internal" href="openturns.NormalFactory.html#openturns.NormalFactory" title="openturns.NormalFactory"><code class="xref py py-class docutils literal"><span class="pre">NormalFactory</span></code></a>.</p>
+<p>If not given, this will build a <a class="reference internal" href="openturns.Normal.html#openturns.Normal" title="openturns.Normal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Normal</span></code></a> distribution
+from the given sample using the <a class="reference internal" href="openturns.NormalFactory.html#openturns.NormalFactory" title="openturns.NormalFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">NormalFactory</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -137,7 +130,7 @@ from the given sample using the <a class="reference internal" href="openturns.No
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.VisualTest_DrawQQplot.html#openturns.VisualTest_DrawQQplot" title="openturns.VisualTest_DrawQQplot"><code class="xref py py-obj docutils literal"><span class="pre">VisualTest_DrawQQplot</span></code></a>, <a class="reference internal" href="openturns.FittingTest_Kolmogorov.html#openturns.FittingTest_Kolmogorov" title="openturns.FittingTest_Kolmogorov"><code class="xref py py-obj docutils literal"><span class="pre">FittingTest_Kolmogorov</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.VisualTest_DrawQQplot.html#openturns.VisualTest_DrawQQplot" title="openturns.VisualTest_DrawQQplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VisualTest_DrawQQplot</span></code></a>, <a class="reference internal" href="openturns.FittingTest_Kolmogorov.html#openturns.FittingTest_Kolmogorov" title="openturns.FittingTest_Kolmogorov"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FittingTest_Kolmogorov</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The Henry plot is a visual fitting test for the normal distribution. It
@@ -159,24 +152,24 @@ of the empirical probabilities) on the <strong>Henry line</strong> whose equatio
 <p><img src="../../_images/math/ebf143d2d11e3fc08958543b7084157a9f95255a.svg" alt="y = \frac{x - \mu}{\sigma}, \quad x \in \Rset"/></p>
 </div><p>The Henry plot is a special case of the more general QQ-plot.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">openturns.viewer</span> <span class="k">import</span> <span class="n">View</span>
 </pre></div>
 </div>
 <p>Generate a random sample from a Normal distribution:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Draw an Henry plot against a given (wrong) Normal distribution:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">henry_graph</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VisualTest</span><span class="o">.</span><span class="n">DrawHenryLine</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">distribution</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">henry_graph</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VisualTest</span><span class="o">.</span><span class="n">DrawHenryLine</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">distribution</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">henry_graph</span><span class="o">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s1">&#39;Henry plot against given </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">View</span><span class="p">(</span><span class="n">henry_graph</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Draw an Henry plot against an inferred Normal distribution:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">henry_graph</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VisualTest</span><span class="o">.</span><span class="n">DrawHenryLine</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">henry_graph</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VisualTest</span><span class="o">.</span><span class="n">DrawHenryLine</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">henry_graph</span><span class="o">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s1">&#39;Henry plot against inferred Normal distribution&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">View</span><span class="p">(</span><span class="n">henry_graph</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -211,8 +204,8 @@ of the empirical probabilities) on the <strong>Henry line</strong> whose equatio
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

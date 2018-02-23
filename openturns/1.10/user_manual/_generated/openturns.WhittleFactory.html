@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>WhittleFactory &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -131,12 +124,12 @@
 <div><p>Restrict the estimation to invertible ARMA processes.</p>
 <p>By default: True.</p>
 </div></blockquote>
-<p><strong>indP</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal"><span class="pre">Indices</span></code></a></p>
+<p><strong>indP</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></p>
 <blockquote>
 <div><p>All the <img class="math" src="../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/> orders that will be investigated.
 Care: not yet implemented.</p>
 </div></blockquote>
-<p><strong>indQ</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal"><span class="pre">Indices</span></code></a></p>
+<p><strong>indQ</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></p>
 <blockquote class="last">
 <div><p>All the <img class="math" src="../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/> orders that will be investigated.
 Care: not yet implemented.</p>
@@ -184,7 +177,7 @@ Care: not yet implemented.</p>
 <p>The <em>BIC</em> criterion leads to a model that gives a better prediction. The <em>AIC</em> criterion selects the best model that fits the given data. The <img class="math" src="../../_images/math/3951e03f271014e168f8ec1f5ecf8dd26798e34b.svg" alt="AIC_c"/> criterion improves the previous one by penalizing a too high order that would artificially fit to the data.</p>
 <p class="rubric">Examples</p>
 <p>Create a time series from a scalar ARMA(4,2) and a normal white noise:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myTimeGrid</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RegularGrid</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myWhiteNoise</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">WhiteNoise</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Triangular</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">myTimeGrid</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myARCoef</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ARMACoefficients</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
@@ -195,15 +188,15 @@ Care: not yet implemented.</p>
 </pre></div>
 </div>
 <p>Estimate the ARMA process specifying the orders:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myFactory_42</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">WhittleFactory</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myFactory_42</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">WhittleFactory</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Check the default SpectralModelFactory:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1">#print(myFactory_42.getSpectralModelFactory())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1">#print(myFactory_42.getSpectralModelFactory())</span>
 </pre></div>
 </div>
 <p>Set a particular spectral model: WelchFactory as SpectralModelFactory with the Hanning filtering window:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myFilteringWindow</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span> <span class="n">Hanning</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myFilteringWindow</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span> <span class="n">Hanning</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mySpectralFactory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">WelchFactory</span><span class="p">(</span><span class="n">myFilteringWindow</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myFactory_42</span><span class="o">.</span><span class="n">setSpectralModelFactory</span><span class="p">(</span><span class="n">mySpectralFactory</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1">#print(myFactory_42.getSpectralModelFactory())</span>
@@ -211,14 +204,14 @@ Care: not yet implemented.</p>
 </div>
 <p>Estimate the ARMA process specifying a range for the orders:</p>
 <p>p = [1, 2, 4] and q = [4,5,6]:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pIndices</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Indices</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pIndices</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Indices</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">qIndices</span> <span class="o">=</span>  <span class="n">ot</span><span class="o">.</span><span class="n">Indices</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">qIndices</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myFactory_Range</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">WhittleFactory</span><span class="p">(</span><span class="n">pIndices</span><span class="p">,</span> <span class="n">qIndices</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>To get the quantified AICc, AIC and BIC criteria:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myARMA_42</span><span class="p">,</span> <span class="n">myCriterion</span> <span class="o">=</span> <span class="n">myFactory_42</span><span class="o">.</span><span class="n">buildWithCriteria</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">TimeSeries</span><span class="p">(</span><span class="n">myTimeSeries</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myARMA_42</span><span class="p">,</span> <span class="n">myCriterion</span> <span class="o">=</span> <span class="n">myFactory_42</span><span class="o">.</span><span class="n">buildWithCriteria</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">TimeSeries</span><span class="p">(</span><span class="n">myTimeSeries</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">AICc</span><span class="p">,</span> <span class="n">AIC</span><span class="p">,</span> <span class="n">BIC</span> <span class="o">=</span> <span class="n">myCriterion</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -229,91 +222,91 @@ Care: not yet implemented.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.build" title="openturns.WhittleFactory.build"><code class="xref py py-obj docutils literal"><span class="pre">build</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.build" title="openturns.WhittleFactory.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>(*args)</td>
 <td>Estimate the ARMA process.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.buildWithCriteria" title="openturns.WhittleFactory.buildWithCriteria"><code class="xref py py-obj docutils literal"><span class="pre">buildWithCriteria</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.buildWithCriteria" title="openturns.WhittleFactory.buildWithCriteria"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildWithCriteria</span></code></a>(*args)</td>
 <td>Estimate the ARMA process.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.clearHistory" title="openturns.WhittleFactory.clearHistory"><code class="xref py py-obj docutils literal"><span class="pre">clearHistory</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.clearHistory" title="openturns.WhittleFactory.clearHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clearHistory</span></code></a>()</td>
 <td>Clear the history of the factory.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.disableHistory" title="openturns.WhittleFactory.disableHistory"><code class="xref py py-obj docutils literal"><span class="pre">disableHistory</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.disableHistory" title="openturns.WhittleFactory.disableHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disableHistory</span></code></a>()</td>
 <td>Desactivate the history of all the estimated models.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.enableHistory" title="openturns.WhittleFactory.enableHistory"><code class="xref py py-obj docutils literal"><span class="pre">enableHistory</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.enableHistory" title="openturns.WhittleFactory.enableHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enableHistory</span></code></a>()</td>
 <td>Activate the history of all the estimated models.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.getClassName" title="openturns.WhittleFactory.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.getClassName" title="openturns.WhittleFactory.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.getCurrentP" title="openturns.WhittleFactory.getCurrentP"><code class="xref py py-obj docutils literal"><span class="pre">getCurrentP</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.getCurrentP" title="openturns.WhittleFactory.getCurrentP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCurrentP</span></code></a>()</td>
 <td>Accessor to the current P order.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.getCurrentQ" title="openturns.WhittleFactory.getCurrentQ"><code class="xref py py-obj docutils literal"><span class="pre">getCurrentQ</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.getCurrentQ" title="openturns.WhittleFactory.getCurrentQ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCurrentQ</span></code></a>()</td>
 <td>Accessor to the current Q order.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.getHistory" title="openturns.WhittleFactory.getHistory"><code class="xref py py-obj docutils literal"><span class="pre">getHistory</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.getHistory" title="openturns.WhittleFactory.getHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHistory</span></code></a>()</td>
 <td>Check whether the history mecanism is activated.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.getId" title="openturns.WhittleFactory.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.getId" title="openturns.WhittleFactory.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.getInvertible" title="openturns.WhittleFactory.getInvertible"><code class="xref py py-obj docutils literal"><span class="pre">getInvertible</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.getInvertible" title="openturns.WhittleFactory.getInvertible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInvertible</span></code></a>()</td>
 <td>Accessor to the invertible constraint.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.getName" title="openturns.WhittleFactory.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.getName" title="openturns.WhittleFactory.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.getP" title="openturns.WhittleFactory.getP"><code class="xref py py-obj docutils literal"><span class="pre">getP</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.getP" title="openturns.WhittleFactory.getP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getP</span></code></a>()</td>
 <td>Accessor to the P orders.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.getQ" title="openturns.WhittleFactory.getQ"><code class="xref py py-obj docutils literal"><span class="pre">getQ</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.getQ" title="openturns.WhittleFactory.getQ"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getQ</span></code></a>()</td>
 <td>Accessor to the Q orders.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.getShadowedId" title="openturns.WhittleFactory.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.getShadowedId" title="openturns.WhittleFactory.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.getSpectralModelFactory" title="openturns.WhittleFactory.getSpectralModelFactory"><code class="xref py py-obj docutils literal"><span class="pre">getSpectralModelFactory</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.getSpectralModelFactory" title="openturns.WhittleFactory.getSpectralModelFactory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSpectralModelFactory</span></code></a>()</td>
 <td>Accessor to the spectral factory.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.getStartingPoints" title="openturns.WhittleFactory.getStartingPoints"><code class="xref py py-obj docutils literal"><span class="pre">getStartingPoints</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.getStartingPoints" title="openturns.WhittleFactory.getStartingPoints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStartingPoints</span></code></a>()</td>
 <td>Accessor to the starting points for the optimization step.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.getVerbose" title="openturns.WhittleFactory.getVerbose"><code class="xref py py-obj docutils literal"><span class="pre">getVerbose</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.getVerbose" title="openturns.WhittleFactory.getVerbose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVerbose</span></code></a>()</td>
 <td>Accessor to the verbose mode.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.getVisibility" title="openturns.WhittleFactory.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.getVisibility" title="openturns.WhittleFactory.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.hasName" title="openturns.WhittleFactory.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.hasName" title="openturns.WhittleFactory.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.hasVisibleName" title="openturns.WhittleFactory.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.hasVisibleName" title="openturns.WhittleFactory.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.isHistoryEnabled" title="openturns.WhittleFactory.isHistoryEnabled"><code class="xref py py-obj docutils literal"><span class="pre">isHistoryEnabled</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.isHistoryEnabled" title="openturns.WhittleFactory.isHistoryEnabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isHistoryEnabled</span></code></a>()</td>
 <td>Check whether the history mecanism is activated.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.setInvertible" title="openturns.WhittleFactory.setInvertible"><code class="xref py py-obj docutils literal"><span class="pre">setInvertible</span></code></a>(invertible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.setInvertible" title="openturns.WhittleFactory.setInvertible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInvertible</span></code></a>(invertible)</td>
 <td>Accessor to the invertible constraint.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.setName" title="openturns.WhittleFactory.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.setName" title="openturns.WhittleFactory.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.setShadowedId" title="openturns.WhittleFactory.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.setShadowedId" title="openturns.WhittleFactory.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.setSpectralModelFactory" title="openturns.WhittleFactory.setSpectralModelFactory"><code class="xref py py-obj docutils literal"><span class="pre">setSpectralModelFactory</span></code></a>(factory)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.setSpectralModelFactory" title="openturns.WhittleFactory.setSpectralModelFactory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSpectralModelFactory</span></code></a>(factory)</td>
 <td>Accessor to the spectral factory.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.setStartingPoints" title="openturns.WhittleFactory.setStartingPoints"><code class="xref py py-obj docutils literal"><span class="pre">setStartingPoints</span></code></a>(startingPoints)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.setStartingPoints" title="openturns.WhittleFactory.setStartingPoints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setStartingPoints</span></code></a>(startingPoints)</td>
 <td>Accessor to the starting points for the optimization step.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.setVerbose" title="openturns.WhittleFactory.setVerbose"><code class="xref py py-obj docutils literal"><span class="pre">setVerbose</span></code></a>(verbose)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhittleFactory.setVerbose" title="openturns.WhittleFactory.setVerbose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVerbose</span></code></a>(verbose)</td>
 <td>Accessor to the verbose mode.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.setVisibility" title="openturns.WhittleFactory.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhittleFactory.setVisibility" title="openturns.WhittleFactory.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -338,17 +331,17 @@ Care: not yet implemented.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>myTimeSeries</strong> : <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal"><span class="pre">TimeSeries</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>myTimeSeries</strong> : <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSeries</span></code></a></p>
 <blockquote>
 <div><p>One realization of the  process.</p>
 </div></blockquote>
-<p><strong>myProcessSample</strong> : <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal"><span class="pre">ProcessSample</span></code></a></p>
+<p><strong>myProcessSample</strong> : <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a></p>
 <blockquote>
 <div><p>Several realizations of the  process.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>myARMA</strong> : <a class="reference internal" href="openturns.ARMA.html#openturns.ARMA" title="openturns.ARMA"><code class="xref py py-class docutils literal"><span class="pre">ARMA</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>myARMA</strong> : <a class="reference internal" href="openturns.ARMA.html#openturns.ARMA" title="openturns.ARMA"><code class="xref py py-class docutils literal notranslate"><span class="pre">ARMA</span></code></a></p>
 <blockquote class="last">
 <div><p>The  process estimated with the Whittle estimator.</p>
 </div></blockquote>
@@ -375,21 +368,21 @@ Care: not yet implemented.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>myTimeSeries</strong> : <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal"><span class="pre">TimeSeries</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>myTimeSeries</strong> : <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSeries</span></code></a></p>
 <blockquote>
 <div><p>One realization of the  process.</p>
 </div></blockquote>
-<p><strong>myProcessSample</strong> : <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal"><span class="pre">ProcessSample</span></code></a></p>
+<p><strong>myProcessSample</strong> : <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a></p>
 <blockquote>
 <div><p>Several realizations of the  process.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>myARMA</strong> : <a class="reference internal" href="openturns.ARMA.html#openturns.ARMA" title="openturns.ARMA"><code class="xref py py-class docutils literal"><span class="pre">ARMA</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>myARMA</strong> : <a class="reference internal" href="openturns.ARMA.html#openturns.ARMA" title="openturns.ARMA"><code class="xref py py-class docutils literal notranslate"><span class="pre">ARMA</span></code></a></p>
 <blockquote>
 <div><p>The  process estimated with the Whittle estimator.</p>
 </div></blockquote>
-<p><strong>criterion</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<p><strong>criterion</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>Result of the evaluation of the AICc, AIC and BIC criteria</p>
 </div></blockquote>
@@ -489,7 +482,7 @@ Care: not yet implemented.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>histMec</strong> : a list of <a class="reference internal" href="openturns.WhittleFactoryState.html#openturns.WhittleFactoryState" title="openturns.WhittleFactoryState"><code class="xref py py-class docutils literal"><span class="pre">WhittleFactoryState</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>histMec</strong> : a list of <a class="reference internal" href="openturns.WhittleFactoryState.html#openturns.WhittleFactoryState" title="openturns.WhittleFactoryState"><code class="xref py py-class docutils literal notranslate"><span class="pre">WhittleFactoryState</span></code></a></p>
 <blockquote class="last">
 <div><p>Returns the collection of all the states that have been built for the estimation.</p>
 </div></blockquote>
@@ -561,7 +554,7 @@ Care: not yet implemented.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indP</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal"><span class="pre">Indices</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indP</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></p>
 <blockquote class="last">
 <div><p>All the <img class="math" src="../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/> orders that will be investigated.</p>
 </div></blockquote>
@@ -579,7 +572,7 @@ Care: not yet implemented.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indQ</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal"><span class="pre">Indices</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indQ</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></p>
 <blockquote class="last">
 <div><p>All the <img class="math" src="../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/> orders that will be investigated.</p>
 </div></blockquote>
@@ -615,7 +608,7 @@ Care: not yet implemented.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>initARCoeff</strong> : <a class="reference internal" href="openturns.SpectralModelFactory.html#openturns.SpectralModelFactory" title="openturns.SpectralModelFactory"><code class="xref py py-class docutils literal"><span class="pre">SpectralModelFactory</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>initARCoeff</strong> : <a class="reference internal" href="openturns.SpectralModelFactory.html#openturns.SpectralModelFactory" title="openturns.SpectralModelFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpectralModelFactory</span></code></a></p>
 <blockquote class="last">
 <div><p>The spectral factory used to estimate the spectral density based on the data.</p>
 </div></blockquote>
@@ -633,7 +626,7 @@ Care: not yet implemented.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>startPointsList</strong> : a list of <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>startPointsList</strong> : a list of <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>Starting points for the optimization step, for each pair of orders that will be tested.</p>
 </div></blockquote>
@@ -796,7 +789,7 @@ Care: not yet implemented.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>spectralModelFact</strong> : <a class="reference internal" href="openturns.SpectralModelFactory.html#openturns.SpectralModelFactory" title="openturns.SpectralModelFactory"><code class="xref py py-class docutils literal"><span class="pre">SpectralModelFactory</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>spectralModelFact</strong> : <a class="reference internal" href="openturns.SpectralModelFactory.html#openturns.SpectralModelFactory" title="openturns.SpectralModelFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpectralModelFactory</span></code></a></p>
 <blockquote class="last">
 <div><p>The spectral factory used to estimate the spectral density based on the data.</p>
 </div></blockquote>
@@ -814,7 +807,7 @@ Care: not yet implemented.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>startPointsList</strong> : a list of <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>startPointsList</strong> : a list of <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>Starting points for the optimization step, for each pair of orders that will be tested.</p>
 </div></blockquote>
@@ -890,8 +883,8 @@ Care: not yet implemented.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

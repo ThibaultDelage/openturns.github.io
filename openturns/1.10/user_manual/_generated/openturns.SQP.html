@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>SQP &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -117,7 +110,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>problem</strong> : <a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal"><span class="pre">OptimizationProblem</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>problem</strong> : <a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></p>
 <blockquote>
 <div><p>Optimization problem to solve.</p>
 </div></blockquote>
@@ -139,14 +132,14 @@
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.AbdoRackwitz.html#openturns.AbdoRackwitz" title="openturns.AbdoRackwitz"><code class="xref py py-obj docutils literal"><span class="pre">AbdoRackwitz</span></code></a>, <a class="reference internal" href="openturns.Cobyla.html#openturns.Cobyla" title="openturns.Cobyla"><code class="xref py py-obj docutils literal"><span class="pre">Cobyla</span></code></a>, <a class="reference internal" href="openturns.TNC.html#openturns.TNC" title="openturns.TNC"><code class="xref py py-obj docutils literal"><span class="pre">TNC</span></code></a>, <a class="reference internal" href="openturns.NLopt.html#openturns.NLopt" title="openturns.NLopt"><code class="xref py py-obj docutils literal"><span class="pre">NLopt</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.AbdoRackwitz.html#openturns.AbdoRackwitz" title="openturns.AbdoRackwitz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AbdoRackwitz</span></code></a>, <a class="reference internal" href="openturns.Cobyla.html#openturns.Cobyla" title="openturns.Cobyla"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Cobyla</span></code></a>, <a class="reference internal" href="openturns.TNC.html#openturns.TNC" title="openturns.TNC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TNC</span></code></a>, <a class="reference internal" href="openturns.NLopt.html#openturns.NLopt" title="openturns.NLopt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NLopt</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>SQP methods solve a sequence of optimization subproblems,
 each of which optimizes a quadratic model of the objective
 subject to a linearization of the constraints.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">,</span> <span class="s1">&#39;x3&#39;</span><span class="p">,</span> <span class="s1">&#39;x4&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x1*cos(x1)+2*x2*x3-3*x3+4*x3*x4&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">problem</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">OptimizationProblem</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">algo</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SQP</span><span class="p">(</span><span class="n">problem</span><span class="p">)</span>
@@ -162,124 +155,124 @@ subject to a linearization of the constraints.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.computeLagrangeMultipliers" title="openturns.SQP.computeLagrangeMultipliers"><code class="xref py py-obj docutils literal"><span class="pre">computeLagrangeMultipliers</span></code></a>(x)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.computeLagrangeMultipliers" title="openturns.SQP.computeLagrangeMultipliers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeLagrangeMultipliers</span></code></a>(x)</td>
 <td>Compute the Lagrange multipliers of a problem at a given point.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getClassName" title="openturns.SQP.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getClassName" title="openturns.SQP.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getId" title="openturns.SQP.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getId" title="openturns.SQP.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getMaximumAbsoluteError" title="openturns.SQP.getMaximumAbsoluteError"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumAbsoluteError</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getMaximumAbsoluteError" title="openturns.SQP.getMaximumAbsoluteError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumAbsoluteError</span></code></a>()</td>
 <td>Accessor to maximum allowed absolute error.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getMaximumConstraintError" title="openturns.SQP.getMaximumConstraintError"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumConstraintError</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getMaximumConstraintError" title="openturns.SQP.getMaximumConstraintError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumConstraintError</span></code></a>()</td>
 <td>Accessor to maximum allowed constraint error.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getMaximumEvaluationNumber" title="openturns.SQP.getMaximumEvaluationNumber"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumEvaluationNumber</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getMaximumEvaluationNumber" title="openturns.SQP.getMaximumEvaluationNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumEvaluationNumber</span></code></a>()</td>
 <td>Accessor to maximum allowed number of evaluations.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getMaximumIterationNumber" title="openturns.SQP.getMaximumIterationNumber"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumIterationNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getMaximumIterationNumber" title="openturns.SQP.getMaximumIterationNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumIterationNumber</span></code></a>()</td>
 <td>Accessor to maximum allowed number of iterations.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getMaximumRelativeError" title="openturns.SQP.getMaximumRelativeError"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumRelativeError</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getMaximumRelativeError" title="openturns.SQP.getMaximumRelativeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumRelativeError</span></code></a>()</td>
 <td>Accessor to maximum allowed relative error.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getMaximumResidualError" title="openturns.SQP.getMaximumResidualError"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumResidualError</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getMaximumResidualError" title="openturns.SQP.getMaximumResidualError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumResidualError</span></code></a>()</td>
 <td>Accessor to maximum allowed residual error.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getName" title="openturns.SQP.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getName" title="openturns.SQP.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getOmega" title="openturns.SQP.getOmega"><code class="xref py py-obj docutils literal"><span class="pre">getOmega</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getOmega" title="openturns.SQP.getOmega"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOmega</span></code></a>()</td>
 <td>Accessor to omega parameter.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getProblem" title="openturns.SQP.getProblem"><code class="xref py py-obj docutils literal"><span class="pre">getProblem</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getProblem" title="openturns.SQP.getProblem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getProblem</span></code></a>()</td>
 <td>Accessor to optimization problem.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getResult" title="openturns.SQP.getResult"><code class="xref py py-obj docutils literal"><span class="pre">getResult</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getResult" title="openturns.SQP.getResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResult</span></code></a>()</td>
 <td>Accessor to optimization result.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getShadowedId" title="openturns.SQP.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getShadowedId" title="openturns.SQP.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getSmooth" title="openturns.SQP.getSmooth"><code class="xref py py-obj docutils literal"><span class="pre">getSmooth</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getSmooth" title="openturns.SQP.getSmooth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSmooth</span></code></a>()</td>
 <td>Accessor to smooth parameter.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getStartingPoint" title="openturns.SQP.getStartingPoint"><code class="xref py py-obj docutils literal"><span class="pre">getStartingPoint</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getStartingPoint" title="openturns.SQP.getStartingPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStartingPoint</span></code></a>()</td>
 <td>Accessor to starting point.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getTau" title="openturns.SQP.getTau"><code class="xref py py-obj docutils literal"><span class="pre">getTau</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getTau" title="openturns.SQP.getTau"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTau</span></code></a>()</td>
 <td>Accessor to tau parameter.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getVerbose" title="openturns.SQP.getVerbose"><code class="xref py py-obj docutils literal"><span class="pre">getVerbose</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.getVerbose" title="openturns.SQP.getVerbose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVerbose</span></code></a>()</td>
 <td>Accessor to the verbosity flag.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getVisibility" title="openturns.SQP.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.getVisibility" title="openturns.SQP.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.hasName" title="openturns.SQP.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.hasName" title="openturns.SQP.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.hasVisibleName" title="openturns.SQP.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.hasVisibleName" title="openturns.SQP.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.run" title="openturns.SQP.run"><code class="xref py py-obj docutils literal"><span class="pre">run</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.run" title="openturns.SQP.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>()</td>
 <td>Launch the optimization.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setMaximumAbsoluteError" title="openturns.SQP.setMaximumAbsoluteError"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumAbsoluteError</span></code></a>(maximumAbsoluteError)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setMaximumAbsoluteError" title="openturns.SQP.setMaximumAbsoluteError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumAbsoluteError</span></code></a>(maximumAbsoluteError)</td>
 <td>Accessor to maximum allowed absolute error.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setMaximumConstraintError" title="openturns.SQP.setMaximumConstraintError"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumConstraintError</span></code></a>(maximumConstraintError)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setMaximumConstraintError" title="openturns.SQP.setMaximumConstraintError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumConstraintError</span></code></a>(maximumConstraintError)</td>
 <td>Accessor to maximum allowed constraint error.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setMaximumEvaluationNumber" title="openturns.SQP.setMaximumEvaluationNumber"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumEvaluationNumber</span></code></a>(…)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setMaximumEvaluationNumber" title="openturns.SQP.setMaximumEvaluationNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumEvaluationNumber</span></code></a>(…)</td>
 <td>Accessor to maximum allowed number of evaluations.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setMaximumIterationNumber" title="openturns.SQP.setMaximumIterationNumber"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumIterationNumber</span></code></a>(maximumIterationNumber)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setMaximumIterationNumber" title="openturns.SQP.setMaximumIterationNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumIterationNumber</span></code></a>(maximumIterationNumber)</td>
 <td>Accessor to maximum allowed number of iterations.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setMaximumRelativeError" title="openturns.SQP.setMaximumRelativeError"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumRelativeError</span></code></a>(maximumRelativeError)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setMaximumRelativeError" title="openturns.SQP.setMaximumRelativeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumRelativeError</span></code></a>(maximumRelativeError)</td>
 <td>Accessor to maximum allowed relative error.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setMaximumResidualError" title="openturns.SQP.setMaximumResidualError"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumResidualError</span></code></a>(maximumResidualError)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setMaximumResidualError" title="openturns.SQP.setMaximumResidualError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumResidualError</span></code></a>(maximumResidualError)</td>
 <td>Accessor to maximum allowed residual error.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setName" title="openturns.SQP.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setName" title="openturns.SQP.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setOmega" title="openturns.SQP.setOmega"><code class="xref py py-obj docutils literal"><span class="pre">setOmega</span></code></a>(tau)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setOmega" title="openturns.SQP.setOmega"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOmega</span></code></a>(tau)</td>
 <td>Accessor to omega parameter.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setProblem" title="openturns.SQP.setProblem"><code class="xref py py-obj docutils literal"><span class="pre">setProblem</span></code></a>(problem)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setProblem" title="openturns.SQP.setProblem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setProblem</span></code></a>(problem)</td>
 <td>Accessor to optimization problem.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setProgressCallback" title="openturns.SQP.setProgressCallback"><code class="xref py py-obj docutils literal"><span class="pre">setProgressCallback</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setProgressCallback" title="openturns.SQP.setProgressCallback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setProgressCallback</span></code></a>(*args)</td>
 <td>Set up a progress callback.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setResult" title="openturns.SQP.setResult"><code class="xref py py-obj docutils literal"><span class="pre">setResult</span></code></a>(result)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setResult" title="openturns.SQP.setResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setResult</span></code></a>(result)</td>
 <td>Accessor to optimization result.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setShadowedId" title="openturns.SQP.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setShadowedId" title="openturns.SQP.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setSmooth" title="openturns.SQP.setSmooth"><code class="xref py py-obj docutils literal"><span class="pre">setSmooth</span></code></a>(tau)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setSmooth" title="openturns.SQP.setSmooth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSmooth</span></code></a>(tau)</td>
 <td>Accessor to smooth parameter.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setStartingPoint" title="openturns.SQP.setStartingPoint"><code class="xref py py-obj docutils literal"><span class="pre">setStartingPoint</span></code></a>(startingPoint)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setStartingPoint" title="openturns.SQP.setStartingPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setStartingPoint</span></code></a>(startingPoint)</td>
 <td>Accessor to starting point.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setStopCallback" title="openturns.SQP.setStopCallback"><code class="xref py py-obj docutils literal"><span class="pre">setStopCallback</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setStopCallback" title="openturns.SQP.setStopCallback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setStopCallback</span></code></a>(*args)</td>
 <td>Set up a stop callback.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setTau" title="openturns.SQP.setTau"><code class="xref py py-obj docutils literal"><span class="pre">setTau</span></code></a>(tau)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setTau" title="openturns.SQP.setTau"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTau</span></code></a>(tau)</td>
 <td>Accessor to tau parameter.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setVerbose" title="openturns.SQP.setVerbose"><code class="xref py py-obj docutils literal"><span class="pre">setVerbose</span></code></a>(verbose)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SQP.setVerbose" title="openturns.SQP.setVerbose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVerbose</span></code></a>(verbose)</td>
 <td>Accessor to the verbosity flag.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setVisibility" title="openturns.SQP.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SQP.setVisibility" title="openturns.SQP.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -524,7 +517,7 @@ constraint, else of dimension the dimension of <img class="math" src="../../_ima
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>problem</strong> : <a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal"><span class="pre">OptimizationProblem</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>problem</strong> : <a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></p>
 <blockquote class="last">
 <div><p>Optimization problem.</p>
 </div></blockquote>
@@ -542,7 +535,7 @@ constraint, else of dimension the dimension of <img class="math" src="../../_ima
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="openturns.OptimizationResult.html#openturns.OptimizationResult" title="openturns.OptimizationResult"><code class="xref py py-class docutils literal"><span class="pre">OptimizationResult</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="openturns.OptimizationResult.html#openturns.OptimizationResult" title="openturns.OptimizationResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></p>
 <blockquote class="last">
 <div><p>Result class.</p>
 </div></blockquote>
@@ -596,7 +589,7 @@ constraint, else of dimension the dimension of <img class="math" src="../../_ima
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>startingPoint</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>startingPoint</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>Starting point.</p>
 </div></blockquote>
@@ -854,7 +847,7 @@ constraint, else of dimension the dimension of <img class="math" src="../../_ima
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>problem</strong> : <a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal"><span class="pre">OptimizationProblem</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>problem</strong> : <a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></p>
 <blockquote class="last">
 <div><p>Optimization problem.</p>
 </div></blockquote>
@@ -892,7 +885,7 @@ constraint, else of dimension the dimension of <img class="math" src="../../_ima
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="openturns.OptimizationResult.html#openturns.OptimizationResult" title="openturns.OptimizationResult"><code class="xref py py-class docutils literal"><span class="pre">OptimizationResult</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="openturns.OptimizationResult.html#openturns.OptimizationResult" title="openturns.OptimizationResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></p>
 <blockquote class="last">
 <div><p>Result class.</p>
 </div></blockquote>
@@ -946,7 +939,7 @@ constraint, else of dimension the dimension of <img class="math" src="../../_ima
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>startingPoint</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>startingPoint</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>Starting point.</p>
 </div></blockquote>
@@ -1060,8 +1053,8 @@ constraint, else of dimension the dimension of <img class="math" src="../../_ima
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

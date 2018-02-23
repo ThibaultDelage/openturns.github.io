@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>StandardDistributionPolynomialFactory &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -111,14 +104,14 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>arg</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a> or <a class="reference internal" href="openturns.OrthonormalizationAlgorithm.html#openturns.OrthonormalizationAlgorithm" title="openturns.OrthonormalizationAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">OrthonormalizationAlgorithm</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>arg</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a> or <a class="reference internal" href="openturns.OrthonormalizationAlgorithm.html#openturns.OrthonormalizationAlgorithm" title="openturns.OrthonormalizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrthonormalizationAlgorithm</span></code></a></p>
 <blockquote class="last">
-<div><p>Either a <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a> implementing the probability
+<div><p>Either a <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a> implementing the probability
 measure according to which the polynomial family is orthonormal <strong>or</strong> an
-<a class="reference internal" href="openturns.OrthonormalizationAlgorithm.html#openturns.OrthonormalizationAlgorithm" title="openturns.OrthonormalizationAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">OrthonormalizationAlgorithm</span></code></a>.</p>
+<a class="reference internal" href="openturns.OrthonormalizationAlgorithm.html#openturns.OrthonormalizationAlgorithm" title="openturns.OrthonormalizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrthonormalizationAlgorithm</span></code></a>.</p>
 <p>In the first case, the implementation will switch to the suitable specific
 orthonormal univariate polynomial family if any (see the notes below), or
-it will default to the <a class="reference internal" href="openturns.AdaptiveStieltjesAlgorithm.html#openturns.AdaptiveStieltjesAlgorithm" title="openturns.AdaptiveStieltjesAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">AdaptiveStieltjesAlgorithm</span></code></a> to build
+it will default to the <a class="reference internal" href="openturns.AdaptiveStieltjesAlgorithm.html#openturns.AdaptiveStieltjesAlgorithm" title="openturns.AdaptiveStieltjesAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">AdaptiveStieltjesAlgorithm</span></code></a> to build
 an orthonormal univariate polynomial family.</p>
 </div></blockquote>
 </td>
@@ -135,9 +128,9 @@ will be plain numerical noise.</li>
 <li>Even if the polynomials exist, they form an Hilbertian basis wrt the
 dot product induced by the distribution if and only if the distribution is
 <strong>determinate</strong>, ie is characterized by its moments. For example, the
-<a class="reference internal" href="openturns.LogNormal.html#openturns.LogNormal" title="openturns.LogNormal"><code class="xref py py-class docutils literal"><span class="pre">LogNormal</span></code></a> distribution has orthonormal polynomials of
+<a class="reference internal" href="openturns.LogNormal.html#openturns.LogNormal" title="openturns.LogNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogNormal</span></code></a> distribution has orthonormal polynomials of
 arbitrary degree but the projection onto the functional space generated by
-these polynomials (see <a class="reference internal" href="../response_surface/_generated/openturns.FunctionalChaosAlgorithm.html#openturns.FunctionalChaosAlgorithm" title="openturns.FunctionalChaosAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">FunctionalChaosAlgorithm</span></code></a>) may
+these polynomials (see <a class="reference internal" href="../response_surface/_generated/openturns.FunctionalChaosAlgorithm.html#openturns.FunctionalChaosAlgorithm" title="openturns.FunctionalChaosAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">FunctionalChaosAlgorithm</span></code></a>) may
 converge to a function that differs significantly from the function being
 projected.</li>
 </ul>
@@ -156,43 +149,43 @@ distributions</strong>:</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><a class="reference internal" href="openturns.Normal.html#openturns.Normal" title="openturns.Normal"><code class="xref py py-class docutils literal"><span class="pre">Normal</span></code></a>
+<tr class="row-even"><td><a class="reference internal" href="openturns.Normal.html#openturns.Normal" title="openturns.Normal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Normal</span></code></a>
 <img class="math" src="../../_images/math/cdd195c7c19e683f3c34a9efa197b7acd1eed06c.svg" alt="\cN(\mu = 0, \sigma = 1)"/></td>
-<td><a class="reference internal" href="openturns.HermiteFactory.html#openturns.HermiteFactory" title="openturns.HermiteFactory"><code class="xref py py-class docutils literal"><span class="pre">HermiteFactory</span></code></a></td>
+<td><a class="reference internal" href="openturns.HermiteFactory.html#openturns.HermiteFactory" title="openturns.HermiteFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">HermiteFactory</span></code></a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="openturns.Uniform.html#openturns.Uniform" title="openturns.Uniform"><code class="xref py py-class docutils literal"><span class="pre">Uniform</span></code></a>
+<tr class="row-odd"><td><a class="reference internal" href="openturns.Uniform.html#openturns.Uniform" title="openturns.Uniform"><code class="xref py py-class docutils literal notranslate"><span class="pre">Uniform</span></code></a>
 <img class="math" src="../../_images/math/5c4551ecf20a534d3704f2eefcb4e87917e57a9c.svg" alt="\cU(a = -1, b = 1)"/></td>
-<td><a class="reference internal" href="openturns.LegendreFactory.html#openturns.LegendreFactory" title="openturns.LegendreFactory"><code class="xref py py-class docutils literal"><span class="pre">LegendreFactory</span></code></a></td>
+<td><a class="reference internal" href="openturns.LegendreFactory.html#openturns.LegendreFactory" title="openturns.LegendreFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">LegendreFactory</span></code></a></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="openturns.Gamma.html#openturns.Gamma" title="openturns.Gamma"><code class="xref py py-class docutils literal"><span class="pre">Gamma</span></code></a>
+<tr class="row-even"><td><a class="reference internal" href="openturns.Gamma.html#openturns.Gamma" title="openturns.Gamma"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gamma</span></code></a>
 <img class="math" src="../../_images/math/411bf7a6cebb247b7478dbace5aa6979153350e0.svg" alt="\Gamma(k = k_a + 1, \lambda = 1, \gamma = 0)"/></td>
-<td><a class="reference internal" href="openturns.LaguerreFactory.html#openturns.LaguerreFactory" title="openturns.LaguerreFactory"><code class="xref py py-class docutils literal"><span class="pre">LaguerreFactory</span></code></a></td>
+<td><a class="reference internal" href="openturns.LaguerreFactory.html#openturns.LaguerreFactory" title="openturns.LaguerreFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">LaguerreFactory</span></code></a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="openturns.Beta.html#openturns.Beta" title="openturns.Beta"><code class="xref py py-class docutils literal"><span class="pre">Beta</span></code></a>
+<tr class="row-odd"><td><a class="reference internal" href="openturns.Beta.html#openturns.Beta" title="openturns.Beta"><code class="xref py py-class docutils literal notranslate"><span class="pre">Beta</span></code></a>
 <img class="math" src="../../_images/math/ddf2aa925b50f5bd71c9dfa792dda74e55fe20fe.svg" alt="{\rm B}(r = \beta + 1, t = \alpha + \beta + 2, a = -1, b = 1)"/></td>
-<td><a class="reference internal" href="openturns.JacobiFactory.html#openturns.JacobiFactory" title="openturns.JacobiFactory"><code class="xref py py-class docutils literal"><span class="pre">JacobiFactory</span></code></a></td>
+<td><a class="reference internal" href="openturns.JacobiFactory.html#openturns.JacobiFactory" title="openturns.JacobiFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">JacobiFactory</span></code></a></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="openturns.Poisson.html#openturns.Poisson" title="openturns.Poisson"><code class="xref py py-class docutils literal"><span class="pre">Poisson</span></code></a>
+<tr class="row-even"><td><a class="reference internal" href="openturns.Poisson.html#openturns.Poisson" title="openturns.Poisson"><code class="xref py py-class docutils literal notranslate"><span class="pre">Poisson</span></code></a>
 <img class="math" src="../../_images/math/242d74076462fd81b3c9deaf3e243274cc85827e.svg" alt="\cP(\lambda)"/></td>
-<td><a class="reference internal" href="openturns.CharlierFactory.html#openturns.CharlierFactory" title="openturns.CharlierFactory"><code class="xref py py-class docutils literal"><span class="pre">CharlierFactory</span></code></a></td>
+<td><a class="reference internal" href="openturns.CharlierFactory.html#openturns.CharlierFactory" title="openturns.CharlierFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharlierFactory</span></code></a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="openturns.Binomial.html#openturns.Binomial" title="openturns.Binomial"><code class="xref py py-class docutils literal"><span class="pre">Binomial</span></code></a>
+<tr class="row-odd"><td><a class="reference internal" href="openturns.Binomial.html#openturns.Binomial" title="openturns.Binomial"><code class="xref py py-class docutils literal notranslate"><span class="pre">Binomial</span></code></a>
 <img class="math" src="../../_images/math/64790bb828fb2e987ab96f4838cfbf73923f46b6.svg" alt="\cB(n, p)"/></td>
-<td><a class="reference internal" href="openturns.KrawtchoukFactory.html#openturns.KrawtchoukFactory" title="openturns.KrawtchoukFactory"><code class="xref py py-class docutils literal"><span class="pre">KrawtchoukFactory</span></code></a></td>
+<td><a class="reference internal" href="openturns.KrawtchoukFactory.html#openturns.KrawtchoukFactory" title="openturns.KrawtchoukFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">KrawtchoukFactory</span></code></a></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="openturns.NegativeBinomial.html#openturns.NegativeBinomial" title="openturns.NegativeBinomial"><code class="xref py py-class docutils literal"><span class="pre">NegativeBinomial</span></code></a>
+<tr class="row-even"><td><a class="reference internal" href="openturns.NegativeBinomial.html#openturns.NegativeBinomial" title="openturns.NegativeBinomial"><code class="xref py py-class docutils literal notranslate"><span class="pre">NegativeBinomial</span></code></a>
 <img class="math" src="../../_images/math/f0e29f8ffacd79dbf71326ee19a9827d5b4472b7.svg" alt="\cB^-(r, p)"/></td>
-<td><a class="reference internal" href="openturns.MeixnerFactory.html#openturns.MeixnerFactory" title="openturns.MeixnerFactory"><code class="xref py py-class docutils literal"><span class="pre">MeixnerFactory</span></code></a></td>
+<td><a class="reference internal" href="openturns.MeixnerFactory.html#openturns.MeixnerFactory" title="openturns.MeixnerFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">MeixnerFactory</span></code></a></td>
 </tr>
 </tbody>
 </table>
 <p>Aside, OpenTURNS also implements generic algorithms for building orthonormal
 univariate polynomial families with respect to any arbitrary probability
-measure (implemented as a <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a>).
-OpenTURNS implements the following <a class="reference internal" href="openturns.OrthonormalizationAlgorithm.html#openturns.OrthonormalizationAlgorithm" title="openturns.OrthonormalizationAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">OrthonormalizationAlgorithm</span></code></a>’s:</p>
+measure (implemented as a <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a>).
+OpenTURNS implements the following <a class="reference internal" href="openturns.OrthonormalizationAlgorithm.html#openturns.OrthonormalizationAlgorithm" title="openturns.OrthonormalizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrthonormalizationAlgorithm</span></code></a>’s:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="openturns.AdaptiveStieltjesAlgorithm.html#openturns.AdaptiveStieltjesAlgorithm" title="openturns.AdaptiveStieltjesAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">AdaptiveStieltjesAlgorithm</span></code></a> (default),</li>
+<li><a class="reference internal" href="openturns.AdaptiveStieltjesAlgorithm.html#openturns.AdaptiveStieltjesAlgorithm" title="openturns.AdaptiveStieltjesAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">AdaptiveStieltjesAlgorithm</span></code></a> (default),</li>
 </ul>
 </div></blockquote>
 <table class="docutils footnote" frame="void" id="orthonormal" rules="none">
@@ -209,12 +202,12 @@ and only if:</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 <p>Build the specific orthonormal polynomial factory associated to the normal
 distribution (Hermite):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">polynomial_factory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">StandardDistributionPolynomialFactory</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">polynomial_factory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">StandardDistributionPolynomialFactory</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">polynomial_factory</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 <span class="go">1</span>
@@ -224,7 +217,7 @@ distribution (Hermite):</p>
 </div>
 <p>Build an orthonormal polynomial factory for the Weibull distribution with
 the default orthonormalization algorithm:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">polynomial_factory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">StandardDistributionPolynomialFactory</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Weibull</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">polynomial_factory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">StandardDistributionPolynomialFactory</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Weibull</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">polynomial_factory</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 <span class="go">1</span>
@@ -234,7 +227,7 @@ the default orthonormalization algorithm:</p>
 </div>
 <p>Build an orthonormal polynomial factory for the log-normal distribution with
 Chebychev’s othonormalization algorithm:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">algorithm</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AdaptiveStieltjesAlgorithm</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Weibull</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">algorithm</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AdaptiveStieltjesAlgorithm</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Weibull</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">polynomial_factory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">StandardDistributionPolynomialFactory</span><span class="p">(</span><span class="n">algorithm</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">polynomial_factory</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
@@ -250,55 +243,55 @@ Chebychev’s othonormalization algorithm:</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.build" title="openturns.StandardDistributionPolynomialFactory.build"><code class="xref py py-obj docutils literal"><span class="pre">build</span></code></a>(degree)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.build" title="openturns.StandardDistributionPolynomialFactory.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>(degree)</td>
 <td>Build the <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/>-th order orthogonal univariate polynomial.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.buildCoefficients" title="openturns.StandardDistributionPolynomialFactory.buildCoefficients"><code class="xref py py-obj docutils literal"><span class="pre">buildCoefficients</span></code></a>(degree)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.buildCoefficients" title="openturns.StandardDistributionPolynomialFactory.buildCoefficients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildCoefficients</span></code></a>(degree)</td>
 <td>Build the <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/>-th order orthogonal univariate polynomial coefficients.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.buildRecurrenceCoefficientsCollection" title="openturns.StandardDistributionPolynomialFactory.buildRecurrenceCoefficientsCollection"><code class="xref py py-obj docutils literal"><span class="pre">buildRecurrenceCoefficientsCollection</span></code></a>(degree)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.buildRecurrenceCoefficientsCollection" title="openturns.StandardDistributionPolynomialFactory.buildRecurrenceCoefficientsCollection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildRecurrenceCoefficientsCollection</span></code></a>(degree)</td>
 <td>Build the recurrence coefficients.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getClassName" title="openturns.StandardDistributionPolynomialFactory.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getClassName" title="openturns.StandardDistributionPolynomialFactory.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getId" title="openturns.StandardDistributionPolynomialFactory.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getId" title="openturns.StandardDistributionPolynomialFactory.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getMeasure" title="openturns.StandardDistributionPolynomialFactory.getMeasure"><code class="xref py py-obj docutils literal"><span class="pre">getMeasure</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getMeasure" title="openturns.StandardDistributionPolynomialFactory.getMeasure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMeasure</span></code></a>()</td>
 <td>Accessor to the associated probability measure.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getName" title="openturns.StandardDistributionPolynomialFactory.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getName" title="openturns.StandardDistributionPolynomialFactory.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getNodesAndWeights" title="openturns.StandardDistributionPolynomialFactory.getNodesAndWeights"><code class="xref py py-obj docutils literal"><span class="pre">getNodesAndWeights</span></code></a>(n)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getNodesAndWeights" title="openturns.StandardDistributionPolynomialFactory.getNodesAndWeights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNodesAndWeights</span></code></a>(n)</td>
 <td>Build the <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/>-th order quadrature scheme.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getRecurrenceCoefficients" title="openturns.StandardDistributionPolynomialFactory.getRecurrenceCoefficients"><code class="xref py py-obj docutils literal"><span class="pre">getRecurrenceCoefficients</span></code></a>(n)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getRecurrenceCoefficients" title="openturns.StandardDistributionPolynomialFactory.getRecurrenceCoefficients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRecurrenceCoefficients</span></code></a>(n)</td>
 <td>Accessor to the recurrence coefficients of the <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/>-th order.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getRoots" title="openturns.StandardDistributionPolynomialFactory.getRoots"><code class="xref py py-obj docutils literal"><span class="pre">getRoots</span></code></a>(n)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getRoots" title="openturns.StandardDistributionPolynomialFactory.getRoots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRoots</span></code></a>(n)</td>
 <td>Accessor to the recurrence coefficients of the <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/>-th order.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getShadowedId" title="openturns.StandardDistributionPolynomialFactory.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getShadowedId" title="openturns.StandardDistributionPolynomialFactory.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getVisibility" title="openturns.StandardDistributionPolynomialFactory.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.getVisibility" title="openturns.StandardDistributionPolynomialFactory.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.hasName" title="openturns.StandardDistributionPolynomialFactory.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.hasName" title="openturns.StandardDistributionPolynomialFactory.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.hasVisibleName" title="openturns.StandardDistributionPolynomialFactory.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.hasVisibleName" title="openturns.StandardDistributionPolynomialFactory.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.setName" title="openturns.StandardDistributionPolynomialFactory.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.setName" title="openturns.StandardDistributionPolynomialFactory.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.setShadowedId" title="openturns.StandardDistributionPolynomialFactory.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.setShadowedId" title="openturns.StandardDistributionPolynomialFactory.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.setVisibility" title="openturns.StandardDistributionPolynomialFactory.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.StandardDistributionPolynomialFactory.setVisibility" title="openturns.StandardDistributionPolynomialFactory.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -323,7 +316,7 @@ Chebychev’s othonormalization algorithm:</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>polynomial</strong> : <a class="reference internal" href="openturns.OrthogonalUniVariatePolynomial.html#openturns.OrthogonalUniVariatePolynomial" title="openturns.OrthogonalUniVariatePolynomial"><code class="xref py py-class docutils literal"><span class="pre">OrthogonalUniVariatePolynomial</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>polynomial</strong> : <a class="reference internal" href="openturns.OrthogonalUniVariatePolynomial.html#openturns.OrthogonalUniVariatePolynomial" title="openturns.OrthogonalUniVariatePolynomial"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrthogonalUniVariatePolynomial</span></code></a></p>
 <blockquote class="last">
 <div><p>Requested orthogonal univariate polynomial.</p>
 </div></blockquote>
@@ -332,7 +325,7 @@ Chebychev’s othonormalization algorithm:</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">polynomial_factory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HermiteFactory</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">polynomial_factory</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="go">-0.707107 + 0.707107 * X^2</span>
@@ -354,7 +347,7 @@ Chebychev’s othonormalization algorithm:</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>coefficients</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>coefficients</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>Coefficients of the requested orthogonal univariate polynomial.</p>
 </div></blockquote>
@@ -363,7 +356,7 @@ Chebychev’s othonormalization algorithm:</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">polynomial_factory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HermiteFactory</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">polynomial_factory</span><span class="o">.</span><span class="n">buildCoefficients</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="go">[-0.707107,0,0.707107]</span>
@@ -387,7 +380,7 @@ family up to the <img class="math" src="../../_images/math/4fdc6254dc3e018091042
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>recurrence_coefficients</strong> : list of <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>recurrence_coefficients</strong> : list of <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>All the tecurrence coefficients up to the requested order.</p>
 </div></blockquote>
@@ -396,7 +389,7 @@ family up to the <img class="math" src="../../_images/math/4fdc6254dc3e018091042
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">polynomial_factory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HermiteFactory</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">polynomial_factory</span><span class="o">.</span><span class="n">buildRecurrenceCoefficientsCollection</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="go">[[1,0,0],[0.707107,0,-0.707107]]</span>
@@ -448,7 +441,7 @@ family up to the <img class="math" src="../../_images/math/4fdc6254dc3e018091042
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>measure</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>measure</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
 <blockquote class="last">
 <div><p>The associated probability measure (according to which the polynomials are
 orthogonal).</p>
@@ -466,7 +459,7 @@ measure</strong> <img class="math" src="../../_images/math/dd05b70cd3165f244c1e0
 </div><p>where <img class="math" src="../../_images/math/d0885b75cfa3db54aaf86bce1999ee682d1408d9.svg" alt="\alpha \in \Rset \cup \{-\infty\}"/> and
 <img class="math" src="../../_images/math/fa046014149846e6dc11adbf5a1e8fc7a58e799e.svg" alt="\beta \in \Rset \cup \{+\infty\}"/>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">polynomial_factory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HermiteFactory</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">polynomial_factory</span><span class="o">.</span><span class="n">getMeasure</span><span class="p">())</span>
 <span class="go">Normal(mu = 0, sigma = 1)</span>
@@ -507,11 +500,11 @@ measure</strong> <img class="math" src="../../_images/math/dd05b70cd3165f244c1e0
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>nodes</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>nodes</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote>
 <div><p>The nodes of the <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/>-th order quadrature scheme.</p>
 </div></blockquote>
-<p><strong>weights</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<p><strong>weights</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The weights of the <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/>-th order quadrature scheme.</p>
 </div></blockquote>
@@ -520,7 +513,7 @@ measure</strong> <img class="math" src="../../_images/math/dd05b70cd3165f244c1e0
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">polynomial_factory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HermiteFactory</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nodes</span><span class="p">,</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">polynomial_factory</span><span class="o">.</span><span class="n">getNodesAndWeights</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
@@ -546,7 +539,7 @@ measure</strong> <img class="math" src="../../_images/math/dd05b70cd3165f244c1e0
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>recurrence_coefficients</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>recurrence_coefficients</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The recurrence coefficients of the <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/>-th order orthogonal
 univariate polynomial.</p>
@@ -561,7 +554,7 @@ three consecutive polynomials as follows:</p>
 <div class="math">
 <p><img src="../../_images/math/0437624dadb99156b3c3f473aba9c75a113669de.svg" alt="P_{-1}=0, P_0=1, P_{n + 1} = (a_n x + b_n) P_n + c_n P_{n - 1}, \quad n &gt; 1"/></p>
 </div><p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">polynomial_factory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HermiteFactory</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">polynomial_factory</span><span class="o">.</span><span class="n">getRecurrenceCoefficients</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 <span class="go">[0.5,0,-0.866025]</span>
@@ -584,7 +577,7 @@ three consecutive polynomials as follows:</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>roots</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>roots</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The roots of the <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/>-th order orthogonal univariate polynomial.</p>
 </div></blockquote>
@@ -593,7 +586,7 @@ three consecutive polynomials as follows:</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">polynomial_factory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HermiteFactory</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">polynomial_factory</span><span class="o">.</span><span class="n">getRoots</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 <span class="go">[-1.73205,...,1.73205]</span>
@@ -757,8 +750,8 @@ three consecutive polynomials as follows:</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

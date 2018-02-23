@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>UserDefinedSpectralModel &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -115,11 +108,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>frequency</strong> : <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal"><span class="pre">RegularGrid</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>frequency</strong> : <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></p>
 <blockquote>
 <div><p>The frequency grid <img class="math" src="../../_images/math/156f57d40ec5f812563c9468219daeb16272abcc.svg" alt="(-f_c, \dots, f_c)"/> with step <img class="math" src="../../_images/math/f05ab3bcecc071dae97943256911d90dd76d6874.svg" alt="\delta f"/> on which the model is built.</p>
 </div></blockquote>
-<p><strong>densityCollectionFunction</strong> : <code class="xref py py-class docutils literal"><span class="pre">HermitianMatrixCollection</span></code></p>
+<p><strong>densityCollectionFunction</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">HermitianMatrixCollection</span></code></p>
 <blockquote class="last">
 <div><p>Collection of hermitian matrices <img class="math" src="../../_images/math/807f264f546ff88032b6d692a9a96af9e2c39544.svg" alt="\in \mathbb{M}_d(\mathbb{C})"/> which are the images of each point of the frequency grid through the density spectral function.</p>
 </div></blockquote>
@@ -131,14 +124,14 @@
 <p>We consider a multivariate process <img class="math" src="../../_images/math/6559e71e678128cf536c83203d725a540b2a8569.svg" alt="X: \Omega \times \cD \rightarrow \Rset^d"/> of dimension <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> where <img class="math" src="../../_images/math/3d7e1160d7e53256036e975e1957c3e2bde7847f.svg" alt="\cD \in \Rset^n"/>. We only treat here the case where the domain is of dimension 1: <img class="math" src="../../_images/math/8deeba2e5216d5e11edfcdb5dd599862cbd86368.svg" alt="\cD \in \Rset"/> (<img class="math" src="../../_images/math/bced73f400e4134702f077b42d46777740988149.svg" alt="n=1"/>).</p>
 <p>We denote <img class="math" src="../../_images/math/b94f216dd8317e9b98b23456387521db10effaa7.svg" alt="(\vect{t}_0, \dots, \vect{t}_{N-1})"/> the time stamps of the time grid.</p>
 <p><img class="math" src="../../_images/math/f1b50f1cf2a4ace81733f358fd002c88dc7a7ad8.svg" alt="X"/> is supposed to be a stationary second order process and we suppose that its spectral density function <img class="math" src="../../_images/math/a1fdb83eb9219cbd48c9f8a96021451ebe6b2b67.svg" alt="S : \Rset \rightarrow \mathcal{H}^+(d)"/> defined by:</p>
-<div class="math" id="equation-fourier_transform">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-fourier_transform" title="Permalink to this equation">¶</a></span><img src="../../_images/math/c5a21cf863cdd91df94445ba8098f1520809ff00.svg" alt="\forall \vect{f} \in \Rset^n, \,S(\vect{f}) = \int_{\Rset^n}\exp\left\{  -2i\pi &lt;\vect{f},\vect{\tau}&gt; \right\} C^{stat}(\vect{\tau})\di{\vect{\tau}}"/></p>
+<div class="math" id="equation-fourier-transform">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-fourier-transform" title="Permalink to this equation">¶</a></span><img src="../../_images/math/c5a21cf863cdd91df94445ba8098f1520809ff00.svg" alt="\forall \vect{f} \in \Rset^n, \,S(\vect{f}) = \int_{\Rset^n}\exp\left\{  -2i\pi &lt;\vect{f},\vect{\tau}&gt; \right\} C^{stat}(\vect{\tau})\di{\vect{\tau}}"/></p>
 </div><p>exists, where <img class="math" src="../../_images/math/6e54738c5837432aae0e3cd861bffbb3136cf0cf.svg" alt="\mathcal{H}^+(d) \in \mathcal{M}_d(\Cset)"/> is the set of <em>d</em>-dimensional positive definite hermitian matrices.</p>
 <p>We get a piecewise constant function on <img class="math" src="../../_images/math/a91b33b139575d9ad3adf25085f91308f45955cc.svg" alt="[-f_c,f_c]"/>, where the intervals on which the density spectral function is constant are centered on the points of the frequency grid, of length <img class="math" src="../../_images/math/f05ab3bcecc071dae97943256911d90dd76d6874.svg" alt="\delta f"/>.</p>
 <p>Then, it is  possible to evaluate the spectral density function for a given frequency thanks to the method <em>computeSpectralDensity</em>: if the frequency is not inside the interval <img class="math" src="../../_images/math/a91b33b139575d9ad3adf25085f91308f45955cc.svg" alt="[-f_c,f_c]"/>, OpenTURNS returns an exception. Otherwise, it returns the hermitian matrix of the subinterval of <img class="math" src="../../_images/math/a91b33b139575d9ad3adf25085f91308f45955cc.svg" alt="[-f_c,f_c]"/> that contains the given frequency.</p>
 <p class="rubric">Examples</p>
 <p>Create the frequency grid:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">exp</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fmin</span> <span class="o">=</span> <span class="mf">0.1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="mf">0.5</span>
@@ -147,7 +140,7 @@
 </pre></div>
 </div>
 <p>Define the spectral function:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">s</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">s</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">if</span><span class="p">(</span><span class="n">f</span> <span class="o">&lt;=</span> <span class="mf">5.0</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="k">return</span> <span class="mf">1.0</span>
 <span class="gp">... </span>    <span class="k">else</span><span class="p">:</span>
@@ -156,7 +149,7 @@
 </pre></div>
 </div>
 <p>Create the collection of HermitianMatrix:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myCollection</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HermitianMatrixCollection</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myCollection</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HermitianMatrixCollection</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">frequency</span> <span class="o">=</span> <span class="n">myFrequencyGrid</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="n">matrix</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HermitianMatrix</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -165,7 +158,7 @@
 </pre></div>
 </div>
 <p>Create the spectral model:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mySpectralModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">UserDefinedSpectralModel</span><span class="p">(</span><span class="n">myFrequencyGrid</span><span class="p">,</span> <span class="n">myCollection</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mySpectralModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">UserDefinedSpectralModel</span><span class="p">(</span><span class="n">myFrequencyGrid</span><span class="p">,</span> <span class="n">myCollection</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
@@ -175,70 +168,70 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">__call__</span></code>(frequency)</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(frequency)</td>
 <td>Evaluate the spectral density function for a specific frequency.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.computeStandardRepresentative" title="openturns.UserDefinedSpectralModel.computeStandardRepresentative"><code class="xref py py-obj docutils literal"><span class="pre">computeStandardRepresentative</span></code></a>(frequency)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.computeStandardRepresentative" title="openturns.UserDefinedSpectralModel.computeStandardRepresentative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeStandardRepresentative</span></code></a>(frequency)</td>
 <td>Compute the standard representant of the spectral density function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.draw" title="openturns.UserDefinedSpectralModel.draw"><code class="xref py py-obj docutils literal"><span class="pre">draw</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.draw" title="openturns.UserDefinedSpectralModel.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>(*args)</td>
 <td>Draw a specific component of the spectral density function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getAmplitude" title="openturns.UserDefinedSpectralModel.getAmplitude"><code class="xref py py-obj docutils literal"><span class="pre">getAmplitude</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getAmplitude" title="openturns.UserDefinedSpectralModel.getAmplitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAmplitude</span></code></a>()</td>
 <td>Get the amplitude parameter of the spectral density function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getClassName" title="openturns.UserDefinedSpectralModel.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getClassName" title="openturns.UserDefinedSpectralModel.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getDimension" title="openturns.UserDefinedSpectralModel.getDimension"><code class="xref py py-obj docutils literal"><span class="pre">getDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getDimension" title="openturns.UserDefinedSpectralModel.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
 <td>Get the dimension of the <em>SpectralModel</em>.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getFrequencyGrid" title="openturns.UserDefinedSpectralModel.getFrequencyGrid"><code class="xref py py-obj docutils literal"><span class="pre">getFrequencyGrid</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getFrequencyGrid" title="openturns.UserDefinedSpectralModel.getFrequencyGrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFrequencyGrid</span></code></a>()</td>
 <td>Return the frequency grid associated to the model.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getId" title="openturns.UserDefinedSpectralModel.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getId" title="openturns.UserDefinedSpectralModel.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getName" title="openturns.UserDefinedSpectralModel.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getName" title="openturns.UserDefinedSpectralModel.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getScale" title="openturns.UserDefinedSpectralModel.getScale"><code class="xref py py-obj docutils literal"><span class="pre">getScale</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getScale" title="openturns.UserDefinedSpectralModel.getScale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getScale</span></code></a>()</td>
 <td>Get the scale parameter of the spectral density function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getShadowedId" title="openturns.UserDefinedSpectralModel.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getShadowedId" title="openturns.UserDefinedSpectralModel.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getSpatialCorrelation" title="openturns.UserDefinedSpectralModel.getSpatialCorrelation"><code class="xref py py-obj docutils literal"><span class="pre">getSpatialCorrelation</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getSpatialCorrelation" title="openturns.UserDefinedSpectralModel.getSpatialCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSpatialCorrelation</span></code></a>()</td>
 <td>Get the spatial correlation matrix of the spectral density function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getSpatialDimension" title="openturns.UserDefinedSpectralModel.getSpatialDimension"><code class="xref py py-obj docutils literal"><span class="pre">getSpatialDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getSpatialDimension" title="openturns.UserDefinedSpectralModel.getSpatialDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSpatialDimension</span></code></a>()</td>
 <td>Get the spatial dimension of the spectral density function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getVisibility" title="openturns.UserDefinedSpectralModel.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.getVisibility" title="openturns.UserDefinedSpectralModel.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.hasName" title="openturns.UserDefinedSpectralModel.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.hasName" title="openturns.UserDefinedSpectralModel.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.hasVisibleName" title="openturns.UserDefinedSpectralModel.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.hasVisibleName" title="openturns.UserDefinedSpectralModel.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.setAmplitude" title="openturns.UserDefinedSpectralModel.setAmplitude"><code class="xref py py-obj docutils literal"><span class="pre">setAmplitude</span></code></a>(amplitude)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.setAmplitude" title="openturns.UserDefinedSpectralModel.setAmplitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAmplitude</span></code></a>(amplitude)</td>
 <td>Set the amplitude parameter of the spectral density function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.setFrequencyGrid" title="openturns.UserDefinedSpectralModel.setFrequencyGrid"><code class="xref py py-obj docutils literal"><span class="pre">setFrequencyGrid</span></code></a>(frequencyGrid)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.setFrequencyGrid" title="openturns.UserDefinedSpectralModel.setFrequencyGrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setFrequencyGrid</span></code></a>(frequencyGrid)</td>
 <td>Set the frequency grid associated to the model.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.setName" title="openturns.UserDefinedSpectralModel.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.setName" title="openturns.UserDefinedSpectralModel.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.setScale" title="openturns.UserDefinedSpectralModel.setScale"><code class="xref py py-obj docutils literal"><span class="pre">setScale</span></code></a>(scale)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.setScale" title="openturns.UserDefinedSpectralModel.setScale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setScale</span></code></a>(scale)</td>
 <td>Set the scale parameter of the spectral density function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.setShadowedId" title="openturns.UserDefinedSpectralModel.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.setShadowedId" title="openturns.UserDefinedSpectralModel.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.setVisibility" title="openturns.UserDefinedSpectralModel.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.UserDefinedSpectralModel.setVisibility" title="openturns.UserDefinedSpectralModel.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -272,7 +265,7 @@
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>According to definitions in <a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal"><span class="pre">CovarianceModel</span></code></a>, as the spectral density function is the Fourier transform of the stationary covariance function and using the expression of the last one, the spectral density function writes as a matrix-complex product where the matrix is the constant spatial covariance structure and the complex represents the standard representative:</p>
+<p>According to definitions in <a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a>, as the spectral density function is the Fourier transform of the stationary covariance function and using the expression of the last one, the spectral density function writes as a matrix-complex product where the matrix is the constant spatial covariance structure and the complex represents the standard representative:</p>
 <p>Thus,</p>
 <div class="math">
 <p><img src="../../_images/math/a7287a6fa6023a37e3310de5130c5488de730e19.svg" alt="\forall \vect{f} \in \Rset^n, \cS(\vect{f}) = \prod_{k=1}^{n} \vect{\theta}_k \mat{\Sigma} \rho(\vect{f} \odot \vect{\theta})"/></p>
@@ -298,11 +291,11 @@
 </div></blockquote>
 <p><strong>minimumFrequency</strong> : float</p>
 <blockquote>
-<div><p>The lower bound of the frequency range over which the model is plotted. Default value is <em>SpectralModel-DefaultMinimumFrequency</em> in <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>.</p>
+<div><p>The lower bound of the frequency range over which the model is plotted. Default value is <em>SpectralModel-DefaultMinimumFrequency</em> in <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </div></blockquote>
 <p><strong>maximumFrequency</strong> : float</p>
 <blockquote>
-<div><p>The upper bound of the frequency range over which the model is plotted. Default value is <em>SpectralModel-DefaultMaximumFrequency</em> in <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>.</p>
+<div><p>The upper bound of the frequency range over which the model is plotted. Default value is <em>SpectralModel-DefaultMaximumFrequency</em> in <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </div></blockquote>
 <p><strong>frequencyNumber</strong> : int, <img class="math" src="../../_images/math/52b408bf3c4dcbd8c880794c5ccace53f0d2297f.svg" alt="pointNumber \geq 2"/></p>
 <blockquote>
@@ -334,7 +327,7 @@ Default value is <em>True</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>amplitude</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>amplitude</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The used amplitude parameter.</p>
 </div></blockquote>
@@ -388,7 +381,7 @@ Default value is <em>True</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>grid</strong> : <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal"><span class="pre">RegularGrid</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>grid</strong> : <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></p>
 <blockquote class="last">
 <div><p>The frequency grid of the model.</p>
 </div></blockquote>
@@ -442,7 +435,7 @@ Default value is <em>True</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>scale</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>scale</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The used scale parameter.</p>
 </div></blockquote>
@@ -478,7 +471,7 @@ Default value is <em>True</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>spatialCorrelation</strong> : <a class="reference internal" href="openturns.CorrelationMatrix.html#openturns.CorrelationMatrix" title="openturns.CorrelationMatrix"><code class="xref py py-class docutils literal"><span class="pre">CorrelationMatrix</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>spatialCorrelation</strong> : <a class="reference internal" href="openturns.CorrelationMatrix.html#openturns.CorrelationMatrix" title="openturns.CorrelationMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">CorrelationMatrix</span></code></a></p>
 <blockquote class="last">
 <div><p>Correlation matrix <img class="math" src="../../_images/math/495acacd1f1d923199ca750e3c6dcddce5400a85.svg" alt="\mat{R} \in \mathcal{M}_{dimension \times dimension}([-1, 1])"/>.</p>
 </div></blockquote>
@@ -568,7 +561,7 @@ Default value is <em>True</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>amplitude</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>amplitude</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The amplitude parameter to be used in the spectral density function.</p>
 </div></blockquote>
@@ -586,7 +579,7 @@ Default value is <em>True</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal"><span class="pre">RegularGrid</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></p>
 <blockquote class="last">
 <div><p>The frequency grid of the model.</p>
 </div></blockquote>
@@ -622,7 +615,7 @@ Default value is <em>True</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>scale</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>scale</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The scale parameter to be used in the spectral density function.
 It should be of size dimension.</p>
@@ -699,8 +692,8 @@ It should be of size dimension.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

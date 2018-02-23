@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Event &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -119,11 +112,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>antecedent</strong> : <a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal"><span class="pre">RandomVector</span></code></a> of dimension 1</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>antecedent</strong> : <a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a> of dimension 1</p>
 <blockquote>
 <div><p>Output variable of interest.</p>
 </div></blockquote>
-<p><strong>comparisonOperator</strong> : <a class="reference internal" href="openturns.ComparisonOperator.html#openturns.ComparisonOperator" title="openturns.ComparisonOperator"><code class="xref py py-class docutils literal"><span class="pre">ComparisonOperator</span></code></a></p>
+<p><strong>comparisonOperator</strong> : <a class="reference internal" href="openturns.ComparisonOperator.html#openturns.ComparisonOperator" title="openturns.ComparisonOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">ComparisonOperator</span></code></a></p>
 <blockquote>
 <div><p>Comparison operator used to compare <em>antecedent</em> with <em>threshold</em>.</p>
 </div></blockquote>
@@ -131,11 +124,11 @@
 <blockquote>
 <div><p><em>threshold</em> we want to compare to <em>antecedent</em>.</p>
 </div></blockquote>
-<p><strong>domain</strong> : <a class="reference internal" href="openturns.Domain.html#openturns.Domain" title="openturns.Domain"><code class="xref py py-class docutils literal"><span class="pre">Domain</span></code></a></p>
+<p><strong>domain</strong> : <a class="reference internal" href="openturns.Domain.html#openturns.Domain" title="openturns.Domain"><code class="xref py py-class docutils literal notranslate"><span class="pre">Domain</span></code></a></p>
 <blockquote>
 <div><p>Domain failure.</p>
 </div></blockquote>
-<p><strong>process</strong> : <a class="reference internal" href="openturns.Process.html#openturns.Process" title="openturns.Process"><code class="xref py py-class docutils literal"><span class="pre">Process</span></code></a></p>
+<p><strong>process</strong> : <a class="reference internal" href="openturns.Process.html#openturns.Process" title="openturns.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a></p>
 <blockquote class="last">
 <div><p>Stochastic process.</p>
 </div></blockquote>
@@ -172,7 +165,7 @@ considered, associated to the threshold <img class="math" src="../../_images/mat
     &amp;= \int_{g(\vect{X}, \vect{d}) \le 0} \pdf\di{\vect{x}}"/></p>
 </div><p class="rubric">Examples</p>
 <p>An event created from a limit state function:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;-F*L^3/(3*E*I)&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myDistribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">([</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">IdentityMatrix</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vect</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">myDistribution</span><span class="p">)</span>
@@ -181,7 +174,7 @@ considered, associated to the threshold <img class="math" src="../../_images/mat
 </pre></div>
 </div>
 <p>A composite random vector based event:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x0&#39;</span><span class="p">,</span> <span class="s1">&#39;x1&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x0&#39;</span><span class="p">,</span> <span class="s1">&#39;x1&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Y</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># The domain: [0, 1]^2</span>
@@ -191,7 +184,7 @@ considered, associated to the threshold <img class="math" src="../../_images/mat
 </pre></div>
 </div>
 <p>A process based event:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># The input process</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># The input process</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">WhiteNoise</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># The domain: [0, 1]^2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">domain</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -206,64 +199,64 @@ considered, associated to the threshold <img class="math" src="../../_images/mat
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getAntecedent" title="openturns.Event.getAntecedent"><code class="xref py py-obj docutils literal"><span class="pre">getAntecedent</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getAntecedent" title="openturns.Event.getAntecedent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAntecedent</span></code></a>()</td>
 <td>Accessor to the antecedent RandomVector in case of a composite RandomVector.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getClassName" title="openturns.Event.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getClassName" title="openturns.Event.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getCovariance" title="openturns.Event.getCovariance"><code class="xref py py-obj docutils literal"><span class="pre">getCovariance</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getCovariance" title="openturns.Event.getCovariance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCovariance</span></code></a>()</td>
 <td>Accessor to the covariance of the RandomVector.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getDescription" title="openturns.Event.getDescription"><code class="xref py py-obj docutils literal"><span class="pre">getDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getDescription" title="openturns.Event.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a>()</td>
 <td>Accessor to the description of the RandomVector.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getDimension" title="openturns.Event.getDimension"><code class="xref py py-obj docutils literal"><span class="pre">getDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getDimension" title="openturns.Event.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
 <td>Accessor to the dimension of the RandomVector.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getDistribution" title="openturns.Event.getDistribution"><code class="xref py py-obj docutils literal"><span class="pre">getDistribution</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getDistribution" title="openturns.Event.getDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDistribution</span></code></a>()</td>
 <td>Accessor to the distribution of the RandomVector.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getDomain" title="openturns.Event.getDomain"><code class="xref py py-obj docutils literal"><span class="pre">getDomain</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getDomain" title="openturns.Event.getDomain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDomain</span></code></a>()</td>
 <td>Accessor to the domain of the Event.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getFunction" title="openturns.Event.getFunction"><code class="xref py py-obj docutils literal"><span class="pre">getFunction</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getFunction" title="openturns.Event.getFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFunction</span></code></a>()</td>
 <td>Accessor to the Function in case of a composite RandomVector.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getId" title="openturns.Event.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getId" title="openturns.Event.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getImplementation" title="openturns.Event.getImplementation"><code class="xref py py-obj docutils literal"><span class="pre">getImplementation</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getImplementation" title="openturns.Event.getImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getImplementation</span></code></a>(*args)</td>
 <td>Accessor to the underlying implementation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getMarginal" title="openturns.Event.getMarginal"><code class="xref py py-obj docutils literal"><span class="pre">getMarginal</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getMarginal" title="openturns.Event.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
 <td>Get the random vector corresponding to the <img class="math" src="../../_images/math/ac006054facb099418a40f4c4558f810e894487f.svg" alt="i^{th}"/> marginal component(s).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getMean" title="openturns.Event.getMean"><code class="xref py py-obj docutils literal"><span class="pre">getMean</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getMean" title="openturns.Event.getMean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMean</span></code></a>()</td>
 <td>Accessor to the mean of the RandomVector.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getName" title="openturns.Event.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getName" title="openturns.Event.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getOperator" title="openturns.Event.getOperator"><code class="xref py py-obj docutils literal"><span class="pre">getOperator</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getOperator" title="openturns.Event.getOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOperator</span></code></a>()</td>
 <td>Accessor to the comparaison operator of the Event.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getRealization" title="openturns.Event.getRealization"><code class="xref py py-obj docutils literal"><span class="pre">getRealization</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getRealization" title="openturns.Event.getRealization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRealization</span></code></a>()</td>
 <td>Compute one realization of the RandomVector.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getSample" title="openturns.Event.getSample"><code class="xref py py-obj docutils literal"><span class="pre">getSample</span></code></a>(size)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.getSample" title="openturns.Event.getSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSample</span></code></a>(size)</td>
 <td>Compute realizations of the RandomVector.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getThreshold" title="openturns.Event.getThreshold"><code class="xref py py-obj docutils literal"><span class="pre">getThreshold</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.getThreshold" title="openturns.Event.getThreshold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getThreshold</span></code></a>()</td>
 <td>Accessor to the threshold of the Event.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.isComposite" title="openturns.Event.isComposite"><code class="xref py py-obj docutils literal"><span class="pre">isComposite</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.isComposite" title="openturns.Event.isComposite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isComposite</span></code></a>()</td>
 <td>Accessor to know if the RandomVector is a composite one.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.setDescription" title="openturns.Event.setDescription"><code class="xref py py-obj docutils literal"><span class="pre">setDescription</span></code></a>(description)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Event.setDescription" title="openturns.Event.setDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDescription</span></code></a>(description)</td>
 <td>Accessor to the description of the RandomVector.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.setName" title="openturns.Event.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Event.setName" title="openturns.Event.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
 </tbody>
@@ -282,10 +275,10 @@ considered, associated to the threshold <img class="math" src="../../_images/mat
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>antecedent</strong> : <a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal"><span class="pre">RandomVector</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>antecedent</strong> : <a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a></p>
 <blockquote class="last">
 <div><p>Antecedent RandomVector <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/> in case of a
-<a class="reference internal" href="openturns.CompositeRandomVector.html#openturns.CompositeRandomVector" title="openturns.CompositeRandomVector"><code class="xref py py-class docutils literal"><span class="pre">CompositeRandomVector</span></code></a> such as:
+<a class="reference internal" href="openturns.CompositeRandomVector.html#openturns.CompositeRandomVector" title="openturns.CompositeRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompositeRandomVector</span></code></a> such as:
 <img class="math" src="../../_images/math/ac0283b0f07a8464b8d47fd18a296c8a5b8e34be.svg" alt="\vect{Y}=f(\vect{X})"/>.</p>
 </div></blockquote>
 </td>
@@ -320,16 +313,16 @@ considered, associated to the threshold <img class="math" src="../../_images/mat
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>covariance</strong> : <a class="reference internal" href="openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="openturns.CovarianceMatrix"><code class="xref py py-class docutils literal"><span class="pre">CovarianceMatrix</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>covariance</strong> : <a class="reference internal" href="openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="openturns.CovarianceMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceMatrix</span></code></a></p>
 <blockquote class="last">
-<div><p>Covariance of the considered <a class="reference internal" href="openturns.UsualRandomVector.html#openturns.UsualRandomVector" title="openturns.UsualRandomVector"><code class="xref py py-class docutils literal"><span class="pre">UsualRandomVector</span></code></a>.</p>
+<div><p>Covariance of the considered <a class="reference internal" href="openturns.UsualRandomVector.html#openturns.UsualRandomVector" title="openturns.UsualRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">UsualRandomVector</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">randomVector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">distribution</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -348,7 +341,7 @@ considered, associated to the threshold <img class="math" src="../../_images/mat
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Describes the components of the RandomVector.</p>
 </div></blockquote>
@@ -384,16 +377,16 @@ considered, associated to the threshold <img class="math" src="../../_images/mat
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
 <blockquote class="last">
-<div><p>Distribution of the considered <a class="reference internal" href="openturns.UsualRandomVector.html#openturns.UsualRandomVector" title="openturns.UsualRandomVector"><code class="xref py py-class docutils literal"><span class="pre">UsualRandomVector</span></code></a>.</p>
+<div><p>Distribution of the considered <a class="reference internal" href="openturns.UsualRandomVector.html#openturns.UsualRandomVector" title="openturns.UsualRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">UsualRandomVector</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">randomVector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">distribution</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -412,7 +405,7 @@ considered, associated to the threshold <img class="math" src="../../_images/mat
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>domain</strong> : <a class="reference internal" href="openturns.Domain.html#openturns.Domain" title="openturns.Domain"><code class="xref py py-class docutils literal"><span class="pre">Domain</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>domain</strong> : <a class="reference internal" href="openturns.Domain.html#openturns.Domain" title="openturns.Domain"><code class="xref py py-class docutils literal notranslate"><span class="pre">Domain</span></code></a></p>
 <blockquote class="last">
 <div><p>Describes the domain of an event.</p>
 </div></blockquote>
@@ -430,9 +423,9 @@ considered, associated to the threshold <img class="math" src="../../_images/mat
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
-<div><p>Function used to define a <a class="reference internal" href="openturns.CompositeRandomVector.html#openturns.CompositeRandomVector" title="openturns.CompositeRandomVector"><code class="xref py py-class docutils literal"><span class="pre">CompositeRandomVector</span></code></a> as the
+<div><p>Function used to define a <a class="reference internal" href="openturns.CompositeRandomVector.html#openturns.CompositeRandomVector" title="openturns.CompositeRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompositeRandomVector</span></code></a> as the
 image through this function of the antecedent <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/>:
 <img class="math" src="../../_images/math/ac0283b0f07a8464b8d47fd18a296c8a5b8e34be.svg" alt="\vect{Y}=f(\vect{X})"/>.</p>
 </div></blockquote>
@@ -493,7 +486,7 @@ RandomVector.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vector</strong> :  <a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal"><span class="pre">RandomVector</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vector</strong> :  <a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a></p>
 <blockquote class="last">
 <div><p>RandomVector restricted to the concerned components.</p>
 </div></blockquote>
@@ -504,14 +497,14 @@ RandomVector.</p>
 <p class="rubric">Notes</p>
 <p>Let’s note <img class="math" src="../../_images/math/c527932c1da02fb68ccc3665513d7b7f8c965823.svg" alt="\vect{Y}=\Tr{(Y_1,\dots,Y_n)}"/> a random vector and
 <img class="math" src="../../_images/math/af6589225695f7bb6b5d7236ccb1a6626b557dbe.svg" alt="I \in [1,n]"/> a set of indices. If <img class="math" src="../../_images/math/b4d1a67d55d68c3f0afdabbb41f86fb00c03dfb5.svg" alt="\vect{Y}"/> is a
-<a class="reference internal" href="openturns.UsualRandomVector.html#openturns.UsualRandomVector" title="openturns.UsualRandomVector"><code class="xref py py-class docutils literal"><span class="pre">UsualRandomVector</span></code></a>, the subvector is defined by
+<a class="reference internal" href="openturns.UsualRandomVector.html#openturns.UsualRandomVector" title="openturns.UsualRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">UsualRandomVector</span></code></a>, the subvector is defined by
 <img class="math" src="../../_images/math/b3197088ff2355e6fb2444bc5a0bc469396ad875.svg" alt="\tilde{\vect{Y}}=\Tr{(Y_i)}_{i \in I}"/>. If <img class="math" src="../../_images/math/b4d1a67d55d68c3f0afdabbb41f86fb00c03dfb5.svg" alt="\vect{Y}"/> is a
-<a class="reference internal" href="openturns.CompositeRandomVector.html#openturns.CompositeRandomVector" title="openturns.CompositeRandomVector"><code class="xref py py-class docutils literal"><span class="pre">CompositeRandomVector</span></code></a>, defined by
+<a class="reference internal" href="openturns.CompositeRandomVector.html#openturns.CompositeRandomVector" title="openturns.CompositeRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompositeRandomVector</span></code></a>, defined by
 <img class="math" src="../../_images/math/ac0283b0f07a8464b8d47fd18a296c8a5b8e34be.svg" alt="\vect{Y}=f(\vect{X})"/> with <img class="math" src="../../_images/math/276d7986137f0802496fdb20569f75bf8c069ea6.svg" alt="f=(f_1,\dots,f_n)"/>,
 <img class="math" src="../../_images/math/83826dafd3081c1d1ce50c8fdc59d788f6efcefa.svg" alt="f_i"/> some scalar functions, the subvector is
 <img class="math" src="../../_images/math/1da5b3e29dffa372de603eb0fdcd6c94839b25e9.svg" alt="\tilde{\vect{Y}}=(f_i(\vect{X}))_{i \in I}"/>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">randomVector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">distribution</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -531,16 +524,16 @@ RandomVector.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mean</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mean</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
-<div><p>Mean of the considered <a class="reference internal" href="openturns.UsualRandomVector.html#openturns.UsualRandomVector" title="openturns.UsualRandomVector"><code class="xref py py-class docutils literal"><span class="pre">UsualRandomVector</span></code></a>.</p>
+<div><p>Mean of the considered <a class="reference internal" href="openturns.UsualRandomVector.html#openturns.UsualRandomVector" title="openturns.UsualRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">UsualRandomVector</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">randomVector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">distribution</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -576,9 +569,9 @@ RandomVector.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>operator</strong> : <a class="reference internal" href="openturns.ComparisonOperator.html#openturns.ComparisonOperator" title="openturns.ComparisonOperator"><code class="xref py py-class docutils literal"><span class="pre">ComparisonOperator</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>operator</strong> : <a class="reference internal" href="openturns.ComparisonOperator.html#openturns.ComparisonOperator" title="openturns.ComparisonOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">ComparisonOperator</span></code></a></p>
 <blockquote class="last">
-<div><p>Comparaison operator used to define the <a class="reference internal" href="#openturns.Event" title="openturns.Event"><code class="xref py py-class docutils literal"><span class="pre">Event</span></code></a>.</p>
+<div><p>Comparaison operator used to define the <a class="reference internal" href="#openturns.Event" title="openturns.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -594,7 +587,7 @@ RandomVector.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>aRealization</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>aRealization</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>Sequence of values randomly determined from the RandomVector definition.
 In the case of an event: one realization of the event (considered as a
@@ -607,10 +600,10 @@ event and 0 else).</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.Event.getSample" title="openturns.Event.getSample"><code class="xref py py-obj docutils literal"><span class="pre">getSample</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.Event.getSample" title="openturns.Event.getSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSample</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">randomVector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">distribution</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -636,7 +629,7 @@ event and 0 else).</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>realizations</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>realizations</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>n sequences of values randomly determined from the RandomVector definition.
 In the case of an event: n realizations of the event (considered as a
@@ -649,10 +642,10 @@ event and 0 else).</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.Event.getRealization" title="openturns.Event.getRealization"><code class="xref py py-obj docutils literal"><span class="pre">getRealization</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.Event.getRealization" title="openturns.Event.getRealization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRealization</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">randomVector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">distribution</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -675,7 +668,7 @@ event and 0 else).</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>threshold</strong> : float</p>
 <blockquote class="last">
-<div><p>Threshold of the <a class="reference internal" href="#openturns.Event" title="openturns.Event"><code class="xref py py-class docutils literal"><span class="pre">Event</span></code></a>.</p>
+<div><p>Threshold of the <a class="reference internal" href="#openturns.Event" title="openturns.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -767,8 +760,8 @@ event and 0 else).</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

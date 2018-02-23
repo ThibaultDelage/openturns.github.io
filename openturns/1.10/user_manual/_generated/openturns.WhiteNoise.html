@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>WhiteNoise &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -115,11 +108,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
 <blockquote>
 <div><p>Distribution of dimension <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> of the white noise process.</p>
 </div></blockquote>
-<p><strong>mesh</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal"><span class="pre">Mesh</span></code></a>, optional</p>
+<p><strong>mesh</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a>, optional</p>
 <blockquote class="last">
 <div><p>Mesh in <img class="math" src="../../_images/math/68f1abcd965891af6bf660d2486d375f95b82462.svg" alt="\Rset^n"/> over which the process is discretized. 
 By default, the mesh is reduced to one point in <img class="math" src="../../_images/math/12ed436b6d8da4a70da0d3c7ec9d6ceb3046aec4.svg" alt="\Rset"/> which coordinate is equal to 0.</p>
@@ -133,14 +126,14 @@ By default, the mesh is reduced to one point in <img class="math" src="../../_im
 <p>A process <img class="math" src="../../_images/math/36f8b807183680d9b644839cf648cc289a9fc9dc.svg" alt="\varepsilon"/> is a white noise if  all finite family of locations  <img class="math" src="../../_images/math/9be5b21d56d0cfe02db58c6dfd4650dfce00fe5d.svg" alt="(\vect{t}_i)_{i=1, \dots, n} \in \cD"/>, <img class="math" src="../../_images/math/7c5bbfd681d08808d622f9c4b9fa465aedcd3f0c.svg" alt="(\varepsilon_{\vect{t}_i})_{i=1, \dots, n}"/> is independent and identically distributed.</p>
 <p class="rubric">Examples</p>
 <p>Create a normal normal white noise of dimension 1:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myDist</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myMesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">IntervalMesher</span><span class="p">([</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myWN</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">WhiteNoise</span><span class="p">(</span><span class="n">myDist</span><span class="p">,</span> <span class="n">myMesh</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Get a realization:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myReal</span> <span class="o">=</span><span class="n">myWN</span><span class="o">.</span><span class="n">getRealization</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myReal</span> <span class="o">=</span><span class="n">myWN</span><span class="o">.</span><span class="n">getRealization</span><span class="p">()</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
@@ -150,94 +143,94 @@ By default, the mesh is reduced to one point in <img class="math" src="../../_im
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getClassName" title="openturns.WhiteNoise.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getClassName" title="openturns.WhiteNoise.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getContinuousRealization" title="openturns.WhiteNoise.getContinuousRealization"><code class="xref py py-obj docutils literal"><span class="pre">getContinuousRealization</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getContinuousRealization" title="openturns.WhiteNoise.getContinuousRealization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getContinuousRealization</span></code></a>()</td>
 <td>Get a continuous realization.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getCovarianceModel" title="openturns.WhiteNoise.getCovarianceModel"><code class="xref py py-obj docutils literal"><span class="pre">getCovarianceModel</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getCovarianceModel" title="openturns.WhiteNoise.getCovarianceModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCovarianceModel</span></code></a>()</td>
 <td>Accessor to the covariance model.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getDescription" title="openturns.WhiteNoise.getDescription"><code class="xref py py-obj docutils literal"><span class="pre">getDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getDescription" title="openturns.WhiteNoise.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a>()</td>
 <td>Get the description of the process.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getDimension" title="openturns.WhiteNoise.getDimension"><code class="xref py py-obj docutils literal"><span class="pre">getDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getDimension" title="openturns.WhiteNoise.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
 <td>Get the dimension of the domain <img class="math" src="../../_images/math/4502dceb2a4b3dbf38d044181ebe1d26ef89e030.svg" alt="\cD"/>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getDistribution" title="openturns.WhiteNoise.getDistribution"><code class="xref py py-obj docutils literal"><span class="pre">getDistribution</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getDistribution" title="openturns.WhiteNoise.getDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDistribution</span></code></a>()</td>
 <td>Accessor to the distribution.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getFuture" title="openturns.WhiteNoise.getFuture"><code class="xref py py-obj docutils literal"><span class="pre">getFuture</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getFuture" title="openturns.WhiteNoise.getFuture"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFuture</span></code></a>(*args)</td>
 <td>Prediction of the <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> future iterations of the process.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getId" title="openturns.WhiteNoise.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getId" title="openturns.WhiteNoise.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getMarginal" title="openturns.WhiteNoise.getMarginal"><code class="xref py py-obj docutils literal"><span class="pre">getMarginal</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getMarginal" title="openturns.WhiteNoise.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
 <td>Accessor to the marginal process.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getMesh" title="openturns.WhiteNoise.getMesh"><code class="xref py py-obj docutils literal"><span class="pre">getMesh</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getMesh" title="openturns.WhiteNoise.getMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMesh</span></code></a>()</td>
 <td>Get the mesh.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getName" title="openturns.WhiteNoise.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getName" title="openturns.WhiteNoise.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getRealization" title="openturns.WhiteNoise.getRealization"><code class="xref py py-obj docutils literal"><span class="pre">getRealization</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getRealization" title="openturns.WhiteNoise.getRealization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRealization</span></code></a>()</td>
 <td>Get a realization of the process.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getSample" title="openturns.WhiteNoise.getSample"><code class="xref py py-obj docutils literal"><span class="pre">getSample</span></code></a>(size)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getSample" title="openturns.WhiteNoise.getSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSample</span></code></a>(size)</td>
 <td>Get <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> realizations of the process.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getShadowedId" title="openturns.WhiteNoise.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getShadowedId" title="openturns.WhiteNoise.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getSpatialDimension" title="openturns.WhiteNoise.getSpatialDimension"><code class="xref py py-obj docutils literal"><span class="pre">getSpatialDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getSpatialDimension" title="openturns.WhiteNoise.getSpatialDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSpatialDimension</span></code></a>()</td>
 <td>Get the dimension of the domain <img class="math" src="../../_images/math/4502dceb2a4b3dbf38d044181ebe1d26ef89e030.svg" alt="\cD"/>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getTimeGrid" title="openturns.WhiteNoise.getTimeGrid"><code class="xref py py-obj docutils literal"><span class="pre">getTimeGrid</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getTimeGrid" title="openturns.WhiteNoise.getTimeGrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTimeGrid</span></code></a>()</td>
 <td>Get the time grid of observation of the process.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getTrend" title="openturns.WhiteNoise.getTrend"><code class="xref py py-obj docutils literal"><span class="pre">getTrend</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.getTrend" title="openturns.WhiteNoise.getTrend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTrend</span></code></a>()</td>
 <td>Accessor to the trend.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getVisibility" title="openturns.WhiteNoise.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.getVisibility" title="openturns.WhiteNoise.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.hasName" title="openturns.WhiteNoise.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.hasName" title="openturns.WhiteNoise.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.hasVisibleName" title="openturns.WhiteNoise.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.hasVisibleName" title="openturns.WhiteNoise.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.isComposite" title="openturns.WhiteNoise.isComposite"><code class="xref py py-obj docutils literal"><span class="pre">isComposite</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.isComposite" title="openturns.WhiteNoise.isComposite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isComposite</span></code></a>()</td>
 <td>Test whether the process is composite or not.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.isNormal" title="openturns.WhiteNoise.isNormal"><code class="xref py py-obj docutils literal"><span class="pre">isNormal</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.isNormal" title="openturns.WhiteNoise.isNormal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isNormal</span></code></a>()</td>
 <td>Test whether the process is normal or not.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.isStationary" title="openturns.WhiteNoise.isStationary"><code class="xref py py-obj docutils literal"><span class="pre">isStationary</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.isStationary" title="openturns.WhiteNoise.isStationary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isStationary</span></code></a>()</td>
 <td>Test whether the process is stationary or not.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.setDescription" title="openturns.WhiteNoise.setDescription"><code class="xref py py-obj docutils literal"><span class="pre">setDescription</span></code></a>(description)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.setDescription" title="openturns.WhiteNoise.setDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDescription</span></code></a>(description)</td>
 <td>Set the description of the process.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.setDistribution" title="openturns.WhiteNoise.setDistribution"><code class="xref py py-obj docutils literal"><span class="pre">setDistribution</span></code></a>(distribution)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.setDistribution" title="openturns.WhiteNoise.setDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDistribution</span></code></a>(distribution)</td>
 <td>Accessor to the distribution.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.setMesh" title="openturns.WhiteNoise.setMesh"><code class="xref py py-obj docutils literal"><span class="pre">setMesh</span></code></a>(mesh)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.setMesh" title="openturns.WhiteNoise.setMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMesh</span></code></a>(mesh)</td>
 <td>Set the mesh.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.setName" title="openturns.WhiteNoise.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.setName" title="openturns.WhiteNoise.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.setShadowedId" title="openturns.WhiteNoise.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.setShadowedId" title="openturns.WhiteNoise.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.setTimeGrid" title="openturns.WhiteNoise.setTimeGrid"><code class="xref py py-obj docutils literal"><span class="pre">setTimeGrid</span></code></a>(timeGrid)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.WhiteNoise.setTimeGrid" title="openturns.WhiteNoise.setTimeGrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTimeGrid</span></code></a>(timeGrid)</td>
 <td>Set the time grid of observation of the process.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.setVisibility" title="openturns.WhiteNoise.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.WhiteNoise.setVisibility" title="openturns.WhiteNoise.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -274,7 +267,7 @@ By default, the mesh is reduced to one point in <img class="math" src="../../_im
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>realization</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>realization</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>According to the process, the continuous realizations are built:</p>
 <ul class="simple">
@@ -301,7 +294,7 @@ the process).</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cov_model</strong> : <a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal"><span class="pre">CovarianceModel</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cov_model</strong> : <a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></p>
 <blockquote class="last">
 <div><p>Covariance model, if any.</p>
 </div></blockquote>
@@ -319,7 +312,7 @@ the process).</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></p>
 <blockquote class="last">
 <div><p>Description of the process.</p>
 </div></blockquote>
@@ -355,7 +348,7 @@ the process).</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
 <blockquote class="last">
 <div><p>The distribution of dimension <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> of the white noise.</p>
 </div></blockquote>
@@ -383,11 +376,11 @@ the process).</li>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>prediction</strong> : <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal"><span class="pre">ProcessSample</span></code></a> or <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal"><span class="pre">TimeSeries</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>prediction</strong> : <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a> or <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSeries</span></code></a></p>
 <blockquote class="last">
 <div><p><img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> future iterations of the process.
-If <img class="math" src="../../_images/math/b8373b07b8b7fc8791c14c50f8040df913d5c242.svg" alt="size = 1"/>, <em>prediction</em> is a <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal"><span class="pre">TimeSeries</span></code></a>.
-Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal"><span class="pre">ProcessSample</span></code></a>.</p>
+If <img class="math" src="../../_images/math/b8373b07b8b7fc8791c14c50f8040df913d5c242.svg" alt="size = 1"/>, <em>prediction</em> is a <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSeries</span></code></a>.
+Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -425,13 +418,13 @@ Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.h
 <blockquote>
 <div><p>The  index of the marginal to be extracted.</p>
 </div></blockquote>
-<p><strong>indices</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal"><span class="pre">Indices</span></code></a>, optional</p>
+<p><strong>indices</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a>, optional</p>
 <blockquote>
 <div><p>The list of the indexes of the marginal to be extracted.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>wn</strong> : <a class="reference internal" href="#openturns.WhiteNoise" title="openturns.WhiteNoise"><code class="xref py py-class docutils literal"><span class="pre">WhiteNoise</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>wn</strong> : <a class="reference internal" href="#openturns.WhiteNoise" title="openturns.WhiteNoise"><code class="xref py py-class docutils literal notranslate"><span class="pre">WhiteNoise</span></code></a></p>
 <blockquote class="last">
 <div><p>The marginal white noise.</p>
 </div></blockquote>
@@ -449,7 +442,7 @@ Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.h
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mesh</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal"><span class="pre">Mesh</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mesh</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></p>
 <blockquote class="last">
 <div><p>Mesh over which the domain <img class="math" src="../../_images/math/4502dceb2a4b3dbf38d044181ebe1d26ef89e030.svg" alt="\cD"/> is discretized.</p>
 </div></blockquote>
@@ -485,7 +478,7 @@ Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.h
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>realization</strong> : <a class="reference internal" href="openturns.Field.html#openturns.Field" title="openturns.Field"><code class="xref py py-class docutils literal"><span class="pre">Field</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>realization</strong> : <a class="reference internal" href="openturns.Field.html#openturns.Field" title="openturns.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></p>
 <blockquote class="last">
 <div><p>Contains a mesh over which the process is discretized and the values of the
 process at the vertices of the mesh.</p>
@@ -510,7 +503,7 @@ process at the vertices of the mesh.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>processSample</strong> : <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal"><span class="pre">ProcessSample</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>processSample</strong> : <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a></p>
 <blockquote class="last">
 <div><p><img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> realizations of the random process. A process sample is a
 collection of fields which share the same mesh <img class="math" src="../../_images/math/aee4d429d2004c1fe20184ba9799f566851add7b.svg" alt="\cM \in \Rset^n"/>.</p>
@@ -565,10 +558,10 @@ collection of fields which share the same mesh <img class="math" src="../../_ima
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>timeGrid</strong> : <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal"><span class="pre">RegularGrid</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>timeGrid</strong> : <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></p>
 <blockquote class="last">
 <div><p>Time grid of a process when the mesh associated to the
-process can be interpreted as a <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal"><span class="pre">RegularGrid</span></code></a>. We check
+process can be interpreted as a <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a>. We check
 if the vertices of the mesh are scalar and are regularly spaced in
 <img class="math" src="../../_images/math/12ed436b6d8da4a70da0d3c7ec9d6ceb3046aec4.svg" alt="\Rset"/> but we don’t check if the connectivity of the mesh is conform
 to the one of a regular grid (without any hole and composed of ordered
@@ -588,7 +581,7 @@ instants).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>trend</strong> : <a class="reference internal" href="openturns.TrendTransform.html#openturns.TrendTransform" title="openturns.TrendTransform"><code class="xref py py-class docutils literal"><span class="pre">TrendTransform</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>trend</strong> : <a class="reference internal" href="openturns.TrendTransform.html#openturns.TrendTransform" title="openturns.TrendTransform"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrendTransform</span></code></a></p>
 <blockquote class="last">
 <div><p>Trend, if any.</p>
 </div></blockquote>
@@ -764,7 +757,7 @@ translation: <img class="math" src="../../_images/math/b873ea12f65815a5328972cb8
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal"><span class="pre">Distribution</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
 <blockquote class="last">
 <div><p>The distribution of dimension <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> of the white noise.</p>
 </div></blockquote>
@@ -782,7 +775,7 @@ translation: <img class="math" src="../../_images/math/b873ea12f65815a5328972cb8
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>mesh</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal"><span class="pre">Mesh</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>mesh</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></p>
 <blockquote class="last">
 <div><p>Mesh over which the domain <img class="math" src="../../_images/math/4502dceb2a4b3dbf38d044181ebe1d26ef89e030.svg" alt="\cD"/> is discretized.</p>
 </div></blockquote>
@@ -836,10 +829,10 @@ translation: <img class="math" src="../../_images/math/b873ea12f65815a5328972cb8
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>timeGrid</strong> : <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal"><span class="pre">RegularGrid</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>timeGrid</strong> : <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></p>
 <blockquote class="last">
 <div><p>Time grid of observation of the process when the mesh associated to the
-process can be interpreted as a <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal"><span class="pre">RegularGrid</span></code></a>. We check
+process can be interpreted as a <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a>. We check
 if the vertices of the mesh are scalar and are regularly spaced in
 <img class="math" src="../../_images/math/12ed436b6d8da4a70da0d3c7ec9d6ceb3046aec4.svg" alt="\Rset"/> but we don’t check if the connectivity of the mesh is conform
 to the one of a regular grid (without any hole and composed of ordered
@@ -899,8 +892,8 @@ instants).</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Latex documentation &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -94,12 +85,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -130,7 +123,7 @@ theoretical background of the methods featured in the library.</li>
 packages.</p>
 </li>
 <li><p class="first">Fork the repository <a class="reference external" href="https://github.com/openturns/doc.git">https://github.com/openturns/doc.git</a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">YOURUSERNAME</span><span class="o">/</span><span class="n">doc</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">YOURUSERNAME</span><span class="o">/</span><span class="n">doc</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 </li>
@@ -142,7 +135,7 @@ packages.</p>
 <li><p class="first">Add your contribution, update the CMakeLists when adding new files.</p>
 </li>
 <li><p class="first">Build the documentation:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>mkdir build
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=$PWD/install ..
 make
@@ -150,7 +143,7 @@ make
 </div>
 </li>
 <li><p class="first">Check the PDF and HTML outputs</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">install</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">install</span>
 <span class="n">xpdf</span> <span class="n">install</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span><span class="n">openturns</span><span class="o">-</span><span class="n">doc</span><span class="o">/</span><span class="n">pdf</span><span class="o">/</span><span class="n">OpenTURNS_ReferenceGuide</span><span class="o">.</span><span class="n">pdf</span>
 <span class="n">firefox</span> <span class="n">install</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span><span class="n">openturns</span><span class="o">-</span><span class="n">doc</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">ReferenceGuide</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">xhtml</span>
 </pre></div>
@@ -162,13 +155,13 @@ make
 <h2>Run embedded scripts<a class="headerlink" href="#run-embedded-scripts" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Detect your openturns installation:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">DUSE_OPENTURNS</span><span class="o">=</span><span class="n">ON</span> \
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">DUSE_OPENTURNS</span><span class="o">=</span><span class="n">ON</span> \
   <span class="o">-</span><span class="n">DOpenTURNS_DIR</span><span class="o">=&lt;</span><span class="n">OT_PREFIX</span><span class="o">&gt;/</span><span class="n">lib</span><span class="o">/</span><span class="n">cmake</span><span class="o">/</span><span class="n">openturns</span> <span class="o">..</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Run tests</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">check</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">check</span>
 </pre></div>
 </div>
 <p>and all the tests should be successful else check the log file
@@ -203,8 +196,8 @@ test/Testing/Temporary/LastTest.log.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

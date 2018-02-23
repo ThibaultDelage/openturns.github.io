@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>LevelSetMesher &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -123,18 +116,18 @@
 <blockquote>
 <div><p>Discretization of the level set bounding box.</p>
 </div></blockquote>
-<p><strong>solver</strong> : <a class="reference internal" href="openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">OptimizationAlgorithm</span></code></a></p>
+<p><strong>solver</strong> : <a class="reference internal" href="openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationAlgorithm</span></code></a></p>
 <blockquote class="last">
 <div><p>Optimization solver used to project the vertices onto the level set.
 It must be able to solve nearest point problems.
-Default is <a class="reference internal" href="openturns.AbdoRackwitz.html#openturns.AbdoRackwitz" title="openturns.AbdoRackwitz"><code class="xref py py-class docutils literal"><span class="pre">AbdoRackwitz</span></code></a>.</p>
+Default is <a class="reference internal" href="openturns.AbdoRackwitz.html#openturns.AbdoRackwitz" title="openturns.AbdoRackwitz"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbdoRackwitz</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The meshing algorithm is based on the <a class="reference internal" href="openturns.IntervalMesher.html#openturns.IntervalMesher" title="openturns.IntervalMesher"><code class="xref py py-class docutils literal"><span class="pre">IntervalMesher</span></code></a> class.
+<p>The meshing algorithm is based on the <a class="reference internal" href="openturns.IntervalMesher.html#openturns.IntervalMesher" title="openturns.IntervalMesher"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntervalMesher</span></code></a> class.
 First, the bounding box of the level set (provided by the user or automatically
 computed) is meshed. Then, all the simplices with all vertices outside of the
 level set are rejected, while the simplices with all vertices inside of the level
@@ -150,7 +143,7 @@ optimization solver.</li>
 </div></blockquote>
 <p class="rubric">Examples</p>
 <p>Create a mesh:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesher</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LevelSetMesher</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">level</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">function</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x0&#39;</span><span class="p">,</span> <span class="s1">&#39;x1&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x0^2+x1^2&#39;</span><span class="p">])</span>
@@ -165,49 +158,49 @@ optimization solver.</li>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.build" title="openturns.LevelSetMesher.build"><code class="xref py py-obj docutils literal"><span class="pre">build</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.build" title="openturns.LevelSetMesher.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>(*args)</td>
 <td>Build the mesh of level set type.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSetMesher.getClassName" title="openturns.LevelSetMesher.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSetMesher.getClassName" title="openturns.LevelSetMesher.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.getDiscretization" title="openturns.LevelSetMesher.getDiscretization"><code class="xref py py-obj docutils literal"><span class="pre">getDiscretization</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.getDiscretization" title="openturns.LevelSetMesher.getDiscretization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDiscretization</span></code></a>()</td>
 <td>Accessor to the discretization.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSetMesher.getId" title="openturns.LevelSetMesher.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSetMesher.getId" title="openturns.LevelSetMesher.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.getName" title="openturns.LevelSetMesher.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.getName" title="openturns.LevelSetMesher.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSetMesher.getOptimizationAlgorithm" title="openturns.LevelSetMesher.getOptimizationAlgorithm"><code class="xref py py-obj docutils literal"><span class="pre">getOptimizationAlgorithm</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSetMesher.getOptimizationAlgorithm" title="openturns.LevelSetMesher.getOptimizationAlgorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOptimizationAlgorithm</span></code></a>()</td>
 <td>Accessor to the optimization solver.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.getShadowedId" title="openturns.LevelSetMesher.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.getShadowedId" title="openturns.LevelSetMesher.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSetMesher.getVisibility" title="openturns.LevelSetMesher.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSetMesher.getVisibility" title="openturns.LevelSetMesher.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.hasName" title="openturns.LevelSetMesher.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.hasName" title="openturns.LevelSetMesher.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSetMesher.hasVisibleName" title="openturns.LevelSetMesher.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSetMesher.hasVisibleName" title="openturns.LevelSetMesher.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.setDiscretization" title="openturns.LevelSetMesher.setDiscretization"><code class="xref py py-obj docutils literal"><span class="pre">setDiscretization</span></code></a>(discretization)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.setDiscretization" title="openturns.LevelSetMesher.setDiscretization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDiscretization</span></code></a>(discretization)</td>
 <td>Accessor to the discretization.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSetMesher.setName" title="openturns.LevelSetMesher.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSetMesher.setName" title="openturns.LevelSetMesher.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.setOptimizationAlgorithm" title="openturns.LevelSetMesher.setOptimizationAlgorithm"><code class="xref py py-obj docutils literal"><span class="pre">setOptimizationAlgorithm</span></code></a>(solver)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.setOptimizationAlgorithm" title="openturns.LevelSetMesher.setOptimizationAlgorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOptimizationAlgorithm</span></code></a>(solver)</td>
 <td>Accessor to the optimization solver.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSetMesher.setShadowedId" title="openturns.LevelSetMesher.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LevelSetMesher.setShadowedId" title="openturns.LevelSetMesher.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.setVisibility" title="openturns.LevelSetMesher.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LevelSetMesher.setVisibility" title="openturns.LevelSetMesher.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -226,12 +219,12 @@ optimization solver.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>levelSet</strong> : <a class="reference internal" href="openturns.LevelSet.html#openturns.LevelSet" title="openturns.LevelSet"><code class="xref py py-class docutils literal"><span class="pre">LevelSet</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>levelSet</strong> : <a class="reference internal" href="openturns.LevelSet.html#openturns.LevelSet" title="openturns.LevelSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelSet</span></code></a></p>
 <blockquote>
 <div><p>The level set to be meshed, of dimension equal to the dimension
 of <cite>discretization</cite>.</p>
 </div></blockquote>
-<p><strong>boundingBox</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal"><span class="pre">Interval</span></code></a></p>
+<p><strong>boundingBox</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
 <blockquote>
 <div><p>The bounding box used to mesh the level set. By default it is automatically computed from the elements of the given level set.</p>
 </div></blockquote>
@@ -241,7 +234,7 @@ of <cite>discretization</cite>.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mesh</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal"><span class="pre">Mesh</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mesh</strong> : <a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></p>
 <blockquote class="last">
 <div><p>The mesh built.</p>
 </div></blockquote>
@@ -277,7 +270,7 @@ of <cite>discretization</cite>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>discretization</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal"><span class="pre">Indices</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>discretization</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></p>
 <blockquote class="last">
 <div><p>Discretization of the bounding box of the level sets.</p>
 </div></blockquote>
@@ -331,7 +324,7 @@ of <cite>discretization</cite>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>solver</strong> : <a class="reference internal" href="openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">OptimizationAlgorithm</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>solver</strong> : <a class="reference internal" href="openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationAlgorithm</span></code></a></p>
 <blockquote class="last">
 <div><p>The optimization solver used to project vertices onto the level set.</p>
 </div></blockquote>
@@ -457,7 +450,7 @@ of <cite>discretization</cite>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>solver</strong> : <a class="reference internal" href="openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">OptimizationAlgorithm</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>solver</strong> : <a class="reference internal" href="openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationAlgorithm</span></code></a></p>
 <blockquote class="last">
 <div><p>The optimization solver used to project vertices onto the level set.</p>
 </div></blockquote>
@@ -533,8 +526,8 @@ of <cite>discretization</cite>.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

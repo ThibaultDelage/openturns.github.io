@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>BoxCoxFactory &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -112,7 +105,7 @@
 <em class="property">class </em><code class="descname">BoxCoxFactory</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.BoxCoxFactory" title="Permalink to this definition">¶</a></dt>
 <dd><p>BoxCox transformation estimator.</p>
 <p class="rubric">Notes</p>
-<p>The class <a class="reference internal" href="#openturns.BoxCoxFactory" title="openturns.BoxCoxFactory"><code class="xref py py-class docutils literal"><span class="pre">BoxCoxFactory</span></code></a> enables to build a Box Cox transformation from data.</p>
+<p>The class <a class="reference internal" href="#openturns.BoxCoxFactory" title="openturns.BoxCoxFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoxCoxFactory</span></code></a> enables to build a Box Cox transformation from data.</p>
 <p>The Box Cox transformation <img class="math" src="../../_images/math/fcaaafb8bd0aff68b978cc0af1c9b8f30ffbc0b4.svg" alt="h_{\vect{\lambda}, \vect{\alpha}}: \Rset^d \rightarrow \Rset^d"/> maps a sample into a new sample following a normal distribution with independent components. That sample may be the realization of a process as well as the realization of a distribution.</p>
 <p>In the multivariate case, OpenTURNS proceeds component by component: <img class="math" src="../../_images/math/31438da219f49e80c7cdfd5d04f30df3a4e30e10.svg" alt="h_{\lambda_i, \alpha_i}: \Rset \rightarrow \Rset"/> which writes :</p>
 <div class="math">
@@ -127,8 +120,8 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>BoxCox transformation could alse be performed in the case of the estimation of a generalized linear model through <a class="reference internal" href="../response_surface/_generated/openturns.GeneralLinearModelAlgorithm.html#openturns.GeneralLinearModelAlgorithm" title="openturns.GeneralLinearModelAlgorithm"><code class="xref py py-class docutils literal"><span class="pre">GeneralLinearModelAlgorithm</span></code></a>.
-The objective is to estimate the most likely surrogate model (generalized linear model) which links input data <img class="math" src="../../_images/math/146b227458440b864cc6963ad74e5b7349a02a0b.svg" alt="x"/> and <img class="math" src="../../_images/math/b2ad9fb7367c583462b54710d4f13724d57f16da.svg" alt="h_{\vect{\lambda}, \vect{\alpha}}(y)"/>. <img class="math" src="../../_images/math/e8b38e7787310eca391ed49a12bffbaf0d742355.svg" alt="\vect{\lambda}"/> are to be calibrated such as maximizing the generalized linear model’s likelihood function. In that context, a <a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal"><span class="pre">CovarianceModel</span></code></a> and a <a class="reference internal" href="openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal"><span class="pre">Basis</span></code></a> have to be fixed</p>
+<p>BoxCox transformation could alse be performed in the case of the estimation of a generalized linear model through <a class="reference internal" href="../response_surface/_generated/openturns.GeneralLinearModelAlgorithm.html#openturns.GeneralLinearModelAlgorithm" title="openturns.GeneralLinearModelAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralLinearModelAlgorithm</span></code></a>.
+The objective is to estimate the most likely surrogate model (generalized linear model) which links input data <img class="math" src="../../_images/math/146b227458440b864cc6963ad74e5b7349a02a0b.svg" alt="x"/> and <img class="math" src="../../_images/math/b2ad9fb7367c583462b54710d4f13724d57f16da.svg" alt="h_{\vect{\lambda}, \vect{\alpha}}(y)"/>. <img class="math" src="../../_images/math/e8b38e7787310eca391ed49a12bffbaf0d742355.svg" alt="\vect{\lambda}"/> are to be calibrated such as maximizing the generalized linear model’s likelihood function. In that context, a <a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a> and a <a class="reference internal" href="openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a> have to be fixed</p>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -136,43 +129,43 @@ The objective is to estimate the most likely surrogate model (generalized linear
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BoxCoxFactory.build" title="openturns.BoxCoxFactory.build"><code class="xref py py-obj docutils literal"><span class="pre">build</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BoxCoxFactory.build" title="openturns.BoxCoxFactory.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>(*args)</td>
 <td>Estimate the Box Cox transformation.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BoxCoxFactory.getClassName" title="openturns.BoxCoxFactory.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BoxCoxFactory.getClassName" title="openturns.BoxCoxFactory.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BoxCoxFactory.getId" title="openturns.BoxCoxFactory.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BoxCoxFactory.getId" title="openturns.BoxCoxFactory.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BoxCoxFactory.getName" title="openturns.BoxCoxFactory.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BoxCoxFactory.getName" title="openturns.BoxCoxFactory.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">getOptimizationAlgorithm</span></code>()</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOptimizationAlgorithm</span></code>()</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BoxCoxFactory.getShadowedId" title="openturns.BoxCoxFactory.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BoxCoxFactory.getShadowedId" title="openturns.BoxCoxFactory.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BoxCoxFactory.getVisibility" title="openturns.BoxCoxFactory.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BoxCoxFactory.getVisibility" title="openturns.BoxCoxFactory.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BoxCoxFactory.hasName" title="openturns.BoxCoxFactory.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BoxCoxFactory.hasName" title="openturns.BoxCoxFactory.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BoxCoxFactory.hasVisibleName" title="openturns.BoxCoxFactory.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BoxCoxFactory.hasVisibleName" title="openturns.BoxCoxFactory.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BoxCoxFactory.setName" title="openturns.BoxCoxFactory.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BoxCoxFactory.setName" title="openturns.BoxCoxFactory.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">setOptimizationAlgorithm</span></code>(solver)</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOptimizationAlgorithm</span></code>(solver)</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BoxCoxFactory.setShadowedId" title="openturns.BoxCoxFactory.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BoxCoxFactory.setShadowedId" title="openturns.BoxCoxFactory.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BoxCoxFactory.setVisibility" title="openturns.BoxCoxFactory.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BoxCoxFactory.setVisibility" title="openturns.BoxCoxFactory.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -203,49 +196,49 @@ The objective is to estimate the most likely surrogate model (generalized linear
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>myTimeSeries</strong> : <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal"><span class="pre">TimeSeries</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>myTimeSeries</strong> : <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSeries</span></code></a></p>
 <blockquote>
 <div><p>One realization of a  process.</p>
 </div></blockquote>
-<p><strong>mySample</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<p><strong>mySample</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote>
 <div><p>A set of <em>iid</em> values.</p>
 </div></blockquote>
-<p><strong>shift</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<p><strong>shift</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote>
 <div><p>It ensures that when shifted, the data are all positive. If not precised, OpenTURNS uses the opposite of the min vector of the data if some data are negative.</p>
 </div></blockquote>
-<p><strong>likelihoodGraph</strong> : <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a></p>
+<p><strong>likelihoodGraph</strong> : <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></p>
 <blockquote>
 <div><p>An empty graph that is fulfilled later with the log-likelihood of the mapped variables with respect to the <img class="math" src="../../_images/math/00e26f17d956765731e4b1079636258ec7f12a32.svg" alt="lambda"/> parameter for each component.</p>
 </div></blockquote>
-<p><strong>inputSample, outputSample</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a> or 2d-array</p>
+<p><strong>inputSample, outputSample</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a> or 2d-array</p>
 <blockquote>
 <div><p>The input and output samples of a model evaluated apart.</p>
 </div></blockquote>
-<p><strong>basis</strong> : <a class="reference internal" href="openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal"><span class="pre">Basis</span></code></a></p>
+<p><strong>basis</strong> : <a class="reference internal" href="openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></p>
 <blockquote>
 <div><p>Functional basis to estimate the trend.
 If the output dimension is greater than 1, the same basis is used for all marginals.</p>
 </div></blockquote>
-<p><strong>multivariateBasis</strong> : collection of <a class="reference internal" href="openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal"><span class="pre">Basis</span></code></a></p>
+<p><strong>multivariateBasis</strong> : collection of <a class="reference internal" href="openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></p>
 <blockquote>
 <div><p>Collection of functional basis: one basis for each marginal output.
 If the trend is not estimated, the collection must be empty.</p>
 </div></blockquote>
-<p><strong>covarianceModel</strong> : <a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal"><span class="pre">CovarianceModel</span></code></a></p>
+<p><strong>covarianceModel</strong> : <a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></p>
 <blockquote>
 <div><p>Covariance model.
 Should have spatial dimension equal to input sample’s dimension and dimension equal to output sample’s dimension.
 See note for some particular applications.</p>
 </div></blockquote>
-<p><strong>generalizedLinearModelResult</strong> : <a class="reference internal" href="../response_surface/_generated/openturns.GeneralLinearModelResult.html#openturns.GeneralLinearModelResult" title="openturns.GeneralLinearModelResult"><code class="xref py py-class docutils literal"><span class="pre">GeneralLinearModelResult</span></code></a></p>
+<p><strong>generalizedLinearModelResult</strong> : <a class="reference internal" href="../response_surface/_generated/openturns.GeneralLinearModelResult.html#openturns.GeneralLinearModelResult" title="openturns.GeneralLinearModelResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralLinearModelResult</span></code></a></p>
 <blockquote>
 <div><p>Empty structure that contains results of generalized linear model algorithm.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>myBoxCoxTransform</strong> : <a class="reference internal" href="openturns.BoxCoxTransform.html#openturns.BoxCoxTransform" title="openturns.BoxCoxTransform"><code class="xref py py-class docutils literal"><span class="pre">BoxCoxTransform</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>myBoxCoxTransform</strong> : <a class="reference internal" href="openturns.BoxCoxTransform.html#openturns.BoxCoxTransform" title="openturns.BoxCoxTransform"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoxCoxTransform</span></code></a></p>
 <blockquote class="last">
 <div><p>The estimated Box Cox transformation.</p>
 </div></blockquote>
@@ -333,7 +326,7 @@ Thus implies that <img class="math" src="../../_images/math/d6362340034e7163ede5
 The parameter <img class="math" src="../../_images/math/f84c2631666224177f10419aeb4f2e9fe725c5c8.svg" alt="\hat{\lambda}"/> is the one maximising <img class="math" src="../../_images/math/a693de9b6ca28fb6577ee4ef3d5eed636994d8d9.svg" alt="\ell_{glm}(\lambda)"/>.</p>
 <p class="rubric">Examples</p>
 <p>Estimate the Box Cox transformation from a sample:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mySample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Exponential</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myBoxCoxFactory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BoxCoxFactory</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myModelTransform</span> <span class="o">=</span> <span class="n">myBoxCoxFactory</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">mySample</span><span class="p">)</span>
@@ -341,7 +334,7 @@ The parameter <img class="math" src="../../_images/math/f84c2631666224177f10419a
 </pre></div>
 </div>
 <p>Estimate the Box Cox transformation from a field:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myIndices</span><span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Indices</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myIndices</span><span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Indices</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myMesher</span><span class="o">=</span><span class="n">ot</span><span class="o">.</span><span class="n">IntervalMesher</span><span class="p">(</span><span class="n">myIndices</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myInterval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myMesh</span><span class="o">=</span><span class="n">myMesher</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">myInterval</span><span class="p">)</span>
@@ -354,12 +347,12 @@ The parameter <img class="math" src="../../_images/math/f84c2631666224177f10419a
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myXtProcess</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CompositeProcess</span><span class="p">(</span><span class="n">myDynTransform</span><span class="p">,</span> <span class="n">myXproc</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myField</span> <span class="o">=</span> <span class="n">myXtProcess</span><span class="o">.</span><span class="n">getRealization</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myField</span> <span class="o">=</span> <span class="n">myXtProcess</span><span class="o">.</span><span class="n">getRealization</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myModelTransform</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BoxCoxFactory</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">myField</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Estimation of a generalized linear model:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">inputSample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">inputSample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">outputSample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">inputSample</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Evaluation of y = ax + b (a: scale, b: translate)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">outputSample</span> <span class="o">=</span> <span class="n">outputSample</span> <span class="o">*</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mf">3.1</span><span class="p">]</span>
@@ -587,8 +580,8 @@ The parameter <img class="math" src="../../_images/math/f84c2631666224177f10419a
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

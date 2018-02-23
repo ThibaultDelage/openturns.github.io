@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>EfficientGlobalOptimization &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -124,12 +117,12 @@ relearnt on the extended design of experiment.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>problem</strong> : <a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal"><span class="pre">OptimizationProblem</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>problem</strong> : <a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></p>
 <blockquote>
 <div><p>The optimization problem to solve
 optionally, a 2nd objective marginal can be used as noise</p>
 </div></blockquote>
-<p><strong>krigingResult</strong> : <a class="reference internal" href="../response_surface/_generated/openturns.KrigingResult.html#openturns.KrigingResult" title="openturns.KrigingResult"><code class="xref py py-class docutils literal"><span class="pre">KrigingResult</span></code></a></p>
+<p><strong>krigingResult</strong> : <a class="reference internal" href="../response_surface/_generated/openturns.KrigingResult.html#openturns.KrigingResult" title="openturns.KrigingResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">KrigingResult</span></code></a></p>
 <blockquote class="last">
 <div><p>The result of the meta-model on the first design of experiment</p>
 </div></blockquote>
@@ -168,15 +161,15 @@ of the kriging prediction is used, with the constant <img class="math" src="../.
 <div class="math">
 <p><img src="../../_images/math/2815debdd106bf79baff4b96c327336ba31a6080.svg" alt="\mathbb{E}\left[max(m_K(x_{min}) - Y_{new}, 0)\right] = (m_K(x_{min}) - m_K(x_{new})) \Phi\left( \frac{m_K(x_{min}) - m_K(x_{new})}{s_K(x_{new})} \right) + s_K(x_{new}) \phi\left( \frac{m_K(x_{min}) - m_K(x_{new})}{s_K(x_{new})} \right)"/></p>
 </div><p>A less computationally expensive noise function can be provided through
-<a class="reference internal" href="#openturns.EfficientGlobalOptimization.setNoiseModel" title="openturns.EfficientGlobalOptimization.setNoiseModel"><code class="xref py py-func docutils literal"><span class="pre">setNoiseModel()</span></code></a> to evaluate <img class="math" src="../../_images/math/cd4a02262486a86a4b346d0afc4dc7e0a638f3dd.svg" alt="\sigma^2_{\epsilon}(x)"/>
+<a class="reference internal" href="#openturns.EfficientGlobalOptimization.setNoiseModel" title="openturns.EfficientGlobalOptimization.setNoiseModel"><code class="xref py py-func docutils literal notranslate"><span class="pre">setNoiseModel()</span></code></a> to evaluate <img class="math" src="../../_images/math/cd4a02262486a86a4b346d0afc4dc7e0a638f3dd.svg" alt="\sigma^2_{\epsilon}(x)"/>
 for the improvement criterion optimization, the objective being only used to
 compute values and associated noise at design points.</p>
-<p>By default the criteria is minimized using <a class="reference internal" href="openturns.MultiStart.html#openturns.MultiStart" title="openturns.MultiStart"><code class="xref py py-class docutils literal"><span class="pre">MultiStart</span></code></a>
+<p>By default the criteria is minimized using <a class="reference internal" href="openturns.MultiStart.html#openturns.MultiStart" title="openturns.MultiStart"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiStart</span></code></a>
 with starting points uniformly sampled in the optimization problem bounds,
-see <a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMultiStartExperimentSize" title="openturns.EfficientGlobalOptimization.setMultiStartExperimentSize"><code class="xref py py-func docutils literal"><span class="pre">setMultiStartExperimentSize()</span></code></a> and <a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMultiStartNumber" title="openturns.EfficientGlobalOptimization.setMultiStartNumber"><code class="xref py py-func docutils literal"><span class="pre">setMultiStartNumber()</span></code></a>.
-This behavior can be overridden by using another solver with <a class="reference internal" href="#openturns.EfficientGlobalOptimization.setOptimizationAlgorithm" title="openturns.EfficientGlobalOptimization.setOptimizationAlgorithm"><code class="xref py py-func docutils literal"><span class="pre">setOptimizationAlgorithm()</span></code></a>.</p>
+see <a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMultiStartExperimentSize" title="openturns.EfficientGlobalOptimization.setMultiStartExperimentSize"><code class="xref py py-func docutils literal notranslate"><span class="pre">setMultiStartExperimentSize()</span></code></a> and <a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMultiStartNumber" title="openturns.EfficientGlobalOptimization.setMultiStartNumber"><code class="xref py py-func docutils literal notranslate"><span class="pre">setMultiStartNumber()</span></code></a>.
+This behavior can be overridden by using another solver with <a class="reference internal" href="#openturns.EfficientGlobalOptimization.setOptimizationAlgorithm" title="openturns.EfficientGlobalOptimization.setOptimizationAlgorithm"><code class="xref py py-func docutils literal notranslate"><span class="pre">setOptimizationAlgorithm()</span></code></a>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dim</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">,</span> <span class="s1">&#39;x3&#39;</span><span class="p">,</span> <span class="s1">&#39;x4&#39;</span><span class="p">],</span>
@@ -205,157 +198,157 @@ This behavior can be overridden by using another solver with <a class="reference
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.computeLagrangeMultipliers" title="openturns.EfficientGlobalOptimization.computeLagrangeMultipliers"><code class="xref py py-obj docutils literal"><span class="pre">computeLagrangeMultipliers</span></code></a>(x)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.computeLagrangeMultipliers" title="openturns.EfficientGlobalOptimization.computeLagrangeMultipliers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeLagrangeMultipliers</span></code></a>(x)</td>
 <td>Compute the Lagrange multipliers of a problem at a given point.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getAEITradeoff" title="openturns.EfficientGlobalOptimization.getAEITradeoff"><code class="xref py py-obj docutils literal"><span class="pre">getAEITradeoff</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getAEITradeoff" title="openturns.EfficientGlobalOptimization.getAEITradeoff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAEITradeoff</span></code></a>()</td>
 <td>AEI tradeoff constant accessor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getClassName" title="openturns.EfficientGlobalOptimization.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getClassName" title="openturns.EfficientGlobalOptimization.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getCorrelationLengthFactor" title="openturns.EfficientGlobalOptimization.getCorrelationLengthFactor"><code class="xref py py-obj docutils literal"><span class="pre">getCorrelationLengthFactor</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getCorrelationLengthFactor" title="openturns.EfficientGlobalOptimization.getCorrelationLengthFactor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCorrelationLengthFactor</span></code></a>()</td>
 <td>Correlation length stopping criterion factor accessor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getExpectedImprovement" title="openturns.EfficientGlobalOptimization.getExpectedImprovement"><code class="xref py py-obj docutils literal"><span class="pre">getExpectedImprovement</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getExpectedImprovement" title="openturns.EfficientGlobalOptimization.getExpectedImprovement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getExpectedImprovement</span></code></a>()</td>
 <td>Expected improvement values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getId" title="openturns.EfficientGlobalOptimization.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getId" title="openturns.EfficientGlobalOptimization.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getImprovementFactor" title="openturns.EfficientGlobalOptimization.getImprovementFactor"><code class="xref py py-obj docutils literal"><span class="pre">getImprovementFactor</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getImprovementFactor" title="openturns.EfficientGlobalOptimization.getImprovementFactor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getImprovementFactor</span></code></a>()</td>
 <td>Improvement criterion factor accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMaximumAbsoluteError" title="openturns.EfficientGlobalOptimization.getMaximumAbsoluteError"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumAbsoluteError</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMaximumAbsoluteError" title="openturns.EfficientGlobalOptimization.getMaximumAbsoluteError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumAbsoluteError</span></code></a>()</td>
 <td>Accessor to maximum allowed absolute error.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMaximumConstraintError" title="openturns.EfficientGlobalOptimization.getMaximumConstraintError"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumConstraintError</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMaximumConstraintError" title="openturns.EfficientGlobalOptimization.getMaximumConstraintError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumConstraintError</span></code></a>()</td>
 <td>Accessor to maximum allowed constraint error.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMaximumEvaluationNumber" title="openturns.EfficientGlobalOptimization.getMaximumEvaluationNumber"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumEvaluationNumber</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMaximumEvaluationNumber" title="openturns.EfficientGlobalOptimization.getMaximumEvaluationNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumEvaluationNumber</span></code></a>()</td>
 <td>Accessor to maximum allowed number of evaluations.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMaximumIterationNumber" title="openturns.EfficientGlobalOptimization.getMaximumIterationNumber"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumIterationNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMaximumIterationNumber" title="openturns.EfficientGlobalOptimization.getMaximumIterationNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumIterationNumber</span></code></a>()</td>
 <td>Accessor to maximum allowed number of iterations.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMaximumRelativeError" title="openturns.EfficientGlobalOptimization.getMaximumRelativeError"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumRelativeError</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMaximumRelativeError" title="openturns.EfficientGlobalOptimization.getMaximumRelativeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumRelativeError</span></code></a>()</td>
 <td>Accessor to maximum allowed relative error.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMaximumResidualError" title="openturns.EfficientGlobalOptimization.getMaximumResidualError"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumResidualError</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMaximumResidualError" title="openturns.EfficientGlobalOptimization.getMaximumResidualError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumResidualError</span></code></a>()</td>
 <td>Accessor to maximum allowed residual error.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMultiStartExperimentSize" title="openturns.EfficientGlobalOptimization.getMultiStartExperimentSize"><code class="xref py py-obj docutils literal"><span class="pre">getMultiStartExperimentSize</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMultiStartExperimentSize" title="openturns.EfficientGlobalOptimization.getMultiStartExperimentSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMultiStartExperimentSize</span></code></a>()</td>
 <td>Size of the design to draw starting points.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMultiStartNumber" title="openturns.EfficientGlobalOptimization.getMultiStartNumber"><code class="xref py py-obj docutils literal"><span class="pre">getMultiStartNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getMultiStartNumber" title="openturns.EfficientGlobalOptimization.getMultiStartNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMultiStartNumber</span></code></a>()</td>
 <td>Number of starting points for the criterion optimization.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getName" title="openturns.EfficientGlobalOptimization.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getName" title="openturns.EfficientGlobalOptimization.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getNoiseModel" title="openturns.EfficientGlobalOptimization.getNoiseModel"><code class="xref py py-obj docutils literal"><span class="pre">getNoiseModel</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getNoiseModel" title="openturns.EfficientGlobalOptimization.getNoiseModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNoiseModel</span></code></a>()</td>
 <td>Improvement noise model accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getOptimizationAlgorithm" title="openturns.EfficientGlobalOptimization.getOptimizationAlgorithm"><code class="xref py py-obj docutils literal"><span class="pre">getOptimizationAlgorithm</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getOptimizationAlgorithm" title="openturns.EfficientGlobalOptimization.getOptimizationAlgorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOptimizationAlgorithm</span></code></a>()</td>
 <td>Expected improvement solver accessor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getParameterEstimationPeriod" title="openturns.EfficientGlobalOptimization.getParameterEstimationPeriod"><code class="xref py py-obj docutils literal"><span class="pre">getParameterEstimationPeriod</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getParameterEstimationPeriod" title="openturns.EfficientGlobalOptimization.getParameterEstimationPeriod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterEstimationPeriod</span></code></a>()</td>
 <td>Parameter estimation period accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getProblem" title="openturns.EfficientGlobalOptimization.getProblem"><code class="xref py py-obj docutils literal"><span class="pre">getProblem</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getProblem" title="openturns.EfficientGlobalOptimization.getProblem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getProblem</span></code></a>()</td>
 <td>Accessor to optimization problem.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getResult" title="openturns.EfficientGlobalOptimization.getResult"><code class="xref py py-obj docutils literal"><span class="pre">getResult</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getResult" title="openturns.EfficientGlobalOptimization.getResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResult</span></code></a>()</td>
 <td>Accessor to optimization result.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getShadowedId" title="openturns.EfficientGlobalOptimization.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getShadowedId" title="openturns.EfficientGlobalOptimization.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getStartingPoint" title="openturns.EfficientGlobalOptimization.getStartingPoint"><code class="xref py py-obj docutils literal"><span class="pre">getStartingPoint</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getStartingPoint" title="openturns.EfficientGlobalOptimization.getStartingPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStartingPoint</span></code></a>()</td>
 <td>Accessor to starting point.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getVerbose" title="openturns.EfficientGlobalOptimization.getVerbose"><code class="xref py py-obj docutils literal"><span class="pre">getVerbose</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getVerbose" title="openturns.EfficientGlobalOptimization.getVerbose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVerbose</span></code></a>()</td>
 <td>Accessor to the verbosity flag.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getVisibility" title="openturns.EfficientGlobalOptimization.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.getVisibility" title="openturns.EfficientGlobalOptimization.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.hasName" title="openturns.EfficientGlobalOptimization.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.hasName" title="openturns.EfficientGlobalOptimization.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.hasVisibleName" title="openturns.EfficientGlobalOptimization.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.hasVisibleName" title="openturns.EfficientGlobalOptimization.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.run" title="openturns.EfficientGlobalOptimization.run"><code class="xref py py-obj docutils literal"><span class="pre">run</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.run" title="openturns.EfficientGlobalOptimization.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>()</td>
 <td>Launch the optimization.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setAEITradeoff" title="openturns.EfficientGlobalOptimization.setAEITradeoff"><code class="xref py py-obj docutils literal"><span class="pre">setAEITradeoff</span></code></a>(c)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setAEITradeoff" title="openturns.EfficientGlobalOptimization.setAEITradeoff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAEITradeoff</span></code></a>(c)</td>
 <td>AEI tradeoff constant accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setCorrelationLengthFactor" title="openturns.EfficientGlobalOptimization.setCorrelationLengthFactor"><code class="xref py py-obj docutils literal"><span class="pre">setCorrelationLengthFactor</span></code></a>(b)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setCorrelationLengthFactor" title="openturns.EfficientGlobalOptimization.setCorrelationLengthFactor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setCorrelationLengthFactor</span></code></a>(b)</td>
 <td>Correlation length stopping criterion factor accessor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setImprovementFactor" title="openturns.EfficientGlobalOptimization.setImprovementFactor"><code class="xref py py-obj docutils literal"><span class="pre">setImprovementFactor</span></code></a>(improvementFactor)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setImprovementFactor" title="openturns.EfficientGlobalOptimization.setImprovementFactor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setImprovementFactor</span></code></a>(improvementFactor)</td>
 <td>Improvement criterion factor accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMaximumAbsoluteError" title="openturns.EfficientGlobalOptimization.setMaximumAbsoluteError"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumAbsoluteError</span></code></a>(maximumAbsoluteError)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMaximumAbsoluteError" title="openturns.EfficientGlobalOptimization.setMaximumAbsoluteError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumAbsoluteError</span></code></a>(maximumAbsoluteError)</td>
 <td>Accessor to maximum allowed absolute error.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMaximumConstraintError" title="openturns.EfficientGlobalOptimization.setMaximumConstraintError"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumConstraintError</span></code></a>(maximumConstraintError)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMaximumConstraintError" title="openturns.EfficientGlobalOptimization.setMaximumConstraintError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumConstraintError</span></code></a>(maximumConstraintError)</td>
 <td>Accessor to maximum allowed constraint error.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMaximumEvaluationNumber" title="openturns.EfficientGlobalOptimization.setMaximumEvaluationNumber"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumEvaluationNumber</span></code></a>(…)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMaximumEvaluationNumber" title="openturns.EfficientGlobalOptimization.setMaximumEvaluationNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumEvaluationNumber</span></code></a>(…)</td>
 <td>Accessor to maximum allowed number of evaluations.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMaximumIterationNumber" title="openturns.EfficientGlobalOptimization.setMaximumIterationNumber"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumIterationNumber</span></code></a>(maximumIterationNumber)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMaximumIterationNumber" title="openturns.EfficientGlobalOptimization.setMaximumIterationNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumIterationNumber</span></code></a>(maximumIterationNumber)</td>
 <td>Accessor to maximum allowed number of iterations.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMaximumRelativeError" title="openturns.EfficientGlobalOptimization.setMaximumRelativeError"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumRelativeError</span></code></a>(maximumRelativeError)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMaximumRelativeError" title="openturns.EfficientGlobalOptimization.setMaximumRelativeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumRelativeError</span></code></a>(maximumRelativeError)</td>
 <td>Accessor to maximum allowed relative error.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMaximumResidualError" title="openturns.EfficientGlobalOptimization.setMaximumResidualError"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumResidualError</span></code></a>(maximumResidualError)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMaximumResidualError" title="openturns.EfficientGlobalOptimization.setMaximumResidualError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumResidualError</span></code></a>(maximumResidualError)</td>
 <td>Accessor to maximum allowed residual error.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMultiStartExperimentSize" title="openturns.EfficientGlobalOptimization.setMultiStartExperimentSize"><code class="xref py py-obj docutils literal"><span class="pre">setMultiStartExperimentSize</span></code></a>(…)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMultiStartExperimentSize" title="openturns.EfficientGlobalOptimization.setMultiStartExperimentSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMultiStartExperimentSize</span></code></a>(…)</td>
 <td>Size of the design to draw starting points.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMultiStartNumber" title="openturns.EfficientGlobalOptimization.setMultiStartNumber"><code class="xref py py-obj docutils literal"><span class="pre">setMultiStartNumber</span></code></a>(multiStartNumberSize)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setMultiStartNumber" title="openturns.EfficientGlobalOptimization.setMultiStartNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMultiStartNumber</span></code></a>(multiStartNumberSize)</td>
 <td>Number of starting points for the criterion optimization.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setName" title="openturns.EfficientGlobalOptimization.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setName" title="openturns.EfficientGlobalOptimization.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setNoiseModel" title="openturns.EfficientGlobalOptimization.setNoiseModel"><code class="xref py py-obj docutils literal"><span class="pre">setNoiseModel</span></code></a>(noiseModel)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setNoiseModel" title="openturns.EfficientGlobalOptimization.setNoiseModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setNoiseModel</span></code></a>(noiseModel)</td>
 <td>Improvement noise model accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setOptimizationAlgorithm" title="openturns.EfficientGlobalOptimization.setOptimizationAlgorithm"><code class="xref py py-obj docutils literal"><span class="pre">setOptimizationAlgorithm</span></code></a>(solver)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setOptimizationAlgorithm" title="openturns.EfficientGlobalOptimization.setOptimizationAlgorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOptimizationAlgorithm</span></code></a>(solver)</td>
 <td>Expected improvement solver accessor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setParameterEstimationPeriod" title="openturns.EfficientGlobalOptimization.setParameterEstimationPeriod"><code class="xref py py-obj docutils literal"><span class="pre">setParameterEstimationPeriod</span></code></a>(…)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setParameterEstimationPeriod" title="openturns.EfficientGlobalOptimization.setParameterEstimationPeriod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameterEstimationPeriod</span></code></a>(…)</td>
 <td>Parameter estimation period accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setProblem" title="openturns.EfficientGlobalOptimization.setProblem"><code class="xref py py-obj docutils literal"><span class="pre">setProblem</span></code></a>(problem)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setProblem" title="openturns.EfficientGlobalOptimization.setProblem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setProblem</span></code></a>(problem)</td>
 <td>Accessor to optimization problem.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setProgressCallback" title="openturns.EfficientGlobalOptimization.setProgressCallback"><code class="xref py py-obj docutils literal"><span class="pre">setProgressCallback</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setProgressCallback" title="openturns.EfficientGlobalOptimization.setProgressCallback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setProgressCallback</span></code></a>(*args)</td>
 <td>Set up a progress callback.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setResult" title="openturns.EfficientGlobalOptimization.setResult"><code class="xref py py-obj docutils literal"><span class="pre">setResult</span></code></a>(result)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setResult" title="openturns.EfficientGlobalOptimization.setResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setResult</span></code></a>(result)</td>
 <td>Accessor to optimization result.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setShadowedId" title="openturns.EfficientGlobalOptimization.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setShadowedId" title="openturns.EfficientGlobalOptimization.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setStartingPoint" title="openturns.EfficientGlobalOptimization.setStartingPoint"><code class="xref py py-obj docutils literal"><span class="pre">setStartingPoint</span></code></a>(startingPoint)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setStartingPoint" title="openturns.EfficientGlobalOptimization.setStartingPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setStartingPoint</span></code></a>(startingPoint)</td>
 <td>Accessor to starting point.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setStopCallback" title="openturns.EfficientGlobalOptimization.setStopCallback"><code class="xref py py-obj docutils literal"><span class="pre">setStopCallback</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setStopCallback" title="openturns.EfficientGlobalOptimization.setStopCallback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setStopCallback</span></code></a>(*args)</td>
 <td>Set up a stop callback.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setVerbose" title="openturns.EfficientGlobalOptimization.setVerbose"><code class="xref py py-obj docutils literal"><span class="pre">setVerbose</span></code></a>(verbose)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setVerbose" title="openturns.EfficientGlobalOptimization.setVerbose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVerbose</span></code></a>(verbose)</td>
 <td>Accessor to the verbosity flag.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setVisibility" title="openturns.EfficientGlobalOptimization.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EfficientGlobalOptimization.setVisibility" title="openturns.EfficientGlobalOptimization.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -480,7 +473,7 @@ with <img class="math" src="../../_images/math/f4e2a80888eb61199b757d2011945e0a8
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ei</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ei</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
 <blockquote class="last">
 <div><p>The expected improvement optimal values.</p>
 </div></blockquote>
@@ -700,7 +693,7 @@ points.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>noiseVariance</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>noiseVariance</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>The noise variance <img class="math" src="../../_images/math/cd4a02262486a86a4b346d0afc4dc7e0a638f3dd.svg" alt="\sigma^2_{\epsilon}(x)"/> used for the AEI
 criterion optimization only.
@@ -720,7 +713,7 @@ Of same input dimension than the objective and 1-d output.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>solver</strong> : <code class="xref py py-class docutils literal"><span class="pre">OptimizationSolver</span></code></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>solver</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationSolver</span></code></p>
 <blockquote class="last">
 <div><p>The solver used to optimize the expected improvement</p>
 </div></blockquote>
@@ -757,7 +750,7 @@ Default is 1 (each iteration). Can be set to 0 (never).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>problem</strong> : <a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal"><span class="pre">OptimizationProblem</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>problem</strong> : <a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></p>
 <blockquote class="last">
 <div><p>Optimization problem.</p>
 </div></blockquote>
@@ -775,7 +768,7 @@ Default is 1 (each iteration). Can be set to 0 (never).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="openturns.OptimizationResult.html#openturns.OptimizationResult" title="openturns.OptimizationResult"><code class="xref py py-class docutils literal"><span class="pre">OptimizationResult</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="openturns.OptimizationResult.html#openturns.OptimizationResult" title="openturns.OptimizationResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></p>
 <blockquote class="last">
 <div><p>Result class.</p>
 </div></blockquote>
@@ -811,7 +804,7 @@ Default is 1 (each iteration). Can be set to 0 (never).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>startingPoint</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>startingPoint</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>Starting point.</p>
 </div></blockquote>
@@ -1084,7 +1077,7 @@ and <img class="math" src="../../_images/math/8fd28348c6d1a94d9f15b623114bb50071
 points.
 The default number can be tweaked with the
 <cite>EfficientGlobalOptimization-DefaultMultiStartExperimentSize</cite> key from
-<a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>.</p>
+<a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1105,7 +1098,7 @@ The default number can be tweaked with the
 <div><p>The number of starting points for the criterion optimization.
 The default number can be tweaked with the
 <cite>EfficientGlobalOptimization-DefaultMultiStartNumber</cite> key from
-<a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>.</p>
+<a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1139,7 +1132,7 @@ The default number can be tweaked with the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>noiseVariance</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>noiseVariance</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>The noise variance <img class="math" src="../../_images/math/cd4a02262486a86a4b346d0afc4dc7e0a638f3dd.svg" alt="\sigma^2_{\epsilon}(x)"/> used for the AEI
 criterion optimization only.
@@ -1159,7 +1152,7 @@ Of same input dimension than the objective and 1-d output.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>solver</strong> : <code class="xref py py-class docutils literal"><span class="pre">OptimizationSolver</span></code></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>solver</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationSolver</span></code></p>
 <blockquote class="last">
 <div><p>The solver used to optimize the expected improvement</p>
 </div></blockquote>
@@ -1183,7 +1176,7 @@ Of same input dimension than the objective and 1-d output.</p>
 Default is 1 (each iteration). Can be set to 0 (never).
 The default number can be tweaked with the
 <cite>EfficientGlobalOptimization-DefaultParameterEstimationPeriod</cite> key from
-<a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>.</p>
+<a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -1199,7 +1192,7 @@ The default number can be tweaked with the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>problem</strong> : <a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal"><span class="pre">OptimizationProblem</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>problem</strong> : <a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></p>
 <blockquote class="last">
 <div><p>Optimization problem.</p>
 </div></blockquote>
@@ -1237,7 +1230,7 @@ The default number can be tweaked with the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="openturns.OptimizationResult.html#openturns.OptimizationResult" title="openturns.OptimizationResult"><code class="xref py py-class docutils literal"><span class="pre">OptimizationResult</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="openturns.OptimizationResult.html#openturns.OptimizationResult" title="openturns.OptimizationResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></p>
 <blockquote class="last">
 <div><p>Result class.</p>
 </div></blockquote>
@@ -1273,7 +1266,7 @@ The default number can be tweaked with the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>startingPoint</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>startingPoint</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>Starting point.</p>
 </div></blockquote>
@@ -1369,8 +1362,8 @@ The default number can be tweaked with the
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

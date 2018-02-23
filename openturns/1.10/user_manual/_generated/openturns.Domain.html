@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Domain &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -117,7 +110,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>lowerBound, upperBound</strong> : sequence of float of dimension <em>dim</em></p>
 <blockquote class="last">
-<div><p>Define a finite <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal"><span class="pre">interval</span></code></a>
+<div><p>Define a finite <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">interval</span></code></a>
 <img class="math" src="../../_images/math/84cc3822de24583807e591c2d5c0fbd0518c319f.svg" alt="[lowerBound_0, upperBound_0]\times \dots \times [lowerBound_{dim-1}, upperBound_{dim-1}]"/>.
 It is allowed to have <img class="math" src="../../_images/math/207a14a91137b2ab14ebb452aac1a01baeb93b23.svg" alt="lowerBound_i \geq upperBound_i"/> for some
 <img class="math" src="../../_images/math/a3df85ab260449b6b4eca20eb30e8f01a26cb550.svg" alt="i"/>: it simply defines an empty interval.
@@ -130,13 +123,13 @@ By default, an empty interval is created.</p>
 <p class="rubric">Notes</p>
 <p>A Domain object can be created through its derived classes:</p>
 <ul class="simple">
-<li><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal"><span class="pre">Mesh</span></code></a></li>
-<li><a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal"><span class="pre">RegularGrid</span></code></a></li>
-<li><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal"><span class="pre">Interval</span></code></a></li>
-<li><a class="reference internal" href="openturns.LevelSet.html#openturns.LevelSet" title="openturns.LevelSet"><code class="xref py py-class docutils literal"><span class="pre">LevelSet</span></code></a></li>
+<li><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></li>
+<li><a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></li>
+<li><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></li>
+<li><a class="reference internal" href="openturns.LevelSet.html#openturns.LevelSet" title="openturns.LevelSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelSet</span></code></a></li>
 </ul>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create the interval [a, b]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
@@ -153,46 +146,46 @@ By default, an empty interval is created.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Domain.contains" title="openturns.Domain.contains"><code class="xref py py-obj docutils literal"><span class="pre">contains</span></code></a>(point)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Domain.contains" title="openturns.Domain.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(point)</td>
 <td>Check if the given point is inside of the domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Domain.getClassName" title="openturns.Domain.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Domain.getClassName" title="openturns.Domain.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Domain.getDimension" title="openturns.Domain.getDimension"><code class="xref py py-obj docutils literal"><span class="pre">getDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Domain.getDimension" title="openturns.Domain.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
 <td>Get the dimension of the domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Domain.getId" title="openturns.Domain.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Domain.getId" title="openturns.Domain.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Domain.getImplementation" title="openturns.Domain.getImplementation"><code class="xref py py-obj docutils literal"><span class="pre">getImplementation</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Domain.getImplementation" title="openturns.Domain.getImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getImplementation</span></code></a>(*args)</td>
 <td>Accessor to the underlying implementation.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Domain.getLowerBound" title="openturns.Domain.getLowerBound"><code class="xref py py-obj docutils literal"><span class="pre">getLowerBound</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Domain.getLowerBound" title="openturns.Domain.getLowerBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLowerBound</span></code></a>()</td>
 <td>Get the lower bound of the domain.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Domain.getName" title="openturns.Domain.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Domain.getName" title="openturns.Domain.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Domain.getNumericalVolume" title="openturns.Domain.getNumericalVolume"><code class="xref py py-obj docutils literal"><span class="pre">getNumericalVolume</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Domain.getNumericalVolume" title="openturns.Domain.getNumericalVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNumericalVolume</span></code></a>()</td>
 <td>Get the volume of the domain.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Domain.getUpperBound" title="openturns.Domain.getUpperBound"><code class="xref py py-obj docutils literal"><span class="pre">getUpperBound</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Domain.getUpperBound" title="openturns.Domain.getUpperBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUpperBound</span></code></a>()</td>
 <td>Get the upper bound of the domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Domain.getVolume" title="openturns.Domain.getVolume"><code class="xref py py-obj docutils literal"><span class="pre">getVolume</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Domain.getVolume" title="openturns.Domain.getVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVolume</span></code></a>()</td>
 <td>Get the geometric volume of the domain.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Domain.isEmpty" title="openturns.Domain.isEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isEmpty</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Domain.isEmpty" title="openturns.Domain.isEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEmpty</span></code></a>()</td>
 <td>Test whether the domain is empty or not.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Domain.isNumericallyEmpty" title="openturns.Domain.isNumericallyEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isNumericallyEmpty</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Domain.isNumericallyEmpty" title="openturns.Domain.isNumericallyEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isNumericallyEmpty</span></code></a>()</td>
 <td>Check if the domain is numerically empty.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Domain.numericallyContains" title="openturns.Domain.numericallyContains"><code class="xref py py-obj docutils literal"><span class="pre">numericallyContains</span></code></a>(point)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Domain.numericallyContains" title="openturns.Domain.numericallyContains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numericallyContains</span></code></a>(point)</td>
 <td>Check if the given point is inside of the discretization of the domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Domain.setName" title="openturns.Domain.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Domain.setName" title="openturns.Domain.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
 </tbody>
@@ -307,7 +300,7 @@ By default, an empty interval is created.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>lower</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>lower</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The lower bound of an axes-aligned bounding box of the domain.</p>
 </div></blockquote>
@@ -362,7 +355,7 @@ For now, by default, it is equal to the geometrical volume.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>upper</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>upper</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
 <div><p>The upper bound of an axes-aligned bounding box of the domain.</p>
 </div></blockquote>
@@ -420,7 +413,7 @@ For now, by default, it is equal to the geometrical volume.</p>
 <blockquote class="last">
 <div><p>Flag telling whether the domain is numerically empty, i.e. if its numerical
 volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a7c25f8bb27be0c07c78bf5c323768d959.svg" alt="\epsilon"/> (defined in the
-<a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>:
+<a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>:
 <img class="math" src="../../_images/math/29d6c0a7c25f8bb27be0c07c78bf5c323768d959.svg" alt="\epsilon"/> = DomainImplementation-SmallVolume).</p>
 </div></blockquote>
 </td>
@@ -428,7 +421,7 @@ volume is inferior or equal to <img class="math" src="../../_images/math/29d6c0a
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">domain</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Domain</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span> 
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">isNumericallyEmpty</span><span class="p">())</span>
 <span class="go">True</span>
@@ -510,8 +503,8 @@ geometrical domain.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

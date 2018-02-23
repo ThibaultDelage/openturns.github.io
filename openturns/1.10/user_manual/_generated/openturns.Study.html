@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Study &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -119,7 +112,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fileName</strong> : str</p>
 <blockquote class="last">
-<div><p>Name of the file used by the underlying storage manager, a <a class="reference internal" href="openturns.XMLStorageManager.html#openturns.XMLStorageManager" title="openturns.XMLStorageManager"><code class="xref py py-class docutils literal"><span class="pre">XMLStorageManager</span></code></a> in this case.</p>
+<div><p>Name of the file used by the underlying storage manager, a <a class="reference internal" href="openturns.XMLStorageManager.html#openturns.XMLStorageManager" title="openturns.XMLStorageManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">XMLStorageManager</span></code></a> in this case.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -133,17 +126,17 @@ update the data saved in the study, the user has to explicitely save it again.
 Study allows the user to retrieve previously saved objects either by their name
 if a name was defined for the object or by their Id.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 <p>Create a Study object:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Study</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Study</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">setStorageManager</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">XMLStorageManager</span><span class="p">(</span><span class="s1">&#39;myStudy.xml&#39;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Study</span><span class="p">(</span><span class="s1">&#39;myStudy2.xml&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Add PersistentObjects to the study:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># a Point:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># a Point:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">point</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">11.0</span>
@@ -155,25 +148,25 @@ if a name was defined for the object or by their Id.</p>
 </pre></div>
 </div>
 <p>Get objects from the study:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">myStudy</span><span class="o">.</span><span class="n">getObject</span><span class="p">(</span><span class="s1">&#39;point&#39;</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">myStudy</span><span class="o">.</span><span class="n">getObject</span><span class="p">(</span><span class="s1">&#39;point&#39;</span><span class="p">))</span>
 <span class="go">[10,11,12]</span>
 </pre></div>
 </div>
 <p>Save the Study:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Create a new Study object:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Study</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Study</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">setStorageManager</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">XMLStorageManager</span><span class="p">(</span><span class="s1">&#39;myStudy.xml&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Load data from the study:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Create data from the ones stored in the study:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># a Point:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># a Point:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">otherPoint</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">fillObject</span><span class="p">(</span><span class="s1">&#39;point&#39;</span><span class="p">,</span> <span class="n">otherPoint</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># a Simulation::Result:</span>
@@ -182,12 +175,12 @@ if a name was defined for the object or by their Id.</p>
 </pre></div>
 </div>
 <p>Get information from the study:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">printLabels</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">printLabels</span><span class="p">()</span>
 <span class="go">&#39;point;simulationResult&#39;</span>
 </pre></div>
 </div>
 <p>Remove data:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">hasObject</span><span class="p">(</span><span class="n">otherSimulationResult</span><span class="o">.</span><span class="n">getId</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">hasObject</span><span class="p">(</span><span class="n">otherSimulationResult</span><span class="o">.</span><span class="n">getId</span><span class="p">())</span>
 <span class="go">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">otherSimulationResult</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">hasObject</span><span class="p">(</span><span class="s1">&#39;simulationResult&#39;</span><span class="p">)</span>
@@ -201,40 +194,40 @@ if a name was defined for the object or by their Id.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Study.add" title="openturns.Study.add"><code class="xref py py-obj docutils literal"><span class="pre">add</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Study.add" title="openturns.Study.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(*args)</td>
 <td>Add an object to the study.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Study.fillObject" title="openturns.Study.fillObject"><code class="xref py py-obj docutils literal"><span class="pre">fillObject</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Study.fillObject" title="openturns.Study.fillObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fillObject</span></code></a>(*args)</td>
 <td>Fill an object with one got from study.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Study.fillObjectByName" title="openturns.Study.fillObjectByName"><code class="xref py py-obj docutils literal"><span class="pre">fillObjectByName</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Study.fillObjectByName" title="openturns.Study.fillObjectByName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fillObjectByName</span></code></a>(*args)</td>
 <td>Fill an object with one got from study.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Study.getClassName" title="openturns.Study.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Study.getClassName" title="openturns.Study.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Study.getObject" title="openturns.Study.getObject"><code class="xref py py-obj docutils literal"><span class="pre">getObject</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Study.getObject" title="openturns.Study.getObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getObject</span></code></a>(*args)</td>
 <td>Get object from the study.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Study.getStorageManager" title="openturns.Study.getStorageManager"><code class="xref py py-obj docutils literal"><span class="pre">getStorageManager</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Study.getStorageManager" title="openturns.Study.getStorageManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStorageManager</span></code></a>()</td>
 <td>Get the storage manager used by the study.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Study.hasObject" title="openturns.Study.hasObject"><code class="xref py py-obj docutils literal"><span class="pre">hasObject</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Study.hasObject" title="openturns.Study.hasObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasObject</span></code></a>(*args)</td>
 <td>Query if object is stored in study.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Study.load" title="openturns.Study.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Study.load" title="openturns.Study.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>()</td>
 <td>Reload the study from the storage manager.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Study.printLabels" title="openturns.Study.printLabels"><code class="xref py py-obj docutils literal"><span class="pre">printLabels</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Study.printLabels" title="openturns.Study.printLabels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">printLabels</span></code></a>()</td>
 <td>Print all the names of the objects stored in the study.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Study.remove" title="openturns.Study.remove"><code class="xref py py-obj docutils literal"><span class="pre">remove</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Study.remove" title="openturns.Study.remove"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove</span></code></a>(*args)</td>
 <td>Remove an object from the study.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Study.save" title="openturns.Study.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Study.save" title="openturns.Study.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>()</td>
 <td>Save the study through the storage manager.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Study.setStorageManager" title="openturns.Study.setStorageManager"><code class="xref py py-obj docutils literal"><span class="pre">setStorageManager</span></code></a>(smgr)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Study.setStorageManager" title="openturns.Study.setStorageManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setStorageManager</span></code></a>(smgr)</td>
 <td>Set the storage manager used by the study.</td>
 </tr>
 </tbody>
@@ -258,7 +251,7 @@ if a name was defined for the object or by their Id.</p>
 <p>add(<em>name, object, force=False</em>)</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>object</strong> : <code class="xref py py-class docutils literal"><span class="pre">InterfaceObject</span></code>, <code class="xref py py-class docutils literal"><span class="pre">PersistentObject</span></code></p>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>object</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">InterfaceObject</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PersistentObject</span></code></p>
 <blockquote>
 <div><p>Object to add in the study.</p>
 </div></blockquote>
@@ -291,7 +284,7 @@ otherwise.</p>
 <p>fillObject(<em>id, object</em>)</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>object</strong> : <code class="xref py py-class docutils literal"><span class="pre">InterfaceObject</span></code>, <code class="xref py py-class docutils literal"><span class="pre">PersistentObject</span></code></p>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>object</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">InterfaceObject</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PersistentObject</span></code></p>
 <blockquote>
 <div><p>An object to be refilled (may be empty, i.e. default constructed).</p>
 </div></blockquote>
@@ -322,7 +315,7 @@ otherwise.</p>
 <p>fillObjectByName(<em>id, object</em>)</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>object</strong> : <code class="xref py py-class docutils literal"><span class="pre">InterfaceObject</span></code>, <code class="xref py py-class docutils literal"><span class="pre">PersistentObject</span></code></p>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>object</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">InterfaceObject</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PersistentObject</span></code></p>
 <blockquote>
 <div><p>An object to be refilled (may be empty, i.e. default constructed).</p>
 </div></blockquote>
@@ -381,7 +374,7 @@ otherwise.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>object</strong> : <code class="xref py py-class docutils literal"><span class="pre">PersistentObject</span></code></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>object</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">PersistentObject</span></code></p>
 <blockquote class="last">
 <div><p>The object saved in the study.</p>
 </div></blockquote>
@@ -399,7 +392,7 @@ otherwise.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>manager</strong> : <a class="reference internal" href="openturns.StorageManager.html#openturns.StorageManager" title="openturns.StorageManager"><code class="xref py py-class docutils literal"><span class="pre">StorageManager</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>manager</strong> : <a class="reference internal" href="openturns.StorageManager.html#openturns.StorageManager" title="openturns.StorageManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">StorageManager</span></code></a></p>
 <blockquote class="last">
 <div><p>Storage manager used by the study to save and reload data.</p>
 </div></blockquote>
@@ -479,7 +472,7 @@ otherwise.</p>
 <p>remove(<em>name</em>)</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>object</strong> : <code class="xref py py-class docutils literal"><span class="pre">InterfaceObject</span></code></p>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>object</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">InterfaceObject</span></code></p>
 <blockquote>
 <div><p>An object to be removed.</p>
 </div></blockquote>
@@ -507,7 +500,7 @@ otherwise.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>manager</strong> : <a class="reference internal" href="openturns.StorageManager.html#openturns.StorageManager" title="openturns.StorageManager"><code class="xref py py-class docutils literal"><span class="pre">StorageManager</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>manager</strong> : <a class="reference internal" href="openturns.StorageManager.html#openturns.StorageManager" title="openturns.StorageManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">StorageManager</span></code></a></p>
 <blockquote class="last">
 <div><p>Storage manager used by the study to save and reload data.</p>
 </div></blockquote>
@@ -547,8 +540,8 @@ otherwise.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

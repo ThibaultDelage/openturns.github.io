@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>OptimizationProblem &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -119,24 +112,24 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>objective</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>objective</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote>
 <div><p>Objective function. Additional constraints and bounds must always be
 consistent with the objective input dimension.</p>
 </div></blockquote>
-<p><strong>equality</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<p><strong>equality</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote>
 <div><p>Equality constraints.</p>
 </div></blockquote>
-<p><strong>inequality</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<p><strong>inequality</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote>
 <div><p>Inequality constraints.</p>
 </div></blockquote>
-<p><strong>bounds</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal"><span class="pre">Interval</span></code></a></p>
+<p><strong>bounds</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
 <blockquote>
 <div><p>Bounds.</p>
 </div></blockquote>
-<p><strong>level</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<p><strong>level</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote>
 <div><p>Level function.</p>
 </div></blockquote>
@@ -161,13 +154,13 @@ h(x) \ge 0"/></p>
 g(x) = v"/></p>
 </div><p class="rubric">Examples</p>
 <p>Define an optimization problem to find the minimum of the Rosenbrock function:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rosenbrock</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;(1-x1)^2+100*(x2-x1^2)^2&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">problem</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">OptimizationProblem</span><span class="p">(</span><span class="n">rosenbrock</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Define an optimization problem to find the point with minimum norm which satisfies <img class="math" src="../../_images/math/1a9b2bf62b0c008a55483a5b4520770b66cee65f.svg" alt="x1+2*x2-3*x3+4*x4=3"/>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">levelFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="p">[</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">,</span> <span class="s1">&#39;x3&#39;</span><span class="p">,</span> <span class="s1">&#39;x4&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x1+2*x2-3*x3+4*x4&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">problem</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">OptimizationProblem</span><span class="p">(</span><span class="n">levelFunction</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
@@ -180,79 +173,79 @@ g(x) = v"/></p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.getBounds" title="openturns.OptimizationProblem.getBounds"><code class="xref py py-obj docutils literal"><span class="pre">getBounds</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.getBounds" title="openturns.OptimizationProblem.getBounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBounds</span></code></a>()</td>
 <td>Accessor to bounds.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.getClassName" title="openturns.OptimizationProblem.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.getClassName" title="openturns.OptimizationProblem.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.getDimension" title="openturns.OptimizationProblem.getDimension"><code class="xref py py-obj docutils literal"><span class="pre">getDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.getDimension" title="openturns.OptimizationProblem.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
 <td>Accessor to spatial dimension.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.getEqualityConstraint" title="openturns.OptimizationProblem.getEqualityConstraint"><code class="xref py py-obj docutils literal"><span class="pre">getEqualityConstraint</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.getEqualityConstraint" title="openturns.OptimizationProblem.getEqualityConstraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEqualityConstraint</span></code></a>()</td>
 <td>Accessor to equality constraints.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.getId" title="openturns.OptimizationProblem.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.getId" title="openturns.OptimizationProblem.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.getImplementation" title="openturns.OptimizationProblem.getImplementation"><code class="xref py py-obj docutils literal"><span class="pre">getImplementation</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.getImplementation" title="openturns.OptimizationProblem.getImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getImplementation</span></code></a>(*args)</td>
 <td>Accessor to the underlying implementation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.getInequalityConstraint" title="openturns.OptimizationProblem.getInequalityConstraint"><code class="xref py py-obj docutils literal"><span class="pre">getInequalityConstraint</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.getInequalityConstraint" title="openturns.OptimizationProblem.getInequalityConstraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInequalityConstraint</span></code></a>()</td>
 <td>Accessor to inequality constraints.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.getLevelFunction" title="openturns.OptimizationProblem.getLevelFunction"><code class="xref py py-obj docutils literal"><span class="pre">getLevelFunction</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.getLevelFunction" title="openturns.OptimizationProblem.getLevelFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLevelFunction</span></code></a>()</td>
 <td>Accessor to level function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.getLevelValue" title="openturns.OptimizationProblem.getLevelValue"><code class="xref py py-obj docutils literal"><span class="pre">getLevelValue</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.getLevelValue" title="openturns.OptimizationProblem.getLevelValue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLevelValue</span></code></a>()</td>
 <td>Accessor to level value.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.getName" title="openturns.OptimizationProblem.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.getName" title="openturns.OptimizationProblem.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.getObjective" title="openturns.OptimizationProblem.getObjective"><code class="xref py py-obj docutils literal"><span class="pre">getObjective</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.getObjective" title="openturns.OptimizationProblem.getObjective"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getObjective</span></code></a>()</td>
 <td>Accessor to objective function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.hasBounds" title="openturns.OptimizationProblem.hasBounds"><code class="xref py py-obj docutils literal"><span class="pre">hasBounds</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.hasBounds" title="openturns.OptimizationProblem.hasBounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasBounds</span></code></a>()</td>
 <td>Test whether bounds had been specified.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.hasEqualityConstraint" title="openturns.OptimizationProblem.hasEqualityConstraint"><code class="xref py py-obj docutils literal"><span class="pre">hasEqualityConstraint</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.hasEqualityConstraint" title="openturns.OptimizationProblem.hasEqualityConstraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasEqualityConstraint</span></code></a>()</td>
 <td>Test whether equality constraints had been specified.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.hasInequalityConstraint" title="openturns.OptimizationProblem.hasInequalityConstraint"><code class="xref py py-obj docutils literal"><span class="pre">hasInequalityConstraint</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.hasInequalityConstraint" title="openturns.OptimizationProblem.hasInequalityConstraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasInequalityConstraint</span></code></a>()</td>
 <td>Test whether inequality constraints had been specified.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.hasLevelFunction" title="openturns.OptimizationProblem.hasLevelFunction"><code class="xref py py-obj docutils literal"><span class="pre">hasLevelFunction</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.hasLevelFunction" title="openturns.OptimizationProblem.hasLevelFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasLevelFunction</span></code></a>()</td>
 <td>Test whether level function had been specified.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.hasMultipleObjective" title="openturns.OptimizationProblem.hasMultipleObjective"><code class="xref py py-obj docutils literal"><span class="pre">hasMultipleObjective</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.hasMultipleObjective" title="openturns.OptimizationProblem.hasMultipleObjective"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasMultipleObjective</span></code></a>()</td>
 <td>Test whether objective function is a scalar or vector function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.isMinimization" title="openturns.OptimizationProblem.isMinimization"><code class="xref py py-obj docutils literal"><span class="pre">isMinimization</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.isMinimization" title="openturns.OptimizationProblem.isMinimization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isMinimization</span></code></a>()</td>
 <td>Test whether this is a minimization or maximization problem.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.setBounds" title="openturns.OptimizationProblem.setBounds"><code class="xref py py-obj docutils literal"><span class="pre">setBounds</span></code></a>(bounds)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.setBounds" title="openturns.OptimizationProblem.setBounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBounds</span></code></a>(bounds)</td>
 <td>Accessor to bounds.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.setEqualityConstraint" title="openturns.OptimizationProblem.setEqualityConstraint"><code class="xref py py-obj docutils literal"><span class="pre">setEqualityConstraint</span></code></a>(equalityConstraint)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.setEqualityConstraint" title="openturns.OptimizationProblem.setEqualityConstraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setEqualityConstraint</span></code></a>(equalityConstraint)</td>
 <td>Accessor to equality constraints.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.setInequalityConstraint" title="openturns.OptimizationProblem.setInequalityConstraint"><code class="xref py py-obj docutils literal"><span class="pre">setInequalityConstraint</span></code></a>(inequalityConstraint)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.setInequalityConstraint" title="openturns.OptimizationProblem.setInequalityConstraint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInequalityConstraint</span></code></a>(inequalityConstraint)</td>
 <td>Accessor to inequality constraints.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.setLevelFunction" title="openturns.OptimizationProblem.setLevelFunction"><code class="xref py py-obj docutils literal"><span class="pre">setLevelFunction</span></code></a>(levelFunction)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.setLevelFunction" title="openturns.OptimizationProblem.setLevelFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLevelFunction</span></code></a>(levelFunction)</td>
 <td>Accessor to level function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.setLevelValue" title="openturns.OptimizationProblem.setLevelValue"><code class="xref py py-obj docutils literal"><span class="pre">setLevelValue</span></code></a>(levelValue)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.setLevelValue" title="openturns.OptimizationProblem.setLevelValue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLevelValue</span></code></a>(levelValue)</td>
 <td>Accessor to level value.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.setMinimization" title="openturns.OptimizationProblem.setMinimization"><code class="xref py py-obj docutils literal"><span class="pre">setMinimization</span></code></a>(minimization)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.setMinimization" title="openturns.OptimizationProblem.setMinimization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMinimization</span></code></a>(minimization)</td>
 <td>Tell whether this is a minimization or maximization problem.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.setName" title="openturns.OptimizationProblem.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationProblem.setName" title="openturns.OptimizationProblem.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.setObjective" title="openturns.OptimizationProblem.setObjective"><code class="xref py py-obj docutils literal"><span class="pre">setObjective</span></code></a>(objective)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationProblem.setObjective" title="openturns.OptimizationProblem.setObjective"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setObjective</span></code></a>(objective)</td>
 <td>Accessor to objective function.</td>
 </tr>
 </tbody>
@@ -271,7 +264,7 @@ g(x) = v"/></p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>bounds</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal"><span class="pre">Interval</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>bounds</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
 <blockquote class="last">
 <div><p>Problem bounds.</p>
 </div></blockquote>
@@ -325,7 +318,7 @@ g(x) = v"/></p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>equality</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>equality</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Describe equality constraints.</p>
 </div></blockquote>
@@ -379,7 +372,7 @@ g(x) = v"/></p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>inequality</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>inequality</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Describe inequality constraints.</p>
 </div></blockquote>
@@ -397,7 +390,7 @@ g(x) = v"/></p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>level</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>level</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Level function.</p>
 </div></blockquote>
@@ -451,7 +444,7 @@ g(x) = v"/></p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>objective</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>objective</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Objective function.</p>
 </div></blockquote>
@@ -577,7 +570,7 @@ g(x) = v"/></p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>bounds</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal"><span class="pre">Interval</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>bounds</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
 <blockquote class="last">
 <div><p>Problem bounds.</p>
 </div></blockquote>
@@ -595,7 +588,7 @@ g(x) = v"/></p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>equalityConstraint</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>equalityConstraint</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Equality constraints.</p>
 </div></blockquote>
@@ -613,7 +606,7 @@ g(x) = v"/></p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>inequalityConstraint</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>inequalityConstraint</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Inequality constraints.</p>
 </div></blockquote>
@@ -631,7 +624,7 @@ g(x) = v"/></p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>levelFunction</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>levelFunction</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Level function.</p>
 </div></blockquote>
@@ -703,7 +696,7 @@ g(x) = v"/></p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>objectiveFunction</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>objectiveFunction</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Objective function.</p>
 </div></blockquote>
@@ -746,8 +739,8 @@ dimension in order to keep the problem valid at all time.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

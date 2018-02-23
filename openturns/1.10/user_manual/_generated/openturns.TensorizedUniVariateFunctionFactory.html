@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>TensorizedUniVariateFunctionFactory &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -117,11 +110,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>functions</strong> : list of <code class="xref py py-class docutils literal"><span class="pre">UniVariateFunctionFamily</span></code></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>functions</strong> : list of <code class="xref py py-class docutils literal notranslate"><span class="pre">UniVariateFunctionFamily</span></code></p>
 <blockquote>
 <div><p>List of univariate function factories.</p>
 </div></blockquote>
-<p><strong>enumerateFunction</strong> : <a class="reference internal" href="openturns.EnumerateFunction.html#openturns.EnumerateFunction" title="openturns.EnumerateFunction"><code class="xref py py-class docutils literal"><span class="pre">EnumerateFunction</span></code></a></p>
+<p><strong>enumerateFunction</strong> : <a class="reference internal" href="openturns.EnumerateFunction.html#openturns.EnumerateFunction" title="openturns.EnumerateFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnumerateFunction</span></code></a></p>
 <blockquote class="last">
 <div><p>Associates to an integer its multi-index image in the <img class="math" src="../../_images/math/1b8c436284cfe9ffd026a823b066675f45eb623b.svg" alt="\Nset^d"/>
 dimension, which is the dimension of the basis. This multi-index represents
@@ -133,7 +126,7 @@ the collection of degrees of the univariate polynomials.</p>
 </table>
 <p class="rubric">Notes</p>
 <p>TensorizedUniVariateFunctionFactory allows to create multidimensional functions as the tensor product of univariate
-functions created by their respective factories (i.e. <code class="xref py py-class docutils literal"><span class="pre">UniVariateFunctionFamily</span></code>):</p>
+functions created by their respective factories (i.e. <code class="xref py py-class docutils literal notranslate"><span class="pre">UniVariateFunctionFamily</span></code>):</p>
 <div class="math">
 <p><img src="../../_images/math/9673bbf492147d50d3ad2d00369c7e41a1363b51.svg" alt="\Phi_n(x_1,\dots,x_d)=\prod_{i=1}^d \phi^i_{enum(n)_i}(x_i)"/></p>
 </div><p>where <img class="math" src="../../_images/math/9cad3d3ddddd6d15e4f0969648f4645a0d67c7ee.svg" alt="\phi^i_k"/> is the univariate basis of degree <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/> associated to the component <img class="math" src="../../_images/math/a2eb3f6bcc26aec85366e1815d20d2b637b464f0.svg" alt="x_i"/>
@@ -141,7 +134,7 @@ and <img class="math" src="../../_images/math/883921b94d69d9739283fa25274de4ce99
 <p>Let’s note that the exact hessian and gradient have been implemented
 for the product of polynomials.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">funcColl</span> <span class="o">=</span> <span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">HaarWaveletFactory</span><span class="p">(),</span> <span class="n">ot</span><span class="o">.</span><span class="n">FourierSeriesFactory</span><span class="p">(),</span> <span class="n">ot</span><span class="o">.</span><span class="n">MonomialFunctionFactory</span><span class="p">()]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dim</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">funcColl</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">enumerateFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LinearEnumerateFunction</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
@@ -155,67 +148,67 @@ for the product of polynomials.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.add" title="openturns.TensorizedUniVariateFunctionFactory.add"><code class="xref py py-obj docutils literal"><span class="pre">add</span></code></a>(elt)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.add" title="openturns.TensorizedUniVariateFunctionFactory.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(elt)</td>
 <td>Add an element in the Basis.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.build" title="openturns.TensorizedUniVariateFunctionFactory.build"><code class="xref py py-obj docutils literal"><span class="pre">build</span></code></a>(index)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.build" title="openturns.TensorizedUniVariateFunctionFactory.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>(index)</td>
 <td>Build the element of the given index.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getClassName" title="openturns.TensorizedUniVariateFunctionFactory.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getClassName" title="openturns.TensorizedUniVariateFunctionFactory.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getDimension" title="openturns.TensorizedUniVariateFunctionFactory.getDimension"><code class="xref py py-obj docutils literal"><span class="pre">getDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getDimension" title="openturns.TensorizedUniVariateFunctionFactory.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
 <td>Get the dimension of the Basis.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">getEnumerateFunction</span></code>()</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEnumerateFunction</span></code>()</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">getFunctionFamilyCollection</span></code>()</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFunctionFamilyCollection</span></code>()</td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getId" title="openturns.TensorizedUniVariateFunctionFactory.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getId" title="openturns.TensorizedUniVariateFunctionFactory.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getName" title="openturns.TensorizedUniVariateFunctionFactory.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getName" title="openturns.TensorizedUniVariateFunctionFactory.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getShadowedId" title="openturns.TensorizedUniVariateFunctionFactory.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getShadowedId" title="openturns.TensorizedUniVariateFunctionFactory.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getSize" title="openturns.TensorizedUniVariateFunctionFactory.getSize"><code class="xref py py-obj docutils literal"><span class="pre">getSize</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getSize" title="openturns.TensorizedUniVariateFunctionFactory.getSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSize</span></code></a>()</td>
 <td>Get the size of the Basis.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getSubBasis" title="openturns.TensorizedUniVariateFunctionFactory.getSubBasis"><code class="xref py py-obj docutils literal"><span class="pre">getSubBasis</span></code></a>(indices)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getSubBasis" title="openturns.TensorizedUniVariateFunctionFactory.getSubBasis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSubBasis</span></code></a>(indices)</td>
 <td>Get a sub-basis of the Basis.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getVisibility" title="openturns.TensorizedUniVariateFunctionFactory.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.getVisibility" title="openturns.TensorizedUniVariateFunctionFactory.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.hasName" title="openturns.TensorizedUniVariateFunctionFactory.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.hasName" title="openturns.TensorizedUniVariateFunctionFactory.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.hasVisibleName" title="openturns.TensorizedUniVariateFunctionFactory.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.hasVisibleName" title="openturns.TensorizedUniVariateFunctionFactory.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.isFunctional" title="openturns.TensorizedUniVariateFunctionFactory.isFunctional"><code class="xref py py-obj docutils literal"><span class="pre">isFunctional</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.isFunctional" title="openturns.TensorizedUniVariateFunctionFactory.isFunctional"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isFunctional</span></code></a>()</td>
 <td>Tell whether the basis is functional.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.isOrthogonal" title="openturns.TensorizedUniVariateFunctionFactory.isOrthogonal"><code class="xref py py-obj docutils literal"><span class="pre">isOrthogonal</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.isOrthogonal" title="openturns.TensorizedUniVariateFunctionFactory.isOrthogonal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isOrthogonal</span></code></a>()</td>
 <td>Tell whether the basis is orthogonal.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">setEnumerateFunction</span></code>(phi)</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setEnumerateFunction</span></code>(phi)</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">setFunctionFamilyCollection</span></code>(coll)</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setFunctionFamilyCollection</span></code>(coll)</td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.setName" title="openturns.TensorizedUniVariateFunctionFactory.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.setName" title="openturns.TensorizedUniVariateFunctionFactory.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.setShadowedId" title="openturns.TensorizedUniVariateFunctionFactory.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.setShadowedId" title="openturns.TensorizedUniVariateFunctionFactory.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.setVisibility" title="openturns.TensorizedUniVariateFunctionFactory.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedUniVariateFunctionFactory.setVisibility" title="openturns.TensorizedUniVariateFunctionFactory.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -234,7 +227,7 @@ for the product of polynomials.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Function added in the Basis.</p>
 </div></blockquote>
@@ -243,7 +236,7 @@ for the product of polynomials.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dimension</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x0&#39;</span><span class="p">,</span> <span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">functions</span> <span class="o">=</span> <span class="p">[]</span>
@@ -269,7 +262,7 @@ for the product of polynomials.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>The function at the index <em>index</em> of the Basis.</p>
 </div></blockquote>
@@ -278,7 +271,7 @@ for the product of polynomials.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dimension</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x0&#39;</span><span class="p">,</span> <span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">functions</span> <span class="o">=</span> <span class="p">[]</span>
@@ -413,7 +406,7 @@ for the product of polynomials.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>subBasis</strong> : list of <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal"><span class="pre">Function</span></code></a></p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>subBasis</strong> : list of <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>Functions defining a sub-basis.</p>
 </div></blockquote>
@@ -422,7 +415,7 @@ for the product of polynomials.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dimension</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x0&#39;</span><span class="p">,</span> <span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">functions</span> <span class="o">=</span> <span class="p">[]</span>
@@ -611,8 +604,8 @@ to an equation (e.g. a basis made up of Legendre functions).</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Dec 14, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Feb 23, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>
