@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ProductFunction &#8212; OpenTURNS  documentation</title>
+    <title>MemoizeFunction &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" src="../../_static/documentation_options.js"></script>
@@ -17,8 +17,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="PointToPointEvaluation" href="openturns.PointToPointEvaluation.html" />
-    <link rel="prev" title="ParametricFunction" href="openturns.ParametricFunction.html" />
+    <link rel="next" title="AggregatedFunction" href="openturns.AggregatedFunction.html" />
+    <link rel="prev" title="OpenTURNSPythonFunction" href="openturns.OpenTURNSPythonFunction.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -48,10 +48,10 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="openturns.PointToPointEvaluation.html" title="PointToPointEvaluation"
+          <a href="openturns.AggregatedFunction.html" title="AggregatedFunction"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="openturns.ParametricFunction.html" title="ParametricFunction"
+          <a href="openturns.OpenTURNSPythonFunction.html" title="OpenTURNSPythonFunction"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
@@ -62,15 +62,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="openturns.ParametricFunction.html"
-                        title="previous chapter">ParametricFunction</a></p>
+  <p class="topless"><a href="openturns.OpenTURNSPythonFunction.html"
+                        title="previous chapter">OpenTURNSPythonFunction</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="openturns.PointToPointEvaluation.html"
-                        title="next chapter">PointToPointEvaluation</a></p>
+  <p class="topless"><a href="openturns.AggregatedFunction.html"
+                        title="next chapter">AggregatedFunction</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/user_manual/_generated/openturns.ProductFunction.rst.txt"
+      <li><a href="../../_sources/user_manual/_generated/openturns.MemoizeFunction.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -94,40 +94,68 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="productfunction">
-<h1>ProductFunction<a class="headerlink" href="#productfunction" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="memoizefunction">
+<h1>MemoizeFunction<a class="headerlink" href="#memoizefunction" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="openturns.ProductFunction">
-<em class="property">class </em><code class="descname">ProductFunction</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Product function.</p>
+<dt id="openturns.MemoizeFunction">
+<em class="property">class </em><code class="descname">MemoizeFunction</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function which keep tracks of input and output.</p>
+<p>When this function is evaluated, it calls the
+<a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> passed as argument, and store
+input and output <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a>.</p>
 <dl class="docutils">
-<dt>Available constructor:</dt>
-<dd>ProductFunction(<em>f, g</em>)</dd>
+<dt>Available constructors:</dt>
+<dd>MemoizeFunction(<em>function, historyStrategy</em>)</dd>
 </dl>
-<p>The function is the product function <img class="math" src="../../_images/math/9912b10a391ced2f972392148e8d3d8d01f6d0ab.svg" alt="f\times g"/>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f,g</strong> : two <code class="xref py py-class docutils literal notranslate"><span class="pre">FunctionImplementation</span></code></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>function</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
+<blockquote>
+<div><p>Delegate function</p>
+</div></blockquote>
+<p><strong>historyStrategy</strong> : <a class="reference internal" href="openturns.HistoryStrategy.html#openturns.HistoryStrategy" title="openturns.HistoryStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">HistoryStrategy</span></code></a> (optional)</p>
 <blockquote class="last">
-<div><p>The functions to multiply.</p>
+<div><p>Strategy used to store points, default is <a class="reference internal" href="openturns.Full.html#openturns.Full" title="openturns.Full"><code class="xref py py-class docutils literal notranslate"><span class="pre">Full</span></code></a>.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Function</span></code></a>, <a class="reference internal" href="openturns.HistoryStrategy.html#openturns.HistoryStrategy" title="openturns.HistoryStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HistoryStrategy</span></code></a>, <a class="reference internal" href="openturns.Full.html#openturns.Full" title="openturns.Full"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Full</span></code></a>, <a class="reference internal" href="openturns.Last.html#openturns.Last" title="openturns.Last"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Last</span></code></a>, <a class="reference internal" href="openturns.Compact.html#openturns.Compact" title="openturns.Compact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Compact</span></code></a>, <a class="reference internal" href="openturns.Null.html#openturns.Null" title="openturns.Null"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Null</span></code></a></p>
+</div>
+<p class="rubric">Notes</p>
+<p>When the function passed as argument is a <a class="reference internal" href="#openturns.MemoizeFunction" title="openturns.MemoizeFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">MemoizeFunction</span></code></a>,
+its input and output history are copied into current instance.  This allows
+to retrieve this history from a <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a> object which
+is in fact a <a class="reference internal" href="#openturns.MemoizeFunction" title="openturns.MemoizeFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">MemoizeFunction</span></code></a>.
+Thus, if you create a <a class="reference internal" href="#openturns.MemoizeFunction" title="openturns.MemoizeFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">MemoizeFunction</span></code></a> from an unknown
+<a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>, it is better to call <a class="reference internal" href="#openturns.MemoizeFunction.clearHistory" title="openturns.MemoizeFunction.clearHistory"><code class="xref py py-meth docutils literal notranslate"><span class="pre">clearHistory()</span></code></a>.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x1&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x2&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">product</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ProductFunction</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getImplementation</span><span class="p">(),</span> <span class="n">g</span><span class="o">.</span><span class="n">getImplementation</span><span class="p">())</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">product</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
-<span class="go">[12]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;x^2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inputSample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MemoizeFunction</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">outputSample</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">inputSample</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Or, shorter:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">product</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">g</span>
+<p>Retrieve input sample:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getInputHistory</span><span class="p">())</span>
+<span class="go">0 : [ 1 ]</span>
+<span class="go">1 : [ 2 ]</span>
+<span class="go">2 : [ 3 ]</span>
+<span class="go">3 : [ 4 ]</span>
+</pre></div>
+</div>
+<p>Retrieve output sample:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">getOutputHistory</span><span class="p">())</span>
+<span class="go">0 : [  1 ]</span>
+<span class="go">1 : [  4 ]</span>
+<span class="go">2 : [  9 ]</span>
+<span class="go">3 : [ 16 ]</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
@@ -140,149 +168,167 @@
 <tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args)</td>
 <td>Call self as a function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.addCacheContent" title="openturns.ProductFunction.addCacheContent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addCacheContent</span></code></a>(inSample,&nbsp;outSample)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.addCacheContent" title="openturns.MemoizeFunction.addCacheContent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addCacheContent</span></code></a>(inSample,&nbsp;outSample)</td>
 <td>Add input numerical points and associated output to the cache.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.clearCache" title="openturns.ProductFunction.clearCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clearCache</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.clearCache" title="openturns.MemoizeFunction.clearCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clearCache</span></code></a>()</td>
 <td>Empty the content of the cache.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.disableCache" title="openturns.ProductFunction.disableCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disableCache</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.clearHistory" title="openturns.MemoizeFunction.clearHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clearHistory</span></code></a>()</td>
+<td>Clear input and output history.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.disableCache" title="openturns.MemoizeFunction.disableCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disableCache</span></code></a>()</td>
 <td>Disable the cache mechanism.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.draw" title="openturns.ProductFunction.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.disableHistory" title="openturns.MemoizeFunction.disableHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disableHistory</span></code></a>()</td>
+<td>Disable the history mechanism.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.draw" title="openturns.MemoizeFunction.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>(*args)</td>
 <td>Draw the output of function as a <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.enableCache" title="openturns.ProductFunction.enableCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enableCache</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.enableCache" title="openturns.MemoizeFunction.enableCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enableCache</span></code></a>()</td>
 <td>Enable the cache mechanism.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getCacheHits" title="openturns.ProductFunction.getCacheHits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheHits</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.enableHistory" title="openturns.MemoizeFunction.enableHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enableHistory</span></code></a>()</td>
+<td>Enable the history mechanism.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.getCacheHits" title="openturns.MemoizeFunction.getCacheHits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheHits</span></code></a>()</td>
 <td>Accessor to the number of computations saved thanks to the cache mecanism.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getCacheInput" title="openturns.ProductFunction.getCacheInput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheInput</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.getCacheInput" title="openturns.MemoizeFunction.getCacheInput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheInput</span></code></a>()</td>
 <td>Accessor to all the input numerical points stored in the cache mecanism.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getCacheOutput" title="openturns.ProductFunction.getCacheOutput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheOutput</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.getCacheOutput" title="openturns.MemoizeFunction.getCacheOutput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheOutput</span></code></a>()</td>
 <td>Accessor to all the output numerical points stored in the cache mecanism.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getCallsNumber" title="openturns.ProductFunction.getCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCallsNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.getCallsNumber" title="openturns.MemoizeFunction.getCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCallsNumber</span></code></a>()</td>
 <td>Accessor to the number of times the function has been called.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getClassName" title="openturns.ProductFunction.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.getClassName" title="openturns.MemoizeFunction.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getDescription" title="openturns.ProductFunction.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.getDescription" title="openturns.MemoizeFunction.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a>()</td>
 <td>Accessor to the description of the inputs and outputs.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getEvaluation" title="openturns.ProductFunction.getEvaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvaluation</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.getEvaluation" title="openturns.MemoizeFunction.getEvaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvaluation</span></code></a>()</td>
 <td>Accessor to the evaluation function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getEvaluationCallsNumber" title="openturns.ProductFunction.getEvaluationCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvaluationCallsNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.getEvaluationCallsNumber" title="openturns.MemoizeFunction.getEvaluationCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvaluationCallsNumber</span></code></a>()</td>
 <td>Accessor to the number of times the function has been called.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getGradient" title="openturns.ProductFunction.getGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGradient</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.getGradient" title="openturns.MemoizeFunction.getGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGradient</span></code></a>()</td>
 <td>Accessor to the gradient function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getGradientCallsNumber" title="openturns.ProductFunction.getGradientCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGradientCallsNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.getGradientCallsNumber" title="openturns.MemoizeFunction.getGradientCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGradientCallsNumber</span></code></a>()</td>
 <td>Accessor to the number of times the gradient of the function has been called.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getHessian" title="openturns.ProductFunction.getHessian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHessian</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.getHessian" title="openturns.MemoizeFunction.getHessian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHessian</span></code></a>()</td>
 <td>Accessor to the hessian function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getHessianCallsNumber" title="openturns.ProductFunction.getHessianCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHessianCallsNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.getHessianCallsNumber" title="openturns.MemoizeFunction.getHessianCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHessianCallsNumber</span></code></a>()</td>
 <td>Accessor to the number of times the hessian of the function has been called.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getId" title="openturns.ProductFunction.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.getId" title="openturns.MemoizeFunction.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getInputDescription" title="openturns.ProductFunction.getInputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDescription</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.getInputDescription" title="openturns.MemoizeFunction.getInputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDescription</span></code></a>()</td>
 <td>Accessor to the description of the input vector.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getInputDimension" title="openturns.ProductFunction.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.getInputDimension" title="openturns.MemoizeFunction.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
 <td>Accessor to the dimension of the input vector.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getMarginal" title="openturns.ProductFunction.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.getInputHistory" title="openturns.MemoizeFunction.getInputHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputHistory</span></code></a>()</td>
+<td>Get the input sample.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.getMarginal" title="openturns.MemoizeFunction.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
 <td>Accessor to marginal.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getName" title="openturns.ProductFunction.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.getName" title="openturns.MemoizeFunction.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getOutputDescription" title="openturns.ProductFunction.getOutputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.getOutputDescription" title="openturns.MemoizeFunction.getOutputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDescription</span></code></a>()</td>
 <td>Accessor to the description of the output vector.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getOutputDimension" title="openturns.ProductFunction.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.getOutputDimension" title="openturns.MemoizeFunction.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
 <td>Accessor to the number of the outputs.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getParameter" title="openturns.ProductFunction.getParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameter</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.getOutputHistory" title="openturns.MemoizeFunction.getOutputHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputHistory</span></code></a>()</td>
+<td>Get the output sample.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.getParameter" title="openturns.MemoizeFunction.getParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameter</span></code></a>()</td>
 <td>Accessor to the parameter values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getParameterDescription" title="openturns.ProductFunction.getParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.getParameterDescription" title="openturns.MemoizeFunction.getParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDescription</span></code></a>()</td>
 <td>Accessor to the parameter description.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getParameterDimension" title="openturns.ProductFunction.getParameterDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.getParameterDimension" title="openturns.MemoizeFunction.getParameterDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDimension</span></code></a>()</td>
 <td>Accessor to the dimension of the parameter.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.getShadowedId" title="openturns.ProductFunction.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.getShadowedId" title="openturns.MemoizeFunction.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.getVisibility" title="openturns.ProductFunction.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.getVisibility" title="openturns.MemoizeFunction.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.gradient" title="openturns.ProductFunction.gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gradient</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.gradient" title="openturns.MemoizeFunction.gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gradient</span></code></a>(*args)</td>
 <td>Return the Jacobian transposed matrix of the function at a point.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.hasName" title="openturns.ProductFunction.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.hasName" title="openturns.MemoizeFunction.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.hasVisibleName" title="openturns.ProductFunction.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.hasVisibleName" title="openturns.MemoizeFunction.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.hessian" title="openturns.ProductFunction.hessian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hessian</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.hessian" title="openturns.MemoizeFunction.hessian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hessian</span></code></a>(*args)</td>
 <td>Return the hessian of the function at a point.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.isCacheEnabled" title="openturns.ProductFunction.isCacheEnabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isCacheEnabled</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.isCacheEnabled" title="openturns.MemoizeFunction.isCacheEnabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isCacheEnabled</span></code></a>()</td>
 <td>Test whether the cache mechanism is enabled or not.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.parameterGradient" title="openturns.ProductFunction.parameterGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameterGradient</span></code></a>(inP)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.isHistoryEnabled" title="openturns.MemoizeFunction.isHistoryEnabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isHistoryEnabled</span></code></a>()</td>
+<td>Test whether the history mechanism is enabled or not.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.parameterGradient" title="openturns.MemoizeFunction.parameterGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameterGradient</span></code></a>(*args)</td>
 <td>Accessor to the gradient against the parameter.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setDescription" title="openturns.ProductFunction.setDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDescription</span></code></a>(description)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.setDescription" title="openturns.MemoizeFunction.setDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDescription</span></code></a>(description)</td>
 <td>Accessor to the description of the inputs and outputs.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.setEvaluation" title="openturns.ProductFunction.setEvaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setEvaluation</span></code></a>(evaluation)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.setEvaluation" title="openturns.MemoizeFunction.setEvaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setEvaluation</span></code></a>(evaluation)</td>
 <td>Accessor to the evaluation function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setGradient" title="openturns.ProductFunction.setGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setGradient</span></code></a>(gradient)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.setGradient" title="openturns.MemoizeFunction.setGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setGradient</span></code></a>(gradient)</td>
 <td>Accessor to the gradient function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.setHessian" title="openturns.ProductFunction.setHessian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setHessian</span></code></a>(hessian)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.setHessian" title="openturns.MemoizeFunction.setHessian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setHessian</span></code></a>(hessian)</td>
 <td>Accessor to the hessian function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setName" title="openturns.ProductFunction.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.setName" title="openturns.MemoizeFunction.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.setParameter" title="openturns.ProductFunction.setParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameter</span></code></a>(parameter)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.setParameter" title="openturns.MemoizeFunction.setParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameter</span></code></a>(parameter)</td>
 <td>Accessor to the parameter values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setParameterDescription" title="openturns.ProductFunction.setParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameterDescription</span></code></a>(description)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.setParameterDescription" title="openturns.MemoizeFunction.setParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameterDescription</span></code></a>(description)</td>
 <td>Accessor to the parameter description.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductFunction.setShadowedId" title="openturns.ProductFunction.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MemoizeFunction.setShadowedId" title="openturns.MemoizeFunction.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductFunction.setVisibility" title="openturns.ProductFunction.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MemoizeFunction.setVisibility" title="openturns.MemoizeFunction.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
-<dt id="openturns.ProductFunction.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.__init__" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.addCacheContent">
-<code class="descname">addCacheContent</code><span class="sig-paren">(</span><em>inSample</em>, <em>outSample</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.addCacheContent" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.addCacheContent">
+<code class="descname">addCacheContent</code><span class="sig-paren">(</span><em>inSample</em>, <em>outSample</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.addCacheContent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add input numerical points and associated output to the cache.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -304,20 +350,32 @@ cache.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.clearCache">
-<code class="descname">clearCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.clearCache" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.clearCache">
+<code class="descname">clearCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.clearCache" title="Permalink to this definition">¶</a></dt>
 <dd><p>Empty the content of the cache.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.disableCache">
-<code class="descname">disableCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.disableCache" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.clearHistory">
+<code class="descname">clearHistory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.clearHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear input and output history.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.MemoizeFunction.disableCache">
+<code class="descname">disableCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.disableCache" title="Permalink to this definition">¶</a></dt>
 <dd><p>Disable the cache mechanism.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.draw">
-<code class="descname">draw</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.draw" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.disableHistory">
+<code class="descname">disableHistory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.disableHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable the history mechanism.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.MemoizeFunction.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw the output of function as a <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a>.</p>
 <dl class="docutils">
 <dt>Available usages:</dt>
@@ -405,14 +463,20 @@ central point <em>CP</em>. Then OpenTURNS draws the graph:
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.enableCache">
-<code class="descname">enableCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.enableCache" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.enableCache">
+<code class="descname">enableCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.enableCache" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable the cache mechanism.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getCacheHits">
-<code class="descname">getCacheHits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getCacheHits" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.enableHistory">
+<code class="descname">enableHistory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.enableHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable the history mechanism.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.MemoizeFunction.getCacheHits">
+<code class="descname">getCacheHits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getCacheHits" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the number of computations saved thanks to the cache mecanism.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -430,8 +494,8 @@ mecanism.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getCacheInput">
-<code class="descname">getCacheInput</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getCacheInput" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getCacheInput">
+<code class="descname">getCacheInput</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getCacheInput" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to all the input numerical points stored in the cache mecanism.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -448,8 +512,8 @@ mecanism.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getCacheOutput">
-<code class="descname">getCacheOutput</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getCacheOutput" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getCacheOutput">
+<code class="descname">getCacheOutput</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getCacheOutput" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to all the output numerical points stored in the cache mecanism.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -466,8 +530,8 @@ mecanism.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getCallsNumber">
-<code class="descname">getCallsNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getCallsNumber" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getCallsNumber">
+<code class="descname">getCallsNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getCallsNumber" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the number of times the function has been called.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -485,8 +549,8 @@ since its creation.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getClassName">
-<code class="descname">getClassName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getClassName" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getClassName">
+<code class="descname">getClassName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getClassName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s name.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -503,8 +567,8 @@ since its creation.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getDescription">
-<code class="descname">getDescription</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getDescription" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getDescription">
+<code class="descname">getDescription</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getDescription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the description of the inputs and outputs.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -529,8 +593,8 @@ since its creation.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getEvaluation">
-<code class="descname">getEvaluation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getEvaluation" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getEvaluation">
+<code class="descname">getEvaluation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getEvaluation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the evaluation function.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -555,8 +619,8 @@ since its creation.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getEvaluationCallsNumber">
-<code class="descname">getEvaluationCallsNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getEvaluationCallsNumber" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getEvaluationCallsNumber">
+<code class="descname">getEvaluationCallsNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getEvaluationCallsNumber" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the number of times the function has been called.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -574,8 +638,8 @@ since its creation.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getGradient">
-<code class="descname">getGradient</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getGradient" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getGradient">
+<code class="descname">getGradient</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getGradient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the gradient function.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -592,8 +656,8 @@ since its creation.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getGradientCallsNumber">
-<code class="descname">getGradientCallsNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getGradientCallsNumber" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getGradientCallsNumber">
+<code class="descname">getGradientCallsNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getGradientCallsNumber" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the number of times the gradient of the function has been called.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -614,8 +678,8 @@ counted in the evaluation calls number.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getHessian">
-<code class="descname">getHessian</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getHessian" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getHessian">
+<code class="descname">getHessian</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getHessian" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the hessian function.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -632,8 +696,8 @@ counted in the evaluation calls number.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getHessianCallsNumber">
-<code class="descname">getHessianCallsNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getHessianCallsNumber" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getHessianCallsNumber">
+<code class="descname">getHessianCallsNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getHessianCallsNumber" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the number of times the hessian of the function has been called.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -654,8 +718,8 @@ in the evaluation calls number.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getId">
-<code class="descname">getId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getId" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getId">
+<code class="descname">getId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getId" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s id.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -672,8 +736,8 @@ in the evaluation calls number.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getInputDescription">
-<code class="descname">getInputDescription</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getInputDescription" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getInputDescription">
+<code class="descname">getInputDescription</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getInputDescription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the description of the input vector.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -698,8 +762,8 @@ in the evaluation calls number.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getInputDimension">
-<code class="descname">getInputDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getInputDimension" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getInputDimension">
+<code class="descname">getInputDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getInputDimension" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the dimension of the input vector.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -724,8 +788,26 @@ in the evaluation calls number.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getMarginal">
-<code class="descname">getMarginal</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getMarginal" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getInputHistory">
+<code class="descname">getInputHistory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getInputHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the input sample.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>inputSample</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
+<blockquote class="last">
+<div><p>Input points which have been evaluated.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.MemoizeFunction.getMarginal">
+<code class="descname">getMarginal</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getMarginal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to marginal.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -750,8 +832,8 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getName">
-<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getName" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getName">
+<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s name.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -768,8 +850,8 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getOutputDescription">
-<code class="descname">getOutputDescription</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getOutputDescription" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getOutputDescription">
+<code class="descname">getOutputDescription</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getOutputDescription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the description of the output vector.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -794,8 +876,8 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getOutputDimension">
-<code class="descname">getOutputDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getOutputDimension" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getOutputDimension">
+<code class="descname">getOutputDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getOutputDimension" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the number of the outputs.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -820,8 +902,26 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getParameter">
-<code class="descname">getParameter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getParameter" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getOutputHistory">
+<code class="descname">getOutputHistory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getOutputHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the output sample.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>outputSample</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
+<blockquote class="last">
+<div><p>Output points which have been evaluated.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.MemoizeFunction.getParameter">
+<code class="descname">getParameter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getParameter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the parameter values.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -838,8 +938,8 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getParameterDescription">
-<code class="descname">getParameterDescription</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getParameterDescription" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getParameterDescription">
+<code class="descname">getParameterDescription</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getParameterDescription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the parameter description.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -856,8 +956,8 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getParameterDimension">
-<code class="descname">getParameterDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getParameterDimension" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getParameterDimension">
+<code class="descname">getParameterDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getParameterDimension" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the dimension of the parameter.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -874,8 +974,8 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getShadowedId">
-<code class="descname">getShadowedId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getShadowedId" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getShadowedId">
+<code class="descname">getShadowedId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getShadowedId" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s shadowed id.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -892,8 +992,8 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.getVisibility">
-<code class="descname">getVisibility</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.getVisibility" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.getVisibility">
+<code class="descname">getVisibility</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.getVisibility" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s visibility state.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -910,8 +1010,8 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.gradient">
-<code class="descname">gradient</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.gradient" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.gradient">
+<code class="descname">gradient</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.gradient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the Jacobian transposed matrix of the function at a point.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -943,8 +1043,8 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.hasName">
-<code class="descname">hasName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.hasName" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.hasName">
+<code class="descname">hasName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.hasName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test if the object is named.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -961,8 +1061,8 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.hasVisibleName">
-<code class="descname">hasVisibleName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.hasVisibleName" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.hasVisibleName">
+<code class="descname">hasVisibleName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.hasVisibleName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test if the object has a distinguishable name.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -979,8 +1079,8 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.hessian">
-<code class="descname">hessian</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.hessian" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.hessian">
+<code class="descname">hessian</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.hessian" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the hessian of the function at a point.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1016,8 +1116,8 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.isCacheEnabled">
-<code class="descname">isCacheEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.isCacheEnabled" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.isCacheEnabled">
+<code class="descname">isCacheEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.isCacheEnabled" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test whether the cache mechanism is enabled or not.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1035,8 +1135,26 @@ It is disabled by default.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.parameterGradient">
-<code class="descname">parameterGradient</code><span class="sig-paren">(</span><em>inP</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.parameterGradient" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.isHistoryEnabled">
+<code class="descname">isHistoryEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.isHistoryEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test whether the history mechanism is enabled or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isHistoryEnabled</strong> : bool</p>
+<blockquote class="last">
+<div><p>Flag telling whether the history mechanism is enabled.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.MemoizeFunction.parameterGradient">
+<code class="descname">parameterGradient</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.parameterGradient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the gradient against the parameter.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1053,8 +1171,8 @@ It is disabled by default.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.setDescription">
-<code class="descname">setDescription</code><span class="sig-paren">(</span><em>description</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.setDescription" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.setDescription">
+<code class="descname">setDescription</code><span class="sig-paren">(</span><em>description</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.setDescription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the description of the inputs and outputs.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1082,8 +1200,8 @@ It is disabled by default.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.setEvaluation">
-<code class="descname">setEvaluation</code><span class="sig-paren">(</span><em>evaluation</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.setEvaluation" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.setEvaluation">
+<code class="descname">setEvaluation</code><span class="sig-paren">(</span><em>evaluation</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.setEvaluation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the evaluation function.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1100,8 +1218,8 @@ It is disabled by default.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.setGradient">
-<code class="descname">setGradient</code><span class="sig-paren">(</span><em>gradient</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.setGradient" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.setGradient">
+<code class="descname">setGradient</code><span class="sig-paren">(</span><em>gradient</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.setGradient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the gradient function.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1127,8 +1245,8 @@ It is disabled by default.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.setHessian">
-<code class="descname">setHessian</code><span class="sig-paren">(</span><em>hessian</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.setHessian" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.setHessian">
+<code class="descname">setHessian</code><span class="sig-paren">(</span><em>hessian</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.setHessian" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the hessian function.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1154,8 +1272,8 @@ It is disabled by default.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.setName">
-<code class="descname">setName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.setName" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.setName">
+<code class="descname">setName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.setName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s name.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1172,8 +1290,8 @@ It is disabled by default.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.setParameter">
-<code class="descname">setParameter</code><span class="sig-paren">(</span><em>parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.setParameter" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.setParameter">
+<code class="descname">setParameter</code><span class="sig-paren">(</span><em>parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.setParameter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the parameter values.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1190,8 +1308,8 @@ It is disabled by default.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.setParameterDescription">
-<code class="descname">setParameterDescription</code><span class="sig-paren">(</span><em>description</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.setParameterDescription" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.setParameterDescription">
+<code class="descname">setParameterDescription</code><span class="sig-paren">(</span><em>description</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.setParameterDescription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the parameter description.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1208,8 +1326,8 @@ It is disabled by default.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.setShadowedId">
-<code class="descname">setShadowedId</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.setShadowedId" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.setShadowedId">
+<code class="descname">setShadowedId</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.setShadowedId" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s shadowed id.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1226,8 +1344,8 @@ It is disabled by default.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.ProductFunction.setVisibility">
-<code class="descname">setVisibility</code><span class="sig-paren">(</span><em>visible</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductFunction.setVisibility" title="Permalink to this definition">¶</a></dt>
+<dt id="openturns.MemoizeFunction.setVisibility">
+<code class="descname">setVisibility</code><span class="sig-paren">(</span><em>visible</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MemoizeFunction.setVisibility" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s visibility state.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1260,10 +1378,10 @@ It is disabled by default.</p>
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="openturns.PointToPointEvaluation.html" title="PointToPointEvaluation"
+          <a href="openturns.AggregatedFunction.html" title="AggregatedFunction"
              >next</a> |</li>
         <li class="right" >
-          <a href="openturns.ParametricFunction.html" title="ParametricFunction"
+          <a href="openturns.OpenTURNSPythonFunction.html" title="OpenTURNSPythonFunction"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>

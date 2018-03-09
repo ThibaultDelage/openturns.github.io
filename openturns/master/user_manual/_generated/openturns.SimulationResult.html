@@ -108,7 +108,7 @@ and obtained thanks to the method getResult().</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">limitState</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;-F*L^3/(3.*E*I)&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Enable the history mecanism in order to use the getImportanceFactors method</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">limitState</span><span class="o">.</span><span class="n">enableHistory</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">limitState</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MemoizeFunction</span><span class="p">(</span><span class="n">limitState</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myDistribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">([</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">IdentityMatrix</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">output</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">limitState</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">myDistribution</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myEvent</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Event</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">Less</span><span class="p">(),</span> <span class="o">-</span><span class="mf">3.0</span><span class="p">)</span>
@@ -201,7 +201,7 @@ and obtained thanks to the method getResult().</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">It is necessary to enable the history of the model to perform this analysis
-(see <a class="reference internal" href="openturns.Function.html#openturns.Function.enableHistory" title="openturns.Function.enableHistory"><code class="xref py py-meth docutils literal notranslate"><span class="pre">enableHistory()</span></code></a>).</p>
+(see <a class="reference internal" href="openturns.MemoizeFunction.html#openturns.MemoizeFunction" title="openturns.MemoizeFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">MemoizeFunction</span></code></a>).</p>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -388,7 +388,7 @@ with <img class="math" src="../../_images/math/40833f0c689da6962c9dce1102bca4f02
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">This notion is only available if the history mecanism of the model is
-activated (see <a class="reference internal" href="openturns.Function.html#openturns.Function.enableHistory" title="openturns.Function.enableHistory"><code class="xref py py-meth docutils literal notranslate"><span class="pre">enableHistory()</span></code></a>).</p>
+activated (see <a class="reference internal" href="openturns.MemoizeFunction.html#openturns.MemoizeFunction" title="openturns.MemoizeFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">MemoizeFunction</span></code></a>).</p>
 </div>
 </dd></dl>
 
@@ -413,7 +413,7 @@ activated (see <a class="reference internal" href="openturns.Function.html#opent
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">This notion is only available if the history mecanism of the model is
-activated (see <a class="reference internal" href="openturns.Function.html#openturns.Function.enableHistory" title="openturns.Function.enableHistory"><code class="xref py py-meth docutils literal notranslate"><span class="pre">enableHistory()</span></code></a>).</p>
+activated (see <a class="reference internal" href="openturns.MemoizeFunction.html#openturns.MemoizeFunction" title="openturns.MemoizeFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">MemoizeFunction</span></code></a>).</p>
 </div>
 </dd></dl>
 
