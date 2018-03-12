@@ -148,7 +148,7 @@ optimization solver.</li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">level</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">function</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x0&#39;</span><span class="p">,</span> <span class="s1">&#39;x1&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x0^2+x1^2&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">levelSet</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LevelSet</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span> <span class="o">=</span> <span class="n">mesher</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">levelSet</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span> <span class="o">=</span> <span class="n">mesher</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">levelSet</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="o">-</span><span class="mf">2.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
@@ -226,15 +226,11 @@ of <cite>discretization</cite>.</p>
 </div></blockquote>
 <p><strong>boundingBox</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
 <blockquote>
-<div><p>The bounding box used to mesh the level set. By default it is automatically computed from the elements of the given level set.</p>
+<div><p>The bounding box used to mesh the level set.</p>
 </div></blockquote>
 <p><strong>project</strong> : bool</p>
 <blockquote>
 <div><p>Flag to tell if the vertices outside of the level set of a simplex partially included into the level set have to be projected onto the level set. Default is <em>True</em>.</p>
-</div></blockquote>
-<p><strong>surface</strong> : bool</p>
-<blockquote>
-<div><p>Flag to tell if the simplices have to fill the level set or to mesh only the boundary of the level set. Default is <em>False</em>.</p>
 </div></blockquote>
 </td>
 </tr>
