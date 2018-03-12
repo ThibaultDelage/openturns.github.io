@@ -304,7 +304,7 @@ by probability simulation algorithms:</p>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create the model</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;R-F/(_pi*100.0)&#39;</span><span class="p">])</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;R-F/(pi_*100.0)&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -328,7 +328,7 @@ by probability simulation algorithms:</p>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># To have access to the input and output samples</span>
 <span class="c1"># after the simulation, activate the History mechanism</span>
-<span class="n">model</span><span class="o">.</span><span class="n">enableHistory</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MemoizeFunction</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 
 <span class="c1"># Remove all the values stored in the history mechanism</span>
 <span class="c1"># Care : it is done regardless the status of the History mechanism</span>
@@ -639,8 +639,8 @@ IC at 0.95 = [ 0.02433414931165087 ;  0.03619627190519774 ]
 <span></span><span class="c1"># Get the numerical samples of the input and output random vectors</span>
 <span class="c1"># stored according to the History Strategy specified</span>
 <span class="c1"># and used to evaluate the probability estimator and its variance</span>
-<span class="n">inputSampleStored</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">getHistoryInput</span><span class="p">()</span><span class="o">.</span><span class="n">getSample</span><span class="p">()</span>
-<span class="n">outputSampleStored</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">getHistoryOutput</span><span class="p">()</span><span class="o">.</span><span class="n">getSample</span><span class="p">()</span>
+<span class="n">inputSampleStored</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">getInputHistory</span><span class="p">()</span>
+<span class="n">outputSampleStored</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">getOutputHistory</span><span class="p">()</span>
 <span class="n">inputSampleStored</span>
 </pre></div>
 </div>

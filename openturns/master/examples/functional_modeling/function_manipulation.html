@@ -352,7 +352,7 @@ inputs with the methods</li>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Enable the history mechanism</span>
-<span class="n">f</span><span class="o">.</span><span class="n">enableHistory</span><span class="p">()</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MemoizeFunction</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -384,8 +384,8 @@ x= [1.0, 1.0] y= [4,5]
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Get the history</span>
-<span class="n">samplex</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">getHistoryInput</span><span class="p">()</span><span class="o">.</span><span class="n">getSample</span><span class="p">()</span>
-<span class="n">sampley</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">getHistoryOutput</span><span class="p">()</span><span class="o">.</span><span class="n">getSample</span><span class="p">()</span>
+<span class="n">samplex</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">getInputHistory</span><span class="p">()</span>
+<span class="n">sampley</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">getOutputHistory</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;evaluation history = &#39;</span><span class="p">,</span> <span class="n">samplex</span><span class="p">,</span>  <span class="n">sampley</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -668,7 +668,7 @@ sheet #1<br>
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<p>[_e -> Euler's constant (2.71828...),_pi -> Pi constant (3.14159...)]<br>
+<p>[e_ -> Euler's constant (2.71828...),pi_ -> Pi constant (3.14159...)]<br>
 </p></div>
 </div>
 <div class="nbinput docutils container">

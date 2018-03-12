@@ -291,8 +291,8 @@ output sample Y and the corresponding inputs using various estimators:</p>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create X/Y data</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">formula</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X3+sin(_pi*X1)+7*sin(X2)*sin(_pi*X2)+&#39;</span> <span class="o">+</span> \
-           <span class="s1">&#39;1.2*((_pi*X3)*(_pi*X2))*sin(_pi*X1)&#39;</span><span class="p">]</span>
+<span class="n">formula</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X3+sin(pi_*X1)+7*sin(X2)*sin(pi_*X2)+&#39;</span> <span class="o">+</span> \
+           <span class="s1">&#39;1.2*((pi_*X3)*(pi_*X2))*sin(pi_*X1)&#39;</span><span class="p">]</span>
 <span class="n">input_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span> <span class="s1">&#39;X2&#39;</span><span class="p">,</span> <span class="s1">&#39;X3&#39;</span><span class="p">]</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">(</span><span class="n">input_names</span><span class="p">,</span> <span class="n">formula</span><span class="p">)</span>
 <span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComposedDistribution</span><span class="p">([</span><span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> \
