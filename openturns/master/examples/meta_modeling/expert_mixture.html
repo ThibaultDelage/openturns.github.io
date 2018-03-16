@@ -292,7 +292,7 @@ defined as:</p>
 is <img class="math" src="../../_images/math/c73252053ad1c96f4b9de8e6545c3dbe5f33967e.svg" alt="\log w_kp_k(\underline{x})"/>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [62]:
+<span></span>In [1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -300,12 +300,13 @@ is <img class="math" src="../../_images/math/c73252053ad1c96f4b9de8e6545c3dbe5f3
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">openturns.viewer</span> <span class="kn">import</span> <span class="n">View</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [63]:
+<span></span>In [2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -313,19 +314,19 @@ is <img class="math" src="../../_images/math/c73252053ad1c96f4b9de8e6545c3dbe5f3
 
 <span class="c1"># Define the piecewise model we want to rebuild</span>
 <span class="k">def</span> <span class="nf">piecewise</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">:</span>
-        <span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">0.75</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mf">0.75</span><span class="o">**</span><span class="mi">2</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">f</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">f</span><span class="p">]</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PythonFunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">piecewise</span><span class="p">)</span>
+    <span class="c1"># if x &lt; 0.0:</span>
+    <span class="c1">#     f = (x+0.75)**2-0.75**2</span>
+    <span class="c1"># else:</span>
+    <span class="c1">#     f = 2.0-x**2</span>
+    <span class="n">xarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">piecewise</span><span class="p">(</span><span class="n">xarray</span><span class="p">,</span> <span class="p">[</span><span class="n">xarray</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">xarray</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">1.5</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">2.0</span> <span class="o">-</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">])</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PythonFunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">func_sample</span><span class="o">=</span><span class="n">piecewise</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [64]:
+<span></span>In [3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -341,7 +342,7 @@ is <img class="math" src="../../_images/math/c73252053ad1c96f4b9de8e6545c3dbe5f3
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [65]:
+<span></span>In [4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -350,13 +351,13 @@ is <img class="math" src="../../_images/math/c73252053ad1c96f4b9de8e6545c3dbe5f3
 <span class="n">fc1</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FunctionalChaosAlgorithm</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">adaptiveStrategy</span><span class="p">,</span> <span class="n">projectionStrategy</span><span class="p">)</span>
 <span class="n">fc1</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="n">mm1</span> <span class="o">=</span> <span class="n">fc1</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span><span class="o">.</span><span class="n">getMetaModel</span><span class="p">()</span>
-<span class="n">f</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1e-6</span><span class="p">)</span>
+<span class="n">mm1</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1e-6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[65]:
+<span></span>Out[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -364,7 +365,7 @@ is <img class="math" src="../../_images/math/c73252053ad1c96f4b9de8e6545c3dbe5f3
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [66]:
+<span></span>In [5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -373,13 +374,13 @@ is <img class="math" src="../../_images/math/c73252053ad1c96f4b9de8e6545c3dbe5f3
 <span class="n">fc2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FunctionalChaosAlgorithm</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">adaptiveStrategy</span><span class="p">,</span> <span class="n">projectionStrategy</span><span class="p">)</span>
 <span class="n">fc2</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="n">mm2</span> <span class="o">=</span> <span class="n">fc2</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span><span class="o">.</span><span class="n">getMetaModel</span><span class="p">()</span>
-<span class="n">f</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="mf">1e-6</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">mm2</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="mf">1e-6</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[66]:
+<span></span>Out[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -387,7 +388,7 @@ is <img class="math" src="../../_images/math/c73252053ad1c96f4b9de8e6545c3dbe5f3
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [67]:
+<span></span>In [6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -403,7 +404,7 @@ is <img class="math" src="../../_images/math/c73252053ad1c96f4b9de8e6545c3dbe5f3
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [68]:
+<span></span>In [7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -414,7 +415,7 @@ is <img class="math" src="../../_images/math/c73252053ad1c96f4b9de8e6545c3dbe5f3
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [69]:
+<span></span>In [8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -425,7 +426,7 @@ is <img class="math" src="../../_images/math/c73252053ad1c96f4b9de8e6545c3dbe5f3
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [70]:
+<span></span>In [9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -437,7 +438,7 @@ is <img class="math" src="../../_images/math/c73252053ad1c96f4b9de8e6545c3dbe5f3
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [71]:
+<span></span>In [10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -448,7 +449,7 @@ is <img class="math" src="../../_images/math/c73252053ad1c96f4b9de8e6545c3dbe5f3
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[71]:
+<span></span>Out[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
