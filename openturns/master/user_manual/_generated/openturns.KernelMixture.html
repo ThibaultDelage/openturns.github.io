@@ -117,27 +117,24 @@
 <div><p>Contains the bandwith in each direction, <img class="math" src="../../_images/math/0d99770fed72c4506aff28edb6a53198147fe270.svg" alt="(h_1, \dots, h_d)"/>.</p>
 </div></blockquote>
 <p><strong>sample</strong> : 2-d sequence of float</p>
-<blockquote>
+<blockquote class="last">
 <div><p>The data on wich each kernel is centered,
 <img class="math" src="../../_images/math/b969473c9167b3b0c03e7ed88cab362f59405b40.svg" alt="(\vect{X}_1, \dots, \vect{X}_N) \in \Rset^d"/>.</p>
 </div></blockquote>
-<p><strong>Notes</strong></p>
-<p><strong>—–</strong></p>
-<p><strong>A *KernelMixture* is a particular *Mixture*: all the weights are identical and</strong></p>
-<p><strong>the all the probability density functions of the combination are of the same</strong></p>
-<p><strong>family. They are centered on :math:`N` points. The treatment is optimized.</strong></p>
-<p><strong>The pdf of a *KernelMixture* is defined by:</strong></p>
-<p><strong>..math::</strong></p>
-<blockquote>
-<div><p>f(vect{x}) =  sum_{i=1}^N dfrac{1}{N} Pi_{j=1}^d dfrac{1}{h_j}K(frac{x^j-X^j_i}{h})</p>
-</div></blockquote>
-<p><strong>where :math:`N` is the number of points in the sample</strong></p>
-<p><strong>:math:`(vect{X}_1, dots, vect{X}_N) in Rset^d` and :math:`K` a univariate</strong></p>
-<p class="last"><strong>distribution.</strong></p>
 </td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<p>A <em>KernelMixture</em> is a particular <em>Mixture</em>: all the weights are identical and
+the all the probability density functions of the combination are of the same
+family. They are centered on <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> points. The treatment is optimized.</p>
+<p>The pdf of a <em>KernelMixture</em> is defined by:</p>
+<div class="math">
+<p><img src="../../_images/math/7caea2576fa7e3dc69b3e67792a30a89af577be9.svg" alt="f(\vect{x}) =  \sum_{i=1}^N \dfrac{1}{N} \Pi_{j=1}^d \dfrac{1}{h_j}K(\frac{x^j-X^j_i}{h})"/></p>
+</div><p>where <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> is the number of points in the sample
+<img class="math" src="../../_images/math/b969473c9167b3b0c03e7ed88cab362f59405b40.svg" alt="(\vect{X}_1, \dots, \vect{X}_N) \in \Rset^d"/> and <img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> a univariate
+distribution.</p>
 <p class="rubric">Examples</p>
 <p>Create a <em>KernelMixture</em>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
@@ -147,9 +144,11 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myKernelMixture</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">KernelMixture</span><span class="p">(</span><span class="n">kernel</span><span class="p">,</span> <span class="n">bandwith</span><span class="p">,</span> <span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>See the pdf:
-&gt;&gt;&gt; graph = myKernelMixture.drawPDF(64)
-&gt;&gt;&gt; graph.setLegends([‘KernelMixture’])</p>
+<p>See the pdf:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span> <span class="o">=</span> <span class="n">myKernelMixture</span><span class="o">.</span><span class="n">drawPDF</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">setLegends</span><span class="p">([</span><span class="s1">&#39;KernelMixture&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
