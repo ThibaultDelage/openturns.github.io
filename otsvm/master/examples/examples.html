@@ -91,8 +91,8 @@ a lot of parameters to test.</p>
 <span class="n">distribution</span> <span class="o">=</span> <span class="n">ComposedDistribution</span><span class="p">(</span><span class="n">marginals</span><span class="p">)</span>
 
 <span class="c1">#create lists of kernel parameters and tradeoff factors</span>
-<span class="n">tradeoff</span> <span class="o">=</span> <span class="n">Point</span><span class="p">([</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1000</span><span class="p">])</span>
-<span class="n">kernel</span> <span class="o">=</span> <span class="n">Point</span><span class="p">([</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+<span class="n">tradeoff</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1000</span><span class="p">]</span>
+<span class="n">kernel</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
 
 <span class="c1">#first example : create the problem with an input and output samples:</span>
 <span class="c1">#first, we create samples</span>
@@ -213,9 +213,9 @@ a lot of parameters to test.</p>
     <span class="n">dataOut</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="c1">#list of C parameter </span>
-<span class="n">cp</span><span class="o">=</span><span class="n">Point</span><span class="p">([</span><span class="mf">0.000001</span><span class="p">,</span><span class="mf">0.00001</span><span class="p">,</span><span class="mf">0.0001</span><span class="p">,</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+<span class="n">cp</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.000001</span><span class="p">,</span><span class="mf">0.00001</span><span class="p">,</span><span class="mf">0.0001</span><span class="p">,</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
 <span class="c1">#list of gamma parameter in kernel function</span>
-<span class="n">gamma</span><span class="o">=</span><span class="n">Point</span><span class="p">([</span><span class="mf">0.000001</span><span class="p">,</span><span class="mf">0.00001</span><span class="p">,</span><span class="mf">0.0001</span><span class="p">,</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.000001</span><span class="p">,</span><span class="mf">0.00001</span><span class="p">,</span><span class="mf">0.0001</span><span class="p">,</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
 
 <span class="c1">#create the Classification Problem </span>
 <span class="n">Regression</span><span class="o">=</span><span class="n">LibSVMClassification</span><span class="p">(</span><span class="n">dataIn</span><span class="p">,</span><span class="n">dataOut</span><span class="p">)</span>
@@ -227,7 +227,7 @@ a lot of parameters to test.</p>
 <span class="n">Regression</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="nb">print</span> <span class="s2">&quot;#######################&quot;</span>
 <span class="nb">print</span> <span class="s2">&quot;Results with Samples I/O&quot;</span>
-<span class="nb">print</span> <span class="s2">&quot;Accuracy(p.c.)=&quot;</span><span class="p">,</span><span class="n">Regression</span><span class="o">.</span><span class="n">getAccuracy</span><span class="p">()</span>  
+<span class="nb">print</span> <span class="s2">&quot;Accuracy(p.c.)=&quot;</span><span class="p">,</span><span class="n">Regression</span><span class="o">.</span><span class="n">getAccuracy</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
