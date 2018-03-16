@@ -234,12 +234,6 @@
 <tr class="row-even"><td><a class="reference internal" href="#openturns.TimeSeries.getValueAtIndex" title="openturns.TimeSeries.getValueAtIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getValueAtIndex</span></code></a>(index)</td>
 <td>Get the value of the field at the vertex of the given index.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TimeSeries.getValueAtNearestPosition" title="openturns.TimeSeries.getValueAtNearestPosition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getValueAtNearestPosition</span></code></a>(position)</td>
-<td>Get the value of the field at the vertex of the mesh the nearest to the given point.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getValueAtNearestTime</span></code>(timestamp)</td>
-<td></td>
-</tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.TimeSeries.getValues" title="openturns.TimeSeries.getValues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getValues</span></code></a>()</td>
 <td>Get the values of the field.</td>
 </tr>
@@ -263,12 +257,6 @@
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.TimeSeries.setValueAtIndex" title="openturns.TimeSeries.setValueAtIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setValueAtIndex</span></code></a>(index,&nbsp;val)</td>
 <td>Assign the value of the field to the vertex at the given index.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.TimeSeries.setValueAtNearestPosition" title="openturns.TimeSeries.setValueAtNearestPosition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setValueAtNearestPosition</span></code></a>(position,&nbsp;val)</td>
-<td>Assign the value of the field to the vertex the nearest to a specified position.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setValueAtNearestTime</span></code>(timestamp,&nbsp;val)</td>
-<td></td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.TimeSeries.setValues" title="openturns.TimeSeries.setValues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setValues</span></code></a>(values)</td>
 <td>Assign values to a field.</td>
@@ -703,28 +691,6 @@ any hole and composed of ordered instants).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.TimeSeries.getValueAtNearestPosition">
-<code class="descname">getValueAtNearestPosition</code><span class="sig-paren">(</span><em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.TimeSeries.getValueAtNearestPosition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the value of the field at the vertex of the mesh the nearest to the given point.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float in <img class="math" src="../../_images/math/68f1abcd965891af6bf660d2486d375f95b82462.svg" alt="\Rset^n"/>.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>value</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> in <img class="math" src="../../_images/math/22c6c41f1c9750494e0194efd90fd5624b15288d.svg" alt="\Rset^d"/>.</p>
-<blockquote class="last">
-<div><p>The value of the field associated to vertex the nearest of <em>point</em> with
-respect to the Euclidean norm.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="openturns.TimeSeries.getValues">
 <code class="descname">getValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.TimeSeries.getValues" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the values of the field.</p>
@@ -868,26 +834,6 @@ description of the vertices and the values.</p>
 <p><strong>value</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> in <img class="math" src="../../_images/math/22c6c41f1c9750494e0194efd90fd5624b15288d.svg" alt="\Rset^d"/>.</p>
 <blockquote class="last">
 <div><p>New value assigned to the selected vertex.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.TimeSeries.setValueAtNearestPosition">
-<code class="descname">setValueAtNearestPosition</code><span class="sig-paren">(</span><em>position</em>, <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.TimeSeries.setValueAtNearestPosition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Assign the value of the field to the vertex the nearest to a specified position.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>position</strong> : sequence of float in <img class="math" src="../../_images/math/68f1abcd965891af6bf660d2486d375f95b82462.svg" alt="\Rset^n"/>.</p>
-<p><strong>value</strong> : sequence of float in <img class="math" src="../../_images/math/22c6c41f1c9750494e0194efd90fd5624b15288d.svg" alt="\Rset^d"/>.</p>
-<blockquote class="last">
-<div><p>New value assigned to the vertex the nearest to <em>position</em> with respect to
-the Euclidean norm.</p>
 </div></blockquote>
 </td>
 </tr>
