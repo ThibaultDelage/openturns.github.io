@@ -103,7 +103,7 @@
 <p>Returned by optimization solvers, see <a class="reference internal" href="openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationAlgorithm</span></code></a>.</p>
 <dl class="docutils">
 <dt>Available constructors:</dt>
-<dd>OptimizationResult(<em>optimalPoint, optimalValue, iterationNumber, absoluteError, relativeError, residualError, constraintError</em>)</dd>
+<dd>OptimizationResult(<em>optimalPoint, optimalValue, evaluationNumber, absoluteError, relativeError, residualError, constraintError</em>)</dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -117,9 +117,9 @@
 <blockquote>
 <div><p>Value at optimal point.</p>
 </div></blockquote>
-<p><strong>iterationNumber</strong> : int</p>
+<p><strong>evaluationNumber</strong> : int</p>
 <blockquote>
-<div><p>Number of iterations.</p>
+<div><p>Number of evaluations.</p>
 </div></blockquote>
 <p><strong>absoluteError</strong> : float</p>
 <blockquote>
@@ -173,56 +173,62 @@
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getConstraintErrorHistory" title="openturns.OptimizationResult.getConstraintErrorHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getConstraintErrorHistory</span></code></a>()</td>
 <td>Accessor to the evolution of the constraint error.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getId" title="openturns.OptimizationResult.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getEvaluationNumber" title="openturns.OptimizationResult.getEvaluationNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvaluationNumber</span></code></a>()</td>
+<td>Accessor to the number of evaluations.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getId" title="openturns.OptimizationResult.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getInputSample" title="openturns.OptimizationResult.getInputSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputSample</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getInputSample" title="openturns.OptimizationResult.getInputSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputSample</span></code></a>()</td>
 <td>Accessor to the input sample.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getIterationNumber" title="openturns.OptimizationResult.getIterationNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getIterationNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getIterationNumber" title="openturns.OptimizationResult.getIterationNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getIterationNumber</span></code></a>()</td>
 <td>Accessor to the number of iterations.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getLagrangeMultipliers" title="openturns.OptimizationResult.getLagrangeMultipliers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLagrangeMultipliers</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getLagrangeMultipliers" title="openturns.OptimizationResult.getLagrangeMultipliers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLagrangeMultipliers</span></code></a>()</td>
 <td>Accessor to the Lagrange multipliers.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getName" title="openturns.OptimizationResult.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getName" title="openturns.OptimizationResult.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getOptimalPoint" title="openturns.OptimizationResult.getOptimalPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOptimalPoint</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getOptimalPoint" title="openturns.OptimizationResult.getOptimalPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOptimalPoint</span></code></a>()</td>
 <td>Accessor to the optimal point.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getOptimalValue" title="openturns.OptimizationResult.getOptimalValue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOptimalValue</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getOptimalValue" title="openturns.OptimizationResult.getOptimalValue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOptimalValue</span></code></a>()</td>
 <td>Accessor to the optimal value.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getOutputSample" title="openturns.OptimizationResult.getOutputSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputSample</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getOutputSample" title="openturns.OptimizationResult.getOutputSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputSample</span></code></a>()</td>
 <td>Accessor to the output sample.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getProblem" title="openturns.OptimizationResult.getProblem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getProblem</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getProblem" title="openturns.OptimizationResult.getProblem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getProblem</span></code></a>()</td>
 <td>Accessor to the underlying optimization problem.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getRelativeError" title="openturns.OptimizationResult.getRelativeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRelativeError</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getRelativeError" title="openturns.OptimizationResult.getRelativeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRelativeError</span></code></a>()</td>
 <td>Accessor to the relative error.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getRelativeErrorHistory" title="openturns.OptimizationResult.getRelativeErrorHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRelativeErrorHistory</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getRelativeErrorHistory" title="openturns.OptimizationResult.getRelativeErrorHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRelativeErrorHistory</span></code></a>()</td>
 <td>Accessor to the evolution of the relative error.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getResidualError" title="openturns.OptimizationResult.getResidualError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResidualError</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getResidualError" title="openturns.OptimizationResult.getResidualError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResidualError</span></code></a>()</td>
 <td>Accessor to the residual error.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getResidualErrorHistory" title="openturns.OptimizationResult.getResidualErrorHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResidualErrorHistory</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getResidualErrorHistory" title="openturns.OptimizationResult.getResidualErrorHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResidualErrorHistory</span></code></a>()</td>
 <td>Accessor to the evolution of the residual error.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getShadowedId" title="openturns.OptimizationResult.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getShadowedId" title="openturns.OptimizationResult.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.getVisibility" title="openturns.OptimizationResult.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.getVisibility" title="openturns.OptimizationResult.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.hasName" title="openturns.OptimizationResult.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.hasName" title="openturns.OptimizationResult.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.hasVisibleName" title="openturns.OptimizationResult.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.hasVisibleName" title="openturns.OptimizationResult.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.OptimizationResult.setEvaluationNumber" title="openturns.OptimizationResult.setEvaluationNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setEvaluationNumber</span></code></a>(evaluationNumber)</td>
+<td>Accessor to the number of evaluation.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.OptimizationResult.setIterationNumber" title="openturns.OptimizationResult.setIterationNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setIterationNumber</span></code></a>(iterationNumber)</td>
 <td>Accessor to the number of iterations.</td>
@@ -386,6 +392,24 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.OptimizationResult.getEvaluationNumber">
+<code class="descname">getEvaluationNumber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.OptimizationResult.getEvaluationNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the number of evaluations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>evaluationNumber</strong> : int</p>
+<blockquote class="last">
+<div><p>Number of evaluations.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.OptimizationResult.getId">
 <code class="descname">getId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.OptimizationResult.getId" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s id.</p>
@@ -431,7 +455,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>iterationNumber</strong> : int</p>
 <blockquote class="last">
-<div><p>Number of evaluations.</p>
+<div><p>Number of iterations.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -694,6 +718,24 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.OptimizationResult.setEvaluationNumber">
+<code class="descname">setEvaluationNumber</code><span class="sig-paren">(</span><em>evaluationNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.OptimizationResult.setEvaluationNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the number of evaluation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>evaluationNumber</strong> : int</p>
+<blockquote class="last">
+<div><p>Number of evaluations.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.OptimizationResult.setIterationNumber">
 <code class="descname">setIterationNumber</code><span class="sig-paren">(</span><em>iterationNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.OptimizationResult.setIterationNumber" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the number of iterations.</p>
@@ -703,7 +745,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>iterationNumber</strong> : int</p>
 <blockquote class="last">
-<div><p>Number of evaluations.</p>
+<div><p>Number of iterations.</p>
 </div></blockquote>
 </td>
 </tr>
