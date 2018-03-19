@@ -162,6 +162,17 @@ method for the evaluation of both first and total order indices.</p>
 \hat{V_i} &amp; = &amp; \Var{G(A_k)} - \frac{1}{2n} \sum_{k=1}^{n} \left( G(E_k) - G(B_k) \right)^2 \\
 \hat{VT_{i}} &amp; = &amp; \frac{1}{2n} \sum_{k=1}^{n} \left( G(A_k) -  G(E_k) \right)^2
 \end{array}"/></p>
+</div><p>The variance of the estimator is computed using:</p>
+<div class="math">
+<p><img src="../../_images/math/19696fca01d46f39a5f0dcbf50179e996451e149.svg" alt="\begin{array}{ccc}
+U_i = \left(\left(\textsuperscript{c}Y_i^E - \textsuperscript{c}Y_i^B\right)^2, \left(\textsuperscript{c}Y_i^{A}\right)^2 \right)^T \\
+\Psi_i(x, y) = 1 - \frac{0.5 x}{y}
+\end{array}"/></p>
+</div><div class="math">
+<p><img src="../../_images/math/2fca23daef6b3cac13f04b221629975acd6588e6.svg" alt="\begin{array}{ccc}
+U_{-i} = \left(\left(\textsuperscript{c}Y_i^A - \textsuperscript{c}Y_i^E\right)^2, \left(\textsuperscript{c}Y_i^{A}\right)^2 \right)^T \\
+\Psi_{-i}(x, y) = \frac{0.5x}{y}
+\end{array}"/></p>
 </div><p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -194,13 +205,13 @@ method for the evaluation of both first and total order indices.</p>
 <td>Draw sensitivity indices.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getAggregatedFirstOrderIndices" title="openturns.JansenSensitivityAlgorithm.getAggregatedFirstOrderIndices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAggregatedFirstOrderIndices</span></code></a>()</td>
-<td>Get the evaluation of merged first order Sobol indices.</td>
+<td>Get the evaluation of aggregated first order Sobol indices.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getAggregatedTotalOrderIndices" title="openturns.JansenSensitivityAlgorithm.getAggregatedTotalOrderIndices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAggregatedTotalOrderIndices</span></code></a>()</td>
-<td>Get the evaluation of merged total order Sobol indices.</td>
+<td>Get the evaluation of aggregated total order Sobol indices.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getBootstrapConfidenceLevel" title="openturns.JansenSensitivityAlgorithm.getBootstrapConfidenceLevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBootstrapConfidenceLevel</span></code></a>()</td>
-<td>Get the confidence interval level for bootstrap sampling.</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBootstrapConfidenceLevel</span></code>()</td>
+<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getBootstrapSize" title="openturns.JansenSensitivityAlgorithm.getBootstrapSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBootstrapSize</span></code></a>()</td>
 <td>Get the number of bootstrap sampling size.</td>
@@ -208,11 +219,17 @@ method for the evaluation of both first and total order indices.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getClassName" title="openturns.JansenSensitivityAlgorithm.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getFirstOrderIndices" title="openturns.JansenSensitivityAlgorithm.getFirstOrderIndices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFirstOrderIndices</span></code></a>([marginalIndex])</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getConfidenceLevel" title="openturns.JansenSensitivityAlgorithm.getConfidenceLevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getConfidenceLevel</span></code></a>()</td>
+<td>Get the confidence interval level for confidence intervals.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getFirstOrderIndices" title="openturns.JansenSensitivityAlgorithm.getFirstOrderIndices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFirstOrderIndices</span></code></a>([marginalIndex])</td>
 <td>Get first order Sobol indices.</td>
 </tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getFirstOrderIndicesDistribution" title="openturns.JansenSensitivityAlgorithm.getFirstOrderIndicesDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFirstOrderIndicesDistribution</span></code></a>()</td>
+<td>Get the distribution of the aggregated first order Sobol indices.</td>
+</tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getFirstOrderIndicesInterval" title="openturns.JansenSensitivityAlgorithm.getFirstOrderIndicesInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFirstOrderIndicesInterval</span></code></a>()</td>
-<td>Get interval for the merged first order Sobol indices.</td>
+<td>Get interval for the aggregated first order Sobol indices.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getId" title="openturns.JansenSensitivityAlgorithm.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
@@ -229,8 +246,14 @@ method for the evaluation of both first and total order indices.</p>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getTotalOrderIndices" title="openturns.JansenSensitivityAlgorithm.getTotalOrderIndices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTotalOrderIndices</span></code></a>([marginalIndex])</td>
 <td>Get total order Sobol indices.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getTotalOrderIndicesInterval" title="openturns.JansenSensitivityAlgorithm.getTotalOrderIndicesInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTotalOrderIndicesInterval</span></code></a>()</td>
-<td>Get interval for the merged total order Sobol indices.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getTotalOrderIndicesDistribution" title="openturns.JansenSensitivityAlgorithm.getTotalOrderIndicesDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTotalOrderIndicesDistribution</span></code></a>()</td>
+<td>Get the distribution of the aggregated total order Sobol indices.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getTotalOrderIndicesInterval" title="openturns.JansenSensitivityAlgorithm.getTotalOrderIndicesInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTotalOrderIndicesInterval</span></code></a>()</td>
+<td>Get interval for the aggregated total order Sobol indices.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getUseAsymptoticDistribution" title="openturns.JansenSensitivityAlgorithm.getUseAsymptoticDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUseAsymptoticDistribution</span></code></a>()</td>
+<td>Select asymptotic or bootstrap confidence intervals.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.getVisibility" title="openturns.JansenSensitivityAlgorithm.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
@@ -241,17 +264,23 @@ method for the evaluation of both first and total order indices.</p>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.hasVisibleName" title="openturns.JansenSensitivityAlgorithm.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.setBootstrapConfidenceLevel" title="openturns.JansenSensitivityAlgorithm.setBootstrapConfidenceLevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBootstrapConfidenceLevel</span></code></a>(confidenceLevel)</td>
-<td>Set the confidence interval level for bootstrap sampling.</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBootstrapConfidenceLevel</span></code>(confidenceLevel)</td>
+<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.setBootstrapSize" title="openturns.JansenSensitivityAlgorithm.setBootstrapSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBootstrapSize</span></code></a>(bootstrapSize)</td>
 <td>Set the number of bootstrap sampling size.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.setName" title="openturns.JansenSensitivityAlgorithm.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.setConfidenceLevel" title="openturns.JansenSensitivityAlgorithm.setConfidenceLevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setConfidenceLevel</span></code></a>(confidenceLevel)</td>
+<td>Set the confidence interval level for confidence intervals.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.setName" title="openturns.JansenSensitivityAlgorithm.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.setShadowedId" title="openturns.JansenSensitivityAlgorithm.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.setShadowedId" title="openturns.JansenSensitivityAlgorithm.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.setUseAsymptoticDistribution" title="openturns.JansenSensitivityAlgorithm.setUseAsymptoticDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUseAsymptoticDistribution</span></code></a>(…)</td>
+<td>Select asymptotic or bootstrap confidence intervals.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.JansenSensitivityAlgorithm.setVisibility" title="openturns.JansenSensitivityAlgorithm.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
@@ -346,14 +375,14 @@ the graph includes confidence interval plots in the first usage.</p>
 <dl class="method">
 <dt id="openturns.JansenSensitivityAlgorithm.getAggregatedFirstOrderIndices">
 <code class="descname">getAggregatedFirstOrderIndices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.JansenSensitivityAlgorithm.getAggregatedFirstOrderIndices" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the evaluation of merged first order Sobol indices.</p>
+<dd><p>Get the evaluation of aggregated first order Sobol indices.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indices</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
-<div><p>Sequence containing merged first order Sobol indices.</p>
+<div><p>Sequence containing aggregated first order Sobol indices.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -364,32 +393,14 @@ the graph includes confidence interval plots in the first usage.</p>
 <dl class="method">
 <dt id="openturns.JansenSensitivityAlgorithm.getAggregatedTotalOrderIndices">
 <code class="descname">getAggregatedTotalOrderIndices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.JansenSensitivityAlgorithm.getAggregatedTotalOrderIndices" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the evaluation of merged total order Sobol indices.</p>
+<dd><p>Get the evaluation of aggregated total order Sobol indices.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indices</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
-<div><p>Sequence containing merged total order Sobol indices.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.JansenSensitivityAlgorithm.getBootstrapConfidenceLevel">
-<code class="descname">getBootstrapConfidenceLevel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.JansenSensitivityAlgorithm.getBootstrapConfidenceLevel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the confidence interval level for bootstrap sampling.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>confidenceLevel</strong> : float</p>
-<blockquote class="last">
-<div><p>Confidence level for boostrap sampling</p>
+<div><p>Sequence containing aggregated total order Sobol indices.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -434,6 +445,24 @@ the graph includes confidence interval plots in the first usage.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.JansenSensitivityAlgorithm.getConfidenceLevel">
+<code class="descname">getConfidenceLevel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.JansenSensitivityAlgorithm.getConfidenceLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the confidence interval level for confidence intervals.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>confidenceLevel</strong> : float</p>
+<blockquote class="last">
+<div><p>Confidence level for confidence intervals</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.JansenSensitivityAlgorithm.getFirstOrderIndices">
 <code class="descname">getFirstOrderIndices</code><span class="sig-paren">(</span><em>marginalIndex=0</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.JansenSensitivityAlgorithm.getFirstOrderIndices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get first order Sobol indices.</p>
@@ -458,16 +487,35 @@ the graph includes confidence interval plots in the first usage.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.JansenSensitivityAlgorithm.getFirstOrderIndicesDistribution">
+<code class="descname">getFirstOrderIndicesDistribution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.JansenSensitivityAlgorithm.getFirstOrderIndicesDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the distribution of the aggregated first order Sobol indices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
+<blockquote class="last">
+<div><p>Distribution for first order Sobol indices for each component.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.JansenSensitivityAlgorithm.getFirstOrderIndicesInterval">
 <code class="descname">getFirstOrderIndicesInterval</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.JansenSensitivityAlgorithm.getFirstOrderIndicesInterval" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get interval for the merged first order Sobol indices.</p>
+<dd><p>Get interval for the aggregated first order Sobol indices.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>interval</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
 <blockquote class="last">
-<div><p>Interval for first order Sobol indices for each component.</p>
+<div><p>Interval for first order Sobol indices for each component.
+Computed marginal by marginal (not from the joint distribution).</p>
 </div></blockquote>
 </td>
 </tr>
@@ -578,16 +626,53 @@ the graph includes confidence interval plots in the first usage.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.JansenSensitivityAlgorithm.getTotalOrderIndicesDistribution">
+<code class="descname">getTotalOrderIndicesDistribution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.JansenSensitivityAlgorithm.getTotalOrderIndicesDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the distribution of the aggregated total order Sobol indices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
+<blockquote class="last">
+<div><p>Distribution for total order Sobol indices for each component.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.JansenSensitivityAlgorithm.getTotalOrderIndicesInterval">
 <code class="descname">getTotalOrderIndicesInterval</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.JansenSensitivityAlgorithm.getTotalOrderIndicesInterval" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get interval for the merged total order Sobol indices.</p>
+<dd><p>Get interval for the aggregated total order Sobol indices.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>interval</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
 <blockquote class="last">
-<div><p>Interval for total order Sobol indices for each component.</p>
+<div><p>Interval for total order Sobol indices for each component.
+Computed marginal by marginal (not from the joint distribution).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.JansenSensitivityAlgorithm.getUseAsymptoticDistribution">
+<code class="descname">getUseAsymptoticDistribution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.JansenSensitivityAlgorithm.getUseAsymptoticDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select asymptotic or bootstrap confidence intervals.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>useAsymptoticDistribution</strong> : bool</p>
+<blockquote class="last">
+<div><p>Whether to use bootstrap or asymptotic intervals</p>
 </div></blockquote>
 </td>
 </tr>
@@ -650,24 +735,6 @@ the graph includes confidence interval plots in the first usage.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.JansenSensitivityAlgorithm.setBootstrapConfidenceLevel">
-<code class="descname">setBootstrapConfidenceLevel</code><span class="sig-paren">(</span><em>confidenceLevel</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.JansenSensitivityAlgorithm.setBootstrapConfidenceLevel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the confidence interval level for bootstrap sampling.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>confidenceLevel</strong> : float</p>
-<blockquote class="last">
-<div><p>Confidence level for boostrap sampling</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="openturns.JansenSensitivityAlgorithm.setBootstrapSize">
 <code class="descname">setBootstrapSize</code><span class="sig-paren">(</span><em>bootstrapSize</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.JansenSensitivityAlgorithm.setBootstrapSize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the number of bootstrap sampling size.</p>
@@ -679,6 +746,24 @@ the graph includes confidence interval plots in the first usage.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>bootstrapSize</strong> : int</p>
 <blockquote class="last">
 <div><p>Number of bootsrap sampling</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.JansenSensitivityAlgorithm.setConfidenceLevel">
+<code class="descname">setConfidenceLevel</code><span class="sig-paren">(</span><em>confidenceLevel</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.JansenSensitivityAlgorithm.setConfidenceLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the confidence interval level for confidence intervals.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>confidenceLevel</strong> : float</p>
+<blockquote class="last">
+<div><p>Confidence level for confidence intervals</p>
 </div></blockquote>
 </td>
 </tr>
@@ -715,6 +800,25 @@ the graph includes confidence interval plots in the first usage.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
 <blockquote class="last">
 <div><p>Internal unique identifier.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.JansenSensitivityAlgorithm.setUseAsymptoticDistribution">
+<code class="descname">setUseAsymptoticDistribution</code><span class="sig-paren">(</span><em>useAsymptoticDistribution</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.JansenSensitivityAlgorithm.setUseAsymptoticDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select asymptotic or bootstrap confidence intervals.</p>
+<p>Default value is set by the <cite>SobolIndicesAlgorithm-DefaultUseAsymptoticDistribution</cite> key.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>useAsymptoticDistribution</strong> : bool</p>
+<blockquote class="last">
+<div><p>Whether to use bootstrap or asymptotic intervals</p>
 </div></blockquote>
 </td>
 </tr>

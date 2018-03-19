@@ -204,11 +204,20 @@ a_{n,1} &amp; a_{1,2} &amp; \cdots &amp; b_{n,i} &amp; \cdots &amp; a_{n, n_X}
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Note finally that evaluation of intervals for indices might be done for first and total order thanks to
-the <cite>getFirstOrderIndicesInterval</cite> and <cite>getTotalOrderIndicesInterval</cite> methods. Default bootstrap size 
-and confidence level values are parametrized thanks to the resource map keys <cite>SobolIndicesAlgorithm-BootstrapSize</cite>
-and <cite>SobolIndicesAlgorithm-BootstrapConfidenceLevel</cite>. Appropriate setters
-might be called to change their values.</p>
+<p>Note finally that the distribution of indices can be computed for first
+and total order thanks to the <a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getFirstOrderIndicesDistribution" title="openturns.SobolIndicesAlgorithm.getFirstOrderIndicesDistribution"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getFirstOrderIndicesDistribution()</span></code></a> and
+<a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getTotalOrderIndicesDistribution" title="openturns.SobolIndicesAlgorithm.getTotalOrderIndicesDistribution"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getTotalOrderIndicesDistribution()</span></code></a> methods.</p>
+<p>This can be done by either bootstrap or by using an asymptotic estimator,
+this behavior can be changed using <a class="reference internal" href="#openturns.SobolIndicesAlgorithm.setUseAsymptoticDistribution" title="openturns.SobolIndicesAlgorithm.setUseAsymptoticDistribution"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setUseAsymptoticDistribution()</span></code></a>. Its value in initialized by the
+<cite>SobolIndicesAlgorithm-DefaultUseAsymptoticDistribution</cite> resourcemap key.</p>
+<p>For the bootstrap method the size is set by <a class="reference internal" href="#openturns.SobolIndicesAlgorithm.setBootstrapSize" title="openturns.SobolIndicesAlgorithm.setBootstrapSize"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setBootstrapSize()</span></code></a>
+values and initialized by <cite>SobolIndicesAlgorithm-DefaultBootstrapSize</cite> resourcemap key.</p>
+<p>The asymptotic estimators are computed using the <a class="reference internal" href="../../bibliography.html#janon2014" id="id3">[Janon2014]</a> delta method,
+refer to the documentation of each estimator’s class.</p>
+<p>The corresponding confidence interval is also provided using
+<a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getFirstOrderIndicesInterval" title="openturns.SobolIndicesAlgorithm.getFirstOrderIndicesInterval"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getFirstOrderIndicesInterval()</span></code></a> and <a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getTotalOrderIndicesInterval" title="openturns.SobolIndicesAlgorithm.getTotalOrderIndicesInterval"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getTotalOrderIndicesInterval()</span></code></a>.
+The confidence level is set by <cite>setConfidenceLevel</cite>
+and is initialized by the <cite>SobolIndicesAlgorithm-DefaultConfidenceLevel</cite> resourcemap key.</p>
 <p>Also note that for numerical stability reasons the ouputs are centered before indices estimation:</p>
 <div class="math">
 <p><img src="../../_images/math/af67b5c497fd7f98592444858277b54798a18982.svg" alt="Y_k = Y_k - \Eset(Y_k)"/></p>
@@ -223,13 +232,13 @@ might be called to change their values.</p>
 <td>Draw sensitivity indices.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getAggregatedFirstOrderIndices" title="openturns.SobolIndicesAlgorithm.getAggregatedFirstOrderIndices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAggregatedFirstOrderIndices</span></code></a>()</td>
-<td>Get the evaluation of merged first order Sobol indices.</td>
+<td>Get the evaluation of aggregated first order Sobol indices.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getAggregatedTotalOrderIndices" title="openturns.SobolIndicesAlgorithm.getAggregatedTotalOrderIndices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAggregatedTotalOrderIndices</span></code></a>()</td>
-<td>Get the evaluation of merged total order Sobol indices.</td>
+<td>Get the evaluation of aggregated total order Sobol indices.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getBootstrapConfidenceLevel" title="openturns.SobolIndicesAlgorithm.getBootstrapConfidenceLevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBootstrapConfidenceLevel</span></code></a>()</td>
-<td>Get the confidence interval level for bootstrap sampling.</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBootstrapConfidenceLevel</span></code>()</td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getBootstrapSize" title="openturns.SobolIndicesAlgorithm.getBootstrapSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBootstrapSize</span></code></a>()</td>
 <td>Get the number of bootstrap sampling size.</td>
@@ -237,11 +246,17 @@ might be called to change their values.</p>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getClassName" title="openturns.SobolIndicesAlgorithm.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getFirstOrderIndices" title="openturns.SobolIndicesAlgorithm.getFirstOrderIndices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFirstOrderIndices</span></code></a>([marginalIndex])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getConfidenceLevel" title="openturns.SobolIndicesAlgorithm.getConfidenceLevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getConfidenceLevel</span></code></a>()</td>
+<td>Get the confidence interval level for confidence intervals.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getFirstOrderIndices" title="openturns.SobolIndicesAlgorithm.getFirstOrderIndices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFirstOrderIndices</span></code></a>([marginalIndex])</td>
 <td>Get first order Sobol indices.</td>
 </tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getFirstOrderIndicesDistribution" title="openturns.SobolIndicesAlgorithm.getFirstOrderIndicesDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFirstOrderIndicesDistribution</span></code></a>()</td>
+<td>Get the distribution of the aggregated first order Sobol indices.</td>
+</tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getFirstOrderIndicesInterval" title="openturns.SobolIndicesAlgorithm.getFirstOrderIndicesInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFirstOrderIndicesInterval</span></code></a>()</td>
-<td>Get interval for the merged first order Sobol indices.</td>
+<td>Get interval for the aggregated first order Sobol indices.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getId" title="openturns.SobolIndicesAlgorithm.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
@@ -258,17 +273,29 @@ might be called to change their values.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getTotalOrderIndices" title="openturns.SobolIndicesAlgorithm.getTotalOrderIndices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTotalOrderIndices</span></code></a>([marginalIndex])</td>
 <td>Get total order Sobol indices.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getTotalOrderIndicesInterval" title="openturns.SobolIndicesAlgorithm.getTotalOrderIndicesInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTotalOrderIndicesInterval</span></code></a>()</td>
-<td>Get interval for the merged total order Sobol indices.</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getTotalOrderIndicesDistribution" title="openturns.SobolIndicesAlgorithm.getTotalOrderIndicesDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTotalOrderIndicesDistribution</span></code></a>()</td>
+<td>Get the distribution of the aggregated total order Sobol indices.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.setBootstrapConfidenceLevel" title="openturns.SobolIndicesAlgorithm.setBootstrapConfidenceLevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBootstrapConfidenceLevel</span></code></a>(confidenceLevel)</td>
-<td>Set the confidence interval level for bootstrap sampling.</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getTotalOrderIndicesInterval" title="openturns.SobolIndicesAlgorithm.getTotalOrderIndicesInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTotalOrderIndicesInterval</span></code></a>()</td>
+<td>Get interval for the aggregated total order Sobol indices.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getUseAsymptoticDistribution" title="openturns.SobolIndicesAlgorithm.getUseAsymptoticDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUseAsymptoticDistribution</span></code></a>()</td>
+<td>Select asymptotic or bootstrap confidence intervals.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBootstrapConfidenceLevel</span></code>(confidenceLevel)</td>
+<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.setBootstrapSize" title="openturns.SobolIndicesAlgorithm.setBootstrapSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBootstrapSize</span></code></a>(bootstrapSize)</td>
 <td>Set the number of bootstrap sampling size.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.setName" title="openturns.SobolIndicesAlgorithm.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.setConfidenceLevel" title="openturns.SobolIndicesAlgorithm.setConfidenceLevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setConfidenceLevel</span></code></a>(confidenceLevel)</td>
+<td>Set the confidence interval level for confidence intervals.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.setName" title="openturns.SobolIndicesAlgorithm.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.setUseAsymptoticDistribution" title="openturns.SobolIndicesAlgorithm.setUseAsymptoticDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUseAsymptoticDistribution</span></code></a>(…)</td>
+<td>Select asymptotic or bootstrap confidence intervals.</td>
 </tr>
 </tbody>
 </table>
@@ -316,14 +343,14 @@ the graph includes confidence interval plots in the first usage.</p>
 <dl class="method">
 <dt id="openturns.SobolIndicesAlgorithm.getAggregatedFirstOrderIndices">
 <code class="descname">getAggregatedFirstOrderIndices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.getAggregatedFirstOrderIndices" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the evaluation of merged first order Sobol indices.</p>
+<dd><p>Get the evaluation of aggregated first order Sobol indices.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indices</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
-<div><p>Sequence containing merged first order Sobol indices.</p>
+<div><p>Sequence containing aggregated first order Sobol indices.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -334,32 +361,14 @@ the graph includes confidence interval plots in the first usage.</p>
 <dl class="method">
 <dt id="openturns.SobolIndicesAlgorithm.getAggregatedTotalOrderIndices">
 <code class="descname">getAggregatedTotalOrderIndices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.getAggregatedTotalOrderIndices" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the evaluation of merged total order Sobol indices.</p>
+<dd><p>Get the evaluation of aggregated total order Sobol indices.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indices</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
-<div><p>Sequence containing merged total order Sobol indices.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.SobolIndicesAlgorithm.getBootstrapConfidenceLevel">
-<code class="descname">getBootstrapConfidenceLevel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.getBootstrapConfidenceLevel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the confidence interval level for bootstrap sampling.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>confidenceLevel</strong> : float</p>
-<blockquote class="last">
-<div><p>Confidence level for boostrap sampling</p>
+<div><p>Sequence containing aggregated total order Sobol indices.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -404,6 +413,24 @@ the graph includes confidence interval plots in the first usage.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.SobolIndicesAlgorithm.getConfidenceLevel">
+<code class="descname">getConfidenceLevel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.getConfidenceLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the confidence interval level for confidence intervals.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>confidenceLevel</strong> : float</p>
+<blockquote class="last">
+<div><p>Confidence level for confidence intervals</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.SobolIndicesAlgorithm.getFirstOrderIndices">
 <code class="descname">getFirstOrderIndices</code><span class="sig-paren">(</span><em>marginalIndex=0</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.getFirstOrderIndices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get first order Sobol indices.</p>
@@ -428,16 +455,35 @@ the graph includes confidence interval plots in the first usage.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.SobolIndicesAlgorithm.getFirstOrderIndicesDistribution">
+<code class="descname">getFirstOrderIndicesDistribution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.getFirstOrderIndicesDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the distribution of the aggregated first order Sobol indices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
+<blockquote class="last">
+<div><p>Distribution for first order Sobol indices for each component.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.SobolIndicesAlgorithm.getFirstOrderIndicesInterval">
 <code class="descname">getFirstOrderIndicesInterval</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.getFirstOrderIndicesInterval" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get interval for the merged first order Sobol indices.</p>
+<dd><p>Get interval for the aggregated first order Sobol indices.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>interval</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
 <blockquote class="last">
-<div><p>Interval for first order Sobol indices for each component.</p>
+<div><p>Interval for first order Sobol indices for each component.
+Computed marginal by marginal (not from the joint distribution).</p>
 </div></blockquote>
 </td>
 </tr>
@@ -548,16 +594,16 @@ the graph includes confidence interval plots in the first usage.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.SobolIndicesAlgorithm.getTotalOrderIndicesInterval">
-<code class="descname">getTotalOrderIndicesInterval</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.getTotalOrderIndicesInterval" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get interval for the merged total order Sobol indices.</p>
+<dt id="openturns.SobolIndicesAlgorithm.getTotalOrderIndicesDistribution">
+<code class="descname">getTotalOrderIndicesDistribution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.getTotalOrderIndicesDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the distribution of the aggregated total order Sobol indices.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>interval</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
 <blockquote class="last">
-<div><p>Interval for total order Sobol indices for each component.</p>
+<div><p>Distribution for total order Sobol indices for each component.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -566,16 +612,35 @@ the graph includes confidence interval plots in the first usage.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.SobolIndicesAlgorithm.setBootstrapConfidenceLevel">
-<code class="descname">setBootstrapConfidenceLevel</code><span class="sig-paren">(</span><em>confidenceLevel</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.setBootstrapConfidenceLevel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the confidence interval level for bootstrap sampling.</p>
+<dt id="openturns.SobolIndicesAlgorithm.getTotalOrderIndicesInterval">
+<code class="descname">getTotalOrderIndicesInterval</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.getTotalOrderIndicesInterval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get interval for the aggregated total order Sobol indices.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>confidenceLevel</strong> : float</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>interval</strong> : <a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
 <blockquote class="last">
-<div><p>Confidence level for boostrap sampling</p>
+<div><p>Interval for total order Sobol indices for each component.
+Computed marginal by marginal (not from the joint distribution).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.SobolIndicesAlgorithm.getUseAsymptoticDistribution">
+<code class="descname">getUseAsymptoticDistribution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.getUseAsymptoticDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select asymptotic or bootstrap confidence intervals.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>useAsymptoticDistribution</strong> : bool</p>
+<blockquote class="last">
+<div><p>Whether to use bootstrap or asymptotic intervals</p>
 </div></blockquote>
 </td>
 </tr>
@@ -603,6 +668,24 @@ the graph includes confidence interval plots in the first usage.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.SobolIndicesAlgorithm.setConfidenceLevel">
+<code class="descname">setConfidenceLevel</code><span class="sig-paren">(</span><em>confidenceLevel</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.setConfidenceLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the confidence interval level for confidence intervals.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>confidenceLevel</strong> : float</p>
+<blockquote class="last">
+<div><p>Confidence level for confidence intervals</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.SobolIndicesAlgorithm.setName">
 <code class="descname">setName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.setName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s name.</p>
@@ -613,6 +696,25 @@ the graph includes confidence interval plots in the first usage.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
 <blockquote class="last">
 <div><p>The name of the object.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.SobolIndicesAlgorithm.setUseAsymptoticDistribution">
+<code class="descname">setUseAsymptoticDistribution</code><span class="sig-paren">(</span><em>useAsymptoticDistribution</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.setUseAsymptoticDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select asymptotic or bootstrap confidence intervals.</p>
+<p>Default value is set by the <cite>SobolIndicesAlgorithm-DefaultUseAsymptoticDistribution</cite> key.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>useAsymptoticDistribution</strong> : bool</p>
+<blockquote class="last">
+<div><p>Whether to use bootstrap or asymptotic intervals</p>
 </div></blockquote>
 </td>
 </tr>
