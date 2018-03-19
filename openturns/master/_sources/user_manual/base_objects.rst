@@ -144,7 +144,6 @@ Spatial lookup
     NearestNeighbourAlgorithm
     KDTree
     NaiveNearestNeighbour
-    NearestNeighbour1D
     RegularGridNearestNeighbour
     EnclosingSimplexAlgorithm
     NaiveEnclosingSimplex
