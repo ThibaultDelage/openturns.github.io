@@ -160,26 +160,20 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.ImportFromMSHFile" title="openturns.Mesh.ImportFromMSHFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImportFromMSHFile</span></code></a>()</td>
 <td>Import mesh from FreeFem 2-d mesh files.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.checkPointInNeighbourhoodWithCoordinates" title="openturns.Mesh.checkPointInNeighbourhoodWithCoordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">checkPointInNeighbourhoodWithCoordinates</span></code></a>(…)</td>
-<td>Check if a point is inside a simplex and returns its barycentric coordinates.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.checkPointInSimplex" title="openturns.Mesh.checkPointInSimplex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">checkPointInSimplex</span></code></a>(point,&nbsp;index)</td>
-<td>Check if a point is inside a simplex.</td>
-</tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.checkPointInSimplexWithCoordinates" title="openturns.Mesh.checkPointInSimplexWithCoordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">checkPointInSimplexWithCoordinates</span></code></a>(point,&nbsp;index)</td>
 <td>Check if a point is inside a simplex and returns its barycentric coordinates.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.computeP1Gram" title="openturns.Mesh.computeP1Gram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeP1Gram</span></code></a>()</td>
 <td>Compute the P1 Lagrange finite element gram matrix of the mesh.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.computeSimplexVolume" title="openturns.Mesh.computeSimplexVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSimplexVolume</span></code></a>(index)</td>
-<td>Compute the volume of a given simplex.</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSimplexVolume</span></code>(index)</td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.computeWeights" title="openturns.Mesh.computeWeights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeWeights</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.computeSimplicesVolume" title="openturns.Mesh.computeSimplicesVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSimplicesVolume</span></code></a>()</td>
+<td>Compute the volume of all simplices.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.computeWeights" title="openturns.Mesh.computeWeights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeWeights</span></code></a>()</td>
 <td>Compute an approximation of an integral defined over the mesh.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.contains" title="openturns.Mesh.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(*args)</td>
-<td>Check if the given point is inside of the domain.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.draw" title="openturns.Mesh.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>()</td>
 <td>Draw the mesh.</td>
@@ -205,8 +199,8 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 <tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getDescription" title="openturns.Mesh.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a>()</td>
 <td>Get the description of the vertices.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getDimension" title="openturns.Mesh.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
-<td>Get the dimension of the domain.</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code>()</td>
+<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getId" title="openturns.Mesh.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
@@ -217,97 +211,76 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 <tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getName" title="openturns.Mesh.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getNearestNeighbourAlgorithm" title="openturns.Mesh.getNearestNeighbourAlgorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNearestNeighbourAlgorithm</span></code></a>()</td>
-<td>Get the current nearest neighbour algorithm.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getNearestVertex" title="openturns.Mesh.getNearestVertex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNearestVertex</span></code></a>(*args)</td>
-<td>Get the nearest vertex of a given point.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getNearestVertexAndSimplexIndicesWithCoordinates" title="openturns.Mesh.getNearestVertexAndSimplexIndicesWithCoordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNearestVertexAndSimplexIndicesWithCoordinates</span></code></a>(point)</td>
-<td>Get the index of the nearest vertex of a given point and the containing simplex if any, and returns its barycentric coordinates.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getNearestVertexIndex" title="openturns.Mesh.getNearestVertexIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNearestVertexIndex</span></code></a>(*args)</td>
-<td>Get the index of the nearest vertex of a given point.</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNumericalVolume</span></code>()</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getShadowedId" title="openturns.Mesh.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getShadowedId" title="openturns.Mesh.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getSimplex" title="openturns.Mesh.getSimplex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSimplex</span></code></a>(index)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getSimplex" title="openturns.Mesh.getSimplex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSimplex</span></code></a>(index)</td>
 <td>Get the simplex of a given index.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getSimplices" title="openturns.Mesh.getSimplices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSimplices</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getSimplices" title="openturns.Mesh.getSimplices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSimplices</span></code></a>()</td>
 <td>Get the simplices of the mesh.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getSimplicesNumber" title="openturns.Mesh.getSimplicesNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSimplicesNumber</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getSimplicesNumber" title="openturns.Mesh.getSimplicesNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSimplicesNumber</span></code></a>()</td>
 <td>Get the number of simplices of the mesh.</td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUpperBound</span></code>()</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUpperBound</span></code>()</td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getVertex" title="openturns.Mesh.getVertex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVertex</span></code></a>(index)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getVertex" title="openturns.Mesh.getVertex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVertex</span></code></a>(index)</td>
 <td>Get the vertex of a given index.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getVertices" title="openturns.Mesh.getVertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVertices</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getVertices" title="openturns.Mesh.getVertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVertices</span></code></a>()</td>
 <td>Get the vertices of the mesh.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getVerticesNumber" title="openturns.Mesh.getVerticesNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVerticesNumber</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getVerticesNumber" title="openturns.Mesh.getVerticesNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVerticesNumber</span></code></a>()</td>
 <td>Get the number of vertices of the mesh.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getVerticesToSimplicesMap" title="openturns.Mesh.getVerticesToSimplicesMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVerticesToSimplicesMap</span></code></a>()</td>
-<td>Accessor to the map between vertices and simplices.</td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVerticesToSimplicesMap</span></code>()</td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getVisibility" title="openturns.Mesh.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getVisibility" title="openturns.Mesh.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.getVolume" title="openturns.Mesh.getVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVolume</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.getVolume" title="openturns.Mesh.getVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVolume</span></code></a>()</td>
 <td>Get the volume of the mesh.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.hasName" title="openturns.Mesh.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.hasName" title="openturns.Mesh.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.hasVisibleName" title="openturns.Mesh.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.hasVisibleName" title="openturns.Mesh.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEmpty</span></code>()</td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEmpty</span></code>()</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.isNumericallyEmpty" title="openturns.Mesh.isNumericallyEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isNumericallyEmpty</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.isNumericallyEmpty" title="openturns.Mesh.isNumericallyEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isNumericallyEmpty</span></code></a>()</td>
 <td>Check if the mesh is numerically empty.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.isRegular" title="openturns.Mesh.isRegular"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isRegular</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.isRegular" title="openturns.Mesh.isRegular"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isRegular</span></code></a>()</td>
 <td>Check if the mesh is regular (only for 1-d meshes).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.isValid" title="openturns.Mesh.isValid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isValid</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.isValid" title="openturns.Mesh.isValid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isValid</span></code></a>()</td>
 <td>Check the mesh validity.</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">numericallyContains</span></code>(point)</td>
-<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.setName" title="openturns.Mesh.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.setNearestNeighbourAlgorithm" title="openturns.Mesh.setNearestNeighbourAlgorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setNearestNeighbourAlgorithm</span></code></a>(tree)</td>
-<td>Set a nearest neighbour algorithm to speed-up nearest-neighbour lookups.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.setShadowedId" title="openturns.Mesh.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.setShadowedId" title="openturns.Mesh.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.setSimplices" title="openturns.Mesh.setSimplices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSimplices</span></code></a>(simplices)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.setSimplices" title="openturns.Mesh.setSimplices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSimplices</span></code></a>(simplices)</td>
 <td>Set the simplices of the mesh.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.setVertex" title="openturns.Mesh.setVertex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVertex</span></code></a>(index,&nbsp;vertex)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.setVertex" title="openturns.Mesh.setVertex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVertex</span></code></a>(index,&nbsp;vertex)</td>
 <td>Set a vertex of a given index.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.setVertices" title="openturns.Mesh.setVertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVertices</span></code></a>(vertices)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.setVertices" title="openturns.Mesh.setVertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVertices</span></code></a>(vertices)</td>
 <td>Set the vertices of the mesh.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.setVisibility" title="openturns.Mesh.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.setVisibility" title="openturns.Mesh.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Mesh.streamToVTKFormat" title="openturns.Mesh.streamToVTKFormat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">streamToVTKFormat</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Mesh.streamToVTKFormat" title="openturns.Mesh.streamToVTKFormat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">streamToVTKFormat</span></code></a>(*args)</td>
 <td>Give a VTK representation of the mesh.</td>
 </tr>
 </tbody>
@@ -340,102 +313,6 @@ triangle <img class="math" src="../../_images/math/6f52a14c2f4efd222fb860d950c89
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.Mesh.checkPointInNeighbourhoodWithCoordinates">
-<code class="descname">checkPointInNeighbourhoodWithCoordinates</code><span class="sig-paren">(</span><em>point</em>, <em>nearestIndex</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.checkPointInNeighbourhoodWithCoordinates" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if a point is inside a simplex and returns its barycentric coordinates.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float</p>
-<blockquote>
-<div><p>Point of dimension <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e243cb0f5f.svg" alt="dim"/>, the dimension of the vertices of the mesh.</p>
-</div></blockquote>
-<p><strong>index</strong> : int</p>
-<blockquote>
-<div><p>Integer characterizes a vertex of the mesh.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isInside</strong> : bool</p>
-<blockquote>
-<div><p>Flag telling whether <em>point</em> is inside a simplex containg vertex <em>index</em>.</p>
-</div></blockquote>
-<p><strong>simplex</strong> : int</p>
-<blockquote>
-<div><p>Index of the simplex containing this point.</p>
-</div></blockquote>
-<p><strong>coordinates</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
-<blockquote>
-<div><p>The barycentric coordinates of the given point with respect to the vertices
-of the simplex.</p>
-</div></blockquote>
-<p class="last">.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">simplex</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplex</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a point A inside the simplex</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pointA</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mesh2d</span><span class="o">.</span><span class="n">checkPointInSimplexWithCoordinates</span><span class="p">(</span><span class="n">pointA</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-<span class="go">[True, class=Point name=Unnamed dimension=3 values=[0.4,0.3,0.3]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a point B outside the simplex</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pointB</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mesh2d</span><span class="o">.</span><span class="n">checkPointInSimplexWithCoordinates</span><span class="p">(</span><span class="n">pointB</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-<span class="go">[False, class=Point name=Unnamed dimension=3 values=[-0.1,0.5,0.6]]</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.Mesh.checkPointInSimplex">
-<code class="descname">checkPointInSimplex</code><span class="sig-paren">(</span><em>point</em>, <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.checkPointInSimplex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if a point is inside a simplex.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float</p>
-<blockquote>
-<div><p>Point of dimension <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e243cb0f5f.svg" alt="dim"/>, the dimension of the vertices of the mesh.</p>
-</div></blockquote>
-<p><strong>index</strong> : int</p>
-<blockquote>
-<div><p>Integer characterizes one simplex of the mesh.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isInside</strong> : bool</p>
-<blockquote class="last">
-<div><p>Flag telling whether <em>point</em> is inside the simplex of index <em>index</em>.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">simplex</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplex</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a point A inside the simplex</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pointA</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mesh2d</span><span class="o">.</span><span class="n">checkPointInSimplex</span><span class="p">(</span><span class="n">pointA</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-<span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a point B outside the simplex</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pointB</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mesh2d</span><span class="o">.</span><span class="n">checkPointInSimplex</span><span class="p">(</span><span class="n">pointB</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-<span class="go">False</span>
-</pre></div>
-</div>
 </dd></dl>
 
 <dl class="method">
@@ -526,22 +403,16 @@ of the simplex.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.Mesh.computeSimplexVolume">
-<code class="descname">computeSimplexVolume</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.computeSimplexVolume" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the volume of a given simplex.</p>
+<dt id="openturns.Mesh.computeSimplicesVolume">
+<code class="descname">computeSimplicesVolume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.computeSimplicesVolume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the volume of all simplices.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>index</strong> : int</p>
-<blockquote>
-<div><p>Integer characterizes one simplex of the mesh.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>volume</strong> : float</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>volume</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
 <blockquote class="last">
-<div><p>Volume of the simplex of index <em>index</em>.</p>
+<div><p>Volume of all simplices.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -552,8 +423,8 @@ of the simplex.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplex</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplex</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mesh2d</span><span class="o">.</span><span class="n">computeSimplexVolume</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-<span class="go">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mesh2d</span><span class="o">.</span><span class="n">computeSimplicesVolume</span><span class="p">())</span>
+<span class="go">[0.5]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -570,30 +441,6 @@ of the simplex.</p>
 <blockquote class="last">
 <div><p>Weights such that an integral of a function over the mesh
 is a weighted sum of its values at the vertices.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.Mesh.contains">
-<code class="descname">contains</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.contains" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the given point is inside of the domain.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float</p>
-<blockquote>
-<div><p>Point with the same dimension as the current domain’s dimension.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isInside</strong> : bool</p>
-<blockquote class="last">
-<div><p>Flag telling whether the given point is inside of the domain.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -855,24 +702,6 @@ values that can be visualized with the open source software
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.Mesh.getDimension">
-<code class="descname">getDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.getDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the dimension of the domain.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dim</strong> : int</p>
-<blockquote class="last">
-<div><p>Dimension of the domain.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="openturns.Mesh.getId">
 <code class="descname">getId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.getId" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s id.</p>
@@ -906,127 +735,6 @@ values that can be visualized with the open source software
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.Mesh.getNearestNeighbourAlgorithm">
-<code class="descname">getNearestNeighbourAlgorithm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.getNearestNeighbourAlgorithm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the current nearest neighbour algorithm.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.Mesh.getNearestVertex">
-<code class="descname">getNearestVertex</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.getNearestVertex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the nearest vertex of a given point.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float</p>
-<blockquote>
-<div><p>Point of dimension <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e243cb0f5f.svg" alt="dim"/>, the dimension of the vertices of the mesh.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vertex</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Coordinates of the nearest vertex of <em>point</em>.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">simplices</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplices</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span><span class="o">.</span><span class="n">setNearestNeighbourAlgorithm</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">KDTree</span><span class="p">())</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">point</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mesh2d</span><span class="o">.</span><span class="n">getNearestVertex</span><span class="p">(</span><span class="n">point</span><span class="p">))</span>
-<span class="go">[1,0]</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.Mesh.getNearestVertexAndSimplexIndicesWithCoordinates">
-<code class="descname">getNearestVertexAndSimplexIndicesWithCoordinates</code><span class="sig-paren">(</span><em>point</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.getNearestVertexAndSimplexIndicesWithCoordinates" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the index of the nearest vertex of a given point and the containing simplex if any, and returns its barycentric coordinates.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float</p>
-<blockquote>
-<div><p>Point of dimension <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e243cb0f5f.svg" alt="dim"/>, the dimension of the vertices of the mesh.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indices</strong> : <a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></p>
-<blockquote>
-<div><p>Collecton of 1 or 2 integers, the first one being the index of the vertex the closest to the given point and the second one the index of the containing simplex if the given point is inside of the mesh.</p>
-</div></blockquote>
-<p><strong>coordinates</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>The barycentric coordinates of the given point wrt the vertices of the containing simplex. It is of dimension 0 if the point is not contained into the mesh.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">simplex</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplex</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span><span class="o">.</span><span class="n">setNearestNeighbourAlgorithm</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">KDTree</span><span class="p">())</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a point A inside the simplex</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pointA</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mesh2d</span><span class="o">.</span><span class="n">getNearestVertexAndSimplexIndicesWithCoordinates</span><span class="p">(</span><span class="n">pointA</span><span class="p">))</span>
-<span class="go">[[1,0], class=Point name=Unnamed dimension=3 values=[0.4,0.3,0.3]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a point B outside the simplex</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pointB</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mesh2d</span><span class="o">.</span><span class="n">getNearestVertexAndSimplexIndicesWithCoordinates</span><span class="p">(</span><span class="n">pointB</span><span class="p">))</span>
-<span class="go">[[2], class=Point name=Unnamed dimension=0 values=[]]</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.Mesh.getNearestVertexIndex">
-<code class="descname">getNearestVertexIndex</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.getNearestVertexIndex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the index of the nearest vertex of a given point.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float</p>
-<blockquote>
-<div><p>Point of dimension <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e243cb0f5f.svg" alt="dim"/>, the dimension of the vertices of the mesh.</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>index</strong> : int</p>
-<blockquote class="last">
-<div><p>Index of the simplex the nearest of <em>point</em> according to the Euclidean
-norm.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">vertices</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">simplices</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">simplices</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh2d</span><span class="o">.</span><span class="n">setNearestNeighbourAlgorithm</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">KDTree</span><span class="p">())</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">point</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">mesh2d</span><span class="o">.</span><span class="n">getNearestVertexIndex</span><span class="p">(</span><span class="n">point</span><span class="p">))</span>
-<span class="go">1</span>
-</pre></div>
-</div>
 </dd></dl>
 
 <dl class="method">
@@ -1220,24 +928,6 @@ where <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e2
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.Mesh.getVerticesToSimplicesMap">
-<code class="descname">getVerticesToSimplicesMap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.getVerticesToSimplicesMap" title="Permalink to this definition">¶</a></dt>
-<dd><p>Accessor to the map between vertices and simplices.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>verticesSimplicesMap</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">IndicesCollection</span></code></p>
-<blockquote class="last">
-<div><p>For each vertex, list the vertices indices it belongs to.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="openturns.Mesh.getVisibility">
 <code class="descname">getVisibility</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.getVisibility" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s visibility state.</p>
@@ -1415,12 +1105,6 @@ vertices.</p>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.Mesh.setNearestNeighbourAlgorithm">
-<code class="descname">setNearestNeighbourAlgorithm</code><span class="sig-paren">(</span><em>tree</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Mesh.setNearestNeighbourAlgorithm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set a nearest neighbour algorithm to speed-up nearest-neighbour lookups.</p>
 </dd></dl>
 
 <dl class="method">
