@@ -103,23 +103,28 @@
 <dl class="docutils">
 <dt>Available constructors:</dt>
 <dd><p class="first">OrthogonalProductPolynomialFactory(<em>polynomials</em>)</p>
-<p class="last">OrthogonalProductPolynomialFactory(<em>polynomials, enumerateFunction</em>)</p>
+<p>OrthogonalProductPolynomialFactory(<em>polynomials, enumerateFunction</em>)</p>
+<p class="last">OrthogonalProductPolynomialFactory(<em>marginals</em>)</p>
 </dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>polynomials</strong> : list of <a class="reference internal" href="openturns.OrthogonalUniVariatePolynomialFamily.html#openturns.OrthogonalUniVariatePolynomialFamily" title="openturns.OrthogonalUniVariatePolynomialFamily"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrthogonalUniVariatePolynomialFamily</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>polynomials</strong> : sequence of <a class="reference internal" href="openturns.OrthogonalUniVariatePolynomialFamily.html#openturns.OrthogonalUniVariatePolynomialFamily" title="openturns.OrthogonalUniVariatePolynomialFamily"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrthogonalUniVariatePolynomialFamily</span></code></a></p>
 <blockquote>
 <div><p>List of orthogonal univariate polynomials factories with the same
 dimension as the orthogonal basis.</p>
 </div></blockquote>
 <p><strong>enumerateFunction</strong> : <a class="reference internal" href="openturns.EnumerateFunction.html#openturns.EnumerateFunction" title="openturns.EnumerateFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnumerateFunction</span></code></a></p>
-<blockquote class="last">
+<blockquote>
 <div><p>Associates to an integer its multi-index image in the <img class="math" src="../../_images/math/1b8c436284cfe9ffd026a823b066675f45eb623b.svg" alt="\Nset^d"/>
 dimension, which is the dimension of the basis. This multi-index represents
 the collection of degrees of the univariate polynomials.</p>
+</div></blockquote>
+<p><strong>marginals</strong> : sequence of <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
+<blockquote class="last">
+<div><p>List of physical space marginals.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -152,8 +157,8 @@ To facilitate the construction of the basis it is recommanded to use the class
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Easier way to construct the same multivariate orthonormal basis</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">polyColl</span> <span class="o">=</span> <span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">StandardDistributionPolynomialFactory</span><span class="p">(</span><span class="n">Xdist</span><span class="o">.</span><span class="n">getMarginal</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Xdist</span><span class="o">.</span><span class="n">getDimension</span><span class="p">())]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">productBasis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">OrthogonalProductPolynomialFactory</span><span class="p">(</span><span class="n">polyColl</span><span class="p">,</span> <span class="n">enumerateFunction</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">marginals</span> <span class="o">=</span> <span class="p">[</span><span class="n">Xdist</span><span class="o">.</span><span class="n">getMarginal</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Xdist</span><span class="o">.</span><span class="n">getDimension</span><span class="p">())]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">productBasis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">OrthogonalProductPolynomialFactory</span><span class="p">(</span><span class="n">marginals</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>

@@ -340,7 +340,7 @@ model response using functional chaos.</p>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># draw Sobol&#39; indices</span>
-<span class="n">sensitivityAnalysis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FunctionalChaosRandomVector</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">sensitivityAnalysis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FunctionalChaosSobolIndices</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="n">first_order</span> <span class="o">=</span> <span class="p">[</span><span class="n">sensitivityAnalysis</span><span class="o">.</span><span class="n">getSobolIndex</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">)]</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">SaltelliSensitivityAlgorithm</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">first_order</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;1st order Sobol</span><span class="se">\&#39;</span><span class="s1"> indices&#39;</span><span class="p">)</span>
 </pre></div>
