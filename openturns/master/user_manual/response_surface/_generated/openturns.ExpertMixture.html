@@ -118,9 +118,9 @@ defined by the collection of functions <img class="math" src="../../../_images/m
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>basis</strong> : <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>basis</strong> : sequence of <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote>
-<div><p>A basis which is a collection of <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>.</p>
+<div><p>A basis</p>
 </div></blockquote>
 <p><strong>classifier</strong> : <a class="reference internal" href="openturns.Classifier.html#openturns.Classifier" title="openturns.Classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classifier</span></code></a></p>
 <blockquote>
@@ -153,7 +153,7 @@ classifier only partitions the input space.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">classifier</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">MixtureClassifier</span><span class="p">(</span><span class="n">distribution</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;-x&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">experts</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Basis</span><span class="p">([</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">experts</span> <span class="o">=</span> <span class="p">[</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">evaluation</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ExpertMixture</span><span class="p">(</span><span class="n">experts</span><span class="p">,</span> <span class="n">classifier</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">moe</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">evaluation</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">moe</span><span class="p">([</span><span class="o">-</span><span class="mf">0.3</span><span class="p">]))</span>
@@ -574,7 +574,7 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>basis</strong> : <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>basis</strong> : collection of <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
 <blockquote class="last">
 <div><p>The collection of functions <img class="math" src="../../../_images/math/f62acfb6121ce9bd82986401eb18a4d6b94707d8.svg" alt="(f_i)_{i=1, \ldots, N}"/>.</p>
 </div></blockquote>
