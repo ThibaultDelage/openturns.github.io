@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Perturbation Law Indices &#8212; otpod  documentation</title>
     <link rel="stylesheet" href="../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -30,8 +22,7 @@
           rel='stylesheet' type='text/css' />
  
 
-  </head>
-  <body>
+  </head><body>
 <div class="pageheader">
   <ul>
     <li><a href="../index.html">Home</a></li>
@@ -105,12 +96,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -294,11 +287,11 @@ metamodel or on the polynomial chaos in order to compute the PLI. It
 also can be used only if the input parameters dimension is greater than
 2 (without counting the defect).</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># import relevant module</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 <span class="kn">import</span> <span class="nn">otpod</span>
@@ -314,11 +307,11 @@ also can be used only if the input parameters dimension is greater than
 <div class="section" id="Generate-data">
 <h2>Generate data<a class="headerlink" href="#Generate-data" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">inputSample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">NumericalSample</span><span class="p">(</span>
     <span class="p">[[</span><span class="mf">4.59626812e+00</span><span class="p">,</span> <span class="mf">7.46143339e-02</span><span class="p">,</span> <span class="mf">1.02231538e+00</span><span class="p">,</span> <span class="mf">8.60042277e+01</span><span class="p">],</span>
     <span class="p">[</span><span class="mf">4.14315790e+00</span><span class="p">,</span> <span class="mf">4.20801346e-02</span><span class="p">,</span> <span class="mf">1.05874908e+00</span><span class="p">,</span> <span class="mf">2.65757364e+01</span><span class="p">],</span>
@@ -356,11 +349,11 @@ also can be used only if the input parameters dimension is greater than
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># signal detection threshold</span>
 <span class="n">detection</span> <span class="o">=</span> <span class="mf">38.</span>
 </pre></div>
@@ -372,11 +365,11 @@ also can be used only if the input parameters dimension is greater than
 <div class="section" id="Running-the-Kriging-based-POD">
 <h3>Running the Kriging based POD<a class="headerlink" href="#Running-the-Kriging-based-POD" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">krigingPOD</span> <span class="o">=</span> <span class="n">otpod</span><span class="o">.</span><span class="n">KrigingPOD</span><span class="p">(</span><span class="n">inputSample</span><span class="p">,</span> <span class="n">signals</span><span class="p">,</span> <span class="n">detection</span><span class="p">)</span>
 
 <span class="c1"># we can change all simulation size parameters as we are not interested in having an accurate POD curve</span>
@@ -403,11 +396,11 @@ Wall time: 3 s
 <div class="section" id="Show-POD-graphs">
 <h3>Show POD graphs<a class="headerlink" href="#Show-POD-graphs" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">krigingPOD</span><span class="o">.</span><span class="n">drawPOD</span><span class="p">(</span><span class="n">probabilityLevel</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">confidenceLevel</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
                       <span class="n">name</span><span class="o">=</span><span class="s1">&#39;figure/PODKriging.png&#39;</span><span class="p">)</span>
 <span class="c1"># The figure is saved in PODPolyChaos.png</span>
@@ -429,11 +422,11 @@ Wall time: 3 s
 <div class="section" id="Running-the-chaos-based-POD">
 <h3>Running the chaos based POD<a class="headerlink" href="#Running-the-chaos-based-POD" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">chaosPOD</span> <span class="o">=</span> <span class="n">otpod</span><span class="o">.</span><span class="n">PolynomialChaosPOD</span><span class="p">(</span><span class="n">inputSample</span><span class="p">,</span> <span class="n">signals</span><span class="p">,</span> <span class="n">detection</span><span class="p">)</span>
 
 <span class="c1"># we can change all simulation size parameters as we are not interested in having an accurate POD curve</span>
@@ -461,11 +454,11 @@ Wall time: 1.93 s
 <div class="section" id="Show-POD-graphs">
 <h3>Show POD graphs<a class="headerlink" href="#Show-POD-graphs" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">chaosPOD</span><span class="o">.</span><span class="n">drawPOD</span><span class="p">(</span><span class="n">probabilityLevel</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">confidenceLevel</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
                       <span class="n">name</span><span class="o">=</span><span class="s1">&#39;figure/PODChaos.png&#39;</span><span class="p">)</span>
 <span class="c1"># The figure is saved in PODPolyChaos.png</span>
@@ -496,18 +489,18 @@ variance. Two dedicated classes exists for each case.</p>
 <p>For the mean perturbation, it is possible to change the type of the mean
 shifting. If <em>sigmaScaled = False</em>, the given delta values are the new
 marginal means. If <em>sigmaScaled = True</em>, then
-<span class="math">\(newMean = mean + sigma \times delta\)</span>, where sigma is the standard
+<span class="math notranslate">\(newMean = mean + sigma \times delta\)</span>, where sigma is the standard
 deviation of each marginals.</p>
 <p>It is adviced to set the <em>sigmaScaled</em> parameter to True when the input
 distribution are not equal.</p>
 <div class="section" id="with-a-Kriging-POD">
 <h4>with a Kriging POD<a class="headerlink" href="#with-a-Kriging-POD" title="Permalink to this headline">¶</a></h4>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># the delta values</span>
 <span class="n">deltas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="c1"># sigma scaled is activated because the input distributions are not the same</span>
@@ -527,21 +520,21 @@ choose to display the indices with respect to the Hellinger distance
 margin are plotted with respect to the defect size and the delta values.
 It enables you to compare the indices depending of the defect size.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">label</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span> <span class="s1">&#39;variable2&#39;</span><span class="p">,</span> <span class="s1">&#39;param3&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">idefect</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">pliMean</span><span class="o">.</span><span class="n">drawIndices</span><span class="p">(</span><span class="n">idefect</span><span class="p">,</span> <span class="n">confidenceLevel</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
                               <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">hellinger</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -558,11 +551,11 @@ It enables you to compare the indices depending of the defect size.</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">marginal</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">pliMean</span><span class="o">.</span><span class="n">drawContourIndices</span><span class="p">(</span><span class="n">marginal</span><span class="p">,</span> <span class="n">label</span><span class="p">[</span><span class="n">marginal</span><span class="p">])</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -587,11 +580,11 @@ indices for a specific delta value - indices for a specific defect size
 cannot be computed because the probability estimate is too small or too
 large.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Indices for marginal 1: &#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">pliMean</span><span class="o">.</span><span class="n">getIndices</span><span class="p">(</span><span class="n">marginal</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
@@ -630,11 +623,11 @@ Indices for marginal 1:
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Indices for defect 4: &#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">pliMean</span><span class="o">.</span><span class="n">getIndices</span><span class="p">(</span><span class="n">idefect</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
@@ -661,11 +654,11 @@ Indices for defect 4:
 access to more results : - the confidence interval - the perturbed
 probability estimate - draw the perturbed marginal density</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># get PLI object for the 3rd defect</span>
 <span class="n">pliMeanDefect3</span> <span class="o">=</span> <span class="n">pliMean</span><span class="o">.</span><span class="n">getPLIObject</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
@@ -702,11 +695,11 @@ Perturbed probability estimate :
 <div class="section" id="with-polynomial-chaos">
 <h4>with polynomial chaos<a class="headerlink" href="#with-polynomial-chaos" title="Permalink to this headline">¶</a></h4>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># the delta values</span>
 <span class="n">deltas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="c1"># sigma scaled is activated because the input distributions are not the same</span>
@@ -716,11 +709,11 @@ Perturbed probability estimate :
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">marginal</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">pliMean</span><span class="o">.</span><span class="n">drawContourIndices</span><span class="p">(</span><span class="n">marginal</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -740,17 +733,17 @@ Perturbed probability estimate :
 <h3>Variance perturbation<a class="headerlink" href="#Variance-perturbation" title="Permalink to this headline">¶</a></h3>
 <p>For the variance perturbation, the delta values must be greater than 0.
 The delta values corresponds to: - the new variance if <em>coefScaled =
-False</em> - <span class="math">\(newCov = delta + cov\)</span> if <em>covScaled = True</em>, this
+False</em> - <span class="math notranslate">\(newCov = delta + cov\)</span> if <em>covScaled = True</em>, this
 increases the coefficient of variation by delta. The new variance is
 computed such that the mean does not change.</p>
 <p>It is also possible to define the delta values independently for each
 margin.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [26]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># the delta values</span>
 <span class="n">deltas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
@@ -763,11 +756,11 @@ margin.</p>
 <p>With the Hellinger distance, we can see that the perturbed variance is
 not equivalent for all margins.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [27]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">idefect</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">pliVar</span><span class="o">.</span><span class="n">drawIndices</span><span class="p">(</span><span class="n">idefect</span><span class="p">,</span> <span class="n">confidenceLevel</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
                               <span class="n">hellinger</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
@@ -784,11 +777,11 @@ not equivalent for all margins.</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [28]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">marginal</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">pliVar</span><span class="o">.</span><span class="n">drawContourIndices</span><span class="p">(</span><span class="n">marginal</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -827,8 +820,8 @@ not equivalent for all margins.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017.
-      Last updated on Feb 02, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+      Last updated on Mar 28, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
     </div>
   </body>
 </html>
