@@ -106,64 +106,61 @@ readable file.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
-<blockquote>
-<div><p>The name of the file that will be parsed</p>
-</div></blockquote>
-<p><strong>token</strong> : str</p>
-<blockquote>
-<div><p>A regex that will be searched.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>filename</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the file that will be parsed</p>
+</dd>
+<dt><strong>token</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">A regex that will be searched.
 The value right after the token is returned.
 Default: None (no token searched)</p>
-</div></blockquote>
-<p><strong>skip_token</strong> : int</p>
-<blockquote>
-<div><p>The number of tokens that will be skipped before getting
+</dd>
+<dt><strong>skip_token</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of tokens that will be skipped before getting
 the value. If set to != 0, the corresponding token parameter must
 not be equal to None.
 If skip_tokens &lt; 0: count tokens backward from the end of the file.
 Default: 0: no token skipped</p>
-</div></blockquote>
-<p><strong>skip_line</strong> : int</p>
-<blockquote>
-<div><p>Number of lines skipped from the token found.
+</dd>
+<dt><strong>skip_line</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of lines skipped from the token found.
 If corresponding token equal None, skip from the beginning of the file.
 If corresponding token != None, skip from the token.
 If skip_line &lt; 0: count lines backward from the token or from the end
 of the file. Be careful: a last empty line is taken into account too.
 Default: 0: no line skipped</p>
-</div></blockquote>
-<p><strong>skip_col</strong> : int</p>
-<blockquote>
-<div><p>Number of columns skipped from the token found.
+</dd>
+<dt><strong>skip_col</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of columns skipped from the token found.
 If corresponding token = None, skip words from the beginning
 of the line.
 If corresponding token != None, skip words from the token.
 If skip_col &lt; 0: count col backward from the end of the line or from
 the token.
 Default: 0: no column skipped</p>
-</div></blockquote>
-<p><strong>encoding</strong> : str</p>
-<blockquote>
-<div><p>File encoding
+</dd>
+<dt><strong>encoding</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">File encoding
 see <a class="reference external" href="http://docs.python.org/2/library/codecs.html#codec-base-classes">http://docs.python.org/2/library/codecs.html#codec-base-classes</a></p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>value</strong> : float</p>
-<blockquote>
-<div><p>Value found</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>value</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Value found</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>AssertionError</strong></p>
-<blockquote>
-<div><p>parameters badly set</p>
-</div></blockquote>
-<p><strong>EOFError</strong></p>
-<blockquote class="last">
-<div><p>no value found</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>AssertionError</strong></dt>
+<dd><p class="first last">parameters badly set</p>
+</dd>
+<dt><strong>EOFError</strong></dt>
+<dd><p class="first last">no value found</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>

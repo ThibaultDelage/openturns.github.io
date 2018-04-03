@@ -108,16 +108,16 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Path.BuildTemporaryFileName" title="openturns.Path.BuildTemporaryFileName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BuildTemporaryFileName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Path.BuildTemporaryFileName" title="openturns.Path.BuildTemporaryFileName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BuildTemporaryFileName</span></code></a>(pattern)</td>
 <td>Create a new temporary file.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Path.CreateTemporaryDirectory" title="openturns.Path.CreateTemporaryDirectory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CreateTemporaryDirectory</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Path.CreateTemporaryDirectory" title="openturns.Path.CreateTemporaryDirectory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CreateTemporaryDirectory</span></code></a>(directoryPrefix)</td>
 <td>Create a new temporary directory.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Path.DeleteTemporaryDirectory" title="openturns.Path.DeleteTemporaryDirectory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DeleteTemporaryDirectory</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Path.DeleteTemporaryDirectory" title="openturns.Path.DeleteTemporaryDirectory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DeleteTemporaryDirectory</span></code></a>(directoryName)</td>
 <td>Remove a temporary directory.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Path.FindFileByNameInDirectoryList" title="openturns.Path.FindFileByNameInDirectoryList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FindFileByNameInDirectoryList</span></code></a>(dirList)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Path.FindFileByNameInDirectoryList" title="openturns.Path.FindFileByNameInDirectoryList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FindFileByNameInDirectoryList</span></code></a>(name,&nbsp;dirList)</td>
 <td>Find a file.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Path.GetConfigDirectoryList" title="openturns.Path.GetConfigDirectoryList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GetConfigDirectoryList</span></code></a>()</td>
@@ -142,23 +142,25 @@
 
 <dl class="staticmethod">
 <dt id="openturns.Path.BuildTemporaryFileName">
-<em class="property">static </em><code class="descname">BuildTemporaryFileName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Path.BuildTemporaryFileName" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">BuildTemporaryFileName</code><span class="sig-paren">(</span><em>pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Path.BuildTemporaryFileName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new temporary file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pattern</strong> : str</p>
-<blockquote>
-<div><p>Filename pattern, eg ‘tmpXXXXXX’.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>pattern</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Filename pattern, eg ‘tmpXXXXXX’.
 The ‘XXXXXXX’ part will be replaced by random chars.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>fileName</strong> : str</p>
-<blockquote class="last">
-<div><p>The unique newly created file.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fileName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The unique newly created file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -167,22 +169,24 @@ The ‘XXXXXXX’ part will be replaced by random chars.</p>
 
 <dl class="staticmethod">
 <dt id="openturns.Path.CreateTemporaryDirectory">
-<em class="property">static </em><code class="descname">CreateTemporaryDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Path.CreateTemporaryDirectory" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">CreateTemporaryDirectory</code><span class="sig-paren">(</span><em>directoryPrefix</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Path.CreateTemporaryDirectory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new temporary directory.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>directoryPrefix</strong> : str</p>
-<blockquote>
-<div><p>A subdirectory name.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>directoryPrefix</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">A subdirectory name.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>tempDir</strong> : str</p>
-<blockquote class="last">
-<div><p>The newly created directory.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>tempDir</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The newly created directory.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -191,16 +195,17 @@ The ‘XXXXXXX’ part will be replaced by random chars.</p>
 
 <dl class="staticmethod">
 <dt id="openturns.Path.DeleteTemporaryDirectory">
-<em class="property">static </em><code class="descname">DeleteTemporaryDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Path.DeleteTemporaryDirectory" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">DeleteTemporaryDirectory</code><span class="sig-paren">(</span><em>directoryName</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Path.DeleteTemporaryDirectory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a temporary directory.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>directoryName</strong> : str</p>
-<blockquote class="last">
-<div><p>The directory to remove.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>directoryName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The directory to remove.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -209,26 +214,27 @@ The ‘XXXXXXX’ part will be replaced by random chars.</p>
 
 <dl class="staticmethod">
 <dt id="openturns.Path.FindFileByNameInDirectoryList">
-<em class="property">static </em><code class="descname">FindFileByNameInDirectoryList</code><span class="sig-paren">(</span><em>dirList</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Path.FindFileByNameInDirectoryList" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">FindFileByNameInDirectoryList</code><span class="sig-paren">(</span><em>name</em>, <em>dirList</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Path.FindFileByNameInDirectoryList" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find a file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote>
-<div><p>Filename to be found.</p>
-</div></blockquote>
-<p><strong>dirList</strong> : sequence of str</p>
-<blockquote>
-<div><p>The list of directories to search in.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Filename to be found.</p>
+</dd>
+<dt><strong>dirList</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of str</span></dt>
+<dd><p class="first last">The list of directories to search in.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dirList</strong> : list of str</p>
-<blockquote class="last">
-<div><p>The list of directories searched for config files.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dirList</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of str</span></dt>
+<dd><p class="first last">The list of directories searched for config files.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -243,10 +249,11 @@ The ‘XXXXXXX’ part will be replaced by random chars.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dirList</strong> : list of str</p>
-<blockquote class="last">
-<div><p>The list of directories searched for config files.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dirList</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of str</span></dt>
+<dd><p class="first last">The list of directories searched for config files.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -261,10 +268,11 @@ The ‘XXXXXXX’ part will be replaced by random chars.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>installDir</strong> : str</p>
-<blockquote class="last">
-<div><p>The installation prefix.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>installDir</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The installation prefix.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -279,10 +287,11 @@ The ‘XXXXXXX’ part will be replaced by random chars.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dir</strong> : str</p>
-<blockquote class="last">
-<div><p>The directory containing the shared library.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dir</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The directory containing the shared library.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -297,10 +306,11 @@ The ‘XXXXXXX’ part will be replaced by random chars.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>tempDir</strong> : str</p>
-<blockquote class="last">
-<div><p>The absolute temporary directory.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>tempDir</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The absolute temporary directory.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>

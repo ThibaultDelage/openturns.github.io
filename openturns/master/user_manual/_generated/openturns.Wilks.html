@@ -108,10 +108,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>randomVector</strong> : <a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a> of dimension 1</p>
-<blockquote class="last">
-<div><p>Output variable of interest.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>randomVector</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a> of dimension 1</span></dt>
+<dd><p class="first last">Output variable of interest.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -134,7 +135,7 @@ than the theoretical quantile <img class="math" src="../../_images/math/9f061ebe
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Wilks.ComputeSampleSize" title="openturns.Wilks.ComputeSampleSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComputeSampleSize</span></code></a>(confidenceLevel[,&nbsp;marginIndex])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Wilks.ComputeSampleSize" title="openturns.Wilks.ComputeSampleSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComputeSampleSize</span></code></a>(quantileLevel,&nbsp;confidenceLevel)</td>
 <td>Evaluate the size of the sample.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.Wilks.computeQuantileBound" title="openturns.Wilks.computeQuantileBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeQuantileBound</span></code></a>(quantileLevel,&nbsp;…[,&nbsp;…])</td>
@@ -153,31 +154,31 @@ than the theoretical quantile <img class="math" src="../../_images/math/9f061ebe
 
 <dl class="staticmethod">
 <dt id="openturns.Wilks.ComputeSampleSize">
-<em class="property">static </em><code class="descname">ComputeSampleSize</code><span class="sig-paren">(</span><em>confidenceLevel</em>, <em>marginIndex=0</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Wilks.ComputeSampleSize" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">ComputeSampleSize</code><span class="sig-paren">(</span><em>quantileLevel</em>, <em>confidenceLevel</em>, <em>marginIndex=0</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Wilks.ComputeSampleSize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate the size of the sample.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>alpha</strong> : positive float <img class="math" src="../../_images/math/cb9513e61fb4418a5ab7e121be17862c8235bc65.svg" alt="&lt; 1"/></p>
-<blockquote>
-<div><p>The order of the quantile we want to evaluate.</p>
-</div></blockquote>
-<p><strong>beta</strong> : positive float <img class="math" src="../../_images/math/cb9513e61fb4418a5ab7e121be17862c8235bc65.svg" alt="&lt; 1"/></p>
-<blockquote>
-<div><p>Confidence on the evaluation of the empirical quantile.</p>
-</div></blockquote>
-<p><strong>i</strong> : int</p>
-<blockquote>
-<div><p>Rank of the maximum which will evaluate the empirical quantile. Default
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive float <img class="math" src="../../_images/math/cb9513e61fb4418a5ab7e121be17862c8235bc65.svg" alt="&lt; 1"/></span></dt>
+<dd><p class="first last">The order of the quantile we want to evaluate.</p>
+</dd>
+<dt><strong>beta</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive float <img class="math" src="../../_images/math/cb9513e61fb4418a5ab7e121be17862c8235bc65.svg" alt="&lt; 1"/></span></dt>
+<dd><p class="first last">Confidence on the evaluation of the empirical quantile.</p>
+</dd>
+<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Rank of the maximum which will evaluate the empirical quantile. Default
 <img class="math" src="../../_images/math/bbc78d7e2cbc635f03a34107c990574c8afb0298.svg" alt="i = 0"/> (maximum of the sample)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>w</strong> : int</p>
-<blockquote class="last">
-<div><p>the Wilks number.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>w</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">the Wilks number.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -192,26 +193,26 @@ than the theoretical quantile <img class="math" src="../../_images/math/9f061ebe
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>alpha</strong> : positive float <img class="math" src="../../_images/math/cb9513e61fb4418a5ab7e121be17862c8235bc65.svg" alt="&lt; 1"/></p>
-<blockquote>
-<div><p>The order of the quantile we want to evaluate.</p>
-</div></blockquote>
-<p><strong>beta</strong> : positive float <img class="math" src="../../_images/math/cb9513e61fb4418a5ab7e121be17862c8235bc65.svg" alt="&lt; 1"/></p>
-<blockquote>
-<div><p>Confidence on the evaluation of the empirical quantile.</p>
-</div></blockquote>
-<p><strong>i</strong> : int</p>
-<blockquote>
-<div><p>Rank of the maximum which will evaluate the empirical quantile. Default
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive float <img class="math" src="../../_images/math/cb9513e61fb4418a5ab7e121be17862c8235bc65.svg" alt="&lt; 1"/></span></dt>
+<dd><p class="first last">The order of the quantile we want to evaluate.</p>
+</dd>
+<dt><strong>beta</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive float <img class="math" src="../../_images/math/cb9513e61fb4418a5ab7e121be17862c8235bc65.svg" alt="&lt; 1"/></span></dt>
+<dd><p class="first last">Confidence on the evaluation of the empirical quantile.</p>
+</dd>
+<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Rank of the maximum which will evaluate the empirical quantile. Default
 <img class="math" src="../../_images/math/bbc78d7e2cbc635f03a34107c990574c8afb0298.svg" alt="i = 0"/> (maximum of the sample)</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>q</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>The estimate of the quantile upper bound for the given quantile level, at
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>q</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">The estimate of the quantile upper bound for the given quantile level, at
 the given confidence level and using the given upper statistics.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -226,10 +227,11 @@ the given confidence level and using the given upper statistics.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
-<blockquote class="last">
-<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>

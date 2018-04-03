@@ -113,40 +113,35 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>inputSample, outputSample</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a> or 2d-array</p>
-<blockquote>
-<div><p>The samples <img class="math" src="../../../_images/math/d80a2cac24441e7f24859e8f682259bba878b9cf.svg" alt="(\vect{x}_k)_{1 \leq k \leq N} \in \Rset^n"/> and <img class="math" src="../../../_images/math/550fb3c595cd67181c33c96d3c8a88a423f11a8b.svg" alt="(\vect{y}_k)_{1 \leq k \leq N}\in \Rset^d"/>.</p>
-</div></blockquote>
-<p><strong>inputTransformation</strong> : <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
-<blockquote>
-<div><p>Function <img class="math" src="../../../_images/math/40833f0c689da6962c9dce1102bca4f02b2a5410.svg" alt="T"/> used to normalize the input sample.</p>
-<p>If used, the meta model is built on the transformed data.</p>
-</div></blockquote>
-<p><strong>basis</strong> : <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></p>
-<blockquote>
-<div><p>Functional basis to estimate the trend: <img class="math" src="../../../_images/math/1d3d0e2d09b26fa935ea046ecc0972173c13c7ed.svg" alt="(\varphi_j)_{1 \leq j \leq n_1}: \Rset^n \rightarrow \Rset"/>.</p>
-<p>If <img class="math" src="../../../_images/math/26f27712c48d14a1e5b1e45952c6d1c777e415e7.svg" alt="d&gt;1"/>, the same basis is used for each marginal output.</p>
-</div></blockquote>
-<p><strong>basisCollection</strong> : collection of <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></p>
-<blockquote>
-<div><p>Collection of <img class="math" src="../../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> functional basis: one basis for each marginal output.</p>
-<p>An empty collection means that no trend is estimated.</p>
-</div></blockquote>
-<p><strong>covarianceModel</strong> : <a class="reference internal" href="../../_generated/openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></p>
-<blockquote>
-<div><p>Covariance model of the Gaussian process. See notes for the details.</p>
-</div></blockquote>
-<p><strong>normalize</strong> : bool, optional</p>
-<blockquote>
-<div><p>Indicates whether the input sample has to be normalized.</p>
-<p>OpenTURNS uses the transformation fixed by the User in <em>inputTransformation</em> or the empirical mean and variance of the input sample.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>inputSample, outputSample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a> or 2d-array</span></dt>
+<dd><p class="first last">The samples <img class="math" src="../../../_images/math/d80a2cac24441e7f24859e8f682259bba878b9cf.svg" alt="(\vect{x}_k)_{1 \leq k \leq N} \in \Rset^n"/> and <img class="math" src="../../../_images/math/550fb3c595cd67181c33c96d3c8a88a423f11a8b.svg" alt="(\vect{y}_k)_{1 \leq k \leq N}\in \Rset^d"/>.</p>
+</dd>
+<dt><strong>inputTransformation</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
+<dd><p class="first">Function <img class="math" src="../../../_images/math/40833f0c689da6962c9dce1102bca4f02b2a5410.svg" alt="T"/> used to normalize the input sample.</p>
+<p class="last">If used, the meta model is built on the transformed data.</p>
+</dd>
+<dt><strong>basis</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></span></dt>
+<dd><p class="first">Functional basis to estimate the trend: <img class="math" src="../../../_images/math/1d3d0e2d09b26fa935ea046ecc0972173c13c7ed.svg" alt="(\varphi_j)_{1 \leq j \leq n_1}: \Rset^n \rightarrow \Rset"/>.</p>
+<p class="last">If <img class="math" src="../../../_images/math/26f27712c48d14a1e5b1e45952c6d1c777e415e7.svg" alt="d&gt;1"/>, the same basis is used for each marginal output.</p>
+</dd>
+<dt><strong>basisCollection</strong> <span class="classifier-delimiter">:</span> <span class="classifier">collection of <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></span></dt>
+<dd><p class="first">Collection of <img class="math" src="../../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> functional basis: one basis for each marginal output.</p>
+<p class="last">An empty collection means that no trend is estimated.</p>
+</dd>
+<dt><strong>covarianceModel</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></span></dt>
+<dd><p class="first last">Covariance model of the Gaussian process. See notes for the details.</p>
+</dd>
+<dt><strong>normalize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first">Indicates whether the input sample has to be normalized.</p>
+<p class="last">OpenTURNS uses the transformation fixed by the User in <em>inputTransformation</em> or the empirical mean and variance of the input sample.
 Default is set in resource map key <cite>GeneralLinearModelAlgorithm-NormalizeData</cite></p>
-</div></blockquote>
-<p><strong>keepCovariance</strong> : bool, optional</p>
-<blockquote class="last">
-<div><p>Indicates whether the covariance matrix has to be stored in the result structure <em>GeneralLinearModelResult</em>.
+</dd>
+<dt><strong>keepCovariance</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">Indicates whether the covariance matrix has to be stored in the result structure <em>GeneralLinearModelResult</em>.
 Default is set in resource map key <cite>GeneralLinearModelAlgorithm-KeepCovariance</cite></p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -382,10 +377,11 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
-<blockquote class="last">
-<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -400,10 +396,11 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="../../_generated/openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
-<blockquote class="last">
-<div><p>Joint probability density function of the physical input vector.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>distribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
+<dd><p class="first last">Joint probability density function of the physical input vector.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -418,10 +415,11 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -436,10 +434,11 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>inputSample</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>The input sample <img class="math" src="../../../_images/math/cb180a0dde0f5a9c93245e280d6a875da6382edf.svg" alt="(\vect{x}_k)_{1 \leq k \leq N}"/>.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>inputSample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">The input sample <img class="math" src="../../../_images/math/cb180a0dde0f5a9c93245e280d6a875da6382edf.svg" alt="(\vect{x}_k)_{1 \leq k \leq N}"/>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -454,10 +453,11 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>transformation</strong> : <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
-<blockquote class="last">
-<div><p>Function <em>T</em> that normalizes the input.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>transformation</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
+<dd><p class="first last">Function <em>T</em> that normalizes the input.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -472,10 +472,11 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -490,10 +491,11 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>noise</strong> : sequence of positive float</p>
-<blockquote class="last">
-<div><p>The noise variance <img class="math" src="../../../_images/math/b357b0e2d7cdcb78a1c0c2d46ffcdfbb60d21ebe.svg" alt="\tau_k^2"/> of each output value.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>noise</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of positive float</span></dt>
+<dd><p class="first last">The noise variance <img class="math" src="../../../_images/math/b357b0e2d7cdcb78a1c0c2d46ffcdfbb60d21ebe.svg" alt="\tau_k^2"/> of each output value.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -508,10 +510,11 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>logLikelihood</strong> : <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
-<blockquote class="last">
-<div><p>The log-likelihood function degined in <a class="reference internal" href="#equation-loglikelihood">(1)</a> as a function of <img class="math" src="../../../_images/math/a57e1523b18a306650d633dba47e171387d919e3.svg" alt="(\vect{\theta}, \vect{\sigma})"/>.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>logLikelihood</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
+<dd><p class="first last">The log-likelihood function degined in <a class="reference internal" href="#equation-loglikelihood">(1)</a> as a function of <img class="math" src="../../../_images/math/a57e1523b18a306650d633dba47e171387d919e3.svg" alt="(\vect{\theta}, \vect{\sigma})"/>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -547,11 +550,12 @@ with <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>algorithm</strong> : <a class="reference internal" href="../../_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationAlgorithm</span></code></a></p>
-<blockquote class="last">
-<div><p>Solver used to optimize the covariance model parameters.
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>algorithm</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationAlgorithm</span></code></a></span></dt>
+<dd><p class="first last">Solver used to optimize the covariance model parameters.
 Default optimizer is <a class="reference internal" href="../../_generated/openturns.TNC.html#openturns.TNC" title="openturns.TNC"><code class="xref py py-class docutils literal notranslate"><span class="pre">TNC</span></code></a></p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -566,10 +570,11 @@ Default optimizer is <a class="reference internal" href="../../_generated/opentu
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>bounds</strong> : <a class="reference internal" href="../../_generated/openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
-<blockquote class="last">
-<div><p>Bounds for covariance model parameter optimization.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bounds</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt>
+<dd><p class="first last">Bounds for covariance model parameter optimization.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -584,10 +589,11 @@ Default optimizer is <a class="reference internal" href="../../_generated/opentu
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>optimizeParameters</strong> : bool</p>
-<blockquote class="last">
-<div><p>Whether to optimize the covariance model parameters.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>optimizeParameters</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Whether to optimize the covariance model parameters.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -602,10 +608,11 @@ Default optimizer is <a class="reference internal" href="../../_generated/opentu
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>outputSample</strong> : <a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>The output sample <img class="math" src="../../../_images/math/246b08cbc2d11721a2aa13bfe3b27620fbe3194d.svg" alt="(\vect{y}_k)_{1 \leq k \leq N}"/> .</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>outputSample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">The output sample <img class="math" src="../../../_images/math/246b08cbc2d11721a2aa13bfe3b27620fbe3194d.svg" alt="(\vect{y}_k)_{1 \leq k \leq N}"/> .</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -620,11 +627,12 @@ Default optimizer is <a class="reference internal" href="../../_generated/opentu
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : <a class="reference internal" href="openturns.GeneralLinearModelResult.html#openturns.GeneralLinearModelResult" title="openturns.GeneralLinearModelResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralLinearModelResult</span></code></a></p>
-<blockquote class="last">
-<div><p>Structure containing all the results obtained after computation
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>result</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.GeneralLinearModelResult.html#openturns.GeneralLinearModelResult" title="openturns.GeneralLinearModelResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralLinearModelResult</span></code></a></span></dt>
+<dd><p class="first last">Structure containing all the results obtained after computation
 and created by the method <a class="reference internal" href="#openturns.GeneralLinearModelAlgorithm.run" title="openturns.GeneralLinearModelAlgorithm.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a>.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -639,10 +647,11 @@ and created by the method <a class="reference internal" href="#openturns.General
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -657,10 +666,11 @@ and created by the method <a class="reference internal" href="#openturns.General
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -675,10 +685,11 @@ and created by the method <a class="reference internal" href="#openturns.General
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -693,10 +704,11 @@ and created by the method <a class="reference internal" href="#openturns.General
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasVisibleName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty and not the default one.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasVisibleName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty and not the default one.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -720,10 +732,11 @@ and created by the method <a class="reference internal" href="#openturns.General
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="../../_generated/openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
-<blockquote class="last">
-<div><p>Joint probability density function of the physical input vector.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>distribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
+<dd><p class="first last">Joint probability density function of the physical input vector.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -738,12 +751,13 @@ and created by the method <a class="reference internal" href="#openturns.General
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>transformation</strong> : <a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
-<blockquote class="last">
-<div><p>Function that normalizes the input.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>transformation</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
+<dd><p class="first last">Function that normalizes the input.
 The input dimension should be the same as input’s sample dimension, output dimension
 should be output sample’s dimension</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -758,10 +772,11 @@ should be output sample’s dimension</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -776,10 +791,11 @@ should be output sample’s dimension</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>noise</strong> : sequence of positive float</p>
-<blockquote class="last">
-<div><p>The noise variance <img class="math" src="../../../_images/math/b357b0e2d7cdcb78a1c0c2d46ffcdfbb60d21ebe.svg" alt="\tau_k^2"/> of each output value.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>noise</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of positive float</span></dt>
+<dd><p class="first last">The noise variance <img class="math" src="../../../_images/math/b357b0e2d7cdcb78a1c0c2d46ffcdfbb60d21ebe.svg" alt="\tau_k^2"/> of each output value.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -794,10 +810,11 @@ should be output sample’s dimension</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>algorithm</strong> : <a class="reference internal" href="../../_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationAlgorithm</span></code></a></p>
-<blockquote class="last">
-<div><p>Solver used to optimize the covariance model parameters.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>algorithm</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.OptimizationAlgorithm.html#openturns.OptimizationAlgorithm" title="openturns.OptimizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationAlgorithm</span></code></a></span></dt>
+<dd><p class="first last">Solver used to optimize the covariance model parameters.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -812,10 +829,11 @@ should be output sample’s dimension</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>bounds</strong> : <a class="reference internal" href="../../_generated/openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
-<blockquote class="last">
-<div><p>Bounds for covariance model parameter optimization.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>bounds</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt>
+<dd><p class="first last">Bounds for covariance model parameter optimization.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -830,10 +848,11 @@ should be output sample’s dimension</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>optimizeParameters</strong> : bool</p>
-<blockquote class="last">
-<div><p>Whether to optimize the covariance model parameters.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>optimizeParameters</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Whether to optimize the covariance model parameters.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -848,10 +867,11 @@ should be output sample’s dimension</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -866,10 +886,11 @@ should be output sample’s dimension</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>

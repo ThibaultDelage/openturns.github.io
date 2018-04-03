@@ -108,33 +108,30 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>model</strong> : <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></p>
-<blockquote>
-<div><p>Definition of the model to analyse.</p>
-</div></blockquote>
-<p><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
-<blockquote>
-<div><p>Contains the distributions of each model’s input.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
+<dd><p class="first last">Definition of the model to analyse.</p>
+</dd>
+<dt><strong>distribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
+<dd><p class="first last">Contains the distributions of each model’s input.
 Its dimension must be equal to the number of inputs.</p>
-</div></blockquote>
-<p><strong>N</strong> : int, <img class="math" src="../../_images/math/10ad38341ec8c9719a1a7b8f89b8e27e63e0bad7.svg" alt="N &gt; Nr"/></p>
-<blockquote>
-<div><p>Size of the sample from which the Fourier series are calculated.
+</dd>
+<dt><strong>N</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/10ad38341ec8c9719a1a7b8f89b8e27e63e0bad7.svg" alt="N &gt; Nr"/></span></dt>
+<dd><p class="first last">Size of the sample from which the Fourier series are calculated.
 It represents the length of the discretization of the s-space.</p>
-</div></blockquote>
-<p><strong>Nr</strong> : int, <img class="math" src="../../_images/math/e2b2932b9743d3d9621bdd5c7421b7f9a8331436.svg" alt="Nr \geq 1"/></p>
-<blockquote>
-<div><p>Number of resamplings. The extended FAST method involves a part of
+</dd>
+<dt><strong>Nr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/e2b2932b9743d3d9621bdd5c7421b7f9a8331436.svg" alt="Nr \geq 1"/></span></dt>
+<dd><p class="first last">Number of resamplings. The extended FAST method involves a part of
 randomness in the computation of the indices. So it can be asked to
 realize the procedure <em>Nr</em> times and then to calculate the
 arithmetic means of the results over the <em>Nr</em> estimates.</p>
-</div></blockquote>
-<p><strong>M</strong> : int, <img class="math" src="../../_images/math/fbcc41b95d187ea4c8bd0ff48de6d2a084086bbc.svg" alt="0 &lt; M &lt; N"/></p>
-<blockquote class="last">
-<div><p>Interference factor usually equal to 4 or higher.
+</dd>
+<dt><strong>M</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/fbcc41b95d187ea4c8bd0ff48de6d2a084086bbc.svg" alt="0 &lt; M &lt; N"/></span></dt>
+<dd><p class="first last">Interference factor usually equal to 4 or higher.
 It corresponds to the truncation level of the Fourier series, i.e. the
 number of harmonics that are retained in the decomposition.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -236,12 +233,13 @@ that <img class="math" src="../../_images/math/0551996e68bb109be73ec45c6406207af
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>k</strong> : positive int</p>
-<blockquote class="last">
-<div><p>Size of each block the sample is splitted into, this allows to save space
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>k</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive int</span></dt>
+<dd><p class="first last">Size of each block the sample is splitted into, this allows to save space
 while allowing multithreading, when available we recommend to use
 the number of available CPUs, set by default to 1.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -256,10 +254,11 @@ the number of available CPUs, set by default to 1.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>fft</strong> : a <a class="reference internal" href="openturns.FFT.html#openturns.FFT" title="openturns.FFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFT</span></code></a></p>
-<blockquote class="last">
-<div><p>A FFT algorithm.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fft</strong> <span class="classifier-delimiter">:</span> <span class="classifier">a <a class="reference internal" href="openturns.FFT.html#openturns.FFT" title="openturns.FFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFT</span></code></a></span></dt>
+<dd><p class="first last">A FFT algorithm.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -274,17 +273,19 @@ the number of available CPUs, set by default to 1.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>marginalIndex</strong> : int, <img class="math" src="../../_images/math/a3257020dd88acc4529e6521f8288ab5119cc29b.svg" alt="0 \leq i &lt; n"/>, optional</p>
-<blockquote>
-<div><p>Index of the model’s marginal used to estimate the indices.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>marginalIndex</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a3257020dd88acc4529e6521f8288ab5119cc29b.svg" alt="0 \leq i &lt; n"/>, optional</span></dt>
+<dd><p class="first last">Index of the model’s marginal used to estimate the indices.
 By default, marginalIndex is equal to 0.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indices</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>List of the first order indices of all the inputs.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>indices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">List of the first order indices of all the inputs.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -299,17 +300,19 @@ By default, marginalIndex is equal to 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>marginalIndex</strong> : int, <img class="math" src="../../_images/math/a3257020dd88acc4529e6521f8288ab5119cc29b.svg" alt="0 \leq i &lt; n"/>, optional</p>
-<blockquote>
-<div><p>Index of the model’s  marginal used to estimate the indices.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>marginalIndex</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a3257020dd88acc4529e6521f8288ab5119cc29b.svg" alt="0 \leq i &lt; n"/>, optional</span></dt>
+<dd><p class="first last">Index of the model’s  marginal used to estimate the indices.
 By default, marginalIndex is equal to 0.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>indices</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>List of the total-effect order indices of all the inputs.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>indices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">List of the total-effect order indices of all the inputs.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -324,12 +327,13 @@ By default, marginalIndex is equal to 0.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>k</strong> : positive int</p>
-<blockquote class="last">
-<div><p>Size of each block the sample is splitted into, this allows to save space
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>k</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive int</span></dt>
+<dd><p class="first last">Size of each block the sample is splitted into, this allows to save space
 while allowing multithreading, when available we recommend to use
 the number of available CPUs, set by default to <img class="math" src="../../_images/math/73c91af0a64463e5bb1d6e539f12c1e3f4fdc257.svg" alt="1"/>.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -344,10 +348,11 @@ the number of available CPUs, set by default to <img class="math" src="../../_im
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>fft</strong> : a <a class="reference internal" href="openturns.FFT.html#openturns.FFT" title="openturns.FFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFT</span></code></a></p>
-<blockquote class="last">
-<div><p>A FFT algorithm.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fft</strong> <span class="classifier-delimiter">:</span> <span class="classifier">a <a class="reference internal" href="openturns.FFT.html#openturns.FFT" title="openturns.FFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFT</span></code></a></span></dt>
+<dd><p class="first last">A FFT algorithm.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>

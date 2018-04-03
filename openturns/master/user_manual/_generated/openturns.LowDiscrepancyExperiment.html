@@ -115,31 +115,29 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>size</strong> : positive int</p>
-<blockquote>
-<div><p>Number <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> of points of the sequence.</p>
-</div></blockquote>
-<p><strong>sequence</strong> : <a class="reference internal" href="openturns.LowDiscrepancySequence.html#openturns.LowDiscrepancySequence" title="openturns.LowDiscrepancySequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">LowDiscrepancySequence</span></code></a></p>
-<blockquote>
-<div><p>Sequence of points <img class="math" src="../../_images/math/f72e28ef0f4b702336f7d91d8ab0175c1d3583b2.svg" alt="(u_1, \cdots, u_N)"/> with low discrepancy.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive int</span></dt>
+<dd><p class="first last">Number <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> of points of the sequence.</p>
+</dd>
+<dt><strong>sequence</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.LowDiscrepancySequence.html#openturns.LowDiscrepancySequence" title="openturns.LowDiscrepancySequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">LowDiscrepancySequence</span></code></a></span></dt>
+<dd><p class="first last">Sequence of points <img class="math" src="../../_images/math/f72e28ef0f4b702336f7d91d8ab0175c1d3583b2.svg" alt="(u_1, \cdots, u_N)"/> with low discrepancy.
 If not specified, the sequence is a <a class="reference internal" href="openturns.SobolSequence.html#openturns.SobolSequence" title="openturns.SobolSequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">SobolSequence</span></code></a>.</p>
-</div></blockquote>
-<p><strong>distribution :</strong></p>
-<blockquote>
-<div><p>Distribution <img class="math" src="../../_images/math/6a70e9f2b33beac2ab75d748e24c94afa23b7039.svg" alt="\mu"/> of dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> with an independent copula.
+</dd>
+<dt><strong>distribution :</strong></dt>
+<dd><p class="first last">Distribution <img class="math" src="../../_images/math/6a70e9f2b33beac2ab75d748e24c94afa23b7039.svg" alt="\mu"/> of dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> with an independent copula.
 The low discrepancy sequence <img class="math" src="../../_images/math/f72e28ef0f4b702336f7d91d8ab0175c1d3583b2.svg" alt="(u_1, \cdots, u_N)"/> is uniformly
 distributed over <img class="math" src="../../_images/math/386267f7d5e7f75e527507ccde4660097487150a.svg" alt="[0,1]^n"/>. We use the marginal transformation
 <img class="math" src="../../_images/math/11f6fe826f6f4ab0b2490894d99d1d45ab849c73.svg" alt="\Xi_i =F_i^{-1}(u_i)"/> to generate points <img class="math" src="../../_images/math/f27342267d2b05461ddbd78d79fd598e4c6c22c0.svg" alt="(\Xi_i)_{i\in I}"/>
 according to the distribution <img class="math" src="../../_images/math/6a70e9f2b33beac2ab75d748e24c94afa23b7039.svg" alt="\mu"/>. The weights are all equal to
 <img class="math" src="../../_images/math/e078115daffa4ff552f7a9123157c09a02464b29.svg" alt="1/N"/>.</p>
-</div></blockquote>
-<p><strong>restart</strong> : bool</p>
-<blockquote class="last">
-<div><p>Flag to tell if the low discrepancy sequence must be restarted from
+</dd>
+<dt><strong>restart</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Flag to tell if the low discrepancy sequence must be restarted from
 its initial state at each change of distribution or not.
 Default is <em>True</em>: the sequence is restarted at each change of
 distribution.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -300,12 +298,13 @@ of distribution:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sample</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>Points <img class="math" src="../../_images/math/225748c493f7ce778ce60a9a50254a8755a1eecc.svg" alt="(\Xi_i)_{i \in I}"/> which constitute the design of experiments
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">Points <img class="math" src="../../_images/math/225748c493f7ce778ce60a9a50254a8755a1eecc.svg" alt="(\Xi_i)_{i \in I}"/> which constitute the design of experiments
 with <img class="math" src="../../_images/math/6f896ab0b53bed65c9eed53f91a3a92bc23075b3.svg" alt="card I = size"/>. The sampling method is defined by the nature of
 the weighted experiment.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -334,16 +333,16 @@ the weighted experiment.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sample</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
-<blockquote>
-<div><p>The points which constitute the design of experiments. The sampling method
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">The points which constitute the design of experiments. The sampling method
 is defined by the nature of the experiment.</p>
-</div></blockquote>
-<p><strong>weights</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> of size <img class="math" src="../../_images/math/a5dbd54d12a268e1a5fd50d48adbade596f248fe.svg" alt="cardI"/></p>
-<blockquote class="last">
-<div><p>Weights <img class="math" src="../../_images/math/134b3afb4afea9c0dd2191c84bb13ec02e329557.svg" alt="(\omega_i)_{i \in I}"/> associated with the points. By default,
+</dd>
+<dt><strong>weights</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> of size <img class="math" src="../../_images/math/a5dbd54d12a268e1a5fd50d48adbade596f248fe.svg" alt="cardI"/></span></dt>
+<dd><p class="first last">Weights <img class="math" src="../../_images/math/134b3afb4afea9c0dd2191c84bb13ec02e329557.svg" alt="(\omega_i)_{i \in I}"/> associated with the points. By default,
 all the weights are equal to <img class="math" src="../../_images/math/930a1db685b8201fbe9a186c23c657360e154380.svg" alt="1/cardI"/>.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -374,10 +373,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
-<blockquote class="last">
-<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -392,10 +392,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
-<blockquote class="last">
-<div><p>Distribution used to generate the set of input data.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>distribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
+<dd><p class="first last">Distribution used to generate the set of input data.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -410,10 +411,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -428,10 +430,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -446,10 +449,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>randomize</strong> : bool</p>
-<blockquote class="last">
-<div><p>The value of the <em>randomize</em> flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>randomize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">The value of the <em>randomize</em> flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -464,10 +468,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>restart</strong> : bool</p>
-<blockquote class="last">
-<div><p>The value of the <em>restart</em> flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>restart</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">The value of the <em>restart</em> flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -482,10 +487,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sequence</strong> : <a class="reference internal" href="openturns.LowDiscrepancySequence.html#openturns.LowDiscrepancySequence" title="openturns.LowDiscrepancySequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">LowDiscrepancySequence</span></code></a></p>
-<blockquote class="last">
-<div><p>Sequence of points <img class="math" src="../../_images/math/f72e28ef0f4b702336f7d91d8ab0175c1d3583b2.svg" alt="(u_1, \cdots, u_N)"/> with low discrepancy.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sequence</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.LowDiscrepancySequence.html#openturns.LowDiscrepancySequence" title="openturns.LowDiscrepancySequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">LowDiscrepancySequence</span></code></a></span></dt>
+<dd><p class="first last">Sequence of points <img class="math" src="../../_images/math/f72e28ef0f4b702336f7d91d8ab0175c1d3583b2.svg" alt="(u_1, \cdots, u_N)"/> with low discrepancy.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -500,10 +506,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -518,10 +525,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>size</strong> : positive int</p>
-<blockquote class="last">
-<div><p>Number <img class="math" src="../../_images/math/a5dbd54d12a268e1a5fd50d48adbade596f248fe.svg" alt="cardI"/> of points constituting the design of experiments.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive int</span></dt>
+<dd><p class="first last">Number <img class="math" src="../../_images/math/a5dbd54d12a268e1a5fd50d48adbade596f248fe.svg" alt="cardI"/> of points constituting the design of experiments.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -536,10 +544,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -554,10 +563,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -572,10 +582,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasUniformWeights</strong> : bool</p>
-<blockquote class="last">
-<div><p>Whether the experiment has uniform weights.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasUniformWeights</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Whether the experiment has uniform weights.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -590,10 +601,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasVisibleName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty and not the default one.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasVisibleName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty and not the default one.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -608,10 +620,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></p>
-<blockquote class="last">
-<div><p>Distribution used to generate the set of input data.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>distribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
+<dd><p class="first last">Distribution used to generate the set of input data.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -626,10 +639,11 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -644,12 +658,13 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>randomize</strong> : bool</p>
-<blockquote class="last">
-<div><p>Use a cyclic scrambling of the low discrepancy sequence. See <a class="reference internal" href="../../bibliography.html#lecuyer2005" id="id1">[Lecuyer2005]</a> for
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>randomize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Use a cyclic scrambling of the low discrepancy sequence. See <a class="reference internal" href="../../bibliography.html#lecuyer2005" id="id1">[Lecuyer2005]</a> for
 the interest of such a scrambling.
 Default is false.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -664,13 +679,14 @@ Default is false.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>restart</strong> : bool</p>
-<blockquote class="last">
-<div><p>The value of the <em>restart</em> flag. If equals to <em>True</em>, the low
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>restart</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">The value of the <em>restart</em> flag. If equals to <em>True</em>, the low
 discrepancy sequence is restarted at each change of distribution,
 else it is changed only if the new distribution has a dimension
 different from the current one.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -685,10 +701,11 @@ different from the current one.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -703,10 +720,11 @@ different from the current one.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>size</strong> : positive int</p>
-<blockquote class="last">
-<div><p>Number <img class="math" src="../../_images/math/a5dbd54d12a268e1a5fd50d48adbade596f248fe.svg" alt="cardI"/> of points constituting the design of experiments.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive int</span></dt>
+<dd><p class="first last">Number <img class="math" src="../../_images/math/a5dbd54d12a268e1a5fd50d48adbade596f248fe.svg" alt="cardI"/> of points constituting the design of experiments.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -721,10 +739,11 @@ different from the current one.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>

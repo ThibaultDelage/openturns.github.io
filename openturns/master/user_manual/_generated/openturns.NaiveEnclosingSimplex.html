@@ -17,7 +17,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="BoundingVolumeHierarchy" href="openturns.BoundingVolumeHierarchy.html" />
+    <link rel="next" title="RegularGridEnclosingSimplex" href="openturns.RegularGridEnclosingSimplex.html" />
     <link rel="prev" title="EnclosingSimplexAlgorithm" href="openturns.EnclosingSimplexAlgorithm.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
@@ -48,7 +48,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="openturns.BoundingVolumeHierarchy.html" title="BoundingVolumeHierarchy"
+          <a href="openturns.RegularGridEnclosingSimplex.html" title="RegularGridEnclosingSimplex"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="openturns.EnclosingSimplexAlgorithm.html" title="EnclosingSimplexAlgorithm"
@@ -65,8 +65,8 @@
   <p class="topless"><a href="openturns.EnclosingSimplexAlgorithm.html"
                         title="previous chapter">EnclosingSimplexAlgorithm</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="openturns.BoundingVolumeHierarchy.html"
-                        title="next chapter">BoundingVolumeHierarchy</a></p>
+  <p class="topless"><a href="openturns.RegularGridEnclosingSimplex.html"
+                        title="next chapter">RegularGridEnclosingSimplex</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -99,7 +99,49 @@
 <dl class="class">
 <dt id="openturns.NaiveEnclosingSimplex">
 <em class="property">class </em><code class="descname">NaiveEnclosingSimplex</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.NaiveEnclosingSimplex" title="Permalink to this definition">¶</a></dt>
-<dd><p class="rubric">Methods</p>
+<dd><p>Naive implementation of point location.</p>
+<p>This class implements a naive implementation of point location,
+by looking into all its simplices.  It works well for convex
+domains, but may be slow otherwise.</p>
+<dl class="docutils">
+<dt>Available constructors:</dt>
+<dd>NaiveEnclosingSimplex(<em>points, simplices</em>)</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>mesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
+<dd><p class="first last">Mesh.</p>
+</dd>
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
+<dd><p class="first last">Points.</p>
+</dd>
+<dt><strong>simplices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndicesCollection</span></code></span></dt>
+<dd><p class="first last">Simplices.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="openturns.EnclosingSimplexAlgorithm.html#openturns.EnclosingSimplexAlgorithm" title="openturns.EnclosingSimplexAlgorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EnclosingSimplexAlgorithm</span></code></a></p>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mesher</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">IntervalMesher</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lowerbound</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">upperBound</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">interval</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">(</span><span class="n">lowerbound</span><span class="p">,</span> <span class="n">upperBound</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span> <span class="o">=</span> <span class="n">mesher</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">locator</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">NaiveEnclosingSimplex</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">getVertices</span><span class="p">(),</span> <span class="n">mesh</span><span class="o">.</span><span class="n">getSimplices</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplex</span> <span class="o">=</span> <span class="n">locator</span><span class="o">.</span><span class="n">query</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -115,44 +157,52 @@
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.getName" title="openturns.NaiveEnclosingSimplex.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNearestNeighbourAlgorithm</span></code>()</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.getShadowedId" title="openturns.NaiveEnclosingSimplex.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.getShadowedId" title="openturns.NaiveEnclosingSimplex.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.getSimplices" title="openturns.NaiveEnclosingSimplex.getSimplices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSimplices</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.getSimplices" title="openturns.NaiveEnclosingSimplex.getSimplices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSimplices</span></code></a>()</td>
 <td>Collection of simplex accessor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.getVertices" title="openturns.NaiveEnclosingSimplex.getVertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVertices</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.getVertices" title="openturns.NaiveEnclosingSimplex.getVertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVertices</span></code></a>()</td>
 <td>Collection of vertices accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.getVisibility" title="openturns.NaiveEnclosingSimplex.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.getVisibility" title="openturns.NaiveEnclosingSimplex.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.hasName" title="openturns.NaiveEnclosingSimplex.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.hasName" title="openturns.NaiveEnclosingSimplex.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.hasVisibleName" title="openturns.NaiveEnclosingSimplex.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.hasVisibleName" title="openturns.NaiveEnclosingSimplex.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.query" title="openturns.NaiveEnclosingSimplex.query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.query" title="openturns.NaiveEnclosingSimplex.query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query</span></code></a>(*args)</td>
 <td>Get the index of the enclosing simplex of the given point.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.setName" title="openturns.NaiveEnclosingSimplex.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.setName" title="openturns.NaiveEnclosingSimplex.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setNearestNeighbourAlgorithm</span></code>(nearestNeighbour)</td>
-<td></td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.setShadowedId" title="openturns.NaiveEnclosingSimplex.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVerticesAndSimplices</span></code>(vertices,&nbsp;simplices)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.setVisibility" title="openturns.NaiveEnclosingSimplex.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.NaiveEnclosingSimplex.setVisibility" title="openturns.NaiveEnclosingSimplex.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="76%" />
+<col width="24%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>getNearestNeighbourAlgorithm</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>setNearestNeighbourAlgorithm</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>setVerticesAndSimplices</strong></td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
@@ -170,10 +220,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
-<blockquote class="last">
-<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -188,10 +239,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -206,10 +258,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -224,10 +277,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -242,10 +296,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>simplices</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">IndicesCollection</span></code></p>
-<blockquote class="last">
-<div><p>Collection of simplices.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>simplices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndicesCollection</span></code></span></dt>
+<dd><p class="first last">Collection of simplices.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -260,10 +315,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>vertices</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>Collection of points.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>vertices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">Collection of points.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -278,10 +334,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -296,10 +353,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -314,10 +372,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasVisibleName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty and not the default one.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasVisibleName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty and not the default one.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -332,17 +391,19 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float</p>
-<blockquote>
-<div><p>Given point.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>point</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">Given point.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>index</strong> : int</p>
-<blockquote class="last">
-<div><p>If point is enclosed in a simplex, return its index; otherwise return an
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">If point is enclosed in a simplex, return its index; otherwise return an
 int which is at least greater than the number of simplices.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -357,10 +418,11 @@ int which is at least greater than the number of simplices.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -375,10 +437,11 @@ int which is at least greater than the number of simplices.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -393,10 +456,11 @@ int which is at least greater than the number of simplices.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -420,7 +484,7 @@ int which is at least greater than the number of simplices.</p>
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="openturns.BoundingVolumeHierarchy.html" title="BoundingVolumeHierarchy"
+          <a href="openturns.RegularGridEnclosingSimplex.html" title="RegularGridEnclosingSimplex"
              >next</a> |</li>
         <li class="right" >
           <a href="openturns.EnclosingSimplexAlgorithm.html" title="EnclosingSimplexAlgorithm"

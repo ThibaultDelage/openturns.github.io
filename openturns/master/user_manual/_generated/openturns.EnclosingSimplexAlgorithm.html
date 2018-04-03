@@ -104,30 +104,57 @@
 a list of points.</p>
 <dl class="docutils">
 <dt>Available constructors:</dt>
-<dd><p class="first">EnclosingSimplexAlgorithm()</p>
-<p class="last">EnclosingSimplexAlgorithm(<em>vertices, simplices</em>)</p>
-</dd>
+<dd>EnclosingSimplexAlgorithm(<em>vertices, simplices</em>)</dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>vertices</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></p>
-<blockquote>
-<div><p>Vertices.</p>
-</div></blockquote>
-<p><strong>simplices</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">IndicesCollection</span></code></p>
-<blockquote class="last">
-<div><p>Simplices.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>vertices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">Vertices.</p>
+</dd>
+<dt><strong>simplices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndicesCollection</span></code></span></dt>
+<dd><p class="first last">Simplices.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.NaiveEnclosingSimplex.html#openturns.NaiveEnclosingSimplex" title="openturns.NaiveEnclosingSimplex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NaiveEnclosingSimplex</span></code></a>, <a class="reference internal" href="openturns.BoundingVolumeHierarchy.html#openturns.BoundingVolumeHierarchy" title="openturns.BoundingVolumeHierarchy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BoundingVolumeHierarchy</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.NaiveEnclosingSimplex.html#openturns.NaiveEnclosingSimplex" title="openturns.NaiveEnclosingSimplex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NaiveEnclosingSimplex</span></code></a>, <a class="reference internal" href="openturns.BoundingVolumeHierarchy.html#openturns.BoundingVolumeHierarchy" title="openturns.BoundingVolumeHierarchy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BoundingVolumeHierarchy</span></code></a>, <a class="reference internal" href="openturns.RegularGridEnclosingSimplex.html#openturns.RegularGridEnclosingSimplex" title="openturns.RegularGridEnclosingSimplex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegularGridEnclosingSimplex</span></code></a>, <a class="reference internal" href="openturns.EnclosingSimplexMonotonic1D.html#openturns.EnclosingSimplexMonotonic1D" title="openturns.EnclosingSimplexMonotonic1D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EnclosingSimplexMonotonic1D</span></code></a></p>
 </div>
+<p class="rubric">Notes</p>
+<p>Two algorithms can be selected in any dimension:</p>
+<ul class="simple">
+<li><a class="reference internal" href="openturns.NaiveEnclosingSimplex.html#openturns.NaiveEnclosingSimplex" title="openturns.NaiveEnclosingSimplex"><code class="xref py py-class docutils literal notranslate"><span class="pre">NaiveEnclosingSimplex</span></code></a> loops over all simplices
+and stops when the given point is inside.</li>
+<li><a class="reference internal" href="openturns.BoundingVolumeHierarchy.html#openturns.BoundingVolumeHierarchy" title="openturns.BoundingVolumeHierarchy"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoundingVolumeHierarchy</span></code></a> builds a binary tree based
+on bounding box of simplices.</li>
+</ul>
+<p>Two algorithms are specific to 1D meshes, and much more efficient:</p>
+<ul class="simple">
+<li><a class="reference internal" href="openturns.RegularGridEnclosingSimplex.html#openturns.RegularGridEnclosingSimplex" title="openturns.RegularGridEnclosingSimplex"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGridEnclosingSimplex</span></code></a> is the most efficient
+algorithm when mesh corresponds to a <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a>,
+<a class="reference internal" href="#openturns.EnclosingSimplexAlgorithm.query" title="openturns.EnclosingSimplexAlgorithm.query"><code class="xref py py-meth docutils literal notranslate"><span class="pre">query()</span></code></a> works in constant time.</li>
+<li><a class="reference internal" href="openturns.EnclosingSimplexMonotonic1D.html#openturns.EnclosingSimplexMonotonic1D" title="openturns.EnclosingSimplexMonotonic1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnclosingSimplexMonotonic1D</span></code></a> looks for enclosing
+simplex by dichotomy, it only works for sorted 1D meshes.</li>
+</ul>
+<p>It is recommended to use derived classes in order to select the best algorithm
+according to your data.  If you create a generic <a class="reference internal" href="#openturns.EnclosingSimplexAlgorithm" title="openturns.EnclosingSimplexAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnclosingSimplexAlgorithm</span></code></a>,
+here is how the derived class is selected:</p>
+<ul class="simple">
+<li>If vertices and simplices correspond to a <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a>,
+<a class="reference internal" href="openturns.RegularGridEnclosingSimplex.html#openturns.RegularGridEnclosingSimplex" title="openturns.RegularGridEnclosingSimplex"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGridEnclosingSimplex</span></code></a> algorithm is selected.</li>
+<li>If vertices and simplices correspond to a simple 1D mesh with sorted vertices,
+<a class="reference internal" href="openturns.EnclosingSimplexMonotonic1D.html#openturns.EnclosingSimplexMonotonic1D" title="openturns.EnclosingSimplexMonotonic1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnclosingSimplexMonotonic1D</span></code></a> algorithm is selected.</li>
+<li>Otherwise, ‘EnclosingSimplexAlgorithm-LargeDimension’ <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>
+entry is read.  If spatial dimension is lower than this value,
+<a class="reference internal" href="openturns.BoundingVolumeHierarchy.html#openturns.BoundingVolumeHierarchy" title="openturns.BoundingVolumeHierarchy"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoundingVolumeHierarchy</span></code></a> algorithm is chosen, otherwise
+it is <a class="reference internal" href="openturns.NaiveEnclosingSimplex.html#openturns.NaiveEnclosingSimplex" title="openturns.NaiveEnclosingSimplex"><code class="xref py py-class docutils literal notranslate"><span class="pre">NaiveEnclosingSimplex</span></code></a>.</li>
+</ul>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesher</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">IntervalMesher</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
@@ -158,20 +185,28 @@ a list of points.</p>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.EnclosingSimplexAlgorithm.getName" title="openturns.EnclosingSimplexAlgorithm.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSimplices</span></code>()</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVertices</span></code>()</td>
-<td></td>
-</tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.EnclosingSimplexAlgorithm.query" title="openturns.EnclosingSimplexAlgorithm.query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query</span></code></a>(*args)</td>
 <td>Get the index of the enclosing simplex of the given point.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.EnclosingSimplexAlgorithm.setName" title="openturns.EnclosingSimplexAlgorithm.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVerticesAndSimplices</span></code>(vertices,&nbsp;simplices)</td>
-<td></td>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="73%" />
+<col width="27%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>getSimplices</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>getVertices</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>setVerticesAndSimplices</strong></td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
@@ -189,10 +224,11 @@ a list of points.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
-<blockquote class="last">
-<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -207,10 +243,11 @@ a list of points.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -225,10 +262,11 @@ a list of points.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>impl</strong> : Implementation</p>
-<blockquote class="last">
-<div><p>The implementation class.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>impl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Implementation</span></dt>
+<dd><p class="first last">The implementation class.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -243,10 +281,11 @@ a list of points.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -261,17 +300,19 @@ a list of points.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float</p>
-<blockquote>
-<div><p>Given point.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>point</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">Given point.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>index</strong> : int</p>
-<blockquote class="last">
-<div><p>If point is enclosed in a simplex, return its index; otherwise return an
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">If point is enclosed in a simplex, return its index; otherwise return an
 int which is at least greater than the number of simplices.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -286,10 +327,11 @@ int which is at least greater than the number of simplices.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
