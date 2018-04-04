@@ -104,9 +104,7 @@
 <dl class="docutils">
 <dt>Available constructors:</dt>
 <dd><p class="first">GeneralLinearModelAlgorithm(<em>inputSample, outputSample, covarianceModel, basis, normalize=True, keepCovariance=True</em>)</p>
-<p>GeneralLinearModelAlgorithm(<em>inputSample, inputTransformation, outputSample, covarianceModel, basis, keepCovariance=True</em>)</p>
-<p>GeneralLinearModelAlgorithm(<em>inputSample, outputSample, covarianceModel, basisCollection, normalize=True, keepCovariance=True</em>)</p>
-<p class="last">GeneralLinearModelAlgorithm(<em>inputSample, inputTransformation, outputSample, covarianceModel, basisCollection, keepCovariance=True</em>)</p>
+<p class="last">GeneralLinearModelAlgorithm(<em>inputSample, outputSample, covarianceModel, basisCollection, normalize=True, keepCovariance=True</em>)</p>
 </dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
@@ -838,6 +836,29 @@ should be output sample’s dimension</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<p>Parameters involved by this method are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Scale parameters,</li>
+<li>Amplitude parameters if output dimension is greater than one or
+analytical sigma disabled,</li>
+<li>Additional parameters.</li>
+</ul>
+</div></blockquote>
+<p>Lower &amp; upper bounds are defined in resource map.
+Default lower upper bounds value for all parameters is
+<img class="math" src="../../../_images/math/e88a7d74f171b294df1106fab98db4ddd02279a1.svg" alt="10^{-2}"/> and defined thanks to the
+<cite>GeneralLinearModelAlgorithm-DefaultOptimizationLowerBound</cite>
+resource map key.</p>
+<p>For scale parameters, default upper bounds are set as <img class="math" src="../../../_images/math/a98df6fa6ba79351e43b16655cd183e7464cd616.svg" alt="2"/>
+times the difference between the max and min values of <cite>X</cite> for
+each coordinate, <cite>X</cite> being the (transformed) input sample.
+The value <img class="math" src="../../../_images/math/a98df6fa6ba79351e43b16655cd183e7464cd616.svg" alt="2"/> is defined in resource map
+(<cite>GeneralLinearModelAlgorithm-DefaultOptimizationScaleFactor</cite>).</p>
+<p>Finally for other parameters (amplitude,…), default upper bound is set
+to <img class="math" src="../../../_images/math/3997371acfc0411e57f6fc01876f9069404977ad.svg" alt="100"/> (corresponding resource map key is
+<cite>GeneralLinearModelAlgorithm-DefaultOptimizationUpperBound</cite>)</p>
 </dd></dl>
 
 <dl class="method">
