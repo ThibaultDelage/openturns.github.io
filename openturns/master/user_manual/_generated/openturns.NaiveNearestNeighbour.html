@@ -145,7 +145,7 @@ In other cases, KDTree is much faster.</p>
 <td>Accessor to the object’s name.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.NaiveNearestNeighbour.getSample" title="openturns.NaiveNearestNeighbour.getSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSample</span></code></a>()</td>
-<td>Collection of points accessor.</td>
+<td>Get the points which have been used to build this nearest neighbour algorithm.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.NaiveNearestNeighbour.getShadowedId" title="openturns.NaiveNearestNeighbour.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
@@ -163,13 +163,13 @@ In other cases, KDTree is much faster.</p>
 <td>Get the index of the nearest neighbour of the given point.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.NaiveNearestNeighbour.queryK" title="openturns.NaiveNearestNeighbour.queryK"><code class="xref py py-obj docutils literal notranslate"><span class="pre">queryK</span></code></a>(x,&nbsp;k[,&nbsp;sorted])</td>
-<td>Accessor to the nearest neighbours indices.</td>
+<td>Get the indices of nearest neighbours of the given point.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.NaiveNearestNeighbour.setName" title="openturns.NaiveNearestNeighbour.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.NaiveNearestNeighbour.setSample" title="openturns.NaiveNearestNeighbour.setSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSample</span></code></a>(sample)</td>
-<td>Collection of points accessor.</td>
+<td>Build a NearestNeighbourAlgorithm from these points.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.NaiveNearestNeighbour.setShadowedId" title="openturns.NaiveNearestNeighbour.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
@@ -245,14 +245,14 @@ In other cases, KDTree is much faster.</p>
 <dl class="method">
 <dt id="openturns.NaiveNearestNeighbour.getSample">
 <code class="descname">getSample</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.NaiveNearestNeighbour.getSample" title="Permalink to this definition">¶</a></dt>
-<dd><p>Collection of points accessor.</p>
+<dd><p>Get the points which have been used to build this nearest neighbour algorithm.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>points</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">Collection of points.</p>
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">Input points.</p>
 </dd>
 </dl>
 </td>
@@ -341,6 +341,12 @@ In other cases, KDTree is much faster.</p>
 <dt id="openturns.NaiveNearestNeighbour.query">
 <code class="descname">query</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.NaiveNearestNeighbour.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the index of the nearest neighbour of the given point.</p>
+<dl class="docutils">
+<dt>Available usages:</dt>
+<dd><p class="first">query(<em>point</em>)</p>
+<p class="last">query(<em>sample</em>)</p>
+</dd>
+</dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -349,12 +355,18 @@ In other cases, KDTree is much faster.</p>
 <dt><strong>point</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
 <dd><p class="first last">Given point.</p>
 </dd>
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
+<dd><p class="first last">Given points.</p>
+</dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Index of the nearest neighbour of the given point.</p>
+</dd>
+<dt><strong>indices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Indices</span></code></a></span></dt>
+<dd><p class="first last">Index of the nearest neighbour of the given points.</p>
 </dd>
 </dl>
 </td>
@@ -366,7 +378,7 @@ In other cases, KDTree is much faster.</p>
 <dl class="method">
 <dt id="openturns.NaiveNearestNeighbour.queryK">
 <code class="descname">queryK</code><span class="sig-paren">(</span><em>x</em>, <em>k</em>, <em>sorted=False</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.NaiveNearestNeighbour.queryK" title="Permalink to this definition">¶</a></dt>
-<dd><p>Accessor to the nearest neighbours indices.</p>
+<dd><p>Get the indices of nearest neighbours of the given point.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -376,17 +388,18 @@ In other cases, KDTree is much faster.</p>
 <dd><p class="first last">Given point.</p>
 </dd>
 <dt><strong>k</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of points to return</p>
+<dd><p class="first last">Number of indices to return.</p>
 </dd>
-<dt><strong>sorted</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Whether to return the points sorted</p>
+<dt><strong>sorted</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">Boolean to tell whether returned indices are sorted according to
+the distance to the given point.</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>indices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></span></dt>
-<dd><p class="first last">Indices of the k nearest neighbours.</p>
+<dt><strong>indices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of int</span></dt>
+<dd><p class="first last">Indices of the <cite>k</cite> nearest neighbours of the given point.</p>
 </dd>
 </dl>
 </td>
@@ -417,7 +430,7 @@ In other cases, KDTree is much faster.</p>
 <dl class="method">
 <dt id="openturns.NaiveNearestNeighbour.setSample">
 <code class="descname">setSample</code><span class="sig-paren">(</span><em>sample</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.NaiveNearestNeighbour.setSample" title="Permalink to this definition">¶</a></dt>
-<dd><p>Collection of points accessor.</p>
+<dd><p>Build a NearestNeighbourAlgorithm from these points.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />

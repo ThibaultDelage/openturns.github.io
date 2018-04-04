@@ -174,19 +174,11 @@
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.EnclosingSimplexMonotonic1D.setShadowedId" title="openturns.EnclosingSimplexMonotonic1D.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.EnclosingSimplexMonotonic1D.setVisibility" title="openturns.EnclosingSimplexMonotonic1D.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
-<td>Accessor to the object’s visibility state.</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.EnclosingSimplexMonotonic1D.setVerticesAndSimplices" title="openturns.EnclosingSimplexMonotonic1D.setVerticesAndSimplices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVerticesAndSimplices</span></code></a>(vertices,&nbsp;simplices)</td>
+<td>Rebuild a new data structure for these vertices and simplices.</td>
 </tr>
-</tbody>
-</table>
-<table border="1" class="docutils">
-<colgroup>
-<col width="73%" />
-<col width="27%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>setVerticesAndSimplices</strong></td>
-<td>&#160;</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.EnclosingSimplexMonotonic1D.setVisibility" title="openturns.EnclosingSimplexMonotonic1D.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
 </table>
@@ -281,7 +273,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>simplices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndicesCollection</span></code></span></dt>
+<dt><strong>simplices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.IndicesCollection.html#openturns.IndicesCollection" title="openturns.IndicesCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndicesCollection</span></code></a></span></dt>
 <dd><p class="first last">Collection of simplices.</p>
 </dd>
 </dl>
@@ -371,6 +363,12 @@
 <dt id="openturns.EnclosingSimplexMonotonic1D.query">
 <code class="descname">query</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.EnclosingSimplexMonotonic1D.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the index of the enclosing simplex of the given point.</p>
+<dl class="docutils">
+<dt>Available usages:</dt>
+<dd><p class="first">query(<em>point</em>)</p>
+<p class="last">query(<em>sample</em>)</p>
+</dd>
+</dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -379,6 +377,9 @@
 <dt><strong>point</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
 <dd><p class="first last">Given point.</p>
 </dd>
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
+<dd><p class="first last">Given points.</p>
+</dd>
 </dl>
 </td>
 </tr>
@@ -386,6 +387,11 @@
 <dt><strong>index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">If point is enclosed in a simplex, return its index; otherwise return an
 int which is at least greater than the number of simplices.</p>
+</dd>
+<dt><strong>indices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Indices</span></code></a></span></dt>
+<dd><p class="first last">Index of enclosing simplex of each point of the sample.  If there is no
+enclosing simplex, value is an int which is at least greater than the
+number of simplices.</p>
 </dd>
 </dl>
 </td>
@@ -398,6 +404,12 @@ int which is at least greater than the number of simplices.</p>
 <dt id="openturns.EnclosingSimplexMonotonic1D.queryScalar">
 <code class="descname">queryScalar</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.EnclosingSimplexMonotonic1D.queryScalar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the enclosing simplex index.</p>
+<dl class="docutils">
+<dt>Available usages:</dt>
+<dd><p class="first">queryScalar(<em>x</em>)</p>
+<p class="last">queryScalar(<em>point</em>)</p>
+</dd>
+</dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -406,14 +418,20 @@ int which is at least greater than the number of simplices.</p>
 <dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Given point.</p>
 </dd>
+<dt><strong>point</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">Sequence of 1D points.</p>
+</dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">If point is inside RegularGrid bounds, return the index of the interval
+<dd><p class="first last">If <em>x</em> is inside RegularGrid bounds, return the index of the interval
 in  which it is contained; otherwise return an int which is at least
 greater than the number of intervals.</p>
+</dd>
+<dt><strong>indices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Indices</span></code></a></span></dt>
+<dd><p class="first last">Index of the enclosing simplex of the given 1D points.</p>
 </dd>
 </dl>
 </td>
@@ -452,6 +470,28 @@ greater than the number of intervals.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.EnclosingSimplexMonotonic1D.setVerticesAndSimplices">
+<code class="descname">setVerticesAndSimplices</code><span class="sig-paren">(</span><em>vertices</em>, <em>simplices</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.EnclosingSimplexMonotonic1D.setVerticesAndSimplices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rebuild a new data structure for these vertices and simplices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>vertices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">Vertices.</p>
+</dd>
+<dt><strong>simplices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.IndicesCollection.html#openturns.IndicesCollection" title="openturns.IndicesCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndicesCollection</span></code></a></span></dt>
+<dd><p class="first last">Simplices.</p>
 </dd>
 </dl>
 </td>

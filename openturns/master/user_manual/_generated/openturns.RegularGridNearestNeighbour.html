@@ -344,6 +344,12 @@
 <dt id="openturns.RegularGridNearestNeighbour.query">
 <code class="descname">query</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGridNearestNeighbour.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the index of the nearest neighbour of the given point.</p>
+<dl class="docutils">
+<dt>Available usages:</dt>
+<dd><p class="first">query(<em>point</em>)</p>
+<p class="last">query(<em>sample</em>)</p>
+</dd>
+</dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -352,12 +358,18 @@
 <dt><strong>point</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
 <dd><p class="first last">Given point.</p>
 </dd>
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
+<dd><p class="first last">Given points.</p>
+</dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Index of the nearest neighbour of the given point.</p>
+</dd>
+<dt><strong>indices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Indices</span></code></a></span></dt>
+<dd><p class="first last">Index of the nearest neighbour of the given points.</p>
 </dd>
 </dl>
 </td>
@@ -375,7 +387,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>point</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
 <dd><p class="first last">Given point.</p>
 </dd>
 <dt><strong>k</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
@@ -403,13 +415,22 @@ the distance to the given point.</p>
 <dt id="openturns.RegularGridNearestNeighbour.queryScalar">
 <code class="descname">queryScalar</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.RegularGridNearestNeighbour.queryScalar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the nearest neighbour index.</p>
+<dl class="docutils">
+<dt>Available usages:</dt>
+<dd><p class="first">queryScalar(<em>x</em>)</p>
+<p class="last">queryScalar(<em>point</em>)</p>
+</dd>
+</dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Given point.</p>
+<dd><p class="first last">Given 1D point.</p>
+</dd>
+<dt><strong>point</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">Sequence of 1D points.</p>
 </dd>
 </dl>
 </td>
@@ -417,6 +438,9 @@ the distance to the given point.</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Index of the nearest neighbour.</p>
+</dd>
+<dt><strong>indices</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Indices</span></code></a></span></dt>
+<dd><p class="first last">Index of the nearest neighbour of the given points.</p>
 </dd>
 </dl>
 </td>
@@ -435,7 +459,7 @@ the distance to the given point.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Given point.</p>
+<dd><p class="first last">Given 1D point.</p>
 </dd>
 <dt><strong>k</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Number of indices to return.</p>
