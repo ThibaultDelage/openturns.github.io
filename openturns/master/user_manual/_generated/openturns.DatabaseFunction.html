@@ -102,9 +102,7 @@
 <dd><p>Pre-evaluated function.</p>
 <dl class="docutils">
 <dt>Available constructor:</dt>
-<dd><p class="first">DatabaseFunction(<em>inputSample, outputSample</em>)</p>
-<p class="last">DatabaseFunction(<em>inputSample, outputSample, enableCache</em>)</p>
-</dd>
+<dd>DatabaseFunction(<em>inputSample, outputSample</em>)</dd>
 </dl>
 <p>Allows to build a function takes a value in the output sample when presented
 the corresponding point in the input sample .</p>
@@ -118,10 +116,6 @@ the corresponding point in the input sample .</p>
 </dd>
 <dt><strong>outputSample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
 <dd><p class="first last">Values of the outputs.</p>
-</dd>
-<dt><strong>enableCache</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
-<dd><p class="first last">Whether to enable the cache, defaults to True
-It can take a significant amount of time for large samples.</p>
 </dd>
 </dl>
 </td>
@@ -145,98 +139,74 @@ It can take a significant amount of time for large samples.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.addCacheContent" title="openturns.DatabaseFunction.addCacheContent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addCacheContent</span></code></a>(inSample,&nbsp;outSample)</td>
-<td>Add input numerical points and associated output to the cache.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.clearCache" title="openturns.DatabaseFunction.clearCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clearCache</span></code></a>()</td>
-<td>Empty the content of the cache.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.disableCache" title="openturns.DatabaseFunction.disableCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disableCache</span></code></a>()</td>
-<td>Disable the cache mechanism.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.draw" title="openturns.DatabaseFunction.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.draw" title="openturns.DatabaseFunction.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>(*args)</td>
 <td>Draw the output of function as a <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a>.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.enableCache" title="openturns.DatabaseFunction.enableCache"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enableCache</span></code></a>()</td>
-<td>Enable the cache mechanism.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getCacheHits" title="openturns.DatabaseFunction.getCacheHits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheHits</span></code></a>()</td>
-<td>Accessor to the number of computations saved thanks to the cache mecanism.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getCacheInput" title="openturns.DatabaseFunction.getCacheInput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheInput</span></code></a>()</td>
-<td>Accessor to all the input numerical points stored in the cache mecanism.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getCacheOutput" title="openturns.DatabaseFunction.getCacheOutput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCacheOutput</span></code></a>()</td>
-<td>Accessor to all the output numerical points stored in the cache mecanism.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getCallsNumber" title="openturns.DatabaseFunction.getCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCallsNumber</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getCallsNumber" title="openturns.DatabaseFunction.getCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCallsNumber</span></code></a>()</td>
 <td>Accessor to the number of times the function has been called.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getClassName" title="openturns.DatabaseFunction.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getClassName" title="openturns.DatabaseFunction.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getDescription" title="openturns.DatabaseFunction.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getDescription" title="openturns.DatabaseFunction.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a>()</td>
 <td>Accessor to the description of the inputs and outputs.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getEvaluation" title="openturns.DatabaseFunction.getEvaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvaluation</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getEvaluation" title="openturns.DatabaseFunction.getEvaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvaluation</span></code></a>()</td>
 <td>Accessor to the evaluation function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getEvaluationCallsNumber" title="openturns.DatabaseFunction.getEvaluationCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvaluationCallsNumber</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getEvaluationCallsNumber" title="openturns.DatabaseFunction.getEvaluationCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvaluationCallsNumber</span></code></a>()</td>
 <td>Accessor to the number of times the function has been called.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getGradient" title="openturns.DatabaseFunction.getGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGradient</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getGradient" title="openturns.DatabaseFunction.getGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGradient</span></code></a>()</td>
 <td>Accessor to the gradient function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getGradientCallsNumber" title="openturns.DatabaseFunction.getGradientCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGradientCallsNumber</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getGradientCallsNumber" title="openturns.DatabaseFunction.getGradientCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGradientCallsNumber</span></code></a>()</td>
 <td>Accessor to the number of times the gradient of the function has been called.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getHessian" title="openturns.DatabaseFunction.getHessian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHessian</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getHessian" title="openturns.DatabaseFunction.getHessian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHessian</span></code></a>()</td>
 <td>Accessor to the hessian function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getHessianCallsNumber" title="openturns.DatabaseFunction.getHessianCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHessianCallsNumber</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getHessianCallsNumber" title="openturns.DatabaseFunction.getHessianCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getHessianCallsNumber</span></code></a>()</td>
 <td>Accessor to the number of times the hessian of the function has been called.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getId" title="openturns.DatabaseFunction.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getId" title="openturns.DatabaseFunction.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getImplementation" title="openturns.DatabaseFunction.getImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getImplementation</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getImplementation" title="openturns.DatabaseFunction.getImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getImplementation</span></code></a>(*args)</td>
 <td>Accessor to the underlying implementation.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getInputDescription" title="openturns.DatabaseFunction.getInputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDescription</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getInputDescription" title="openturns.DatabaseFunction.getInputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDescription</span></code></a>()</td>
 <td>Accessor to the description of the input vector.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getInputDimension" title="openturns.DatabaseFunction.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getInputDimension" title="openturns.DatabaseFunction.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
 <td>Accessor to the dimension of the input vector.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getMarginal" title="openturns.DatabaseFunction.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getMarginal" title="openturns.DatabaseFunction.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
 <td>Accessor to marginal.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getName" title="openturns.DatabaseFunction.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getName" title="openturns.DatabaseFunction.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getOutputDescription" title="openturns.DatabaseFunction.getOutputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDescription</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getOutputDescription" title="openturns.DatabaseFunction.getOutputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDescription</span></code></a>()</td>
 <td>Accessor to the description of the output vector.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getOutputDimension" title="openturns.DatabaseFunction.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getOutputDimension" title="openturns.DatabaseFunction.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
 <td>Accessor to the number of the outputs.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getParameter" title="openturns.DatabaseFunction.getParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameter</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getParameter" title="openturns.DatabaseFunction.getParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameter</span></code></a>()</td>
 <td>Accessor to the parameter values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getParameterDescription" title="openturns.DatabaseFunction.getParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getParameterDescription" title="openturns.DatabaseFunction.getParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDescription</span></code></a>()</td>
 <td>Accessor to the parameter description.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.getParameterDimension" title="openturns.DatabaseFunction.getParameterDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.getParameterDimension" title="openturns.DatabaseFunction.getParameterDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDimension</span></code></a>()</td>
 <td>Accessor to the dimension of the parameter.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.gradient" title="openturns.DatabaseFunction.gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gradient</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.gradient" title="openturns.DatabaseFunction.gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gradient</span></code></a>(*args)</td>
 <td>Return the Jacobian transposed matrix of the function at a point.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.hessian" title="openturns.DatabaseFunction.hessian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hessian</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.hessian" title="openturns.DatabaseFunction.hessian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hessian</span></code></a>(*args)</td>
 <td>Return the hessian of the function at a point.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.DatabaseFunction.isCacheEnabled" title="openturns.DatabaseFunction.isCacheEnabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isCacheEnabled</span></code></a>()</td>
-<td>Test whether the cache mechanism is enabled or not.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.DatabaseFunction.parameterGradient" title="openturns.DatabaseFunction.parameterGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameterGradient</span></code></a>(*args)</td>
 <td>Accessor to the gradient against the parameter.</td>
@@ -279,41 +249,6 @@ It can take a significant amount of time for large samples.</p>
 <dt id="openturns.DatabaseFunction.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.DatabaseFunction.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.DatabaseFunction.addCacheContent">
-<code class="descname">addCacheContent</code><span class="sig-paren">(</span><em>inSample</em>, <em>outSample</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.DatabaseFunction.addCacheContent" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add input numerical points and associated output to the cache.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>input_sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
-<dd><p class="first last">Input numerical points to be added to the cache.</p>
-</dd>
-<dt><strong>output_sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
-<dd><p class="first last">Output numerical points associated with the input_sample to be added to the
-cache.</p>
-</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.DatabaseFunction.clearCache">
-<code class="descname">clearCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.DatabaseFunction.clearCache" title="Permalink to this definition">¶</a></dt>
-<dd><p>Empty the content of the cache.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.DatabaseFunction.disableCache">
-<code class="descname">disableCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.DatabaseFunction.disableCache" title="Permalink to this definition">¶</a></dt>
-<dd><p>Disable the cache mechanism.</p>
 </dd></dl>
 
 <dl class="method">
@@ -399,70 +334,6 @@ central point <em>CP</em>. Then OpenTURNS draws the graph:
 <span class="gp">&gt;&gt;&gt; </span><span class="n">View</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.DatabaseFunction.enableCache">
-<code class="descname">enableCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.DatabaseFunction.enableCache" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable the cache mechanism.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.DatabaseFunction.getCacheHits">
-<code class="descname">getCacheHits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.DatabaseFunction.getCacheHits" title="Permalink to this definition">¶</a></dt>
-<dd><p>Accessor to the number of computations saved thanks to the cache mecanism.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>cacheHits</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Integer that counts the number of computations saved thanks to the cache
-mecanism.</p>
-</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.DatabaseFunction.getCacheInput">
-<code class="descname">getCacheInput</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.DatabaseFunction.getCacheInput" title="Permalink to this definition">¶</a></dt>
-<dd><p>Accessor to all the input numerical points stored in the cache mecanism.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>cacheInput</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">All the input numerical points stored in the cache mecanism.</p>
-</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.DatabaseFunction.getCacheOutput">
-<code class="descname">getCacheOutput</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.DatabaseFunction.getCacheOutput" title="Permalink to this definition">¶</a></dt>
-<dd><p>Accessor to all the output numerical points stored in the cache mecanism.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>cacheInput</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">All the output numerical points stored in the cache mecanism.</p>
-</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 <dl class="method">
@@ -984,26 +855,6 @@ and <img class="math" src="../../_images/math/47c85ba166ea3436340bfc171fcc7068e6
 <span class="go"> [  0           0          ]]</span>
 </pre></div>
 </div>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.DatabaseFunction.isCacheEnabled">
-<code class="descname">isCacheEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.DatabaseFunction.isCacheEnabled" title="Permalink to this definition">¶</a></dt>
-<dd><p>Test whether the cache mechanism is enabled or not.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>isCacheEnabled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Flag telling whether the cache mechanism is enabled.
-It is disabled by default.</p>
-</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 <dl class="method">
