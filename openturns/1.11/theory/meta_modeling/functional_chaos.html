@@ -1,0 +1,217 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Functional Chaos Expansion &#8212; OpenTURNS  documentation</title>
+    <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Cross validation assessment of PC models" href="cross_validation.html" />
+    <link rel="prev" title="Chaos basis enumeration strategies" href="enumeration_strategy.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="http://www.openturns.org/">Home</a></li>
+    <li><a href="../../install.html">Get it</a></li>
+    <li><a href="../../contents.html">Doc</a></li>
+    <li><a href="https://github.com/openturns">Code</a></li>
+    <li><a href="http://trac.openturns.org">Bugs</a></li>
+  </ul>
+  <a href="../../index.html">
+    <h1>
+      <img src="../../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      OpenTURNS
+    </h1>
+    <h2> An Open source initiative for the Treatment of Uncertainties, Risks'N Statistics</h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="cross_validation.html" title="Cross validation assessment of PC models"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="enumeration_strategy.html" title="Chaos basis enumeration strategies"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../theory.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="meta_modeling.html" accesskey="U">Meta modeling</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="enumeration_strategy.html"
+                        title="previous chapter">Chaos basis enumeration strategies</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cross_validation.html"
+                        title="next chapter">Cross validation assessment of PC models</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/theory/meta_modeling/functional_chaos.rst"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="functional-chaos-expansion">
+<h1>Functional Chaos Expansion<a class="headerlink" href="#functional-chaos-expansion" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">Accounting for the joint probability density function (PDF)
+<img class="math" src="../../_images/math/7d3d0a3c6c562639c8d0aa6e521976310146960a.svg" alt="f_{\underline{X}}(\underline{x})"/> of the input random vector
+<img class="math" src="../../_images/math/abaf3583f4447868ee35c83099a6e1ccdb65f4c7.svg" alt="\underline{X}"/>, one seeks the joint PDF of the model response
+<img class="math" src="../../_images/math/480c9655bf95b9c52931f9c0cb27c9740f1c3ac1.svg" alt="\underline{Y} = h(\underline{X})"/>. This may be achieved using
+Monte Carlo (MC) simulation, i.e. by evaluating the model <img class="math" src="../../_images/math/7bc3c3b1a2be80b5e49a4bf613a598d81206e9bf.svg" alt="h"/>
+at a large number of realizations <img class="math" src="../../_images/math/8aaacb1349fd32f221059e54a33f0db0159eb67c.svg" alt="\underline{x}^{(i)}"/> of
+<img class="math" src="../../_images/math/abaf3583f4447868ee35c83099a6e1ccdb65f4c7.svg" alt="\underline{X}"/> and then by estimating the empirical
+distribution of the corresponding sample of model output
+<img class="math" src="../../_images/math/9fa029c155e1cab5834adcab9ccbe2d5d1ad10fa.svg" alt="h(\underline{x}^{(i)})"/>. However it is well-known that the MC
+method requires a large number of model evaluations, i.e. a great
+computational cost, in order to obtain accurate results.</div>
+<div class="line">In fact, when using MC simulation, each model run is performed
+independently. Thus, whereas it is expected that
+<img class="math" src="../../_images/math/d5944abc0daba90435012f7de23a616da632b99d.svg" alt="h(\underline{x}^{(i)}) \approx h(\underline{x}^{(j)})"/> if
+<img class="math" src="../../_images/math/75f2fa42b83ae9689ed1874812a18e966504a46b.svg" alt="\underline{x}^{(i)} \approx \underline{x}^{(j)}"/>, the model is
+evaluated twice without accounting for this information. In other
+words, the functional dependence between <img class="math" src="../../_images/math/abaf3583f4447868ee35c83099a6e1ccdb65f4c7.svg" alt="\underline{X}"/> and
+<img class="math" src="../../_images/math/610ae71bc6155fe9269d9bd6ace1acf1a824de63.svg" alt="\underline{Y}"/> is lost.</div>
+<div class="line">A possible solution to overcome this problem and thereby to reduce the
+computational cost of MC simulation is to represent the random
+response <img class="math" src="../../_images/math/610ae71bc6155fe9269d9bd6ace1acf1a824de63.svg" alt="\underline{Y}"/> in a suitable functional space, such as
+the Hilbert space <img class="math" src="../../_images/math/678e0ce2206232779f6e7e48772f085e6c6233ea.svg" alt="L^2"/> of square-integrable functions with
+respect to the PDF <img class="math" src="../../_images/math/7d3d0a3c6c562639c8d0aa6e521976310146960a.svg" alt="f_{\underline{X}}(\underline{x})"/>.
+Precisely, an expansion of the model response onto an orthonormal
+basis of <img class="math" src="../../_images/math/678e0ce2206232779f6e7e48772f085e6c6233ea.svg" alt="L^2"/> is of interest.</div>
+</div>
+<div class="line-block">
+<div class="line">The principles of the building of a (infinite numerable) basis of this
+space, i.e. the PC basis, are described in the sequel.</div>
+<div class="line"><strong>Principle of the functional chaos expansion</strong></div>
+<div class="line">Consider a model <img class="math" src="../../_images/math/7bc3c3b1a2be80b5e49a4bf613a598d81206e9bf.svg" alt="h"/> depending on a set of <em>random</em> variables
+<img class="math" src="../../_images/math/f339426622c28192968a27b6422c1b091e5d0ff6.svg" alt="\underline{X} = (X_1,\dots,X_{n_X})^{\textsf{T}}"/>. We call
+functional chaos expansion the class of spectral methods which gathers
+all types of response surface that can be seen as a projection of the
+physical model in an orthonormal basis. This class of methods uses the
+Hilbertian space (square-integrable space: <img class="math" src="../../_images/math/678e0ce2206232779f6e7e48772f085e6c6233ea.svg" alt="L^2"/>) to construct
+the response surface.</div>
+<div class="line">Assuming that the physical model has a finite second order measure
+(i.e. <img class="math" src="../../_images/math/b2bef647176efc13ebbba96691481b9072133ae3.svg" alt="E\left( \|h(\underline{X})\|^2\right)&lt; + \infty"/>), it may
+be uniquely represented as a converging series onto an orthonormal
+basis as follows:</div>
+</div>
+<blockquote>
+<div><div class="math">
+<p><img src="../../_images/math/f071ffc639973dba81914704b3e2db764a742a18.svg" alt="h(\underline{x})= \sum_{i=0}^{+\infty}  \underline{y}_{i}\Phi_{i}(\underline{x})."/></p>
+</div><p>where the
+<img class="math" src="../../_images/math/5b73d9a566181d314f28e0632eefc85f058a3d50.svg" alt="\underline{y}_{i} = (y_{i,1},\dots,y_{i,n_Y})^{\textsf{T}}"/>’s
+are deterministic vectors that fully characterize the random vector
+<img class="math" src="../../_images/math/610ae71bc6155fe9269d9bd6ace1acf1a824de63.svg" alt="\underline{Y}"/>, and the <img class="math" src="../../_images/math/8cb7248700bc4dde924a5a9cf3ca81817cbb53eb.svg" alt="\Phi_{i}"/>’s are given basis
+functions (e.g. orthonormal polynomials, wavelets).</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line">The orthonormality property of the functional chaos basis reads:</div>
+</div>
+<blockquote>
+<div><div class="math">
+<p><img src="../../_images/math/80b66b9d4219570147f9386dfe044e6c60c2108d.svg" alt="\langle \Phi_{i},\Phi_{j}\rangle = \int_{D}\Phi_{i}(\underline{x}) \Phi_{j}(\underline{x})~f_{\underline{X}}(\underline{x}) d \underline{x} = \delta_{i,j}."/></p>
+</div><p>where <img class="math" src="../../_images/math/9c23fde143742ef9cc7651e0591155c1b03e6882.svg" alt="\delta_{i,j} =1"/> if <img class="math" src="../../_images/math/e9c7ac43d4be8dbb6059df97df20c74cc52a2eb7.svg" alt="i=j"/> and 0 otherwise. The
+metamodel <img class="math" src="../../_images/math/68ade5c9f718d20fc01143ed59cfa1d1ccddb460.svg" alt="\widehat{h}(\underline{x})"/> is represented by a
+<em>finite</em> subset of coefficients
+<img class="math" src="../../_images/math/71336042ca95a9e178cd32401d1f64aa990e1573.svg" alt="\{y_{i}, i \in \cA \subset (N)\}"/> in a <em>truncated</em> basis
+<img class="math" src="../../_images/math/bfb3b31026098e4ce18ecd1624727364ed728743.svg" alt="\{\Phi_{i}, i \in \cA \subset (N)\}"/> as follows:</p>
+<div class="math">
+<p><img src="../../_images/math/3500ddd1fe6e3e637263bc714dbf7ac8e841ecb1.svg" alt="\widehat{h}(\underline{x})= \sum_{i \in \cA \subset N}  y_{i}\Phi_{i}(\underline{x})"/></p>
+</div></div></blockquote>
+<p>As an example of this type of expansion, one can mention responses by
+wavelet expansion, polynomial chaos expansion, etc.</p>
+<div class="topic">
+<p class="topic-title first">API:</p>
+<ul class="simple">
+<li>See <a class="reference internal" href="../../user_manual/response_surface/_generated/openturns.FunctionalChaosAlgorithm.html#openturns.FunctionalChaosAlgorithm" title="openturns.FunctionalChaosAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">FunctionalChaosAlgorithm</span></code></a></li>
+</ul>
+</div>
+<div class="topic">
+<p class="topic-title first">Examples:</p>
+<ul class="simple">
+<li>See <a class="reference internal" href="../../examples/meta_modeling/functional_chaos.html"><span class="doc">Create a polynomial chaos metamodel</span></a></li>
+</ul>
+</div>
+<div class="topic">
+<p class="topic-title first">References:</p>
+<ul class="simple">
+<li><a class="reference internal" href="../../bibliography.html#soizeghanem2004" id="id1">[SoizeGhanem2004]</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="cross_validation.html" title="Cross validation assessment of PC models"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="enumeration_strategy.html" title="Chaos basis enumeration strategies"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../theory.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="meta_modeling.html" >Meta modeling</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+    </div>
+  </body>
+</html>
