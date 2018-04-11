@@ -8,7 +8,7 @@ MaternModel
     from matplotlib import pyplot as plt
     from openturns.viewer import View
     covarianceModel = ot.MaternModel()
-    if covarianceModel.getSpatialDimension() == 1:
+    if covarianceModel.getInputDimension() == 1:
         scale = covarianceModel.getScale()[0]
         if covarianceModel.isStationary():
             def f(x):

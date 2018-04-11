@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>BlendedStep &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../functions.html" accesskey="U">Functions</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -115,27 +108,27 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>epsilon</strong> : sequence of float</p>
-<blockquote>
-<div><p>Finite difference step factors for each dimension.</p>
-</div></blockquote>
-<p><strong>eta</strong> : positive float, sequence of positive float with the same dimension as <em>epsilon</em></p>
-<blockquote class="last">
-<div><p>Finite difference step offsets for each dimension.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>epsilon</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">Finite difference step factors for each dimension.</p>
+</dd>
+<dt><strong>eta</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive float, sequence of positive float with the same dimension as <em>epsilon</em></span></dt>
+<dd><p class="first last">Finite difference step offsets for each dimension.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.ConstantStep.html#openturns.ConstantStep" title="openturns.ConstantStep"><code class="xref py py-obj docutils literal"><span class="pre">ConstantStep</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.ConstantStep.html#openturns.ConstantStep" title="openturns.ConstantStep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConstantStep</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p><em>BlendedStep</em> defines a list of finite difference steps equal to:
 <em>epsilon (|x| + eta)</em>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">epsilon</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1e-4</span><span class="p">,</span> <span class="mf">2e-4</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">steps</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BlendedStep</span><span class="p">(</span><span class="n">epsilon</span><span class="p">)</span>
@@ -159,57 +152,65 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">__call__</span></code>(…)&nbsp;&lt;==&gt;&nbsp;x(…)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BlendedStep.getClassName" title="openturns.BlendedStep.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BlendedStep.getClassName" title="openturns.BlendedStep.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BlendedStep.getEpsilon" title="openturns.BlendedStep.getEpsilon"><code class="xref py py-obj docutils literal"><span class="pre">getEpsilon</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BlendedStep.getEpsilon" title="openturns.BlendedStep.getEpsilon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEpsilon</span></code></a>()</td>
 <td>Get the finite difference steps.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BlendedStep.getEta" title="openturns.BlendedStep.getEta"><code class="xref py py-obj docutils literal"><span class="pre">getEta</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BlendedStep.getEta" title="openturns.BlendedStep.getEta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEta</span></code></a>()</td>
 <td>Get the finite difference step offsets.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BlendedStep.getId" title="openturns.BlendedStep.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BlendedStep.getId" title="openturns.BlendedStep.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BlendedStep.getName" title="openturns.BlendedStep.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BlendedStep.getName" title="openturns.BlendedStep.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BlendedStep.getShadowedId" title="openturns.BlendedStep.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BlendedStep.getShadowedId" title="openturns.BlendedStep.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BlendedStep.getVisibility" title="openturns.BlendedStep.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BlendedStep.getVisibility" title="openturns.BlendedStep.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BlendedStep.hasName" title="openturns.BlendedStep.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BlendedStep.hasName" title="openturns.BlendedStep.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BlendedStep.hasVisibleName" title="openturns.BlendedStep.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BlendedStep.hasVisibleName" title="openturns.BlendedStep.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BlendedStep.setEpsilon" title="openturns.BlendedStep.setEpsilon"><code class="xref py py-obj docutils literal"><span class="pre">setEpsilon</span></code></a>(epsilon)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BlendedStep.setEpsilon" title="openturns.BlendedStep.setEpsilon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setEpsilon</span></code></a>(epsilon)</td>
 <td>Set the finite difference steps.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BlendedStep.setEta" title="openturns.BlendedStep.setEta"><code class="xref py py-obj docutils literal"><span class="pre">setEta</span></code></a>(eta)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BlendedStep.setEta" title="openturns.BlendedStep.setEta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setEta</span></code></a>(eta)</td>
 <td>Set the finite difference step offsets.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BlendedStep.setName" title="openturns.BlendedStep.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BlendedStep.setName" title="openturns.BlendedStep.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BlendedStep.setShadowedId" title="openturns.BlendedStep.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BlendedStep.setShadowedId" title="openturns.BlendedStep.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BlendedStep.setVisibility" title="openturns.BlendedStep.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BlendedStep.setVisibility" title="openturns.BlendedStep.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="55%" />
+<col width="45%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>__call__</strong></td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="openturns.BlendedStep.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.BlendedStep.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>x.__init__(…) initializes x; see help(type(x)) for signature</p>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
@@ -220,10 +221,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
-<blockquote class="last">
-<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -238,13 +240,14 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>epsilon</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>If <a class="reference internal" href="openturns.ConstantStep.html#openturns.ConstantStep" title="openturns.ConstantStep"><code class="xref py py-class docutils literal"><span class="pre">ConstantStep</span></code></a> : Finite difference steps for each
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>epsilon</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first">If <a class="reference internal" href="openturns.ConstantStep.html#openturns.ConstantStep" title="openturns.ConstantStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConstantStep</span></code></a> : Finite difference steps for each
 dimension.</p>
-<p>If <a class="reference internal" href="#openturns.BlendedStep" title="openturns.BlendedStep"><code class="xref py py-class docutils literal"><span class="pre">BlendedStep</span></code></a> : Finite difference step factors for
+<p class="last">If <a class="reference internal" href="#openturns.BlendedStep" title="openturns.BlendedStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">BlendedStep</span></code></a> : Finite difference step factors for
 each dimension.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -259,10 +262,11 @@ each dimension.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>eta</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Finite difference step offsets for each dimension.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>eta</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Finite difference step offsets for each dimension.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -277,10 +281,11 @@ each dimension.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -295,10 +300,11 @@ each dimension.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -313,10 +319,11 @@ each dimension.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -331,10 +338,11 @@ each dimension.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -349,10 +357,11 @@ each dimension.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -367,10 +376,11 @@ each dimension.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasVisibleName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty and not the default one.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasVisibleName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty and not the default one.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -385,13 +395,14 @@ each dimension.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>epsilon</strong> : sequence of float</p>
-<blockquote class="last">
-<div><p>If <a class="reference internal" href="openturns.ConstantStep.html#openturns.ConstantStep" title="openturns.ConstantStep"><code class="xref py py-class docutils literal"><span class="pre">ConstantStep</span></code></a> : Finite difference steps for each
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>epsilon</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first">If <a class="reference internal" href="openturns.ConstantStep.html#openturns.ConstantStep" title="openturns.ConstantStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConstantStep</span></code></a> : Finite difference steps for each
 dimension.</p>
-<p>If <a class="reference internal" href="#openturns.BlendedStep" title="openturns.BlendedStep"><code class="xref py py-class docutils literal"><span class="pre">BlendedStep</span></code></a> : Finite difference step factors for
+<p class="last">If <a class="reference internal" href="#openturns.BlendedStep" title="openturns.BlendedStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">BlendedStep</span></code></a> : Finite difference step factors for
 each dimension.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -406,10 +417,11 @@ each dimension.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>eta</strong> : sequence of positive float</p>
-<blockquote class="last">
-<div><p>Finite difference step offsets for each dimension.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>eta</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of positive float</span></dt>
+<dd><p class="first last">Finite difference step offsets for each dimension.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -424,10 +436,11 @@ each dimension.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -442,10 +455,11 @@ each dimension.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -460,10 +474,11 @@ each dimension.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -494,14 +509,14 @@ each dimension.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../functions.html" >Functions</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Nov 15, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

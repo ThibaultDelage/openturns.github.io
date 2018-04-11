@@ -22,6 +22,7 @@ Domains
 
     Domain
     LevelSet
+    MeshDomain
 
     :template: classWithPlot.rst_t
     LevelSetMesher
@@ -34,6 +35,13 @@ Domains
 
     :template: classWithPlot.rst_t
     IntervalMesher
+
+    :template: class.rst_t
+    DomainComplement
+    DomainIntersection
+    DomainUnion
+    DomainDisjunctiveUnion
+    DomainDifference
 
 .. autosummary::
     :toctree: _generated/
@@ -84,6 +92,7 @@ Vectors
     BoolCollection
     Description
     Indices
+    IndicesCollection
     Point
     PointWithDescription
     ComplexCollection
@@ -127,11 +136,20 @@ History strategy
     Last
     Null
 
-K-d tree
-========
+Spatial lookup
+==============
 
 .. autosummary::
     :toctree: _generated/
     :template: class.rst_t
 
+    NearestNeighbourAlgorithm
     KDTree
+    NaiveNearestNeighbour
+    NearestNeighbour1D
+    RegularGridNearestNeighbour
+    EnclosingSimplexAlgorithm
+    NaiveEnclosingSimplex
+    RegularGridEnclosingSimplex
+    EnclosingSimplexMonotonic1D
+    BoundingVolumeHierarchy

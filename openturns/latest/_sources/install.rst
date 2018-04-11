@@ -13,8 +13,11 @@ This is relevant to the `Conda <http://conda.pydata.org/>`_ userland Python pack
 
 Install the package from `Anaconda.org <https://anaconda.org/conda-forge/openturns>`_::
 
-    conda install -c conda-forge openturns
+    conda config --add channels conda-forge
+    conda install openturns
 
+Alternatively, you can download the `otconda <https://github.com/openturns/otconda>`_ bundle
+containing the library and its modules that allows for an offline installation.
 
 Windows
 -------
@@ -97,14 +100,16 @@ RPM-based distributions
 Add the repository corresponding to your operating system::
 
     curl http://download.opensuse.org/repositories/science:/openturns/CentOS_7/science:openturns.repo -o /etc/yum.repos.d/obs-openturns.repo
-    curl http://download.opensuse.org/repositories/science:/openturns/Fedora_26/science:openturns.repo -o /etc/yum.repos.d/obs-openturns.repo
+    curl http://download.opensuse.org/repositories/science:/openturns/Fedora_27/science:openturns.repo -o /etc/yum.repos.d/obs-openturns.repo
     curl http://download.opensuse.org/repositories/science:/openturns/openSUSE_Leap_42.3/science:openturns.repo -o /etc/yum.repos.d/obs-openturns.repo
+    curl http://download.opensuse.org/repositories/science:/openturns/Mageia_6/science:openturns.repo -o /etc/yum.repos.d/obs-openturns.repo
 
 Import the gpg key corresponding to your operating system::
 
     rpm --import http://download.opensuse.org/repositories/science:/openturns/CentOS_7/repodata/repomd.xml.key
-    rpm --import http://download.opensuse.org/repositories/science:/openturns/Fedora_26/repodata/repomd.xml.key
+    rpm --import http://download.opensuse.org/repositories/science:/openturns/Fedora_27/repodata/repomd.xml.key
     rpm --import http://download.opensuse.org/repositories/science:/openturns/openSUSE_Leap_42.3/repodata/repomd.xml.key
+    rpm --import http://download.opensuse.org/repositories/science:/openturns/Mageia_6/repodata/repomd.xml.key
 
 Install the package::
 

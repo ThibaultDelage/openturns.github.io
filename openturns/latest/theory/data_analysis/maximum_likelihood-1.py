@@ -11,8 +11,8 @@ axis.set_xlim(auto=True)
 
 N=6
 # coordinates of points
-x = list(map(lambda x:x[0], distribution.getSample(N)))
-y = list(map(lambda x:distribution.computePDF([x]), x))
+x = [v[0] for v in distribution.getSample(N)]
+y = [distribution.computePDF([v]) for v in x]
 
 # draw lines
 for dot_x, dot_y in zip(x, y):

@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>LinearEnumerateFunction &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../orthogonal_basis.html" accesskey="U">Orthogonal basis</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -115,17 +108,18 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dim</strong> : int</p>
-<blockquote class="last">
-<div><p>Dimension.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Dimension.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.EnumerateFunction.html#openturns.EnumerateFunction" title="openturns.EnumerateFunction"><code class="xref py py-obj docutils literal"><span class="pre">EnumerateFunction</span></code></a>, <a class="reference internal" href="openturns.HyperbolicAnisotropicEnumerateFunction.html#openturns.HyperbolicAnisotropicEnumerateFunction" title="openturns.HyperbolicAnisotropicEnumerateFunction"><code class="xref py py-obj docutils literal"><span class="pre">HyperbolicAnisotropicEnumerateFunction</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.EnumerateFunction.html#openturns.EnumerateFunction" title="openturns.EnumerateFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EnumerateFunction</span></code></a>, <a class="reference internal" href="openturns.HyperbolicAnisotropicEnumerateFunction.html#openturns.HyperbolicAnisotropicEnumerateFunction" title="openturns.HyperbolicAnisotropicEnumerateFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HyperbolicAnisotropicEnumerateFunction</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>Given an input random vector <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/> with prescribed probability
@@ -216,7 +210,7 @@ defined by:</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># 4-dimensional case</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">enumerateFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LinearEnumerateFunction</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
@@ -239,66 +233,74 @@ defined by:</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">__call__</span></code>(…)&nbsp;&lt;==&gt;&nbsp;x(…)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getClassName" title="openturns.LinearEnumerateFunction.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getClassName" title="openturns.LinearEnumerateFunction.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getDimension" title="openturns.LinearEnumerateFunction.getDimension"><code class="xref py py-obj docutils literal"><span class="pre">getDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getDimension" title="openturns.LinearEnumerateFunction.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
 <td>Return the dimension of the <em>EnumerateFunction</em>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getId" title="openturns.LinearEnumerateFunction.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getId" title="openturns.LinearEnumerateFunction.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getMaximumDegreeCardinal" title="openturns.LinearEnumerateFunction.getMaximumDegreeCardinal"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumDegreeCardinal</span></code></a>(maximumDegree)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getMaximumDegreeCardinal" title="openturns.LinearEnumerateFunction.getMaximumDegreeCardinal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumDegreeCardinal</span></code></a>(maximumDegree)</td>
 <td>Get the cardinal of indices of degree inferior or equal to a given value.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getMaximumDegreeStrataIndex" title="openturns.LinearEnumerateFunction.getMaximumDegreeStrataIndex"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumDegreeStrataIndex</span></code></a>(maximumDegree)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getMaximumDegreeStrataIndex" title="openturns.LinearEnumerateFunction.getMaximumDegreeStrataIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumDegreeStrataIndex</span></code></a>(maximumDegree)</td>
 <td>Get the index of the strata of degree inferior to a given value.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getName" title="openturns.LinearEnumerateFunction.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getName" title="openturns.LinearEnumerateFunction.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getShadowedId" title="openturns.LinearEnumerateFunction.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getShadowedId" title="openturns.LinearEnumerateFunction.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getStrataCardinal" title="openturns.LinearEnumerateFunction.getStrataCardinal"><code class="xref py py-obj docutils literal"><span class="pre">getStrataCardinal</span></code></a>(strataIndex)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getStrataCardinal" title="openturns.LinearEnumerateFunction.getStrataCardinal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStrataCardinal</span></code></a>(strataIndex)</td>
 <td>Get the number of members of the basis associated to a given strata.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getStrataCumulatedCardinal" title="openturns.LinearEnumerateFunction.getStrataCumulatedCardinal"><code class="xref py py-obj docutils literal"><span class="pre">getStrataCumulatedCardinal</span></code></a>(strataIndex)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getStrataCumulatedCardinal" title="openturns.LinearEnumerateFunction.getStrataCumulatedCardinal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStrataCumulatedCardinal</span></code></a>(strataIndex)</td>
 <td>Get the cardinal of the cumulated strata above or equal to the given strata.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getVisibility" title="openturns.LinearEnumerateFunction.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.getVisibility" title="openturns.LinearEnumerateFunction.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.hasName" title="openturns.LinearEnumerateFunction.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.hasName" title="openturns.LinearEnumerateFunction.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.hasVisibleName" title="openturns.LinearEnumerateFunction.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.hasVisibleName" title="openturns.LinearEnumerateFunction.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.inverse" title="openturns.LinearEnumerateFunction.inverse"><code class="xref py py-obj docutils literal"><span class="pre">inverse</span></code></a>(indices)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.inverse" title="openturns.LinearEnumerateFunction.inverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse</span></code></a>(indices)</td>
 <td>Get the antecedent of a indices list in the <em>EnumerateFunction</em>.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.setDimension" title="openturns.LinearEnumerateFunction.setDimension"><code class="xref py py-obj docutils literal"><span class="pre">setDimension</span></code></a>(dimension)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.setDimension" title="openturns.LinearEnumerateFunction.setDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDimension</span></code></a>(dimension)</td>
 <td>Set the dimension of the <em>EnumerateFunction</em>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.setName" title="openturns.LinearEnumerateFunction.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.setName" title="openturns.LinearEnumerateFunction.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.setShadowedId" title="openturns.LinearEnumerateFunction.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.setShadowedId" title="openturns.LinearEnumerateFunction.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.setVisibility" title="openturns.LinearEnumerateFunction.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.LinearEnumerateFunction.setVisibility" title="openturns.LinearEnumerateFunction.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="55%" />
+<col width="45%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>__call__</strong></td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="openturns.LinearEnumerateFunction.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.LinearEnumerateFunction.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>x.__init__(…) initializes x; see help(type(x)) for signature</p>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
@@ -309,10 +311,11 @@ defined by:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
-<blockquote class="last">
-<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -327,10 +330,11 @@ defined by:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dim</strong> : int, <img class="math" src="../../_images/math/20aaf98126ca912d8a272464a64c61f41b847da1.svg" alt="dim \geq 0"/></p>
-<blockquote class="last">
-<div><p>Dimension of the <em>EnumerateFunction</em>.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/20aaf98126ca912d8a272464a64c61f41b847da1.svg" alt="dim \geq 0"/></span></dt>
+<dd><p class="first last">Dimension of the <em>EnumerateFunction</em>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -345,10 +349,11 @@ defined by:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -363,22 +368,24 @@ defined by:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>maximumDegree</strong> : int</p>
-<blockquote>
-<div><p>Number of polynoms of the basis.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>maximumDegree</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of polynoms of the basis.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cardinal</strong> : int</p>
-<blockquote class="last">
-<div><p>Cardinal of indices of degree <img class="math" src="../../_images/math/e2fa48672be49c465baa5f26bdd85320ab1a43d7.svg" alt="max \leq maximumDegree"/>.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>cardinal</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Cardinal of indices of degree <img class="math" src="../../_images/math/e2fa48672be49c465baa5f26bdd85320ab1a43d7.svg" alt="max \leq maximumDegree"/>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">enumerateFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">EnumerateFunction</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">LinearEnumerateFunction</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">indices</span> <span class="o">=</span> <span class="n">enumerateFunction</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -404,22 +411,24 @@ defined by:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>maximumDegree</strong> : int</p>
-<blockquote>
-<div><p>Degree.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>maximumDegree</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Degree.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>index</strong> : int</p>
-<blockquote class="last">
-<div><p>Index of the strata of degree <img class="math" src="../../_images/math/5430f3b9df6865e1d4743daa84740d824b81a116.svg" alt="max &lt; maximumDegree"/>.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Index of the strata of degree <img class="math" src="../../_images/math/e2fa48672be49c465baa5f26bdd85320ab1a43d7.svg" alt="max \leq maximumDegree"/>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">enumerateFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">EnumerateFunction</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">LinearEnumerateFunction</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
 <span class="gp">... </span>    <span class="n">indices</span> <span class="o">=</span> <span class="n">enumerateFunction</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -441,10 +450,11 @@ defined by:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -459,10 +469,11 @@ defined by:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -477,25 +488,27 @@ defined by:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>strataIndex</strong> : int</p>
-<blockquote>
-<div><p>Index of the strata in the hierarchical basis. In the context of product of
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>strataIndex</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Index of the strata in the hierarchical basis. In the context of product of
 polynomial basis, this is the total polynom degree.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cardinal</strong> : int</p>
-<blockquote class="last">
-<div><p>Number of members of the basis associated to the strata <em>strataIndex</em>. In
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>cardinal</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of members of the basis associated to the strata <em>strataIndex</em>. In
 the context of product of polynomial basis, this is the number of polynoms
 of the basis which total degree is <em>strataIndex</em>.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">enumerateFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">EnumerateFunction</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">LinearEnumerateFunction</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]:</span>
 <span class="gp">... </span>    <span class="n">indices</span> <span class="o">=</span> <span class="n">enumerateFunction</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -518,26 +531,28 @@ of the basis which total degree is <em>strataIndex</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>strataIndex</strong> : int</p>
-<blockquote>
-<div><p>Index of the strata in the hierarchical basis. In the context of product of
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>strataIndex</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Index of the strata in the hierarchical basis. In the context of product of
 polynomial basis, this is the total polynomial degree.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cardinal</strong> : int</p>
-<blockquote class="last">
-<div><p>Number of members of the basis associated to the strates inferior or equal
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>cardinal</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of members of the basis associated to the strates inferior or equal
 to <em>strataIndex</em>. In the context of product of polynomial basis, this is
 the number of polynomials of the basis which total degree is inferior or
 equal to <em>strataIndex</em>.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">enumerateFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">EnumerateFunction</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">LinearEnumerateFunction</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">indices</span> <span class="o">=</span> <span class="n">enumerateFunction</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -563,10 +578,11 @@ equal to <em>strataIndex</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -581,10 +597,11 @@ equal to <em>strataIndex</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -599,10 +616,11 @@ equal to <em>strataIndex</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasVisibleName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty and not the default one.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasVisibleName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty and not the default one.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -617,22 +635,24 @@ equal to <em>strataIndex</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>multiIndex</strong> : sequence of int</p>
-<blockquote>
-<div><p>List of indices.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>multiIndex</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of int</span></dt>
+<dd><p class="first last">List of indices.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>antecedent</strong> : int</p>
-<blockquote class="last">
-<div><p>Represents the antecedent of the <em>multiIndex</em> in the <em>EnumerateFunction</em>.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>antecedent</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Represents the antecedent of the <em>multiIndex</em> in the <em>EnumerateFunction</em>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">enumerateFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">EnumerateFunction</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">LinearEnumerateFunction</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">enumerateFunction</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
@@ -656,10 +676,11 @@ equal to <em>strataIndex</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dim</strong> : int, <img class="math" src="../../_images/math/20aaf98126ca912d8a272464a64c61f41b847da1.svg" alt="dim \geq 0"/></p>
-<blockquote class="last">
-<div><p>Dimension of the <em>EnumerateFunction</em>.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/20aaf98126ca912d8a272464a64c61f41b847da1.svg" alt="dim \geq 0"/></span></dt>
+<dd><p class="first last">Dimension of the <em>EnumerateFunction</em>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -674,10 +695,11 @@ equal to <em>strataIndex</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -692,10 +714,11 @@ equal to <em>strataIndex</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -710,10 +733,11 @@ equal to <em>strataIndex</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -744,14 +768,14 @@ equal to <em>strataIndex</em>.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../orthogonal_basis.html" >Orthogonal basis</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Nov 15, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

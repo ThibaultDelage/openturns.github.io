@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>CenteredFiniteDifferenceHessian &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../functions.html" accesskey="U">Functions</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -117,18 +110,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>evalImpl</strong> : <a class="reference internal" href="openturns.EvaluationImplementation.html#openturns.EvaluationImplementation" title="openturns.EvaluationImplementation"><code class="xref py py-class docutils literal"><span class="pre">EvaluationImplementation</span></code></a></p>
-<blockquote>
-<div><p>Implementation of the evaluation of a function.</p>
-</div></blockquote>
-<p><strong>epsilon</strong> : float, sequence of float</p>
-<blockquote>
-<div><p>Finite difference steps for each dimension.</p>
-</div></blockquote>
-<p><strong>step</strong> : <a class="reference internal" href="openturns.FiniteDifferenceStep.html#openturns.FiniteDifferenceStep" title="openturns.FiniteDifferenceStep"><code class="xref py py-class docutils literal"><span class="pre">FiniteDifferenceStep</span></code></a></p>
-<blockquote class="last">
-<div><p>Defines how finite difference steps values are computed.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>evalImpl</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.EvaluationImplementation.html#openturns.EvaluationImplementation" title="openturns.EvaluationImplementation"><code class="xref py py-class docutils literal notranslate"><span class="pre">EvaluationImplementation</span></code></a></span></dt>
+<dd><p class="first last">Implementation of the evaluation of a function.</p>
+</dd>
+<dt><strong>epsilon</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, sequence of float</span></dt>
+<dd><p class="first last">Finite difference steps for each dimension.</p>
+</dd>
+<dt><strong>step</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.FiniteDifferenceStep.html#openturns.FiniteDifferenceStep" title="openturns.FiniteDifferenceStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">FiniteDifferenceStep</span></code></a></span></dt>
+<dd><p class="first last">Defines how finite difference steps values are computed.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -145,7 +137,7 @@ difference scheme:</p>
                                       f_k(x - \epsilon_i + \epsilon_j)}
                                    {4 \epsilon_i \epsilon_j}"/></p>
 </div><p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">formulas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x1 * sin(x2)&#39;</span><span class="p">,</span> <span class="s1">&#39;cos(x1 + x2)&#39;</span><span class="p">,</span> <span class="s1">&#39;(x2 + 1) * exp(x1 - 2 * x2)&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myFunc</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span> <span class="n">formulas</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">epsilon</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span>
@@ -170,70 +162,70 @@ difference scheme:</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getCallsNumber" title="openturns.CenteredFiniteDifferenceHessian.getCallsNumber"><code class="xref py py-obj docutils literal"><span class="pre">getCallsNumber</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getCallsNumber" title="openturns.CenteredFiniteDifferenceHessian.getCallsNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCallsNumber</span></code></a>()</td>
 <td>Accessor to the number of times the hessian has been called.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getClassName" title="openturns.CenteredFiniteDifferenceHessian.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getClassName" title="openturns.CenteredFiniteDifferenceHessian.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getEpsilon" title="openturns.CenteredFiniteDifferenceHessian.getEpsilon"><code class="xref py py-obj docutils literal"><span class="pre">getEpsilon</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getEpsilon" title="openturns.CenteredFiniteDifferenceHessian.getEpsilon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEpsilon</span></code></a>()</td>
 <td>Get the finite difference steps.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getEvaluation" title="openturns.CenteredFiniteDifferenceHessian.getEvaluation"><code class="xref py py-obj docutils literal"><span class="pre">getEvaluation</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getEvaluation" title="openturns.CenteredFiniteDifferenceHessian.getEvaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvaluation</span></code></a>()</td>
 <td>Get the implementation of the evaluation of the function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getFiniteDifferenceStep" title="openturns.CenteredFiniteDifferenceHessian.getFiniteDifferenceStep"><code class="xref py py-obj docutils literal"><span class="pre">getFiniteDifferenceStep</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getFiniteDifferenceStep" title="openturns.CenteredFiniteDifferenceHessian.getFiniteDifferenceStep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFiniteDifferenceStep</span></code></a>()</td>
 <td>Get the finite difference step.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getId" title="openturns.CenteredFiniteDifferenceHessian.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getId" title="openturns.CenteredFiniteDifferenceHessian.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getInputDimension" title="openturns.CenteredFiniteDifferenceHessian.getInputDimension"><code class="xref py py-obj docutils literal"><span class="pre">getInputDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getInputDimension" title="openturns.CenteredFiniteDifferenceHessian.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
 <td>Get the input dimension.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getMarginal" title="openturns.CenteredFiniteDifferenceHessian.getMarginal"><code class="xref py py-obj docutils literal"><span class="pre">getMarginal</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getMarginal" title="openturns.CenteredFiniteDifferenceHessian.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
 <td>Accessor to the hessian implementation of a specific output.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getName" title="openturns.CenteredFiniteDifferenceHessian.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getName" title="openturns.CenteredFiniteDifferenceHessian.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getOutputDimension" title="openturns.CenteredFiniteDifferenceHessian.getOutputDimension"><code class="xref py py-obj docutils literal"><span class="pre">getOutputDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getOutputDimension" title="openturns.CenteredFiniteDifferenceHessian.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
 <td>Get the output dimension.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getParameter" title="openturns.CenteredFiniteDifferenceHessian.getParameter"><code class="xref py py-obj docutils literal"><span class="pre">getParameter</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getParameter" title="openturns.CenteredFiniteDifferenceHessian.getParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameter</span></code></a>()</td>
 <td>Accessor to the parameter values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getShadowedId" title="openturns.CenteredFiniteDifferenceHessian.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getShadowedId" title="openturns.CenteredFiniteDifferenceHessian.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getVisibility" title="openturns.CenteredFiniteDifferenceHessian.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.getVisibility" title="openturns.CenteredFiniteDifferenceHessian.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.hasName" title="openturns.CenteredFiniteDifferenceHessian.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.hasName" title="openturns.CenteredFiniteDifferenceHessian.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.hasVisibleName" title="openturns.CenteredFiniteDifferenceHessian.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.hasVisibleName" title="openturns.CenteredFiniteDifferenceHessian.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.hessian" title="openturns.CenteredFiniteDifferenceHessian.hessian"><code class="xref py py-obj docutils literal"><span class="pre">hessian</span></code></a>(inP)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.hessian" title="openturns.CenteredFiniteDifferenceHessian.hessian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hessian</span></code></a>(inP)</td>
 <td>Get the hessian at some point.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.isActualImplementation" title="openturns.CenteredFiniteDifferenceHessian.isActualImplementation"><code class="xref py py-obj docutils literal"><span class="pre">isActualImplementation</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.isActualImplementation" title="openturns.CenteredFiniteDifferenceHessian.isActualImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isActualImplementation</span></code></a>()</td>
 <td>Accessor to the validity flag.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.setFiniteDifferenceStep" title="openturns.CenteredFiniteDifferenceHessian.setFiniteDifferenceStep"><code class="xref py py-obj docutils literal"><span class="pre">setFiniteDifferenceStep</span></code></a>(finiteDifferenceStep)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.setFiniteDifferenceStep" title="openturns.CenteredFiniteDifferenceHessian.setFiniteDifferenceStep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setFiniteDifferenceStep</span></code></a>(finiteDifferenceStep)</td>
 <td>Set the finite difference step.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.setName" title="openturns.CenteredFiniteDifferenceHessian.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.setName" title="openturns.CenteredFiniteDifferenceHessian.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.setParameter" title="openturns.CenteredFiniteDifferenceHessian.setParameter"><code class="xref py py-obj docutils literal"><span class="pre">setParameter</span></code></a>(parameter)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.setParameter" title="openturns.CenteredFiniteDifferenceHessian.setParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameter</span></code></a>(parameter)</td>
 <td>Accessor to the parameter values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.setShadowedId" title="openturns.CenteredFiniteDifferenceHessian.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.setShadowedId" title="openturns.CenteredFiniteDifferenceHessian.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.setVisibility" title="openturns.CenteredFiniteDifferenceHessian.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.CenteredFiniteDifferenceHessian.setVisibility" title="openturns.CenteredFiniteDifferenceHessian.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -241,7 +233,7 @@ difference scheme:</p>
 <dl class="method">
 <dt id="openturns.CenteredFiniteDifferenceHessian.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.CenteredFiniteDifferenceHessian.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>x.__init__(…) initializes x; see help(type(x)) for signature</p>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
@@ -252,11 +244,12 @@ difference scheme:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>calls_number</strong> : int</p>
-<blockquote class="last">
-<div><p>Integer that counts the number of times the hessian has been called
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>calls_number</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Integer that counts the number of times the hessian has been called
 since its creation.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -271,10 +264,11 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
-<blockquote class="last">
-<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -289,10 +283,11 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>epsilon</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Finite difference steps for each dimension.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>epsilon</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Finite difference steps for each dimension.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -307,10 +302,11 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>evalImpl</strong> : <a class="reference internal" href="openturns.EvaluationImplementation.html#openturns.EvaluationImplementation" title="openturns.EvaluationImplementation"><code class="xref py py-class docutils literal"><span class="pre">EvaluationImplementation</span></code></a></p>
-<blockquote class="last">
-<div><p>Implementation of the evaluation of a function.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>evalImpl</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.EvaluationImplementation.html#openturns.EvaluationImplementation" title="openturns.EvaluationImplementation"><code class="xref py py-class docutils literal notranslate"><span class="pre">EvaluationImplementation</span></code></a></span></dt>
+<dd><p class="first last">Implementation of the evaluation of a function.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -325,10 +321,11 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>step</strong> : <a class="reference internal" href="openturns.FiniteDifferenceStep.html#openturns.FiniteDifferenceStep" title="openturns.FiniteDifferenceStep"><code class="xref py py-class docutils literal"><span class="pre">FiniteDifferenceStep</span></code></a></p>
-<blockquote class="last">
-<div><p>Defines how finite difference steps values are computed.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>step</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.FiniteDifferenceStep.html#openturns.FiniteDifferenceStep" title="openturns.FiniteDifferenceStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">FiniteDifferenceStep</span></code></a></span></dt>
+<dd><p class="first last">Defines how finite difference steps values are computed.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -343,10 +340,11 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -361,10 +359,11 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dimension</strong> : int</p>
-<blockquote class="last">
-<div><p>Input dimension.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dimension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Input dimension.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -379,21 +378,22 @@ since its creation.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>i</strong> : integer</p>
-<blockquote>
-<div><p>Integer corresponding to the output (Care: it starts at 0).</p>
-</div></blockquote>
-<p><strong>indices</strong> : sequence of integer</p>
-<blockquote>
-<div><p>The set of indices for which the outputs are extracted.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">Integer corresponding to the output (Care: it starts at 0).</p>
+</dd>
+<dt><strong>indices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of integer</span></dt>
+<dd><p class="first last">The set of indices for which the outputs are extracted.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hessianImplementation</strong> : <a class="reference internal" href="openturns.HessianImplementation.html#openturns.HessianImplementation" title="openturns.HessianImplementation"><code class="xref py py-class docutils literal"><span class="pre">HessianImplementation</span></code></a></p>
-<blockquote class="last">
-<div><p>A hessian implementation restricted to its compenents functions which
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hessianImplementation</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.HessianImplementation.html#openturns.HessianImplementation" title="openturns.HessianImplementation"><code class="xref py py-class docutils literal notranslate"><span class="pre">HessianImplementation</span></code></a></span></dt>
+<dd><p class="first last">A hessian implementation restricted to its compenents functions which
 indices are <em>i</em> or <em>indices</em>.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -408,10 +408,11 @@ indices are <em>i</em> or <em>indices</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -426,10 +427,11 @@ indices are <em>i</em> or <em>indices</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dimension</strong> : int</p>
-<blockquote class="last">
-<div><p>Output dimension.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dimension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Output dimension.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -444,10 +446,11 @@ indices are <em>i</em> or <em>indices</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parameter</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>The parameter values.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>parameter</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">The parameter values.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -462,10 +465,11 @@ indices are <em>i</em> or <em>indices</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -480,10 +484,11 @@ indices are <em>i</em> or <em>indices</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -498,10 +503,11 @@ indices are <em>i</em> or <em>indices</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -516,10 +522,11 @@ indices are <em>i</em> or <em>indices</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasVisibleName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty and not the default one.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasVisibleName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty and not the default one.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -534,16 +541,18 @@ indices are <em>i</em> or <em>indices</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float</p>
-<blockquote>
-<div><p>Point where the hessian is computed.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>point</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">Point where the hessian is computed.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hessian</strong> : <a class="reference internal" href="openturns.SymmetricTensor.html#openturns.SymmetricTensor" title="openturns.SymmetricTensor"><code class="xref py py-class docutils literal"><span class="pre">SymmetricTensor</span></code></a></p>
-<blockquote class="last">
-<div><p>Hessian evaluated at <em>point</em>.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hessian</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.SymmetricTensor.html#openturns.SymmetricTensor" title="openturns.SymmetricTensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">SymmetricTensor</span></code></a></span></dt>
+<dd><p class="first last">Hessian evaluated at <em>point</em>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -558,10 +567,11 @@ indices are <em>i</em> or <em>indices</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>is_impl</strong> : bool</p>
-<blockquote class="last">
-<div><p>Whether the implementation is valid.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>is_impl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Whether the implementation is valid.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -576,10 +586,11 @@ indices are <em>i</em> or <em>indices</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>step</strong> : <a class="reference internal" href="openturns.FiniteDifferenceStep.html#openturns.FiniteDifferenceStep" title="openturns.FiniteDifferenceStep"><code class="xref py py-class docutils literal"><span class="pre">FiniteDifferenceStep</span></code></a></p>
-<blockquote class="last">
-<div><p>Defines how finite difference steps values are computed.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>step</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.FiniteDifferenceStep.html#openturns.FiniteDifferenceStep" title="openturns.FiniteDifferenceStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">FiniteDifferenceStep</span></code></a></span></dt>
+<dd><p class="first last">Defines how finite difference steps values are computed.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -594,10 +605,11 @@ indices are <em>i</em> or <em>indices</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -612,10 +624,11 @@ indices are <em>i</em> or <em>indices</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parameter</strong> : sequence of float</p>
-<blockquote class="last">
-<div><p>The parameter values.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>parameter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">The parameter values.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -630,10 +643,11 @@ indices are <em>i</em> or <em>indices</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -648,10 +662,11 @@ indices are <em>i</em> or <em>indices</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -682,14 +697,14 @@ indices are <em>i</em> or <em>indices</em>.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../functions.html" >Functions</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Nov 15, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

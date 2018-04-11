@@ -1,0 +1,265 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Taylor variance decomposition &#8212; OpenTURNS  documentation</title>
+    <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Estimating moments with Monte Carlo" href="monte_carlo_moments.html" />
+    <link rel="prev" title="Optimal LHS design" href="optimal_lhs.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="http://www.openturns.org/">Home</a></li>
+    <li><a href="../../install.html">Get it</a></li>
+    <li><a href="../../contents.html">Doc</a></li>
+    <li><a href="https://github.com/openturns">Code</a></li>
+    <li><a href="http://trac.openturns.org">Bugs</a></li>
+  </ul>
+  <a href="../../index.html">
+    <h1>
+      <img src="../../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      OpenTURNS
+    </h1>
+    <h2> An Open source initiative for the Treatment of Uncertainties, Risks'N Statistics</h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="monte_carlo_moments.html" title="Estimating moments with Monte Carlo"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="optimal_lhs.html" title="Optimal LHS design"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../theory.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="reliability_sensitivity.html" accesskey="U">Reliability, sensitivity</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="optimal_lhs.html"
+                        title="previous chapter">Optimal LHS design</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="monte_carlo_moments.html"
+                        title="next chapter">Estimating moments with Monte Carlo</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/theory/reliability_sensitivity/taylor_moments.rst"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="taylor-variance-decomposition">
+<h1>Taylor variance decomposition<a class="headerlink" href="#taylor-variance-decomposition" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">The quadratic cumul is a probabilistic approach designed to propagate
+the uncertainties of the input variables <img class="math" src="../../_images/math/3cc3cf29aa4d8a54d23d769dc601db594a5ac873.svg" alt="\uX"/> through the model
+<img class="math" src="../../_images/math/7bc3c3b1a2be80b5e49a4bf613a598d81206e9bf.svg" alt="h"/> towards the output variables <img class="math" src="../../_images/math/ece4f3491b3391c535187c37c3f5ecec5b7c2662.svg" alt="\uY"/>. It enables to
+access the central dispersion (expectation and variance) of the output
+variables.</div>
+<div class="line">This method is based on a Taylor decomposition of the output variable
+<img class="math" src="../../_images/math/ece4f3491b3391c535187c37c3f5ecec5b7c2662.svg" alt="\uY"/> towards the <img class="math" src="../../_images/math/3cc3cf29aa4d8a54d23d769dc601db594a5ac873.svg" alt="\uX"/> random vectors around the mean
+point <img class="math" src="../../_images/math/490b3867274863b4068c4dfa6e8bf776e60561ea.svg" alt="\muX"/>. Depending on the order of the Taylor decomposition
+(classically first order or second order), one can obtain different
+formulas. For easiness of the reading, we first present the formulas
+with <img class="math" src="../../_images/math/006516d05dde4dd3fea8100c94018119631ea795.svg" alt="n_Y=1"/> before the ones obtained for <img class="math" src="../../_images/math/76c8f50ae2f12726a2cac71b6df48eab294c67e7.svg" alt="n_Y &gt; 1"/>.</div>
+<div class="line">As <img class="math" src="../../_images/math/1ebe11b4fc5bd8488ad92a4d1fe5c99ec0503f1d.svg" alt="Y=h(\uX)"/>, the Taylor decomposition around
+<img class="math" src="../../_images/math/21d371965b15da25f6246127c9c4bef6a3bcd021.svg" alt="\ux = \muX"/> at the second order yields to:</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Case</strong> <img class="math" src="../../_images/math/006516d05dde4dd3fea8100c94018119631ea795.svg" alt="n_Y=1"/></div>
+</div>
+<div class="math">
+<p><img src="../../_images/math/8ac5f313dea467992da253de5609bf4026f4277d.svg" alt="Y = h(\muX) + &lt; \underline{\nabla} h(\muX) , \: \uX - \muX&gt; + \frac{1}{2}&lt;&lt;\underline{\underline{\nabla }}^2 h(\muX,\: \underline{\mu}_{\:X}),\: \uX - \muX&gt;,\: \uX - \muX&gt; + o(\Cov \uX)"/></p>
+</div><p>where:</p>
+<ul class="simple">
+<li><img class="math" src="../../_images/math/eb89f7fec7e9021e2ffc932c748cb42c977e341a.svg" alt="\muX = \Expect{\uX}"/> is the vector of the input variables at
+the mean values of each component.</li>
+<li><img class="math" src="../../_images/math/0db1111b93d184e30055054ea63a6c57662df1cf.svg" alt="\Cov \uX"/> is the covariance matrix of the random vector
+<img class="math" src="../../_images/math/3cc3cf29aa4d8a54d23d769dc601db594a5ac873.svg" alt="\uX"/>. The elements are the followings :
+<img class="math" src="../../_images/math/6d8d996a6f4b22a9aa98d186c624c21f968b0687.svg" alt="(\Cov \uX)_{ij} = \Expect{\left(X^i - \Expect{X^i} \right)\times\left(X^j - \Expect{X^j} \right)}"/></li>
+<li><img class="math" src="../../_images/math/ed2150e6d8cf18a8e4e3eb0e2f1fb114795ea955.svg" alt="\underline{\nabla} h(\muX) = \: ^t \left( \frac{\partial y}{\partial x^j}\right)_{\ux\: =\: \muX} = \: ^t \left( \frac{\partial h(\ux)}{\partial x^j}\right)_{\ux\: =\: \muX}"/>
+is the gradient vector taken at the value <img class="math" src="../../_images/math/21d371965b15da25f6246127c9c4bef6a3bcd021.svg" alt="\ux = \muX"/> and
+<img class="math" src="../../_images/math/c5d528f592243f99d01232b9fc8f70bb10da62c8.svg" alt="j=1,\ldots,n_X"/>.</li>
+<li><img class="math" src="../../_images/math/edc1db1fcae316bae1c34645f674238e6e3a8253.svg" alt="\underline{\underline{\nabla}}^2 h(\ux,\ux)"/> is a matrix. It
+is composed by the second order derivative of the output variable
+towards the <img class="math" src="../../_images/math/1af8abc7f0411f2aff527776b7c28e48efc29201.svg" alt="i^\textrm{th}"/> and <img class="math" src="../../_images/math/ecc9d92aa2065de2a629037fac9d9ac4c0792d4c.svg" alt="j^\textrm{th}"/>
+components of <img class="math" src="../../_images/math/ebe60a0df4904290cfbd68f24ff549a0be350c94.svg" alt="\ux"/> taken around <img class="math" src="../../_images/math/21d371965b15da25f6246127c9c4bef6a3bcd021.svg" alt="\ux = \muX"/>. It yields
+to:
+<img class="math" src="../../_images/math/ab2be859247912114ed4293ea6317ce37a81042a.svg" alt="\left( \nabla^2 h(\muX,\muX) \right)_{ij} =\left( \frac{\partial^2 h(\ux,\ux)}{\partial x^i \partial x^j}\right)_{\ux\: =\: \muX}"/></li>
+<li><img class="math" src="../../_images/math/64b5ab0e658df1c6bd7278979bd55ce48149625d.svg" alt="&lt;,&gt;"/> is a scalar product between two vectors.</li>
+</ul>
+<div class="line-block">
+<div class="line"><strong>Approximation at the order 1 - Case</strong> <img class="math" src="../../_images/math/006516d05dde4dd3fea8100c94018119631ea795.svg" alt="n_Y=1"/></div>
+</div>
+<blockquote>
+<div><div class="math">
+<p><img src="../../_images/math/1754b08d389cd515c0de62e11b13a799271f3fd6.svg" alt="\Expect{Y} = h(\muX)"/></p>
+</div><div class="math">
+<p><img src="../../_images/math/317ffd7b9ab655a0a2dcbeb5a30fce946b0d65a4.svg" alt="\Var{Y} = \sum_{i,j=1}^{n_X} \frac{\partial h(\muX)}{\partial X^i} . \frac{\partial h(\muX)}{\partial X^j}.(\Cov \uX)_{ij}"/></p>
+</div></div></blockquote>
+<div class="line-block">
+<div class="line"><strong>Approximation at the order 2 - Case</strong> <img class="math" src="../../_images/math/006516d05dde4dd3fea8100c94018119631ea795.svg" alt="n_Y=1"/></div>
+</div>
+<blockquote>
+<div><div class="math">
+<p><img src="../../_images/math/ade2de86b245f44bff5884762b56bbbd70ec64af.svg" alt="\begin{aligned}
+    \begin{split}
+      \Expect{Y} = h(\muX) + \frac{1}{2}. \sum_{i,j=1}^{n_X} \frac{\partial^2 h(\muX,\muX)}{\partial x^i \partial x^j} . (\Cov \uX)_{ij}
+    \end{split}
+  \end{aligned}"/></p>
+</div></div></blockquote>
+<div class="line-block">
+<div class="line">The decomposition of the variance at the order 2 is not implemented.
+It requires both the knowledge of higher order derivatives of the model
+and the knowledge of moments of order strictly greater than 2 of the pdf.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Case</strong> <img class="math" src="../../_images/math/3c1c7445c42c3d2fd111b9496948415c3549eaeb.svg" alt="n_Y&gt;1"/></div>
+</div>
+<div class="line-block">
+<div class="line">The quadratic cumul approach can be developed at different orders
+from the Taylor decomposition of the random vector <img class="math" src="../../_images/math/ece4f3491b3391c535187c37c3f5ecec5b7c2662.svg" alt="\uY"/>. As
+<img class="math" src="../../_images/math/7f6fe6b790263d712aa909cf98f8e8182bd41e01.svg" alt="\uY=h(\uX)"/>, the Taylor decomposition around <img class="math" src="../../_images/math/21d371965b15da25f6246127c9c4bef6a3bcd021.svg" alt="\ux = \muX"/>
+at the second order yields to:</div>
+</div>
+<blockquote>
+<div><div class="math">
+<p><img src="../../_images/math/4d2ab497182bbd76c1a700db49cf66aad664f4f4.svg" alt="\uY = h(\muX) + &lt;\underline{\underline{\nabla}}h(\muX) , \: \uX - \muX&gt; + \frac{1}{2}&lt;&lt;\underline{\underline{\underline{\nabla }}}^2 h(\muX,\: \underline{\mu}_{\:X}),\: \uX - \muX&gt;,\: \uX - \muX&gt; + o(\Cov \uX)"/></p>
+</div></div></blockquote>
+<p>where:</p>
+<ul class="simple">
+<li><img class="math" src="../../_images/math/eb89f7fec7e9021e2ffc932c748cb42c977e341a.svg" alt="\muX = \Expect{\uX}"/> is the vector of the input variables at
+the mean values of each component.</li>
+<li><img class="math" src="../../_images/math/0db1111b93d184e30055054ea63a6c57662df1cf.svg" alt="\Cov \uX"/> is the covariance matrix of the random vector
+<img class="math" src="../../_images/math/3cc3cf29aa4d8a54d23d769dc601db594a5ac873.svg" alt="\uX"/>. The elements are the followings :
+<img class="math" src="../../_images/math/7b5059d9f7f10f560cdcdabe8490835a399810b5.svg" alt="(\Cov \uX)_{ij} = \Expect{\left(X^i - \Expect{X^i} \right)^2}"/></li>
+<li><img class="math" src="../../_images/math/a4543308c779b10914c6e170d84df52a5a36fa1a.svg" alt="\underline{\underline{\nabla}} h(\muX) = \: ^t \left( \frac{\partial y^i}{\partial x^j}\right)_{\ux\: =\: \muX} = \: ^t \left( \frac{\partial h^i(\ux)}{\partial x^j}\right)_{\ux\: =\: \muX}"/>
+is the transposed Jacobian matrix with <img class="math" src="../../_images/math/c2350b71530289f2c11e921b1093d782860981a6.svg" alt="i=1,\ldots,n_Y"/> and
+<img class="math" src="../../_images/math/c5d528f592243f99d01232b9fc8f70bb10da62c8.svg" alt="j=1,\ldots,n_X"/>.</li>
+<li><img class="math" src="../../_images/math/e44e361306b12c30af474da8ad05aae586410f63.svg" alt="\underline{\underline{\underline{\nabla^2}}} h(\ux\:,\ux)"/> is
+a tensor of order 3. It is composed by the second order derivative
+towards the <img class="math" src="../../_images/math/1af8abc7f0411f2aff527776b7c28e48efc29201.svg" alt="i^\textrm{th}"/> and <img class="math" src="../../_images/math/ecc9d92aa2065de2a629037fac9d9ac4c0792d4c.svg" alt="j^\textrm{th}"/>
+components of <img class="math" src="../../_images/math/ebe60a0df4904290cfbd68f24ff549a0be350c94.svg" alt="\ux"/> of the <img class="math" src="../../_images/math/9202351246dc935113bf66e001655f29c58f9223.svg" alt="k^\textrm{th}"/> component of
+the output vector <img class="math" src="../../_images/math/e6131e6b34e60e615f93d138a3c121f868921f06.svg" alt="h(\ux)"/>. It yields to:
+<img class="math" src="../../_images/math/67c23902343b99e7df402853e4b95300f015255e.svg" alt="\left( \nabla^2 h(\ux) \right)_{ijk} = \frac{\partial^2 (h^k(\ux))}{\partial x^i \partial x^j}"/></li>
+<li><img class="math" src="../../_images/math/facfc77621e1320145ed35b6adeb8f2285e7c02e.svg" alt="&lt;\underline{\underline{\nabla}}h(\muX) , \: \uX - \muX&gt; = \sum_{j=1}^{n_X} \left( \frac{\partial {\uy}}{\partial {x^j}}\right)_{\ux = \muX} . \left( X^j-\muX^j \right)"/></li>
+<li><img class="math" src="../../_images/math/050d9f1843345bcb10022c798bf54336451ddbed.svg" alt="&lt;&lt;\underline{\underline{\underline{\nabla }}}^2 h(\muX,\: \underline{\mu}_{X}),\: \uX - \muX&gt;,\: \uX - \muX&gt; = \left( ^t (\uX^i - \muX^i). \left(\frac{\partial^2 y^k}{\partial x^i \partial x^k}\right)_{\ux = \muX}. (\uX^j - \muX^j) \right)_{ijk}"/></li>
+</ul>
+<div class="line-block">
+<div class="line"><strong>Approximation at the order 1 - Case</strong> <img class="math" src="../../_images/math/3c1c7445c42c3d2fd111b9496948415c3549eaeb.svg" alt="n_Y&gt;1"/></div>
+</div>
+<blockquote>
+<div><div class="math">
+<p><img src="../../_images/math/5ab1d3ffe918cbec74e0261c9ee038ae565d3019.svg" alt="\Expect{\uY} \approx \underline{h}(\muX)"/></p>
+</div><p>Pay attention that <img class="math" src="../../_images/math/051c795798922aa4d4277d047087c924589d00af.svg" alt="\Expect{\uY}"/> is a vector. The
+<img class="math" src="../../_images/math/9202351246dc935113bf66e001655f29c58f9223.svg" alt="k^\textrm{th}"/> component of this vector is equal to the
+<img class="math" src="../../_images/math/9202351246dc935113bf66e001655f29c58f9223.svg" alt="k^\textrm{th}"/> component of the output vector computed by the
+model <img class="math" src="../../_images/math/7bc3c3b1a2be80b5e49a4bf613a598d81206e9bf.svg" alt="h"/> at the mean value. <img class="math" src="../../_images/math/051c795798922aa4d4277d047087c924589d00af.svg" alt="\Expect{\uY}"/> is thus the
+computation of the model at mean.</p>
+</div></blockquote>
+<div class="math">
+<p><img src="../../_images/math/53a114d164b19c2d933b837d58f5eda671159c36.svg" alt="\Cov \uY \approx ^t\underline{\underline{\nabla}}\:\underline{h}(\muX).\Cov \uX.\underline{\underline{\nabla}}\:\underline{h}(\muX)"/></p>
+</div><div class="line-block">
+<div class="line"><strong>Approximation at the order 2 - Case</strong> <img class="math" src="../../_images/math/3c1c7445c42c3d2fd111b9496948415c3549eaeb.svg" alt="n_Y&gt;1"/></div>
+</div>
+<div class="math">
+<p><img src="../../_images/math/d0750c9b22efcd23772c5b837bc20a63509dcfb4.svg" alt="\Expect{\uY} \approx \underline{h}(\muX) + \frac{1}{2}.\underline{\underline{\underline{\nabla}}}^2 \underline{\underline{h}}(\muX,\muX) \odot \Cov \uX"/></p>
+</div><p>This last formulation is the reduced writing of the following
+expression:</p>
+<div class="math">
+<p><img src="../../_images/math/cf4b2e54e178f5c32a41af458d6cec7b3ecc0219.svg" alt="(\Expect{\uY})_k \approx (\underline{h}(\muX))_k + \left( \sum_{i=1}^{n_X}\frac{1}{2} (\Cov \uX)_{ii}.{(\nabla^2\:h(\uX))}_{iik} + \sum_{i=1}^{n_X} \sum_{j=1}^{i-1} (\Cov X)_{ij}.{(\nabla^2\:h(\uX))}_{ijk}  \right)_k"/></p>
+</div><p>The decomposition of the variance at the order 2 is not implemented.
+It requires both the knowledge of
+higher order derivatives of the model and the knowledge of moments of
+order strictly greater than 2 of the pdf.</p>
+<div class="topic">
+<p class="topic-title first">API:</p>
+<ul class="simple">
+<li>See <a class="reference internal" href="../../user_manual/_generated/openturns.TaylorExpansionMoments.html#openturns.TaylorExpansionMoments" title="openturns.TaylorExpansionMoments"><code class="xref py py-class docutils literal notranslate"><span class="pre">TaylorExpansionMoments</span></code></a></li>
+</ul>
+</div>
+<div class="topic">
+<p class="topic-title first">Examples:</p>
+<ul class="simple">
+<li>See <a class="reference internal" href="../../examples/reliability_sensitivity/estimate_moments_taylor.html"><span class="doc">Estimate moments from Taylor expansions</span></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="monte_carlo_moments.html" title="Estimating moments with Monte Carlo"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="optimal_lhs.html" title="Optimal LHS design"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../theory.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="reliability_sensitivity.html" >Reliability, sensitivity</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+    </div>
+  </body>
+</html>

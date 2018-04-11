@@ -2,6 +2,7 @@ Numerical methods
 =================
 
   .. toctree::
+    :maxdepth: 1
 
     random_generator.ipynb
     combinatorial_generator.ipynb
@@ -13,3 +14,6 @@ Numerical methods
     minmax_optimization.ipynb
     estimate_integral_iterated_quadrature.ipynb
     control_termination.ipynb
+    logistic_growth_model.ipynb
+    study_save_load.ipynb
+    ifs.ipynb

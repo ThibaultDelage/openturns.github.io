@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Description &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" accesskey="U">Base objects</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -117,28 +110,27 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>size</strong> : int, <img class="math" src="../../_images/math/0942f8482110607be37fe2282f05d1422eae828e.svg" alt="size \geq 0"/></p>
-<blockquote>
-<div><p>Size of the collection.</p>
-</div></blockquote>
-<p><strong>value</strong> : str</p>
-<blockquote>
-<div><p>Value set to the <em>size</em> elements.</p>
-</div></blockquote>
-<p><strong>sequence</strong> : sequence of str</p>
-<blockquote class="last">
-<div><p>Components of the vector.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/0942f8482110607be37fe2282f05d1422eae828e.svg" alt="size \geq 0"/></span></dt>
+<dd><p class="first last">Size of the collection.</p>
+</dd>
+<dt><strong>value</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Value set to the <em>size</em> elements.</p>
+</dd>
+<dt><strong>sequence</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of str</span></dt>
+<dd><p class="first last">Components of the vector.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 <p>Use the first constructor:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">Description</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">Description</span><span class="p">()</span>
 <span class="go">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">Description</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="go">[,]</span>
@@ -147,13 +139,13 @@
 </pre></div>
 </div>
 <p>Use the second constructor:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Description</span><span class="p">([</span><span class="s1">&#39;P1&#39;</span><span class="p">,</span> <span class="s1">&#39;P2&#39;</span><span class="p">,</span> <span class="s1">&#39;P3&#39;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Description</span><span class="p">([</span><span class="s1">&#39;P1&#39;</span><span class="p">,</span> <span class="s1">&#39;P2&#39;</span><span class="p">,</span> <span class="s1">&#39;P3&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span>
 <span class="go">[P1,P2,P3]</span>
 </pre></div>
 </div>
 <p>Use some functionalities:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;P4&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;P4&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span>
 <span class="go">[P1,P4,P3]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;P5&#39;</span><span class="p">)</span>
@@ -168,99 +160,108 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.BuildDefault" title="openturns.Description.BuildDefault"><code class="xref py py-obj docutils literal"><span class="pre">BuildDefault</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.BuildDefault" title="openturns.Description.BuildDefault"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BuildDefault</span></code></a>(*args)</td>
 <td>Build a default description.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.add" title="openturns.Description.add"><code class="xref py py-obj docutils literal"><span class="pre">add</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.add" title="openturns.Description.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(*args)</td>
 <td>Append a component (in-place).</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.at" title="openturns.Description.at"><code class="xref py py-obj docutils literal"><span class="pre">at</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.at" title="openturns.Description.at"><code class="xref py py-obj docutils literal notranslate"><span class="pre">at</span></code></a>(*args)</td>
 <td>Access to an element of the collection.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.clear" title="openturns.Description.clear"><code class="xref py py-obj docutils literal"><span class="pre">clear</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.clear" title="openturns.Description.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</td>
 <td>Reset the collection to zero dimension.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.getClassName" title="openturns.Description.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.getClassName" title="openturns.Description.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.getId" title="openturns.Description.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.getId" title="openturns.Description.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.getName" title="openturns.Description.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.getName" title="openturns.Description.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.getShadowedId" title="openturns.Description.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.getShadowedId" title="openturns.Description.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.getSize" title="openturns.Description.getSize"><code class="xref py py-obj docutils literal"><span class="pre">getSize</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.getSize" title="openturns.Description.getSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSize</span></code></a>()</td>
 <td>Get the collection’s dimension (or size).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.getVisibility" title="openturns.Description.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.getVisibility" title="openturns.Description.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.hasName" title="openturns.Description.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.hasName" title="openturns.Description.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.hasVisibleName" title="openturns.Description.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.hasVisibleName" title="openturns.Description.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.isBlank" title="openturns.Description.isBlank"><code class="xref py py-obj docutils literal"><span class="pre">isBlank</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.isBlank" title="openturns.Description.isBlank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isBlank</span></code></a>()</td>
 <td>Check if the description is blank.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.isEmpty" title="openturns.Description.isEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isEmpty</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.isEmpty" title="openturns.Description.isEmpty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEmpty</span></code></a>()</td>
 <td>Tell if the collection is empty.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.resize" title="openturns.Description.resize"><code class="xref py py-obj docutils literal"><span class="pre">resize</span></code></a>(newSize)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.resize" title="openturns.Description.resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resize</span></code></a>(newSize)</td>
 <td>Change the size of the collection.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.setName" title="openturns.Description.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.setName" title="openturns.Description.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.setShadowedId" title="openturns.Description.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Description.setShadowedId" title="openturns.Description.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.setVisibility" title="openturns.Description.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Description.setVisibility" title="openturns.Description.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">sort</span></code>()</td>
-<td></td>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>sort</strong></td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="openturns.Description.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Description.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>x.__init__(…) initializes x; see help(type(x)) for signature</p>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="openturns.Description.BuildDefault">
-<em class="property">static </em><code class="descname">BuildDefault</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Description.BuildDefault" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">BuildDefault</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Description.BuildDefault" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build a default description.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>size</strong> : int, <img class="math" src="../../_images/math/0942f8482110607be37fe2282f05d1422eae828e.svg" alt="size \geq 0"/></p>
-<blockquote>
-<div><p>Size of the collection.</p>
-</div></blockquote>
-<p><strong>value</strong> : str</p>
-<blockquote>
-<div><p>Prefixed label of the final labels. By default, it is equal to <em>Component</em>.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/0942f8482110607be37fe2282f05d1422eae828e.svg" alt="size \geq 0"/></span></dt>
+<dd><p class="first last">Size of the collection.</p>
+</dd>
+<dt><strong>value</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Prefixed label of the final labels. By default, it is equal to <em>Component</em>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
-<blockquote class="last">
-<div><p>Description of dimension <em>size</em> built as: <em>value0, …, valueN with N=size-1</em>.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>description</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></span></dt>
+<dd><p class="first last">Description of dimension <em>size</em> built as: <em>value0, …, valueN with N=size-1</em>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">Description</span><span class="o">.</span><span class="n">BuildDefault</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="go">[Component0,Component1,Component2]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">Description</span><span class="o">.</span><span class="n">BuildDefault</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
@@ -277,16 +278,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>value</strong> : type depends on the type of the collection.</p>
-<blockquote class="last">
-<div><p>The component to append.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>value</strong> <span class="classifier-delimiter">:</span> <span class="classifier">type depends on the type of the collection.</span></dt>
+<dd><p class="first last">The component to append.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -303,16 +305,18 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>index</strong> : positive int</p>
-<blockquote>
-<div><p>Position of the element to access.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive int</span></dt>
+<dd><p class="first last">Position of the element to access.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>element</strong> : type depends on the type of the collection</p>
-<blockquote class="last">
-<div><p>Element of the collection at the position <em>index</em>.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>element</strong> <span class="classifier-delimiter">:</span> <span class="classifier">type depends on the type of the collection</span></dt>
+<dd><p class="first last">Element of the collection at the position <em>index</em>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -324,7 +328,7 @@
 <code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Description.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset the collection to zero dimension.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
@@ -341,10 +345,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
-<blockquote class="last">
-<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -359,10 +364,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -377,10 +383,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -395,10 +402,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -413,10 +421,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>n</strong> : int</p>
-<blockquote class="last">
-<div><p>The number of components in the collection.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of components in the collection.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -431,10 +440,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -449,10 +459,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -467,10 +478,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasVisibleName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty and not the default one.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasVisibleName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty and not the default one.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -485,16 +497,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isBlank</strong> : bool</p>
-<blockquote class="last">
-<div><p><em>True</em> if all the components are empty.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>isBlank</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last"><em>True</em> if all the components are empty.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Description</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vector</span><span class="o">.</span><span class="n">isBlank</span><span class="p">()</span>
 <span class="go">True</span>
@@ -513,16 +526,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>isEmpty</strong> : bool</p>
-<blockquote class="last">
-<div><p><em>True</em> if there is no element in the collection.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>isEmpty</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last"><em>True</em> if there is no element in the collection.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">()</span>
 <span class="go">False</span>
@@ -541,10 +555,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>newSize</strong> : positive int</p>
-<blockquote class="last">
-<div><p>New size of the collection.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>newSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive int</span></dt>
+<dd><p class="first last">New size of the collection.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -553,7 +568,7 @@
 <p>If the new size is smaller than the older one, the last elements are thrown
 away, else the new elements are set to the default value of the element type.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">[4,4]</span>
@@ -575,10 +590,11 @@ away, else the new elements are set to the default value of the element type.</p
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -593,10 +609,11 @@ away, else the new elements are set to the default value of the element type.</p
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -611,10 +628,11 @@ away, else the new elements are set to the default value of the element type.</p
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -645,14 +663,14 @@ away, else the new elements are set to the default value of the element type.</p
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" >Base objects</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Nov 15, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

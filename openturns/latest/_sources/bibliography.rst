@@ -36,6 +36,9 @@ Bibliography
 .. [Doornik2005] Doornik, J.A. *An Improved Ziggurat Method to Generate Normal Random Samples*,
     mimeo, Nuffield College, University of Oxford, 2005.
     `pdf <http://doc.openturns.org/papers/doornik2005.pdf>`__
+.. [Dubourg2011] Dubourg, V. *Adaptative surrogate models for reliability and reliability-based design optimization*,
+    University Blaise Pascal - Clermont II, 2011.
+    `pdf <http://doc.openturns.org/papers/dubourg2011.pdf>`__
 .. [Fang2006] K-T. Fang, R. Li, and A. Sudjianto. *Design and modeling for
     computer experiments.* Chapman & Hall CRC, 2006.
 .. [Gamboa2013] Gamboa, F., Janon, A., Klein, T. & Lagnoux, A. *Sensitivity
@@ -43,6 +46,10 @@ Bibliography
     `pdf <http://doc.openturns.org/papers/gamboa2013.pdf>`__
 .. [Hormann1992] Hormann W., *The generation of Binomial Random Variates*
     `pdf <http://doc.openturns.org/papers/hormann1992.pdf>`__
+.. [Janon2014] Janon A., Klein T., Lagnoux-Renaudie A., Prieur C., *Asymptotic
+    normality and efficiency of two Sobol index estimators*,
+    ESAIM: Probability and Statistics, EDP Sciences, 2014, 18, pp.342-364.
+    `pdf <https://hal.inria.fr/hal-00665048/document>`__
 .. [Jansen1999] Jansen, M.J.W. *Analysis of variance designs for model output*,
     Computer Physics Communication, 1999, 117, 35-43.
     `pdf <http://doc.openturns.org/papers/jansen1999.pdf>`__
@@ -79,6 +86,11 @@ Bibliography
     isoprobabilistic transformations really differ?* Prob. Eng. Mech., 2009,
     24, 577-584.
     `pdf <http://doc.openturns.org/papers/lebrun2009c.pdf>`__
+.. [Lecuyer2005] L’Ecuyer P., Lemieux C. (2005) Recent Advances in Randomized
+    Quasi-Monte Carlo Methods. In: Dror M., L’Ecuyer P., Szidarovszky F. (eds)
+    Modeling Uncertainty. International Series in Operations Research &
+    Management Science, vol 46. Springer, Boston, MA
+    `pdf <http://doc.openturns.org/papers/lecuyer2005.pdf>`__
 .. [Marsaglia1993] Marsaglia G. and Tsang W. W., *A Simple Method for Generating Gamma*,
     Journal of Statistical Computational and Simulation, vol 46, pp101 - 110,1993.
 .. [Martinez2011] Martinez, J-M., *Analyse de sensibilite globale par decomposition de la variance*,
@@ -107,6 +119,10 @@ Bibliography
 .. [Nataf1962] Nataf, A. *Determination des distributions dont les marges sont
     donnees.* C. R. Acad. Sci. Paris, 1962, 225, 42-43.
     `pdf <http://doc.openturns.org/papers/nataf1962.pdf>`__
+.. [Nash1999] Stephen G. Nash, 1999, *A survey of Truncated-Newton methods*,
+    Systems Engineering and Operations Research Dept.,
+    George Mason University, Fairfax, VA 22030.
+    `pdf <http://doc.openturns.org/papers/nash1999.pdf>`__
 .. [NISThandbook] NIST/SEMATECH e-Handbook of Statistical Methods,
     http://www.itl.nist.gov/div898/handbook/
 .. [NLopt] Steven G. Johnson, The NLopt nonlinear-optimization package,
@@ -153,3 +169,7 @@ Bibliography
     discrete random variates*. Journal of Computational and Applied Mathematics,
     vol. 31, no. 1, pp. 181-189, 1990.
     `pdf <http://doc.openturns.org/papers/stadlober1990.pdf>`__
+.. [Stoer1993] Stoer, J., Bulirsch, R. *Introduction to Numerical
+    Analysis*, Second Edition, Springer-Verlag, 1993.
+    `pdf <http://alvand.basu.ac.ir/~dezfoulian/files/Numericals/Springer%20-%20Introduction%20to%20numerical%20analysis,%20Bulirsch,%20Stoer.%20(2ed.,%201993)(400dpi)(ISBN%200387978.pdf>`__
+	       

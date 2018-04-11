@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Estimate moments &#8212; OpenTURNS  documentation</title>
+    <title>Estimate moments from sample &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -26,7 +17,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Estimate Spearman correlation coefficent" href="estimate_spearman.html" />
+    <link rel="next" title="Correlation analysis on samples" href="sample_correlation.html" />
     <link rel="prev" title="Visualize an histogram from data" href="visualize_histogram.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
@@ -57,7 +48,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="estimate_spearman.html" title="Estimate Spearman correlation coefficent"
+          <a href="sample_correlation.html" title="Correlation analysis on samples"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="visualize_histogram.html" title="Visualize an histogram from data"
@@ -74,8 +65,8 @@
   <p class="topless"><a href="visualize_histogram.html"
                         title="previous chapter">Visualize an histogram from data</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="estimate_spearman.html"
-                        title="next chapter">Estimate Spearman correlation coefficent</a></p>
+  <p class="topless"><a href="sample_correlation.html"
+                        title="next chapter">Correlation analysis on samples</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -267,136 +260,145 @@ div.nboutput div.output_area.stderr {
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
 </style>
-<div class="section" id="Estimate-moments">
-<h1>Estimate moments<a class="headerlink" href="#Estimate-moments" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Estimate-moments-from-sample">
+<h1>Estimate moments from sample<a class="headerlink" href="#Estimate-moments-from-sample" title="Permalink to this headline">¶</a></h1>
 <p>In this basic example we are going to estimate statistical moments from
-a sample.</p>
+a sample, eventually from an output variable of interest.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span><span class="c1"># Create data</span>
-<span class="n">size</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">mu</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]</span>
-<span class="n">sigma</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
-<span class="n">R</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">normal</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
-<span class="n">sample</span> <span class="o">=</span> <span class="n">normal</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Create a sample</span>
+
+<span class="c1"># model f</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s2">&quot;x1&quot;</span><span class="p">,</span> <span class="s2">&quot;x2&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;x1^2+x2&quot;</span><span class="p">,</span> <span class="s2">&quot;x2^2+x1&quot;</span><span class="p">])</span>
+
+<span class="c1"># input vector X</span>
+<span class="n">inputDist</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComposedDistribution</span><span class="p">([</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">IndependentCopula</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">inputDist</span><span class="o">.</span><span class="n">setDescription</span><span class="p">([</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span> <span class="s1">&#39;X2&#39;</span><span class="p">])</span>
+<span class="n">inputVector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">inputDist</span><span class="p">)</span>
+
+<span class="c1"># output vector Y=f(X)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">inputVector</span><span class="p">)</span>
+
+<span class="c1"># sample Y</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Estimate mean</span>
 <span class="n">sample</span><span class="o">.</span><span class="n">computeMean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[3]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<p>[-3.99594,4.75612]<br>
+<p>[0.928558,1.01799]<br>
 </p></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Estimate standard deviation</span>
 <span class="n">sample</span><span class="o">.</span><span class="n">computeStandardDeviation</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<p>[[ 1.89414   0         ]<br>
- [ 0.0759477 3.13125   ]]<br>
+<p>[[ 1.66702   0         ]<br>
+ [ 0.0547869 1.81849   ]]<br>
 </p></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Estimate variance</span>
 <span class="n">sample</span><span class="o">.</span><span class="n">computeVariance</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<p>[3.58776,9.81049]<br>
+<p>[2.77895,3.30989]<br>
 </p></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Estimate skewness</span>
 <span class="n">sample</span><span class="o">.</span><span class="n">computeSkewness</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<p>[-0.169881,0.108393]<br>
+<p>[1.40965,1.73437]<br>
 </p></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Estimate kurtosis</span>
 <span class="n">sample</span><span class="o">.</span><span class="n">computeKurtosis</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<p>[3.45227,3.07151]<br>
+<p>[6.84373,7.96431]<br>
 </p></div>
 </div>
 </div>
@@ -414,7 +416,7 @@ a sample.</p>
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="estimate_spearman.html" title="Estimate Spearman correlation coefficent"
+          <a href="sample_correlation.html" title="Correlation analysis on samples"
              >next</a> |</li>
         <li class="right" >
           <a href="visualize_histogram.html" title="Visualize an histogram from data"
@@ -427,8 +429,8 @@ a sample.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Nov 15, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

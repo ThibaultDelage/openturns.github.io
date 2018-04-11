@@ -9,10 +9,23 @@ This methodology is relevant if each model evaluation is time consuming.
 Indeed, once a response surface has been built up, the various propagation steps may be applied at a negligible cost.
 A special focus will be given to polynomial response surfaces.
 
-.. Methods description
-.. ===================
-.. 
-.. .. toctree::
-..     :maxdepth: 1
-.. 
-..     optimal_lhs
+
+.. toctree::
+    :maxdepth: 1
+
+    taylor_expansion
+    polynomial_least_squares
+    polynomial_sparse_least_squares
+    kriging
+
+Functional chaos
+----------------
+
+.. toctree::
+    :maxdepth: 1
+
+    orthorgonal_polynomials
+    chaos_basis
+    enumeration_strategy
+    functional_chaos
+    cross_validation

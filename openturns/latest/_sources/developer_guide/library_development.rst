@@ -252,7 +252,7 @@ Document your contribution more thoroughly
 
 If your class introduces important mathematical concepts or impacts the
 library architecture it may be useful to add some more details in the
-latex documentation, see :ref:`latex_doc`.
+documentation, see :ref:`sphinx_doc`.
 
 That’s all, folks!
 
@@ -304,7 +304,7 @@ by the following template:
     #
     #  CMakeLists.txt
     #
-    #  Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca
+    #  Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca
     #
     #  This library is free software: you can redistribute it and/or modify
     #  it under the terms of the GNU Lesser General Public License as published by
@@ -316,7 +316,7 @@ by the following template:
     #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     #  GNU Lesser General Public License for more details.
     #
-    #  You should have received a copy of the GNU Lesser General Public
+    #  You should have received a copy of the GNU Lesser General Public License
     #  along with this library.  If not, see <http://www.gnu.org/licenses/>.
     #
 

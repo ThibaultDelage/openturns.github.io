@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Sample independence test &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -26,7 +17,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Compare samples using Smirnov test" href="smirnov_test.html" />
+    <link rel="next" title="Compare samples using Smirnov, QQ-plot" href="smirnov_test.html" />
     <link rel="prev" title="Distribution fitting test using QQ plot" href="qqplot_graph.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
@@ -57,7 +48,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="smirnov_test.html" title="Compare samples using Smirnov test"
+          <a href="smirnov_test.html" title="Compare samples using Smirnov, QQ-plot"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="qqplot_graph.html" title="Distribution fitting test using QQ plot"
@@ -75,7 +66,7 @@
                         title="previous chapter">Distribution fitting test using QQ plot</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="smirnov_test.html"
-                        title="next chapter">Compare samples using Smirnov test</a></p>
+                        title="next chapter">Compare samples using Smirnov, QQ-plot</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -271,18 +264,58 @@ div.nboutput div.output_area.stderr {
 <h1>Sample independence test<a class="headerlink" href="#Sample-independence-test" title="Permalink to this headline">¶</a></h1>
 <p>In this example we are going to perform tests to assess whether two 1-d
 samples are independent or not.</p>
-<p>Several methods can be used:</p>
-<ul class="simple">
-<li>Pearson test (for continuous values)</li>
-<li>Spearman test (for continuous values)</li>
-<li>Chi2 test (for discrete values)</li>
+<p>The following tests are available:</p>
+<ul>
+<li><p class="first">the ChiSquared test: it tests if both scalar samples (discrete ones
+only) are independent. If <img class="math" src="../../_images/math/fa98dafefdda93937f7c4515ed811f5a2d6fa259.svg" alt="n_{ij}"/> is the number of values of
+the sample <img class="math" src="../../_images/math/84ff5e21b84f0794166e54c03e7077ea64618cbf.svg" alt="i=(1,2)"/> in the modality <img class="math" src="../../_images/math/762b7014f119b5967ded93d11184b31ced8f8fc5.svg" alt="1 \leq j \leq m"/>,
+<img class="math" src="../../_images/math/b37eca3d16fbef690b927ff02add25b174247c66.svg" alt="\displaystyle n_{i.} = \sum_{j=1}^m n_{ij}"/>
+<img class="math" src="../../_images/math/a5db5cef872d89c986e422c7367daa2fdc257241.svg" alt="\displaystyle n_{.j} = \sum_{i=1}^2 n_{ij}"/>, and the
+ChiSquared test evaluates the decision variable:</p>
+<div class="math">
+<p><img src="../../_images/math/7f5361f33e4b8cc03ff9ae6ac7c6e9b32ce04d4f.svg" alt="D^2 = \displaystyle \sum_{i=1}^2 \sum_{j=1}^m \frac{( n_{ij} - \frac{n_{i.} n_{.j}}{n} )^2}{\frac{n_{i.} n_{.j}}{n}}"/></p>
+</div></li>
 </ul>
+<p>which tends towards the <img class="math" src="../../_images/math/2f154c3d3fbab6629432ed86bbb008d558ffe206.svg" alt="\chi^2(m-1)"/> distribution. The hypothesis
+of independence is rejected if <img class="math" src="../../_images/math/2090f19c4bd85d7e287f3de3731d9e39f4836dd3.svg" alt="D^2"/> is too high (depending on the
+p-value threshold).</p>
+<ul>
+<li><p class="first">the Pearson test: it tests if there exists a linear relation between
+two scalar samples which form a gaussian vector (which is equivalent
+to have a linear correlation coefficient not equal to zero). If both
+samples are <img class="math" src="../../_images/math/f836923df21d2ac901bca05875b9f8b3baa68734.svg" alt="\underline{x} = (x_i)_{1 \leq i \leq n}"/> and
+<img class="math" src="../../_images/math/d5a802ea1eaaf15695fe00f1e6936cf63ba49fd0.svg" alt="\underline{y} = (y_i)_{1 \leq i \leq n}"/>, and
+<img class="math" src="../../_images/math/57d5bf981ce91f736a6b53b0ff032537fe87492e.svg" alt="\bar{x} = \displaystyle \frac{1}{n}\sum_{i=1}^n x_i"/> and
+<img class="math" src="../../_images/math/ab774650121b295e1a7cad0af9d66db1aef6441f.svg" alt="\bar{y} = \displaystyle \frac{1}{n}\sum_{i=1}^n y_i"/>, the
+Pearson test evaluates the decision variable:</p>
+<div class="math">
+<p><img src="../../_images/math/f5af80450a362758fd79beafe2d40771305d4970.svg" alt="D = \displaystyle \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2\sum_{i=1}^n (y_i - \bar{y})^2}}"/></p>
+</div></li>
+</ul>
+<p>The variable <img class="math" src="../../_images/math/a9c7f391737d43f94064ee4d2c034cab589eaecc.svg" alt="D"/> tends towards a <img class="math" src="../../_images/math/9a7b05c6ebba30ec44698f2f5f4713038778b055.svg" alt="\chi^2(n-2)"/>, under the
+hypothesis of normality of both samples. The hypothesis of a linear
+coefficient equal to 0 is rejected (which is equivalent to the
+independence of the samples) if D is too high (depending on the p-value
+threshold).</p>
+<ul>
+<li><p class="first">the Spearman test: it tests if there exists a monotonous relation
+between two scalar samples. If both samples are
+<img class="math" src="../../_images/math/f836923df21d2ac901bca05875b9f8b3baa68734.svg" alt="\underline{x} = (x_i)_{1 \leq i \leq n}"/> and
+<img class="math" src="../../_images/math/8375180d94fc6aa6d6ca8a5a336bc67bb2b5766f.svg" alt="\underline{y}= (y_i)_{1 \leq i \leq n}"/>,, the Spearman test
+evaluates the decision variable:</p>
+<div class="math">
+<p><img src="../../_images/math/c81bb962c1dc02e72899a205a2becc11f9dcdfac.svg" alt="D = \displaystyle 1-\frac{6\sum_{i=1}^n (r_i - s_i)^2}{n(n^2-1)}"/></p>
+</div></li>
+</ul>
+<p>where <img class="math" src="../../_images/math/6616c9935c0a32552a5e7492fdf735383be3b1a4.svg" alt="r_i = rank(x_i)"/> and <img class="math" src="../../_images/math/faa79a3a7d61f364af5d941ea805914bb134bf86.svg" alt="s_i = rank(y_i)"/>. <img class="math" src="../../_images/math/a9c7f391737d43f94064ee4d2c034cab589eaecc.svg" alt="D"/> is
+such that <img class="math" src="../../_images/math/0775d589add77c0fe4b3fc5be0f7d10e08f67677.svg" alt="\sqrt{n-1}D"/> tends towards the gaussian (0,1)
+distribution.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 </pre></div>
@@ -290,11 +323,11 @@ samples are independent or not.</p>
 </div>
 <p><strong>continuous samples</strong></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create continuous samples</span>
 <span class="n">sample1</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">sample2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
@@ -302,18 +335,18 @@ samples are independent or not.</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Using the Pearson test</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">HypothesisTest</span><span class="o">.</span><span class="n">Pearson</span><span class="p">(</span><span class="n">sample1</span><span class="p">,</span> <span class="n">sample2</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[9]:
 </pre></div>
 </div>
@@ -322,18 +355,18 @@ samples are independent or not.</p>
 </p></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Using the Spearman test</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">HypothesisTest</span><span class="o">.</span><span class="n">Spearman</span><span class="p">(</span><span class="n">sample1</span><span class="p">,</span> <span class="n">sample2</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[11]:
 </pre></div>
 </div>
@@ -343,11 +376,11 @@ samples are independent or not.</p>
 </div>
 <p><strong>discrete samples</strong></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create discrete samples</span>
 <span class="n">sample1</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Poisson</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">sample2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Poisson</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
@@ -355,18 +388,18 @@ samples are independent or not.</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Using the Chi2 test</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">HypothesisTest</span><span class="o">.</span><span class="n">ChiSquared</span><span class="p">(</span><span class="n">sample1</span><span class="p">,</span> <span class="n">sample2</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[6]:
 </pre></div>
 </div>
@@ -389,7 +422,7 @@ samples are independent or not.</p>
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="smirnov_test.html" title="Compare samples using Smirnov test"
+          <a href="smirnov_test.html" title="Compare samples using Smirnov, QQ-plot"
              >next</a> |</li>
         <li class="right" >
           <a href="qqplot_graph.html" title="Distribution fitting test using QQ plot"
@@ -402,8 +435,8 @@ samples are independent or not.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Nov 15, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

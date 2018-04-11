@@ -29,7 +29,6 @@ channels for you to contact us:
     architecture
     library_development
     sphinx_documentation
-    latex_documentation
     module_development
     wrapper_development
     git_workflow
@@ -37,3 +36,4 @@ channels for you to contact us:
     windows_port
     windows_native_port
     validation/validation
+    release

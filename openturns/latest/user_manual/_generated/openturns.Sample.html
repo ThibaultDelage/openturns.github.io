@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Sample &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../statistics_on_sample.html" accesskey="U">Statistics on sample</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -118,44 +111,40 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>size</strong> : int, <img class="math" src="../../_images/math/4b7cdc5b2606c213a91fa38e57a29b2896951d60.svg" alt="m &gt; 0"/>, optional</p>
-<blockquote>
-<div><p>The sample size.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/4b7cdc5b2606c213a91fa38e57a29b2896951d60.svg" alt="m &gt; 0"/>, optional</span></dt>
+<dd><p class="first last">The sample size.
 Default creates an empty sample with dimension 1.</p>
-</div></blockquote>
-<p><strong>dimension</strong> : int, <img class="math" src="../../_images/math/d1a9115768c6d3d99c1c4674ce5f238a2c2c7251.svg" alt="n &gt; 0"/>, optional</p>
-<blockquote>
-<div><p>The real vectors dimension.
+</dd>
+<dt><strong>dimension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/d1a9115768c6d3d99c1c4674ce5f238a2c2c7251.svg" alt="n &gt; 0"/>, optional</span></dt>
+<dd><p class="first last">The real vectors dimension.
 Default creates an empty sample with dimension 1.</p>
-</div></blockquote>
-<p><strong>point</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a> or flat (1d) array, list or tuple of floats, optional</p>
-<blockquote>
-<div><p>The point that will be repeated along the sample.
+</dd>
+<dt><strong>point</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> or flat (1d) array, list or tuple of floats, optional</span></dt>
+<dd><p class="first last">The point that will be repeated along the sample.
 Default creates a sample filled with zeros (null vectors).</p>
-</div></blockquote>
-<p><strong>other</strong> : <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
-<blockquote>
-<div><p>The sample contains points to copy.</p>
-</div></blockquote>
-<p><strong>first</strong> : int, <img class="math" src="../../_images/math/bbb6236dc84ef3f3946196ca2b690ad0ac998cb8.svg" alt="0 \leq first &lt; m"/></p>
-<blockquote>
-<div><p>The index of the first point to copy.</p>
-</div></blockquote>
-<p><strong>last</strong> : int, <img class="math" src="../../_images/math/276a33bd179dda762af6d2a2384f87f9d00cc344.svg" alt="first &lt; last \leq m"/>, optional</p>
-<blockquote class="last">
-<div><p>The index after the last point to copy.</p>
-</div></blockquote>
+</dd>
+<dt><strong>other</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">The sample contains points to copy.</p>
+</dd>
+<dt><strong>first</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/bbb6236dc84ef3f3946196ca2b690ad0ac998cb8.svg" alt="0 \leq first &lt; m"/></span></dt>
+<dd><p class="first last">The index of the first point to copy.</p>
+</dd>
+<dt><strong>last</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/276a33bd179dda762af6d2a2384f87f9d00cc344.svg" alt="first &lt; last \leq m"/>, optional</span></dt>
+<dd><p class="first last">The index after the last point to copy.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.Sample.ImportFromCSVFile" title="openturns.Sample.ImportFromCSVFile"><code class="xref py py-obj docutils literal"><span class="pre">ImportFromCSVFile</span></code></a>, <a class="reference internal" href="#openturns.Sample.ImportFromTextFile" title="openturns.Sample.ImportFromTextFile"><code class="xref py py-obj docutils literal"><span class="pre">ImportFromTextFile</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.Sample.ImportFromCSVFile" title="openturns.Sample.ImportFromCSVFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImportFromCSVFile</span></code></a>, <a class="reference internal" href="#openturns.Sample.ImportFromTextFile" title="openturns.Sample.ImportFromTextFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImportFromTextFile</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
 <p>Create a Sample</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
@@ -170,25 +159,22 @@ Default creates a sample filled with zeros (null vectors).</p>
 </pre></div>
 </div>
 <p>Create a Sample from a (2d) array, list or tuple</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">)]))</span>
 </pre></div>
 </div>
 <p>and back</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
-<span class="go">array([[ 1.,  2.],</span>
-<span class="go">       [ 3.,  4.],</span>
-<span class="go">       [ 5.,  6.]])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Eventually samples may also be generated from probability distributions or
 experiments</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">random_sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">random_sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">experiment</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LHSExperiment</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
 </pre></div>
 </div>
 <p><strong>Translation:</strong> addition or subtraction of a (compatible) sample or a point, or a scalar which is promoted into a point of compatible dimension with equal components</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span> <span class="o">+</span> <span class="n">sample</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span> <span class="o">+</span> <span class="n">sample</span><span class="p">)</span>
 <span class="go">0 : [  2  4 ]</span>
 <span class="go">1 : [  6  8 ]</span>
 <span class="go">2 : [ 10 12 ]</span>
@@ -209,7 +195,7 @@ experiments</p>
 <p><strong>Scaling:</strong> right multiplication or division of a (compatible) square matrix
 with the points in the sample (this can be used e.g. for rotating all the
 points in a sample)</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">4.0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">4.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rotation_matrix</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquareMatrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)],</span>
 <span class="gp">... </span>                                   <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span>  <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rotated_sample</span> <span class="o">=</span> <span class="n">sample</span> <span class="o">*</span> <span class="n">rotation_matrix</span>
@@ -223,133 +209,139 @@ points in a sample)</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.ImportFromCSVFile" title="openturns.Sample.ImportFromCSVFile"><code class="xref py py-obj docutils literal"><span class="pre">ImportFromCSVFile</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.ImportFromCSVFile" title="openturns.Sample.ImportFromCSVFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImportFromCSVFile</span></code></a>(*args)</td>
 <td>Static method for building a sample from a CSV file.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.ImportFromTextFile" title="openturns.Sample.ImportFromTextFile"><code class="xref py py-obj docutils literal"><span class="pre">ImportFromTextFile</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.ImportFromTextFile" title="openturns.Sample.ImportFromTextFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImportFromTextFile</span></code></a>(*args)</td>
 <td>Static method for building a sample from a text file.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.add" title="openturns.Sample.add"><code class="xref py py-obj docutils literal"><span class="pre">add</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.add" title="openturns.Sample.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(*args)</td>
 <td>Append a vector (in-place).</td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">clear</span></code>()</td>
-<td></td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.asPoint" title="openturns.Sample.asPoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asPoint</span></code></a>()</td>
+<td>Accessor to the internal linear storage for 1D sample.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeCenteredMoment" title="openturns.Sample.computeCenteredMoment"><code class="xref py py-obj docutils literal"><span class="pre">computeCenteredMoment</span></code></a>(k)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.clear" title="openturns.Sample.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</td>
+<td>Erase all values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeCenteredMoment" title="openturns.Sample.computeCenteredMoment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeCenteredMoment</span></code></a>(k)</td>
 <td>Estimate componentwise centered moments.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeCovariance" title="openturns.Sample.computeCovariance"><code class="xref py py-obj docutils literal"><span class="pre">computeCovariance</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeCovariance" title="openturns.Sample.computeCovariance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeCovariance</span></code></a>()</td>
 <td>Estimate the covariance matrix.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeEmpiricalCDF" title="openturns.Sample.computeEmpiricalCDF"><code class="xref py py-obj docutils literal"><span class="pre">computeEmpiricalCDF</span></code></a>(point[,&nbsp;tail])</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeEmpiricalCDF" title="openturns.Sample.computeEmpiricalCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeEmpiricalCDF</span></code></a>(point[,&nbsp;tail])</td>
 <td>Estimate the empirical cumulative distribution function (ECDF).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeKendallTau" title="openturns.Sample.computeKendallTau"><code class="xref py py-obj docutils literal"><span class="pre">computeKendallTau</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeKendallTau" title="openturns.Sample.computeKendallTau"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeKendallTau</span></code></a>()</td>
 <td>Estimate the Kendall coefficients matrix.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeKurtosis" title="openturns.Sample.computeKurtosis"><code class="xref py py-obj docutils literal"><span class="pre">computeKurtosis</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeKurtosis" title="openturns.Sample.computeKurtosis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeKurtosis</span></code></a>()</td>
 <td>Estimate the componentwise kurtosis (4th order centered normalized moment).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeLinearCorrelation" title="openturns.Sample.computeLinearCorrelation"><code class="xref py py-obj docutils literal"><span class="pre">computeLinearCorrelation</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeLinearCorrelation" title="openturns.Sample.computeLinearCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeLinearCorrelation</span></code></a>()</td>
 <td><strong>(ditch me?)</strong></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeMean" title="openturns.Sample.computeMean"><code class="xref py py-obj docutils literal"><span class="pre">computeMean</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeMean" title="openturns.Sample.computeMean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeMean</span></code></a>()</td>
 <td>Estimate the mean vector.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeMedian" title="openturns.Sample.computeMedian"><code class="xref py py-obj docutils literal"><span class="pre">computeMedian</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeMedian" title="openturns.Sample.computeMedian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeMedian</span></code></a>()</td>
 <td>Estimate the componentwise medians (50%-quantiles).</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computePearsonCorrelation" title="openturns.Sample.computePearsonCorrelation"><code class="xref py py-obj docutils literal"><span class="pre">computePearsonCorrelation</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computePearsonCorrelation" title="openturns.Sample.computePearsonCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computePearsonCorrelation</span></code></a>()</td>
 <td>Estimate the Pearson correlation matrix.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeQuantile" title="openturns.Sample.computeQuantile"><code class="xref py py-obj docutils literal"><span class="pre">computeQuantile</span></code></a>(prob)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeQuantile" title="openturns.Sample.computeQuantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeQuantile</span></code></a>(prob)</td>
 <td>Estimate the quantile of the <strong>joint</strong> distribution underlying the sample.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeQuantilePerComponent" title="openturns.Sample.computeQuantilePerComponent"><code class="xref py py-obj docutils literal"><span class="pre">computeQuantilePerComponent</span></code></a>(prob)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeQuantilePerComponent" title="openturns.Sample.computeQuantilePerComponent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeQuantilePerComponent</span></code></a>(prob)</td>
 <td>Estimate the componentwise quantiles.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeRange" title="openturns.Sample.computeRange"><code class="xref py py-obj docutils literal"><span class="pre">computeRange</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeRange" title="openturns.Sample.computeRange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeRange</span></code></a>()</td>
 <td>Compute the range per component.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeRawMoment" title="openturns.Sample.computeRawMoment"><code class="xref py py-obj docutils literal"><span class="pre">computeRawMoment</span></code></a>(k)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeRawMoment" title="openturns.Sample.computeRawMoment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeRawMoment</span></code></a>(k)</td>
 <td>Compute the raw (non-centered) moment per component.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeSkewness" title="openturns.Sample.computeSkewness"><code class="xref py py-obj docutils literal"><span class="pre">computeSkewness</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeSkewness" title="openturns.Sample.computeSkewness"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSkewness</span></code></a>()</td>
 <td>Estimate the componentwise skewness (3rd order centered normalized moment).</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeSpearmanCorrelation" title="openturns.Sample.computeSpearmanCorrelation"><code class="xref py py-obj docutils literal"><span class="pre">computeSpearmanCorrelation</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeSpearmanCorrelation" title="openturns.Sample.computeSpearmanCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSpearmanCorrelation</span></code></a>()</td>
 <td>Estimate the Spearman correlation matrix.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeStandardDeviation" title="openturns.Sample.computeStandardDeviation"><code class="xref py py-obj docutils literal"><span class="pre">computeStandardDeviation</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeStandardDeviation" title="openturns.Sample.computeStandardDeviation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeStandardDeviation</span></code></a>()</td>
 <td>Compute the Cholesky factor of the covariance matrix.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeStandardDeviationPerComponent" title="openturns.Sample.computeStandardDeviationPerComponent"><code class="xref py py-obj docutils literal"><span class="pre">computeStandardDeviationPerComponent</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeStandardDeviationPerComponent" title="openturns.Sample.computeStandardDeviationPerComponent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeStandardDeviationPerComponent</span></code></a>()</td>
 <td>Estimate the componentwise standard deviations.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeVariance" title="openturns.Sample.computeVariance"><code class="xref py py-obj docutils literal"><span class="pre">computeVariance</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeVariance" title="openturns.Sample.computeVariance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeVariance</span></code></a>()</td>
 <td>Estimate the componentwise variances.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.erase" title="openturns.Sample.erase"><code class="xref py py-obj docutils literal"><span class="pre">erase</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.erase" title="openturns.Sample.erase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">erase</span></code></a>(*args)</td>
 <td>Erase point(s) at or between index(es) (in-place).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.exportToCSVFile" title="openturns.Sample.exportToCSVFile"><code class="xref py py-obj docutils literal"><span class="pre">exportToCSVFile</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.exportToCSVFile" title="openturns.Sample.exportToCSVFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exportToCSVFile</span></code></a>(*args)</td>
 <td>Dump the sample to a CSV file.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.find" title="openturns.Sample.find"><code class="xref py py-obj docutils literal"><span class="pre">find</span></code></a>(point)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.find" title="openturns.Sample.find"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find</span></code></a>(point)</td>
 <td>Get the position of a point in the sample.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.getClassName" title="openturns.Sample.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.getClassName" title="openturns.Sample.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.getDescription" title="openturns.Sample.getDescription"><code class="xref py py-obj docutils literal"><span class="pre">getDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.getDescription" title="openturns.Sample.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a>()</td>
 <td>Accessor to the componentwise description.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.getDimension" title="openturns.Sample.getDimension"><code class="xref py py-obj docutils literal"><span class="pre">getDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.getDimension" title="openturns.Sample.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
 <td>Accessor to the sample’s dimension.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.getId" title="openturns.Sample.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.getId" title="openturns.Sample.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.getImplementation" title="openturns.Sample.getImplementation"><code class="xref py py-obj docutils literal"><span class="pre">getImplementation</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.getImplementation" title="openturns.Sample.getImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getImplementation</span></code></a>(*args)</td>
 <td>Accessor to the underlying implementation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.getMarginal" title="openturns.Sample.getMarginal"><code class="xref py py-obj docutils literal"><span class="pre">getMarginal</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.getMarginal" title="openturns.Sample.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
 <td>Accessor to sample marginal(s) (column(s)).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.getMax" title="openturns.Sample.getMax"><code class="xref py py-obj docutils literal"><span class="pre">getMax</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.getMax" title="openturns.Sample.getMax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMax</span></code></a>()</td>
 <td>Accessor to the componentwise maximum values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.getMin" title="openturns.Sample.getMin"><code class="xref py py-obj docutils literal"><span class="pre">getMin</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.getMin" title="openturns.Sample.getMin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMin</span></code></a>()</td>
 <td>Accessor to the componentwise minimum values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.getName" title="openturns.Sample.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.getName" title="openturns.Sample.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.getSize" title="openturns.Sample.getSize"><code class="xref py py-obj docutils literal"><span class="pre">getSize</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.getSize" title="openturns.Sample.getSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSize</span></code></a>()</td>
 <td>Accessor to the sample size.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.rank" title="openturns.Sample.rank"><code class="xref py py-obj docutils literal"><span class="pre">rank</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.rank" title="openturns.Sample.rank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rank</span></code></a>(*args)</td>
 <td>Compute the sample (componentwise) ranks.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.setDescription" title="openturns.Sample.setDescription"><code class="xref py py-obj docutils literal"><span class="pre">setDescription</span></code></a>(description)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.select" title="openturns.Sample.select"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select</span></code></a>(indices)</td>
+<td>Select points in a sample.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.setDescription" title="openturns.Sample.setDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDescription</span></code></a>(description)</td>
 <td>Accessor to the componentwise description.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.setName" title="openturns.Sample.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.setName" title="openturns.Sample.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.sort" title="openturns.Sample.sort"><code class="xref py py-obj docutils literal"><span class="pre">sort</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.sort" title="openturns.Sample.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a>(*args)</td>
 <td>Sort the sample.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.sortAccordingToAComponent" title="openturns.Sample.sortAccordingToAComponent"><code class="xref py py-obj docutils literal"><span class="pre">sortAccordingToAComponent</span></code></a>(index)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.sortAccordingToAComponent" title="openturns.Sample.sortAccordingToAComponent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sortAccordingToAComponent</span></code></a>(index)</td>
 <td>Sort the sample according to the given component.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.sortUnique" title="openturns.Sample.sortUnique"><code class="xref py py-obj docutils literal"><span class="pre">sortUnique</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.sortUnique" title="openturns.Sample.sortUnique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sortUnique</span></code></a>()</td>
 <td>Sort the sample and remove duplicate points.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.split" title="openturns.Sample.split"><code class="xref py py-obj docutils literal"><span class="pre">split</span></code></a>(index)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.split" title="openturns.Sample.split"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split</span></code></a>(index)</td>
 <td>Trunk the sample.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.stack" title="openturns.Sample.stack"><code class="xref py py-obj docutils literal"><span class="pre">stack</span></code></a>(sample)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.stack" title="openturns.Sample.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a>(sample)</td>
 <td>Stack (horizontally) the given sample to the current one (in-place).</td>
 </tr>
 </tbody>
@@ -357,56 +349,57 @@ points in a sample)</p>
 <dl class="method">
 <dt id="openturns.Sample.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>x.__init__(…) initializes x; see help(type(x)) for signature</p>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="openturns.Sample.ImportFromCSVFile">
-<em class="property">static </em><code class="descname">ImportFromCSVFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.ImportFromCSVFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">ImportFromCSVFile</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.ImportFromCSVFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Static method for building a sample from a CSV file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>file_name</strong> : str</p>
-<blockquote>
-<div><p>Path to CSV file.</p>
-</div></blockquote>
-<p><strong>separator</strong> : str</p>
-<blockquote>
-<div><p>Separating string.
-Default uses <cite>csv-file-separator</cite> from the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>file_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Path to CSV file.</p>
+</dd>
+<dt><strong>separator</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Separating string.
+Default uses <cite>csv-file-separator</cite> from the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sample</strong> : <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>Sample loaded from the CSV file.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">Sample loaded from the CSV file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.Sample.exportToCSVFile" title="openturns.Sample.exportToCSVFile"><code class="xref py py-obj docutils literal"><span class="pre">exportToCSVFile</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.Sample.exportToCSVFile" title="openturns.Sample.exportToCSVFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exportToCSVFile</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The file may or may not contain a header line (columns spanned with strings
 delimited with quotes). If it does contain such a header line, it will be
-used for setting the sample description using <a class="reference internal" href="#openturns.Sample.setDescription" title="openturns.Sample.setDescription"><code class="xref py py-meth docutils literal"><span class="pre">setDescription()</span></code></a>.</p>
+used for setting the sample description using <a class="reference internal" href="#openturns.Sample.setDescription" title="openturns.Sample.setDescription"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setDescription()</span></code></a>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 <p>Let’s first create a sample CSV file</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">exportToCSVFile</span><span class="p">(</span><span class="s1">&#39;sample.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>And load it back</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loaded_sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="o">.</span><span class="n">ImportFromCSVFile</span><span class="p">(</span><span class="s1">&#39;sample.csv&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loaded_sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="o">.</span><span class="n">ImportFromCSVFile</span><span class="p">(</span><span class="s1">&#39;sample.csv&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">sample</span> <span class="o">==</span> <span class="n">loaded_sample</span>
 </pre></div>
 </div>
@@ -414,53 +407,58 @@ used for setting the sample description using <a class="reference internal" href
 
 <dl class="staticmethod">
 <dt id="openturns.Sample.ImportFromTextFile">
-<em class="property">static </em><code class="descname">ImportFromTextFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.ImportFromTextFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">ImportFromTextFile</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.ImportFromTextFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Static method for building a sample from a text file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>file_name</strong> : str</p>
-<blockquote>
-<div><p>Path to text file.</p>
-</div></blockquote>
-<p><strong>separator</strong> : str</p>
-<blockquote>
-<div><p>Separating string.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>file_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Path to text file.</p>
+</dd>
+<dt><strong>separator</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Separating string.
 Default uses a blank space.</p>
-</div></blockquote>
+</dd>
+<dt><strong>skipped_lines</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of lines skipped.
+Default is 0.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sample</strong> : <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>Sample loaded from the text file.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">Sample loaded from the text file.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.Sample.exportToCSVFile" title="openturns.Sample.exportToCSVFile"><code class="xref py py-obj docutils literal"><span class="pre">exportToCSVFile</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.Sample.exportToCSVFile" title="openturns.Sample.exportToCSVFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exportToCSVFile</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The file may or may not contain a header line (columns spanned with strings
 delimited with quotes). If it does contain such a header line, it will be
-used for setting the sample description using <a class="reference internal" href="#openturns.Sample.setDescription" title="openturns.Sample.setDescription"><code class="xref py py-meth docutils literal"><span class="pre">setDescription()</span></code></a>.
+used for setting the sample description using <a class="reference internal" href="#openturns.Sample.setDescription" title="openturns.Sample.setDescription"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setDescription()</span></code></a>.
 It can also contain some comments, if a line starts with one of the
-characters contained in <cite>Sample-CommentsMarker</cite> from the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>.</p>
+characters contained in <cite>Sample-CommentsMarker</cite> from the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 <p>Let’s first create a sample text file</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">exportToCSVFile</span><span class="p">(</span><span class="s1">&#39;sample.txt&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>And load it back</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loaded_sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="o">.</span><span class="n">ImportFromTextFile</span><span class="p">(</span><span class="s1">&#39;sample.txt&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loaded_sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="o">.</span><span class="n">ImportFromTextFile</span><span class="p">(</span><span class="s1">&#39;sample.txt&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">sample</span> <span class="o">==</span> <span class="n">loaded_sample</span>
 </pre></div>
 </div>
@@ -474,16 +472,17 @@ characters contained in <cite>Sample-CommentsMarker</cite> from the <a class="re
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float</p>
-<blockquote class="last">
-<div><p>The point to append.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>point</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">The point to append.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">add</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
@@ -496,6 +495,48 @@ characters contained in <cite>Sample-CommentsMarker</cite> from the <a class="re
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.Sample.asPoint">
+<code class="descname">asPoint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.asPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the internal linear storage for 1D sample.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>values</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Flat internal representation of the sample.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Available only for 1D sample.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span class="go">    [ X0        ]</span>
+<span class="go">0 : [  0.608202 ]</span>
+<span class="go">1 : [ -1.26617  ]</span>
+<span class="go">2 : [ -0.438266 ]</span>
+<span class="go">3 : [  1.20548  ]</span>
+<span class="go">4 : [ -2.18139  ]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">asPoint</span><span class="p">())</span>
+<span class="go">[0.608202,-1.26617,-0.438266,1.20548,-2.18139]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.Sample.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Erase all values.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.Sample.computeCenteredMoment">
 <code class="descname">computeCenteredMoment</code><span class="sig-paren">(</span><em>k</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.computeCenteredMoment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate componentwise centered moments.</p>
@@ -503,16 +544,18 @@ characters contained in <cite>Sample-CommentsMarker</cite> from the <a class="re
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>k</strong> : int</p>
-<blockquote>
-<div><p>The centered moment’s order.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>k</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The centered moment’s order.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>m</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Componentwise centered moment of order <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/> estimated from the sample.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Componentwise centered moment of order <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/> estimated from the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -527,9 +570,9 @@ characters contained in <cite>Sample-CommentsMarker</cite> from the <a class="re
 </div><p>where <img class="math" src="../../_images/math/bdfe6117414fa9418eb2047843501a5cd9db04f9.svg" alt="\vect{\widehat{\mu}}"/> is the estimator of the mean.</p>
 <p>These estimators are the natural (possibly biased) estimators.
 For unbiased estimators use the other dedicated methods such as
-<a class="reference internal" href="#openturns.Sample.computeVariance" title="openturns.Sample.computeVariance"><code class="xref py py-meth docutils literal"><span class="pre">computeVariance()</span></code></a> for the variance.</p>
+<a class="reference internal" href="#openturns.Sample.computeVariance" title="openturns.Sample.computeVariance"><code class="xref py py-meth docutils literal notranslate"><span class="pre">computeVariance()</span></code></a> for the variance.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeCenteredMoment</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
@@ -546,10 +589,11 @@ For unbiased estimators use the other dedicated methods such as
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>covariance</strong> : <a class="reference internal" href="openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="openturns.CovarianceMatrix"><code class="xref py py-class docutils literal"><span class="pre">CovarianceMatrix</span></code></a></p>
-<blockquote class="last">
-<div><p>Covariance matrix estimated from the sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>covariance</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="openturns.CovarianceMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceMatrix</span></code></a></span></dt>
+<dd><p class="first last">Covariance matrix estimated from the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -565,7 +609,7 @@ For unbiased estimators use the other dedicated methods such as
 </div><p>where <img class="math" src="../../_images/math/bdfe6117414fa9418eb2047843501a5cd9db04f9.svg" alt="\vect{\widehat{\mu}}"/> denotes the estimate of the mean.</p>
 <p>This is an unbiased estimator.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeCovariance</span><span class="p">())</span>
@@ -583,22 +627,23 @@ For unbiased estimators use the other dedicated methods such as
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> : sequence of float</p>
-<blockquote>
-<div><p>CDF input.</p>
-</div></blockquote>
-<p><strong>survival</strong> : bool, optional</p>
-<blockquote>
-<div><p>A flag telling whether this should estimate the empirical cumulative
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">CDF input.</p>
+</dd>
+<dt><strong>survival</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd><p class="first last">A flag telling whether this should estimate the empirical cumulative
 distribution function or the empirical survival function.
 Default is <cite>False</cite> and estimates the CDF.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>p</strong> : float, <img class="math" src="../../_images/math/edb0d38cfbcedef976dab25f2cc337a70a9beb2b.svg" alt="0 \leq p \leq 1"/></p>
-<blockquote class="last">
-<div><p>Empirical CDF or SF value at point x.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/edb0d38cfbcedef976dab25f2cc337a70a9beb2b.svg" alt="0 \leq p \leq 1"/></span></dt>
+<dd><p class="first last">Empirical CDF or SF value at point x.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -613,7 +658,7 @@ Default is <cite>False</cite> and estimates the CDF.</p>
 <p><img src="../../_images/math/d191dd6095ca88f77ca58e21a52c9d2dc2d11881.svg" alt="\hat{S}(\vect{x}) = \frac{1}{m} \sum_{j=1}^m
                     \mathbf{1}_{\cap_{i=1}^n x_i^{(j)} &gt; x_i}(\vect{x})"/></p>
 </div><p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeEmpiricalCDF</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
@@ -630,10 +675,11 @@ Default is <cite>False</cite> and estimates the CDF.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>tau</strong> : <a class="reference internal" href="openturns.CorrelationMatrix.html#openturns.CorrelationMatrix" title="openturns.CorrelationMatrix"><code class="xref py py-class docutils literal"><span class="pre">CorrelationMatrix</span></code></a></p>
-<blockquote class="last">
-<div><p>Kendall coefficients matrix estimated from the sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>tau</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.CorrelationMatrix.html#openturns.CorrelationMatrix" title="openturns.CorrelationMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">CorrelationMatrix</span></code></a></span></dt>
+<dd><p class="first last">Kendall coefficients matrix estimated from the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -646,13 +692,13 @@ between two implementations depending on the sample size:</p>
 <div><ul class="simple">
 <li>The most basic implementation performing in <img class="math" src="../../_images/math/c097dc7c7f3ef6a7aef9029ca16b2601751ec53f.svg" alt="O(m^2)"/> is used when
 the sample size is less than <cite>SampleImplementation-SmallKendallTau</cite>
-from the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>.</li>
+from the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</li>
 <li>The other more complex implementation performing in <img class="math" src="../../_images/math/0c5fa17d90b56c130e481f6f9d9440dbe75c1e52.svg" alt="O(m\log(m))"/>
 is used for larger samples.</li>
 </ul>
 </div></blockquote>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeKendallTau</span><span class="p">())</span>
@@ -670,10 +716,11 @@ is used for larger samples.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>kurtosis</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Componentwise kurtosis estimated from the sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>kurtosis</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Componentwise kurtosis estimated from the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -692,7 +739,7 @@ is used for larger samples.</li>
 </div><p>where <img class="math" src="../../_images/math/bdfe6117414fa9418eb2047843501a5cd9db04f9.svg" alt="\vect{\widehat{\mu}}"/> is the estimate of the mean.</p>
 <p>This estimator is unbiased.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeKurtosis</span><span class="p">())</span>
@@ -715,10 +762,11 @@ is used for larger samples.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mean</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Mean vector estimated from the sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>mean</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Mean vector estimated from the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -730,7 +778,7 @@ is used for larger samples.</li>
                                  \sum_{j=1}^m x_i^{(j)},
                                  \quad i = 1, \ldots, n\right)}"/></p>
 </div><p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeMean</span><span class="p">())</span>
@@ -747,20 +795,21 @@ is used for larger samples.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>median</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Median vector estimated from the sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>median</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Median vector estimated from the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.Sample.computeQuantilePerComponent" title="openturns.Sample.computeQuantilePerComponent"><code class="xref py py-obj docutils literal"><span class="pre">computeQuantilePerComponent</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.Sample.computeQuantilePerComponent" title="openturns.Sample.computeQuantilePerComponent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeQuantilePerComponent</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeMedian</span><span class="p">())</span>
@@ -777,10 +826,11 @@ is used for larger samples.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>rho</strong> : <a class="reference internal" href="openturns.CorrelationMatrix.html#openturns.CorrelationMatrix" title="openturns.CorrelationMatrix"><code class="xref py py-class docutils literal"><span class="pre">CorrelationMatrix</span></code></a></p>
-<blockquote class="last">
-<div><p>Pearson correlation matrix estimated from the sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>rho</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.CorrelationMatrix.html#openturns.CorrelationMatrix" title="openturns.CorrelationMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">CorrelationMatrix</span></code></a></span></dt>
+<dd><p class="first last">Pearson correlation matrix estimated from the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -793,7 +843,7 @@ is used for larger samples.</li>
                              \quad i,j = 1, \ldots, n\right]"/></p>
 </div><p>where <img class="math" src="../../_images/math/df2ff91b116d336043407d412b31e208088c38f8.svg" alt="\mat{\widehat{\Sigma}}"/> denotes the estimate of the covariance.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computePearsonCorrelation</span><span class="p">())</span>
@@ -811,30 +861,35 @@ is used for larger samples.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>p</strong> : float, <img class="math" src="../../_images/math/edb0d38cfbcedef976dab25f2cc337a70a9beb2b.svg" alt="0 \leq p \leq 1"/></p>
-<blockquote>
-<div><p>Input probability level.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/edb0d38cfbcedef976dab25f2cc337a70a9beb2b.svg" alt="0 \leq p \leq 1"/></span></dt>
+<dd><p class="first last">Input probability level.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>quantile</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote>
-<div><p>Quantile of the joint distribution at probability level <img class="math" src="../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/>,
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>quantile</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Quantile of the joint distribution at probability level <img class="math" src="../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/>,
 estimated from the sample.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><strong>NotImplementedYetError</strong> : If the dimension is greater than 1.</p>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>NotImplementedYetError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">If the dimension is greater than 1.</span></dt>
+<dd></dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.Sample.computeQuantilePerComponent" title="openturns.Sample.computeQuantilePerComponent"><code class="xref py py-obj docutils literal"><span class="pre">computeQuantilePerComponent</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.Sample.computeQuantilePerComponent" title="openturns.Sample.computeQuantilePerComponent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeQuantilePerComponent</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeQuantile</span><span class="p">(</span><span class="o">.</span><span class="mi">2</span><span class="p">))</span>
@@ -851,17 +906,19 @@ estimated from the sample.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>p</strong> : float, <img class="math" src="../../_images/math/edb0d38cfbcedef976dab25f2cc337a70a9beb2b.svg" alt="0 \leq p \leq 1"/></p>
-<blockquote>
-<div><p>Input probability level.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/edb0d38cfbcedef976dab25f2cc337a70a9beb2b.svg" alt="0 \leq p \leq 1"/></span></dt>
+<dd><p class="first last">Input probability level.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>quantile</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Componentwise quantile at probability level <img class="math" src="../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/>, estimated from the
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>quantile</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Componentwise quantile at probability level <img class="math" src="../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/>, estimated from the
 sample.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -873,7 +930,7 @@ empirical quantiles (<img class="math" src="../../_images/math/61e75bc5984b184cb
 <p><img src="../../_images/math/fe9fa3e30d79f4972b3a90304c1b18d4b33ba5c5.svg" alt="\widehat{q}_i = \alpha \widehat{x}_i^- + (1 - \alpha) \widehat{x}_i^+"/></p>
 </div><p>where <img class="math" src="../../_images/math/466eb2d3d08221bf857380b4a39ce622614529b0.svg" alt="\alpha = p m - 0.5"/>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeQuantilePerComponent</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
@@ -890,10 +947,11 @@ empirical quantiles (<img class="math" src="../../_images/math/61e75bc5984b184cb
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>range</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Componentwise ranges estimated from the sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>range</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Componentwise ranges estimated from the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -902,7 +960,7 @@ empirical quantiles (<img class="math" src="../../_images/math/61e75bc5984b184cb
 <p>The <em>statistical range</em> is defined as the deviation between the maximal and
 the minimal value of the sample.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeRange</span><span class="p">())</span>
@@ -919,16 +977,18 @@ the minimal value of the sample.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>k</strong> : int, <img class="math" src="../../_images/math/8344d8ed0b68487814c7c77c14c67b1beaf02992.svg" alt="k \geq 0"/></p>
-<blockquote>
-<div><p>Componentwise moment’s order.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>k</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/8344d8ed0b68487814c7c77c14c67b1beaf02992.svg" alt="k \geq 0"/></span></dt>
+<dd><p class="first last">Componentwise moment’s order.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>moments</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Componentwise moments estimated from the sample.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>moments</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Componentwise moments estimated from the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -940,7 +1000,7 @@ the minimal value of the sample.</p>
                                      \sum_{j=1}^m {x_i^{(j)}}^k,
                                      \quad i = 1, \ldots, n\right)}"/></p>
 </div><p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeRawMoment</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
@@ -957,10 +1017,11 @@ the minimal value of the sample.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>skewness</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Componentwise skewness estimated from the sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>skewness</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Componentwise skewness estimated from the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -978,7 +1039,7 @@ the minimal value of the sample.</p>
 </div><p>where <img class="math" src="../../_images/math/bdfe6117414fa9418eb2047843501a5cd9db04f9.svg" alt="\vect{\widehat{\mu}}"/> is the estimate of the mean.</p>
 <p>This is an unbiased estimator.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeSkewness</span><span class="p">())</span>
@@ -995,23 +1056,24 @@ the minimal value of the sample.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>rho</strong> : <a class="reference internal" href="openturns.CorrelationMatrix.html#openturns.CorrelationMatrix" title="openturns.CorrelationMatrix"><code class="xref py py-class docutils literal"><span class="pre">CorrelationMatrix</span></code></a></p>
-<blockquote class="last">
-<div><p>Spearman correlation matrix estimated from the sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>rho</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.CorrelationMatrix.html#openturns.CorrelationMatrix" title="openturns.CorrelationMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">CorrelationMatrix</span></code></a></span></dt>
+<dd><p class="first last">Spearman correlation matrix estimated from the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.Sample.rank" title="openturns.Sample.rank"><code class="xref py py-obj docutils literal"><span class="pre">rank</span></code></a>, <a class="reference internal" href="#openturns.Sample.computePearsonCorrelation" title="openturns.Sample.computePearsonCorrelation"><code class="xref py py-obj docutils literal"><span class="pre">computePearsonCorrelation</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.Sample.rank" title="openturns.Sample.rank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rank</span></code></a>, <a class="reference internal" href="#openturns.Sample.computePearsonCorrelation" title="openturns.Sample.computePearsonCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computePearsonCorrelation</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The Spearman correlation matrix is estimated as the Pearson correlation matrix
 of the ranks sample (i.e. using <cite>self.rank().computePearsonCorrelation()</cite>).</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeSpearmanCorrelation</span><span class="p">())</span>
@@ -1030,24 +1092,26 @@ of the ranks sample (i.e. using <cite>self.rank().computePearsonCorrelation()</c
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>L</strong> : <a class="reference internal" href="openturns.TriangularMatrix.html#openturns.TriangularMatrix" title="openturns.TriangularMatrix"><code class="xref py py-class docutils literal"><span class="pre">TriangularMatrix</span></code></a></p>
-<blockquote>
-<div><p>Lower (left) Cholesky factor of the covariance matrix estimated from the
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>L</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.TriangularMatrix.html#openturns.TriangularMatrix" title="openturns.TriangularMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">TriangularMatrix</span></code></a></span></dt>
+<dd><p class="first last">Lower (left) Cholesky factor of the covariance matrix estimated from the
 sample.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>RuntimeError</strong> : If the estimated covariance matrix is not positive definite. In</p>
-<blockquote class="last">
-<div><p>this case, you might want to estimate the covariance and manually shrink
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>RuntimeError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">If the estimated covariance matrix is not positive definite. In</span></dt>
+<dd><p class="first last">this case, you might want to estimate the covariance and manually shrink
 negative eigen values.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeStandardDeviation</span><span class="p">())</span>
@@ -1065,23 +1129,24 @@ negative eigen values.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>standard_deviations</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Componentwise standard deviation estimated from the sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>standard_deviations</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Componentwise standard deviation estimated from the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.Sample.computeVariance" title="openturns.Sample.computeVariance"><code class="xref py py-obj docutils literal"><span class="pre">computeVariance</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.Sample.computeVariance" title="openturns.Sample.computeVariance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeVariance</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The componentwise standard deviations are estimated as the square root of the
 componentwise variances.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeStandardDeviationPerComponent</span><span class="p">())</span>
@@ -1098,10 +1163,11 @@ componentwise variances.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>variances</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Componentwise variances estimated from the sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>variances</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Componentwise variances estimated from the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1116,7 +1182,7 @@ componentwise variances.</p>
 </div><p>where <img class="math" src="../../_images/math/bdfe6117414fa9418eb2047843501a5cd9db04f9.svg" alt="\vect{\widehat{\mu}}"/> is the estimate of the mean.</p>
 <p>This estimator is unbiased.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">computeVariance</span><span class="p">())</span>
@@ -1133,27 +1199,28 @@ componentwise variances.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>f</strong> : int, <img class="math" src="../../_images/math/6fc193074ed4dfb75372db88d0188f3019e72fc1.svg" alt="0 \leq f &lt; m"/></p>
-<blockquote>
-<div><p>The index of the first point to erase.</p>
-</div></blockquote>
-<p><strong>l</strong> : int, <img class="math" src="../../_images/math/b4b296f7ee0393759c39eca357b4cc3a633ad56e.svg" alt="f &lt; l \leq m"/>, optional</p>
-<blockquote>
-<div><p>The index after the last point to erase.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/6fc193074ed4dfb75372db88d0188f3019e72fc1.svg" alt="0 \leq f &lt; m"/></span></dt>
+<dd><p class="first last">The index of the first point to erase.</p>
+</dd>
+<dt><strong>l</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/b4b296f7ee0393759c39eca357b4cc3a633ad56e.svg" alt="f &lt; l \leq m"/>, optional</span></dt>
+<dd><p class="first last">The index after the last point to erase.
 Default uses <cite>l = f + 1</cite> and only removes <cite>sample[f]</cite>.</p>
-</div></blockquote>
-<p><strong>Returns</strong></p>
-<p><strong>——-</strong></p>
-<p><strong>erased_sample</strong> : <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>Erased sample <cite>[sample[:i_start:], sample[i_stop::]]</cite>.</p>
-</div></blockquote>
+</dd>
+<dt><strong>Returns</strong></dt>
+<dd></dd>
+<dt><strong>——-</strong></dt>
+<dd></dd>
+<dt><strong>erased_sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">Erased sample <cite>[sample[:i_start:], sample[i_stop::]]</cite>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">([[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 <span class="go">0 : [ 0 ]</span>
@@ -1178,28 +1245,28 @@ Default uses <cite>l = f + 1</cite> and only removes <cite>sample[f]</cite>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>file_name</strong> : str</p>
-<blockquote>
-<div><p>Path to CSV file.</p>
-</div></blockquote>
-<p><strong>separator</strong> : str</p>
-<blockquote class="last">
-<div><p>Separating string.
-Default uses <cite>csv-file-separator</cite> from the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal"><span class="pre">ResourceMap</span></code></a>.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>file_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Path to CSV file.</p>
+</dd>
+<dt><strong>separator</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Separating string.
+Default uses <cite>csv-file-separator</cite> from the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.Sample.ImportFromCSVFile" title="openturns.Sample.ImportFromCSVFile"><code class="xref py py-obj docutils literal"><span class="pre">ImportFromCSVFile</span></code></a>, <a class="reference internal" href="#openturns.Sample.ImportFromTextFile" title="openturns.Sample.ImportFromTextFile"><code class="xref py py-obj docutils literal"><span class="pre">ImportFromTextFile</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.Sample.ImportFromCSVFile" title="openturns.Sample.ImportFromCSVFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImportFromCSVFile</span></code></a>, <a class="reference internal" href="#openturns.Sample.ImportFromTextFile" title="openturns.Sample.ImportFromTextFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImportFromTextFile</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>This will create a header line with componentwise descriptions (obtained from
-<a class="reference internal" href="#openturns.Sample.getDescription" title="openturns.Sample.getDescription"><code class="xref py py-meth docutils literal"><span class="pre">getDescription()</span></code></a>) between quotes as column names.</p>
+<a class="reference internal" href="#openturns.Sample.getDescription" title="openturns.Sample.getDescription"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getDescription()</span></code></a>) between quotes as column names.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">exportToCSVFile</span><span class="p">(</span><span class="s1">&#39;sample.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;; &#39;</span><span class="p">)</span>
@@ -1215,22 +1282,24 @@ Default uses <cite>csv-file-separator</cite> from the <a class="reference intern
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point</strong> : sequence of float</p>
-<blockquote>
-<div><p>The wanted point.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>point</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">The wanted point.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>index</strong> : int,</p>
-<blockquote class="last">
-<div><p>Returns <img class="math" src="../../_images/math/cbee17603cace45895c0c9786a8a0f2e19a3ec08.svg" alt="m"/> if the point does not belong to the sample.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int,</span></dt>
+<dd><p class="first last">Returns <img class="math" src="../../_images/math/cbee17603cace45895c0c9786a8a0f2e19a3ec08.svg" alt="m"/> if the point does not belong to the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="mi">10</span><span class="p">]))</span>
@@ -1249,10 +1318,11 @@ Default uses <cite>csv-file-separator</cite> from the <a class="reference intern
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
-<blockquote class="last">
-<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1267,17 +1337,18 @@ Default uses <cite>csv-file-separator</cite> from the <a class="reference intern
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>description</strong> : <a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal"><span class="pre">Description</span></code></a></p>
-<blockquote class="last">
-<div><p>Description of the sample’s components.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>description</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></span></dt>
+<dd><p class="first last">Description of the sample’s components.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.Sample.setDescription" title="openturns.Sample.setDescription"><code class="xref py py-obj docutils literal"><span class="pre">setDescription</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.Sample.setDescription" title="openturns.Sample.setDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDescription</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -1289,10 +1360,11 @@ Default uses <cite>csv-file-separator</cite> from the <a class="reference intern
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>n</strong> : int</p>
-<blockquote class="last">
-<div><p>The number of components of the points in the sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of components of the points in the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1307,10 +1379,11 @@ Default uses <cite>csv-file-separator</cite> from the <a class="reference intern
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1325,10 +1398,11 @@ Default uses <cite>csv-file-separator</cite> from the <a class="reference intern
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>impl</strong> : Implementation</p>
-<blockquote class="last">
-<div><p>The implementation class.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>impl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Implementation</span></dt>
+<dd><p class="first last">The implementation class.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1343,25 +1417,27 @@ Default uses <cite>csv-file-separator</cite> from the <a class="reference intern
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>indices</strong> : int or sequence of int, <img class="math" src="../../_images/math/a3257020dd88acc4529e6521f8288ab5119cc29b.svg" alt="0 \leq i &lt; n"/></p>
-<blockquote>
-<div><p>The index(es) of the wanted marginal(s).</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>indices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or sequence of int, <img class="math" src="../../_images/math/a3257020dd88acc4529e6521f8288ab5119cc29b.svg" alt="0 \leq i &lt; n"/></span></dt>
+<dd><p class="first last">The index(es) of the wanted marginal(s).</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sample</strong> : <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>A subsample of the present sample with the requested marginal(s).</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">A subsample of the present sample with the requested marginal(s).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a> also implements slicing in its
+<p>The <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a> also implements slicing in its
 <cite>__getitem__</cite> method.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">getMarginal</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
@@ -1381,10 +1457,11 @@ Default uses <cite>csv-file-separator</cite> from the <a class="reference intern
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>maximum_values</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Componentwise maximum values.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>maximum_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Componentwise maximum values.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1399,10 +1476,11 @@ Default uses <cite>csv-file-separator</cite> from the <a class="reference intern
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>minimum_values</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Componentwise minimum values.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>minimum_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Componentwise minimum values.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1417,10 +1495,11 @@ Default uses <cite>csv-file-separator</cite> from the <a class="reference intern
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1435,10 +1514,11 @@ Default uses <cite>csv-file-separator</cite> from the <a class="reference intern
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>m</strong> : int</p>
-<blockquote class="last">
-<div><p>The number points in the sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number points in the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1453,17 +1533,19 @@ Default uses <cite>csv-file-separator</cite> from the <a class="reference intern
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>marginal_index</strong> : int, <img class="math" src="../../_images/math/a3257020dd88acc4529e6521f8288ab5119cc29b.svg" alt="0 \leq i &lt; n"/>, optional</p>
-<blockquote>
-<div><p>The component whose ranks are wanted.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>marginal_index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a3257020dd88acc4529e6521f8288ab5119cc29b.svg" alt="0 \leq i &lt; n"/>, optional</span></dt>
+<dd><p class="first last">The component whose ranks are wanted.
 Default computes the ranks of all the components.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ranks</strong> : <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>The requested ranks.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ranks</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">The requested ranks.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1472,7 +1554,7 @@ Default computes the ranks of all the components.</p>
 <p>The ranks of a 1d sample is a list of indices that sorts the points in the
 ascending order. Ties (equal points) are averaged.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
@@ -1490,6 +1572,50 @@ ascending order. Ties (equal points) are averaged.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.Sample.select">
+<code class="descname">select</code><span class="sig-paren">(</span><em>indices</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select points in a sample.</p>
+<p>It selects the points at given locations and returns them as a new sample.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>indices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of int, <img class="math" src="../../_images/math/bd16437621f98ad367875f186154316181212002.svg" alt="0 \leq i &lt; m"/></span></dt>
+<dd><p class="first last">The selected indices.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>selected_sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">The selected points as a sample.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span class="go">    [ X0        X1        ]</span>
+<span class="go">0 : [  0.608202 -1.26617  ]</span>
+<span class="go">1 : [ -0.438266  1.20548  ]</span>
+<span class="go">2 : [ -2.18139   0.350042 ]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">selected_sample</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">selected_sample</span><span class="p">)</span>
+<span class="go">    [ X0        X1        ]</span>
+<span class="go">0 : [ -0.438266  1.20548  ]</span>
+<span class="go">1 : [  0.608202 -1.26617  ]</span>
+<span class="go">2 : [ -0.438266  1.20548  ]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.Sample.setDescription">
 <code class="descname">setDescription</code><span class="sig-paren">(</span><em>description</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.setDescription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the componentwise description.</p>
@@ -1497,17 +1623,18 @@ ascending order. Ties (equal points) are averaged.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>description</strong> : sequence of str</p>
-<blockquote class="last">
-<div><p>Description of the sample’s components.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>description</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of str</span></dt>
+<dd><p class="first last">Description of the sample’s components.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.Sample.getDescription" title="openturns.Sample.getDescription"><code class="xref py py-obj docutils literal"><span class="pre">getDescription</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.Sample.getDescription" title="openturns.Sample.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a></p>
 </div>
 </dd></dl>
 
@@ -1519,10 +1646,11 @@ ascending order. Ties (equal points) are averaged.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1537,23 +1665,25 @@ ascending order. Ties (equal points) are averaged.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>marginal_index</strong> : int, <img class="math" src="../../_images/math/a3257020dd88acc4529e6521f8288ab5119cc29b.svg" alt="0 \leq i &lt; n"/>, optional</p>
-<blockquote>
-<div><p>The component to sort.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>marginal_index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a3257020dd88acc4529e6521f8288ab5119cc29b.svg" alt="0 \leq i &lt; n"/>, optional</span></dt>
+<dd><p class="first last">The component to sort.
 Default sorts the whole sample.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sorted_sample</strong> : <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>The requested sorted sample.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sorted_sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">The requested sorted sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
@@ -1578,22 +1708,24 @@ Default sorts the whole sample.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>marginal_index</strong> : int, <img class="math" src="../../_images/math/a3257020dd88acc4529e6521f8288ab5119cc29b.svg" alt="0 \leq i &lt; n"/></p>
-<blockquote>
-<div><p>The component to use for sorting the sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>marginal_index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a3257020dd88acc4529e6521f8288ab5119cc29b.svg" alt="0 \leq i &lt; n"/></span></dt>
+<dd><p class="first last">The component to use for sorting the sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sorted_sample</strong> : <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>The sample sorted according to the given component.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sorted_sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">The sample sorted according to the given component.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
@@ -1618,16 +1750,17 @@ Default sorts the whole sample.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>unique_sample</strong> : <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>The requested sorted sample with duplicate points removed.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>unique_sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">The requested sorted sample with duplicate points removed.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 <span class="go">0 : [ 3 0 3 ]</span>
@@ -1652,22 +1785,24 @@ remainder as new sample.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>index</strong> : int, <img class="math" src="../../_images/math/bd16437621f98ad367875f186154316181212002.svg" alt="0 \leq i &lt; m"/></p>
-<blockquote>
-<div><p>The truncation index.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/bd16437621f98ad367875f186154316181212002.svg" alt="0 \leq i &lt; m"/></span></dt>
+<dd><p class="first last">The truncation index.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>remainder_sample</strong> : <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>The remainder sample (everyting that comes after the truncation index).</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>remainder_sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">The remainder sample (everyting that comes after the truncation index).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
@@ -1695,16 +1830,17 @@ remainder as new sample.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>sample</strong> : <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>Sample to stack with compatible size.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">Sample to stack with compatible size.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
@@ -1752,14 +1888,14 @@ remainder as new sample.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../statistics_on_sample.html" >Statistics on sample</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Nov 15, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

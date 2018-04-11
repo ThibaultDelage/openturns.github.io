@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Creation of a custom random vector &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -279,11 +272,11 @@ its methods:</p>
 <li>getCovariance</li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 <span class="kn">import</span> <span class="nn">math</span> <span class="kn">as</span> <span class="nn">m</span>
@@ -291,11 +284,11 @@ its methods:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Inherit PythonRandomVector</span>
 <span class="k">class</span> <span class="nc">RVEC</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">PythonRandomVector</span><span class="p">):</span>
 
@@ -323,29 +316,29 @@ its methods:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Instanciate our distribution</span>
 <span class="n">randomVector</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">RVEC</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Get a sample</span>
 <span class="n">randomVector</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[4]:
 </pre></div>
 </div>
@@ -353,18 +346,18 @@ its methods:</p>
 <TABLE><TR><TD></TD><TH>v0</TH><TH>v1</TH></TR><TR><TH>0</TH><TD>0.6298765566077771</TD><TD>2.8828052237192603</TD></TR><TR><TH>1</TH><TD>0.13527635081884104</TD><TD>2.032502751204385</TD></TR><TR><TH>2</TH><TD>0.3470570412135219</TD><TD>2.9694230211349892</TD></TR><TR><TH>3</TH><TD>0.9206795933570506</TD><TD>2.5030401514493823</TD></TR><TR><TH>4</TH><TD>0.06320607651305044</TD><TD>2.2927568937477316</TD></TR></TABLE></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Get mean</span>
 <span class="n">randomVector</span><span class="o">.</span><span class="n">getMean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[5]:
 </pre></div>
 </div>
@@ -373,18 +366,18 @@ its methods:</p>
 </p></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Compute the probability contained in an interval</span>
 <span class="n">randomVector</span><span class="o">.</span><span class="n">getCovariance</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[6]:
 </pre></div>
 </div>
@@ -421,8 +414,8 @@ its methods:</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Nov 15, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>BernsteinCopulaFactory &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../statistics_on_sample.html" accesskey="U">Statistics on sample</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -111,20 +104,10 @@
 <dt>Available constructors:</dt>
 <dd>BernsteinCopulaFactory()</dd>
 </dl>
-<p>The copula is estimated by a mixture of products of Beta distributions,
-ie its density function <img class="math" src="../../_images/math/979032db925306cd48e2f11763abef2d59e87dd3.svg" alt="\hat{c}"/> is given by:</p>
-<div class="math">
-<p><img src="../../_images/math/30bf33d8e423c90725956f15ebbb8f8a48fdfbe7.svg" alt="\forall (u_1,\hdots,u_d)\in[0,1]^d,\quad\hat{c}(u_1,\hdots,u_d) = \frac{1}{n}\sum_{i=1}^n\prod_{j=1}^d\beta_{\nu^i_j+1, m+1}(u_j)"/></p>
-</div><p>where <img class="math" src="../../_images/math/07a54efdb24695f5a41735b4e75f8bb8b0591027.svg" alt="\nu_j=\left\lfloor \dfrac{m}{n}\mathrm{rank}(X^i_j)\right\rfloor"/>
-is the index of the bin to which the normalized rank of the component <img class="math" src="../../_images/math/f15551bf91890d82beefb15ba7c7632e63616983.svg" alt="j"/>
-of the observation <img class="math" src="../../_images/math/f15551bf91890d82beefb15ba7c7632e63616983.svg" alt="j"/> belongs and <img class="math" src="../../_images/math/9bc31c09b6e9d56fd68f4e30edb90e40d12d21c3.svg" alt="\beta_{r,t}"/> is the density of
-the beta distribution supported by [0,1].</p>
-<p>This estimator is called the Bernstein estimator because of the fact that, for integer shape parameters <img class="math" src="../../_images/math/a7686bd05236abfb8a5e5d0a98a7312a81959c9e.svg" alt="r"/> and <img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/>, the density function of the beta distribution is equal to the Bernstein polynomial <img class="math" src="../../_images/math/947ca4754d2e3418d5cf15295e9968c245d54c47.svg" alt="P_{r,t}"/>:</p>
-<div class="math">
-<p><img src="../../_images/math/249fec27ddaee1ed7284d4b9526d3d0b9f9b0cf7.svg" alt="\beta_{r+1,t+1}(u)=(t+1)\binom{t}{r}u^r(1-u)^{t-r-1}=P_{r,t-r-1}(u)"/></p>
-</div><div class="admonition seealso">
+<p>This class allows to estimate a copula in a nonparametric way as an <a class="reference internal" href="openturns.EmpiricalBernsteinCopula.html#openturns.EmpiricalBernsteinCopula" title="openturns.EmpiricalBernsteinCopula"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmpiricalBernsteinCopula</span></code></a>.</p>
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-obj docutils literal"><span class="pre">DistributionFactory</span></code></a>, <a class="reference internal" href="openturns.Beta.html#openturns.Beta" title="openturns.Beta"><code class="xref py py-obj docutils literal"><span class="pre">Beta</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DistributionFactory</span></code></a>, <a class="reference internal" href="openturns.EmpiricalBernsteinCopula.html#openturns.EmpiricalBernsteinCopula" title="openturns.EmpiricalBernsteinCopula"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EmpiricalBernsteinCopula</span></code></a></p>
 </div>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
@@ -133,63 +116,163 @@ the beta distribution supported by [0,1].</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.build" title="openturns.BernsteinCopulaFactory.build"><code class="xref py py-obj docutils literal"><span class="pre">build</span></code></a>(*args)</td>
-<td>Build the nonparametric Bernstein copula estimator based on the empirical copula.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.buildEstimator" title="openturns.BernsteinCopulaFactory.buildEstimator"><code class="xref py py-obj docutils literal"><span class="pre">buildEstimator</span></code></a>(*args)</td>
-<td>Build the distribution and the parameter distribution.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.computeBinNumber" title="openturns.BernsteinCopulaFactory.computeBinNumber"><code class="xref py py-obj docutils literal"><span class="pre">computeBinNumber</span></code></a>(sample)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.ComputeAMISEBinNumber" title="openturns.BernsteinCopulaFactory.ComputeAMISEBinNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComputeAMISEBinNumber</span></code></a>(sample)</td>
 <td>Compute the optimal AMISE number of bins.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.getBootstrapSize" title="openturns.BernsteinCopulaFactory.getBootstrapSize"><code class="xref py py-obj docutils literal"><span class="pre">getBootstrapSize</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.ComputeLogLikelihoodBinNumber" title="openturns.BernsteinCopulaFactory.ComputeLogLikelihoodBinNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComputeLogLikelihoodBinNumber</span></code></a>(*args)</td>
+<td>Compute the optimal log-likelihood number of bins by cross-validation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.ComputePenalizedCsiszarDivergenceBinNumber" title="openturns.BernsteinCopulaFactory.ComputePenalizedCsiszarDivergenceBinNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComputePenalizedCsiszarDivergenceBinNumber</span></code></a>(*args)</td>
+<td>Compute the optimal penalized Csiszar divergence number of bins.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.build" title="openturns.BernsteinCopulaFactory.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>(*args)</td>
+<td>Build the nonparametric Bernstein copula estimator based on the empirical copula.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.buildAsEmpiricalBernsteinCopula" title="openturns.BernsteinCopulaFactory.buildAsEmpiricalBernsteinCopula"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildAsEmpiricalBernsteinCopula</span></code></a>(*args)</td>
+<td>Build the nonparametric Bernstein copula estimator based on the empirical copula.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.buildEstimator" title="openturns.BernsteinCopulaFactory.buildEstimator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildEstimator</span></code></a>(*args)</td>
+<td>Build the distribution and the parameter distribution.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.getBootstrapSize" title="openturns.BernsteinCopulaFactory.getBootstrapSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBootstrapSize</span></code></a>()</td>
 <td>Accessor to the bootstrap size.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.getClassName" title="openturns.BernsteinCopulaFactory.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.getClassName" title="openturns.BernsteinCopulaFactory.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.getId" title="openturns.BernsteinCopulaFactory.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.getId" title="openturns.BernsteinCopulaFactory.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.getName" title="openturns.BernsteinCopulaFactory.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.getName" title="openturns.BernsteinCopulaFactory.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.getShadowedId" title="openturns.BernsteinCopulaFactory.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.getShadowedId" title="openturns.BernsteinCopulaFactory.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.getVisibility" title="openturns.BernsteinCopulaFactory.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.getVisibility" title="openturns.BernsteinCopulaFactory.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.hasName" title="openturns.BernsteinCopulaFactory.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.hasName" title="openturns.BernsteinCopulaFactory.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.hasVisibleName" title="openturns.BernsteinCopulaFactory.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.hasVisibleName" title="openturns.BernsteinCopulaFactory.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">isParallel</span></code>()</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.setBootstrapSize" title="openturns.BernsteinCopulaFactory.setBootstrapSize"><code class="xref py py-obj docutils literal"><span class="pre">setBootstrapSize</span></code></a>(bootstrapSize)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.setBootstrapSize" title="openturns.BernsteinCopulaFactory.setBootstrapSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBootstrapSize</span></code></a>(bootstrapSize)</td>
 <td>Accessor to the bootstrap size.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.setName" title="openturns.BernsteinCopulaFactory.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.setName" title="openturns.BernsteinCopulaFactory.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">setParallel</span></code>(flag)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.setShadowedId" title="openturns.BernsteinCopulaFactory.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.setShadowedId" title="openturns.BernsteinCopulaFactory.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.setVisibility" title="openturns.BernsteinCopulaFactory.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.BernsteinCopulaFactory.setVisibility" title="openturns.BernsteinCopulaFactory.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="76%" />
+<col width="24%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>BuildCrossValidationSamples</strong></td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="openturns.BernsteinCopulaFactory.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.BernsteinCopulaFactory.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>x.__init__(…) initializes x; see help(type(x)) for signature</p>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="openturns.BernsteinCopulaFactory.ComputeAMISEBinNumber">
+<em class="property">static </em><code class="descname">ComputeAMISEBinNumber</code><span class="sig-paren">(</span><em>sample</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.BernsteinCopulaFactory.ComputeAMISEBinNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the optimal AMISE number of bins.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float, of dimension 1</span></dt>
+<dd><p class="first last">The sample from which the optimal AMISE bin number is computed.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The number of bins is computed by minimizing the asymptotic mean integrated squared error (AMISE), leading to</p>
+<div class="math">
+<p><img src="../../_images/math/e97af42681e3d87cd1ece0cfcf8d57a3877f78cb.svg" alt="m = 1+\left\lfloor n^{\dfrac{2}{4+n}} \right\rfloor"/></p>
+</div><p>where <img class="math" src="../../_images/math/30c5f1dad468a7cd4ac57bac86aad058c9f32d96.svg" alt="\lfloor x \rfloor"/> is the largest integer less than or equal to <img class="math" src="../../_images/math/146b227458440b864cc6963ad74e5b7349a02a0b.svg" alt="x"/>.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="openturns.BernsteinCopulaFactory.ComputeLogLikelihoodBinNumber">
+<em class="property">static </em><code class="descname">ComputeLogLikelihoodBinNumber</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.BernsteinCopulaFactory.ComputeLogLikelihoodBinNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the optimal log-likelihood number of bins by cross-validation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float, of dimension 1</span></dt>
+<dd><p class="first last">The sample of size <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> from which the optimal log-likelihood bin number is computed.</p>
+</dd>
+<dt><strong>kFraction</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/f9cd874d902ab4ce6a9ca8c0564a6965194b1506.svg" alt="0&lt;kFraction&lt;n"/></span></dt>
+<dd><p class="first last">The fraction of the sample used for the validation.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Let <img class="math" src="../../_images/math/496e51bd0be2505e73d1b9a55bb0374edec30403.svg" alt="\cE=\left\{\vect{X}_1,\dots,\vect{X}_n\right\}"/> be the given sample. If <img class="math" src="../../_images/math/259ba6debeaa86bcfb6891c544da119365bb09c4.svg" alt="kFraction=1"/>, the bin number <img class="math" src="../../_images/math/cbee17603cace45895c0c9786a8a0f2e19a3ec08.svg" alt="m"/> is given by:</p>
+<div class="math">
+<p><img src="../../_images/math/4bc12b7d457c6e213c4e935aab9833af3cb6a642.svg" alt="m = \argmin_{M\in\{1,\dots,n\}}\dfrac{1}{n}\sum_{\vect{X}_i\in\cE}-\log c^{\cE}_{M}(\vect{X}_i)"/></p>
+</div><p>where <img class="math" src="../../_images/math/181706f5f2cbbea408a0da6a23e2d30d0fdaf07f.svg" alt="c_M^{\cE}"/> is the density function of the <a class="reference internal" href="openturns.EmpiricalBernsteinCopula.html#openturns.EmpiricalBernsteinCopula" title="openturns.EmpiricalBernsteinCopula"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmpiricalBernsteinCopula</span></code></a> associated to the sample <img class="math" src="../../_images/math/df3f934e6830b250a2dd6a226db32426c91ef7de.svg" alt="\cE"/> and the bin number <img class="math" src="../../_images/math/063911fe0928b5aa7856e498e1e5b3a2bb89ed5a.svg" alt="M"/>.</p>
+<p>If <img class="math" src="../../_images/math/8678d61d01b9020368464bff6fb327e4c3e509e9.svg" alt="kFraction&gt;1"/>, the bin number <img class="math" src="../../_images/math/cbee17603cace45895c0c9786a8a0f2e19a3ec08.svg" alt="m"/> is given by:</p>
+<div class="math">
+<p><img src="../../_images/math/69934226057d713ea49a9416775cd851e9585b56.svg" alt="m = \argmin_{M\in\{1,\dots,n\}}\dfrac{1}{kFraction}\sum_{k=0}^{kFraction-1}\dfrac{1}{n}\sum_{\vect{X}_i\in\cE^V_k}-\log c^{\cE^L_k}_{M}(\vect{X}_i)"/></p>
+</div><p>where <img class="math" src="../../_images/math/11ecd5dd49af409186dbdd86cc62603b436ffea6.svg" alt="\cE^V_k=\left\{\vect{X}_i\in\cE\,|\,i\equiv k \mod kFraction\right\}"/> and <img class="math" src="../../_images/math/4215bc3a9e0e7d2e57d10dc9337504f727740cb3.svg" alt="\cE^L_k=\cE \backslash \cE^V_k"/></p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="openturns.BernsteinCopulaFactory.ComputePenalizedCsiszarDivergenceBinNumber">
+<em class="property">static </em><code class="descname">ComputePenalizedCsiszarDivergenceBinNumber</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.BernsteinCopulaFactory.ComputePenalizedCsiszarDivergenceBinNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the optimal penalized Csiszar divergence number of bins.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float, of dimension 1</span></dt>
+<dd><p class="first last">The sample of size <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> from which the optimal AMISE bin number is computed.</p>
+</dd>
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
+<dd><p class="first last">The function defining the Csiszar divergence of interest.</p>
+</dd>
+<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/dad5ad9a30479039499111a88e02087aeaec908b.svg" alt="\alpha\geq 0"/></span></dt>
+<dd><p class="first last">The penalization factor.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Let <img class="math" src="../../_images/math/496e51bd0be2505e73d1b9a55bb0374edec30403.svg" alt="\cE=\left\{\vect{X}_1,\dots,\vect{X}_n\right\}"/> be the given sample. The bin number <img class="math" src="../../_images/math/cbee17603cace45895c0c9786a8a0f2e19a3ec08.svg" alt="m"/> is given by:</p>
+<div class="math">
+<p><img src="../../_images/math/7cdea65c13f14bdd4adc78b58a9cde693a760959.svg" alt="m = \argmin_{M\in\{1,\dots,n\}}\left[\hat{D}_f(c^{\cE}_{M})-\dfrac{1}{n}\sum_{\vect{X}_i\in\cE}f\left(\dfrac{1}{c^{\cE}_{M}(\vect{X}_i)}\right)\right]^2-[\rho_S(c^{\cE}_{M})-\rho_S({\cE}_{M})]^2"/></p>
+</div><p>where <img class="math" src="../../_images/math/181706f5f2cbbea408a0da6a23e2d30d0fdaf07f.svg" alt="c_M^{\cE}"/> is the density function of the <a class="reference internal" href="openturns.EmpiricalBernsteinCopula.html#openturns.EmpiricalBernsteinCopula" title="openturns.EmpiricalBernsteinCopula"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmpiricalBernsteinCopula</span></code></a> associated to the sample <img class="math" src="../../_images/math/df3f934e6830b250a2dd6a226db32426c91ef7de.svg" alt="\cE"/> and the bin number <img class="math" src="../../_images/math/063911fe0928b5aa7856e498e1e5b3a2bb89ed5a.svg" alt="M"/>, <img class="math" src="../../_images/math/2ca640c609bb8bae4564bd2f867124f7c9a8cab0.svg" alt="\hat{D}_f(c^{\cE}_{M})=\dfrac{1}{N}\sum_{j=1}^Nf\left(\dfrac{1}{\vect{U}_j}\right)"/> a Monte Carlo estimate of the Csiszar <img class="math" src="../../_images/math/68690c6e741b6c06797c7e5bed2d9f89bf5b065a.svg" alt="f"/> divergence, <img class="math" src="../../_images/math/6b643e903d4e091240975475f80a2a7cdf8c10b5.svg" alt="\rho_S(c^{\cE}_{M})"/> the exact Spearman correlation of the empirical Bernstein copula <img class="math" src="../../_images/math/5ef53254062e8d66aa8091e58b72ebb20b7f5e5d.svg" alt="c^{\cE}_{M}"/> and <img class="math" src="../../_images/math/a60c6c8ac7e6aa8833224ccfed09403be614c099.svg" alt="\rho_S({\cE}_{M})"/> the empirical Spearman correlation of the sample <img class="math" src="../../_images/math/4db57cda88b3050d0db2acd09f787a78885cba82.svg" alt="{\cE}_{M}"/>.</p>
+<p>The parameter <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> is controlled by the <em>‘BernsteinCopulaFactory-SamplingSize’</em> key in <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -198,22 +281,74 @@ the beta distribution supported by [0,1].</p>
 <dd><p>Build the nonparametric Bernstein copula estimator based on the empirical copula.</p>
 <p><strong>Available usages</strong>:</p>
 <blockquote>
-<div><p>build(<em>sample</em>)</p>
+<div><p>build()</p>
+<p>build(<em>sample</em>)</p>
+<p>build(<em>sample, method, objective</em>)</p>
 <p>build(<em>sample, m</em>)</p>
 </div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>sample</strong> : 2-d sequence of float, of dimension <em>d</em></p>
-<blockquote>
-<div><p>The sample of size <img class="math" src="../../_images/math/36dfd7239f71d2c0484f88e4a677ff94d2f83f03.svg" alt="n&gt;0"/> from which the copula is estimated.</p>
-</div></blockquote>
-<p><strong>m</strong> : int</p>
-<blockquote class="last">
-<div><p>The number of sub-intervals in which all the edges of the unit cube
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float, of dimension <em>d</em></span></dt>
+<dd><p class="first last">The sample of size <img class="math" src="../../_images/math/36dfd7239f71d2c0484f88e4a677ff94d2f83f03.svg" alt="n&gt;0"/> from which the copula is estimated.</p>
+</dd>
+<dt><strong>method</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">The name of thebin number selection method. Possible choices are <em>AMISE</em>, <em>LogLikelihood</em> and <em>PenalizedCsiszarDivergence</em>. Default is <em>LogLikelihood</em>, given by the <em>‘BernsteinCopulaFactory-BinNumberSelection’</em> entry of <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
+</dd>
+<dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of sub-intervals in which all the edges of the unit cube
 <img class="math" src="../../_images/math/ba4584500bfffdb98b5618a60a680bae43bdf1e1.svg" alt="[0, 1]^d"/> are regularly partitioned.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>copula</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
+<dd><p class="first last">The estimated copula as a generic distribution.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.BernsteinCopulaFactory.buildAsEmpiricalBernsteinCopula">
+<code class="descname">buildAsEmpiricalBernsteinCopula</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.BernsteinCopulaFactory.buildAsEmpiricalBernsteinCopula" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build the nonparametric Bernstein copula estimator based on the empirical copula.</p>
+<p><strong>Available usages</strong>:</p>
+<blockquote>
+<div><p>buildAsEmpiricalBernsteinCopula()</p>
+<p>buildAsEmpiricalBernsteinCopula(<em>sample</em>)</p>
+<p>buildAsEmpiricalBernsteinCopula(<em>sample, method, objective</em>)</p>
+<p>buildAsEmpiricalBernsteinCopula(<em>sample, m</em>)</p>
 </div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float, of dimension <em>d</em></span></dt>
+<dd><p class="first last">The sample of size <img class="math" src="../../_images/math/36dfd7239f71d2c0484f88e4a677ff94d2f83f03.svg" alt="n&gt;0"/> from which the copula is estimated.</p>
+</dd>
+<dt><strong>method</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">The name of thebin number selection method. Possible choices are <em>AMISE</em>, <em>LogLikelihood</em> and <em>PenalizedCsiszarDivergence</em>. Default is <em>LogLikelihood</em>, given by the <em>‘BernsteinCopulaFactory-BinNumberSelection’</em> entry of <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
+</dd>
+<dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of sub-intervals in which all the edges of the unit cube
+<img class="math" src="../../_images/math/ba4584500bfffdb98b5618a60a680bae43bdf1e1.svg" alt="[0, 1]^d"/> are regularly partitioned.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>copula</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.EmpiricalBernsteinCopula.html#openturns.EmpiricalBernsteinCopula" title="openturns.EmpiricalBernsteinCopula"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmpiricalBernsteinCopula</span></code></a></span></dt>
+<dd><p class="first last">The estimated copula as an empirical Bernstein copula.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -228,20 +363,21 @@ the beta distribution supported by [0,1].</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>sample</strong> : 2-d sequence of float</p>
-<blockquote>
-<div><p>Sample from which the distribution parameters are estimated.</p>
-</div></blockquote>
-<p><strong>parameters</strong> : <a class="reference internal" href="openturns.DistributionParameters.html#openturns.DistributionParameters" title="openturns.DistributionParameters"><code class="xref py py-class docutils literal"><span class="pre">DistributionParameters</span></code></a></p>
-<blockquote>
-<div><p>Optional, the parametrization.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
+<dd><p class="first last">Sample from which the distribution parameters are estimated.</p>
+</dd>
+<dt><strong>parameters</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.DistributionParameters.html#openturns.DistributionParameters" title="openturns.DistributionParameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">DistributionParameters</span></code></a></span></dt>
+<dd><p class="first last">Optional, the parametrization.</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>resDist</strong> : <a class="reference internal" href="openturns.DistributionFactoryResult.html#openturns.DistributionFactoryResult" title="openturns.DistributionFactoryResult"><code class="xref py py-class docutils literal"><span class="pre">DistributionFactoryResult</span></code></a></p>
-<blockquote class="last">
-<div><p>The results.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>resDist</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.DistributionFactoryResult.html#openturns.DistributionFactoryResult" title="openturns.DistributionFactoryResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">DistributionFactoryResult</span></code></a></span></dt>
+<dd><p class="first last">The results.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -252,7 +388,7 @@ the beta distribution supported by [0,1].</p>
 <div><ul class="simple">
 <li>Moments method: the asymptotic parameters distribution is normal and estimated by Bootstrap on the initial data;</li>
 <li>Maximum likelihood method with a regular model: the asymptotic parameters distribution is normal and its covariance matrix is the inverse Fisher information matrix;</li>
-<li>Other methods: the asymptotic parameters distribution is estimated by Bootstrap on the initial data and kernel fitting (see <a class="reference internal" href="openturns.KernelSmoothing.html#openturns.KernelSmoothing" title="openturns.KernelSmoothing"><code class="xref py py-class docutils literal"><span class="pre">KernelSmoothing</span></code></a>).</li>
+<li>Other methods: the asymptotic parameters distribution is estimated by Bootstrap on the initial data and kernel fitting (see <a class="reference internal" href="openturns.KernelSmoothing.html#openturns.KernelSmoothing" title="openturns.KernelSmoothing"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelSmoothing</span></code></a>).</li>
 </ul>
 </div></blockquote>
 <p>If another set of parameters is specified, the native parameters distribution is first estimated and the new distribution is determined from it:</p>
@@ -264,42 +400,19 @@ the beta distribution supported by [0,1].</p>
 </div></blockquote>
 <p class="rubric">Examples</p>
 <p>Create a sample from a Beta distribution:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Beta</span><span class="p">()</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">ResourceMap</span><span class="o">.</span><span class="n">SetAsUnsignedInteger</span><span class="p">(</span><span class="s1">&#39;DistributionFactory-DefaultBootstrapSize&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Fit a Beta distribution in the native parameters and create a <a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-class docutils literal"><span class="pre">DistributionFactory</span></code></a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<p>Fit a Beta distribution in the native parameters and create a <a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">DistributionFactory</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/73d1520885911cd9f121c0cedc7d91e11efafea8.svg" alt="(\mu, \sigma, a, b)"/>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaMuSigma</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaMuSigma</span><span class="p">())</span>
 </pre></div>
 </div>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.BernsteinCopulaFactory.computeBinNumber">
-<code class="descname">computeBinNumber</code><span class="sig-paren">(</span><em>sample</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.BernsteinCopulaFactory.computeBinNumber" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the optimal AMISE number of bins.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>sample</strong> : 2-d sequence of float, of dimension 1</p>
-<blockquote class="last">
-<div><p>The sample from which the optimal AMISE bin number is computed.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Notes</p>
-<p>The number of bins is computed by minimizing the asymptotic mean integrated squared error (AMISE), leading to</p>
-<div class="math">
-<p><img src="../../_images/math/e97af42681e3d87cd1ece0cfcf8d57a3877f78cb.svg" alt="m = 1+\left\lfloor n^{\dfrac{2}{4+n}} \right\rfloor"/></p>
-</div><p>where <img class="math" src="../../_images/math/30c5f1dad468a7cd4ac57bac86aad058c9f32d96.svg" alt="\lfloor x \rfloor"/> is the largest integer less than or equal to <img class="math" src="../../_images/math/146b227458440b864cc6963ad74e5b7349a02a0b.svg" alt="x"/>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -310,10 +423,11 @@ the beta distribution supported by [0,1].</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>size</strong> : integer</p>
-<blockquote class="last">
-<div><p>Size of the bootstrap.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">Size of the bootstrap.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -328,10 +442,11 @@ the beta distribution supported by [0,1].</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
-<blockquote class="last">
-<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -346,10 +461,11 @@ the beta distribution supported by [0,1].</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -364,10 +480,11 @@ the beta distribution supported by [0,1].</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -382,10 +499,11 @@ the beta distribution supported by [0,1].</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -400,10 +518,11 @@ the beta distribution supported by [0,1].</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -418,10 +537,11 @@ the beta distribution supported by [0,1].</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -436,10 +556,11 @@ the beta distribution supported by [0,1].</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasVisibleName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty and not the default one.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasVisibleName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty and not the default one.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -454,10 +575,11 @@ the beta distribution supported by [0,1].</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>size</strong> : integer</p>
-<blockquote class="last">
-<div><p>Size of the bootstrap.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">Size of the bootstrap.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -472,10 +594,11 @@ the beta distribution supported by [0,1].</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -490,10 +613,11 @@ the beta distribution supported by [0,1].</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -508,10 +632,11 @@ the beta distribution supported by [0,1].</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -542,14 +667,14 @@ the beta distribution supported by [0,1].</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../statistics_on_sample.html" >Statistics on sample</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Nov 15, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

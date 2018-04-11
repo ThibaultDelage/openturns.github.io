@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>ANCOVA sensitivity indices &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -27,7 +18,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="FAST sensitivity indices" href="sensitivity_fast.html" />
-    <link rel="prev" title="Estimate Sobol indices" href="estimate_sobol.html" />
+    <link rel="prev" title="Sobol sensitivity indices" href="sensitivity_sobol.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -60,7 +51,7 @@
           <a href="sensitivity_fast.html" title="FAST sensitivity indices"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="estimate_sobol.html" title="Estimate Sobol indices"
+          <a href="sensitivity_sobol.html" title="Sobol sensitivity indices"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
@@ -71,8 +62,8 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="estimate_sobol.html"
-                        title="previous chapter">Estimate Sobol indices</a></p>
+  <p class="topless"><a href="sensitivity_sobol.html"
+                        title="previous chapter">Sobol sensitivity indices</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="sensitivity_fast.html"
                         title="next chapter">FAST sensitivity indices</a></p>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -276,34 +269,52 @@ decomposition of the model it allows to separate the part of variance
 explained by a variable itself from the part of variance explained by a
 correlation which is due to its correlation with the other input
 parameters.</p>
+<p>In theory, ANCOVA indices range is <img class="math" src="../../_images/math/72f88500327724e2c8121061189a1c8e5fc52976.svg" alt="\left[0; 1\right]"/> ; the
+closer to 1 the index is, the greater the model response sensitivity to
+the variable is. These indices are a sum of a physical part
+<img class="math" src="../../_images/math/b31a07185fd9675d7e6f9b855413b79857bd6ad3.svg" alt="S_i^U"/> and correlated part <img class="math" src="../../_images/math/80e88f90643c55c7ef97186f4009bef3dab5643b.svg" alt="S_i^C"/>. The correlation has a
+weak influence on the contribution of <img class="math" src="../../_images/math/138f39d0c7d18f6de494e85102efc4d65d3c5f0d.svg" alt="X_i"/>, if <img class="math" src="../../_images/math/839e5f5207d26a2574ef68d24900afbcab5ef31d.svg" alt="|S_i^C|"/> is
+low and <img class="math" src="../../_images/math/8c7f69d185f8cae534ee75c84d14f96cf9238c46.svg" alt="S_i"/> is close to <img class="math" src="../../_images/math/b31a07185fd9675d7e6f9b855413b79857bd6ad3.svg" alt="S_i^U"/>. On the contrary, the
+correlation has a strong influence on the contribution of the input
+<img class="math" src="../../_images/math/138f39d0c7d18f6de494e85102efc4d65d3c5f0d.svg" alt="X_i"/>, if <img class="math" src="../../_images/math/839e5f5207d26a2574ef68d24900afbcab5ef31d.svg" alt="|S_i^C|"/> is high and <img class="math" src="../../_images/math/8c7f69d185f8cae534ee75c84d14f96cf9238c46.svg" alt="S_i"/> is close to
+<img class="math" src="../../_images/math/80e88f90643c55c7ef97186f4009bef3dab5643b.svg" alt="S_i^C"/>.</p>
+<p>The ANCOVA indices <img class="math" src="../../_images/math/8c7f69d185f8cae534ee75c84d14f96cf9238c46.svg" alt="S_i"/> evaluate the importance of one variable
+at a time (<img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> indices stored, with <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> the input dimension
+of the model). The <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> uncorrelated parts of variance of the
+output due to each input <img class="math" src="../../_images/math/b31a07185fd9675d7e6f9b855413b79857bd6ad3.svg" alt="S_i^U"/> and the effects of the
+correlation are represented by the indices resulting from the
+subtraction of these two previous lists.</p>
+<p>To evaluate the indices, the library needs of a functional chaos result
+approximating the model response with uncorrelated inputs and a sample
+with correlated inputs used to compute the real values of the output.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [47]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [48]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create the model (x1,x2) --&gt; (y) = (4.*x1+5.*x2)</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;4.*x1+5.*x2&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [49]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create the input independent joint distribution</span>
 <span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">distribution</span><span class="o">.</span><span class="n">setDescription</span><span class="p">([</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span> <span class="s1">&#39;X2&#39;</span><span class="p">])</span>
@@ -311,11 +322,11 @@ parameters.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [50]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create the correlated input distribution</span>
 <span class="n">S</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">S</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.3</span>
@@ -326,11 +337,11 @@ parameters.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [51]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># ANCOVA needs a functional decomposition of the model</span>
 <span class="n">enumerateFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">EnumerateFunction</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">productBasis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">OrthogonalProductPolynomialFactory</span><span class="p">([</span><span class="n">ot</span><span class="o">.</span><span class="n">HermiteFactory</span><span class="p">()]</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">enumerateFunction</span><span class="p">)</span>
@@ -344,11 +355,11 @@ parameters.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [52]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create the input sample taking account the correlation</span>
 <span class="n">size</span> <span class="o">=</span> <span class="mi">2000</span>
 <span class="n">sample</span> <span class="o">=</span> <span class="n">distribution_corr</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
@@ -356,11 +367,11 @@ parameters.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [53]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Perform the decomposition</span>
 <span class="n">ancova</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ANCOVA</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">sample</span><span class="p">)</span>
 <span class="c1"># Compute the ANCOVA indices (first order and uncorrelated indices are computed together)</span>
@@ -373,11 +384,11 @@ parameters.</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [54]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Print Sobol&#39; indices, the physical part, and the correlation part</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;ANCOVA indices &quot;</span><span class="p">,</span> <span class="n">indices</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;ANCOVA uncorrelated indices &quot;</span><span class="p">,</span> <span class="n">uncorrelatedIndices</span><span class="p">)</span>
@@ -396,17 +407,17 @@ ANCOVA correlated indices  [0.108171,0.108171]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [55]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">ot</span><span class="o">.</span><span class="n">SobolIndicesAlgorithmImplementation</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getDescription</span><span class="p">(),</span> <span class="s1">&#39;ANCOVA indices (Sobol</span><span class="se">\&#39;</span><span class="s1">)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[55]:
 </pre></div>
 </div>
@@ -414,17 +425,17 @@ ANCOVA correlated indices  [0.108171,0.108171]
 <img alt="../../_images/examples_reliability_sensitivity_sensitivity_ancova_10_0.svg" src="../../_images/examples_reliability_sensitivity_sensitivity_ancova_10_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [56]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">ot</span><span class="o">.</span><span class="n">SobolIndicesAlgorithmImplementation</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">uncorrelatedIndices</span><span class="p">,</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getDescription</span><span class="p">(),</span> <span class="s1">&#39;ANCOVA uncorrelated indices</span><span class="se">\n</span><span class="s1">(part of physical variance in the model)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[56]:
 </pre></div>
 </div>
@@ -432,17 +443,17 @@ ANCOVA correlated indices  [0.108171,0.108171]
 <img alt="../../_images/examples_reliability_sensitivity_sensitivity_ancova_11_0.svg" src="../../_images/examples_reliability_sensitivity_sensitivity_ancova_11_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [57]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">ot</span><span class="o">.</span><span class="n">SobolIndicesAlgorithmImplementation</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">correlatedIndices</span><span class="p">,</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getDescription</span><span class="p">(),</span> <span class="s1">&#39;ANCOVA correlated indices</span><span class="se">\n</span><span class="s1">(part of variance due to the correlation)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[57]:
 </pre></div>
 </div>
@@ -467,7 +478,7 @@ ANCOVA correlated indices  [0.108171,0.108171]
           <a href="sensitivity_fast.html" title="FAST sensitivity indices"
              >next</a> |</li>
         <li class="right" >
-          <a href="estimate_sobol.html" title="Estimate Sobol indices"
+          <a href="sensitivity_sobol.html" title="Sobol sensitivity indices"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
@@ -477,8 +488,8 @@ ANCOVA correlated indices  [0.108171,0.108171]
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Nov 15, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

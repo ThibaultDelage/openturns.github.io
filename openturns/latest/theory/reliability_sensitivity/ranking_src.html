@@ -1,0 +1,191 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Uncertainty ranking: SRC &#8212; OpenTURNS  documentation</title>
+    <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Uncertainty ranking: PCC" href="ranking_pcc.html" />
+    <link rel="prev" title="Uncertainty ranking: Spearman’s correlation" href="ranking_spearman.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="http://www.openturns.org/">Home</a></li>
+    <li><a href="../../install.html">Get it</a></li>
+    <li><a href="../../contents.html">Doc</a></li>
+    <li><a href="https://github.com/openturns">Code</a></li>
+    <li><a href="http://trac.openturns.org">Bugs</a></li>
+  </ul>
+  <a href="../../index.html">
+    <h1>
+      <img src="../../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      OpenTURNS
+    </h1>
+    <h2> An Open source initiative for the Treatment of Uncertainties, Risks'N Statistics</h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ranking_pcc.html" title="Uncertainty ranking: PCC"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ranking_spearman.html" title="Uncertainty ranking: Spearman’s correlation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../theory.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="reliability_sensitivity.html" accesskey="U">Reliability, sensitivity</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ranking_spearman.html"
+                        title="previous chapter">Uncertainty ranking: Spearman’s correlation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ranking_pcc.html"
+                        title="next chapter">Uncertainty ranking: PCC</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/theory/reliability_sensitivity/ranking_src.rst"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="uncertainty-ranking-src">
+<span id="ranking-src"></span><h1>Uncertainty ranking: SRC<a class="headerlink" href="#uncertainty-ranking-src" title="Permalink to this headline">¶</a></h1>
+<p>This method deals with analysing the influence the random vector
+<img class="math" src="../../_images/math/8a6a589b116459f8e5cfdf98fa9f1348b44053a7.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/> has on a random
+variable <img class="math" src="../../_images/math/bf40bd80a21130da88ee12f4bae4c61a902e7e96.svg" alt="Y^j"/> which is being studied for uncertainty. Here we
+attempt to measure linear relationships that exist between <img class="math" src="../../_images/math/bf40bd80a21130da88ee12f4bae4c61a902e7e96.svg" alt="Y^j"/>
+and the different components <img class="math" src="../../_images/math/75fcbfff0e70987cadf22f956f5908b9a08798bc.svg" alt="X^i"/>.</p>
+<p>The principle of the multiple linear regression model (see for more
+details) consists of attempting to find the function that links the
+variable <img class="math" src="../../_images/math/bf40bd80a21130da88ee12f4bae4c61a902e7e96.svg" alt="Y^j"/> to the <img class="math" src="../../_images/math/ea8888fc3d9783c7f6905388e00cbdd16d4245e1.svg" alt="n_x"/> variables
+<img class="math" src="../../_images/math/2446817f6f06b85dd4398a2fe4a91e055deccfd1.svg" alt="X^1,\ldots,X^{n_X}"/> by means of a linear model:</p>
+<div class="math">
+<p><img src="../../_images/math/df3512f39a2254d0b0507c25a424cfb7d5a245f8.svg" alt="Y^j = a_0^j + \sum_{i=1}^{n_X} a_i^j X^i + \varepsilon^j"/></p>
+</div><p>where <img class="math" src="../../_images/math/b9331d5531d650bd8f058cdd18b954fd17f8f0c1.svg" alt="\varepsilon^j"/> describes a random variable with zero mean
+and standard deviation <img class="math" src="../../_images/math/c18cf094d285eea721ac8f415e3f883ecba12d83.svg" alt="\sigma_{\varepsilon}^j"/> independent of the
+input variables <img class="math" src="../../_images/math/75fcbfff0e70987cadf22f956f5908b9a08798bc.svg" alt="X^i"/>. If the random variables
+<img class="math" src="../../_images/math/2446817f6f06b85dd4398a2fe4a91e055deccfd1.svg" alt="X^1,\ldots,X^{n_X}"/> are independent and with finite variance
+<img class="math" src="../../_images/math/864c50d38cfdc77ff81c32bdbf7a60caea263cfc.svg" alt="\Var{X^k} = (\sigma_k)^2"/>, the variance of <img class="math" src="../../_images/math/bf40bd80a21130da88ee12f4bae4c61a902e7e96.svg" alt="Y^j"/> can be
+written as follows:</p>
+<div class="math">
+<p><img src="../../_images/math/2514b9d22879292b8b1756efcd3dc75ea5bf1b20.svg" alt="\Var{Y^j} = \sum_{i=1}^n (a_i^j)^2 \Var{X^i} + (\sigma_{\varepsilon}^j)^2"/></p>
+</div><p>The estimators for the regression coefficients
+<img class="math" src="../../_images/math/2bcebef08b512bfdee4066d4d21eb565611ec5a5.svg" alt="a_0^j,\ldots,a_{n_X}^j"/>, and the standard deviation
+<img class="math" src="../../_images/math/949e289d51ca7f00704c4a21d4f801734b9c5c62.svg" alt="\sigma^j"/> are obtained from a sample of
+<img class="math" src="../../_images/math/e2afe13166bb2053290507082601a683c524df84.svg" alt="(Y^j,X^1,\ldots,X^{n_X})"/>. Uncertainty ranking by linear
+regression ranks the <img class="math" src="../../_images/math/75d84d6b32882c83756bbdd4f879c5aa689a5709.svg" alt="n_X"/> variables <img class="math" src="../../_images/math/2bd3cb4370fc359bf55f2e5c8350d6e0303b56df.svg" alt="X^1,\ldots, X^{n_X}"/>
+in terms of the estimated contribution of each <img class="math" src="../../_images/math/64a5b9951dcb82220ab0c7da6e4d80daa9ce884e.svg" alt="X^k"/> to the
+variance of <img class="math" src="../../_images/math/bf40bd80a21130da88ee12f4bae4c61a902e7e96.svg" alt="Y^j"/>:</p>
+<div class="math">
+<p><img src="../../_images/math/52614988e24f5940f08f0a8755b6b4d30dd10787.svg" alt="C^j_k = \frac{\displaystyle (a_k^j)^2  \Var{X^k}}{ \Var{Y^j}}"/></p>
+</div><p>which is estimated by:</p>
+<div class="math">
+<p><img src="../../_images/math/191540f370c660a47abd861bf8e3da873f61cb19.svg" alt="\widehat{C}^j_k = \frac{\displaystyle (\widehat{a}_k^j)^2 \widehat{\sigma}_k^2}{\displaystyle \sum_{i=1}^{n_X} (a_i^j)^2 \widehat{\sigma}_i^2 + (\widehat{\sigma}_{\varepsilon}^j)^2}"/></p>
+</div><p>where <img class="math" src="../../_images/math/49372c10f67bc9685ba13a63ac8f7ec9229a4c04.svg" alt="\widehat{\sigma}_i"/> describes the empirical standard
+deviation of the sample of the input variables. This estimated
+contribution is by definition between 0 and 1. The closer it is to 1,
+the greater the impact the variable <img class="math" src="../../_images/math/75fcbfff0e70987cadf22f956f5908b9a08798bc.svg" alt="X^i"/> has on the dispersion of
+<img class="math" src="../../_images/math/bf40bd80a21130da88ee12f4bae4c61a902e7e96.svg" alt="Y^j"/>.</p>
+<p>The contribution to the variance <img class="math" src="../../_images/math/882bbdbc23287daa54c7e0d6b8c3c84b3a668376.svg" alt="C_i"/> is sometimes described in
+the literature as the “importance factor”, because of the similarity
+between this approach to linear regression and the method of cumulative
+variance quadratic which uses the term importance factor.</p>
+<div class="topic">
+<p class="topic-title first">API:</p>
+<ul class="simple">
+<li>See <a class="reference internal" href="../../user_manual/_generated/openturns.CorrelationAnalysis_SRC.html#openturns.CorrelationAnalysis_SRC" title="openturns.CorrelationAnalysis_SRC"><code class="xref py py-func docutils literal notranslate"><span class="pre">CorrelationAnalysis_SRC()</span></code></a></li>
+</ul>
+</div>
+<div class="topic">
+<p class="topic-title first">Examples:</p>
+<ul class="simple">
+<li>See <a class="reference internal" href="../../examples/data_analysis/sample_correlation.html"><span class="doc">Correlation analysis on samples</span></a></li>
+</ul>
+</div>
+<div class="topic">
+<p class="topic-title first">References:</p>
+<ul class="simple">
+<li>Saltelli, A., Chan, K., Scott, M. (2000). “Sensitivity Analysis”, John Wiley &amp; Sons publishers, Probability and Statistics series</li>
+<li>J.C. Helton, F.J. Davis (2003). “Latin Hypercube sampling and the propagation of uncertainty analyses of complex systems”. Reliability Engineering and System Safety 81, p.23-69</li>
+<li>J.P.C. Kleijnen, J.C. Helton (1999). “Statistical analyses of scatterplots to identify factors in large-scale simulations, part 1 : review and comparison of techniques”. Reliability Engineering and System Safety 65, p.147-185</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ranking_pcc.html" title="Uncertainty ranking: PCC"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ranking_spearman.html" title="Uncertainty ranking: Spearman’s correlation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../theory.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="reliability_sensitivity.html" >Reliability, sensitivity</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+    </div>
+  </body>
+</html>

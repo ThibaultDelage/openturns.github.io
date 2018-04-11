@@ -1,19 +1,13 @@
 .. _user_manual:
 
-====================================
-User manual for the Python interface
-====================================
+=============
+API Reference
+=============
 
-This is the user manual for the Python bindings to the OpenTURNS library.
-
-.. todo::
-
-    Fill the docstrings in the :ref:`SWIG docstrings header files <contribute_docstrings>`
-    and refer to the documented objects here in order to complete the user
-    manual.
+This section details classes, functions included in the Python bindings.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     base_objects
     combinatorial_generators

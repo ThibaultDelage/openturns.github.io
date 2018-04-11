@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Null &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -26,7 +17,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="KDTree" href="openturns.KDTree.html" />
+    <link rel="next" title="NearestNeighbourAlgorithm" href="openturns.NearestNeighbourAlgorithm.html" />
     <link rel="prev" title="Last" href="openturns.Last.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
@@ -57,14 +48,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="openturns.KDTree.html" title="KDTree"
+          <a href="openturns.NearestNeighbourAlgorithm.html" title="NearestNeighbourAlgorithm"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="openturns.Last.html" title="Last"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" accesskey="U">Base objects</a> &#187;</li> 
       </ul>
     </div>
@@ -74,8 +65,8 @@
   <p class="topless"><a href="openturns.Last.html"
                         title="previous chapter">Last</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="openturns.KDTree.html"
-                        title="next chapter">KDTree</a></p>
+  <p class="topless"><a href="openturns.NearestNeighbourAlgorithm.html"
+                        title="next chapter">NearestNeighbourAlgorithm</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -113,7 +106,7 @@
 </dl>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.HistoryStrategy.html#openturns.HistoryStrategy" title="openturns.HistoryStrategy"><code class="xref py py-obj docutils literal"><span class="pre">HistoryStrategy</span></code></a>, <a class="reference internal" href="openturns.Compact.html#openturns.Compact" title="openturns.Compact"><code class="xref py py-obj docutils literal"><span class="pre">Compact</span></code></a>, <a class="reference internal" href="openturns.Full.html#openturns.Full" title="openturns.Full"><code class="xref py py-obj docutils literal"><span class="pre">Full</span></code></a>, <a class="reference internal" href="openturns.Last.html#openturns.Last" title="openturns.Last"><code class="xref py py-obj docutils literal"><span class="pre">Last</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.HistoryStrategy.html#openturns.HistoryStrategy" title="openturns.HistoryStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HistoryStrategy</span></code></a>, <a class="reference internal" href="openturns.Compact.html#openturns.Compact" title="openturns.Compact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Compact</span></code></a>, <a class="reference internal" href="openturns.Full.html#openturns.Full" title="openturns.Full"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Full</span></code></a>, <a class="reference internal" href="openturns.Last.html#openturns.Last" title="openturns.Last"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Last</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The null strategy does not store anything.</p>
@@ -124,43 +117,46 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Null.clear" title="openturns.Null.clear"><code class="xref py py-obj docutils literal"><span class="pre">clear</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Null.clear" title="openturns.Null.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</td>
 <td>Clear the stored points.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Null.getClassName" title="openturns.Null.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Null.getClassName" title="openturns.Null.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Null.getId" title="openturns.Null.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Null.getId" title="openturns.Null.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Null.getName" title="openturns.Null.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Null.getName" title="openturns.Null.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Null.getSample" title="openturns.Null.getSample"><code class="xref py py-obj docutils literal"><span class="pre">getSample</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Null.getSample" title="openturns.Null.getSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSample</span></code></a>()</td>
 <td>Accessor to the stored sample.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Null.getShadowedId" title="openturns.Null.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Null.getShadowedId" title="openturns.Null.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Null.getVisibility" title="openturns.Null.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Null.getVisibility" title="openturns.Null.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Null.hasName" title="openturns.Null.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Null.hasName" title="openturns.Null.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Null.hasVisibleName" title="openturns.Null.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Null.hasVisibleName" title="openturns.Null.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Null.setName" title="openturns.Null.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Null.setDimension" title="openturns.Null.setDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDimension</span></code></a>(dimension)</td>
+<td>Set the dimension of points to store.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Null.setName" title="openturns.Null.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Null.setShadowedId" title="openturns.Null.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Null.setShadowedId" title="openturns.Null.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Null.setVisibility" title="openturns.Null.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Null.setVisibility" title="openturns.Null.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Null.store" title="openturns.Null.store"><code class="xref py py-obj docutils literal"><span class="pre">store</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Null.store" title="openturns.Null.store"><code class="xref py py-obj docutils literal notranslate"><span class="pre">store</span></code></a>(*args)</td>
 <td>Store points or samples.</td>
 </tr>
 </tbody>
@@ -168,7 +164,7 @@
 <dl class="method">
 <dt id="openturns.Null.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Null.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>x.__init__(…) initializes x; see help(type(x)) for signature</p>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
@@ -187,10 +183,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
-<blockquote class="last">
-<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -205,10 +202,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -223,10 +221,11 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -241,11 +240,12 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sample</strong> : <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal"><span class="pre">Sample</span></code></a></p>
-<blockquote class="last">
-<div><p>Numerical sample which is the collection of points stored by the history
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">Numerical sample which is the collection of points stored by the history
 strategy.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -260,10 +260,11 @@ strategy.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -278,10 +279,11 @@ strategy.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -296,10 +298,11 @@ strategy.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -314,14 +317,37 @@ strategy.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasVisibleName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty and not the default one.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasVisibleName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty and not the default one.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.Null.setDimension">
+<code class="descname">setDimension</code><span class="sig-paren">(</span><em>dimension</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Null.setDimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the dimension of points to store.</p>
+<p>This method must be called before calling the store method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>dimension: int</strong></dt>
+<dd><p class="first last">Dimension of points to store</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>It erases the previously stored points</p>
 </dd></dl>
 
 <dl class="method">
@@ -332,10 +358,11 @@ strategy.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -350,10 +377,11 @@ strategy.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -368,10 +396,11 @@ strategy.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -386,10 +415,11 @@ strategy.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : sequence of float or 2-d sequence of float</p>
-<blockquote class="last">
-<div><p>Point or sample to store.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>data</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float or 2-d sequence of float</span></dt>
+<dd><p class="first last">Point or sample to store.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -416,21 +446,21 @@ the history.</p>
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="openturns.KDTree.html" title="KDTree"
+          <a href="openturns.NearestNeighbourAlgorithm.html" title="NearestNeighbourAlgorithm"
              >next</a> |</li>
         <li class="right" >
           <a href="openturns.Last.html" title="Last"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" >Base objects</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Nov 15, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

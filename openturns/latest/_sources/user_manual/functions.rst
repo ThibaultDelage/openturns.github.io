@@ -13,11 +13,13 @@ General mathematical functions
 
     Function
     SymbolicFunction
+    TranslationFunction
     LinearFunction
     QuadraticFunction
     DatabaseFunction
     PythonFunction
     OpenTURNSPythonFunction
+    MemoizeFunction
 
 Algebra of functions
 ====================
@@ -59,6 +61,7 @@ Field and mixed functions
     OpenTURNSPythonFieldFunction
     OpenTURNSPythonFieldToPointFunction
     OpenTURNSPythonPointToFieldFunction
+    P1LagrangeInterpolation
 
 Collection of functions
 =======================
@@ -68,7 +71,6 @@ Collection of functions
     :template: class.rst_t
 
     Basis
-    FunctionalBasis
     OrthogonalBasis
     BasisSequence
 
@@ -157,7 +159,10 @@ Differential equation solvers
     :template: class.rst_t
 
     ODESolver
+
+    :template: ODESolver.rst_t
     RungeKutta
+    Fehlberg
 
 Special constants & functions
 =============================
@@ -244,6 +249,7 @@ as Python functions.
     SpecFunc_IncompleteBetaInverse
     SpecFunc_IncompleteGamma
     SpecFunc_IncompleteGammaInverse
+    SpecFunc_IsNormal
     SpecFunc_LambertW
     SpecFunc_LnBeta
     SpecFunc_LnGamma
@@ -263,6 +269,7 @@ as Python functions.
     SpecFunc_RegularizedIncompleteGamma
     SpecFunc_RegularizedIncompleteGammaInverse
     SpecFunc_TriGamma
+    TimerCallback
 
 .. _coupling_tools:
 

@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>AdaptiveDirectionalSampling &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -64,7 +55,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../threshold_probability_simulation_algorithms.html" accesskey="U">Threshold probability: Simulation algorithms</a> &#187;</li> 
       </ul>
     </div>
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -111,29 +104,28 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : <a class="reference internal" href="openturns.Event.html#openturns.Event" title="openturns.Event"><code class="xref py py-class docutils literal"><span class="pre">Event</span></code></a></p>
-<blockquote>
-<div><p>Event we are computing the probability of.</p>
-</div></blockquote>
-<p><strong>rootStrategy</strong> : <a class="reference internal" href="openturns.RootStrategy.html#openturns.RootStrategy" title="openturns.RootStrategy"><code class="xref py py-class docutils literal"><span class="pre">RootStrategy</span></code></a>, optional</p>
-<blockquote>
-<div><p>Strategy adopted to evaluate the intersections of each direction with the
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>event</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Event.html#openturns.Event" title="openturns.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a></span></dt>
+<dd><p class="first last">Event we are computing the probability of.</p>
+</dd>
+<dt><strong>rootStrategy</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RootStrategy.html#openturns.RootStrategy" title="openturns.RootStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">RootStrategy</span></code></a>, optional</span></dt>
+<dd><p class="first last">Strategy adopted to evaluate the intersections of each direction with the
 limit state function and take into account the contribution of the
 direction to the event probability.
-Set to <a class="reference internal" href="openturns.SafeAndSlow.html#openturns.SafeAndSlow" title="openturns.SafeAndSlow"><code class="xref py py-class docutils literal"><span class="pre">SafeAndSlow</span></code></a> by default.</p>
-</div></blockquote>
-<p><strong>samplingStrategy</strong> : <a class="reference internal" href="openturns.SamplingStrategy.html#openturns.SamplingStrategy" title="openturns.SamplingStrategy"><code class="xref py py-class docutils literal"><span class="pre">SamplingStrategy</span></code></a>, optional</p>
-<blockquote class="last">
-<div><p>Strategy adopted to sample directions.
-Set to <a class="reference internal" href="openturns.RandomDirection.html#openturns.RandomDirection" title="openturns.RandomDirection"><code class="xref py py-class docutils literal"><span class="pre">RandomDirection</span></code></a> by default.</p>
-</div></blockquote>
+Set to <a class="reference internal" href="openturns.SafeAndSlow.html#openturns.SafeAndSlow" title="openturns.SafeAndSlow"><code class="xref py py-class docutils literal notranslate"><span class="pre">SafeAndSlow</span></code></a> by default.</p>
+</dd>
+<dt><strong>samplingStrategy</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.SamplingStrategy.html#openturns.SamplingStrategy" title="openturns.SamplingStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">SamplingStrategy</span></code></a>, optional</span></dt>
+<dd><p class="first last">Strategy adopted to sample directions.
+Set to <a class="reference internal" href="openturns.RandomDirection.html#openturns.RandomDirection" title="openturns.RandomDirection"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomDirection</span></code></a> by default.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="openturns.Simulation.html#openturns.Simulation" title="openturns.Simulation"><code class="xref py py-obj docutils literal"><span class="pre">Simulation</span></code></a></p>
+<p class="last"><a class="reference internal" href="openturns.Simulation.html#openturns.Simulation" title="openturns.Simulation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Simulation</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>Let <img class="math" src="../../_images/math/57578c6b35c07b91e7ca5e4dd95ae633def906d9.svg" alt="\mathcal D_f"/> denote the failure domain defined as
@@ -222,127 +214,127 @@ than one learning step. For now, only ADS-2 is implemented.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.drawProbabilityConvergence" title="openturns.AdaptiveDirectionalSampling.drawProbabilityConvergence"><code class="xref py py-obj docutils literal"><span class="pre">drawProbabilityConvergence</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.drawProbabilityConvergence" title="openturns.AdaptiveDirectionalSampling.drawProbabilityConvergence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawProbabilityConvergence</span></code></a>(*args)</td>
 <td>Draw the probability convergence at a given level.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getBlockSize" title="openturns.AdaptiveDirectionalSampling.getBlockSize"><code class="xref py py-obj docutils literal"><span class="pre">getBlockSize</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getBlockSize" title="openturns.AdaptiveDirectionalSampling.getBlockSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBlockSize</span></code></a>()</td>
 <td>Accessor to the block size.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getClassName" title="openturns.AdaptiveDirectionalSampling.getClassName"><code class="xref py py-obj docutils literal"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getClassName" title="openturns.AdaptiveDirectionalSampling.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getConvergenceStrategy" title="openturns.AdaptiveDirectionalSampling.getConvergenceStrategy"><code class="xref py py-obj docutils literal"><span class="pre">getConvergenceStrategy</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getConvergenceStrategy" title="openturns.AdaptiveDirectionalSampling.getConvergenceStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getConvergenceStrategy</span></code></a>()</td>
 <td>Accessor to the convergence strategy.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getEvent" title="openturns.AdaptiveDirectionalSampling.getEvent"><code class="xref py py-obj docutils literal"><span class="pre">getEvent</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getEvent" title="openturns.AdaptiveDirectionalSampling.getEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEvent</span></code></a>()</td>
 <td>Accessor to the event.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getGamma" title="openturns.AdaptiveDirectionalSampling.getGamma"><code class="xref py py-obj docutils literal"><span class="pre">getGamma</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getGamma" title="openturns.AdaptiveDirectionalSampling.getGamma"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGamma</span></code></a>()</td>
 <td>Gamma accessor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getId" title="openturns.AdaptiveDirectionalSampling.getId"><code class="xref py py-obj docutils literal"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getId" title="openturns.AdaptiveDirectionalSampling.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getMaximumCoefficientOfVariation" title="openturns.AdaptiveDirectionalSampling.getMaximumCoefficientOfVariation"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumCoefficientOfVariation</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getMaximumCoefficientOfVariation" title="openturns.AdaptiveDirectionalSampling.getMaximumCoefficientOfVariation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumCoefficientOfVariation</span></code></a>()</td>
 <td>Accessor to the maximum coefficient of variation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getMaximumOuterSampling" title="openturns.AdaptiveDirectionalSampling.getMaximumOuterSampling"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumOuterSampling</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getMaximumOuterSampling" title="openturns.AdaptiveDirectionalSampling.getMaximumOuterSampling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumOuterSampling</span></code></a>()</td>
 <td>Accessor to the maximum sample size.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getMaximumStandardDeviation" title="openturns.AdaptiveDirectionalSampling.getMaximumStandardDeviation"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumStandardDeviation</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getMaximumStandardDeviation" title="openturns.AdaptiveDirectionalSampling.getMaximumStandardDeviation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumStandardDeviation</span></code></a>()</td>
 <td>Accessor to the maximum standard deviation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getMaximumStratificationDimension" title="openturns.AdaptiveDirectionalSampling.getMaximumStratificationDimension"><code class="xref py py-obj docutils literal"><span class="pre">getMaximumStratificationDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getMaximumStratificationDimension" title="openturns.AdaptiveDirectionalSampling.getMaximumStratificationDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumStratificationDimension</span></code></a>()</td>
 <td>Maximum stratification dimension accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getName" title="openturns.AdaptiveDirectionalSampling.getName"><code class="xref py py-obj docutils literal"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getName" title="openturns.AdaptiveDirectionalSampling.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getPartialStratification" title="openturns.AdaptiveDirectionalSampling.getPartialStratification"><code class="xref py py-obj docutils literal"><span class="pre">getPartialStratification</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getPartialStratification" title="openturns.AdaptiveDirectionalSampling.getPartialStratification"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPartialStratification</span></code></a>()</td>
 <td>Partial stratification accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getQuadrantOrientation" title="openturns.AdaptiveDirectionalSampling.getQuadrantOrientation"><code class="xref py py-obj docutils literal"><span class="pre">getQuadrantOrientation</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getQuadrantOrientation" title="openturns.AdaptiveDirectionalSampling.getQuadrantOrientation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getQuadrantOrientation</span></code></a>()</td>
 <td>Quadrant orientation accessor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getResult" title="openturns.AdaptiveDirectionalSampling.getResult"><code class="xref py py-obj docutils literal"><span class="pre">getResult</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getResult" title="openturns.AdaptiveDirectionalSampling.getResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResult</span></code></a>()</td>
 <td>Accessor to the results.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getRootStrategy" title="openturns.AdaptiveDirectionalSampling.getRootStrategy"><code class="xref py py-obj docutils literal"><span class="pre">getRootStrategy</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getRootStrategy" title="openturns.AdaptiveDirectionalSampling.getRootStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRootStrategy</span></code></a>()</td>
 <td>Get the root strategy.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getSamplingStrategy" title="openturns.AdaptiveDirectionalSampling.getSamplingStrategy"><code class="xref py py-obj docutils literal"><span class="pre">getSamplingStrategy</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getSamplingStrategy" title="openturns.AdaptiveDirectionalSampling.getSamplingStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSamplingStrategy</span></code></a>()</td>
 <td>Get the direction sampling strategy.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getShadowedId" title="openturns.AdaptiveDirectionalSampling.getShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getShadowedId" title="openturns.AdaptiveDirectionalSampling.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getTStatistic" title="openturns.AdaptiveDirectionalSampling.getTStatistic"><code class="xref py py-obj docutils literal"><span class="pre">getTStatistic</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getTStatistic" title="openturns.AdaptiveDirectionalSampling.getTStatistic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTStatistic</span></code></a>()</td>
 <td>T statistic accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getVerbose" title="openturns.AdaptiveDirectionalSampling.getVerbose"><code class="xref py py-obj docutils literal"><span class="pre">getVerbose</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getVerbose" title="openturns.AdaptiveDirectionalSampling.getVerbose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVerbose</span></code></a>()</td>
 <td>Accessor to verbosity.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getVisibility" title="openturns.AdaptiveDirectionalSampling.getVisibility"><code class="xref py py-obj docutils literal"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.getVisibility" title="openturns.AdaptiveDirectionalSampling.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.hasName" title="openturns.AdaptiveDirectionalSampling.hasName"><code class="xref py py-obj docutils literal"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.hasName" title="openturns.AdaptiveDirectionalSampling.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.hasVisibleName" title="openturns.AdaptiveDirectionalSampling.hasVisibleName"><code class="xref py py-obj docutils literal"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.hasVisibleName" title="openturns.AdaptiveDirectionalSampling.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.run" title="openturns.AdaptiveDirectionalSampling.run"><code class="xref py py-obj docutils literal"><span class="pre">run</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.run" title="openturns.AdaptiveDirectionalSampling.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>()</td>
 <td>Launch simulation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setBlockSize" title="openturns.AdaptiveDirectionalSampling.setBlockSize"><code class="xref py py-obj docutils literal"><span class="pre">setBlockSize</span></code></a>(blockSize)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setBlockSize" title="openturns.AdaptiveDirectionalSampling.setBlockSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBlockSize</span></code></a>(blockSize)</td>
 <td>Accessor to the block size.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setConvergenceStrategy" title="openturns.AdaptiveDirectionalSampling.setConvergenceStrategy"><code class="xref py py-obj docutils literal"><span class="pre">setConvergenceStrategy</span></code></a>(convergenceStrategy)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setConvergenceStrategy" title="openturns.AdaptiveDirectionalSampling.setConvergenceStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setConvergenceStrategy</span></code></a>(convergenceStrategy)</td>
 <td>Accessor to the convergence strategy.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setGamma" title="openturns.AdaptiveDirectionalSampling.setGamma"><code class="xref py py-obj docutils literal"><span class="pre">setGamma</span></code></a>(gamma)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setGamma" title="openturns.AdaptiveDirectionalSampling.setGamma"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setGamma</span></code></a>(gamma)</td>
 <td>Gamma accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setMaximumCoefficientOfVariation" title="openturns.AdaptiveDirectionalSampling.setMaximumCoefficientOfVariation"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumCoefficientOfVariation</span></code></a>(…)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setMaximumCoefficientOfVariation" title="openturns.AdaptiveDirectionalSampling.setMaximumCoefficientOfVariation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumCoefficientOfVariation</span></code></a>(…)</td>
 <td>Accessor to the maximum coefficient of variation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setMaximumOuterSampling" title="openturns.AdaptiveDirectionalSampling.setMaximumOuterSampling"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumOuterSampling</span></code></a>(maximumOuterSampling)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setMaximumOuterSampling" title="openturns.AdaptiveDirectionalSampling.setMaximumOuterSampling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumOuterSampling</span></code></a>(maximumOuterSampling)</td>
 <td>Accessor to the maximum sample size.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setMaximumStandardDeviation" title="openturns.AdaptiveDirectionalSampling.setMaximumStandardDeviation"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumStandardDeviation</span></code></a>(…)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setMaximumStandardDeviation" title="openturns.AdaptiveDirectionalSampling.setMaximumStandardDeviation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumStandardDeviation</span></code></a>(…)</td>
 <td>Accessor to the maximum standard deviation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setMaximumStratificationDimension" title="openturns.AdaptiveDirectionalSampling.setMaximumStratificationDimension"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumStratificationDimension</span></code></a>(…)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setMaximumStratificationDimension" title="openturns.AdaptiveDirectionalSampling.setMaximumStratificationDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumStratificationDimension</span></code></a>(…)</td>
 <td>Maximum stratification dimension accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setName" title="openturns.AdaptiveDirectionalSampling.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setName" title="openturns.AdaptiveDirectionalSampling.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setPartialStratification" title="openturns.AdaptiveDirectionalSampling.setPartialStratification"><code class="xref py py-obj docutils literal"><span class="pre">setPartialStratification</span></code></a>(partialStratification)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setPartialStratification" title="openturns.AdaptiveDirectionalSampling.setPartialStratification"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setPartialStratification</span></code></a>(partialStratification)</td>
 <td>Partial stratification accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setProgressCallback" title="openturns.AdaptiveDirectionalSampling.setProgressCallback"><code class="xref py py-obj docutils literal"><span class="pre">setProgressCallback</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setProgressCallback" title="openturns.AdaptiveDirectionalSampling.setProgressCallback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setProgressCallback</span></code></a>(*args)</td>
 <td>Set up a progress callback.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setQuadrantOrientation" title="openturns.AdaptiveDirectionalSampling.setQuadrantOrientation"><code class="xref py py-obj docutils literal"><span class="pre">setQuadrantOrientation</span></code></a>(quadrantOrientation)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setQuadrantOrientation" title="openturns.AdaptiveDirectionalSampling.setQuadrantOrientation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setQuadrantOrientation</span></code></a>(quadrantOrientation)</td>
 <td>Quadrant orientation accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setRootStrategy" title="openturns.AdaptiveDirectionalSampling.setRootStrategy"><code class="xref py py-obj docutils literal"><span class="pre">setRootStrategy</span></code></a>(rootStrategy)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setRootStrategy" title="openturns.AdaptiveDirectionalSampling.setRootStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setRootStrategy</span></code></a>(rootStrategy)</td>
 <td>Set the root strategy.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setSamplingStrategy" title="openturns.AdaptiveDirectionalSampling.setSamplingStrategy"><code class="xref py py-obj docutils literal"><span class="pre">setSamplingStrategy</span></code></a>(samplingStrategy)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setSamplingStrategy" title="openturns.AdaptiveDirectionalSampling.setSamplingStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSamplingStrategy</span></code></a>(samplingStrategy)</td>
 <td>Set the direction sampling strategy.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setShadowedId" title="openturns.AdaptiveDirectionalSampling.setShadowedId"><code class="xref py py-obj docutils literal"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setShadowedId" title="openturns.AdaptiveDirectionalSampling.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setStopCallback" title="openturns.AdaptiveDirectionalSampling.setStopCallback"><code class="xref py py-obj docutils literal"><span class="pre">setStopCallback</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setStopCallback" title="openturns.AdaptiveDirectionalSampling.setStopCallback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setStopCallback</span></code></a>(*args)</td>
 <td>Set up a stop callback.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setVerbose" title="openturns.AdaptiveDirectionalSampling.setVerbose"><code class="xref py py-obj docutils literal"><span class="pre">setVerbose</span></code></a>(verbose)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setVerbose" title="openturns.AdaptiveDirectionalSampling.setVerbose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVerbose</span></code></a>(verbose)</td>
 <td>Accessor to verbosity.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setVisibility" title="openturns.AdaptiveDirectionalSampling.setVisibility"><code class="xref py py-obj docutils literal"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setVisibility" title="openturns.AdaptiveDirectionalSampling.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -350,7 +342,7 @@ than one learning step. For now, only ADS-2 is implemented.</p>
 <dl class="method">
 <dt id="openturns.AdaptiveDirectionalSampling.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.AdaptiveDirectionalSampling.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>x.__init__(…) initializes x; see help(type(x)) for signature</p>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="method">
@@ -361,17 +353,19 @@ than one learning step. For now, only ADS-2 is implemented.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>level</strong> : float, optional</p>
-<blockquote>
-<div><p>The probability convergence is drawn at this given confidence length
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, optional</span></dt>
+<dd><p class="first last">The probability convergence is drawn at this given confidence length
 <em>level</em>. By default <em>level</em> is 0.95.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>graph</strong> : a <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal"><span class="pre">Graph</span></code></a></p>
-<blockquote class="last">
-<div><p>probability convergence graph</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>graph</strong> <span class="classifier-delimiter">:</span> <span class="classifier">a <a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></span></dt>
+<dd><p class="first last">probability convergence graph</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -386,11 +380,12 @@ than one learning step. For now, only ADS-2 is implemented.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>blockSize</strong> : int</p>
-<blockquote class="last">
-<div><p>Number of terms in the probability simulation estimator grouped together.
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>blockSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of terms in the probability simulation estimator grouped together.
 It is set by default to 1.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -405,10 +400,11 @@ It is set by default to 1.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>class_name</strong> : str</p>
-<blockquote class="last">
-<div><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -423,11 +419,12 @@ It is set by default to 1.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>storage_strategy</strong> : <a class="reference internal" href="openturns.HistoryStrategy.html#openturns.HistoryStrategy" title="openturns.HistoryStrategy"><code class="xref py py-class docutils literal"><span class="pre">HistoryStrategy</span></code></a></p>
-<blockquote class="last">
-<div><p>Storage strategy used to store the values of the probability estimator
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>storage_strategy</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.HistoryStrategy.html#openturns.HistoryStrategy" title="openturns.HistoryStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">HistoryStrategy</span></code></a></span></dt>
+<dd><p class="first last">Storage strategy used to store the values of the probability estimator
 and its variance during the simulation algorithm.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -442,10 +439,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>event</strong> : <a class="reference internal" href="openturns.Event.html#openturns.Event" title="openturns.Event"><code class="xref py py-class docutils literal"><span class="pre">Event</span></code></a></p>
-<blockquote class="last">
-<div><p>Event we want to evaluate the probability.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>event</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Event.html#openturns.Event" title="openturns.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a></span></dt>
+<dd><p class="first last">Event we want to evaluate the probability.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -461,10 +459,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gamma</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Gamma value.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>gamma</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Gamma value.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -479,10 +478,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -497,10 +497,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>coefficient</strong> : float</p>
-<blockquote class="last">
-<div><p>Maximum coefficient of variation of the simulated sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>coefficient</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Maximum coefficient of variation of the simulated sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -515,10 +516,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>outerSampling</strong> : int</p>
-<blockquote class="last">
-<div><p>Maximum number of groups of terms in the probability simulation estimator.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>outerSampling</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Maximum number of groups of terms in the probability simulation estimator.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -533,10 +535,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sigma</strong> : float, <img class="math" src="../../_images/math/96143116c58040f73b4c99262f94b9a81f3cd316.svg" alt="\sigma &gt; 0"/></p>
-<blockquote class="last">
-<div><p>Maximum standard deviation of the estimator.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/96143116c58040f73b4c99262f94b9a81f3cd316.svg" alt="\sigma &gt; 0"/></span></dt>
+<dd><p class="first last">Maximum standard deviation of the estimator.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -551,10 +554,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>max</strong> : int</p>
-<blockquote class="last">
-<div><p>Maximum stratification dimension.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Maximum stratification dimension.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -569,10 +573,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -587,10 +592,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>partialStratification</strong> : bool</p>
-<blockquote class="last">
-<div><p>Partial stratification.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>partialStratification</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Partial stratification.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -605,10 +611,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>orientation</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>Quadrant orientation.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>orientation</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">Quadrant orientation.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -623,11 +630,12 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>results</strong> : <a class="reference internal" href="openturns.SimulationResult.html#openturns.SimulationResult" title="openturns.SimulationResult"><code class="xref py py-class docutils literal"><span class="pre">SimulationResult</span></code></a></p>
-<blockquote class="last">
-<div><p>Structure containing all the results obtained after simulation and created
-by the method <a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.run" title="openturns.AdaptiveDirectionalSampling.run"><code class="xref py py-meth docutils literal"><span class="pre">run()</span></code></a>.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>results</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.SimulationResult.html#openturns.SimulationResult" title="openturns.SimulationResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationResult</span></code></a></span></dt>
+<dd><p class="first last">Structure containing all the results obtained after simulation and created
+by the method <a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.run" title="openturns.AdaptiveDirectionalSampling.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a>.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -642,10 +650,11 @@ by the method <a class="reference internal" href="#openturns.AdaptiveDirectional
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>strategy</strong> : <a class="reference internal" href="openturns.RootStrategy.html#openturns.RootStrategy" title="openturns.RootStrategy"><code class="xref py py-class docutils literal"><span class="pre">RootStrategy</span></code></a></p>
-<blockquote class="last">
-<div><p>Root strategy adopted.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>strategy</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RootStrategy.html#openturns.RootStrategy" title="openturns.RootStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">RootStrategy</span></code></a></span></dt>
+<dd><p class="first last">Root strategy adopted.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -660,10 +669,11 @@ by the method <a class="reference internal" href="#openturns.AdaptiveDirectional
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>strategy</strong> : <a class="reference internal" href="openturns.SamplingStrategy.html#openturns.SamplingStrategy" title="openturns.SamplingStrategy"><code class="xref py py-class docutils literal"><span class="pre">SamplingStrategy</span></code></a></p>
-<blockquote class="last">
-<div><p>Direction sampling strategy adopted.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>strategy</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.SamplingStrategy.html#openturns.SamplingStrategy" title="openturns.SamplingStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">SamplingStrategy</span></code></a></span></dt>
+<dd><p class="first last">Direction sampling strategy adopted.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -678,10 +688,11 @@ by the method <a class="reference internal" href="#openturns.AdaptiveDirectional
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -697,10 +708,11 @@ by the method <a class="reference internal" href="#openturns.AdaptiveDirectional
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gamma</strong> : <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal"><span class="pre">Point</span></code></a></p>
-<blockquote class="last">
-<div><p>T statistic value.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>gamma</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">T statistic value.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -715,10 +727,11 @@ by the method <a class="reference internal" href="#openturns.AdaptiveDirectional
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>verbosity_enabled</strong> : bool</p>
-<blockquote class="last">
-<div><p>If <em>True</em>, the computation is verbose. By default it is verbose.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>verbosity_enabled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">If <em>True</em>, the computation is verbose. By default it is verbose.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -733,10 +746,11 @@ by the method <a class="reference internal" href="#openturns.AdaptiveDirectional
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -751,10 +765,11 @@ by the method <a class="reference internal" href="#openturns.AdaptiveDirectional
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -769,10 +784,11 @@ by the method <a class="reference internal" href="#openturns.AdaptiveDirectional
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>hasVisibleName</strong> : bool</p>
-<blockquote class="last">
-<div><p>True if the name is not empty and not the default one.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>hasVisibleName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">True if the name is not empty and not the default one.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -785,10 +801,10 @@ by the method <a class="reference internal" href="#openturns.AdaptiveDirectional
 <dd><p>Launch simulation.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setBlockSize" title="openturns.AdaptiveDirectionalSampling.setBlockSize"><code class="xref py py-obj docutils literal"><span class="pre">setBlockSize</span></code></a>, <a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setMaximumOuterSampling" title="openturns.AdaptiveDirectionalSampling.setMaximumOuterSampling"><code class="xref py py-obj docutils literal"><span class="pre">setMaximumOuterSampling</span></code></a>, <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-obj docutils literal"><span class="pre">ResourceMap</span></code></a>, <a class="reference internal" href="openturns.SimulationResult.html#openturns.SimulationResult" title="openturns.SimulationResult"><code class="xref py py-obj docutils literal"><span class="pre">SimulationResult</span></code></a></p>
+<p class="last"><a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setBlockSize" title="openturns.AdaptiveDirectionalSampling.setBlockSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBlockSize</span></code></a>, <a class="reference internal" href="#openturns.AdaptiveDirectionalSampling.setMaximumOuterSampling" title="openturns.AdaptiveDirectionalSampling.setMaximumOuterSampling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumOuterSampling</span></code></a>, <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>, <a class="reference internal" href="openturns.SimulationResult.html#openturns.SimulationResult" title="openturns.SimulationResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SimulationResult</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>It launches the simulation and creates a <a class="reference internal" href="openturns.SimulationResult.html#openturns.SimulationResult" title="openturns.SimulationResult"><code class="xref py py-class docutils literal"><span class="pre">SimulationResult</span></code></a>,
+<p>It launches the simulation and creates a <a class="reference internal" href="openturns.SimulationResult.html#openturns.SimulationResult" title="openturns.SimulationResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationResult</span></code></a>,
 structure containing all the results obtained after simulation.
 It computes the probability of occurence of the given event by computing the
 empirical mean of a sample of size at most <em>outerSampling * blockSize</em>,
@@ -806,11 +822,12 @@ with a sample size <img class="math" src="../../_images/math/0c9cbab20b37ef97ad3
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>blockSize</strong> : int, <img class="math" src="../../_images/math/f65d43c86c6a24135745b62987a7323ca8d56f4f.svg" alt="blockSize \geq 1"/></p>
-<blockquote class="last">
-<div><p>Number of terms in the probability simulation estimator grouped together.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>blockSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/f65d43c86c6a24135745b62987a7323ca8d56f4f.svg" alt="blockSize \geq 1"/></span></dt>
+<dd><p class="first last">Number of terms in the probability simulation estimator grouped together.
 It is set by default to 1.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -830,11 +847,12 @@ to set it to 1.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>storage_strategy</strong> : <a class="reference internal" href="openturns.HistoryStrategy.html#openturns.HistoryStrategy" title="openturns.HistoryStrategy"><code class="xref py py-class docutils literal"><span class="pre">HistoryStrategy</span></code></a></p>
-<blockquote class="last">
-<div><p>Storage strategy used to store the values of the probability estimator
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>storage_strategy</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.HistoryStrategy.html#openturns.HistoryStrategy" title="openturns.HistoryStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">HistoryStrategy</span></code></a></span></dt>
+<dd><p class="first last">Storage strategy used to store the values of the probability estimator
 and its variance during the simulation algorithm.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -850,10 +868,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>gamma</strong> : sequence of float</p>
-<blockquote class="last">
-<div><p>Gamma value.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>gamma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">Gamma value.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -868,10 +887,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>coefficient</strong> : float</p>
-<blockquote class="last">
-<div><p>Maximum coefficient of variation of the simulated sample.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>coefficient</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Maximum coefficient of variation of the simulated sample.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -886,10 +906,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>outerSampling</strong> : int</p>
-<blockquote class="last">
-<div><p>Maximum number of groups of terms in the probability simulation estimator.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>outerSampling</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Maximum number of groups of terms in the probability simulation estimator.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -904,10 +925,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>sigma</strong> : float, <img class="math" src="../../_images/math/96143116c58040f73b4c99262f94b9a81f3cd316.svg" alt="\sigma &gt; 0"/></p>
-<blockquote class="last">
-<div><p>Maximum standard deviation of the estimator.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/96143116c58040f73b4c99262f94b9a81f3cd316.svg" alt="\sigma &gt; 0"/></span></dt>
+<dd><p class="first last">Maximum standard deviation of the estimator.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -922,10 +944,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>max</strong> : int</p>
-<blockquote class="last">
-<div><p>Maximum stratification dimension.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Maximum stratification dimension.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -940,10 +963,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : str</p>
-<blockquote class="last">
-<div><p>The name of the object.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -958,10 +982,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>partialStratification</strong> : bool</p>
-<blockquote class="last">
-<div><p>Partial stratification.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>partialStratification</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Partial stratification.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -976,10 +1001,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>callback</strong> : callable</p>
-<blockquote class="last">
-<div><p>Takes a float as argument as percentage of progress.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>callback</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable</span></dt>
+<dd><p class="first last">Takes a float as argument as percentage of progress.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -994,10 +1020,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>orientation</strong> : sequence of float</p>
-<blockquote class="last">
-<div><p>Quadrant orientation.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>orientation</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">Quadrant orientation.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1012,10 +1039,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>strategy</strong> : <a class="reference internal" href="openturns.RootStrategy.html#openturns.RootStrategy" title="openturns.RootStrategy"><code class="xref py py-class docutils literal"><span class="pre">RootStrategy</span></code></a></p>
-<blockquote class="last">
-<div><p>Root strategy adopted.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>strategy</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RootStrategy.html#openturns.RootStrategy" title="openturns.RootStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">RootStrategy</span></code></a></span></dt>
+<dd><p class="first last">Root strategy adopted.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1030,10 +1058,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>strategy</strong> : <a class="reference internal" href="openturns.SamplingStrategy.html#openturns.SamplingStrategy" title="openturns.SamplingStrategy"><code class="xref py py-class docutils literal"><span class="pre">SamplingStrategy</span></code></a></p>
-<blockquote class="last">
-<div><p>Direction sampling strategy adopted.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>strategy</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.SamplingStrategy.html#openturns.SamplingStrategy" title="openturns.SamplingStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">SamplingStrategy</span></code></a></span></dt>
+<dd><p class="first last">Direction sampling strategy adopted.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1048,10 +1077,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>id</strong> : int</p>
-<blockquote class="last">
-<div><p>Internal unique identifier.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1066,10 +1096,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>callback</strong> : callable</p>
-<blockquote class="last">
-<div><p>Returns an int deciding whether to stop or continue.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>callback</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable</span></dt>
+<dd><p class="first last">Returns an int deciding whether to stop or continue.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1084,10 +1115,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>verbosity_enabled</strong> : bool</p>
-<blockquote class="last">
-<div><p>If <em>True</em>, make the computation verbose. By default it is verbose.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>verbosity_enabled</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">If <em>True</em>, make the computation verbose. By default it is verbose.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1102,10 +1134,11 @@ and its variance during the simulation algorithm.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>visible</strong> : bool</p>
-<blockquote class="last">
-<div><p>Visibility flag.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Visibility flag.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -1136,14 +1169,14 @@ and its variance during the simulation algorithm.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >User manual for the Python interface</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../threshold_probability_simulation_algorithms.html" >Threshold probability: Simulation algorithms</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Nov 15, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

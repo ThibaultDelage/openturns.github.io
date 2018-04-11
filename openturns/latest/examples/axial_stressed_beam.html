@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Axial stressed beam &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -27,7 +18,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Flood model" href="flood_model.html" />
-    <link rel="prev" title="Control algorithm termination" href="numerical_methods/control_termination.html" />
+    <link rel="prev" title="Iterated Functions System" href="numerical_methods/ifs.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -60,7 +51,7 @@
           <a href="flood_model.html" title="Flood model"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="numerical_methods/control_termination.html" title="Control algorithm termination"
+          <a href="numerical_methods/ifs.html" title="Iterated Functions System"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../contents.html" >Contents</a> &#187;</li>
@@ -70,8 +61,8 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="numerical_methods/control_termination.html"
-                        title="previous chapter">Control algorithm termination</a></p>
+  <p class="topless"><a href="numerical_methods/ifs.html"
+                        title="previous chapter">Iterated Functions System</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="flood_model.html"
                         title="next chapter">Flood model</a></p>
@@ -84,12 +75,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -307,11 +300,11 @@ directly the failure probability:</p>
 <div class="math">
 <p><img src="../_images/math/4b8f3a4a3ea9473b627a8c0335927ef640b29061.svg" alt="P_f = 0.0292"/></p>
 </div><div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
@@ -320,7 +313,7 @@ directly the failure probability:</p>
 <span class="n">dim</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="c1"># Analytical model definition:</span>
-<span class="n">limitState</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Function</span><span class="p">([</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;R-F/(_pi*100.0)&#39;</span><span class="p">])</span>
+<span class="n">limitState</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;R-F/(pi_*100.0)&#39;</span><span class="p">])</span>
 
 <span class="c1"># Test of the limit state function:</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">300.</span><span class="p">,</span> <span class="mf">75000.</span><span class="p">]</span>
@@ -340,11 +333,11 @@ G(x)= [61.2676]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Stochastic model definition</span>
 
 <span class="c1"># Create a first marginal : LogNormal distribution 1D, parameterized by</span>
@@ -358,7 +351,7 @@ G(x)= [61.2676]
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[2]:
 </pre></div>
 </div>
@@ -366,11 +359,11 @@ G(x)= [61.2676]
 <img alt="../_images/examples_axial_stressed_beam_3_0.svg" src="../_images/examples_axial_stressed_beam_3_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create a second marginal : Normal distribution 1D</span>
 <span class="n">F_dist</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mf">75000.</span><span class="p">,</span> <span class="mf">5000.</span><span class="p">)</span>
 <span class="n">F_dist</span><span class="o">.</span><span class="n">setName</span><span class="p">(</span><span class="s1">&#39;Traction_load&#39;</span><span class="p">)</span>
@@ -381,7 +374,7 @@ G(x)= [61.2676]
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[3]:
 </pre></div>
 </div>
@@ -389,11 +382,11 @@ G(x)= [61.2676]
 <img alt="../_images/examples_axial_stressed_beam_4_0.svg" src="../_images/examples_axial_stressed_beam_4_0.svg" /></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create a copula : IndependentCopula (no correlation)</span>
 <span class="n">aCopula</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">IndependentCopula</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
 <span class="n">aCopula</span><span class="o">.</span><span class="n">setName</span><span class="p">(</span><span class="s1">&#39;Independent copula&#39;</span><span class="p">)</span>
@@ -415,11 +408,11 @@ G(x)= [61.2676]
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Using Monte Carlo simulations</span>
 <span class="n">cv</span> <span class="o">=</span> <span class="mf">0.05</span>
 <span class="n">NbSim</span> <span class="o">=</span> <span class="mi">100000</span>
@@ -460,7 +453,7 @@ CV = 0.0499923113245
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[5]:
 </pre></div>
 </div>
@@ -468,18 +461,18 @@ CV = 0.0499923113245
 <img alt="../_images/examples_axial_stressed_beam_6_1.svg" src="../_images/examples_axial_stressed_beam_6_1.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Using FORM analysis</span>
 
 <span class="c1"># We create a NearestPoint algorithm</span>
 <span class="n">myCobyla</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Cobyla</span><span class="p">()</span>
 <span class="c1"># Resolution options:</span>
 <span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-3</span>
-<span class="n">myCobyla</span><span class="o">.</span><span class="n">setMaximumIterationNumber</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">myCobyla</span><span class="o">.</span><span class="n">setMaximumEvaluationNumber</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">myCobyla</span><span class="o">.</span><span class="n">setMaximumAbsoluteError</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
 <span class="n">myCobyla</span><span class="o">.</span><span class="n">setMaximumRelativeError</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
 <span class="n">myCobyla</span><span class="o">.</span><span class="n">setMaximumResidualError</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
@@ -518,7 +511,7 @@ Pf = 0.0299850318913
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[7]:
 </pre></div>
 </div>
@@ -526,11 +519,11 @@ Pf = 0.0299850318913
 <img alt="../_images/examples_axial_stressed_beam_7_1.svg" src="../_images/examples_axial_stressed_beam_7_1.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Using Directional sampling</span>
 
 <span class="c1"># Resolution options:</span>
@@ -572,7 +565,7 @@ CV = 0.0499171711488
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>Out[8]:
 </pre></div>
 </div>
@@ -597,7 +590,7 @@ CV = 0.0499171711488
           <a href="flood_model.html" title="Flood model"
              >next</a> |</li>
         <li class="right" >
-          <a href="numerical_methods/control_termination.html" title="Control algorithm termination"
+          <a href="numerical_methods/ifs.html" title="Iterated Functions System"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../contents.html" >Contents</a> &#187;</li>
@@ -606,8 +599,8 @@ CV = 0.0499171711488
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Nov 15, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>

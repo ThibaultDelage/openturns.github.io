@@ -1,0 +1,401 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Chaos basis enumeration strategies &#8212; OpenTURNS  documentation</title>
+    <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Functional Chaos Expansion" href="functional_chaos.html" />
+    <link rel="prev" title="Polynomial chaos basis" href="chaos_basis.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="http://www.openturns.org/">Home</a></li>
+    <li><a href="../../install.html">Get it</a></li>
+    <li><a href="../../contents.html">Doc</a></li>
+    <li><a href="https://github.com/openturns">Code</a></li>
+    <li><a href="http://trac.openturns.org">Bugs</a></li>
+  </ul>
+  <a href="../../index.html">
+    <h1>
+      <img src="../../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      OpenTURNS
+    </h1>
+    <h2> An Open source initiative for the Treatment of Uncertainties, Risks'N Statistics</h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="functional_chaos.html" title="Functional Chaos Expansion"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="chaos_basis.html" title="Polynomial chaos basis"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../theory.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="meta_modeling.html" accesskey="U">Meta modeling</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Chaos basis enumeration strategies</a><ul>
+<li><a class="reference internal" href="#linear-enumeration-strategy">Linear enumeration strategy</a></li>
+<li><a class="reference internal" href="#hyperbolic-enumeration-strategy">Hyperbolic enumeration strategy</a></li>
+<li><a class="reference internal" href="#anisotropic-hyperbolic-enumeration-strategy">Anisotropic hyperbolic enumeration strategy</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="chaos_basis.html"
+                        title="previous chapter">Polynomial chaos basis</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="functional_chaos.html"
+                        title="next chapter">Functional Chaos Expansion</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/theory/meta_modeling/enumeration_strategy.rst"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="chaos-basis-enumeration-strategies">
+<h1>Chaos basis enumeration strategies<a class="headerlink" href="#chaos-basis-enumeration-strategies" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">The polynomial chaos (PC) expansion allows one to obtain an explicit
+representation of the random response <img class="math" src="../../_images/math/610ae71bc6155fe9269d9bd6ace1acf1a824de63.svg" alt="\underline{Y}"/> of the
+model under consideration. More precisely, the response is cast
+as a converging series featuring orthonormal polynomials. For
+computational purpose, it is necessary though to retain a finite
+number of terms by truncating the expansion. First of all, a specific
+strategy for enumerating the infinite PC series has to be defined.
+This is the scope of the current section.</div>
+</div>
+<p>Given an input random vector <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/> with prescribed
+probability density function (PDF) <img class="math" src="../../_images/math/8614107d33d6621cdf8d683ed1b9f95866bb9aa6.svg" alt="f_{\vect{X}}(\vect{x})"/>, it is
+possible to build up a <em>polynomial chaos</em> (PC) basis
+<img class="math" src="../../_images/math/63fe31a32a8e6949008fe7356167159300ef6faf.svg" alt="\{\psi_{\idx},\idx \in \NM\}"/> . Of interest is the definition of
+enumeration strategies for exploring this basis, i.e. of suitable
+<em>enumeration functions</em> <img class="math" src="../../_images/math/bc11a4bb49caf968bdfb98343dc86409c6780726.svg" alt="\tau"/> from <img class="math" src="../../_images/math/91353387246d1a0b8dd7735879892fa066040b7d.svg" alt="\Nset"/> to <img class="math" src="../../_images/math/b78814bf56fb5de2022fe7a8e95d4e90098bbe02.svg" alt="\NM"/>,
+which creates a one-to-one mapping between an integer <img class="math" src="../../_images/math/f15551bf91890d82beefb15ba7c7632e63616983.svg" alt="j"/> and a
+multi-index <img class="math" src="../../_images/math/0ba746f07ed5b8d250e86c0b2ead9b4c73f8b999.svg" alt="\idx"/>.</p>
+<div class="section" id="linear-enumeration-strategy">
+<h2>Linear enumeration strategy<a class="headerlink" href="#linear-enumeration-strategy" title="Permalink to this headline">¶</a></h2>
+<p>Let us first define the <em>total degree</em> of any multi-index <img class="math" src="../../_images/math/0ba746f07ed5b8d250e86c0b2ead9b4c73f8b999.svg" alt="\idx"/>
+in <img class="math" src="../../_images/math/b78814bf56fb5de2022fe7a8e95d4e90098bbe02.svg" alt="\NM"/> by <img class="math" src="../../_images/math/fdc67ad90dcef5c629ce540bd477581961c0b309.svg" alt="\sum_{i=1}^{n_X} \alpha_i"/>. A natural choice to
+sort the PC basis (i.e. the multi-indices <img class="math" src="../../_images/math/0ba746f07ed5b8d250e86c0b2ead9b4c73f8b999.svg" alt="\idx"/>) is the
+lexicographical order with a constraint of increasing total degree.
+Mathematically speaking, a bijective enumeration function <img class="math" src="../../_images/math/bc11a4bb49caf968bdfb98343dc86409c6780726.svg" alt="\tau"/>
+is defined by:</p>
+<div class="math">
+<p><img src="../../_images/math/2ae66a1b2cb793f82e34ab4e9685b674fd2a4793.svg" alt="\begin{array}{llcl}
+      \tau \, : &amp; \Nset &amp; \longrightarrow &amp; \NM \\
+      &amp;  j &amp; \longmapsto &amp; \{\alpha_1,\dots, \alpha_M\} \, \equiv \, \{\tau_1(j),\dots,\tau_M(j)\} \\
+    \end{array}"/></p>
+</div><p>such that:</p>
+<div class="math">
+<p><img src="../../_images/math/9ec675e0762ede5cbef62426146192a4656b38f5.svg" alt="\tau(0) \, \, = \, \, \{0,\dots,0\}"/></p>
+</div><p>and</p>
+<div class="math">
+<p><img src="../../_images/math/691086a82c83f06f5f7b1ce23148dcf3f04ea263.svg" alt="\forall 1 \leq j&lt;k  \quad \, , \quad \, \left\{
+    \begin{array}{l}
+      \displaystyle{\sum_{i=1}^{n_X} \tau_i(j) \, &lt; \,  \sum_{i=1}^{n_X} \tau_i(k)  }  \\
+      \\
+      \mbox{ or} \\
+      \\
+      \displaystyle{\exists \; m \; \in \; \{1,\dots,n_X\} \; : \; \left( \; \forall \; i \; \leq \; m \; \; , \; \; \tau_i(j) \, = \, \tau_i(k) \; \right) \, \, \, \mbox{ and } \, \, \, \left( \; \tau_m(j) \, &lt; \, \tau_m(k) \; \right)} \\
+    \end{array}
+    \right."/></p>
+</div><p>Such an enumeration strategy is illustrated in a two-dimensional case
+(i.e. <img class="math" src="../../_images/math/070d442597fd945bb17721329fde515222d77b81.svg" alt="n_X=2"/>) in the figure below:</p>
+<p>(<a class="reference external" href="../../theory/meta_modeling/enumeration_strategy-1.py">Source code</a>, <a class="reference external" href="../../theory/meta_modeling/enumeration_strategy-1.png">png</a>, <a class="reference external" href="../../theory/meta_modeling/enumeration_strategy-1.hires.png">hires.png</a>, <a class="reference external" href="../../theory/meta_modeling/enumeration_strategy-1.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="../../_images/enumeration_strategy-1.png" src="../../_images/enumeration_strategy-1.png" />
+</div>
+<p>This corresponds to the following enumeration of the multi-indices:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><img class="math" src="../../_images/math/f15551bf91890d82beefb15ba7c7632e63616983.svg" alt="j"/></th>
+<th class="head"><img class="math" src="../../_images/math/b48283214a896bea17aee02093d25766e268c354.svg" alt="\idx \, = \, \{\alpha_1,\alpha_2\}"/></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><img class="math" src="../../_images/math/9bcfedc969b8fed4016fbc89e2dadf00da6561b9.svg" alt="0"/></td>
+<td><img class="math" src="../../_images/math/7d15a3e73be2498331735796333b142075f2d8d1.svg" alt="\{0,0\}"/></td>
+</tr>
+<tr class="row-odd"><td><img class="math" src="../../_images/math/73c91af0a64463e5bb1d6e539f12c1e3f4fdc257.svg" alt="1"/></td>
+<td><img class="math" src="../../_images/math/83ebb82219fe68f79a8de3c10fbdbb28364092d5.svg" alt="\{0,1\}"/></td>
+</tr>
+<tr class="row-even"><td><img class="math" src="../../_images/math/a98df6fa6ba79351e43b16655cd183e7464cd616.svg" alt="2"/></td>
+<td><img class="math" src="../../_images/math/d2381bbed3bd2c6922d87f34b9981ee8067dcfac.svg" alt="\{1,0\}"/></td>
+</tr>
+<tr class="row-odd"><td><img class="math" src="../../_images/math/3529912d2c8a40c69d3ad23cfa07ac8821ffe9de.svg" alt="3"/></td>
+<td><img class="math" src="../../_images/math/372a7ff61881dcb15bf6c2d3b0797073471b109a.svg" alt="\{2,0\}"/></td>
+</tr>
+<tr class="row-even"><td><img class="math" src="../../_images/math/5215b049b06ee7303ae3da08e44f2c448713b41b.svg" alt="4"/></td>
+<td><img class="math" src="../../_images/math/5eef0629b1fe003250867725ed6b39e5a6a5a440.svg" alt="\{1,1\}"/></td>
+</tr>
+<tr class="row-odd"><td><img class="math" src="../../_images/math/f49a019f366f3b8ad4e2b4120827d044adacfd76.svg" alt="5"/></td>
+<td><img class="math" src="../../_images/math/d1fc3670b0708fd8d92c6d77302531e061ab43e2.svg" alt="\{0,2\}"/></td>
+</tr>
+<tr class="row-even"><td><img class="math" src="../../_images/math/31e2d826a70d8344c8ce3b1dff53b17668106348.svg" alt="6"/></td>
+<td><img class="math" src="../../_images/math/abfa72fadb94d88a70788ea942c982491a99008d.svg" alt="\{3,0\}"/></td>
+</tr>
+<tr class="row-odd"><td><img class="math" src="../../_images/math/c75b1c8c7f9a751344063817941282dc1a4ad286.svg" alt="7"/></td>
+<td><img class="math" src="../../_images/math/015812e38f95da2185cef72780bc3526e9d13a53.svg" alt="\{2,1\}"/></td>
+</tr>
+<tr class="row-even"><td><img class="math" src="../../_images/math/26254be55eb0e950a8a1cc6fc42ad28e7a126f67.svg" alt="8"/></td>
+<td><img class="math" src="../../_images/math/10567229d9c3dfd791297ceba0cc3504b1b6fe6e.svg" alt="\{1,2\}"/></td>
+</tr>
+<tr class="row-odd"><td><img class="math" src="../../_images/math/e9b4f24abc26a879a168d4b3a6e46b7c51f9f6b5.svg" alt="9"/></td>
+<td><img class="math" src="../../_images/math/04e16b9c427b8df5f243e00de7f53c55eb959efc.svg" alt="\{0,3\}"/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hyperbolic-enumeration-strategy">
+<h2>Hyperbolic enumeration strategy<a class="headerlink" href="#hyperbolic-enumeration-strategy" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">The <em>hyperbolic</em> truncation strategy is inspired by the so-called
+<em>sparsity-of-effects principle</em>, which states that most models are
+principally governed by main effects and low-order interactions.
+Accordingly, one wishes to define an enumeration strategy which first
+selects those multi-indices related to main effects, i.e. with a
+reasonably small number of nonzero components, prior to selecting
+those associated with higher-order interactions.</div>
+<div class="line">For any real number <img class="math" src="../../_images/math/35746cf962b49b4f684e4910eb1090eeb276647a.svg" alt="q"/> in <img class="math" src="../../_images/math/f14e3ab728d4b3b6cef95e78ab8fa0d8228bc8d5.svg" alt="(0,1]"/>, one defines the
+<img class="math" src="../../_images/math/35746cf962b49b4f684e4910eb1090eeb276647a.svg" alt="q"/>-<em>hyperbolic norm</em> (or <img class="math" src="../../_images/math/35746cf962b49b4f684e4910eb1090eeb276647a.svg" alt="q"/>-<em>norm</em> for short) of a
+multi-index <img class="math" src="../../_images/math/0ba746f07ed5b8d250e86c0b2ead9b4c73f8b999.svg" alt="\idx"/> by:</div>
+</div>
+<blockquote>
+<div><div class="math">
+<p><img src="../../_images/math/fcddb321badbb6e25c6a7ad6ffb448ade23ce92a.svg" alt="\|\idx\|_{q} \, \, = \, \, \left(\sum_{i=1}^{n_X} \; \alpha^q \right)^{1/q}"/></p>
+</div><p>Strictly speaking, <img class="math" src="../../_images/math/82f11514312f22f12aa8ed3c091a59e403366d9b.svg" alt="\|\cdot\|_q"/> is not properly a norm but
+rather a <em>quasi-norm</em> since it does not satisfy the triangular
+inequality. However this abuse of language will be used in the
+following. Note that the case <img class="math" src="../../_images/math/88560cafed6aa7cff3811cf080bf60001b1b3478.svg" alt="q=1"/> corresponds to the
+definition of the total degree.</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line">Let <img class="math" src="../../_images/math/86dc5a1e361cb22ee1e5b2f7911c026dd64a33ef.svg" alt="\lambda"/> be a real positive number. One defines the set of
+multi-indices with <img class="math" src="../../_images/math/35746cf962b49b4f684e4910eb1090eeb276647a.svg" alt="q"/>-norm not greater than <img class="math" src="../../_images/math/86dc5a1e361cb22ee1e5b2f7911c026dd64a33ef.svg" alt="\lambda"/> as
+follows:</div>
+</div>
+<blockquote>
+<div><div class="math" id="equation-eq-q-set">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-eq-q-set" title="Permalink to this equation">¶</a></span><img src="../../_images/math/e56525557ed43687d8c674233bd2007810bd047e.svg" alt="\cA_{\lambda} \, \, = \, \, \{\idx \in \NM \, : \, \|\idx\|_q \, \leq \lambda \}"/></p>
+</div><p>Moreover, one defines the <em>front</em> of <img class="math" src="../../_images/math/9653a9245ded7799d30d04f2b24fd3b0a60c6394.svg" alt="\cA_{\lambda}"/> by:</p>
+<div class="math">
+<p><img src="../../_images/math/ffebfb80c3f8f76e4a0af57742abcd73fb0197ff.svg" alt="\partial \cA_{\lambda} \, \, = \, \, \left\{\idx \in \cA_{\lambda} \, : \, \exists \; i \; \in \; \{1,\dots,n_X\} \, , \, \, \idx \, + \, \vect{e_i} \, \notin \, \cA_{\lambda} \right\}"/></p>
+</div><p>where <img class="math" src="../../_images/math/c8948c01abbb3203524ac4df1d3364a16ac66cfa.svg" alt="\vect{e_i}"/> is a multi-index with a unit <img class="math" src="../../_images/math/a3df85ab260449b6b4eca20eb30e8f01a26cb550.svg" alt="i"/>-entry
+and zero <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/>-entries, <img class="math" src="../../_images/math/4ae8b697506c26dff5fc1265e5799606e01639f0.svg" alt="k\neq i"/>.</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line">The idea consists in exploring the space <img class="math" src="../../_images/math/b78814bf56fb5de2022fe7a8e95d4e90098bbe02.svg" alt="\NM"/> by progressively
+increasing the <img class="math" src="../../_images/math/35746cf962b49b4f684e4910eb1090eeb276647a.svg" alt="q"/>-norm of its elements. In this purpose, one
+wants to construct an enumeration function that relies upon (1) the
+bijection <img class="math" src="../../_images/math/bc11a4bb49caf968bdfb98343dc86409c6780726.svg" alt="\tau"/> defined in the previous paragraph and (2) an
+appropriate increasing sequence <img class="math" src="../../_images/math/1f9cfc366812710e2741d3dcea1a8a5e0f7c4774.svg" alt="(\lambda_n)_{\Nset}"/> that tends
+to infinity. Such a sequence can be used to define a specific
+partition of <img class="math" src="../../_images/math/b78814bf56fb5de2022fe7a8e95d4e90098bbe02.svg" alt="\NM"/> into <em>stratas</em> <img class="math" src="../../_images/math/b70dff487071db91b4b1bfe0e83095e07e2ca7e5.svg" alt="(\Delta_n)_{\Nset}"/>.
+Precisely, the enumeration of the multi-indices is achieved by sorting
+the elements of <img class="math" src="../../_images/math/9f4f6e6eff77111760162c7e994082f25362df87.svg" alt="\Delta_n"/> in ascending order of the
+<img class="math" src="../../_images/math/35746cf962b49b4f684e4910eb1090eeb276647a.svg" alt="q"/>-norm, and then by sorting the possible elements having the
+same <img class="math" src="../../_images/math/35746cf962b49b4f684e4910eb1090eeb276647a.svg" alt="q"/>-norm using the bijection <img class="math" src="../../_images/math/bc11a4bb49caf968bdfb98343dc86409c6780726.svg" alt="\tau"/>. Several examples
+of partition are given in the sequel.</div>
+<div class="line"><em>Partition based on the total degree.</em> We can simply define the
+sequence <img class="math" src="../../_images/math/1f9cfc366812710e2741d3dcea1a8a5e0f7c4774.svg" alt="(\lambda_n)_{\Nset}"/> as the set of natural integers
+<img class="math" src="../../_images/math/91353387246d1a0b8dd7735879892fa066040b7d.svg" alt="\Nset"/>. Thus we build up a sequence <img class="math" src="../../_images/math/b70dff487071db91b4b1bfe0e83095e07e2ca7e5.svg" alt="(\Delta_n)_{\Nset}"/>
+of stratas as follows:</div>
+</div>
+<blockquote>
+<div><div class="math">
+<p><img src="../../_images/math/37e46c2c44952a0b95dea9055992292cf148c6a0.svg" alt="\left\{
+  \begin{array}{l}
+    \Delta_0 \, \, = \, \, \{\vect{0}\} \\
+    \forall \; n  \geq  1 \, \, , \, \, \Delta_n \, \, = \, \, \cA_{n} \; \setminus \; \cA_{n-1}  \, \, = \, \,
+    \{\idx \in \NM \, : \, n - 1 \, &lt; \, \|\idx\|_q \, \leq n \}      \\
+  \end{array}
+  \right."/></p>
+</div><p>The progressive exploration of <img class="math" src="../../_images/math/b78814bf56fb5de2022fe7a8e95d4e90098bbe02.svg" alt="\NM"/> is depicted in the
+two-dimensional case for various values of the parameter <img class="math" src="../../_images/math/35746cf962b49b4f684e4910eb1090eeb276647a.svg" alt="q"/>:</p>
+</div></blockquote>
+<p>(<a class="reference external" href="../../theory/meta_modeling/enumeration_strategy-2.py">Source code</a>, <a class="reference external" href="../../theory/meta_modeling/enumeration_strategy-2.png">png</a>, <a class="reference external" href="../../theory/meta_modeling/enumeration_strategy-2.hires.png">hires.png</a>, <a class="reference external" href="../../theory/meta_modeling/enumeration_strategy-2.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="../../_images/enumeration_strategy-2.png" src="../../_images/enumeration_strategy-2.png" />
+</div>
+<div class="line-block">
+<div class="line">As expected, the hyperbolic norms penalize the indices associated with
+high-order interactions all the more since <img class="math" src="../../_images/math/35746cf962b49b4f684e4910eb1090eeb276647a.svg" alt="q"/> is low. Note that
+setting <img class="math" src="../../_images/math/35746cf962b49b4f684e4910eb1090eeb276647a.svg" alt="q"/> equal to 1 corresponds to the usual <em>linear</em>
+enumeration strategy. Then the retained polynomials are located under
+a straight line, hence the label <em>linear enumeration strategy</em>. In
+contrast, when <img class="math" src="../../_images/math/ab581b8079cc113856f376266aa1ee07ede8efab.svg" alt="q &lt; 1"/>, the retained basis polynomials are
+located under an hyperbola, hence the name <em>hyperbolic enumeration
+strategy</em>.</div>
+<div class="line"><em>Partition based on disjoint fronts.</em> Instead of considering the
+sequence of natural integers, we define the sequence
+<img class="math" src="../../_images/math/1f9cfc366812710e2741d3dcea1a8a5e0f7c4774.svg" alt="(\lambda_n)_{\Nset}"/> recursively by:</div>
+</div>
+<blockquote>
+<div><div class="math">
+<p><img src="../../_images/math/fa688d6412aa47852d8797dbc8a9b3cafc30aa49.svg" alt="\left\{
+  \begin{array}{l}
+    \lambda_0 \, \, = \, \, 0 \\
+    \forall \; n  \geq  1 \, \, , \, \, \lambda_n \, \, = \, \,
+    \inf_{\lambda \in \Rset^+} \; \left\{ \lambda \geq \lambda_{n-1} \, \, \mbox{ and } \, \,\partial \cA_{\lambda} \, \cap \, \partial \cA_{\lambda_{n-1}} \, = \, \emptyset \right\}
+  \end{array}
+  \right."/></p>
+</div><p>In other words, <img class="math" src="../../_images/math/c63f236d7ad5e5f54d4d8d09afc2ebea0e30e56d.svg" alt="\lambda_n"/> is the infimum of the real numbers
+<img class="math" src="../../_images/math/86dc5a1e361cb22ee1e5b2f7911c026dd64a33ef.svg" alt="\lambda"/> for which the new front contains only element which do
+not belong to the former one. Hence the sequence of stratas:</p>
+<div class="math">
+<p><img src="../../_images/math/6e6293d2aed3e20ed9f3477c99730a12fe516d5d.svg" alt="\left\{
+  \begin{array}{l}
+    \Delta_0 \, \, = \, \, \{\vect{0}\} \\
+    \forall \; n  \geq  1 \, \, , \, \, \Delta_n \, \, = \, \, \cA_{\lambda_n} \; \setminus \; \cA_{\lambda_{n-1}} \\
+  \end{array}
+  \right."/></p>
+</div><p>Note that this partition of <img class="math" src="../../_images/math/b78814bf56fb5de2022fe7a8e95d4e90098bbe02.svg" alt="\NM"/> is finer than the one based
+on total degrees, since the cardinality of the stratas is smaller.</p>
+</div></blockquote>
+</div>
+<div class="section" id="anisotropic-hyperbolic-enumeration-strategy">
+<h2>Anisotropic hyperbolic enumeration strategy<a class="headerlink" href="#anisotropic-hyperbolic-enumeration-strategy" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">One might also consider enumeration strategies based on an
+<em>anisotropic</em> hyperbolic norm defined by:</div>
+</div>
+<blockquote>
+<div><div class="math">
+<p><img src="../../_images/math/b4e47133c93858dbcd59c7368d19274a5572b557.svg" alt="\|\idx\|_{\vect{w},q} \, \, = \, \, \left(\sum_{i=1}^{n_X} \; w_i\; \alpha^q \right)^{1/q}"/></p>
+</div><p>where the <img class="math" src="../../_images/math/833c9f70ec8512e3feccd253fa0c0a0fa450d016.svg" alt="w_i"/>’s are real positive numbers. This would lead
+to first select the basis polynomials depending on a specific subset
+of input variables.</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line">In this setup, it is also possible to explore the space <img class="math" src="../../_images/math/b78814bf56fb5de2022fe7a8e95d4e90098bbe02.svg" alt="\NM"/> of
+the multi-indices by partitioning it according to one of the two
+schemes outlined in the previous paragraph (it is only necessary to
+replace the isotropic <img class="math" src="../../_images/math/35746cf962b49b4f684e4910eb1090eeb276647a.svg" alt="q"/>-norm in <a class="reference internal" href="#equation-eq-q-set">(1)</a> with the
+<img class="math" src="../../_images/math/90e09be857f5d09966a1f1d2842bbcae6e6d7b3c.svg" alt="(\vect{w},q)"/>-anisotropic one).</div>
+<div class="line">We may also build up an alternative partition related to the <em>partial
+degree</em> of the most important variable, i.e. the one associated to the
+<em>smallest</em> weight <img class="math" src="../../_images/math/833c9f70ec8512e3feccd253fa0c0a0fa450d016.svg" alt="w_i"/>. Then the sequence
+<img class="math" src="../../_images/math/1f9cfc366812710e2741d3dcea1a8a5e0f7c4774.svg" alt="(\lambda_n)_{\Nset}"/> is equal to <img class="math" src="../../_images/math/91353387246d1a0b8dd7735879892fa066040b7d.svg" alt="\Nset"/> and the sets
+<img class="math" src="../../_images/math/9653a9245ded7799d30d04f2b24fd3b0a60c6394.svg" alt="\cA_{\lambda}"/> are defined by:</div>
+</div>
+<blockquote>
+<div><div class="math">
+<p><img src="../../_images/math/351582fe16bf832f3c30b60a966af16a142e2a1a.svg" alt="\cA_{\lambda} \, \, = \, \, \{\idx \in \NM \, : \, \alpha_{i^*} \, \leq \lambda \} \quad \quad , \quad \quad i^* \, \, = \, \, \mbox{arg} \min \left\{w_i \; , \; 1\leq i \leq n_X \right\}"/></p>
+</div><p>If stratas with larger cardinalities are of interest, one may rather
+consider the partial degree of the least significant variable, i.e.
+the one associated with the <em>greatest</em> weight <img class="math" src="../../_images/math/833c9f70ec8512e3feccd253fa0c0a0fa450d016.svg" alt="w_i"/>. To this
+end, the index <img class="math" src="../../_images/math/5095b7ba7b6795a35b5a8d6bf957661922055f2e.svg" alt="i^*"/> in the previous formula has to be defined
+by:</p>
+<div class="math">
+<p><img src="../../_images/math/b13ab25db60a93ec8219d9a105836ea5c63a2b3a.svg" alt="i^* \, \, = \, \, \mbox{arg} \max \left\{w_i \; , \; 1\leq i \leq n_X \right\}"/></p>
+</div></div></blockquote>
+<div class="topic">
+<p class="topic-title first">API:</p>
+<ul class="simple">
+<li>See <a class="reference internal" href="../../user_manual/_generated/openturns.LinearEnumerateFunction.html#openturns.LinearEnumerateFunction" title="openturns.LinearEnumerateFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearEnumerateFunction</span></code></a></li>
+<li>See <a class="reference internal" href="../../user_manual/_generated/openturns.HyperbolicAnisotropicEnumerateFunction.html#openturns.HyperbolicAnisotropicEnumerateFunction" title="openturns.HyperbolicAnisotropicEnumerateFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">HyperbolicAnisotropicEnumerateFunction</span></code></a></li>
+</ul>
+</div>
+<div class="topic">
+<p class="topic-title first">Examples:</p>
+<ul class="simple">
+<li>See <a class="reference internal" href="../../examples/meta_modeling/functional_chaos.html"><span class="doc">Create a polynomial chaos metamodel</span></a></li>
+<li>See <a class="reference internal" href="../../examples/meta_modeling/fieldfunction_metamodel.html"><span class="doc">Metamodel of a field function</span></a></li>
+</ul>
+</div>
+<div class="topic">
+<p class="topic-title first">References:</p>
+<ul class="simple">
+<li><a class="reference internal" href="../../bibliography.html#blatman2009" id="id1">[Blatman2009]</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="functional_chaos.html" title="Functional Chaos Expansion"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="chaos_basis.html" title="Polynomial chaos basis"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../theory.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="meta_modeling.html" >Meta modeling</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+    </div>
+  </body>
+</html>

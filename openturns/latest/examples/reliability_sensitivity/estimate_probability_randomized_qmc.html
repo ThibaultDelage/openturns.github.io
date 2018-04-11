@@ -4,21 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Estimate a probability using randomized quasi Monte Carlo &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: ''
-      };
-    </script>
+    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
@@ -26,8 +17,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Estimate a probability with FORM" href="estimate_probability_form.html" />
-    <link rel="prev" title="Estimate a probability with importance simulation" href="estimate_probability_importance_sampling.html" />
+    <link rel="next" title="Parametrization of a simulation algorithm" href="probability_simulation_parametrization.html" />
+    <link rel="prev" title="Probability estimation: directional simulation" href="estimate_probability_directional_sampling.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -57,10 +48,10 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="estimate_probability_form.html" title="Estimate a probability with FORM"
+          <a href="probability_simulation_parametrization.html" title="Parametrization of a simulation algorithm"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="estimate_probability_importance_sampling.html" title="Estimate a probability with importance simulation"
+          <a href="estimate_probability_directional_sampling.html" title="Probability estimation: directional simulation"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
@@ -71,11 +62,11 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="estimate_probability_importance_sampling.html"
-                        title="previous chapter">Estimate a probability with importance simulation</a></p>
+  <p class="topless"><a href="estimate_probability_directional_sampling.html"
+                        title="previous chapter">Probability estimation: directional simulation</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="estimate_probability_form.html"
-                        title="next chapter">Estimate a probability with FORM</a></p>
+  <p class="topless"><a href="probability_simulation_parametrization.html"
+                        title="next chapter">Parametrization of a simulation algorithm</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -85,12 +76,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -295,22 +288,22 @@ important:</p>
 <li>I ~ Beta(2.5, 4.0, 3.1e2, 4.5e2)</li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create the marginal distributions of the parameters</span>
 <span class="n">dist_E</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Beta</span><span class="p">(</span><span class="mf">0.93</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">2.8e7</span><span class="p">,</span> <span class="mf">4.8e7</span><span class="p">)</span>
 <span class="n">dist_F</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LogNormalMuSigma</span><span class="p">(</span><span class="mi">30000</span><span class="p">,</span> <span class="mi">9000</span><span class="p">,</span> <span class="mi">15000</span><span class="p">)</span><span class="o">.</span><span class="n">getDistribution</span><span class="p">()</span>
@@ -321,11 +314,11 @@ important:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create the Copula</span>
 <span class="n">RS</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="c1">#RS[2, 3] = -0.2</span>
@@ -337,33 +330,33 @@ important:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create the joint probability distribution</span>
 <span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComposedDistribution</span><span class="p">(</span><span class="n">marginals</span><span class="p">,</span> <span class="n">copula</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create the model</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;F*L^3/(3*E*I)&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create the event we want to estimate the probability</span>
 <span class="n">vect</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">distribution</span><span class="p">)</span>
 <span class="n">G</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CompositeRandomVector</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">vect</span><span class="p">)</span>
@@ -372,22 +365,22 @@ important:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># define the low discrepancy sequence</span>
 <span class="n">sequence</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SobolSequence</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create a simulation algorithm</span>
 <span class="n">experiment</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LowDiscrepancyExperiment</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">experiment</span><span class="o">.</span><span class="n">setRandomize</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
@@ -399,11 +392,11 @@ important:</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># retrieve results</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span>
 <span class="n">probability</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">getProbabilityEstimate</span><span class="p">()</span>
@@ -434,10 +427,10 @@ Pf= 0.005471091194017522
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="estimate_probability_form.html" title="Estimate a probability with FORM"
+          <a href="probability_simulation_parametrization.html" title="Parametrization of a simulation algorithm"
              >next</a> |</li>
         <li class="right" >
-          <a href="estimate_probability_importance_sampling.html" title="Estimate a probability with importance simulation"
+          <a href="estimate_probability_directional_sampling.html" title="Probability estimation: directional simulation"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
@@ -447,8 +440,8 @@ Pf= 0.005471091194017522
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Nov 15, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7+.
+      Last updated on Jan 01, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
     </div>
   </body>
 </html>
