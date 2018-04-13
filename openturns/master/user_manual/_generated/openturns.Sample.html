@@ -192,16 +192,6 @@ experiments</p>
 <span class="go">2 : [ 4 5 ]</span>
 </pre></div>
 </div>
-<p><strong>Scaling:</strong> right multiplication or division of a (compatible) square matrix
-with the points in the sample (this can be used e.g. for rotating all the
-points in a sample)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">4.0</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">rotation_matrix</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquareMatrix</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)],</span>
-<span class="gp">... </span>                                   <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span>  <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">rotated_sample</span> <span class="o">=</span> <span class="n">sample</span> <span class="o">*</span> <span class="n">rotation_matrix</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_array_almost_equal</span><span class="p">(</span><span class="n">rotated_sample</span> <span class="o">/</span> <span class="n">rotation_matrix</span><span class="p">,</span> <span class="n">sample</span><span class="p">)</span>
-</pre></div>
-</div>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
