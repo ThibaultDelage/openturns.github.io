@@ -266,10 +266,10 @@ div.nboutput div.output_area.stderr {
 covariance model.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [28]:
+<span></span>In [1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 </pre></div>
@@ -277,27 +277,27 @@ covariance model.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [29]:
+<span></span>In [2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># define a covariance model</span>
 <span class="n">defaultDimension</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="c1"># Amplitude values</span>
 <span class="n">amplitude</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="n">defaultDimension</span>
 <span class="c1"># Scale values</span>
 <span class="n">scale</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="n">defaultDimension</span>
-<span class="c1"># Second order model with parameters</span>
-<span class="n">myModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ExponentialCauchy</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">)</span>
+<span class="c1"># Covariance model</span>
+<span class="n">myModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AbsoluteExponential</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [30]:
+<span></span>In [3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># define a mesh</span>
 <span class="n">tmin</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="n">step</span> <span class="o">=</span> <span class="mf">0.1</span>
@@ -308,10 +308,10 @@ covariance model.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [31]:
+<span></span>In [4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create the process</span>
 <span class="n">process</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GaussianProcess</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">myTimeGrid</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
@@ -328,10 +328,10 @@ GaussianProcess(trend=[x0]-&gt;[0.0], covariance=AbsoluteExponential(scale=[1], 
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [32]:
+<span></span>In [5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># draw a sample</span>
 <span class="n">sample</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">sample</span><span class="o">.</span><span class="n">drawMarginal</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -340,11 +340,12 @@ GaussianProcess(trend=[x0]-&gt;[0.0], covariance=AbsoluteExponential(scale=[1], 
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[32]:
+<span></span>Out[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_probabilistic_modeling_gaussian_process_covariance_6_0.svg" src="../../_images/examples_probabilistic_modeling_gaussian_process_covariance_6_0.svg" /></div>
+<img alt="../../_images/examples_probabilistic_modeling_gaussian_process_covariance_6_0.png" src="../../_images/examples_probabilistic_modeling_gaussian_process_covariance_6_0.png" />
+</div>
 </div>
 </div>
 

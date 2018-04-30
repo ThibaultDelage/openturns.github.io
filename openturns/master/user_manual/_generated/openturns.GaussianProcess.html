@@ -106,9 +106,7 @@
 <dd><p>Gaussian processes.</p>
 <dl class="docutils">
 <dt>Available constructor:</dt>
-<dd><p class="first">GaussianProcess(<em>trend, secondOrderModel, mesh</em>)</p>
-<p>GaussianProcess(<em>trend, covarianceModel, mesh</em>)</p>
-<p>GaussianProcess(<em>secondOrderModel, mesh</em>)</p>
+<dd><p class="first">GaussianProcess(<em>trend, covarianceModel, mesh</em>)</p>
 <p class="last">GaussianProcess(<em>covarianceModel, mesh</em>)</p>
 </dd>
 </dl>
@@ -119,10 +117,6 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>trend</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.TrendTransform.html#openturns.TrendTransform" title="openturns.TrendTransform"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrendTransform</span></code></a></span></dt>
 <dd><p class="first last">Trend function of the process. By default the trend is null.</p>
-</dd>
-<dt><strong>secondOrderModel</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.SecondOrderModel.html#openturns.SecondOrderModel" title="openturns.SecondOrderModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SecondOrderModel</span></code></a></span></dt>
-<dd><p class="first last">Stationary second order model that insures the coherence between the
-covariance function and the spectral density function.</p>
 </dd>
 <dt><strong>covarianceModel</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></span></dt>
 <dd><p class="first last">Temporal covariance model <img class="math" src="../../_images/math/cc97f9382a9b766edaef6224b2a18e88824ad2c0.svg" alt="C"/>.</p>
@@ -146,12 +140,6 @@ normal (See the method <a class="reference internal" href="openturns.Process.htm
 <p>The gaussian processes may have a trend: in that case, the Gaussian 
 process is the sum of the trend function
 <img class="math" src="../../_images/math/0fba51e10f83343605f2d3e89aeb4189cfa33803.svg" alt="f_{trend}: \Rset^n \mapsto \Rset^d"/> and a zero-mean Gaussian process.</p>
-<p>If the zero-mean process is stationary, in order to manipulate the same
-Gaussian process through both the temporal and spectral views, it is necessary to
-create a second order model <em>secondOrderModel</em> that insures the coherence
-between the covariance function <img class="math" src="../../_images/math/bcd5d8cf6b10eb9f0ab4796c473a6d8d466ad195.svg" alt="C^{stat}"/> and the spectral density
-function <img class="math" src="../../_images/math/55ecbd426f4e1ed3b7987c4000a6fb07fabeb15a.svg" alt="S: \Rset \mapsto \cH^+(d)"/>. <img class="math" src="../../_images/math/98eb52be9d79e95c8166b7af34c481728685afe6.svg" alt="\cH^+(d) \in \cM_d(\Cset)"/>
-is the set of <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/>-dimensional positive definite hermitian matrices.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -162,7 +150,7 @@ is the set of <img class="math" src="../../_images/math/af8ad398de24d3755529da92
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Scale values</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">scale</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="n">defaultDimension</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Second order model with parameters</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ExponentialCauchy</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AbsoluteExponential</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Time grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tmin</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">step</span> <span class="o">=</span> <span class="mf">0.1</span>
