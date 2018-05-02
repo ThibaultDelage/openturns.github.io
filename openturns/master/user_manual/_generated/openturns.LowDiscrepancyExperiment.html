@@ -123,13 +123,12 @@
 <dd><p class="first last">Sequence of points <img class="math" src="../../_images/math/f72e28ef0f4b702336f7d91d8ab0175c1d3583b2.svg" alt="(u_1, \cdots, u_N)"/> with low discrepancy.
 If not specified, the sequence is a <a class="reference internal" href="openturns.SobolSequence.html#openturns.SobolSequence" title="openturns.SobolSequence"><code class="xref py py-class docutils literal notranslate"><span class="pre">SobolSequence</span></code></a>.</p>
 </dd>
-<dt><strong>distribution :</strong></dt>
-<dd><p class="first last">Distribution <img class="math" src="../../_images/math/6a70e9f2b33beac2ab75d748e24c94afa23b7039.svg" alt="\mu"/> of dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> with an independent copula.
+<dt><strong>distribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
+<dd><p class="first last">Distribution <img class="math" src="../../_images/math/6a70e9f2b33beac2ab75d748e24c94afa23b7039.svg" alt="\mu"/> of dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/>.
 The low discrepancy sequence <img class="math" src="../../_images/math/f72e28ef0f4b702336f7d91d8ab0175c1d3583b2.svg" alt="(u_1, \cdots, u_N)"/> is uniformly
-distributed over <img class="math" src="../../_images/math/386267f7d5e7f75e527507ccde4660097487150a.svg" alt="[0,1]^n"/>. We use the marginal transformation
-<img class="math" src="../../_images/math/11f6fe826f6f4ab0b2490894d99d1d45ab849c73.svg" alt="\Xi_i =F_i^{-1}(u_i)"/> to generate points <img class="math" src="../../_images/math/f27342267d2b05461ddbd78d79fd598e4c6c22c0.svg" alt="(\Xi_i)_{i\in I}"/>
-according to the distribution <img class="math" src="../../_images/math/6a70e9f2b33beac2ab75d748e24c94afa23b7039.svg" alt="\mu"/>. The weights are all equal to
-<img class="math" src="../../_images/math/e078115daffa4ff552f7a9123157c09a02464b29.svg" alt="1/N"/>.</p>
+distributed over <img class="math" src="../../_images/math/386267f7d5e7f75e527507ccde4660097487150a.svg" alt="[0,1]^n"/>. We use an iso-probabilistic transformation
+from the independent copula of dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> to the given distribution.
+The weights are all equal to <img class="math" src="../../_images/math/e078115daffa4ff552f7a9123157c09a02464b29.svg" alt="1/N"/>.</p>
 </dd>
 <dt><strong>restart</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
 <dd><p class="first last">Flag to tell if the low discrepancy sequence must be restarted from
@@ -148,8 +147,9 @@ distribution.</p>
 </div>
 <p class="rubric">Notes</p>
 <p>The <a class="reference internal" href="#openturns.LowDiscrepancyExperiment.generate" title="openturns.LowDiscrepancyExperiment.generate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">generate()</span></code></a> method generates points <img class="math" src="../../_images/math/225748c493f7ce778ce60a9a50254a8755a1eecc.svg" alt="(\Xi_i)_{i \in I}"/>
-independently from the distribution <img class="math" src="../../_images/math/6a70e9f2b33beac2ab75d748e24c94afa23b7039.svg" alt="\mu"/>. When the <a class="reference internal" href="#openturns.LowDiscrepancyExperiment.generate" title="openturns.LowDiscrepancyExperiment.generate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">generate()</span></code></a>
-method is recalled, the generated sample changes.</p>
+according to the distribution <img class="math" src="../../_images/math/6a70e9f2b33beac2ab75d748e24c94afa23b7039.svg" alt="\mu"/>. When the <a class="reference internal" href="#openturns.LowDiscrepancyExperiment.generate" title="openturns.LowDiscrepancyExperiment.generate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">generate()</span></code></a>
+method is called again, the generated sample changes. In case of dependent
+marginals, the approach based on <a class="reference internal" href="../../bibliography.html#cambou2017" id="id1">[Cambou2017]</a> is used.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComposedDistribution</span><span class="p">([</span><span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
@@ -207,6 +207,18 @@ of distribution:</p>
 <span class="go">2 : [ 0.8125 0.6875 ]</span>
 <span class="go">3 : [ 0.5625 0.4375 ]</span>
 <span class="go">4 : [ 0.0625 0.9375 ]</span>
+</pre></div>
+</div>
+<p>Generate a sample according to a distribution with dependent marginals:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">CovarianceMatrix</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myPlane</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LowDiscrepancyExperiment</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">SobolSequence</span><span class="p">(),</span> <span class="n">distribution</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">myPlane</span><span class="o">.</span><span class="n">generate</span><span class="p">())</span>
+<span class="go">    [ y0        y1        ]</span>
+<span class="go">0 : [  0         0        ]</span>
+<span class="go">1 : [  1.34898  -1.65792  ]</span>
+<span class="go">2 : [ -1.34898   1.65792  ]</span>
+<span class="go">3 : [ -0.637279 -1.10187  ]</span>
+<span class="go">4 : [  2.3007    3.97795  ]</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
@@ -660,7 +672,7 @@ all the weights are equal to <img class="math" src="../../_images/math/930a1db68
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>randomize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Use a cyclic scrambling of the low discrepancy sequence. See <a class="reference internal" href="../../bibliography.html#lecuyer2005" id="id1">[Lecuyer2005]</a> for
+<dd><p class="first last">Use a cyclic scrambling of the low discrepancy sequence. See <a class="reference internal" href="../../bibliography.html#lecuyer2005" id="id2">[Lecuyer2005]</a> for
 the interest of such a scrambling.
 Default is false.</p>
 </dd>
