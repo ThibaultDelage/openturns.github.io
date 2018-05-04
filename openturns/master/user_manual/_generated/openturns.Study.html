@@ -143,8 +143,8 @@ if a name was defined for the object or by their Id.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">11.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">point</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">12.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;point&#39;</span><span class="p">,</span> <span class="n">point</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># a Simulation::Result:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">simulationResult</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SimulationResult</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Event</span><span class="p">(),</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># a simulation result:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simulationResult</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ProbabilitySimulationResult</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Event</span><span class="p">(),</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;simulationResult&#39;</span><span class="p">,</span> <span class="n">simulationResult</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -170,8 +170,8 @@ if a name was defined for the object or by their Id.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># a Point:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">otherPoint</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">fillObject</span><span class="p">(</span><span class="s1">&#39;point&#39;</span><span class="p">,</span> <span class="n">otherPoint</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># a Simulation::Result:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">otherSimulationResult</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SimulationResult</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># a simulation result:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">otherSimulationResult</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ProbabilitySimulationResult</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">fillObject</span><span class="p">(</span><span class="s1">&#39;simulationResult&#39;</span><span class="p">,</span> <span class="n">otherSimulationResult</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -181,9 +181,9 @@ if a name was defined for the object or by their Id.</p>
 </pre></div>
 </div>
 <p>Remove data:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">hasObject</span><span class="p">(</span><span class="n">otherSimulationResult</span><span class="o">.</span><span class="n">getId</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">hasObject</span><span class="p">(</span><span class="s1">&#39;simulationResult&#39;</span><span class="p">)</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">otherSimulationResult</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;simulationResult&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myStudy</span><span class="o">.</span><span class="n">hasObject</span><span class="p">(</span><span class="s1">&#39;simulationResult&#39;</span><span class="p">)</span>
 <span class="go">False</span>
 </pre></div>
