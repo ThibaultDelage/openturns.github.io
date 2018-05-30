@@ -9,10 +9,10 @@
     <title>UserDefinedCovarianceModel &#8212; OpenTURNS  documentation</title>
     <link rel="stylesheet" href="../../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -112,8 +112,8 @@
 <dt><strong>mesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
 <dd><p class="first last">A mesh which contains <cite>N</cite> vertices.</p>
 </dd>
-<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceMatrixCollection</span></code></span></dt>
-<dd><p class="first last">A collection of <img class="math" src="../../_images/math/c85fcc0714474b07e4fb390ed49867600ea60ed6.svg" alt="N(N+1)/2"/> covariance matrices.</p>
+<dt><strong>matrix</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.CovarianceMatrix.html#openturns.CovarianceMatrix" title="openturns.CovarianceMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceMatrix</span></code></a></span></dt>
+<dd><p class="first last">A symmetric positive definite matrix of dimension <img class="math" src="../../_images/math/7dbe62d309626489310c9fe00f320350af836b92.svg" alt="Nd"/> corresponding to the discretization of the model over the given mesh.</p>
 </dd>
 </dl>
 </td>
@@ -121,35 +121,8 @@
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The covariance model is built as follows.
-We consider a process <img class="math" src="../../_images/math/6559e71e678128cf536c83203d725a540b2a8569.svg" alt="X: \Omega \times \cD \rightarrow \Rset^d"/> with <img class="math" src="../../_images/math/3d7e1160d7e53256036e975e1957c3e2bde7847f.svg" alt="\cD \in \Rset^n"/>. We note <img class="math" src="../../_images/math/9ac56ed92e06ec03a0d32874e160046980116105.svg" alt="(\vect{t}_0,\dots, \vect{t}_{N-1})"/> the vertices of <img class="math" src="../../_images/math/5957e31d87b0cf87ec02a11bf04d2894c6cf544c.svg" alt="\cM \in \cD"/> and <img class="math" src="../../_images/math/778bcf57587af31947f1d9d149880b54e76ac610.svg" alt="(\mat{C}_{k,\ell})_{0 \leq \ell \leq k \leq N-1}"/> where <img class="math" src="../../_images/math/be31544225e832d001b3466ce8a68423deab04ad.svg" alt="\mat{C}_{k,\ell} \in \cS_d^+(\Rset)"/>.</p>
-<p>Care: The covariance matrices <img class="math" src="../../_images/math/6b4115ace822fb7a774a003a93f0a47e215f038b.svg" alt="(\mat{C}_{i,j})_{0 \leq j \leq i \leq N-1}"/> must be given in the following order:</p>
-<div class="math">
-<p><img src="../../_images/math/e57024b6a16f6d836e2f66ec97c76d685c9560d0.svg" alt="\mat{C}_{0,0}, \, \mat{C}_{1, 0}, \, \mat{C}_{1,1}, \, \mat{C}_{2,0},  \,\mat{C}_{2,1},\, \mat{C}_{2,2}, \,\dots"/></p>
-</div><p>which corresponds to the global covariance matrix, which lower part is:</p>
-<div class="math">
-<p><img src="../../_images/math/e243394a903279229a3c4cae1dedc71486d38f1d.svg" alt="\left(
-\begin{array}{cccc}
-\mat{C}_{0,0}&amp; &amp; &amp; \\
-\mat{C}_{1,0}&amp;  \mat{C}_{1,1}&amp; &amp; \\
-\mat{C}_{2,0}&amp;   \mat{C}_{2,1}&amp; \mat{C}_{2,2}&amp; \\
-\dots &amp; \dots &amp; \dots &amp; \dots
-\end{array}
-\right)"/></p>
-</div><p>We build a covariance function which is a  piecewise constant function defined on <img class="math" src="../../_images/math/365da93e31a27ebd2e9cae635ad9c6adf67c514b.svg" alt="\cD \times \cD"/> by:</p>
-<div class="math">
-<p><img src="../../_images/math/cc98223669f372940724e6d61d64471d9b5ea8af.svg" alt="\forall (\vect{s}, \vect{t}) \in \cD \times \cD, \, \quad C(\vect{s}, \vect{t}) =  \mat{C}_{k(\vect{s}),k(\vect{t})}"/></p>
-</div><p>where <img class="math" src="../../_images/math/65f7c5657893ef69a8fc75a0626aeeb368a4b168.svg" alt="k(\vect{s})"/> is such that <img class="math" src="../../_images/math/d02c976c0f875aa967dcbcc64a446047a15f1e25.svg" alt="\vect{t}_{k(\vect{s})}"/> is the  vertex of <img class="math" src="../../_images/math/357d53628213ddeb82e30cf093550090a4c83f07.svg" alt="\cM"/> the nearest to <img class="math" src="../../_images/math/5cb5d292352f8d228c13593e530a14ccdc3b4897.svg" alt="\vect{s}"/>.</p>
-<p>Note that:</p>
-<blockquote>
-<div><ul class="simple">
-<li>the  matrix <img class="math" src="../../_images/math/d2601856ed7d9d48b91f35fb4cf6a00c8e055a9b.svg" alt="\mat{C}_{k,\ell}"/> has the index <img class="math" src="../../_images/math/c633da4a9486af7bceea46a39bb9d0cc583c605a.svg" alt="n=\ell +\dfrac{k(k+1)}{2}"/> in the collection of covariance matrcies fixed by the User;</li>
-<li>inversely, the matrix stored at index <cite>n</cite> in the collection is the matrix <img class="math" src="../../_images/math/d2601856ed7d9d48b91f35fb4cf6a00c8e055a9b.svg" alt="\mat{C}_{k,\ell}"/> where:</li>
-</ul>
-</div></blockquote>
-<div class="math">
-<p><img src="../../_images/math/027a1d8b92a892c014a4979ddcd45b7eec2b7ac2.svg" alt="k=\left\lfloor \dfrac{1}{2}\left( \sqrt{8n+1}-1 \right) \right\rfloor, \quad  \ell= n-\dfrac{k(k+1)}{2}"/></p>
-</div><p class="rubric">Examples</p>
+<p>Let <img class="math" src="../../_images/math/cddd68cb75a199db2538386fa6c81d0632416bb0.svg" alt="\mat{\Sigma}"/> be the given covariance matrix, <img class="math" src="../../_images/math/c4d79297c3ded6107e94cf2dc404fc6e73b40861.svg" alt="s_i"/> and <img class="math" src="../../_images/math/e290bc1616552a8a73b49a638707f2607aef27cb.svg" alt="s_j"/> be two vertices of the mesh, with <img class="math" src="../../_images/math/126d7a859d77ce83ac4b71826a1fb1a46a9a0791.svg" alt="i,j\in\{0,\dots,N-1\}"/>. The <img class="math" src="../../_images/math/5170ba61e5241ebacc20d0556055225426df5298.svg" alt="d\times d"/> sub-matrix <img class="math" src="../../_images/math/b57ae31d1c7b3a5a4db49e1640ad04f44309e03b.svg" alt="\mat{S}=(\Sigma_{id+k,jd+\ell})_{k,\ell\in\{0,\dots,d-1}"/> is equal to <img class="math" src="../../_images/math/c9347c8233751b9ed1f4e4797fa3f6326281981c.svg" alt="C(s_i,s_j)"/>, where <img class="math" src="../../_images/math/cc97f9382a9b766edaef6224b2a18e88824ad2c0.svg" alt="C"/> is the user defined covariance model.</p>
+<p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
 </pre></div>
@@ -165,22 +138,17 @@ We consider a process <img class="math" src="../../_images/math/6559e71e678128cf
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myMesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">IntervalMesher</span><span class="p">([</span><span class="n">N</span><span class="p">])</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Create the collection of elementary covariance matrices 
-ie the n(n+1)/2 small covariance matrices quantifying
-the covariance between X(s) and X(t) for s, t in the
-vertices of the mesh and index(s) &lt;= index(t):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myCovarianceCollection</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CovarianceMatrixCollection</span><span class="p">()</span>
+<p>Create the large covariance matrix:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myCovariance</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CovarianceMatrix</span><span class="p">(</span><span class="n">myMesh</span><span class="o">.</span><span class="n">getVerticesNumber</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">myMesh</span><span class="o">.</span><span class="n">getVerticesNumber</span><span class="p">()):</span>
 <span class="gp">... </span>    <span class="n">t</span> <span class="o">=</span> <span class="n">myMesh</span><span class="o">.</span><span class="n">getVertices</span><span class="p">()[</span><span class="n">k</span><span class="p">]</span>
 <span class="gp">... </span>    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="n">s</span> <span class="o">=</span> <span class="n">myMesh</span><span class="o">.</span><span class="n">getVertices</span><span class="p">()[</span><span class="n">l</span><span class="p">]</span>
-<span class="gp">... </span>        <span class="n">matrix</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CovarianceMatrix</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="gp">... </span>        <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="gp">... </span>        <span class="n">myCovarianceCollection</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="n">myCovariance</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Create the covariance model:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myCovarianceModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">UserDefinedCovarianceModel</span><span class="p">(</span><span class="n">myMesh</span><span class="p">,</span> <span class="n">myCovarianceCollection</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myCovarianceModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">UserDefinedCovarianceModel</span><span class="p">(</span><span class="n">myMesh</span><span class="p">,</span> <span class="n">myCovariance</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
