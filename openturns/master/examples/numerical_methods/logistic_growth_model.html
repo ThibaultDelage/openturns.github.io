@@ -289,7 +289,7 @@ parameters modelized by random variables:</p>
 </ul>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [31]:
+<span></span>In [1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -301,7 +301,7 @@ parameters modelized by random variables:</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [32]:
+<span></span>In [2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -313,7 +313,7 @@ parameters modelized by random variables:</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [33]:
+<span></span>In [3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -330,7 +330,7 @@ parameters modelized by random variables:</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [34]:
+<span></span>In [4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -338,22 +338,23 @@ parameters modelized by random variables:</p>
 <span class="k">class</span> <span class="nc">Popu</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">OpenTURNSPythonPointToFieldFunction</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t0</span> <span class="o">=</span> <span class="mf">1790.0</span><span class="p">,</span> <span class="n">tfinal</span> <span class="o">=</span> <span class="mf">2000.0</span><span class="p">,</span> <span class="n">nt</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">Popu</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">grid</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RegularGrid</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="p">(</span><span class="n">tfinal</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">nt</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nt</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Popu</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">setInputDescription</span><span class="p">([</span><span class="s1">&#39;y0&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">setOutputDescription</span><span class="p">([</span><span class="s1">&#39;N&#39;</span><span class="p">])</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">grid_</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RegularGrid</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="p">(</span><span class="n">tfinal</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">nt</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nt</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ticks_</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_</span><span class="o">.</span><span class="n">getVertices</span><span class="p">()]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ticks_</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">grid</span><span class="o">.</span><span class="n">getVertices</span><span class="p">()]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">phi_</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a*y - b*y^2&#39;</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">_exec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
         <span class="n">y0</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">a</span>  <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">b</span>  <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-        <span class="n">phi</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VertexValueFunction</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">ParametricFunction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phi_</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]),</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="n">solver</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RungeKutta</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+        <span class="n">phi_ab</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ParametricFunction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phi_</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>
+        <span class="n">phi_t</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ParametricFunction</span><span class="p">(</span><span class="n">phi_ab</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">])</span>
+        <span class="n">solver</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RungeKutta</span><span class="p">(</span><span class="n">phi_t</span><span class="p">)</span>
         <span class="n">initialState</span> <span class="o">=</span> <span class="p">[</span><span class="n">y0</span><span class="p">]</span>
         <span class="n">values</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">initialState</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ticks_</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ot</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid_</span><span class="p">,</span> <span class="n">values</span> <span class="o">*</span> <span class="p">[</span><span class="mf">1.0e-6</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">ot</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getOutputMesh</span><span class="p">(),</span> <span class="n">values</span> <span class="o">*</span> <span class="p">[</span><span class="mf">1.0e-6</span><span class="p">])</span>
 
 <span class="n">F</span> <span class="o">=</span> <span class="n">Popu</span><span class="p">(</span><span class="mf">1790.0</span><span class="p">,</span> <span class="mf">2000.0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="n">popu</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PointToFieldFunction</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
@@ -362,7 +363,7 @@ parameters modelized by random variables:</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [35]:
+<span></span>In [5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -375,7 +376,7 @@ parameters modelized by random variables:</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [36]:
+<span></span>In [6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -397,11 +398,12 @@ parameters modelized by random variables:</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[36]:
+<span></span>Out[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_numerical_methods_logistic_growth_model_7_0.svg" src="../../_images/examples_numerical_methods_logistic_growth_model_7_0.svg" /></div>
+<img alt="../../_images/examples_numerical_methods_logistic_growth_model_7_0.png" src="../../_images/examples_numerical_methods_logistic_growth_model_7_0.png" />
+</div>
 </div>
 </div>
 

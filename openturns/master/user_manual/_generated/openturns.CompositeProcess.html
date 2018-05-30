@@ -142,7 +142,7 @@
 <p>Create a spatial field  function <img class="math" src="../../_images/math/55742ea0829342b1fa48be181485ba1adf0abb0a.svg" alt="g_{dyn}"/> associated to <img class="math" src="../../_images/math/31c8d70d6983bc7728028f9002778f6ba6981d7d.svg" alt="g: \Rset^2 \mapsto \Rset^2"/> where <img class="math" src="../../_images/math/3ed4ae4856506b73203a42230bc164ad9f2ad52e.svg" alt="g(x_1,x_2)= (x_1^2, x_1+x_2)"/>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span>  <span class="p">[</span><span class="s1">&#39;x1^2&#39;</span><span class="p">,</span> <span class="s1">&#39;x1+x2&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nSpat</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">gdyn</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ValueFunction</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">nSpat</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gdyn</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ValueFunction</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">myMesh</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Create the Y process <img class="math" src="../../_images/math/351e1fa9e9b5b4c759f58d19f950e1ac57be0aab.svg" alt="Y = g_{dyn}(X)"/>:</p>
@@ -151,7 +151,7 @@
 </div>
 <p>Add the trend <img class="math" src="../../_images/math/500c71517bd7ff60f54b5f610b4d5dc953551ae4.svg" alt="f_{trend}: \Rset^2 \mapsto \Rset^2"/> where <img class="math" src="../../_images/math/b11db2d1a24d90aee8d1da0028dddb0cc42992b8.svg" alt="f_{trend}(x_1,x_2)= (1+2x_1, 1+3x_2^2)"/>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;1+2*x1&#39;</span><span class="p">,</span> <span class="s1">&#39;1+3*x2^2&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fTrend</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">TrendTransform</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fTrend</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">TrendTransform</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">myMesh</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Create the process <img class="math" src="../../_images/math/a439bb0cbd62bc2b3b36ce056c764fa75ddce985.svg" alt="Y(\omega, \vect{t}) = X(\omega, \vect{t}) + f_{trend}(\vect{t})"/>:</p>
@@ -160,7 +160,7 @@
 </div>
 <p>Apply the Box Cox transformation <img class="math" src="../../_images/math/e13c1c8ba1ccf73054459c11d92ef911a9e1a5b8.svg" alt="h=(h_1,h_2): \Rset\mapsto \Rset^2"/> where <img class="math" src="../../_images/math/43f5e6b7db2b220fba064541c2afbfce0ea2234c.svg" alt="h_i(x) = \dfrac{x^3-1}{3}"/>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BoxCoxTransform</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hBoxCox</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ValueFunction</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">nSpat</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hBoxCox</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ValueFunction</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">myMesh</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Create the Y process <img class="math" src="../../_images/math/92cfb49c5158e7e22d0f6c5bf11df7597aac536b.svg" alt="Y = hBoxCox(X)"/>:</p>

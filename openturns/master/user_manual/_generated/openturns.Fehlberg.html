@@ -109,8 +109,9 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>transitionFunction</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.FieldFunction.html#openturns.FieldFunction" title="openturns.FieldFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">FieldFunction</span></code></a></span></dt>
-<dd><p class="first last">The function defining the flow of the ordinary differential equation.</p>
+<dt><strong>transitionFunction</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
+<dd><p class="first last">The function defining the flow of the ordinary differential equation.
+Must have one parameter.</p>
 </dd>
 <dt><strong>localPrecision</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">The expected absolute error on one step.</p>
@@ -302,7 +303,7 @@ additional theory on these methods see <a class="reference internal" href="../..
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;y0&#39;</span><span class="p">,</span> <span class="s1">&#39;y1&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;t - y0&#39;</span><span class="p">,</span> <span class="s1">&#39;y1 + t^2&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">phi</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VertexValueFunction</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">phi</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ParametricFunction</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Fehlberg</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Y0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nt</span> <span class="o">=</span> <span class="mi">100</span>

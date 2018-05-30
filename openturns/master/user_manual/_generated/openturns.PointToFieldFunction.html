@@ -100,31 +100,19 @@
 <dt id="openturns.PointToFieldFunction">
 <em class="property">class </em><code class="descname">PointToFieldFunction</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.PointToFieldFunction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function mapping a point into a field.</p>
-<dl class="docutils">
-<dt>Available constructors:</dt>
-<dd><p class="first">PointToFieldFunction(<em>spatialDim=0</em>)</p>
-<p>PointToFieldFunction(<em>spatialDim, inputDim, outputDim</em>)</p>
-<p>PointToFieldFunction(<em>OTpythonFunc</em>)</p>
-<p>PointToFieldFunction(<em>inputDim, outputDim</em>)</p>
-<p class="last">PointToFieldFunction(**)</p>
-</dd>
-</dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>spatialDim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/3468e477c69a8c9aa88e592df9ebd35387f2fc97.svg" alt="\geq 1"/></span></dt>
-<dd><p class="first last">Dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> of the domain <img class="math" src="../../_images/math/4502dceb2a4b3dbf38d044181ebe1d26ef89e030.svg" alt="\cD"/></p>
-</dd>
 <dt><strong>inputDim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/3468e477c69a8c9aa88e592df9ebd35387f2fc97.svg" alt="\geq 1"/></span></dt>
-<dd><p class="first last">Dimension <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> of the input field values</p>
+<dd><p class="first last">Dimension <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> of the input vector</p>
+</dd>
+<dt><strong>outputMesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
+<dd><p class="first last">The output mesh</p>
 </dd>
 <dt><strong>outputDim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/3468e477c69a8c9aa88e592df9ebd35387f2fc97.svg" alt="\geq 1"/></span></dt>
-<dd><p class="first last">Dimension <img class="math" src="../../_images/math/61a6ba9fdc74ebdd912d4ef1100b49015d4609a6.svg" alt="d'"/> of the output vector</p>
-</dd>
-<dt><strong>OTpythonFunc</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.OpenTURNSPythonFieldToPointFunction.html#openturns.OpenTURNSPythonFieldToPointFunction" title="openturns.OpenTURNSPythonFieldToPointFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpenTURNSPythonFieldToPointFunction</span></code></a></span></dt>
-<dd><p class="first last">The implementation of the function.</p>
+<dd><p class="first last">Dimension <img class="math" src="../../_images/math/61a6ba9fdc74ebdd912d4ef1100b49015d4609a6.svg" alt="d'"/> of the output field</p>
 </dd>
 </dl>
 </td>
@@ -159,14 +147,13 @@
 <p>Using the class <a class="reference internal" href="openturns.OpenTURNSPythonFieldToPointFunction.html#openturns.OpenTURNSPythonFieldToPointFunction" title="openturns.OpenTURNSPythonFieldToPointFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">OpenTURNSPythonFieldToPointFunction</span></code></a> allows to define a persistent state between the evaluations of the function.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">FUNC</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">OpenTURNSPythonPointToFieldFunction</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="gp">... </span>        <span class="nb">super</span><span class="p">(</span><span class="n">FUNC</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="n">mesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RegularGrid</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="nb">super</span><span class="p">(</span><span class="n">FUNC</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">setInputDescription</span><span class="p">([</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">])</span>
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">setOutputDescription</span><span class="p">([</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">])</span>
-<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">mesh_</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RegularGrid</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">_exec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
-<span class="gp">... </span>        <span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh_</span><span class="o">.</span><span class="n">getVerticesNumber</span><span class="p">()</span>
-<span class="gp">... </span>        <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span>
-<span class="gp">... </span>        <span class="n">Y</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mesh_</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOutputMesh</span><span class="p">()</span><span class="o">.</span><span class="n">getVerticesNumber</span><span class="p">()</span>
+<span class="gp">... </span>        <span class="n">Y</span> <span class="o">=</span> <span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span>
 <span class="gp">... </span>        <span class="k">return</span> <span class="n">Y</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="n">FUNC</span><span class="p">()</span>
 </pre></div>
@@ -176,16 +163,14 @@
 </pre></div>
 </div>
 <p>It is also possible to create a PointToFieldFunction from a python function as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">myPyFunc</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="n">mesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RegularGrid</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RegularGrid</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">myPyFunc</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">size</span> <span class="o">=</span> <span class="mi">11</span>
-<span class="gp">... </span>    <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span>
-<span class="gp">... </span>    <span class="n">Y</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">Y</span> <span class="o">=</span> <span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="n">Y</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">inputDim</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">outputDim</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">spatialDim</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">myFunc</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PythonPointToFieldFunction</span><span class="p">(</span><span class="n">inputDim</span><span class="p">,</span> <span class="n">outputDim</span><span class="p">,</span> <span class="n">spatialDim</span><span class="p">,</span> <span class="n">myPyFunc</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myFunc</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PythonPointToFieldFunction</span><span class="p">(</span><span class="n">inputDim</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">outputDim</span><span class="p">,</span> <span class="n">myPyFunc</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Evaluation the function on a vector:</p>

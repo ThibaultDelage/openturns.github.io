@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="PythonFieldToPointFunction" href="openturns.PythonFieldToPointFunction.html" />
-    <link rel="prev" title="VertexFunction" href="openturns.VertexFunction.html" />
+    <link rel="prev" title="ValueFunction" href="openturns.ValueFunction.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -51,7 +51,7 @@
           <a href="openturns.PythonFieldToPointFunction.html" title="PythonFieldToPointFunction"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="openturns.VertexFunction.html" title="VertexFunction"
+          <a href="openturns.ValueFunction.html" title="ValueFunction"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
@@ -62,8 +62,8 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="openturns.VertexFunction.html"
-                        title="previous chapter">VertexFunction</a></p>
+  <p class="topless"><a href="openturns.ValueFunction.html"
+                        title="previous chapter">ValueFunction</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="openturns.PythonFieldToPointFunction.html"
                         title="next chapter">PythonFieldToPointFunction</a></p>
@@ -154,9 +154,9 @@
 </div>
 <p>Convert <img class="math" src="../../_images/math/7bc3c3b1a2be80b5e49a4bf613a598d81206e9bf.svg" alt="h"/> into a vertex value function with <img class="math" src="../../_images/math/bced73f400e4134702f077b42d46777740988149.svg" alt="n=1"/>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">myVertexValueFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VertexValueFunction</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a TimeSeries</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tg</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RegularGrid</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myVertexValueFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">VertexValueFunction</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">tg</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a TimeSeries</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">tg</span><span class="o">.</span><span class="n">getN</span><span class="p">(),</span> <span class="n">h</span><span class="o">.</span><span class="n">getInputDimension</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">getSize</span><span class="p">()):</span>
 <span class="gp">... </span>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">getDimension</span><span class="p">()):</span>
@@ -171,13 +171,13 @@
 <span class="go">4 : [ 0.8 4   ]</span>
 <span class="go">5 : [ 1   5   ]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">myVertexValueFunction</span><span class="p">(</span><span class="n">ts</span><span class="p">))</span>
-<span class="go">    [ t    y0   ]</span>
-<span class="go">0 : [ 0    0    ]</span>
-<span class="go">1 : [ 0.2  1.04 ]</span>
-<span class="go">2 : [ 0.4  2.16 ]</span>
-<span class="go">3 : [ 0.6  3.36 ]</span>
-<span class="go">4 : [ 0.8  4.64 ]</span>
-<span class="go">5 : [ 1    6    ]</span>
+<span class="go">    [ y0   ]</span>
+<span class="go">0 : [ 0    ]</span>
+<span class="go">1 : [ 1.04 ]</span>
+<span class="go">2 : [ 2.16 ]</span>
+<span class="go">3 : [ 3.36 ]</span>
+<span class="go">4 : [ 4.64 ]</span>
+<span class="go">5 : [ 6    ]</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
@@ -205,26 +205,26 @@
 <tr class="row-even"><td><a class="reference internal" href="#openturns.VertexValueFunction.getInputDimension" title="openturns.VertexValueFunction.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
 <td>Get the dimension of the input field values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.VertexValueFunction.getMarginal" title="openturns.VertexValueFunction.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.VertexValueFunction.getInputMesh" title="openturns.VertexValueFunction.getInputMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputMesh</span></code></a>()</td>
+<td>Get the mesh associated to the input domain.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.VertexValueFunction.getMarginal" title="openturns.VertexValueFunction.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
 <td>Get the marginal(s) at given indice(s).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.VertexValueFunction.getName" title="openturns.VertexValueFunction.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.VertexValueFunction.getName" title="openturns.VertexValueFunction.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.VertexValueFunction.getOutputDescription" title="openturns.VertexValueFunction.getOutputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.VertexValueFunction.getOutputDescription" title="openturns.VertexValueFunction.getOutputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDescription</span></code></a>()</td>
 <td>Get the description of the output field values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.VertexValueFunction.getOutputDimension" title="openturns.VertexValueFunction.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.VertexValueFunction.getOutputDimension" title="openturns.VertexValueFunction.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
 <td>Get the dimension of the output field values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.VertexValueFunction.getOutputMesh" title="openturns.VertexValueFunction.getOutputMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputMesh</span></code></a>(inputMesh)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.VertexValueFunction.getOutputMesh" title="openturns.VertexValueFunction.getOutputMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputMesh</span></code></a>()</td>
 <td>Get the mesh associated to the output domain.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.VertexValueFunction.getShadowedId" title="openturns.VertexValueFunction.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.VertexValueFunction.getShadowedId" title="openturns.VertexValueFunction.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.VertexValueFunction.getSpatialDimension" title="openturns.VertexValueFunction.getSpatialDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSpatialDimension</span></code></a>()</td>
-<td>Get the dimension of the input domain.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.VertexValueFunction.getVisibility" title="openturns.VertexValueFunction.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
@@ -254,11 +254,14 @@
 </table>
 <table border="1" class="docutils">
 <colgroup>
-<col width="55%" />
-<col width="45%" />
+<col width="70%" />
+<col width="30%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>__call__</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>getSpatialDimension</strong></td>
 <td>&#160;</td>
 </tr>
 </tbody>
@@ -329,7 +332,8 @@ creation.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x + t^2&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">myVertexValueFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ValueFunction</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myVertexValueFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ValueFunction</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">mesh</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">myVertexValueFunction</span><span class="o">.</span><span class="n">getFunction</span><span class="p">())</span>
 <span class="go">[t,x]-&gt;[x + t^2]</span>
 </pre></div>
@@ -385,6 +389,25 @@ creation.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>d</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Dimension <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> of the input field values.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.VertexValueFunction.getInputMesh">
+<code class="descname">getInputMesh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.VertexValueFunction.getInputMesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the mesh associated to the input domain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>inputMesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
+<dd><p class="first last">The input mesh <img class="math" src="../../_images/math/26fd0931920c2084d09589f38dbda2bf946c37a5.svg" alt="\cM_{N'}"/>.</p>
 </dd>
 </dl>
 </td>
@@ -479,7 +502,7 @@ creation.</p>
 
 <dl class="method">
 <dt id="openturns.VertexValueFunction.getOutputMesh">
-<code class="descname">getOutputMesh</code><span class="sig-paren">(</span><em>inputMesh</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.VertexValueFunction.getOutputMesh" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getOutputMesh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.VertexValueFunction.getOutputMesh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the mesh associated to the output domain.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -507,25 +530,6 @@ creation.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Internal unique identifier.</p>
-</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.VertexValueFunction.getSpatialDimension">
-<code class="descname">getSpatialDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.VertexValueFunction.getSpatialDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the dimension of the input domain.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>spatialDim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int,</span></dt>
-<dd><p class="first last">Dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> of the input domain <img class="math" src="../../_images/math/4502dceb2a4b3dbf38d044181ebe1d26ef89e030.svg" alt="\cD"/>.</p>
 </dd>
 </dl>
 </td>
@@ -706,7 +710,7 @@ creation.</p>
           <a href="openturns.PythonFieldToPointFunction.html" title="PythonFieldToPointFunction"
              >next</a> |</li>
         <li class="right" >
-          <a href="openturns.VertexFunction.html" title="VertexFunction"
+          <a href="openturns.ValueFunction.html" title="ValueFunction"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>

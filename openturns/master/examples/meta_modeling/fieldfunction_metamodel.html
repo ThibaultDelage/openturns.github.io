@@ -278,7 +278,7 @@ and output processes</li>
 </ul>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [32]:
+<span></span>In [1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -289,7 +289,7 @@ and output processes</li>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [33]:
+<span></span>In [2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -320,7 +320,7 @@ Create the input process
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [34]:
+<span></span>In [3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -350,7 +350,7 @@ Create the input process
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [35]:
+<span></span>In [4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -379,15 +379,16 @@ Compute the decomposition of the input process
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[35]:
+<span></span>Out[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_meta_modeling_fieldfunction_metamodel_4_1.svg" src="../../_images/examples_meta_modeling_fieldfunction_metamodel_4_1.svg" /></div>
+<img alt="../../_images/examples_meta_modeling_fieldfunction_metamodel_4_1.png" src="../../_images/examples_meta_modeling_fieldfunction_metamodel_4_1.png" />
+</div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [36]:
+<span></span>In [5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -408,7 +409,7 @@ Sample the input process
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [37]:
+<span></span>In [6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -418,11 +419,10 @@ Sample the input process
         <span class="c1"># 1 = input dimension, the dimension of the input field</span>
         <span class="c1"># 1 = output dimension, the dimension of the output field</span>
         <span class="c1"># 1 = mesh dimension</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">ConvolutionP1</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mesh</span><span class="o">.</span><span class="n">getDimension</span><span class="p">())</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ConvolutionP1</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="c1"># Here we define some constants and we set-up the invariant part of the execution</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">setInputDescription</span><span class="p">([</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">setOutputDescription</span><span class="p">([</span><span class="s2">&quot;y&quot;</span><span class="p">])</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mesh_</span> <span class="o">=</span> <span class="n">mesh</span>
         <span class="n">vertices</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">getVertices</span><span class="p">()</span>
         <span class="n">size</span> <span class="o">=</span> <span class="n">vertices</span><span class="o">.</span><span class="n">getSize</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mat_W_</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquareMatrix</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
@@ -435,18 +435,15 @@ Sample the input process
         <span class="bp">self</span><span class="o">.</span><span class="n">mat_W_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mat_W_</span> <span class="o">*</span> <span class="n">G</span>
 
     <span class="k">def</span> <span class="nf">_exec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">X</span><span class="o">.</span><span class="n">getMesh</span><span class="p">()</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh_</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Expected a field X defined on the mesh of the function&quot;</span><span class="p">)</span>
-        <span class="n">values_X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">getValues</span><span class="p">()</span>
-        <span class="n">point_X</span> <span class="o">=</span> <span class="p">[</span><span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">values_X</span><span class="p">]</span>
+        <span class="n">point_X</span> <span class="o">=</span> <span class="p">[</span><span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">X</span><span class="p">]</span>
         <span class="n">values_Y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mat_W_</span> <span class="o">*</span> <span class="n">point_X</span>
-        <span class="k">return</span> <span class="n">ot</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mesh_</span><span class="p">,</span> <span class="p">[[</span><span class="n">v</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values_Y</span><span class="p">])</span>
+        <span class="k">return</span> <span class="p">[[</span><span class="n">v</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values_Y</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [38]:
+<span></span>In [7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -467,7 +464,7 @@ Create the convolution function
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [39]:
+<span></span>In [8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -487,7 +484,7 @@ Sample the output process
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [40]:
+<span></span>In [9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -513,15 +510,16 @@ Compute the decomposition of the output process
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[40]:
+<span></span>Out[9]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_meta_modeling_fieldfunction_metamodel_9_1.svg" src="../../_images/examples_meta_modeling_fieldfunction_metamodel_9_1.svg" /></div>
+<img alt="../../_images/examples_meta_modeling_fieldfunction_metamodel_9_1.png" src="../../_images/examples_meta_modeling_fieldfunction_metamodel_9_1.png" />
+</div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [41]:
+<span></span>In [10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -539,15 +537,16 @@ Compute the decomposition of the output process
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[41]:
+<span></span>Out[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_meta_modeling_fieldfunction_metamodel_10_0.svg" src="../../_images/examples_meta_modeling_fieldfunction_metamodel_10_0.svg" /></div>
+<img alt="../../_images/examples_meta_modeling_fieldfunction_metamodel_10_0.png" src="../../_images/examples_meta_modeling_fieldfunction_metamodel_10_0.png" />
+</div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [42]:
+<span></span>In [11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -594,14 +593,14 @@ project sample_X
 project sample_Y
 Compute PCE between coefficients
 myConvolution= 1 -&gt; 1
-preprocessing= 1 -&gt; 66
-meta_model= 66 -&gt; 26
-postprocessing= 26 -&gt; 1
+preprocessing= 1 -&gt; 76
+meta_model= 76 -&gt; 28
+postprocessing= 28 -&gt; 1
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [43]:
+<span></span>In [12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -626,15 +625,16 @@ postprocessing= 26 -&gt; 1
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[43]:
+<span></span>Out[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_meta_modeling_fieldfunction_metamodel_12_0.svg" src="../../_images/examples_meta_modeling_fieldfunction_metamodel_12_0.svg" /></div>
+<img alt="../../_images/examples_meta_modeling_fieldfunction_metamodel_12_0.png" src="../../_images/examples_meta_modeling_fieldfunction_metamodel_12_0.png" />
+</div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [44]:
+<span></span>In [13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -648,15 +648,16 @@ postprocessing= 26 -&gt; 1
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[44]:
+<span></span>Out[13]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_meta_modeling_fieldfunction_metamodel_13_0.svg" src="../../_images/examples_meta_modeling_fieldfunction_metamodel_13_0.svg" /></div>
+<img alt="../../_images/examples_meta_modeling_fieldfunction_metamodel_13_0.png" src="../../_images/examples_meta_modeling_fieldfunction_metamodel_13_0.png" />
+</div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [45]:
+<span></span>In [14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -670,11 +671,12 @@ postprocessing= 26 -&gt; 1
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[45]:
+<span></span>Out[14]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_meta_modeling_fieldfunction_metamodel_14_0.svg" src="../../_images/examples_meta_modeling_fieldfunction_metamodel_14_0.svg" /></div>
+<img alt="../../_images/examples_meta_modeling_fieldfunction_metamodel_14_0.png" src="../../_images/examples_meta_modeling_fieldfunction_metamodel_14_0.png" />
+</div>
 </div>
 </div>
 

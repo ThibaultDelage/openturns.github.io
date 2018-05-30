@@ -98,21 +98,21 @@
 <h1>OpenTURNSPythonFieldToPointFunction<a class="headerlink" href="#openturnspythonfieldtopointfunction" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="openturns.OpenTURNSPythonFieldToPointFunction">
-<em class="property">class </em><code class="descname">OpenTURNSPythonFieldToPointFunction</code><span class="sig-paren">(</span><em>n=0</em>, <em>p=0</em>, <em>s=0</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.OpenTURNSPythonFieldToPointFunction" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">OpenTURNSPythonFieldToPointFunction</code><span class="sig-paren">(</span><em>inputMesh</em>, <em>inputDim</em>, <em>outputDim</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.OpenTURNSPythonFieldToPointFunction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Override FieldToPointFunction from Python.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>inputMesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
+<dd><p class="first last">The input mesh</p>
+</dd>
 <dt><strong>inputDim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive int</span></dt>
 <dd><p class="first last">Dimension of the input field values d</p>
 </dd>
 <dt><strong>outputDim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive int</span></dt>
 <dd><p class="first last">Dimension of the output vector d’</p>
-</dd>
-<dt><strong>spatialDim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive integer</span></dt>
-<dd><p class="first last">Dimension of the input domain n</p>
 </dd>
 </dl>
 </td>
@@ -127,14 +127,15 @@ returns a <a class="reference internal" href="openturns.Field.html#openturns.Fie
 </dl>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">FUNC</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">OpenTURNSPythonFieldToPointFunction</span><span class="p">):</span>
 <span class="gp">... </span>   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="c1"># first argument:</span>
-<span class="gp">... </span>        <span class="nb">super</span><span class="p">(</span><span class="n">FUNC</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="nb">super</span><span class="p">(</span><span class="n">FUNC</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">setInputDescription</span><span class="p">([</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">])</span>
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">setOutputDescription</span><span class="p">([</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">])</span>
 <span class="gp">... </span>   <span class="k">def</span> <span class="nf">_exec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
-<span class="gp">... </span>        <span class="n">Y</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">getValues</span><span class="p">()</span><span class="o">.</span><span class="n">computeMean</span><span class="p">()</span>
+<span class="gp">... </span>        <span class="n">Y</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">computeMean</span><span class="p">()</span>
 <span class="gp">... </span>        <span class="k">return</span> <span class="n">Y</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="n">FUNC</span><span class="p">()</span>
 </pre></div>
@@ -155,13 +156,13 @@ returns a <a class="reference internal" href="openturns.Field.html#openturns.Fie
 <tr class="row-odd"><td><strong>getInputDimension</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>getOutputDescription</strong></td>
+<tr class="row-even"><td><strong>getInputMesh</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>getOutputDimension</strong></td>
+<tr class="row-odd"><td><strong>getOutputDescription</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>getSpatialDimension</strong></td>
+<tr class="row-even"><td><strong>getOutputDimension</strong></td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td><strong>setInputDescription</strong></td>
@@ -174,7 +175,7 @@ returns a <a class="reference internal" href="openturns.Field.html#openturns.Fie
 </table>
 <dl class="method">
 <dt id="openturns.OpenTURNSPythonFieldToPointFunction.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>n=0</em>, <em>p=0</em>, <em>s=0</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.OpenTURNSPythonFieldToPointFunction.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>inputMesh</em>, <em>inputDim</em>, <em>outputDim</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.OpenTURNSPythonFieldToPointFunction.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 

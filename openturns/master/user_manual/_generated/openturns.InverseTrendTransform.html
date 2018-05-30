@@ -125,7 +125,8 @@
 <p>Create a trend function: <img class="math" src="../../_images/math/e08139eb180bdcb179a4a3bb2054f627faf2b0d8.svg" alt="f_{trend} : \Rset \mapsto \Rset"/> where <img class="math" src="../../_images/math/45a73907d388e526491f77ebf731f492272528c8.svg" alt="f_{trend}(t,s)=-(1+2t+t^2)"/>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;-(1+2*t+t^2)&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fTrendInv</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">InverseTrendTransform</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RegularGrid</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fTrendInv</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">InverseTrendTransform</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">mesh</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
@@ -153,29 +154,29 @@
 <tr class="row-even"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getInputDimension" title="openturns.InverseTrendTransform.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
 <td>Get the dimension of the input field values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getInverse" title="openturns.InverseTrendTransform.getInverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInverse</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getInputMesh" title="openturns.InverseTrendTransform.getInputMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputMesh</span></code></a>()</td>
+<td>Get the mesh associated to the input domain.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getInverse" title="openturns.InverseTrendTransform.getInverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInverse</span></code></a>()</td>
 <td>Accessor to the  trend function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getMarginal" title="openturns.InverseTrendTransform.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getMarginal" title="openturns.InverseTrendTransform.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
 <td>Get the marginal(s) at given indice(s).</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getName" title="openturns.InverseTrendTransform.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getName" title="openturns.InverseTrendTransform.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getOutputDescription" title="openturns.InverseTrendTransform.getOutputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDescription</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getOutputDescription" title="openturns.InverseTrendTransform.getOutputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDescription</span></code></a>()</td>
 <td>Get the description of the output field values.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getOutputDimension" title="openturns.InverseTrendTransform.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getOutputDimension" title="openturns.InverseTrendTransform.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
 <td>Get the dimension of the output field values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getOutputMesh" title="openturns.InverseTrendTransform.getOutputMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputMesh</span></code></a>(inputMesh)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getOutputMesh" title="openturns.InverseTrendTransform.getOutputMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputMesh</span></code></a>()</td>
 <td>Get the mesh associated to the output domain.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getShadowedId" title="openturns.InverseTrendTransform.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getShadowedId" title="openturns.InverseTrendTransform.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getSpatialDimension" title="openturns.InverseTrendTransform.getSpatialDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSpatialDimension</span></code></a>()</td>
-<td>Get the dimension of the input domain.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.InverseTrendTransform.getVisibility" title="openturns.InverseTrendTransform.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
@@ -205,14 +206,17 @@
 </table>
 <table border="1" class="docutils">
 <colgroup>
-<col width="67%" />
-<col width="33%" />
+<col width="70%" />
+<col width="30%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><strong>__call__</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>getTrendFunction</strong></td>
+<tr class="row-even"><td><strong>getSpatialDimension</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>getTrendFunction</strong></td>
 <td>&#160;</td>
 </tr>
 </tbody>
@@ -283,7 +287,8 @@ creation.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x + t^2&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">myVertexValueFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ValueFunction</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Mesh</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myVertexValueFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ValueFunction</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">mesh</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">myVertexValueFunction</span><span class="o">.</span><span class="n">getFunction</span><span class="p">())</span>
 <span class="go">[t,x]-&gt;[x + t^2]</span>
 </pre></div>
@@ -339,6 +344,25 @@ creation.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>d</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Dimension <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> of the input field values.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.InverseTrendTransform.getInputMesh">
+<code class="descname">getInputMesh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.InverseTrendTransform.getInputMesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the mesh associated to the input domain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>inputMesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
+<dd><p class="first last">The input mesh <img class="math" src="../../_images/math/26fd0931920c2084d09589f38dbda2bf946c37a5.svg" alt="\cM_{N'}"/>.</p>
 </dd>
 </dl>
 </td>
@@ -452,7 +476,7 @@ creation.</p>
 
 <dl class="method">
 <dt id="openturns.InverseTrendTransform.getOutputMesh">
-<code class="descname">getOutputMesh</code><span class="sig-paren">(</span><em>inputMesh</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.InverseTrendTransform.getOutputMesh" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getOutputMesh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.InverseTrendTransform.getOutputMesh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the mesh associated to the output domain.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -480,25 +504,6 @@ creation.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Internal unique identifier.</p>
-</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="openturns.InverseTrendTransform.getSpatialDimension">
-<code class="descname">getSpatialDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.InverseTrendTransform.getSpatialDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the dimension of the input domain.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>spatialDim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int,</span></dt>
-<dd><p class="first last">Dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> of the input domain <img class="math" src="../../_images/math/4502dceb2a4b3dbf38d044181ebe1d26ef89e030.svg" alt="\cD"/>.</p>
 </dd>
 </dl>
 </td>
