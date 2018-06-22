@@ -241,10 +241,10 @@ experiments</p>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computePearsonCorrelation" title="openturns.Sample.computePearsonCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computePearsonCorrelation</span></code></a>()</td>
 <td>Estimate the Pearson correlation matrix.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeQuantile" title="openturns.Sample.computeQuantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeQuantile</span></code></a>(prob)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeQuantile" title="openturns.Sample.computeQuantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeQuantile</span></code></a>(*args)</td>
 <td>Estimate the quantile of the <strong>joint</strong> distribution underlying the sample.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeQuantilePerComponent" title="openturns.Sample.computeQuantilePerComponent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeQuantilePerComponent</span></code></a>(prob)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.Sample.computeQuantilePerComponent" title="openturns.Sample.computeQuantilePerComponent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeQuantilePerComponent</span></code></a>(*args)</td>
 <td>Estimate the componentwise quantiles.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.Sample.computeRange" title="openturns.Sample.computeRange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeRange</span></code></a>()</td>
@@ -845,21 +845,21 @@ is used for larger samples.</li>
 
 <dl class="method">
 <dt id="openturns.Sample.computeQuantile">
-<code class="descname">computeQuantile</code><span class="sig-paren">(</span><em>prob</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.computeQuantile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">computeQuantile</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.computeQuantile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate the quantile of the <strong>joint</strong> distribution underlying the sample.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/edb0d38cfbcedef976dab25f2cc337a70a9beb2b.svg" alt="0 \leq p \leq 1"/></span></dt>
+<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/edb0d38cfbcedef976dab25f2cc337a70a9beb2b.svg" alt="0 \leq p \leq 1"/>, or sequence of float</span></dt>
 <dd><p class="first last">Input probability level.</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>quantile</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dt><strong>quantile</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> or <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
 <dd><p class="first last">Quantile of the joint distribution at probability level <img class="math" src="../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/>,
 estimated from the sample.</p>
 </dd>
@@ -890,21 +890,21 @@ estimated from the sample.</p>
 
 <dl class="method">
 <dt id="openturns.Sample.computeQuantilePerComponent">
-<code class="descname">computeQuantilePerComponent</code><span class="sig-paren">(</span><em>prob</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.computeQuantilePerComponent" title="Permalink to this definition">¶</a></dt>
+<code class="descname">computeQuantilePerComponent</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Sample.computeQuantilePerComponent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate the componentwise quantiles.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/edb0d38cfbcedef976dab25f2cc337a70a9beb2b.svg" alt="0 \leq p \leq 1"/></span></dt>
+<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/edb0d38cfbcedef976dab25f2cc337a70a9beb2b.svg" alt="0 \leq p \leq 1"/>, or sequence of float</span></dt>
 <dd><p class="first last">Input probability level.</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>quantile</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dt><strong>quantile</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> or <a class="reference internal" href="#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
 <dd><p class="first last">Componentwise quantile at probability level <img class="math" src="../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/>, estimated from the
 sample.</p>
 </dd>
