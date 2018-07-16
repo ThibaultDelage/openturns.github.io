@@ -119,7 +119,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>spatialDim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Spatial dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/>.
-By default, the spatial dimension is deduced from the <img class="math" src="../../_images/math/2b723f559e8298e535601bd58966d42fe7e1f7a2.svg" alt="\vect{\theta}"/> parameter. If this one is not specified, then <img class="math" src="../../_images/math/bced73f400e4134702f077b42d46777740988149.svg" alt="n=1"/>.</p>
+By default, the input dimension is deduced from the <img class="math" src="../../_images/math/2b723f559e8298e535601bd58966d42fe7e1f7a2.svg" alt="\vect{\theta}"/> parameter. If this one is not specified, then <img class="math" src="../../_images/math/bced73f400e4134702f077b42d46777740988149.svg" alt="n=1"/>.</p>
 </dd>
 <dt><strong>scale</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of floats</span></dt>
 <dd><p class="first last">Scale coefficient <img class="math" src="../../_images/math/852b456d784095409b32cba46e4bfc1b8844623f.svg" alt="\vect{\theta}\in \Rset^n"/>.</p>
@@ -174,7 +174,7 @@ By default, <img class="math" src="../../_images/math/fdde2382088d83419d11ec0dcc
 <span class="gp">&gt;&gt;&gt; </span><span class="n">spatialCovariance</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">spatialCovariance</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">5.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">spatialCovariance</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">spatialDimension</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inputDimension</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myCovarianceModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ExponentialModel</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="n">spatialCovariance</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -210,7 +210,7 @@ By default, <img class="math" src="../../_images/math/fdde2382088d83419d11ec0dcc
 <td><strong>(TODO)</strong></td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.ExponentialModel.draw" title="openturns.ExponentialModel.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>(*args)</td>
-<td>Draw a specific component of the covariance model with spatial dimension 1.</td>
+<td>Draw a specific component of the covariance model with input dimension 1.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.ExponentialModel.getActiveParameter" title="openturns.ExponentialModel.getActiveParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getActiveParameter</span></code></a>()</td>
 <td>Accessor to the active parameter set.</td>
@@ -231,7 +231,7 @@ By default, <img class="math" src="../../_images/math/fdde2382088d83419d11ec0dcc
 <td>Accessor to the object’s id.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.ExponentialModel.getInputDimension" title="openturns.ExponentialModel.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
-<td>Get the spatial dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> of the covariance function.</td>
+<td>Get the input dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> of the covariance function.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.ExponentialModel.getMarginal" title="openturns.ExponentialModel.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(index)</td>
 <td>Get the ith marginal of the model.</td>
@@ -557,7 +557,7 @@ as its compress data.</p>
 <dl class="method">
 <dt id="openturns.ExponentialModel.draw">
 <code class="descname">draw</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ExponentialModel.draw" title="Permalink to this definition">¶</a></dt>
-<dd><p>Draw a specific component of the covariance model with spatial dimension 1.</p>
+<dd><p>Draw a specific component of the covariance model with input dimension 1.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -720,13 +720,13 @@ and potential other parameter depending on the model;</p>
 <dl class="method">
 <dt id="openturns.ExponentialModel.getInputDimension">
 <code class="descname">getInputDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ExponentialModel.getInputDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the spatial dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> of the covariance function.</p>
+<dd><p>Get the input dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> of the covariance function.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>spatialDimension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dt><strong>inputDimension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Spatial dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> of the covariance function.</p>
 </dd>
 </dl>
@@ -1231,7 +1231,7 @@ function.</p>
 <dt><strong>scale</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
 <dd><p class="first last">The scale parameter <img class="math" src="../../_images/math/d316d0cbf4ce2692733058d2db1f0e150b7de06d.svg" alt="\vect{\theta} \in \Rset^n"/> to be used in the
 covariance function.
-Its size must be equal to the spatial dimension of the covariance function.</p>
+Its size must be equal to the input dimension of the covariance function.</p>
 </dd>
 </dl>
 </td>

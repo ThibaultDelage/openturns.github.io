@@ -134,17 +134,17 @@
 <p class="rubric">Examples</p>
 <p>Create a tensorized covariance function from the tensorization of an absolute exponential function, a squared exponential function and an exponential function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">spatialDimension</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inputDimension</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <p>Create the each covariance models:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myCov1</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AbsoluteExponential</span><span class="p">([</span><span class="mf">3.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">spatialDimension</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">myCov2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquaredExponential</span><span class="p">(</span><span class="n">spatialDimension</span> <span class="o">*</span><span class="p">[</span><span class="mf">2.0</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myCov1</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">AbsoluteExponential</span><span class="p">([</span><span class="mf">3.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">inputDimension</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myCov2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquaredExponential</span><span class="p">(</span><span class="n">inputDimension</span> <span class="o">*</span><span class="p">[</span><span class="mf">2.0</span><span class="p">])</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">amplitude</span><span class="o">=</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">scale</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">spatialCorrelation</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="n">spatialDimension</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spatialCorrelation</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="n">inputDimension</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">spatialCorrelation</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myCov3</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ExponentialModel</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">,</span> <span class="n">spatialCorrelation</span><span class="p">)</span>
 </pre></div>
@@ -158,7 +158,7 @@
 </pre></div>
 </div>
 <p>Fix the same scale to each model:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">covarianceModel</span><span class="o">.</span><span class="n">setScale</span><span class="p">([</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="n">spatialDimension</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">covarianceModel</span><span class="o">.</span><span class="n">setScale</span><span class="p">([</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="n">inputDimension</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
@@ -193,7 +193,7 @@
 <td><strong>(TODO)</strong></td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedCovarianceModel.draw" title="openturns.TensorizedCovarianceModel.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>(*args)</td>
-<td>Draw a specific component of the covariance model with spatial dimension 1.</td>
+<td>Draw a specific component of the covariance model with input dimension 1.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedCovarianceModel.getActiveParameter" title="openturns.TensorizedCovarianceModel.getActiveParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getActiveParameter</span></code></a>()</td>
 <td>Accessor to the active parameter set.</td>
@@ -214,7 +214,7 @@
 <td>Accessor to the object’s id.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.TensorizedCovarianceModel.getInputDimension" title="openturns.TensorizedCovarianceModel.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
-<td>Get the spatial dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> of the covariance function.</td>
+<td>Get the input dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> of the covariance function.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.TensorizedCovarianceModel.getMarginal" title="openturns.TensorizedCovarianceModel.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(index)</td>
 <td>Get the ith marginal of the model.</td>
@@ -551,7 +551,7 @@ as its compress data.</p>
 <dl class="method">
 <dt id="openturns.TensorizedCovarianceModel.draw">
 <code class="descname">draw</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.TensorizedCovarianceModel.draw" title="Permalink to this definition">¶</a></dt>
-<dd><p>Draw a specific component of the covariance model with spatial dimension 1.</p>
+<dd><p>Draw a specific component of the covariance model with input dimension 1.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -714,13 +714,13 @@ and potential other parameter depending on the model;</p>
 <dl class="method">
 <dt id="openturns.TensorizedCovarianceModel.getInputDimension">
 <code class="descname">getInputDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.TensorizedCovarianceModel.getInputDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the spatial dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> of the covariance function.</p>
+<dd><p>Get the input dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> of the covariance function.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>spatialDimension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dt><strong>inputDimension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Spatial dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> of the covariance function.</p>
 </dd>
 </dl>
@@ -1225,7 +1225,7 @@ function.</p>
 <dt><strong>scale</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
 <dd><p class="first last">The scale parameter <img class="math" src="../../_images/math/d316d0cbf4ce2692733058d2db1f0e150b7de06d.svg" alt="\vect{\theta} \in \Rset^n"/> to be used in the
 covariance function.
-Its size must be equal to the spatial dimension of the covariance function.</p>
+Its size must be equal to the input dimension of the covariance function.</p>
 </dd>
 </dl>
 </td>
