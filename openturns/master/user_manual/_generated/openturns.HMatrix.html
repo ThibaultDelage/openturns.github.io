@@ -144,13 +144,13 @@ either low-rank approximation or full blocks.
 The eta parameter is called the admissibility factor, and it can be modified.</li>
 <li>Assembly: coefficients computations
 The hierarchical structure of the matrix has been computed during step 2.
-To compute coefficients, we call the assembleReal method and provide a
-callable to compute interaction between two nodes.  Full blocks are computed
-by calling this callable for the whole block.  If compression method is
-‘SVD’, low-rank approximation is computed by first computing the whole
-block, then finding its singular value decomposition, and rank is truncated
-so that error does not exceed assemblyEpsilon.  This method is precise, but
-very costly.  If compression method is a variant of ACA, only few rows and
+To compute coefficients, we call the assemble method and provide a callable
+to compute interaction between two nodes.  Full blocks are computed by
+calling this callable for the whole block.  If compression method is ‘SVD’,
+low-rank approximation is computed by first computing the whole block, then
+finding its singular value decomposition, and rank is truncated so that
+error does not exceed assemblyEpsilon.  This method is precise, but very
+costly.  If compression method is a variant of ACA, only few rows and
 columns are computed.  This is much more efficient, but error may be larger
 than expected on some problems.</li>
 <li>Matrix computations
@@ -172,14 +172,20 @@ Cholesky or LU decomposition).</li>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.HMatrix.assembleReal" title="openturns.HMatrix.assembleReal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assembleReal</span></code></a>(callable,&nbsp;symmetry)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.HMatrix.assemble" title="openturns.HMatrix.assemble"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assemble</span></code></a>(*args)</td>
 <td>Assemble matrix.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.HMatrix.assembleTensor" title="openturns.HMatrix.assembleTensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assembleTensor</span></code></a>(callable,&nbsp;outputDimension,&nbsp;…)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.HMatrix.assembleReal" title="openturns.HMatrix.assembleReal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assembleReal</span></code></a>(callable,&nbsp;symmetry)</td>
+<td>Assemble matrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.HMatrix.assembleTensor" title="openturns.HMatrix.assembleTensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assembleTensor</span></code></a>(callable,&nbsp;outputDimension,&nbsp;…)</td>
 <td>Assemble matrix by block.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.HMatrix.compressionRatio" title="openturns.HMatrix.compressionRatio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compressionRatio</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.HMatrix.compressionRatio" title="openturns.HMatrix.compressionRatio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compressionRatio</span></code></a>()</td>
 <td>Compression ratio accessor.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.HMatrix.copy" title="openturns.HMatrix.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</td>
+<td>Copy matrix.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.HMatrix.dump" title="openturns.HMatrix.dump"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dump</span></code></a>(name)</td>
 <td>Save matrix to a file.</td>
@@ -244,6 +250,28 @@ Cholesky or LU decomposition).</li>
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.HMatrix.assemble">
+<code class="descname">assemble</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.HMatrix.assemble" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assemble matrix.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">HMatrixRealAssemblyFunction</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">HMatrixTensorRealAssemblyFunction</span></code></span></dt>
+<dd><p class="first last">Assembly function.</p>
+</dd>
+<dt><strong>symmetry</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Symmetry flag, either N or L</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.HMatrix.assembleReal">
 <code class="descname">assembleReal</code><span class="sig-paren">(</span><em>callable</em>, <em>symmetry</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.HMatrix.assembleReal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assemble matrix.</p>
@@ -301,6 +329,28 @@ Cholesky or LU decomposition).</li>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>ratio</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-tuple of int</span></dt>
 <dd><p class="first last">Numbers of elements in the compressed and uncompressed forms.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.HMatrix.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.HMatrix.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy matrix.</p>
+<p>As factorization overwrites matrix contents, this method
+is useful to get a copy of assembled matrix before it is
+factorized.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>matrix</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="#openturns.HMatrix" title="openturns.HMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">HMatrix</span></code></a></span></dt>
+<dd><p class="first last">Matrix copy.</p>
 </dd>
 </dl>
 </td>
