@@ -192,7 +192,7 @@ We note <cite>K</cite> the number of fields contained in the process sample and 
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.ProcessSample.computeTemporalMean" title="openturns.ProcessSample.computeTemporalMean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeTemporalMean</span></code></a>()</td>
 <td>Compute the temporal mean of the values of the fields.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProcessSample.drawMarginal" title="openturns.ProcessSample.drawMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawMarginal</span></code></a>([index])</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProcessSample.drawMarginal" title="openturns.ProcessSample.drawMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawMarginal</span></code></a>([index,&nbsp;interpolate])</td>
 <td>Draw the selected field.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.ProcessSample.getClassName" title="openturns.ProcessSample.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
@@ -264,14 +264,13 @@ fields of the collection.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>mean</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Field.html#openturns.Field" title="openturns.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></span></dt>
-<dd><p class="first last">The mean field has the same dimension <cite>d</cite> and the same mesh as the fields
+<dd><p class="first">The mean field has the same dimension <cite>d</cite> and the same mesh as the fields
 contained in the collection. At each vertex of the mesh, we calculate
 the mean of the values at this vertex of the <cite>K</cite> fields contained
 in the process sample:</p>
-</dd>
-<dt><strong>.. math::</strong></dt>
-<dd><p class="first last">forall i in [0,N-1], quad dfrac{1}{K} sum_{k=1}^K vect{x}_i^k</p>
-</dd>
+<div class="last math">
+<p><img src="../../_images/math/220823ddcd0104cb82a552aa714d4c51097a6be1.svg" alt="\forall i \in [0,N-1], \quad \dfrac{1}{K} \sum_{k=1}^K \vect{x}_i^k"/></p>
+</div></dd>
 </dl>
 </td>
 </tr>
@@ -317,12 +316,11 @@ component-wise quantile of order <cite>p</cite>, using the empirical quantile.</
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>spatialMean</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">Its size is the number <cite>K</cite> of fields in the collection.
+<dd><p class="first">Its size is the number <cite>K</cite> of fields in the collection.
 Its dimension is <cite>d</cite>. The <cite>k</cite> numerical point is the spatial mean of the field <cite>k</cite>:</p>
-</dd>
-<dt><strong>.. math::</strong></dt>
-<dd><p class="first last">forall k in [1,K], quad dfrac{1}{N}sum_{i=0}^{N-1} vect{x}_i^k</p>
-</dd>
+<div class="last math">
+<p><img src="../../_images/math/fd3b75e2ef42c2cedcf64004d175ff3bb93b892a.svg" alt="\forall k \in [1,K], \quad \dfrac{1}{N}\sum_{i=0}^{N-1} \vect{x}_i^k"/></p>
+</div></dd>
 </dl>
 </td>
 </tr>
@@ -340,13 +338,12 @@ Its dimension is <cite>d</cite>. The <cite>k</cite> numerical point is the spati
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>spatialMean</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">Its size is the number <cite>K</cite> of fields in the collection.
+<dd><p class="first">Its size is the number <cite>K</cite> of fields in the collection.
 Its dimension is <cite>d</cite>.
 The <cite>k</cite> numerical point is the temporal mean of the field <cite>k</cite>:</p>
-</dd>
-<dt><strong>.. math::</strong></dt>
-<dd><p class="first last">forall k in [1,K], quad dfrac{1}{N}sum_{i=0}^{N-1} vect{x}_i^k</p>
-</dd>
+<div class="last math">
+<p><img src="../../_images/math/fd3b75e2ef42c2cedcf64004d175ff3bb93b892a.svg" alt="\forall k \in [1,K], \quad \dfrac{1}{N}\sum_{i=0}^{N-1} \vect{x}_i^k"/></p>
+</div></dd>
 <dt><strong>This method can be used only when the mesh can be interpreted as a regular grid.</strong></dt>
 <dd></dd>
 </dl>
@@ -358,7 +355,7 @@ The <cite>k</cite> numerical point is the temporal mean of the field <cite>k</ci
 
 <dl class="method">
 <dt id="openturns.ProcessSample.drawMarginal">
-<code class="descname">drawMarginal</code><span class="sig-paren">(</span><em>index=0</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProcessSample.drawMarginal" title="Permalink to this definition">¶</a></dt>
+<code class="descname">drawMarginal</code><span class="sig-paren">(</span><em>index=0</em>, <em>interpolate=True</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProcessSample.drawMarginal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw the selected field.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -367,6 +364,9 @@ The <cite>k</cite> numerical point is the temporal mean of the field <cite>k</ci
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>indice</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Index of the field that is drawn in the graph.</p>
+</dd>
+<dt><strong>interpolate</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool (optional, default=True)</span></dt>
+<dd><p class="first last">Whether to draw interpolated values.</p>
 </dd>
 </dl>
 </td>

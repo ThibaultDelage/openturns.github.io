@@ -218,8 +218,17 @@
 <tr class="row-even"><td><a class="reference internal" href="#openturns.FieldFunction.getOutputMesh" title="openturns.FieldFunction.getOutputMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputMesh</span></code></a>()</td>
 <td>Get the mesh associated to the output domain.</td>
 </tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.FieldFunction.isActingPointwise" title="openturns.FieldFunction.isActingPointwise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isActingPointwise</span></code></a>()</td>
+<td>Whether the function acts point-wise.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.FieldFunction.setInputMesh" title="openturns.FieldFunction.setInputMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInputMesh</span></code></a>(inputMesh)</td>
+<td>Set the mesh associated to the input domain.</td>
+</tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.FieldFunction.setName" title="openturns.FieldFunction.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.FieldFunction.setOutputMesh" title="openturns.FieldFunction.setOutputMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOutputMesh</span></code></a>(outputMesh)</td>
+<td>Set the mesh associated to the output domain.</td>
 </tr>
 </tbody>
 </table>
@@ -481,6 +490,45 @@ creation.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.FieldFunction.isActingPointwise">
+<code class="descname">isActingPointwise</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.FieldFunction.isActingPointwise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the function acts point-wise.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pointWise</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Returns true if the function evaluation at each vertex depends only on the
+vertex or the value at the vertex.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.FieldFunction.setInputMesh">
+<code class="descname">setInputMesh</code><span class="sig-paren">(</span><em>inputMesh</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.FieldFunction.setInputMesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the mesh associated to the input domain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>inputMesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
+<dd><p class="first last">The input mesh <img class="math" src="../../_images/math/26fd0931920c2084d09589f38dbda2bf946c37a5.svg" alt="\cM_{N'}"/>.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.FieldFunction.setName">
 <code class="descname">setName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.FieldFunction.setName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s name.</p>
@@ -491,6 +539,25 @@ creation.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
 <dd><p class="first last">The name of the object.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.FieldFunction.setOutputMesh">
+<code class="descname">setOutputMesh</code><span class="sig-paren">(</span><em>outputMesh</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.FieldFunction.setOutputMesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the mesh associated to the output domain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>outputMesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
+<dd><p class="first last">The output mesh <img class="math" src="../../_images/math/26fd0931920c2084d09589f38dbda2bf946c37a5.svg" alt="\cM_{N'}"/>.</p>
 </dd>
 </dl>
 </td>

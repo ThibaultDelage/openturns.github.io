@@ -204,11 +204,17 @@ to rebuild the projection between meshes.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.P1LagrangeInterpolation.hasVisibleName" title="openturns.P1LagrangeInterpolation.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.P1LagrangeInterpolation.setDimension" title="openturns.P1LagrangeInterpolation.setDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDimension</span></code></a>(dimension)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.P1LagrangeInterpolation.isActingPointwise" title="openturns.P1LagrangeInterpolation.isActingPointwise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isActingPointwise</span></code></a>()</td>
+<td>Whether the function acts point-wise.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.P1LagrangeInterpolation.setDimension" title="openturns.P1LagrangeInterpolation.setDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDimension</span></code></a>(dimension)</td>
 <td>Accessor to dimension of fields which are evaluated.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.P1LagrangeInterpolation.setInputDescription" title="openturns.P1LagrangeInterpolation.setInputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInputDescription</span></code></a>(inputDescription)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.P1LagrangeInterpolation.setInputDescription" title="openturns.P1LagrangeInterpolation.setInputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInputDescription</span></code></a>(inputDescription)</td>
 <td>Set the description of the input field values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.P1LagrangeInterpolation.setInputMesh" title="openturns.P1LagrangeInterpolation.setInputMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInputMesh</span></code></a>(inputMesh)</td>
+<td>Set the mesh associated to the input domain.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.P1LagrangeInterpolation.setName" title="openturns.P1LagrangeInterpolation.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
@@ -216,10 +222,13 @@ to rebuild the projection between meshes.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.P1LagrangeInterpolation.setOutputDescription" title="openturns.P1LagrangeInterpolation.setOutputDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOutputDescription</span></code></a>(outputDescription)</td>
 <td>Set the description of the output field values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.P1LagrangeInterpolation.setShadowedId" title="openturns.P1LagrangeInterpolation.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.P1LagrangeInterpolation.setOutputMesh" title="openturns.P1LagrangeInterpolation.setOutputMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOutputMesh</span></code></a>(outputMesh)</td>
+<td>Set the mesh associated to the output domain.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.P1LagrangeInterpolation.setShadowedId" title="openturns.P1LagrangeInterpolation.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.P1LagrangeInterpolation.setVisibility" title="openturns.P1LagrangeInterpolation.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.P1LagrangeInterpolation.setVisibility" title="openturns.P1LagrangeInterpolation.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -578,6 +587,26 @@ creation.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.P1LagrangeInterpolation.isActingPointwise">
+<code class="descname">isActingPointwise</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.P1LagrangeInterpolation.isActingPointwise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the function acts point-wise.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pointWise</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Returns true if the function evaluation at each vertex depends only on the
+vertex or the value at the vertex.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.P1LagrangeInterpolation.setDimension">
 <code class="descname">setDimension</code><span class="sig-paren">(</span><em>dimension</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.P1LagrangeInterpolation.setDimension" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to dimension of fields which are evaluated.</p>
@@ -616,6 +645,25 @@ creation.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.P1LagrangeInterpolation.setInputMesh">
+<code class="descname">setInputMesh</code><span class="sig-paren">(</span><em>inputMesh</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.P1LagrangeInterpolation.setInputMesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the mesh associated to the input domain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>inputMesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
+<dd><p class="first last">The input mesh <img class="math" src="../../_images/math/26fd0931920c2084d09589f38dbda2bf946c37a5.svg" alt="\cM_{N'}"/>.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.P1LagrangeInterpolation.setName">
 <code class="descname">setName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.P1LagrangeInterpolation.setName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s name.</p>
@@ -645,6 +693,25 @@ creation.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>outputDescription</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of str</span></dt>
 <dd><p class="first last">Describes the outputs of the output field values.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.P1LagrangeInterpolation.setOutputMesh">
+<code class="descname">setOutputMesh</code><span class="sig-paren">(</span><em>outputMesh</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.P1LagrangeInterpolation.setOutputMesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the mesh associated to the output domain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>outputMesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
+<dd><p class="first last">The output mesh <img class="math" src="../../_images/math/26fd0931920c2084d09589f38dbda2bf946c37a5.svg" alt="\cM_{N'}"/>.</p>
 </dd>
 </dl>
 </td>
