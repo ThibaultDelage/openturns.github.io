@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -158,7 +159,7 @@ equality between <em>values.getSize()</em> and <em>mesh.getVerticesNumber()</em>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.Field.asDeformedMesh" title="openturns.Field.asDeformedMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asDeformedMesh</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.Field.asDeformedMesh" title="openturns.Field.asDeformedMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asDeformedMesh</span></code></a>(*args)</td>
 <td>Get the mesh deformed according to the values of the field.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.Field.draw" title="openturns.Field.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>()</td>
@@ -234,18 +235,28 @@ equality between <em>values.getSize()</em> and <em>mesh.getVerticesNumber()</em>
 
 <dl class="method">
 <dt id="openturns.Field.asDeformedMesh">
-<code class="descname">asDeformedMesh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Field.asDeformedMesh" title="Permalink to this definition">¶</a></dt>
+<code class="descname">asDeformedMesh</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.Field.asDeformedMesh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the mesh deformed according to the values of the field.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>verticesPadding</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of int</span></dt>
+<dd><p class="first last">The positions at which the coordinates of vertices are set to zero when extending the vertices dimension. By default the sequence is empty.</p>
+</dd>
+<dt><strong>valuesPadding</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of int</span></dt>
+<dd><p class="first last">The positions at which the components of values are set to zero when extending the values dimension. By default the sequence is empty.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>deformedMesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
 <dd><p class="first last">The initial mesh is deformed as follows: each vertex of the mesh is
-replaced by the sum of the vertex and the value of the field at this
-vertex. Only works when the input dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/>: is
-equal to the dimension of the field <img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/>.</p>
+translated by the value of the field at this vertex. Only works when
+the input dimension <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/>: is equal to the dimension of the field
+<img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> after extension.</p>
 </dd>
 </dl>
 </td>
