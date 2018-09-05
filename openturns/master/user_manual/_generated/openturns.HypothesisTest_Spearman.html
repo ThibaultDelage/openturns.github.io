@@ -99,8 +99,8 @@
 <h1>HypothesisTest_Spearman<a class="headerlink" href="#hypothesistest-spearman" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="openturns.HypothesisTest_Spearman">
-<code class="descname">HypothesisTest_Spearman</code><span class="sig-paren">(</span><em>firstSample</em>, <em>secondSample</em>, <em>level=0.95</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.HypothesisTest_Spearman" title="Permalink to this definition">¶</a></dt>
-<dd><p>Test whether two discrete samples are not monotonous.</p>
+<code class="descname">HypothesisTest_Spearman</code><span class="sig-paren">(</span><em>firstSample</em>, <em>secondSample</em>, <em>level=0.05</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.HypothesisTest_Spearman" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test whether two samples have no rank correlation.</p>
 <p><strong>Available usages</strong>:</p>
 <blockquote>
 <div><p>HypothesisTest.Spearman(<em>firstSample, secondSample</em>)</p>
@@ -138,8 +138,8 @@
 <p class="last"><a class="reference internal" href="openturns.HypothesisTest_Smirnov.html#openturns.HypothesisTest_Smirnov" title="openturns.HypothesisTest_Smirnov"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HypothesisTest_Smirnov</span></code></a>, <a class="reference internal" href="openturns.HypothesisTest_Pearson.html#openturns.HypothesisTest_Pearson" title="openturns.HypothesisTest_Pearson"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HypothesisTest_Pearson</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>The Spearman Test is used to check whether two scalar samples have a monotonous
-relation.</p>
+<p>The Spearman Test is used to check whether two samples of dimension 1
+have no rank correlation.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -149,7 +149,7 @@ relation.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">secondSample</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">firstSample</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">test_result</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HypothesisTest</span><span class="o">.</span><span class="n">Spearman</span><span class="p">(</span><span class="n">firstSample</span><span class="p">,</span> <span class="n">secondSample</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">test_result</span><span class="p">)</span>
-<span class="go">class=TestResult name=Unnamed type=TwoSampleSpearman binaryQualityMeasure=true p-value threshold=0.05 p-value=0.44348 description=[]</span>
+<span class="go">class=TestResult name=Unnamed type=Spearman binaryQualityMeasure=true p-value threshold=0.05 p-value=0.442067 description=[]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -183,7 +183,7 @@ relation.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
     </div>
   </body>
 </html>
