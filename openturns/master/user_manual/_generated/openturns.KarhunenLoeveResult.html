@@ -118,7 +118,7 @@
 <dt><strong>covModel</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></span></dt>
 <dd><p class="first last">The covariance model.</p>
 </dd>
-<dt><strong>s</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/ed5b773978c6c31d1900a1935a55b630b2fd900e.svg" alt="\geq0"/></span></dt>
+<dt><strong>s</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/e12ca94f30b06a3515ba26035c37ee353d780ee2.svg" alt="\geq0"/></span></dt>
 <dd><p class="first last">The threshold used to select the most significant eigenmodes, defined in  <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
 </dd>
 <dt><strong>lambda</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
@@ -140,36 +140,36 @@
 </table>
 <p class="rubric">Notes</p>
 <p>Structure generally created by the method run() of a <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a> and obtained thanks to the method getResult().</p>
-<p>We consider <img class="math" src="../../_images/math/29f0872f3ffb9ba93438da104e7d79cbc7dab02f.svg" alt="C:\cD \times \cD \rightarrow  \cS^+_d(\Rset)"/> a covariance function defined on <img class="math" src="../../_images/math/3d7e1160d7e53256036e975e1957c3e2bde7847f.svg" alt="\cD \in \Rset^n"/>, continuous at <img class="math" src="../../_images/math/f7dc87e7df595a415c2cf5b3d4db65c5a2e804c5.svg" alt="\vect{0}"/>.</p>
-<p>We note <img class="math" src="../../_images/math/63ac23c7af4a24c5191f23f07066589a47b6efe0.svg" alt="(\lambda_k,  \vect{\varphi}_k)_{1 \leq k \leq K}"/> the solutions of the Fredholm problem associated to  <img class="math" src="../../_images/math/cc97f9382a9b766edaef6224b2a18e88824ad2c0.svg" alt="C"/> where <em>K</em> is the highest index <img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> such that <img class="math" src="../../_images/math/03cee9b5981b586e8e3a528532a6122699ef8ff2.svg" alt="\lambda_K \geq s \lambda_1"/>.</p>
-<p>We note <img class="math" src="../../_images/math/e8b38e7787310eca391ed49a12bffbaf0d742355.svg" alt="\vect{\lambda}"/> the eigenvalues sequence and <img class="math" src="../../_images/math/ccc420774f229a14548858522f23d66374408f75.svg" alt="\vect{\varphi}"/> the eigenfunctions sequence.</p>
-<p>Then we define the linear projection function <img class="math" src="../../_images/math/d5b633ff78f2d427bae65c71ab652a51efb1c6f4.svg" alt="\pi_{ \vect{\lambda}, \vect{\varphi}}"/> by:</p>
+<p>We consider <img class="math" src="../../_images/math/d585b26bec7b3c49fab8f68c3ca9b483e0670d15.svg" alt="C:\cD \times \cD \rightarrow  \cS^+_d(\Rset)"/> a covariance function defined on <img class="math" src="../../_images/math/2d98a1790a94d717f54c99f9d29f71d8035ed993.svg" alt="\cD \in \Rset^n"/>, continuous at <img class="math" src="../../_images/math/7d862242a23c0bddcd0cd6453a85e63d236795d0.svg" alt="\vect{0}"/>.</p>
+<p>We note <img class="math" src="../../_images/math/726ffca7a5e2c663090a7b781140f5fef0287fbf.svg" alt="(\lambda_k,  \vect{\varphi}_k)_{1 \leq k \leq K}"/> the solutions of the Fredholm problem associated to  <img class="math" src="../../_images/math/672a37f589017d9850b03c88d416135b30d4f284.svg" alt="C"/> where <em>K</em> is the highest index <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> such that <img class="math" src="../../_images/math/c4141ca9024ae83fd1af81027f960c54e988ddfd.svg" alt="\lambda_K \geq s \lambda_1"/>.</p>
+<p>We note <img class="math" src="../../_images/math/ae9ead0d4862367669ade58386a2c925e5e4340d.svg" alt="\vect{\lambda}"/> the eigenvalues sequence and <img class="math" src="../../_images/math/c8c93effdc607368c708023de4f1bdd41e8537fa.svg" alt="\vect{\varphi}"/> the eigenfunctions sequence.</p>
+<p>Then we define the linear projection function <img class="math" src="../../_images/math/621ecc959a31afa321558622ecfa13cd0bb87fec.svg" alt="\pi_{ \vect{\lambda}, \vect{\varphi}}"/> by:</p>
 <div class="math" id="equation-projection">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-projection" title="Permalink to this equation">¶</a></span><img src="../../_images/math/0749ea69c2e44c54a1dabfb3a1549e08a755b057.svg" alt="\pi_{\vect{\lambda}, \vect{\varphi}}: \left|
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-projection" title="Permalink to this equation">¶</a></span><img src="../../_images/math/7ceb5949d0cdc88681ed67cae658f1896c16a520.svg" alt="\pi_{\vect{\lambda}, \vect{\varphi}}: \left|
   \begin{array}{ccl}
     L^2(\cD, \Rset^d) &amp; \rightarrow &amp; \cS^{\Nset} \\
     f &amp; \mapsto &amp;\left(\dfrac{1}{\sqrt{\lambda_k}}\int_{\cD}f(\vect{t}) \vect{\varphi}_k(\vect{t})\, d\vect{t}\right)_{k \geq 1}
   \end{array}
 \right."/></p>
-</div><p>where <img class="math" src="../../_images/math/04bcd3125aac7b81a9633a544c08e505ac6a6b79.svg" alt="\cS^{\Nset}  = \left \{ (\zeta_k)_{k \geq 1} \in  \Rset^{\Nset} \, | \, \sum_{k=1}^{\infty}\lambda_k \zeta_k^2 &lt; +\infty \right \}"/>.</p>
+</div><p>where <img class="math" src="../../_images/math/3ea28453578df19e38be3e8f5303091163369ad6.svg" alt="\cS^{\Nset}  = \left \{ (\zeta_k)_{k \geq 1} \in  \Rset^{\Nset} \, | \, \sum_{k=1}^{\infty}\lambda_k \zeta_k^2 &lt; +\infty \right \}"/>.</p>
 <p>According to the Karhunen Loeve algorithm, the integral of <a class="reference internal" href="#equation-projection">(1)</a> is replaced by a specific weighted and finite sum. Thus, the linear relation <a class="reference internal" href="#equation-projection">(1)</a> becomes a relation between fields which allows the following matrix representation:</p>
 <div class="math" id="equation-projectionmatrix">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-projectionmatrix" title="Permalink to this equation">¶</a></span><img src="../../_images/math/e70988ac4156708a62ff6ea95420a111f3571b18.svg" alt="\left|
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-projectionmatrix" title="Permalink to this equation">¶</a></span><img src="../../_images/math/487911571df2f3db16926b45c0b6c4eb9b4e5fae.svg" alt="\left|
   \begin{array}{ccl}
      \cM_N \times (\Rset^d)^N &amp; \rightarrow &amp; \Rset^K \\
      F &amp; \mapsto &amp; (\xi_1, \dots, \xi_K) = MF
   \end{array}
 \right."/></p>
-</div><p>where <img class="math" src="../../_images/math/5a29f968610752a24dd8e3d81f927a512f97a86b.svg" alt="F = (\vect{t}_i, \vect{v}_i)_{1 \leq i \leq N}"/> is a <a class="reference internal" href="openturns.Field.html#openturns.Field" title="openturns.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a> and <img class="math" src="../../_images/math/063911fe0928b5aa7856e498e1e5b3a2bb89ed5a.svg" alt="M"/>  the <em>projection matrix</em>.</p>
-<p>The inverse of <img class="math" src="../../_images/math/f28a44d1a66d40bee284c331b9267df667aaec71.svg" alt="\pi_{\vect{\lambda}, \vect{\varphi}}"/> is the lift function defined by:</p>
+</div><p>where <img class="math" src="../../_images/math/c8c6dcf9a42f4ab9ed69f2094c6b2370579e4ddb.svg" alt="F = (\vect{t}_i, \vect{v}_i)_{1 \leq i \leq N}"/> is a <a class="reference internal" href="openturns.Field.html#openturns.Field" title="openturns.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a> and <img class="math" src="../../_images/math/aadb4b560f4759eb199cb33c5eb662ffe016dc18.svg" alt="M"/>  the <em>projection matrix</em>.</p>
+<p>The inverse of <img class="math" src="../../_images/math/b496aaa3cc78cdb802e6d4d307023ca31cb5d160.svg" alt="\pi_{\vect{\lambda}, \vect{\varphi}}"/> is the lift function defined by:</p>
 <div class="math" id="equation-lift">
-<p><span class="eqno">(3)<a class="headerlink" href="#equation-lift" title="Permalink to this equation">¶</a></span><img src="../../_images/math/aaea531dc65e4c18efa756c02b72f599f3a7fc11.svg" alt="\pi_{\vect{\lambda}, \vect{\varphi}}^{-1}: \left|
+<p><span class="eqno">(3)<a class="headerlink" href="#equation-lift" title="Permalink to this equation">¶</a></span><img src="../../_images/math/d98dbcadf010f26cf6c1f821267088210bc771a9.svg" alt="\pi_{\vect{\lambda}, \vect{\varphi}}^{-1}: \left|
   \begin{array}{ccl}
      \cS^{\Nset} &amp; \rightarrow &amp; L^2(\cD, \Rset^d)\\
     (\xi_k)_{k \geq 1} &amp; \mapsto &amp; f(.) = \sum_{k \geq 1} \sqrt{\lambda_k}\xi_k \vect{\varphi}_k(.)
   \end{array}
 \right."/></p>
-</div><p>If the function <img class="math" src="../../_images/math/653bf04793d832221d4ca44ca1055b10e3e07c60.svg" alt="f(.) = X(\omega_0, .)"/> where <img class="math" src="../../_images/math/f1b50f1cf2a4ace81733f358fd002c88dc7a7ad8.svg" alt="X"/> is the centered process which covariance function is associated to the eigenvalues and eigenfunctions <img class="math" src="../../_images/math/3bac33153813b8fd7f80150d52da709e61224609.svg" alt="(\vect{\lambda}, \vect{\varphi})"/>, then the <em>getEigenValues</em> method enables to obtain the <img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> first eigenvalues of the Karhunen Loeve decomposition of <img class="math" src="../../_images/math/f1b50f1cf2a4ace81733f358fd002c88dc7a7ad8.svg" alt="X"/> and the method <em>getModes</em> enables to get the associated modes.</p>
+</div><p>If the function <img class="math" src="../../_images/math/c93f376084d21a5b2527019e75b3921a77bce568.svg" alt="f(.) = X(\omega_0, .)"/> where <img class="math" src="../../_images/math/e39fc198cd7e936bd7b824c9b924f7dc377b6975.svg" alt="X"/> is the centered process which covariance function is associated to the eigenvalues and eigenfunctions <img class="math" src="../../_images/math/c7063de22513b215339b1cea1edebe13186a33e7.svg" alt="(\vect{\lambda}, \vect{\varphi})"/>, then the <em>getEigenValues</em> method enables to obtain the <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> first eigenvalues of the Karhunen Loeve decomposition of <img class="math" src="../../_images/math/e39fc198cd7e936bd7b824c9b924f7dc377b6975.svg" alt="X"/> and the method <em>getModes</em> enables to get the associated modes.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">N</span> <span class="o">=</span> <span class="mi">256</span>
@@ -307,7 +307,7 @@
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>OpenTURNS truncates the sequence <img class="math" src="../../_images/math/7c7372f683a6d4650208211df361ba7fa2b652e2.svg" alt="(\lambda_k,  \vect{\varphi}_k)_{k \geq 1}"/>  to the most significant terms, selected by the threshold defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
+<p>OpenTURNS truncates the sequence <img class="math" src="../../_images/math/11494655aa499a021ae4e7d3ff2d90cf30d064d9.svg" alt="(\lambda_k,  \vect{\varphi}_k)_{k \geq 1}"/>  to the most significant terms, selected by the threshold defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -378,7 +378,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>modes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">collection of <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
-<dd><p class="first last">The truncated basis <img class="math" src="../../_images/math/676a68d29ce46fe3c5ea8b99f8c6badbf5cfc7bc.svg" alt="(\vect{\varphi}_k)_{1 \leq k \leq K}"/>.</p>
+<dd><p class="first last">The truncated basis <img class="math" src="../../_images/math/5a45251542c2deb803265f2fbce747a858038610.svg" alt="(\vect{\varphi}_k)_{1 \leq k \leq K}"/>.</p>
 </dd>
 </dl>
 </td>
@@ -386,8 +386,8 @@
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The basis is truncated to <img class="math" src="../../_images/math/676a68d29ce46fe3c5ea8b99f8c6badbf5cfc7bc.svg" alt="(\vect{\varphi}_k)_{1 \leq k \leq K}"/> where
-<img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/>  is determined by the <img class="math" src="../../_images/math/000fd8cf916564635b0a27243af773bb47dee7c4.svg" alt="s"/>, defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
+<p>The basis is truncated to <img class="math" src="../../_images/math/5a45251542c2deb803265f2fbce747a858038610.svg" alt="(\vect{\varphi}_k)_{1 \leq k \leq K}"/> where
+<img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/>  is determined by the <img class="math" src="../../_images/math/6152ab1727a5471b499b19f272492eb14272751c.svg" alt="s"/>, defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -409,7 +409,7 @@ Fredholm equation.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The modes <img class="math" src="../../_images/math/676a68d29ce46fe3c5ea8b99f8c6badbf5cfc7bc.svg" alt="(\vect{\varphi}_k)_{1 \leq k \leq K}"/> are evaluated on the vertices of the mesh defining the process sample. The values of the i-th field are the values of the i-th mode on these vertices.</p>
+<p>The modes <img class="math" src="../../_images/math/5a45251542c2deb803265f2fbce747a858038610.svg" alt="(\vect{\varphi}_k)_{1 \leq k \leq K}"/> are evaluated on the vertices of the mesh defining the process sample. The values of the i-th field are the values of the i-th mode on these vertices.</p>
 <p>The mesh corresponds to the discretization points of the integral in <a class="reference internal" href="#equation-projection">(1)</a>.</p>
 </dd></dl>
 
@@ -442,7 +442,7 @@ Fredholm equation.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>projection</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Matrix.html#openturns.Matrix" title="openturns.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a></span></dt>
-<dd><p class="first last">The  matrix <img class="math" src="../../_images/math/063911fe0928b5aa7856e498e1e5b3a2bb89ed5a.svg" alt="M"/> defined in <a class="reference internal" href="#equation-projectionmatrix">(2)</a>.</p>
+<dd><p class="first last">The  matrix <img class="math" src="../../_images/math/aadb4b560f4759eb199cb33c5eb662ffe016dc18.svg" alt="M"/> defined in <a class="reference internal" href="#equation-projectionmatrix">(2)</a>.</p>
 </dd>
 </dl>
 </td>
@@ -461,7 +461,7 @@ Fredholm equation.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>modes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">collection of <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
-<dd><p class="first last">The truncated basis <img class="math" src="../../_images/math/b9fa5df2bbd457ef613560abf813385c107ced10.svg" alt="(\sqrt{\lambda_k}\vect{\varphi}_k)_{1 \leq k \leq K}"/>.</p>
+<dd><p class="first last">The truncated basis <img class="math" src="../../_images/math/43b8cc101a6022cac532b956f4ed3c17e3f7c670.svg" alt="(\sqrt{\lambda_k}\vect{\varphi}_k)_{1 \leq k \leq K}"/>.</p>
 </dd>
 </dl>
 </td>
@@ -469,8 +469,8 @@ Fredholm equation.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The basis is truncated to <img class="math" src="../../_images/math/b9fa5df2bbd457ef613560abf813385c107ced10.svg" alt="(\sqrt{\lambda_k}\vect{\varphi}_k)_{1 \leq k \leq K}"/>
-where <img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> is determined by the <img class="math" src="../../_images/math/000fd8cf916564635b0a27243af773bb47dee7c4.svg" alt="s"/>, defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
+<p>The basis is truncated to <img class="math" src="../../_images/math/43b8cc101a6022cac532b956f4ed3c17e3f7c670.svg" alt="(\sqrt{\lambda_k}\vect{\varphi}_k)_{1 \leq k \leq K}"/>
+where <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> is determined by the <img class="math" src="../../_images/math/6152ab1727a5471b499b19f272492eb14272751c.svg" alt="s"/>, defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -492,7 +492,7 @@ discretize the Fredholm equation.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The modes <img class="math" src="../../_images/math/676a68d29ce46fe3c5ea8b99f8c6badbf5cfc7bc.svg" alt="(\vect{\varphi}_k)_{1 \leq k \leq K}"/> are evaluated on the
+<p>The modes <img class="math" src="../../_images/math/5a45251542c2deb803265f2fbce747a858038610.svg" alt="(\vect{\varphi}_k)_{1 \leq k \leq K}"/> are evaluated on the
 vertices of the mesh defining the process sample. The values of the i-th field
 are the values of the i-th mode on these vertices.</p>
 <dl class="docutils">
@@ -510,8 +510,8 @@ are the values of the i-th mode on these vertices.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>s</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/8a1784bb2b3ef6fb7e7ccd6ef36c2eabb8b6554e.svg" alt="\geq 0"/></span></dt>
-<dd><p class="first last">The threshold <img class="math" src="../../_images/math/000fd8cf916564635b0a27243af773bb47dee7c4.svg" alt="s"/> used to select the most significant eigenmodes, defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
+<dt><strong>s</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/2df8b328a22927498bf54f3abfdad68f6f410ca0.svg" alt="\geq 0"/></span></dt>
+<dd><p class="first last">The threshold <img class="math" src="../../_images/math/6152ab1727a5471b499b19f272492eb14272751c.svg" alt="s"/> used to select the most significant eigenmodes, defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
 </dd>
 </dl>
 </td>
@@ -530,14 +530,14 @@ are the values of the i-th mode on these vertices.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>coef</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">The coefficients <img class="math" src="../../_images/math/236594f6d95d7057c336b0fb89b687326922c946.svg" alt="(\xi_1, \dots, \xi_K)"/>.</p>
+<dd><p class="first last">The coefficients <img class="math" src="../../_images/math/e2a65db983ac3a4f856a336d2a5f7e6fa8f53c15.svg" alt="(\xi_1, \dots, \xi_K)"/>.</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>modes</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
-<dd><p class="first last">The function <img class="math" src="../../_images/math/68690c6e741b6c06797c7e5bed2d9f89bf5b065a.svg" alt="f"/> defined in <a class="reference internal" href="#equation-lift">(3)</a>.</p>
+<dd><p class="first last">The function <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> defined in <a class="reference internal" href="#equation-lift">(3)</a>.</p>
 </dd>
 </dl>
 </td>
@@ -545,7 +545,7 @@ are the values of the i-th mode on these vertices.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The sum defining <img class="math" src="../../_images/math/68690c6e741b6c06797c7e5bed2d9f89bf5b065a.svg" alt="f"/> is truncated to the first <img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> terms, where <img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/>  is determined by the <img class="math" src="../../_images/math/000fd8cf916564635b0a27243af773bb47dee7c4.svg" alt="s"/>, defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
+<p>The sum defining <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> is truncated to the first <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> terms, where <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/>  is determined by the <img class="math" src="../../_images/math/6152ab1727a5471b499b19f272492eb14272751c.svg" alt="s"/>, defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -558,14 +558,14 @@ are the values of the i-th mode on these vertices.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>coef</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">The coefficients <img class="math" src="../../_images/math/236594f6d95d7057c336b0fb89b687326922c946.svg" alt="(\xi_1, \dots, \xi_K)"/>.</p>
+<dd><p class="first last">The coefficients <img class="math" src="../../_images/math/e2a65db983ac3a4f856a336d2a5f7e6fa8f53c15.svg" alt="(\xi_1, \dots, \xi_K)"/>.</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>modes</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Field.html#openturns.Field" title="openturns.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></span></dt>
-<dd><p class="first last">The function <img class="math" src="../../_images/math/68690c6e741b6c06797c7e5bed2d9f89bf5b065a.svg" alt="f"/> defined in <a class="reference internal" href="#equation-lift">(3)</a> evaluated on the mesh associated to the discretization of <a class="reference internal" href="#equation-projection">(1)</a>.</p>
+<dd><p class="first last">The function <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> defined in <a class="reference internal" href="#equation-lift">(3)</a> evaluated on the mesh associated to the discretization of <a class="reference internal" href="#equation-projection">(1)</a>.</p>
 </dd>
 </dl>
 </td>
@@ -573,7 +573,7 @@ are the values of the i-th mode on these vertices.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The sum defining <img class="math" src="../../_images/math/68690c6e741b6c06797c7e5bed2d9f89bf5b065a.svg" alt="f"/> is truncated to the first <img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> terms, where <img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> is determined by the <img class="math" src="../../_images/math/000fd8cf916564635b0a27243af773bb47dee7c4.svg" alt="s"/>, defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
+<p>The sum defining <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> is truncated to the first <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> terms, where <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> is determined by the <img class="math" src="../../_images/math/6152ab1727a5471b499b19f272492eb14272751c.svg" alt="s"/>, defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -586,14 +586,14 @@ are the values of the i-th mode on these vertices.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>coef</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">The coefficients <img class="math" src="../../_images/math/236594f6d95d7057c336b0fb89b687326922c946.svg" alt="(\xi_1, \dots, \xi_K)"/>.</p>
+<dd><p class="first last">The coefficients <img class="math" src="../../_images/math/e2a65db983ac3a4f856a336d2a5f7e6fa8f53c15.svg" alt="(\xi_1, \dots, \xi_K)"/>.</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>modes</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">The function <img class="math" src="../../_images/math/68690c6e741b6c06797c7e5bed2d9f89bf5b065a.svg" alt="f"/> defined in <a class="reference internal" href="#equation-lift">(3)</a> evaluated on the mesh associated to the discretization of <a class="reference internal" href="#equation-projection">(1)</a>.</p>
+<dd><p class="first last">The function <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> defined in <a class="reference internal" href="#equation-lift">(3)</a> evaluated on the mesh associated to the discretization of <a class="reference internal" href="#equation-projection">(1)</a>.</p>
 </dd>
 </dl>
 </td>
@@ -601,7 +601,7 @@ are the values of the i-th mode on these vertices.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The sum defining <img class="math" src="../../_images/math/68690c6e741b6c06797c7e5bed2d9f89bf5b065a.svg" alt="f"/> is truncated to the first <img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> terms, where <img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> is determined by the <img class="math" src="../../_images/math/000fd8cf916564635b0a27243af773bb47dee7c4.svg" alt="s"/>, defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
+<p>The sum defining <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> is truncated to the first <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> terms, where <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> is determined by the <img class="math" src="../../_images/math/6152ab1727a5471b499b19f272492eb14272751c.svg" alt="s"/>, defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -638,10 +638,10 @@ are the values of the i-th mode on these vertices.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>point</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">The vector <img class="math" src="../../_images/math/51df9e46d6f1881005e0fdafba27f6a823e661c2.svg" alt="(\alpha_1, \dots, \alpha_K)"/> of the components of the function or the field in the eigenmodes basis</p>
+<dd><p class="first last">The vector <img class="math" src="../../_images/math/ca1b127b24c1242a2b63c819ab150f951ea6d87a.svg" alt="(\alpha_1, \dots, \alpha_K)"/> of the components of the function or the field in the eigenmodes basis</p>
 </dd>
 <dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">The collection of the vectors <img class="math" src="../../_images/math/51df9e46d6f1881005e0fdafba27f6a823e661c2.svg" alt="(\alpha_1, \dots, \alpha_K)"/> of the components of the collection of functions or fields in the eigenmodes basis</p>
+<dd><p class="first last">The collection of the vectors <img class="math" src="../../_images/math/ca1b127b24c1242a2b63c819ab150f951ea6d87a.svg" alt="(\alpha_1, \dots, \alpha_K)"/> of the components of the collection of functions or fields in the eigenmodes basis</p>
 </dd>
 </dl>
 </td>
@@ -649,11 +649,11 @@ are the values of the i-th mode on these vertices.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The <em>project</em> method calculates the projection <a class="reference internal" href="#equation-projection">(1)</a> on a function  or a field where only the first <img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> elements of the sequences are calculated.
-<img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> is determined by the <img class="math" src="../../_images/math/000fd8cf916564635b0a27243af773bb47dee7c4.svg" alt="s"/>, defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
-<p>Lets note <img class="math" src="../../_images/math/024fb78beb95ac38ce1a3026102fc7a093d7fa21.svg" alt="\cM_{KL}"/> the mesh coming from the <a class="reference internal" href="#openturns.KarhunenLoeveResult" title="openturns.KarhunenLoeveResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveResult</span></code></a> (ie the one contained in the <em>modesAsSample</em> <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a>).</p>
-<p>The given values are defined on the input field <img class="math" src="../../_images/math/024fb78beb95ac38ce1a3026102fc7a093d7fa21.svg" alt="\cM_{KL}"/> and the associated values are directly used for the projection.</p>
-<p>If evaluated from a function, the <em>project</em> method evaluates the function on <img class="math" src="../../_images/math/024fb78beb95ac38ce1a3026102fc7a093d7fa21.svg" alt="\cM_{KL}"/> and uses <a class="reference internal" href="#equation-projectionmatrix">(2)</a>.</p>
+<p>The <em>project</em> method calculates the projection <a class="reference internal" href="#equation-projection">(1)</a> on a function  or a field where only the first <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> elements of the sequences are calculated.
+<img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> is determined by the <img class="math" src="../../_images/math/6152ab1727a5471b499b19f272492eb14272751c.svg" alt="s"/>, defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
+<p>Lets note <img class="math" src="../../_images/math/013fd5ee83f2b0f0f55232f3abf02d1818fb562c.svg" alt="\cM_{KL}"/> the mesh coming from the <a class="reference internal" href="#openturns.KarhunenLoeveResult" title="openturns.KarhunenLoeveResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveResult</span></code></a> (ie the one contained in the <em>modesAsSample</em> <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a>).</p>
+<p>The given values are defined on the input field <img class="math" src="../../_images/math/013fd5ee83f2b0f0f55232f3abf02d1818fb562c.svg" alt="\cM_{KL}"/> and the associated values are directly used for the projection.</p>
+<p>If evaluated from a function, the <em>project</em> method evaluates the function on <img class="math" src="../../_images/math/013fd5ee83f2b0f0f55232f3abf02d1818fb562c.svg" alt="\cM_{KL}"/> and uses <a class="reference internal" href="#equation-projectionmatrix">(2)</a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -705,8 +705,8 @@ are the values of the i-th mode on these vertices.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

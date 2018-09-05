@@ -99,12 +99,12 @@
 <h1>Importance Simulation<a class="headerlink" href="#importance-simulation" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">Let us note
-<img class="math" src="../../_images/math/4059a612d2297eb95add05c6b714e2d2de8b3cd2.svg" alt="\cD_f = \{\ux \in \Rset^{n} | g(\ux,\underline{d}) \leq 0\}"/>.
+<img class="math" src="../../_images/math/318345bf42b9d01835690dde96d95ed3027588db.svg" alt="\cD_f = \{\ux \in \Rset^{n} | g(\ux,\underline{d}) \leq 0\}"/>.
 The goal is to estimate the following probability:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/6f12e3ab38fe9e0bdef010fd42106a4d7b2c4b63.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/68f27de5eca569d6dcc634859f9f366cb5899a3d.svg" alt="\begin{aligned}
     P_f &amp;=&amp; \int_{\cD_f} f_{\uX}(\ux)d\ux\\
     &amp;=&amp; \int_{\Rset^{n}} \mathbf{1}_{\{g(\ux,\underline{d}) \:\leq 0\: \}}f_{\uX}(\ux)d\ux\\
     &amp;=&amp; \Prob {\{g(\uX,\underline{d}) \leq 0\}}
@@ -114,29 +114,29 @@ The goal is to estimate the following probability:</div>
 <div class="line">This is a sampling-based method. The main idea of the Importance
 Sampling method is to replace the initial probability distribution of
 the input variables by a more “efficient” one. “Efficient” means that
-more events will be counted in the failure domain <img class="math" src="../../_images/math/6a290d21416df992d1e72ea4eff12e18846e60ea.svg" alt="\cD_f"/> and
+more events will be counted in the failure domain <img class="math" src="../../_images/math/252362c991122f578eb1b8a9a9e2af13e42655d8.svg" alt="\cD_f"/> and
 thus reduce the variance of the estimator of the probability of
-exceeding a threshold. Let <img class="math" src="../../_images/math/610ae71bc6155fe9269d9bd6ace1acf1a824de63.svg" alt="\underline{Y}"/> be a random vector
+exceeding a threshold. Let <img class="math" src="../../_images/math/bee9159cbbc4c64ba61d74e4c2d7728c96c2a5b8.svg" alt="\underline{Y}"/> be a random vector
 such that its probability density function
-<img class="math" src="../../_images/math/d12e87c4380b373e03a2200be116810024ceb22b.svg" alt="f_{\underline{Y}}(\underline{y}) &gt; 0"/> almost everywhere in the
-domain <img class="math" src="../../_images/math/6a290d21416df992d1e72ea4eff12e18846e60ea.svg" alt="\cD_f"/>,</div>
+<img class="math" src="../../_images/math/406c1cf020dfc14275451fcc14eb6e712472cf4c.svg" alt="f_{\underline{Y}}(\underline{y}) &gt; 0"/> almost everywhere in the
+domain <img class="math" src="../../_images/math/252362c991122f578eb1b8a9a9e2af13e42655d8.svg" alt="\cD_f"/>,</div>
 </div>
 <div class="math">
-<p><img src="../../_images/math/affad0bb35df5f41440248ea20e1b14da393c75d.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/116e0da087d50096dbad73013adc369333c2238f.svg" alt="\begin{aligned}
     P_f &amp;=&amp; \int_{\Rset^{n}} \mathbf{1}_{\{g(\ux,\underline{d}) \leq 0 \}}f_{\uX}(\ux)d\ux\\
     &amp;=&amp; \int_{\Rset^{n}} \mathbf{1}_{\{g(\ux,\underline{d}) \leq 0 \}} \frac{f_{\uX}(\ux)}{f_{\underline{Y}}(\ux)}f_{\underline{Y}}(\ux)d\ux
   \end{aligned}"/></p>
 </div><p>The estimator built by Importance Sampling method is:</p>
 <div class="math">
-<p><img src="../../_images/math/5403c30a1b78dbca8339e86dd24f519e096067b2.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/0ef28a078a304ff42f1fd2c85e665348c2c6254a.svg" alt="\begin{aligned}
     \hat{P}_{f,IS}^N = \frac{1}{N}\sum_{i=1}^N \mathbf{1}_{\{g(\underline{Y}_{\:i}),\underline{d}) \leq 0 \}}\frac{f_{\uX}(\underline{Y}_{\:i})}{f_{\underline{Y}}(\underline{Y}_{\:i})}
   \end{aligned}"/></p>
 </div><p>where:</p>
 <ul class="simple">
-<li><img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> is the total number of computations,</li>
-<li>the random vectors <img class="math" src="../../_images/math/e205809333cad3f96c6884381b982a4ed8492c02.svg" alt="\{\underline{Y}_i, i=1\hdots N\}"/> are
+<li><img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> is the total number of computations,</li>
+<li>the random vectors <img class="math" src="../../_images/math/a859508b24315a441b1220d0aa22060fb9431d57.svg" alt="\{\underline{Y}_i, i=1\hdots N\}"/> are
 independent, identically distributed and following the probability
-density function <img class="math" src="../../_images/math/3b8dbe900639f0686cf323670bbb6597bd53c956.svg" alt="f_{\uY}"/></li>
+density function <img class="math" src="../../_images/math/2575c398a1416ebbee2cf303c227b6a5c0b1b38a.svg" alt="f_{\uY}"/></li>
 </ul>
 <p><strong>Confidence Intervals</strong></p>
 <div class="line-block">
@@ -144,19 +144,19 @@ density function <img class="math" src="../../_images/math/3b8dbe900639f0686cf32
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/ad28aeff09df83b71736a45692c1c26898f45bfa.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/3ae5bb78b0a1b3c67d6333de1c47746078b34c60.svg" alt="\begin{aligned}
     \mu_N &amp;=&amp; \frac{1}{N}\sum_{i=1}^N \mathbf{1}_{\{g(\underline{y}_{\:i}),\underline{d}) \leq 0 \}}\frac{f_{\uX}(\underline{y}_{\:i})}{f_{\underline{Y}}(\underline{y}_{\:i})}\\
     \sigma_N^2 &amp;=&amp; \frac{1}{N}\sum_{i=1}^N (\mathbf{1}_{\{g(\underline{y}_i),\underline{d}) \leq 0 \}}\frac{f_{\uX}(\underline{y}_{\:i})}{f_{\underline{Y}}(\underline{y}_{\:i})} - \mu_N)^2
   \end{aligned}"/></p>
 </div></div></blockquote>
-<p>The asymptotic confidence interval of order <img class="math" src="../../_images/math/a02b81d8a3875175a5e8545e9d13a6f14c8ba85c.svg" alt="1-\alpha"/> associated
-to the estimator <img class="math" src="../../_images/math/f0374209daa46e9ba8ace682a7a6c07940261e6a.svg" alt="P_{f,IS}^N"/> is</p>
+<p>The asymptotic confidence interval of order <img class="math" src="../../_images/math/5771e0b6e3fc17a9d95a4869a1cccd6becaa21d2.svg" alt="1-\alpha"/> associated
+to the estimator <img class="math" src="../../_images/math/05e5a6b5a6e14706120fe90f2351ee013c13be00.svg" alt="P_{f,IS}^N"/> is</p>
 <div class="math">
-<p><img src="../../_images/math/3ea5aed0ffd2ddc1d6bf0447c9217e066b11b9b2.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/230d0215c858a3560d4b8e56f7da985f1e6a9878.svg" alt="\begin{aligned}
     [ \mu_N - \frac{q_{1-\alpha / 2} . \sigma_N}{\sqrt{N}} \: ; \: \mu_N + \frac{q_{1-\alpha / 2} . \sigma_N}{\sqrt{N}} ]
   \end{aligned}"/></p>
-</div><p>where <img class="math" src="../../_images/math/47c812bd0ebcecc6bf932da25f045b0b566f3f84.svg" alt="q_{1-\alpha /2}"/> is the <img class="math" src="../../_images/math/05d180d76caa233178ade42378a2c38ad36587a7.svg" alt="1-\alpha / 2"/> quantile from
-the standard distribution <img class="math" src="../../_images/math/6f953454545591954db780def7106df518363404.svg" alt="\cN(0,1)"/>.</p>
+</div><p>where <img class="math" src="../../_images/math/50de1d37429b383b4c7869aa10959e82936fca1c.svg" alt="q_{1-\alpha /2}"/> is the <img class="math" src="../../_images/math/0c949e1662ddf510a3283b4e4ab5538fd0f31ae7.svg" alt="1-\alpha / 2"/> quantile from
+the standard distribution <img class="math" src="../../_images/math/6c6e0506080f119779816d6764299cd6ca9b4eb8.svg" alt="\cN(0,1)"/>.</p>
 <p>This method could also be found under the name “Strategic Sampling”,
 “Ponderated Sampling” or “Biased Sampling” (even if this estimator is
 not biased as it gives exactly the same result).</p>
@@ -209,8 +209,8 @@ not biased as it gives exactly the same result).</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

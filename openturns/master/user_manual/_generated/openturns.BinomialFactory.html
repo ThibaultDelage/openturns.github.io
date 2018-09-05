@@ -116,18 +116,18 @@
 <p class="rubric">Notes</p>
 <p>The estimation is done by maximizing the likelihood of the sample.</p>
 <div class="line-block">
-<div class="line">We initialize the value of <img class="math" src="../../_images/math/7df5a95f1e2ef9933f5c4a5e0f19d417530058a2.svg" alt="(n,p_n)"/> to
-<img class="math" src="../../_images/math/f5bc2a54f7aae4a2625cf638939735dafdeb5b98.svg" alt="\displaystyle\left(\left\lceil\frac{\Hat{x}_n^2}{\Hat{x}_n-\Hat{\sigma}_n^2}\right\rceil, \frac{\Hat{x}_n}{n}\right)"/>
-where <img class="math" src="../../_images/math/42b48cbe29f28c3bd6305b1d13c74e2fa425aac6.svg" alt="\Hat{x}_n"/> is the empirical mean of the sample
-<img class="math" src="../../_images/math/b89c33df97555fd041e2dc91ed6259ef16032700.svg" alt="(x_1, \hdots, x_n)"/>, and <img class="math" src="../../_images/math/a4b59353829b88d56b541a4c5b8a04c884e13413.svg" alt="\Hat{\sigma}_n^2"/> its unbiaised
+<div class="line">We initialize the value of <img class="math" src="../../_images/math/8da461356b7b753b3084ac2f73bb17eeea3e4067.svg" alt="(n,p_n)"/> to
+<img class="math" src="../../_images/math/f721a91a0baa8bf49fab424b481686ce8f1f0118.svg" alt="\displaystyle\left(\left\lceil\frac{\Hat{x}_n^2}{\Hat{x}_n-\Hat{\sigma}_n^2}\right\rceil, \frac{\Hat{x}_n}{n}\right)"/>
+where <img class="math" src="../../_images/math/6679da7ac32c6a70375ef32eb13e680e8e787357.svg" alt="\Hat{x}_n"/> is the empirical mean of the sample
+<img class="math" src="../../_images/math/ac71a945b4d500212be0f44400a39164ed1fecd6.svg" alt="(x_1, \hdots, x_n)"/>, and <img class="math" src="../../_images/math/897bf3b17f00ea71e9380655c01d70de451a43da.svg" alt="\Hat{\sigma}_n^2"/> its unbiaised
 empirical variance.</div>
 <div class="line">Then, we evaluate the likelihood of the sample with respect to the
 Binomial distribution parameterized with
-<img class="math" src="../../_images/math/f5bc2a54f7aae4a2625cf638939735dafdeb5b98.svg" alt="\displaystyle\left(\left\lceil\frac{\Hat{x}_n^2}{\Hat{x}_n-\Hat{\sigma}_n^2}\right\rceil, \frac{\Hat{x}_n}{n}\right)"/>.
-By testing successively <img class="math" src="../../_images/math/5c78bfa354265a827ca3c2e0a759da22a35e969b.svg" alt="n+1"/> and <img class="math" src="../../_images/math/6cc76da67d033691dd7648d408cd64fb3d992fb2.svg" alt="n-1"/> instead of
-<img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/>, we determine the variation of the likelihood of the sample
+<img class="math" src="../../_images/math/f721a91a0baa8bf49fab424b481686ce8f1f0118.svg" alt="\displaystyle\left(\left\lceil\frac{\Hat{x}_n^2}{\Hat{x}_n-\Hat{\sigma}_n^2}\right\rceil, \frac{\Hat{x}_n}{n}\right)"/>.
+By testing successively <img class="math" src="../../_images/math/073b95ce42dacb423a044fa2d0a20b42fad029e6.svg" alt="n+1"/> and <img class="math" src="../../_images/math/4067b1cf12c527249e2c4e94ce3c9a8d78017ae1.svg" alt="n-1"/> instead of
+<img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/>, we determine the variation of the likelihood of the sample
 with respect to the Binomial distribution parameterized with
-<img class="math" src="../../_images/math/2c594c1e9ea6099fbb92c24efc60389f7b5a5b20.svg" alt="(n+1,p_{n+1})"/> and <img class="math" src="../../_images/math/b2cc2a13069b9d27def578b9d591b4d643d2eeb0.svg" alt="(n-1,p_{n-1})"/>. We then iterate in
+<img class="math" src="../../_images/math/cf21dc9eddc3f2443b2c59ad03e55923c754bd5f.svg" alt="(n+1,p_{n+1})"/> and <img class="math" src="../../_images/math/2eaa43b91e6f1d78acf01974c8dd3b584dfdca58.svg" alt="(n-1,p_{n-1})"/>. We then iterate in
 the direction that makes the likelihood decrease, until the likelihood
 stops decreasing. The last couple is the one selected.</div>
 </div>
@@ -287,7 +287,7 @@ stops decreasing. The last couple is the one selected.</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/73d1520885911cd9f121c0cedc7d91e11efafea8.svg" alt="(\mu, \sigma, a, b)"/>:</p>
+<p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/9c0675243e96235ce54d181013419a9d5dd7ef3b.svg" alt="(\mu, \sigma, a, b)"/>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaMuSigma</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -551,8 +551,8 @@ stops decreasing. The last couple is the one selected.</div>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

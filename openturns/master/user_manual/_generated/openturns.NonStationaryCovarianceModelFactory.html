@@ -106,26 +106,26 @@
 <em class="property">class </em><code class="descname">NonStationaryCovarianceModelFactory</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.NonStationaryCovarianceModelFactory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimation of a non stationary covariance model.</p>
 <p class="rubric">Notes</p>
-<p>We consider <img class="math" src="../../_images/math/6559e71e678128cf536c83203d725a540b2a8569.svg" alt="X: \Omega \times \cD \rightarrow \Rset^d"/> be a multivariate process of dimension <em>d</em> where <img class="math" src="../../_images/math/3d7e1160d7e53256036e975e1957c3e2bde7847f.svg" alt="\cD \in \Rset^n"/>. 
-We denote <img class="math" src="../../_images/math/b94f216dd8317e9b98b23456387521db10effaa7.svg" alt="(\vect{t}_0, \dots, \vect{t}_{N-1})"/> the vertices of the mesh <img class="math" src="../../_images/math/5957e31d87b0cf87ec02a11bf04d2894c6cf544c.svg" alt="\cM \in \cD"/>.</p>
-<p><em>X</em> is supposed to be a second order process and we note <img class="math" src="../../_images/math/a70748e160e9233385986a33b6a6094abbe7a247.svg" alt="C : \cD \times \cD \rightarrow \mathcal{M}_{d \times d}(\mathbb{R})"/> its covariance function. <em>X</em> may be stationary or non stationary as well.</p>
-<p>We suppose that we have <em>K</em> fields and we note <img class="math" src="../../_images/math/ac38b064148ecd8d7ad6eb73dd8f75096f75503f.svg" alt="(\vect{x}_0^k, \dots, \vect{x}_{N-1}^k)"/> the values of the field <em>k</em> on the mesh <img class="math" src="../../_images/math/357d53628213ddeb82e30cf093550090a4c83f07.svg" alt="\cM"/>.</p>
+<p>We consider <img class="math" src="../../_images/math/0e1d7c37e2cb3c72888b3b716e0b4825fffd0467.svg" alt="X: \Omega \times \cD \rightarrow \Rset^d"/> be a multivariate process of dimension <em>d</em> where <img class="math" src="../../_images/math/2d98a1790a94d717f54c99f9d29f71d8035ed993.svg" alt="\cD \in \Rset^n"/>. 
+We denote <img class="math" src="../../_images/math/c1fe674480894937eb30fc9e73a8993314ad327b.svg" alt="(\vect{t}_0, \dots, \vect{t}_{N-1})"/> the vertices of the mesh <img class="math" src="../../_images/math/f9a75974e8ad80172bd8fff6f878eae7f78a4470.svg" alt="\cM \in \cD"/>.</p>
+<p><em>X</em> is supposed to be a second order process and we note <img class="math" src="../../_images/math/0e92eed6102ad1b34e7e1e41fc427f13edd6dace.svg" alt="C : \cD \times \cD \rightarrow \mathcal{M}_{d \times d}(\mathbb{R})"/> its covariance function. <em>X</em> may be stationary or non stationary as well.</p>
+<p>We suppose that we have <em>K</em> fields and we note <img class="math" src="../../_images/math/69c3bac76ba6949363493dae0e89d9717665b2b0.svg" alt="(\vect{x}_0^k, \dots, \vect{x}_{N-1}^k)"/> the values of the field <em>k</em> on the mesh <img class="math" src="../../_images/math/c3722bfc0db59fd0c6a78ca12864321cd8f6ac2a.svg" alt="\cM"/>.</p>
 <p>We recall that the covariance function <em>C</em> writes:</p>
 <div class="math">
-<p><img src="../../_images/math/9aba9ad84e89dfef161d84edf967a3317fd2fc6b.svg" alt="\forall (\vect{s}, \vect{t}) \in \cD \times \cD, \quad C(\vect{s}, \vect{t}) = \Expect{\left(X_{\vect{s}}-m(\vect{s})\right)\Tr{\left(X_{\vect{t}}-m(\vect{t})\right)}}"/></p>
-</div><p>where the mean function <img class="math" src="../../_images/math/014701be11797cd7fe27e361c3a581f81dbb74ef.svg" alt="m: \cD \rightarrow \Rset^d"/> is defined by:</p>
+<p><img src="../../_images/math/c60acfc89a73a25d78eb218c17b5ee4658e217fa.svg" alt="\forall (\vect{s}, \vect{t}) \in \cD \times \cD, \quad C(\vect{s}, \vect{t}) = \Expect{\left(X_{\vect{s}}-m(\vect{s})\right)\Tr{\left(X_{\vect{t}}-m(\vect{t})\right)}}"/></p>
+</div><p>where the mean function <img class="math" src="../../_images/math/cdcf100603e4a04bcc0ceff390c6ebb082489383.svg" alt="m: \cD \rightarrow \Rset^d"/> is defined by:</p>
 <div class="math">
-<p><img src="../../_images/math/ed63242c28d4568dd1db7493771234cb7f78de92.svg" alt="\forall \vect{t}\in \cD , \quad m(\vect{t}) = \Expect{X_{\vect{t}}}"/></p>
-</div><p>First, we estimate the covariance function <em>C</em> on the vertices of the mesh <img class="math" src="../../_images/math/357d53628213ddeb82e30cf093550090a4c83f07.svg" alt="\cM"/> using the empirical mean estimator:</p>
+<p><img src="../../_images/math/3db896483794eacbc7b0e2a4b3972197ec197f1a.svg" alt="\forall \vect{t}\in \cD , \quad m(\vect{t}) = \Expect{X_{\vect{t}}}"/></p>
+</div><p>First, we estimate the covariance function <em>C</em> on the vertices of the mesh <img class="math" src="../../_images/math/c3722bfc0db59fd0c6a78ca12864321cd8f6ac2a.svg" alt="\cM"/> using the empirical mean estimator:</p>
 <div class="math">
-<p><img src="../../_images/math/4073194443f12970dbb70c5f60e59e6587432a0c.svg" alt="\begin{eqnarray*}
+<p><img src="../../_images/math/46fd2d7bb18cbb74869b0dd7381ad8f329c9e3ce.svg" alt="\begin{eqnarray*}
     &amp; \forall \vect{t}_i \in \cM, \quad m(\vect{t}_i) \simeq \frac{1}{K} \sum_{k=1}^{K} \vect{x}_i^k \\
     &amp; \forall (\vect{t}_i, \vect{t}_j) \in \cD \times \cD, \quad C(\vect{t}_i, \vect{t}_j) \simeq \frac{1}{K} \sum_{k=1}^{K} \left( \vect{x}_i^k - m(\vect{t}_i) \right) \Tr{\left( \vect{x}_j^k - m(\vect{t}_j) \right)}
 \end{eqnarray*}"/></p>
-</div><p>Then, we build a covariance function defined on <img class="math" src="../../_images/math/365da93e31a27ebd2e9cae635ad9c6adf67c514b.svg" alt="\cD \times \cD"/> which is a piecewise constant function defined on <img class="math" src="../../_images/math/365da93e31a27ebd2e9cae635ad9c6adf67c514b.svg" alt="\cD \times \cD"/> by:</p>
+</div><p>Then, we build a covariance function defined on <img class="math" src="../../_images/math/79ba934b5dc043a9686b5036e80e5b320bc6a2e8.svg" alt="\cD \times \cD"/> which is a piecewise constant function defined on <img class="math" src="../../_images/math/79ba934b5dc043a9686b5036e80e5b320bc6a2e8.svg" alt="\cD \times \cD"/> by:</p>
 <div class="math">
-<p><img src="../../_images/math/865e712002312ab22e995a0d67faf4e342314276.svg" alt="\forall (\vect{s}, \vect{t}) \in \cD \times \cD, \, C(\vect{s}, \vect{t}) = C(\vect{t}_k, \vect{t}_l)"/></p>
-</div><p>where <em>k</em> is such that <img class="math" src="../../_images/math/ddf5a39c53c5e4c1da75175d1ad5debac0eac37d.svg" alt="\vect{t}_k"/> is the vertex of <img class="math" src="../../_images/math/357d53628213ddeb82e30cf093550090a4c83f07.svg" alt="\cM"/> the nearest to <img class="math" src="../../_images/math/5cb5d292352f8d228c13593e530a14ccdc3b4897.svg" alt="\vect{s}"/> and <img class="math" src="../../_images/math/6f3c5c35a27be346822326d5ead4b0ffc2d398a3.svg" alt="\vect{t}_l"/> the nearest to <img class="math" src="../../_images/math/843b05688bd9a4423f6f3da76a850530f5e39792.svg" alt="\vect{t}"/>.</p>
+<p><img src="../../_images/math/62aeeaa13d36528786018e8e291e2873d0befd2c.svg" alt="\forall (\vect{s}, \vect{t}) \in \cD \times \cD, \, C(\vect{s}, \vect{t}) = C(\vect{t}_k, \vect{t}_l)"/></p>
+</div><p>where <em>k</em> is such that <img class="math" src="../../_images/math/62cffc25633db73ec0ac54cc214dec24077016c8.svg" alt="\vect{t}_k"/> is the vertex of <img class="math" src="../../_images/math/c3722bfc0db59fd0c6a78ca12864321cd8f6ac2a.svg" alt="\cM"/> the nearest to <img class="math" src="../../_images/math/f22ae84a1533169e19ef4f14b40de01e4f155206.svg" alt="\vect{s}"/> and <img class="math" src="../../_images/math/4de85f8cdd1bf64d28d5e64a825e0caa76849495.svg" alt="\vect{t}_l"/> the nearest to <img class="math" src="../../_images/math/582f5344469d831339c8d3e8b06a5a55673746c5.svg" alt="\vect{t}"/>.</p>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -500,8 +500,8 @@ We denote <img class="math" src="../../_images/math/b94f216dd8317e9b98b234563875
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

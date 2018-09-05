@@ -114,17 +114,17 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>inputSample, outputSample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
-<dd><p class="first last">The samples <img class="math" src="../../../_images/math/c4f85ebfca467aeec6c001412c057c626263d370.svg" alt="(\vect{x}_k)_{1 \leq k \leq N} \in \Rset^d"/> and <img class="math" src="../../../_images/math/972b78ffe16549ddc34bf560123fef850ed0f206.svg" alt="(\vect{y}_k)_{1 \leq k \leq N}\in \Rset^p"/> upon which the meta-model is built.</p>
+<dd><p class="first last">The samples <img class="math" src="../../../_images/math/90febee6dda102f03f449c761a14f82abca531d5.svg" alt="(\vect{x}_k)_{1 \leq k \leq N} \in \Rset^d"/> and <img class="math" src="../../../_images/math/26935909fbfab8d33e9ee827176a428017fd5755.svg" alt="(\vect{y}_k)_{1 \leq k \leq N}\in \Rset^p"/> upon which the meta-model is built.</p>
 </dd>
 <dt><strong>covarianceModel</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></span></dt>
 <dd><p class="first last">Covariance model used for the underlying Gaussian process assumption.</p>
 </dd>
 <dt><strong>basis</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></span></dt>
-<dd><p class="first">Functional basis to estimate the trend (universal kriging): <img class="math" src="../../../_images/math/d9fe63e0742916a6484bd7b9ba3350a148576b8e.svg" alt="(\varphi_j)_{1 \leq j \leq n_1}: \Rset^d \rightarrow \Rset"/>.</p>
-<p class="last">If <img class="math" src="../../../_images/math/95b3bc882892eeff572f53b6c68fa83a70f3842a.svg" alt="p&gt;1"/>, the same basis is used for each marginal output.</p>
+<dd><p class="first">Functional basis to estimate the trend (universal kriging): <img class="math" src="../../../_images/math/b47f51c0e0bed5c35be66edf0241bfe9075354e5.svg" alt="(\varphi_j)_{1 \leq j \leq n_1}: \Rset^d \rightarrow \Rset"/>.</p>
+<p class="last">If <img class="math" src="../../../_images/math/a035d99bfbe2c08bf5ef036bfe2323ba6b80476c.svg" alt="p&gt;1"/>, the same basis is used for each marginal output.</p>
 </dd>
 <dt><strong>basisCollection</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of <a class="reference internal" href="../../_generated/openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></span></dt>
-<dd><p class="first last">Collection of <img class="math" src="../../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/> functional basis: one basis for each marginal output: <img class="math" src="../../../_images/math/a50381849108bf3b603fcd7d9db073c066ac0dd4.svg" alt="\left[(\varphi_j^1)_{1 \leq j \leq n_1}, \dots, (\varphi_j^p)_{1 \leq j \leq n_p}\right]"/>. If the sequence is empty, no trend coefficient is estimated (simple kriging).</p>
+<dd><p class="first last">Collection of <img class="math" src="../../../_images/math/0f4c0791a2997f071572e3ee6a344919caea8e95.svg" alt="p"/> functional basis: one basis for each marginal output: <img class="math" src="../../../_images/math/a33cfc90deed664173b97002f3335dd34a403355.svg" alt="\left[(\varphi_j^1)_{1 \leq j \leq n_1}, \dots, (\varphi_j^p)_{1 \leq j \leq n_p}\right]"/>. If the sequence is empty, no trend coefficient is estimated (simple kriging).</p>
 </dd>
 <dt><strong>normalize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
 <dd><p class="first">Indicates whether the input sample has to be normalized.</p>
@@ -137,36 +137,36 @@ Default is set in resource map key <cite>GeneralLinearModelAlgorithm-NormalizeDa
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>We suppose we have a sample <img class="math" src="../../../_images/math/5d615557a1c40c6aeac917f3099bdbc08d96a985.svg" alt="(\vect{x}_k, \vect{y}_k)_{1 \leq k \leq N}"/> where <img class="math" src="../../../_images/math/07167eadf46957a9b02be26c0fe8c4dd35e348a1.svg" alt="\vect{y}_k = \cM(\vect{x}_k)"/> for all <em>k</em>, with <img class="math" src="../../../_images/math/e779403446159965c2e6e2c29beeef11037a69a0.svg" alt="\cM:\Rset^d \mapsto \Rset^p"/> the model.</p>
-<p>The meta model <em>Kriging</em> is based on the same principles as those of the general linear model: it assumes that the sample <img class="math" src="../../../_images/math/246b08cbc2d11721a2aa13bfe3b27620fbe3194d.svg" alt="(\vect{y}_k)_{1 \leq k \leq N}"/> is considered as the trace of a Gaussian process <img class="math" src="../../../_images/math/3bd49af5f26cd40aeffee50cd5fd1a932264410b.svg" alt="\vect{Y}(\omega, \vect{x})"/> on <img class="math" src="../../../_images/math/cb180a0dde0f5a9c93245e280d6a875da6382edf.svg" alt="(\vect{x}_k)_{1 \leq k \leq N}"/>. The Gaussian process <img class="math" src="../../../_images/math/3bd49af5f26cd40aeffee50cd5fd1a932264410b.svg" alt="\vect{Y}(\omega, \vect{x})"/> is defined by:</p>
+<p>We suppose we have a sample <img class="math" src="../../../_images/math/b48173a66e8492699093264eef7bbe2483b00904.svg" alt="(\vect{x}_k, \vect{y}_k)_{1 \leq k \leq N}"/> where <img class="math" src="../../../_images/math/8668a34adf94d2f7cd45fa38bf793477cf06f483.svg" alt="\vect{y}_k = \cM(\vect{x}_k)"/> for all <em>k</em>, with <img class="math" src="../../../_images/math/613dec090a8068a13365ebc84eaffa15a1471f8e.svg" alt="\cM:\Rset^d \mapsto \Rset^p"/> the model.</p>
+<p>The meta model <em>Kriging</em> is based on the same principles as those of the general linear model: it assumes that the sample <img class="math" src="../../../_images/math/31089fd0ae5651109699bcd8f512e41b40e1042f.svg" alt="(\vect{y}_k)_{1 \leq k \leq N}"/> is considered as the trace of a Gaussian process <img class="math" src="../../../_images/math/bd5d0a31022d52494fbf4c4a8e22a0f157377f20.svg" alt="\vect{Y}(\omega, \vect{x})"/> on <img class="math" src="../../../_images/math/fee854a25c25e2b317d65da5ee07d5245a7f5b79.svg" alt="(\vect{x}_k)_{1 \leq k \leq N}"/>. The Gaussian process <img class="math" src="../../../_images/math/bd5d0a31022d52494fbf4c4a8e22a0f157377f20.svg" alt="\vect{Y}(\omega, \vect{x})"/> is defined by:</p>
 <div class="math" id="equation-metamodelkrigalgo">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-metamodelkrigalgo" title="Permalink to this equation">¶</a></span><img src="../../../_images/math/90e400e936921ba177a5f11638d3b61d7ac2d8c4.svg" alt="\vect{Y}(\omega, \vect{x}) = \vect{\mu}(\vect{x}) + W(\omega, \vect{x})"/></p>
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-metamodelkrigalgo" title="Permalink to this equation">¶</a></span><img src="../../../_images/math/b95b1f2dfa270a6ef8b20fdec65f703365c2a478.svg" alt="\vect{Y}(\omega, \vect{x}) = \vect{\mu}(\vect{x}) + W(\omega, \vect{x})"/></p>
 </div><p>where:</p>
 <div class="math">
-<p><img src="../../../_images/math/a7e9663c397c98da871e7d00abb524584921f4d6.svg" alt="\vect{\mu}(\vect{x}) = \left(
+<p><img src="../../../_images/math/19ed57e4e3ad3977e54cec8219d09b79089930ea.svg" alt="\vect{\mu}(\vect{x}) = \left(
   \begin{array}{l}
     \mu_1(\vect{x}) \\
     \dots  \\
     \mu_p(\vect{x}) 
    \end{array}
  \right)"/></p>
-</div><p>with <img class="math" src="../../../_images/math/bf3fb67931c65000c55fd19a8f45dce974400125.svg" alt="\mu_l(\vect{x}) = \sum_{j=1}^{n_l} \alpha_j^l \varphi_j^l(\vect{x})"/> and <img class="math" src="../../../_images/math/1ae191ee6d533d5ba48f02928fdd9507b9cb80f9.svg" alt="\varphi_j^l: \Rset^d \rightarrow \Rset"/> the trend functions.</p>
-<p><img class="math" src="../../../_images/math/35f8a5601ffb8ba3ae5e5d6ec3130e3cc4f421d0.svg" alt="W"/> is a Gaussian process of dimension <em>p</em> with zero mean and covariance function <img class="math" src="../../../_images/math/4f9af1d46603e0374299ee37e759c1dc790d733a.svg" alt="C = C(\vect{\theta}, \vect{\sigma}, \mat{R}, \vect{\lambda})"/> (see <a class="reference internal" href="../../_generated/openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a> for the notations).</p>
-<p>The estimation of the parameters <img class="math" src="../../../_images/math/8de0c75b25b35cda1d15f78428f75c02f27a8967.svg" alt="\alpha_j^l, \vect{\theta}, \vect{\sigma}"/> are made by the <a class="reference internal" href="openturns.GeneralLinearModelAlgorithm.html#openturns.GeneralLinearModelAlgorithm" title="openturns.GeneralLinearModelAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralLinearModelAlgorithm</span></code></a> class.</p>
-<p>The Kriging algorithm makes the general linear model interpolary on the input samples. The Kriging meta model <img class="math" src="../../../_images/math/ebe543eef14dd91e94be1706ac89c14293096a33.svg" alt="\tilde{\cM}"/> is defined by:</p>
+</div><p>with <img class="math" src="../../../_images/math/0de12f70ff5c87827ca84f7f986e1491f327c1ab.svg" alt="\mu_l(\vect{x}) = \sum_{j=1}^{n_l} \alpha_j^l \varphi_j^l(\vect{x})"/> and <img class="math" src="../../../_images/math/335d5c6f41a3cfc8cc8736bb93671fc55e2d41a0.svg" alt="\varphi_j^l: \Rset^d \rightarrow \Rset"/> the trend functions.</p>
+<p><img class="math" src="../../../_images/math/96ea6860182175c9cfbff5c0e27d0f8d5a553122.svg" alt="W"/> is a Gaussian process of dimension <em>p</em> with zero mean and covariance function <img class="math" src="../../../_images/math/adaf74ef3d180b592da4b6264b024d4ec102f9e1.svg" alt="C = C(\vect{\theta}, \vect{\sigma}, \mat{R}, \vect{\lambda})"/> (see <a class="reference internal" href="../../_generated/openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a> for the notations).</p>
+<p>The estimation of the parameters <img class="math" src="../../../_images/math/a9b234a68ec36b9f9e49b5697d4a3ac156493fb6.svg" alt="\alpha_j^l, \vect{\theta}, \vect{\sigma}"/> are made by the <a class="reference internal" href="openturns.GeneralLinearModelAlgorithm.html#openturns.GeneralLinearModelAlgorithm" title="openturns.GeneralLinearModelAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralLinearModelAlgorithm</span></code></a> class.</p>
+<p>The Kriging algorithm makes the general linear model interpolary on the input samples. The Kriging meta model <img class="math" src="../../../_images/math/9592b66071907e7c062bfd958fcc7990c83bc68e.svg" alt="\tilde{\cM}"/> is defined by:</p>
 <div class="math">
-<p><img src="../../../_images/math/f033a91e71cabb40150a0d000e2c73c041eb0ef5.svg" alt="\tilde{\cM}(\vect{x}) =  \vect{\mu}(\vect{x}) + \Expect{\vect{Y}(\omega, \vect{x})\, | \,  \cC}"/></p>
-</div><p>where <img class="math" src="../../../_images/math/cc7ff7b01da4027859dbfbd1b3e2684f9ad7bb8c.svg" alt="\cC"/> is the condition <img class="math" src="../../../_images/math/31be4df21ca943798a51fadf9bace2a580d7ed59.svg" alt="\vect{Y}(\omega, \vect{x}_k) = \vect{y}_k"/> for each <img class="math" src="../../../_images/math/0ddf54c8f205e8105659460eaa5740e879a9820f.svg" alt="k \in [1, N]"/>.</p>
+<p><img src="../../../_images/math/5cc62c4b350158410b20b1560850391e729e0bd5.svg" alt="\tilde{\cM}(\vect{x}) =  \vect{\mu}(\vect{x}) + \Expect{\vect{Y}(\omega, \vect{x})\, | \,  \cC}"/></p>
+</div><p>where <img class="math" src="../../../_images/math/c67a2293eb022a781f6a364ba4b006528052b573.svg" alt="\cC"/> is the condition <img class="math" src="../../../_images/math/db83a10886250b3e1da5ff71bba4d996931dcf46.svg" alt="\vect{Y}(\omega, \vect{x}_k) = \vect{y}_k"/> for each <img class="math" src="../../../_images/math/0038a289685f3ae1f86574bb56481f56f6df6e5d.svg" alt="k \in [1, N]"/>.</p>
 <p><a class="reference internal" href="#equation-metamodelkrigalgo">(1)</a> writes:</p>
 <div class="math">
-<p><img src="../../../_images/math/ea2934d21d339c6f1679e77dd43d86a4bf159e63.svg" alt="\tilde{\cM}(\vect{x}) = \vect{\mu}(\vect{x}) + \Cov{\vect{Y}(\omega, \vect{x}), (\vect{Y}(\omega, \vect{x}_1), \dots, \vect{Y}(\omega, \vect{x}_N))} \vect{\gamma}"/></p>
-</div><p>where <img class="math" src="../../../_images/math/0c326e4b2a2274a050c49f3410e2c0828792264d.svg" alt="\Cov{\vect{Y}(\omega, \vect{x}), (\vect{Y}(\omega, \vect{x}_1), \dots, \vect{Y}(\omega, \vect{x}_N))} = \left( \mat{C}( \vect{x},  \vect{x}_1) | \dots | \mat{C}( \vect{x},  \vect{x}_N)  \right)"/> is a matrix in <img class="math" src="../../../_images/math/4ea80f7d8d3685f3adbeface412b54dd692aa6ed.svg" alt="\cM_{p,NP}(\Rset)"/> and <img class="math" src="../../../_images/math/de6a73519a801c4397099c8b331213ec0cf34f1e.svg" alt="\vect{\gamma} = \mat{C}^{-1}(\vect{y}-\vect{m})"/>.</p>
-<p>A known centered gaussian observation noise <img class="math" src="../../../_images/math/48b1d62121a586bf9d44d3ffe81249567895188d.svg" alt="\epsilon_k"/> can be taken into account
+<p><img src="../../../_images/math/353c5a2a5cb1da2f233b2d5459ec5dd28580d5f7.svg" alt="\tilde{\cM}(\vect{x}) = \vect{\mu}(\vect{x}) + \Cov{\vect{Y}(\omega, \vect{x}), (\vect{Y}(\omega, \vect{x}_1), \dots, \vect{Y}(\omega, \vect{x}_N))} \vect{\gamma}"/></p>
+</div><p>where <img class="math" src="../../../_images/math/bfc91e8fd5c472b27fc8dc859aa9072a4b70c372.svg" alt="\Cov{\vect{Y}(\omega, \vect{x}), (\vect{Y}(\omega, \vect{x}_1), \dots, \vect{Y}(\omega, \vect{x}_N))} = \left( \mat{C}( \vect{x},  \vect{x}_1) | \dots | \mat{C}( \vect{x},  \vect{x}_N)  \right)"/> is a matrix in <img class="math" src="../../../_images/math/f6d0e28ef2bdf1a0163fe6d9ecb54a81813c6c25.svg" alt="\cM_{p,NP}(\Rset)"/> and <img class="math" src="../../../_images/math/96cdbeb35ea3f60d8b0c79e79c90d899e38c55dc.svg" alt="\vect{\gamma} = \mat{C}^{-1}(\vect{y}-\vect{m})"/>.</p>
+<p>A known centered gaussian observation noise <img class="math" src="../../../_images/math/60fd94ecaa33c0085a0b3b923e545bc72b631c86.svg" alt="\epsilon_k"/> can be taken into account
 with <a class="reference internal" href="#openturns.KrigingAlgorithm.setNoise" title="openturns.KrigingAlgorithm.setNoise"><code class="xref py py-func docutils literal notranslate"><span class="pre">setNoise()</span></code></a>:</p>
 <div class="math">
-<p><img src="../../../_images/math/96d6adb8209c4aeda3d4be1054106eb9c452eb73.svg" alt="\hat{\vect{y}}_k = \vect{y}_k + \epsilon_k, \epsilon_k \sim \mathcal{N}(0, \tau_k^2)"/></p>
+<p><img src="../../../_images/math/f6e08d41899b0fe901a6835cf058f0de6db21fa8.svg" alt="\hat{\vect{y}}_k = \vect{y}_k + \epsilon_k, \epsilon_k \sim \mathcal{N}(0, \tau_k^2)"/></p>
 </div><p class="rubric">Examples</p>
-<p>Create the model <img class="math" src="../../../_images/math/8bee20bc538f68df2cdaf0e92540522954540e91.svg" alt="\cM: \Rset \mapsto \Rset"/> and the samples:</p>
+<p>Create the model <img class="math" src="../../../_images/math/574097338645a0e0292d271de7c5bae9c80372d7.svg" alt="\cM: \Rset \mapsto \Rset"/> and the samples:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># use of Hmat implementation</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># ot.ResourceMap.Set(&#39;KrigingAlgorithm-LinearAlgebra&#39;, &#39;HMAT&#39;)</span>
@@ -344,7 +344,7 @@ with <a class="reference internal" href="#openturns.KrigingAlgorithm.setNoise" t
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>inputSample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">The input sample <img class="math" src="../../../_images/math/cb180a0dde0f5a9c93245e280d6a875da6382edf.svg" alt="(\vect{x}_k)_{1 \leq k \leq N}"/>.</p>
+<dd><p class="first last">The input sample <img class="math" src="../../../_images/math/fee854a25c25e2b317d65da5ee07d5245a7f5b79.svg" alt="(\vect{x}_k)_{1 \leq k \leq N}"/>.</p>
 </dd>
 </dl>
 </td>
@@ -382,7 +382,7 @@ with <a class="reference internal" href="#openturns.KrigingAlgorithm.setNoise" t
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>noise</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of positive float</span></dt>
-<dd><p class="first last">The noise variance <img class="math" src="../../../_images/math/b357b0e2d7cdcb78a1c0c2d46ffcdfbb60d21ebe.svg" alt="\tau_k^2"/> of each output value.</p>
+<dd><p class="first last">The noise variance <img class="math" src="../../../_images/math/f297a3b1387a4973dbc71661c195b8dc705ecf54.svg" alt="\tau_k^2"/> of each output value.</p>
 </dd>
 </dl>
 </td>
@@ -458,7 +458,7 @@ with <a class="reference internal" href="#openturns.KrigingAlgorithm.setNoise" t
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>outputSample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">The output sample <img class="math" src="../../../_images/math/246b08cbc2d11721a2aa13bfe3b27620fbe3194d.svg" alt="(\vect{y}_k)_{1 \leq k \leq N}"/> .</p>
+<dd><p class="first last">The output sample <img class="math" src="../../../_images/math/31089fd0ae5651109699bcd8f512e41b40e1042f.svg" alt="(\vect{y}_k)_{1 \leq k \leq N}"/> .</p>
 </dd>
 </dl>
 </td>
@@ -477,7 +477,7 @@ with <a class="reference internal" href="#openturns.KrigingAlgorithm.setNoise" t
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>reducedLogLikelihood</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
-<dd><p class="first last">The reduced log-likelihood function as a function of <img class="math" src="../../../_images/math/a57e1523b18a306650d633dba47e171387d919e3.svg" alt="(\vect{\theta}, \vect{\sigma})"/>.</p>
+<dd><p class="first last">The reduced log-likelihood function as a function of <img class="math" src="../../../_images/math/4356a56ad64d0f2621a6f635adefa7faad6bb075.svg" alt="(\vect{\theta}, \vect{\sigma})"/>.</p>
 </dd>
 </dl>
 </td>
@@ -487,7 +487,7 @@ with <a class="reference internal" href="#openturns.KrigingAlgorithm.setNoise" t
 <p class="rubric">Notes</p>
 <p>The reduced log-likelihood function may be useful for some pre/postprocessing: vizuaisation of the maximizer, use of an external optimizers to maximize the reduced log-likelihood etc.</p>
 <p class="rubric">Examples</p>
-<p>Create the model <img class="math" src="../../../_images/math/8bee20bc538f68df2cdaf0e92540522954540e91.svg" alt="\cM: \Rset \mapsto \Rset"/> and the samples:</p>
+<p>Create the model <img class="math" src="../../../_images/math/574097338645a0e0292d271de7c5bae9c80372d7.svg" alt="\cM: \Rset \mapsto \Rset"/> and the samples:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x0&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x0 * sin(x0)&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">inputSample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">8.0</span><span class="p">]])</span>
@@ -660,7 +660,7 @@ and created by the method <a class="reference internal" href="#openturns.Kriging
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>noise</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of positive float</span></dt>
-<dd><p class="first last">The noise variance <img class="math" src="../../../_images/math/b357b0e2d7cdcb78a1c0c2d46ffcdfbb60d21ebe.svg" alt="\tau_k^2"/> of each output value.</p>
+<dd><p class="first last">The noise variance <img class="math" src="../../../_images/math/f297a3b1387a4973dbc71661c195b8dc705ecf54.svg" alt="\tau_k^2"/> of each output value.</p>
 </dd>
 </dl>
 </td>
@@ -687,7 +687,7 @@ and created by the method <a class="reference internal" href="#openturns.Kriging
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<p>Create the model <img class="math" src="../../../_images/math/8bee20bc538f68df2cdaf0e92540522954540e91.svg" alt="\cM: \Rset \mapsto \Rset"/> and the samples:</p>
+<p>Create the model <img class="math" src="../../../_images/math/574097338645a0e0292d271de7c5bae9c80372d7.svg" alt="\cM: \Rset \mapsto \Rset"/> and the samples:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">input_data</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x-1+sin(pi_*x/(1+0.25*x^2))&#39;</span><span class="p">])</span>
@@ -815,8 +815,8 @@ particularly <a class="reference internal" href="openturns.GeneralLinearModelAlg
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

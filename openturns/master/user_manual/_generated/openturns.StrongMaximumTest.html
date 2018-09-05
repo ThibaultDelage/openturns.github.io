@@ -113,22 +113,22 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>event</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.StandardEvent.html#openturns.StandardEvent" title="openturns.StandardEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">StandardEvent</span></code></a></span></dt>
-<dd><p class="first last">Failure event <img class="math" src="../../_images/math/6a290d21416df992d1e72ea4eff12e18846e60ea.svg" alt="\cD_f"/> defining in the standard space (U-space).</p>
+<dd><p class="first last">Failure event <img class="math" src="../../_images/math/252362c991122f578eb1b8a9a9e2af13e42655d8.svg" alt="\cD_f"/> defining in the standard space (U-space).</p>
 </dd>
 <dt><strong>designPoint</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
 <dd><p class="first last">Design point in the standard space resulting from the optimization
 algorithm.</p>
 </dd>
-<dt><strong>importanceLevel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/8f72094892a24217c07b92f0ba492a6d69b3df35.svg" alt="0 &lt; \varepsilon &lt; 1"/></span></dt>
+<dt><strong>importanceLevel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/00f6952d87e735a1e98630e899fac85c507a8521.svg" alt="0 &lt; \varepsilon &lt; 1"/></span></dt>
 <dd><p class="first last">Importance level.</p>
 </dd>
-<dt><strong>accuracyLevel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/5b67dd2f67a86d37fd00305ef360df834bb43202.svg" alt="\tau &gt; 0"/></span></dt>
-<dd><p class="first last">Accuracy level. It is recommanded to take <img class="math" src="../../_images/math/217dcae5215693d02f2e48d25801564cc4948fdb.svg" alt="\tau \leq 4"/>.</p>
+<dt><strong>accuracyLevel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/4c85df4e011bff58ef7213e5192e2c167c11a836.svg" alt="\tau &gt; 0"/></span></dt>
+<dd><p class="first last">Accuracy level. It is recommanded to take <img class="math" src="../../_images/math/0112bab57f7176152a4dc2307be1fd3949ce57f7.svg" alt="\tau \leq 4"/>.</p>
 </dd>
-<dt><strong>confidenceLevel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive float, <img class="math" src="../../_images/math/adef4979d940a9f5b039b251e8a70470f721c0b9.svg" alt="0 &lt; (1-q) &lt; 1"/></span></dt>
+<dt><strong>confidenceLevel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive float, <img class="math" src="../../_images/math/9b67da10cd1bc2258fd9238374b0df96f37c99f8.svg" alt="0 &lt; (1-q) &lt; 1"/></span></dt>
 <dd><p class="first last">Confidence level.</p>
 </dd>
-<dt><strong>pointNumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/882ba39459c56306c466b12cb56b25ddf9bdb01d.svg" alt="N &gt; 0"/></span></dt>
+<dt><strong>pointNumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/51d071d2b14c149331b87b9ccad9af00cf432d50.svg" alt="N &gt; 0"/></span></dt>
 <dd><p class="first last">Number of points used to perform the Strong Maximum Test, evaluated by the
 limit state function.</p>
 </dd>
@@ -143,7 +143,7 @@ limit state function.</p>
 </div>
 <p class="rubric">Notes</p>
 <p>The Strong Maximum Test helps to evaluate the quality of the design point
-<img class="math" src="../../_images/math/ff4ce57d7f933d0d14ef4e2b34817943c1f9d3a3.svg" alt="P^*"/> resulting from the optimization algorithm launched for example by
+<img class="math" src="../../_images/math/67da49bbe7f25bf06a10968bb0cfed2a280dd442.svg" alt="P^*"/> resulting from the optimization algorithm launched for example by
 the <a class="reference internal" href="openturns.Analytical.html#openturns.Analytical" title="openturns.Analytical"><code class="xref py py-class docutils literal notranslate"><span class="pre">Analytical</span></code></a> class or its derived classes
 <a class="reference internal" href="openturns.FORM.html#openturns.FORM" title="openturns.FORM"><code class="xref py py-class docutils literal notranslate"><span class="pre">FORM</span></code></a> and <a class="reference internal" href="openturns.SORM.html#openturns.SORM" title="openturns.SORM"><code class="xref py py-class docutils literal notranslate"><span class="pre">SORM</span></code></a>.
 It checks whether the design point computed is :</p>
@@ -155,14 +155,14 @@ the design point one.</li>
 </ul>
 <p>The Strong Maximum Test will sample the sphere centered on the origin of the
 standard space and of radius :
-<img class="math" src="../../_images/math/18a6316f7494cc7e8c8bb28e199a15930c39c542.svg" alt="R = \beta_{HL} (1 + \tau \delta_{\varepsilon})"/> with <img class="math" src="../../_images/math/5b67dd2f67a86d37fd00305ef360df834bb43202.svg" alt="\tau &gt; 0"/>,
-<img class="math" src="../../_images/math/9cd041eadec863699046a98ebdf94793f55f3ddc.svg" alt="\delta_{\varepsilon}=\sqrt{1 - 2 \frac{ln(\varepsilon)}{\beta_{HL}^2}} - 1"/>
-and <img class="math" src="../../_images/math/cfe5b6a7b53b8c12ad14ee49a56c886a30a37ce6.svg" alt="\beta_{HL}"/> the Hasofer-Lind reliability index.</p>
-<p>The number <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> of the simulations sampling the sphere of radius <img class="math" src="../../_images/math/834d60a4a0625d99048af801691a027ba7396c88.svg" alt="R"/>
+<img class="math" src="../../_images/math/805f69b57942279d07afcd119a8bd52f205a7ff2.svg" alt="R = \beta_{HL} (1 + \tau \delta_{\varepsilon})"/> with <img class="math" src="../../_images/math/4c85df4e011bff58ef7213e5192e2c167c11a836.svg" alt="\tau &gt; 0"/>,
+<img class="math" src="../../_images/math/263a7b97ecca97cf3c71f603d6248127a2c07582.svg" alt="\delta_{\varepsilon}=\sqrt{1 - 2 \frac{ln(\varepsilon)}{\beta_{HL}^2}} - 1"/>
+and <img class="math" src="../../_images/math/e8dbef7194c6f1c8140b308827468c267372cc7b.svg" alt="\beta_{HL}"/> the Hasofer-Lind reliability index.</p>
+<p>The number <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> of the simulations sampling the sphere of radius <img class="math" src="../../_images/math/5184fc174e08f95104ada8e814562210aed5b478.svg" alt="R"/>
 is determined to ensure that the test detects with a probability greater than
-<img class="math" src="../../_images/math/26c8f8126971d45490d819e99b5e5f470bac5aee.svg" alt="(1-q)"/> any point of <img class="math" src="../../_images/math/6a290d21416df992d1e72ea4eff12e18846e60ea.svg" alt="\cD_f"/> outside the design point vicinity
-which contribution to <img class="math" src="../../_images/math/bc35a54fc919ce5e92af549d591ac3a6236b8468.svg" alt="P_f"/> is not negligeable (i.e. which density value
-in the U-space is greater than <img class="math" src="../../_images/math/36f8b807183680d9b644839cf648cc289a9fc9dc.svg" alt="\varepsilon"/> times the density value at
+<img class="math" src="../../_images/math/d0a313c3ed9aeb6d54bedb2023c7553ea3d97acb.svg" alt="(1-q)"/> any point of <img class="math" src="../../_images/math/252362c991122f578eb1b8a9a9e2af13e42655d8.svg" alt="\cD_f"/> outside the design point vicinity
+which contribution to <img class="math" src="../../_images/math/5085f93dd5258efdc1edcc3c0efc525f37018906.svg" alt="P_f"/> is not negligeable (i.e. which density value
+in the U-space is greater than <img class="math" src="../../_images/math/94961bcbae85214199b1565307343ead7e36bc60.svg" alt="\varepsilon"/> times the density value at
 the design point).</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
@@ -199,7 +199,7 @@ the design point).</p>
 <td>Accessor to the confidence level.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.StrongMaximumTest.getDeltaEpsilon" title="openturns.StrongMaximumTest.getDeltaEpsilon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDeltaEpsilon</span></code></a>()</td>
-<td>Accessor to the parameter <img class="math" src="../../_images/math/aa274e327e0b3e637ca98c84089d27c579aa1ecc.svg" alt="\delta_{\varepsilon}"/>.</td>
+<td>Accessor to the parameter <img class="math" src="../../_images/math/9625b2693805b1917e2d022b5b9b6abc1f97f727.svg" alt="\delta_{\varepsilon}"/>.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.StrongMaximumTest.getDesignPointVicinity" title="openturns.StrongMaximumTest.getDesignPointVicinity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDesignPointVicinity</span></code></a>()</td>
 <td>Accessor to the design point vinicity.</td>
@@ -288,7 +288,7 @@ the design point).</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>accuracy</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive float</span></dt>
-<dd><p class="first last">Accuracy level <img class="math" src="../../_images/math/bc11a4bb49caf968bdfb98343dc86409c6780726.svg" alt="\tau"/>.</p>
+<dd><p class="first last">Accuracy level <img class="math" src="../../_images/math/cb3e904a2cb0790d5825572cb2d7e592942fc18c.svg" alt="\tau"/>.</p>
 </dd>
 </dl>
 </td>
@@ -326,7 +326,7 @@ the design point).</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive float</span></dt>
-<dd><p class="first last">Confidence level <img class="math" src="../../_images/math/26c8f8126971d45490d819e99b5e5f470bac5aee.svg" alt="(1-q)"/>.</p>
+<dd><p class="first last">Confidence level <img class="math" src="../../_images/math/d0a313c3ed9aeb6d54bedb2023c7553ea3d97acb.svg" alt="(1-q)"/>.</p>
 </dd>
 </dl>
 </td>
@@ -338,14 +338,14 @@ the design point).</p>
 <dl class="method">
 <dt id="openturns.StrongMaximumTest.getDeltaEpsilon">
 <code class="descname">getDeltaEpsilon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.StrongMaximumTest.getDeltaEpsilon" title="Permalink to this definition">¶</a></dt>
-<dd><p>Accessor to the parameter <img class="math" src="../../_images/math/aa274e327e0b3e637ca98c84089d27c579aa1ecc.svg" alt="\delta_{\varepsilon}"/>.</p>
+<dd><p>Accessor to the parameter <img class="math" src="../../_images/math/9625b2693805b1917e2d022b5b9b6abc1f97f727.svg" alt="\delta_{\varepsilon}"/>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>delta_epsilon</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last"><img class="math" src="../../_images/math/3e8a2bf7e7ec535c813459aed5e51c5926638b0f.svg" alt="\delta_{\varepsilon} = \sqrt{1 - 2 \frac{ln(\varepsilon)}{\beta^2}} - 1"/>.</p>
+<dd><p class="first last"><img class="math" src="../../_images/math/b17e3dfb2860248db3f8ef93cab748769fab2ac4.svg" alt="\delta_{\varepsilon} = \sqrt{1 - 2 \frac{ln(\varepsilon)}{\beta^2}} - 1"/>.</p>
 </dd>
 </dl>
 </td>
@@ -363,8 +363,8 @@ the design point).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>vicinity</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/9292db45b1b5b1ccd5acc4eb415e5a0dcf61ba56.svg" alt="v &gt; 0"/></span></dt>
-<dd><p class="first last">Design point vinicity <img class="math" src="../../_images/math/327e4209b4b5349412c04c6cc09fb4d6afa682e1.svg" alt="v = \frac{1} {1 + \tau \delta_{\varepsilon}}"/>.</p>
+<dt><strong>vicinity</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/d3c5d2146129d8f56a1c36eef84af89bb15ddc13.svg" alt="v &gt; 0"/></span></dt>
+<dd><p class="first last">Design point vinicity <img class="math" src="../../_images/math/92862defb98876f393ed127374681fa027f42578.svg" alt="v = \frac{1} {1 + \tau \delta_{\varepsilon}}"/>.</p>
 </dd>
 </dl>
 </td>
@@ -383,7 +383,7 @@ the design point).</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>event</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.StandardEvent.html#openturns.StandardEvent" title="openturns.StandardEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">StandardEvent</span></code></a></span></dt>
-<dd><p class="first last">Failure event <img class="math" src="../../_images/math/6a290d21416df992d1e72ea4eff12e18846e60ea.svg" alt="\cD_f"/> in the standard space on which is based the
+<dd><p class="first last">Failure event <img class="math" src="../../_images/math/252362c991122f578eb1b8a9a9e2af13e42655d8.svg" alt="\cD_f"/> in the standard space on which is based the
 Strong Maximum Test.</p>
 </dd>
 </dl>
@@ -504,7 +504,7 @@ point and which don’t verify the event.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Importance level <img class="math" src="../../_images/math/36f8b807183680d9b644839cf648cc289a9fc9dc.svg" alt="\varepsilon"/>.</p>
+<dd><p class="first last">Importance level <img class="math" src="../../_images/math/94961bcbae85214199b1565307343ead7e36bc60.svg" alt="\varepsilon"/>.</p>
 </dd>
 </dl>
 </td>
@@ -623,7 +623,7 @@ point and which don’t verify the event.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>number</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/882ba39459c56306c466b12cb56b25ddf9bdb01d.svg" alt="N &gt; 0"/></span></dt>
+<dt><strong>number</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/51d071d2b14c149331b87b9ccad9af00cf432d50.svg" alt="N &gt; 0"/></span></dt>
 <dd><p class="first last">Number of points used to perform the Strong Maximum Test, evaluated by the
 limit state function.</p>
 </dd>
@@ -822,8 +822,8 @@ limit state function.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

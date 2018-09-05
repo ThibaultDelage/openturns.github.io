@@ -101,42 +101,42 @@
 technique that aim at approximating functions (most often in order to
 surrogate it because it is expensive to evaluate). In the following it
 is assumed we aim at creating a surrogate model of a scalar-valued model
-<img class="math" src="../../_images/math/1423e95337eab6f9518f61d7f93f1ffd81653367.svg" alt="\cM: \vect{x} \mapsto y"/>. Note the implementation of
+<img class="math" src="../../_images/math/2c43368101829989e075885f4a476b2997ed5434.svg" alt="\cM: \vect{x} \mapsto y"/>. Note the implementation of
 Kriging deals with vector-valued functions
-(<img class="math" src="../../_images/math/0ef9a53c545d54051a936b7425943ae660bc14ff.svg" alt="\cM: \vect{x} \mapsto \vect{y}"/>), without simply looping over
+(<img class="math" src="../../_images/math/c12e8f0677618d8d34d862d93e8c34829e0d1e7f.svg" alt="\cM: \vect{x} \mapsto \vect{y}"/>), without simply looping over
 each output. It is also assumed the model is obtained over a design of
 experiments in order to produce a set of observations gathered in the
 following dataset:
-<img class="math" src="../../_images/math/36d87512b7ecf4b1b9b1fe2472e3f555e5afc464.svg" alt="\left(\left(\vect{x}^{(i)}, y^{(i)}\right), i = 1, \ldots, m\right)"/>.
+<img class="math" src="../../_images/math/acfee6083bd1a8e004ca38d5e387af1112cc8057.svg" alt="\left(\left(\vect{x}^{(i)}, y^{(i)}\right), i = 1, \ldots, m\right)"/>.
 Ultimately Kriging aims at producing a predictor (also known as a
-response surface or metamodel) denoted as <img class="math" src="../../_images/math/ebe543eef14dd91e94be1706ac89c14293096a33.svg" alt="\tilde{\cM}"/>.</p>
-<p>We put the following Gaussian process prior on the model <img class="math" src="../../_images/math/357d53628213ddeb82e30cf093550090a4c83f07.svg" alt="\cM"/>:</p>
+response surface or metamodel) denoted as <img class="math" src="../../_images/math/9592b66071907e7c062bfd958fcc7990c83bc68e.svg" alt="\tilde{\cM}"/>.</p>
+<p>We put the following Gaussian process prior on the model <img class="math" src="../../_images/math/c3722bfc0db59fd0c6a78ca12864321cd8f6ac2a.svg" alt="\cM"/>:</p>
 <div class="math">
-<p><img src="../../_images/math/2388ba74c6a6bf3d1497dfbbb5bea4caf17ca21a.svg" alt="Y(\vect{x}) = \Tr{\vect{f}(\vect{x})} \vect{\beta} + Z(\vect{x})"/></p>
+<p><img src="../../_images/math/ebdfeba35891abd6d949393061c336985d47cb1c.svg" alt="Y(\vect{x}) = \Tr{\vect{f}(\vect{x})} \vect{\beta} + Z(\vect{x})"/></p>
 </div><p>where:</p>
 <ul>
-<li><p class="first"><img class="math" src="../../_images/math/57fdeb9a4a21b1395b6b8a4a19c21d582bcd0308.svg" alt="\Tr{\vect{f}(\vect{x})} \vect{\beta}"/> is a generalized linear
+<li><p class="first"><img class="math" src="../../_images/math/a88b393c71fac992e63b183b6ccb364a7020958a.svg" alt="\Tr{\vect{f}(\vect{x})} \vect{\beta}"/> is a generalized linear
 model based upon a functional basis
-<img class="math" src="../../_images/math/75a6a2b528cbce8f7a0547ee1a69a3d63ed4481e.svg" alt="\vect{f} = \left(f_j, j = 1, \ldots, p\right)"/> and a vector of
+<img class="math" src="../../_images/math/b5477e247f2bb668b8ae90a6956feabebf1a7d7c.svg" alt="\vect{f} = \left(f_j, j = 1, \ldots, p\right)"/> and a vector of
 coefficients
-<img class="math" src="../../_images/math/d3c1dbc6a5523e3f28f0f6afb8d72f29461ae080.svg" alt="\vect{\beta} = \left(\beta_j, j = 1, \ldots, p\right)"/>,</p>
+<img class="math" src="../../_images/math/a65f279e79435ac91369ac8030315880e413f098.svg" alt="\vect{\beta} = \left(\beta_j, j = 1, \ldots, p\right)"/>,</p>
 </li>
-<li><p class="first"><img class="math" src="../../_images/math/4ec7b582ee05ca10a3f6bd9e5d3a2034a3355c31.svg" alt="Z"/> is a zero-mean stationary Gaussian process whose covariance
+<li><p class="first"><img class="math" src="../../_images/math/ade4e3fd5b9cdda59b2cb9dd2d9ca0d2f61d380d.svg" alt="Z"/> is a zero-mean stationary Gaussian process whose covariance
 function reads:</p>
 <div class="math">
-<p><img src="../../_images/math/ec6f6a70638ca4c496f5b269b0ac440b7171f3e7.svg" alt="\mathbb{E}[Z(\vect{x})\,Z(\vect{x'})] = \sigma^2 R(\vect{x} - \vect{x'}, \vect{\theta})"/></p>
-</div><p>where <img class="math" src="../../_images/math/4e11ca376e734b6ef1bae896c3a54a0c4ab0fdb7.svg" alt="\sigma^2 &gt; 0"/> is the variance and <img class="math" src="../../_images/math/834d60a4a0625d99048af801691a027ba7396c88.svg" alt="R"/> is the
+<p><img src="../../_images/math/dce65d4a12aa9b880d42482d140d34edcea1edc7.svg" alt="\mathbb{E}[Z(\vect{x})\,Z(\vect{x'})] = \sigma^2 R(\vect{x} - \vect{x'}, \vect{\theta})"/></p>
+</div><p>where <img class="math" src="../../_images/math/35fd0f43900af650574997ca64fd1bddf535567b.svg" alt="\sigma^2 &gt; 0"/> is the variance and <img class="math" src="../../_images/math/5184fc174e08f95104ada8e814562210aed5b478.svg" alt="R"/> is the
 correlation function that solely depends on the Manhattan distance
-between input points <img class="math" src="../../_images/math/4e57cc91d12e7b7b50085df3076096d5d7704084.svg" alt="\vect{x} - \vect{x'}"/> and a vector of
-parameters <img class="math" src="../../_images/math/c3e2f80ec1691a427bc6283f374e770995edbb4e.svg" alt="\vect{\theta} \in \Rset^{n_\theta}"/>.</p>
+between input points <img class="math" src="../../_images/math/84e89344e66eaf12caed314767d5bd12e8c64b76.svg" alt="\vect{x} - \vect{x'}"/> and a vector of
+parameters <img class="math" src="../../_images/math/ebbd5b8f2461c17a2dbd770638fec382af8aeb75.svg" alt="\vect{\theta} \in \Rset^{n_\theta}"/>.</p>
 </li>
 </ul>
 <p>Under the Gaussian process prior assumption, the observations
-<img class="math" src="../../_images/math/a8b61232800182ebe30b062f1956ce75b43fee2a.svg" alt="\vect{Y} = \left(Y_i, i = 1, \ldots, m\right)"/> and a prediction
-<img class="math" src="../../_images/math/b85579c357788eb2afa2d4e84209c3589fb5a4ec.svg" alt="Y(\vect{x})"/> at some unobserved input <img class="math" src="../../_images/math/4c1fc3fa3ac721facf1cddd78305f76b86f2623f.svg" alt="\vect{x}"/> are
+<img class="math" src="../../_images/math/c7d4909e527cdd38ff1460660d29b873bb5c186a.svg" alt="\vect{Y} = \left(Y_i, i = 1, \ldots, m\right)"/> and a prediction
+<img class="math" src="../../_images/math/272674b1c6eb5a05697f318df142acb0193a7479.svg" alt="Y(\vect{x})"/> at some unobserved input <img class="math" src="../../_images/math/a3a6f1956f635861141cf384d3945161297b4301.svg" alt="\vect{x}"/> are
 jointly normally distributed:</p>
 <div class="math">
-<p><img src="../../_images/math/c75ad6c2d6f3dd61589b65c733c3685a8048a6bb.svg" alt="\begin{pmatrix}
+<p><img src="../../_images/math/ee7f98e951bfeb7fb489d903c2eb8ffbd1ce0ac1.svg" alt="\begin{pmatrix}
       \vect{Y} \\
       Y(\vect{x})
     \end{pmatrix}
@@ -154,49 +154,49 @@ jointly normally distributed:</p>
     \right)"/></p>
 </div><p>where:</p>
 <div class="math">
-<p><img src="../../_images/math/6eba9e59638c9133c96099c1cc4dccfdec0d6979.svg" alt="\mat{F} = \left[f_j\left(\vect{x}^{(i)}\right), i = 1, \ldots, m, j = 1, \ldots, p\right]"/></p>
+<p><img src="../../_images/math/2ccad6b5977d0feae95f5cadeb5828a3f0630dd6.svg" alt="\mat{F} = \left[f_j\left(\vect{x}^{(i)}\right), i = 1, \ldots, m, j = 1, \ldots, p\right]"/></p>
 </div><p>is the regression matrix,</p>
 <div class="math">
-<p><img src="../../_images/math/a7cf6217625d62c24d11ed1beff6419af17f0ef8.svg" alt="\mat{R} = \left[R\left(\vect{x}^{(i)} - \vect{x}^{(j)}, \vect{\theta}\right), i,\,j = 1, \ldots, m\right]"/></p>
+<p><img src="../../_images/math/189992d9a5233032f854d0fcf0d30cef2b0bcd78.svg" alt="\mat{R} = \left[R\left(\vect{x}^{(i)} - \vect{x}^{(j)}, \vect{\theta}\right), i,\,j = 1, \ldots, m\right]"/></p>
 </div><p>is the observations’ correlation matrix, and:</p>
 <div class="math">
-<p><img src="../../_images/math/5701c713c9ff7f3ac4a875fea8c0051f0c58d7d7.svg" alt="\vect{r}(\vect{x}) = \Tr{\left(R\left(\vect{x} - \vect{x}^{(i)}, \vect{\theta}\right), i = 1, \ldots, m\right)}"/></p>
+<p><img src="../../_images/math/c46094ad2fbc69cb9fdeb24162fb703e62b56014.svg" alt="\vect{r}(\vect{x}) = \Tr{\left(R\left(\vect{x} - \vect{x}^{(i)}, \vect{\theta}\right), i = 1, \ldots, m\right)}"/></p>
 </div><p>is the vector of cross-correlations between the prediction and the
 observations.</p>
 <p>As such, the Kriging predictor is defined as the following conditional
 distribution:</p>
 <div class="math">
-<p><img src="../../_images/math/fe8187947bee9bed77dc67ef08eea3d57fcce17e.svg" alt="\tilde{Y}(\vect{x}) = \left[Y(\vect{x}) \mid \vect{Y} = \vect{y}, \vect{\theta}=\vect{\theta}^*, \sigma^2=(\sigma^2)^*\right]"/></p>
-</div><p>where <img class="math" src="../../_images/math/2b4c51e8f852fcda808a1a9787b790d92fef23a3.svg" alt="\vect{\theta}^*"/> and <img class="math" src="../../_images/math/6f3e21e3522e03045e10dc2e4cf3509eb757104f.svg" alt="(\sigma^2)^*"/> are the maximum
-likelihood estimates of the correlation parameters <img class="math" src="../../_images/math/2b723f559e8298e535601bd58966d42fe7e1f7a2.svg" alt="\vect{\theta}"/>
-and variance <img class="math" src="../../_images/math/efaf88d60ff8ea38061567f479d5e69348062fb7.svg" alt="\sigma^2"/> (see references).</p>
+<p><img src="../../_images/math/658ecc69318b1b28355a351b6d6972bd8d392afe.svg" alt="\tilde{Y}(\vect{x}) = \left[Y(\vect{x}) \mid \vect{Y} = \vect{y}, \vect{\theta}=\vect{\theta}^*, \sigma^2=(\sigma^2)^*\right]"/></p>
+</div><p>where <img class="math" src="../../_images/math/fb04288d10918907e63accd50a6cc5a5f20b57d2.svg" alt="\vect{\theta}^*"/> and <img class="math" src="../../_images/math/2f59b181b56d38a4748d9861fb1fa69dcc1085f4.svg" alt="(\sigma^2)^*"/> are the maximum
+likelihood estimates of the correlation parameters <img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/>
+and variance <img class="math" src="../../_images/math/a022726969cc93f1125b3cb472f088678ee0a846.svg" alt="\sigma^2"/> (see references).</p>
 <p>It can be shown (see references) that the predictor
-<img class="math" src="../../_images/math/490439a60bce748cb2adb06a13408f7d9efc9ecc.svg" alt="\tilde{Y}(\vect{x})"/> is also Gaussian:</p>
+<img class="math" src="../../_images/math/15abbe3dcbf8e96aef114ce5181cba078902732b.svg" alt="\tilde{Y}(\vect{x})"/> is also Gaussian:</p>
 <div class="math">
-<p><img src="../../_images/math/d7f831f925ef174e56d09b9d8d28b8b6e0942301.svg" alt="\tilde{Y}(\vect{x}) = \cN_1\left(\mu_{\tilde{Y}}(\vect{x}), \sigma^2_{\tilde{Y}}(\vect{x})\right)"/></p>
+<p><img src="../../_images/math/85665f9e1dcc60b701797a7209746b23c2c48667.svg" alt="\tilde{Y}(\vect{x}) = \cN_1\left(\mu_{\tilde{Y}}(\vect{x}), \sigma^2_{\tilde{Y}}(\vect{x})\right)"/></p>
 </div><ul>
 <li><p class="first">with mean:</p>
 <div class="math">
-<p><img src="../../_images/math/4c6415fff9625e1ae709ba8ca096599d13f5dbb6.svg" alt="\mu_{\tilde{Y}}(\vect{x}) = \Tr{\vect{f}(\vect{x})} \tilde{\vect{\beta}} + \Tr{\vect{r}(\vect{x})} \vect{\gamma}"/></p>
-</div><p>where <img class="math" src="../../_images/math/f9a31ae6c54588d1efb43eb70a2762586746df12.svg" alt="\underline{\tilde{\beta}}"/> is the generalized least
+<p><img src="../../_images/math/dc0e4ddf0700fe15c80019a0fef5ad6e77ce9c7d.svg" alt="\mu_{\tilde{Y}}(\vect{x}) = \Tr{\vect{f}(\vect{x})} \tilde{\vect{\beta}} + \Tr{\vect{r}(\vect{x})} \vect{\gamma}"/></p>
+</div><p>where <img class="math" src="../../_images/math/774dfc64cf8ffd8b3b3820444c07a83c4f9d0b54.svg" alt="\underline{\tilde{\beta}}"/> is the generalized least
 squares solution of the underlying linear regression problem:</p>
 <div class="math">
-<p><img src="../../_images/math/d2817c79a1eacc7f1eebbc6a4f80e06694e18fc9.svg" alt="\tilde{\vect{\beta}} = \left(\Tr{\mat{F}} \mat{R}^{-1} \mat{F}\right)^{-1} \Tr{\mat{F}} \mat{R}^{-1} \vect{y}
+<p><img src="../../_images/math/2b79d9594be5987710e6035e021b0f30ee98ae32.svg" alt="\tilde{\vect{\beta}} = \left(\Tr{\mat{F}} \mat{R}^{-1} \mat{F}\right)^{-1} \Tr{\mat{F}} \mat{R}^{-1} \vect{y}
 
 and"/></p>
 </div><div class="math">
-<p><img src="../../_images/math/64ed31439f8d966712c998230be3deaf03dfc675.svg" alt="\vect{\gamma} = \mat{R}^{-1} \left(\vect{y} - \mat{F} \tilde{\vect{\beta}}\right)"/></p>
+<p><img src="../../_images/math/1ee27fca34846b8abb00073c8d22703f4184ad74.svg" alt="\vect{\gamma} = \mat{R}^{-1} \left(\vect{y} - \mat{F} \tilde{\vect{\beta}}\right)"/></p>
 </div></li>
 <li><p class="first">and variance:</p>
 <div class="math">
-<p><img src="../../_images/math/a5aca47d24e46d9d486b4913cafe395d8dc93790.svg" alt="\sigma^2_{\tilde{Y}}(\vect{x}) =
+<p><img src="../../_images/math/98135a2d8a4db31a5dd9993c36e0dad20558dcfd.svg" alt="\sigma^2_{\tilde{Y}}(\vect{x}) =
         \sigma^2 \left[1 -
             \Tr{\vect{r}(\vect{x})} \mat{R}^{-1} \vect{r}(\vect{x})
             + \Tr{\vect{u}(\vect{x})} \left(\Tr{\mat{F}} \mat{R}^{-1} \mat{F}\right)^{-1} \vect{u}(\vect{x})
             \right]"/></p>
 </div><p>where:</p>
 <div class="math">
-<p><img src="../../_images/math/6802e657afa3d52d9956d4f002a3518536273f10.svg" alt="\vect{u}(\vect{x}) = \Tr{\mat{F}} \mat{R}^{-1} \vect{r}(\vect{x}) - \vect{f}(\vect{x})"/></p>
+<p><img src="../../_images/math/5e1d37d98ef8b82a1997da7487ee513f0f50fe03.svg" alt="\vect{u}(\vect{x}) = \Tr{\mat{F}} \mat{R}^{-1} \vect{r}(\vect{x}) - \vect{f}(\vect{x})"/></p>
 </div></li>
 </ul>
 <p>Kriging may also be referred to as <em>Gaussian process regression</em>.</p>
@@ -258,8 +258,8 @@ and"/></p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

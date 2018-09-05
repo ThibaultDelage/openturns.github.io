@@ -104,18 +104,18 @@ construction of a <em>response surface</em> (i.e. of a meta-model) is of
 interest, or when one wishes to perform a statistical regression.</div>
 </div>
 <div class="line-block">
-<div class="line">Given a matrix <img class="math" src="../../_images/math/415a3a6673381c95183e863137814dccfe474c08.svg" alt="\matr{\Psi}~\in~\Rset^{N\times P}"/>, <img class="math" src="../../_images/math/747c8ca4f51866b4df1d450cc6da8b82ca8e8b48.svg" alt="N&gt;P"/>,
-and a vector <img class="math" src="../../_images/math/8bdd82d01a5108d83b9896b3003a7bae73ce7d2d.svg" alt="\underline{y}~\in~\Rset^{N}"/>, we want to find a
-vector <img class="math" src="../../_images/math/e29853ac19c42d695cccc3fdbe96e42ecc46a5dd.svg" alt="\underline{a}~\in \Rset^{P}"/> such that
-<img class="math" src="../../_images/math/c705c54a0d372952c37df1ce84b3446bc772a753.svg" alt="\matr{\Psi}\: \underline{a}"/> is the best approximation to
-<img class="math" src="../../_images/math/bae7b46d1ae946388aee9536cce73c5480f0c7d4.svg" alt="\underline{y}"/> in the least squares sense. Mathematically
+<div class="line">Given a matrix <img class="math" src="../../_images/math/da82601f7c9786d263121f8636859c4af3df352c.svg" alt="\matr{\Psi}~\in~\Rset^{N\times P}"/>, <img class="math" src="../../_images/math/e4720ce5ee599ea57d29217e49f68279153c73c5.svg" alt="N&gt;P"/>,
+and a vector <img class="math" src="../../_images/math/2a0445fb2b6a0ad13a621e278e77103a02b47aab.svg" alt="\underline{y}~\in~\Rset^{N}"/>, we want to find a
+vector <img class="math" src="../../_images/math/1f2493e955dffa4af8908b180e5e25c19340546d.svg" alt="\underline{a}~\in \Rset^{P}"/> such that
+<img class="math" src="../../_images/math/a82779d586ea416a80ac257b3b0c375cad8a2449.svg" alt="\matr{\Psi}\: \underline{a}"/> is the best approximation to
+<img class="math" src="../../_images/math/5c28963d87c1e58fb272c9403c17fe3e9051ae4a.svg" alt="\underline{y}"/> in the least squares sense. Mathematically
 speaking, we want to solve the following minimization problem:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/2e801a2f70b7590f3382485be12d45efa842a051.svg" alt="\min_{\underline{a}} \, \, = \, \, \left\| \; \matr{\Psi} \, \underline{a} \, - \, \underline{y} \; \right\|_2"/></p>
+<p><img src="../../_images/math/8a11e466414af352a06a217d9d1f6a39cf4e8cd0.svg" alt="\min_{\underline{a}} \, \, = \, \, \left\| \; \matr{\Psi} \, \underline{a} \, - \, \underline{y} \; \right\|_2"/></p>
 </div><p>In the following, it is assumed that the rank of matrix
-<img class="math" src="../../_images/math/303e54361d485fb8c693c4fbc25859a5ed4a2db7.svg" alt="\matr{\Psi}"/> is equal to <img class="math" src="../../_images/math/03e63ce75956351d9682f5e6de6cf9f203c89365.svg" alt="P"/>.</p>
+<img class="math" src="../../_images/math/99103ae780106d2afeade68a379123a1984e8b1a.svg" alt="\matr{\Psi}"/> is equal to <img class="math" src="../../_images/math/4c21bd0a8df01ae42f62d11fb29cb9ae23746161.svg" alt="P"/>.</p>
 </div></blockquote>
 <div class="line-block">
 <div class="line">Several algorithms can be applied to compute the least squares
@@ -128,27 +128,27 @@ the so-called <em>normal equations</em>, which read using a matrix notation:</di
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/bc242700a14cf1c96d41c57c4e1471a5f5d7794f.svg" alt="\matr{\Psi}^{\mbox{\scriptsize \textsf{T}}} \; \matr{\Psi} \; \underline{a} \, \, = \, \, \matr{\Psi}^{\mbox{\scriptsize \textsf{T}}} \; \underline{y}"/></p>
+<p><img src="../../_images/math/a59d52a30adf635b905eaa2ba39cb78aaf026b6e.svg" alt="\matr{\Psi}^{\mbox{\scriptsize \textsf{T}}} \; \matr{\Psi} \; \underline{a} \, \, = \, \, \matr{\Psi}^{\mbox{\scriptsize \textsf{T}}} \; \underline{y}"/></p>
 </div></div></blockquote>
 <div class="line-block">
 <div class="line">The matrix
-<img class="math" src="../../_images/math/9134669f20c96271dcd68a8c419a36e537eec438.svg" alt="\matr{C} \equiv \matr{\Psi}^{\mbox{\scriptsize \textsf{T}}} \; \matr{\Psi}"/>
+<img class="math" src="../../_images/math/b0b894776c1ed06c5e8a137c1797b1bc449dbe7e.svg" alt="\matr{C} \equiv \matr{\Psi}^{\mbox{\scriptsize \textsf{T}}} \; \matr{\Psi}"/>
 is symmetric and positive definite. The system can be solved using the
 following Cholesky factorization:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/cf9fd75415c2560ea1e6afb17c99ed70b7182d9f.svg" alt="\matr{C} \, \, = \, \, \matr{R}^{\mbox{\scriptsize \textsf{T}}} \; \matr{R}"/></p>
+<p><img src="../../_images/math/576023f40e37859a65ddd8ee2d6503aa9b57bd3f.svg" alt="\matr{C} \, \, = \, \, \matr{R}^{\mbox{\scriptsize \textsf{T}}} \; \matr{R}"/></p>
 </div></div></blockquote>
 <div class="line-block">
-<div class="line">where <img class="math" src="../../_images/math/8ca6f93c6e2491dfec7b576988827a2eb8de2407.svg" alt="\matr{R}"/> is an upper triangular matrix with positive
+<div class="line">where <img class="math" src="../../_images/math/9655901b77f9fa2145d534ce4ce71f6f179e48a0.svg" alt="\matr{R}"/> is an upper triangular matrix with positive
 diagonal entries. Solving the normal equations is equivalent to
 solving the two following triangular systems, which can be easily
 solved by backwards substitution:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/c2fc8bb240ef171ab3fba8fee816369cd6ecfcc0.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/f125c8d81b72b3035e507af5669d928117a1efa4.svg" alt="\begin{aligned}
     \matr{R}^{\mbox{\scriptsize \textsf{T}}} \; \underline{z} \, \, = \, \, \matr{\Psi}^{\mbox{\scriptsize \textsf{T}}} \; \underline{y}
     \qquad , \qquad \matr{R} \; \underline{a} \, \, = \, \, \underline{z}
   \end{aligned}"/></p>
@@ -156,31 +156,31 @@ solved by backwards substitution:</div>
 <div class="line-block">
 <div class="line">It has to be noted that this theoretical approach is seldom used in
 practice though. Indeed the resulting least squares solution is quite
-sensitive to a small change in the data (i.e. in <img class="math" src="../../_images/math/bae7b46d1ae946388aee9536cce73c5480f0c7d4.svg" alt="\underline{y}"/>
-and <img class="math" src="../../_images/math/303e54361d485fb8c693c4fbc25859a5ed4a2db7.svg" alt="\matr{\Psi}"/>). More precisely, the normal equations are
+sensitive to a small change in the data (i.e. in <img class="math" src="../../_images/math/5c28963d87c1e58fb272c9403c17fe3e9051ae4a.svg" alt="\underline{y}"/>
+and <img class="math" src="../../_images/math/99103ae780106d2afeade68a379123a1984e8b1a.svg" alt="\matr{\Psi}"/>). More precisely, the normal equations are
 always more badly conditioned than the original overdetermined system,
 as their condition number is squared compared to the original problem:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/680a04432de2b1ece3cc04bac794ddcac7e96fc3.svg" alt="\kappa(\matr{\Psi}^{\mbox{\scriptsize \textsf{T}}} \; \matr{\Psi}) \, \, = \, \, \kappa(\matr{\Psi})^2"/></p>
+<p><img src="../../_images/math/2d884aa8f9f78dc9307dbe36b05ac21cc9eec55c.svg" alt="\kappa(\matr{\Psi}^{\mbox{\scriptsize \textsf{T}}} \; \matr{\Psi}) \, \, = \, \, \kappa(\matr{\Psi})^2"/></p>
 </div><p>As a consequence more robust numerical methods should be adopted.</p>
 </div></blockquote>
 <div class="line-block">
 <div class="line"><strong>Method based on QR factorization</strong></div>
 </div>
 <div class="line-block">
-<div class="line">It is shown that the matrix <img class="math" src="../../_images/math/303e54361d485fb8c693c4fbc25859a5ed4a2db7.svg" alt="\matr{\Psi}"/> can be factorized as
+<div class="line">It is shown that the matrix <img class="math" src="../../_images/math/99103ae780106d2afeade68a379123a1984e8b1a.svg" alt="\matr{\Psi}"/> can be factorized as
 follows:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/495de25ea583c34acf72ea2e9dadc05f3b6014cc.svg" alt="\matr{\Psi} \, \, = \, \, \matr{Q} \; \matr{R}"/></p>
+<p><img src="../../_images/math/120ac99adaa6162da1a05d35c78138433af5df13.svg" alt="\matr{\Psi} \, \, = \, \, \matr{Q} \; \matr{R}"/></p>
 </div></div></blockquote>
 <div class="line-block">
-<div class="line">where <img class="math" src="../../_images/math/362deb7af6f7243e481e4fadf2906b90816145ae.svg" alt="\matr{Q}"/> is a <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/>-by-<img class="math" src="../../_images/math/03e63ce75956351d9682f5e6de6cf9f203c89365.svg" alt="P"/>-matrix with
-<em>orthonormal</em> columns and <img class="math" src="../../_images/math/8ca6f93c6e2491dfec7b576988827a2eb8de2407.svg" alt="\matr{R}"/> is a
-<img class="math" src="../../_images/math/03e63ce75956351d9682f5e6de6cf9f203c89365.svg" alt="P"/>-by-<img class="math" src="../../_images/math/03e63ce75956351d9682f5e6de6cf9f203c89365.svg" alt="P"/>-upper triangular matrix. Such a <em>QR
+<div class="line">where <img class="math" src="../../_images/math/8186be6bbc35b81c07ba1712b27192fa1df64f4f.svg" alt="\matr{Q}"/> is a <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/>-by-<img class="math" src="../../_images/math/4c21bd0a8df01ae42f62d11fb29cb9ae23746161.svg" alt="P"/>-matrix with
+<em>orthonormal</em> columns and <img class="math" src="../../_images/math/9655901b77f9fa2145d534ce4ce71f6f179e48a0.svg" alt="\matr{R}"/> is a
+<img class="math" src="../../_images/math/4c21bd0a8df01ae42f62d11fb29cb9ae23746161.svg" alt="P"/>-by-<img class="math" src="../../_images/math/4c21bd0a8df01ae42f62d11fb29cb9ae23746161.svg" alt="P"/>-upper triangular matrix. Such a <em>QR
 decomposition</em> may be constructed using several schemes, such as
 <em>Gram-Schmidt orthogonalization</em>, <em>Householder reflections</em> or <em>Givens
 rotations</em>.</div>
@@ -190,7 +190,7 @@ rotations</em>.</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/0ad094b33b717ad89fe8351dc9985d3500bd2a1c.svg" alt="\matr{R} \; \underline{a} \, \, = \, \, \matr{Q}^{\mbox{\scriptsize \textsf{T}}} \; \underline{y}"/></p>
+<p><img src="../../_images/math/72918b9c520311645e98941f7c4ec323d5cbc7af.svg" alt="\matr{R} \; \underline{a} \, \, = \, \, \matr{Q}^{\mbox{\scriptsize \textsf{T}}} \; \underline{y}"/></p>
 </div></div></blockquote>
 <div class="line-block">
 <div class="line">This upper triangular system can be solved using backwards
@@ -202,34 +202,34 @@ relative error that is proportional to:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/f7d5c43f5db9d66b1c53485cbfd784dcdbd83220.svg" alt="\kappa(\matr{\Psi}) + \|\underline{r}\|_2 \kappa(\matr{\Psi})^2"/></p>
+<p><img src="../../_images/math/6043875d54c52a12dd97527786f5e2e42ff4d186.svg" alt="\kappa(\matr{\Psi}) + \|\underline{r}\|_2 \kappa(\matr{\Psi})^2"/></p>
 </div></div></blockquote>
 <div class="line-block">
 <div class="line">where
-<img class="math" src="../../_images/math/1106d80a2bde2d0048738e0d0d351ce786f4e42c.svg" alt="\underline{r} = \matr{\Psi} \, \underline{a} \, - \, \underline{y}"/>.
+<img class="math" src="../../_images/math/7ee1afb5ffdd442cfc0988d1cb2e2f421f8bd6a7.svg" alt="\underline{r} = \matr{\Psi} \, \underline{a} \, - \, \underline{y}"/>.
 Thus this error is expected to be much smaller than the one associated
 with the normal equations provided that the residual
-<img class="math" src="../../_images/math/6ec393d6675e04ae2cecc7a1a4ce781f7916e929.svg" alt="\underline{r}"/> is “small”.</div>
+<img class="math" src="../../_images/math/cd1856b30a4f7b6b45dfa59cc3448d9e2b57ee0f.svg" alt="\underline{r}"/> is “small”.</div>
 </div>
 <div class="line-block">
 <div class="line"><strong>Method based on singular value decomposition</strong></div>
 </div>
 <div class="line-block">
 <div class="line">The so-called <em>singular value decomposition</em> (SVD) of matrix
-<img class="math" src="../../_images/math/303e54361d485fb8c693c4fbc25859a5ed4a2db7.svg" alt="\matr{\Psi}"/> reads:</div>
+<img class="math" src="../../_images/math/99103ae780106d2afeade68a379123a1984e8b1a.svg" alt="\matr{\Psi}"/> reads:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/388b1a8473e2c58ae175c86958c773b88d649d48.svg" alt="\matr{\Psi} \quad = \quad \matr{U} \; \matr{S} \; \matr{V}^{\mbox{\scriptsize \textsf{T}}}"/></p>
+<p><img src="../../_images/math/3147993e649908d7a704c4b2b921d1a3f00d39c8.svg" alt="\matr{\Psi} \quad = \quad \matr{U} \; \matr{S} \; \matr{V}^{\mbox{\scriptsize \textsf{T}}}"/></p>
 </div></div></blockquote>
 <div class="line-block">
-<div class="line">where <img class="math" src="../../_images/math/7aee837158b0db4e87ca1ba7340bcaf36ce99fdc.svg" alt="\matr{U}~\in \Rset^{N \times N}"/> and
-<img class="math" src="../../_images/math/67fbcd0f47184bacfd578c92d03e8171644edd99.svg" alt="\matr{V}~\in \Rset^{P \times P}"/> are orthogonal matrices, and
-<img class="math" src="../../_images/math/bf7e4f381e66326a55a2c30e2739ce35c3757d29.svg" alt="\matr{S}~\in \Rset^{N \times P}"/> can be cast as:</div>
+<div class="line">where <img class="math" src="../../_images/math/5bd0f2ae0b6d9a508bd448d3943c7d1c3af5816f.svg" alt="\matr{U}~\in \Rset^{N \times N}"/> and
+<img class="math" src="../../_images/math/8e95a7655bf36973a80f9a51b7c21de709964bc6.svg" alt="\matr{V}~\in \Rset^{P \times P}"/> are orthogonal matrices, and
+<img class="math" src="../../_images/math/df369931110cb47abba57c6063dccd251f49ca32.svg" alt="\matr{S}~\in \Rset^{N \times P}"/> can be cast as:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/bc50b07fd2173ea79d7c55eece002b139a34df87.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/f4e35ad62d97b35e09a660b7b8c538498c0f431f.svg" alt="\begin{aligned}
     \matr{S} \quad = \quad \left(
     \begin{array}{c}
       \matr{S}_1 \\
@@ -239,17 +239,17 @@ with the normal equations provided that the residual
   \end{aligned}"/></p>
 </div></div></blockquote>
 <div class="line-block">
-<div class="line">In the previous equation, <img class="math" src="../../_images/math/c19f171de8669a8633f33c492e964af24fc37e2d.svg" alt="\matr{S}_1~\in \Rset^{P \times P}"/>
+<div class="line">In the previous equation, <img class="math" src="../../_images/math/19ceed47377e5904868b45be9e7f55a1a98f3176.svg" alt="\matr{S}_1~\in \Rset^{P \times P}"/>
 is a diagonal matrix containing the singular values
-<img class="math" src="../../_images/math/3811d414489e996df707ba2125caee48eeb18181.svg" alt="\sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_P &gt; 0"/> of
-<img class="math" src="../../_images/math/303e54361d485fb8c693c4fbc25859a5ed4a2db7.svg" alt="\matr{\Psi}"/>.</div>
+<img class="math" src="../../_images/math/2763f94691cda3ad256d6f115e399a08cae728f3.svg" alt="\sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_P &gt; 0"/> of
+<img class="math" src="../../_images/math/99103ae780106d2afeade68a379123a1984e8b1a.svg" alt="\matr{\Psi}"/>.</div>
 </div>
 <div class="line-block">
 <div class="line">It can be shown that the least squares solution is equal to:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/b868fc9a2ab25bd28711c5872298c72455e198af.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/ce7d8e4fa34948fadd9b85f7659a8e45a10faf81.svg" alt="\begin{aligned}
     \widehat{\underline{a}} \quad = \quad \matr{V} \; \left( \begin{array}{c}
       \matr{S}_1^{-1} \\
       \matr{0}  \\
@@ -264,34 +264,34 @@ and memory to compute a <em>reduced</em> version of SVD. The latter reads:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/afa6435301204f28077caa0566d63e7a2fee974b.svg" alt="\matr{\Psi} \quad = \quad \matr{U}_1 \; \matr{S}_1 \; \matr{V}^{\mbox{\scriptsize \textsf{T}}}"/></p>
+<p><img src="../../_images/math/c5421f7f173ffff0a500310ae0fcce4bee7af7f4.svg" alt="\matr{\Psi} \quad = \quad \matr{U}_1 \; \matr{S}_1 \; \matr{V}^{\mbox{\scriptsize \textsf{T}}}"/></p>
 </div></div></blockquote>
 <div class="line-block">
-<div class="line">where <img class="math" src="../../_images/math/b03e17fca10cd777702131d15add8e4282b3ab56.svg" alt="\matr{U}_1"/> is obtained by extracting the <img class="math" src="../../_images/math/03e63ce75956351d9682f5e6de6cf9f203c89365.svg" alt="P"/>
-first columns of <img class="math" src="../../_images/math/7f24c9953020988db739ca7e3771979b7069dbb1.svg" alt="\matr{U}"/>.</div>
+<div class="line">where <img class="math" src="../../_images/math/d78d6543bbb5112b6be319a90cbfdba6bc989b16.svg" alt="\matr{U}_1"/> is obtained by extracting the <img class="math" src="../../_images/math/4c21bd0a8df01ae42f62d11fb29cb9ae23746161.svg" alt="P"/>
+first columns of <img class="math" src="../../_images/math/bbc58ffa0f76fb66074b578369b05a7470cf7e91.svg" alt="\matr{U}"/>.</div>
 </div>
 <div class="line-block">
 <div class="line">Note that it is also possible to perform SVD in case of a
-rank-deficient matrix <img class="math" src="../../_images/math/303e54361d485fb8c693c4fbc25859a5ed4a2db7.svg" alt="\matr{\Psi}"/>. In this case the resulting
-vector <img class="math" src="../../_images/math/879159ee8092a2ae217389d69255fe25c71d05ac.svg" alt="\widehat{\underline{a}}"/> corresponds to the <em>minimum
+rank-deficient matrix <img class="math" src="../../_images/math/99103ae780106d2afeade68a379123a1984e8b1a.svg" alt="\matr{\Psi}"/>. In this case the resulting
+vector <img class="math" src="../../_images/math/a929c0c51ee4e28afc4a1d03c186cc2ba3eeb132.svg" alt="\widehat{\underline{a}}"/> corresponds to the <em>minimum
 norm</em> least squares solution.</div>
 </div>
 <div class="line-block">
 <div class="line">The computational cost of the method is proportional to
-<img class="math" src="../../_images/math/3c39fa3e9ae598dbc70bd3169bab1edb14b0f2d6.svg" alt="(NP^2 + P^3)"/> with a factor ranging from 4 to 10, depending on
+<img class="math" src="../../_images/math/08493922c203db0d22385131db11da5a8d8533d0.svg" alt="(NP^2 + P^3)"/> with a factor ranging from 4 to 10, depending on
 the numerical scheme used to compute the SVD decomposition. This cost
 is higher than those associated with the normal equations and with QR
 factorization. However SVD is relevant insofar as it provides a very
 valuable information, that is the singular values of matrix
-<img class="math" src="../../_images/math/303e54361d485fb8c693c4fbc25859a5ed4a2db7.svg" alt="\matr{\Psi}"/>.</div>
+<img class="math" src="../../_images/math/99103ae780106d2afeade68a379123a1984e8b1a.svg" alt="\matr{\Psi}"/>.</div>
 </div>
 <p><strong>Comparison of the methods</strong></p>
 <p>Several conclusions may be drawn concerning the various methods
 considered so far:</p>
 <ul class="simple">
-<li>If <img class="math" src="../../_images/math/f5211a4f6ecbad73f4a739299d80763b6ab90ad9.svg" alt="N \approx P"/>, normal equations and Householder QR
+<li>If <img class="math" src="../../_images/math/5851ceefa52ef9354b501174914cf0f99cd15122.svg" alt="N \approx P"/>, normal equations and Householder QR
 factorization require about the same computational work. If
-<img class="math" src="../../_images/math/c8a843e37abe235129bb9357b420a05c9f953fdb.svg" alt="N &gt;&gt; P"/>, then the QR approach requires about twice as much
+<img class="math" src="../../_images/math/059b1ef0aa30e1e79aadd9911a91bbe76fe1dea3.svg" alt="N &gt;&gt; P"/>, then the QR approach requires about twice as much
 work as normal equations.</li>
 <li>However QR appears to be more accurate than normal equations, so it
 should be almost always preferred in practice.</li>
@@ -344,8 +344,8 @@ purposes.</li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

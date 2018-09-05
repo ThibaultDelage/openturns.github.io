@@ -136,33 +136,33 @@ optionally, a 2nd objective marginal can be used as noise</p>
 We chose the point so as to maximize an improvement criterion based on the
 metamodel.</p>
 <div class="math">
-<p><img src="../../_images/math/c3baabc473630e142ac0e48236900a0a3ab6e288.svg" alt="I(x_{new}) = max(f_{min} - Y_{new}, 0)"/></p>
+<p><img src="../../_images/math/9ec32e6ec675180b55563cab9876f438b2933f3c.svg" alt="I(x_{new}) = max(f_{min} - Y_{new}, 0)"/></p>
 </div><p>The default criteria is called EI (Expected Improvement) and aims at maximizing
 the mean improvement:</p>
 <div class="math">
-<p><img src="../../_images/math/18513ab866975c0ef3a11a3441f66ed2b67ee659.svg" alt="\mathbb{E}\left[I(x_{new})\right] = \mathbb{E}\left[max(f_{min} - Y_{new}, 0)\right]"/></p>
+<p><img src="../../_images/math/f154087d5be43d9370a2c3597b0b01208bfdc046.svg" alt="\mathbb{E}\left[I(x_{new})\right] = \mathbb{E}\left[max(f_{min} - Y_{new}, 0)\right]"/></p>
 </div><p>This criterion is explicited using the kriging mean and variance:</p>
 <div class="math">
-<p><img src="../../_images/math/8153fe7a6c1353efe0499e694b7530876c16cf39.svg" alt="\mathbb{E}\left[I(x_{new})\right] = (f_{min} - m_K(x_{new})) \Phi\left( \frac{f_{min} - m_K(x_{new})}{s_K(x_{new})} \right) + s_K(x_{new}) \phi\left( \frac{f_{min} - m_K(x_{new})}{s_K(x_{new})} \right)"/></p>
+<p><img src="../../_images/math/9ab646527a00132483175e46debb31584b9c5868.svg" alt="\mathbb{E}\left[I(x_{new})\right] = (f_{min} - m_K(x_{new})) \Phi\left( \frac{f_{min} - m_K(x_{new})}{s_K(x_{new})} \right) + s_K(x_{new}) \phi\left( \frac{f_{min} - m_K(x_{new})}{s_K(x_{new})} \right)"/></p>
 </div><p>An observation noise variance can be provided thanks to a 2nd objective marginal.</p>
 <div class="math">
-<p><img src="../../_images/math/f6115dae848f56f950d7df67dab2bd5451e1a583.svg" alt="Y_{obs} = Y(x) + \sigma_{\epsilon}(x) \epsilon"/></p>
+<p><img src="../../_images/math/ba7847ffe461b348bba967f0d0ad80bff7be68a3.svg" alt="Y_{obs} = Y(x) + \sigma_{\epsilon}(x) \epsilon"/></p>
 </div><p>In that case the AEI (Augmented Expected Improvement) formulation is used.
 As we don’t have access to the real minimum of the function anymore a quantile
-of the kriging prediction is used, with the constant <img class="math" src="../../_images/math/e803a2e7f5474c71cda9c1ea9ca5c221237ca964.svg" alt="c"/>:</p>
+of the kriging prediction is used, with the constant <img class="math" src="../../_images/math/123af80c410642d7e849115cfa4dd252bb531b6a.svg" alt="c"/>:</p>
 <div class="math">
-<p><img src="../../_images/math/24c969d079eb2b489c1c8f4e671e53becc67b131.svg" alt="u(x) = m_K(x) + c s_K(x)"/></p>
+<p><img src="../../_images/math/ad8c902dd59ac1622355b1ec55e799d3f7bb861f.svg" alt="u(x) = m_K(x) + c s_K(x)"/></p>
 </div><p>This criterion is minimized over the design points:</p>
 <div class="math">
-<p><img src="../../_images/math/22aeb158be93d1822c1e0f4f2ed202ca80896474.svg" alt="x_{min} = \argmax_{x_i} (u(x_i))"/></p>
+<p><img src="../../_images/math/1462d728a0a524549f8e51a4f3de2d44e5fa862a.svg" alt="x_{min} = \argmax_{x_i} (u(x_i))"/></p>
 </div><p>The AEI criterion reads:</p>
 <div class="math">
-<p><img src="../../_images/math/f3dac76e985640b9ff8a42a2f3a83087917bd99d.svg" alt="AEI(x_{new}) = \mathbb{E}\left[max(m_K(x_{min}) - Y_{new}, 0)\right] \times \left(1 - \frac{\sigma_{\epsilon}(x_{new})}{\sqrt{\sigma_{\epsilon}^2(x_{new})+s^2_K(x_{new})}} \right)"/></p>
+<p><img src="../../_images/math/1fc80051c4536370f52379ea982ff5674a7722ea.svg" alt="AEI(x_{new}) = \mathbb{E}\left[max(m_K(x_{min}) - Y_{new}, 0)\right] \times \left(1 - \frac{\sigma_{\epsilon}(x_{new})}{\sqrt{\sigma_{\epsilon}^2(x_{new})+s^2_K(x_{new})}} \right)"/></p>
 </div><p>with</p>
 <div class="math">
-<p><img src="../../_images/math/2815debdd106bf79baff4b96c327336ba31a6080.svg" alt="\mathbb{E}\left[max(m_K(x_{min}) - Y_{new}, 0)\right] = (m_K(x_{min}) - m_K(x_{new})) \Phi\left( \frac{m_K(x_{min}) - m_K(x_{new})}{s_K(x_{new})} \right) + s_K(x_{new}) \phi\left( \frac{m_K(x_{min}) - m_K(x_{new})}{s_K(x_{new})} \right)"/></p>
+<p><img src="../../_images/math/b38f37efa799fbe4471377bb494579de2fdc201f.svg" alt="\mathbb{E}\left[max(m_K(x_{min}) - Y_{new}, 0)\right] = (m_K(x_{min}) - m_K(x_{new})) \Phi\left( \frac{m_K(x_{min}) - m_K(x_{new})}{s_K(x_{new})} \right) + s_K(x_{new}) \phi\left( \frac{m_K(x_{min}) - m_K(x_{new})}{s_K(x_{new})} \right)"/></p>
 </div><p>A less computationally expensive noise function can be provided through
-<a class="reference internal" href="#openturns.EfficientGlobalOptimization.setNoiseModel" title="openturns.EfficientGlobalOptimization.setNoiseModel"><code class="xref py py-func docutils literal notranslate"><span class="pre">setNoiseModel()</span></code></a> to evaluate <img class="math" src="../../_images/math/cd4a02262486a86a4b346d0afc4dc7e0a638f3dd.svg" alt="\sigma^2_{\epsilon}(x)"/>
+<a class="reference internal" href="#openturns.EfficientGlobalOptimization.setNoiseModel" title="openturns.EfficientGlobalOptimization.setNoiseModel"><code class="xref py py-func docutils literal notranslate"><span class="pre">setNoiseModel()</span></code></a> to evaluate <img class="math" src="../../_images/math/aaa79257bb699995db453d32947052ec602f9d3c.svg" alt="\sigma^2_{\epsilon}(x)"/>
 for the improvement criterion optimization, the objective being only used to
 compute values and associated noise at design points.</p>
 <p>By default the criteria is minimized using <a class="reference internal" href="openturns.MultiStart.html#openturns.MultiStart" title="openturns.MultiStart"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiStart</span></code></a>
@@ -386,27 +386,27 @@ This behavior can be overridden by using another solver with <a class="reference
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The Lagrange multipliers <img class="math" src="../../_images/math/e8b38e7787310eca391ed49a12bffbaf0d742355.svg" alt="\vect{\lambda}"/> are associated with the following Lagrangian formulation of the optimization problem:</p>
+<p>The Lagrange multipliers <img class="math" src="../../_images/math/ae9ead0d4862367669ade58386a2c925e5e4340d.svg" alt="\vect{\lambda}"/> are associated with the following Lagrangian formulation of the optimization problem:</p>
 <div class="math">
-<p><img src="../../_images/math/44c847b8044af6c902ba381ada8ed28cfb69ff4d.svg" alt="\cL(\vect{x}, \vect{\lambda}_{eq}, \vect{\lambda}_{\ell}, \vect{\lambda}_{u}, \vect{\lambda}_{ineq}) = J(\vect{x}) + \Tr{\vect{\lambda}}_{eq} g(\vect{x}) + \Tr{\vect{\lambda}}_{\ell} (\vect{x}-\vect{\ell})^{+} + \Tr{\vect{\lambda}}_{u} (\vect{u}-\vect{x})^{+} + \Tr{\vect{\lambda}}_{ineq}  h^{+}(\vect{x})"/></p>
-</div><p>where <img class="math" src="../../_images/math/6a6b88c8ab61bd7bb471fb9011e7a6315e93fd84.svg" alt="\vect{\alpha}^{+}=(\max(0,\alpha_1),\hdots,\max(0,\alpha_n))"/>.</p>
+<p><img src="../../_images/math/412f7b89c69b6f8076e342a62521d01f62ed6d65.svg" alt="\cL(\vect{x}, \vect{\lambda}_{eq}, \vect{\lambda}_{\ell}, \vect{\lambda}_{u}, \vect{\lambda}_{ineq}) = J(\vect{x}) + \Tr{\vect{\lambda}}_{eq} g(\vect{x}) + \Tr{\vect{\lambda}}_{\ell} (\vect{x}-\vect{\ell})^{+} + \Tr{\vect{\lambda}}_{u} (\vect{u}-\vect{x})^{+} + \Tr{\vect{\lambda}}_{ineq}  h^{+}(\vect{x})"/></p>
+</div><p>where <img class="math" src="../../_images/math/76cfbc79d671791c577f0fdceb7591eb1322fa98.svg" alt="\vect{\alpha}^{+}=(\max(0,\alpha_1),\hdots,\max(0,\alpha_n))"/>.</p>
 <dl class="docutils">
-<dt>The Lagrange multipliers are stored as <img class="math" src="../../_images/math/24be9d4da08b3ab57ae6c2e75486b2d5862855dd.svg" alt="(\vect{\lambda}_{eq}, \vect{\lambda}_{\ell}, \vect{\lambda}_{u}, \vect{\lambda}_{ineq})"/>, where:</dt>
+<dt>The Lagrange multipliers are stored as <img class="math" src="../../_images/math/c0cdc6180f8684bb29712c58ad8c4f7e9d68247b.svg" alt="(\vect{\lambda}_{eq}, \vect{\lambda}_{\ell}, \vect{\lambda}_{u}, \vect{\lambda}_{ineq})"/>, where:</dt>
 <dd><ul class="first last simple">
-<li><img class="math" src="../../_images/math/9fdab635811ba293c16e98cf01859032dd4397d1.svg" alt="\vect{\lambda}_{eq}"/> is of dimension 0 if there is no equality
-constraint, else of dimension the dimension of <img class="math" src="../../_images/math/f5c51139bac9d5e4af01d4d06b4e11ffa07e6486.svg" alt="g(\vect{x})"/> ie the number of scalar equality constraints</li>
-<li><img class="math" src="../../_images/math/2437507d31a3ae8870021b6beb07dcaf75d68df7.svg" alt="\vect{\lambda}_{\ell}"/> and <img class="math" src="../../_images/math/181bd4ad4696666155b0d1feafc227269e07c612.svg" alt="\vect{\lambda}_{u}"/> are of dimension 0 if there is no bound constraint, else of dimension of <img class="math" src="../../_images/math/4c1fc3fa3ac721facf1cddd78305f76b86f2623f.svg" alt="\vect{x}"/></li>
-<li><img class="math" src="../../_images/math/9fdab635811ba293c16e98cf01859032dd4397d1.svg" alt="\vect{\lambda}_{eq}"/> is of dimension 0 if there is no inequality constraint, else of dimension the dimension of <img class="math" src="../../_images/math/7aa3109b5c12bc35218cde888313457f23a2f90d.svg" alt="h(\vect{x})"/> ie the number of scalar inequality constraints</li>
+<li><img class="math" src="../../_images/math/d0f0ebeff963c454cac1261dec73e767703f3d34.svg" alt="\vect{\lambda}_{eq}"/> is of dimension 0 if there is no equality
+constraint, else of dimension the dimension of <img class="math" src="../../_images/math/262f41658a293cf4a8be7320c63ee21e866d429e.svg" alt="g(\vect{x})"/> ie the number of scalar equality constraints</li>
+<li><img class="math" src="../../_images/math/2367a74937d50d48909ec60a15327657ec6c9025.svg" alt="\vect{\lambda}_{\ell}"/> and <img class="math" src="../../_images/math/596de395121a0d9d4c383ddbb746a28d87fb4b0c.svg" alt="\vect{\lambda}_{u}"/> are of dimension 0 if there is no bound constraint, else of dimension of <img class="math" src="../../_images/math/a3a6f1956f635861141cf384d3945161297b4301.svg" alt="\vect{x}"/></li>
+<li><img class="math" src="../../_images/math/d0f0ebeff963c454cac1261dec73e767703f3d34.svg" alt="\vect{\lambda}_{eq}"/> is of dimension 0 if there is no inequality constraint, else of dimension the dimension of <img class="math" src="../../_images/math/d39c3b1c1c5c0bf520f59dbd3ccc77be16fb56b3.svg" alt="h(\vect{x})"/> ie the number of scalar inequality constraints</li>
 </ul>
 </dd>
 </dl>
-<p>The vector <img class="math" src="../../_images/math/e8b38e7787310eca391ed49a12bffbaf0d742355.svg" alt="\vect{\lambda}"/> is solution of the following linear system:</p>
+<p>The vector <img class="math" src="../../_images/math/ae9ead0d4862367669ade58386a2c925e5e4340d.svg" alt="\vect{\lambda}"/> is solution of the following linear system:</p>
 <div class="math">
-<p><img src="../../_images/math/2590cc7f5d220580dbe75f5b9c41035ec6c128d3.svg" alt="\Tr{\vect{\lambda}}_{eq}\left[\dfrac{\partial g}{\partial\vect{x}}(\vect{x})\right]+
+<p><img src="../../_images/math/9d91de0e738c9acc62e11372f3d0bf9d53a939f9.svg" alt="\Tr{\vect{\lambda}}_{eq}\left[\dfrac{\partial g}{\partial\vect{x}}(\vect{x})\right]+
 \Tr{\vect{\lambda}}_{\ell}\left[\dfrac{\partial (\vect{x}-\vect{\ell})^{+}}{\partial\vect{x}}(\vect{x})\right]+
 \Tr{\vect{\lambda}}_{u}\left[\dfrac{\partial (\vect{u}-\vect{x})^{+}}{\partial\vect{x}}(\vect{x})\right]+
 \Tr{\vect{\lambda}}_{ineq}\left[\dfrac{\partial h}{\partial\vect{x}}(\vect{x})\right]=-\dfrac{\partial J}{\partial\vect{x}}(\vect{x})"/></p>
-</div><p>If there is no constraint of any kind, <img class="math" src="../../_images/math/e8b38e7787310eca391ed49a12bffbaf0d742355.svg" alt="\vect{\lambda}"/> is of dimension 0, as well as if no constraint is active.</p>
+</div><p>If there is no constraint of any kind, <img class="math" src="../../_images/math/ae9ead0d4862367669ade58386a2c925e5e4340d.svg" alt="\vect{\lambda}"/> is of dimension 0, as well as if no constraint is active.</p>
 </dd></dl>
 
 <dl class="method">
@@ -420,7 +420,7 @@ constraint, else of dimension the dimension of <img class="math" src="../../_ima
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>c</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Used to define a quantile of the kriging prediction at the design points.
-<img class="math" src="../../_images/math/59234f46f98812195bc01988dc3ac4ae948e48f9.svg" alt="u(x)=m_K(x)+c*s_K(x)"/></p>
+<img class="math" src="../../_images/math/aa36336b065da01aa8abf5be7081e0595dd2f849.svg" alt="u(x)=m_K(x)+c*s_K(x)"/></p>
 </dd>
 </dl>
 </td>
@@ -462,8 +462,8 @@ and the EGO formulation is not adapted anymore.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>b</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Used to define a stopping criterion on the minimum correlation length:
-<img class="math" src="../../_images/math/2625d55ea659edb19cf15e47000861fd2e38716e.svg" alt="\theta_i &lt; \frac{\Delta_i^{min}}{b}"/>
-with <img class="math" src="../../_images/math/f4e2a80888eb61199b757d2011945e0a8c96b040.svg" alt="\Delta^{min}"/> the minimum distance between design points.</p>
+<img class="math" src="../../_images/math/82f4bfbe75944dcb843b69ad17caf62130749001.svg" alt="\theta_i &lt; \frac{\Delta_i^{min}}{b}"/>
+with <img class="math" src="../../_images/math/1c22ca04239b77da6793f132564f7297ad892537.svg" alt="\Delta^{min}"/> the minimum distance between design points.</p>
 </dd>
 </dl>
 </td>
@@ -521,9 +521,9 @@ with <img class="math" src="../../_images/math/f4e2a80888eb61199b757d2011945e0a8
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Used to define a stopping criterion on the improvement criterion:
-<img class="math" src="../../_images/math/605ee732d92d1e568d6ec2174480cd88764e06d4.svg" alt="I_{max} &lt; \alpha |Y_{min}|"/>
-with <img class="math" src="../../_images/math/a564e99bf4ee987d21d55d222895cc8b6be14674.svg" alt="I_{max}"/> the current maximum of the improvement
-and <img class="math" src="../../_images/math/8fd28348c6d1a94d9f15b623114bb50071585679.svg" alt="Y_{min}"/> the current optimum.</p>
+<img class="math" src="../../_images/math/415b5376f8b5d6cae7d8cb5e2f3b7c7f3429fe35.svg" alt="I_{max} &lt; \alpha |Y_{min}|"/>
+with <img class="math" src="../../_images/math/a990a5379c4bedf6afd05f998944cf4db3d9d657.svg" alt="I_{max}"/> the current maximum of the improvement
+and <img class="math" src="../../_images/math/828fa83fe7564c821e3337bc49bfc678df128641.svg" alt="Y_{min}"/> the current optimum.</p>
 </dd>
 </dl>
 </td>
@@ -714,7 +714,7 @@ points.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>noiseVariance</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
-<dd><p class="first last">The noise variance <img class="math" src="../../_images/math/cd4a02262486a86a4b346d0afc4dc7e0a638f3dd.svg" alt="\sigma^2_{\epsilon}(x)"/> used for the AEI
+<dd><p class="first last">The noise variance <img class="math" src="../../_images/math/aaa79257bb699995db453d32947052ec602f9d3c.svg" alt="\sigma^2_{\epsilon}(x)"/> used for the AEI
 criterion optimization only.
 Of same input dimension than the objective and 1-d output.</p>
 </dd>
@@ -933,7 +933,7 @@ Default is 1 (each iteration). Can be set to 0 (never).</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>c</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Used to define a quantile of the kriging prediction at the design points.
-<img class="math" src="../../_images/math/59234f46f98812195bc01988dc3ac4ae948e48f9.svg" alt="u(x)=m_K(x)+c*s_K(x)"/></p>
+<img class="math" src="../../_images/math/aa36336b065da01aa8abf5be7081e0595dd2f849.svg" alt="u(x)=m_K(x)+c*s_K(x)"/></p>
 </dd>
 </dl>
 </td>
@@ -956,8 +956,8 @@ and the EGO formulation is not adapted anymore.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>b</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Used to define a stopping criterion on the minimum correlation length:
-<img class="math" src="../../_images/math/2625d55ea659edb19cf15e47000861fd2e38716e.svg" alt="\theta_i &lt; \frac{\Delta_i^{min}}{b}"/>
-with <img class="math" src="../../_images/math/f4e2a80888eb61199b757d2011945e0a8c96b040.svg" alt="\Delta^{min}"/> the minimum distance between design points.</p>
+<img class="math" src="../../_images/math/82f4bfbe75944dcb843b69ad17caf62130749001.svg" alt="\theta_i &lt; \frac{\Delta_i^{min}}{b}"/>
+with <img class="math" src="../../_images/math/1c22ca04239b77da6793f132564f7297ad892537.svg" alt="\Delta^{min}"/> the minimum distance between design points.</p>
 </dd>
 </dl>
 </td>
@@ -977,9 +977,9 @@ with <img class="math" src="../../_images/math/f4e2a80888eb61199b757d2011945e0a8
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Used to define a stopping criterion on the improvement criterion:
-<img class="math" src="../../_images/math/605ee732d92d1e568d6ec2174480cd88764e06d4.svg" alt="I_{max} &lt; \alpha |Y_{min}|"/>
-with <img class="math" src="../../_images/math/a564e99bf4ee987d21d55d222895cc8b6be14674.svg" alt="I_{max}"/> the current maximum of the improvement
-and <img class="math" src="../../_images/math/8fd28348c6d1a94d9f15b623114bb50071585679.svg" alt="Y_{min}"/> the current optimum.</p>
+<img class="math" src="../../_images/math/415b5376f8b5d6cae7d8cb5e2f3b7c7f3429fe35.svg" alt="I_{max} &lt; \alpha |Y_{min}|"/>
+with <img class="math" src="../../_images/math/a990a5379c4bedf6afd05f998944cf4db3d9d657.svg" alt="I_{max}"/> the current maximum of the improvement
+and <img class="math" src="../../_images/math/828fa83fe7564c821e3337bc49bfc678df128641.svg" alt="Y_{min}"/> the current optimum.</p>
 </dd>
 </dl>
 </td>
@@ -1176,7 +1176,7 @@ The default number can be tweaked with the
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>noiseVariance</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
-<dd><p class="first last">The noise variance <img class="math" src="../../_images/math/cd4a02262486a86a4b346d0afc4dc7e0a638f3dd.svg" alt="\sigma^2_{\epsilon}(x)"/> used for the AEI
+<dd><p class="first last">The noise variance <img class="math" src="../../_images/math/aaa79257bb699995db453d32947052ec602f9d3c.svg" alt="\sigma^2_{\epsilon}(x)"/> used for the AEI
 criterion optimization only.
 Of same input dimension than the objective and 1-d output.</p>
 </dd>
@@ -1415,8 +1415,8 @@ The default number can be tweaked with the
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

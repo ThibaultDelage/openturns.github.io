@@ -123,32 +123,32 @@
 <p class="last"><a class="reference internal" href="openturns.EnumerateFunction.html#openturns.EnumerateFunction" title="openturns.EnumerateFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EnumerateFunction</span></code></a>, <a class="reference internal" href="openturns.HyperbolicAnisotropicEnumerateFunction.html#openturns.HyperbolicAnisotropicEnumerateFunction" title="openturns.HyperbolicAnisotropicEnumerateFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HyperbolicAnisotropicEnumerateFunction</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>Given an input random vector <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/> with prescribed probability
-density function (PDF) <img class="math" src="../../_images/math/8614107d33d6621cdf8d683ed1b9f95866bb9aa6.svg" alt="f_{\vect{X}}(\vect{x})"/>, it is possible to build
+<p>Given an input random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> with prescribed probability
+density function (PDF) <img class="math" src="../../_images/math/fec04d810c6b12dc2bda05d1d3d97a37a453a079.svg" alt="f_{\vect{X}}(\vect{x})"/>, it is possible to build
 up a <em>polynomial chaos</em> (PC) basis
-<img class="math" src="../../_images/math/0241659b5de5cc8ef54c7d6a348e65bc98113b3a.svg" alt="\{\psi_{\vect{\alpha}},\vect{\alpha} \in \Nset^{n_X}\}"/>. Of interest is
+<img class="math" src="../../_images/math/4e805e26dd2b3030e16489efa60fa08c02786911.svg" alt="\{\psi_{\vect{\alpha}},\vect{\alpha} \in \Nset^{n_X}\}"/>. Of interest is
 the definition of enumeration strategies for exploring this basis, i.e. of
-suitable <em>enumeration functions</em> <img class="math" src="../../_images/math/bc11a4bb49caf968bdfb98343dc86409c6780726.svg" alt="\tau"/> from <img class="math" src="../../_images/math/91353387246d1a0b8dd7735879892fa066040b7d.svg" alt="\Nset"/> to
-<img class="math" src="../../_images/math/9f5d9b9d7794d1503e58a21c48f8a3e439d5628f.svg" alt="\Nset^{n_X}"/>, which creates a one-to-one mapping between an integer
-<img class="math" src="../../_images/math/f15551bf91890d82beefb15ba7c7632e63616983.svg" alt="j"/> and a multi-index <img class="math" src="../../_images/math/9f5d9b9d7794d1503e58a21c48f8a3e439d5628f.svg" alt="\Nset^{n_X}"/>.</p>
-<p>Let us first define the <em>total degree</em> of any multi-index <img class="math" src="../../_images/math/6cd6b1cc821e1ab41a087f105ab11acb9673e4a7.svg" alt="\vect{\alpha}"/>
-in <img class="math" src="../../_images/math/9f5d9b9d7794d1503e58a21c48f8a3e439d5628f.svg" alt="\Nset^{n_X}"/> by <img class="math" src="../../_images/math/fdc67ad90dcef5c629ce540bd477581961c0b309.svg" alt="\sum_{i=1}^{n_X} \alpha_i"/>. A natural choice to
-sort the PC basis (i.e. the multi-indices <img class="math" src="../../_images/math/6cd6b1cc821e1ab41a087f105ab11acb9673e4a7.svg" alt="\vect{\alpha}"/>)
+suitable <em>enumeration functions</em> <img class="math" src="../../_images/math/cb3e904a2cb0790d5825572cb2d7e592942fc18c.svg" alt="\tau"/> from <img class="math" src="../../_images/math/7c6c883ff1eb211cd8fbec010b83188ed635e042.svg" alt="\Nset"/> to
+<img class="math" src="../../_images/math/3bfba6d509c34180d561f6526a0906fc439e0c90.svg" alt="\Nset^{n_X}"/>, which creates a one-to-one mapping between an integer
+<img class="math" src="../../_images/math/7b7a508058b13846a869ce6ef969e6b797f7b946.svg" alt="j"/> and a multi-index <img class="math" src="../../_images/math/3bfba6d509c34180d561f6526a0906fc439e0c90.svg" alt="\Nset^{n_X}"/>.</p>
+<p>Let us first define the <em>total degree</em> of any multi-index <img class="math" src="../../_images/math/8be8b720c73dee11c7f4b1de2c2dfce4e2bd5073.svg" alt="\vect{\alpha}"/>
+in <img class="math" src="../../_images/math/3bfba6d509c34180d561f6526a0906fc439e0c90.svg" alt="\Nset^{n_X}"/> by <img class="math" src="../../_images/math/af9cbd250a0b1253e6a679f519bda1e88e392253.svg" alt="\sum_{i=1}^{n_X} \alpha_i"/>. A natural choice to
+sort the PC basis (i.e. the multi-indices <img class="math" src="../../_images/math/8be8b720c73dee11c7f4b1de2c2dfce4e2bd5073.svg" alt="\vect{\alpha}"/>)
 is the lexicographical order with a constraint of increasing total degree.
-Mathematically speaking, a bijective enumeration function <img class="math" src="../../_images/math/bc11a4bb49caf968bdfb98343dc86409c6780726.svg" alt="\tau"/> is
+Mathematically speaking, a bijective enumeration function <img class="math" src="../../_images/math/cb3e904a2cb0790d5825572cb2d7e592942fc18c.svg" alt="\tau"/> is
 defined by:</p>
 <div class="math">
-<p><img src="../../_images/math/f2b90583635eeae5d4fba203c100e252439d2552.svg" alt="\begin{array}{llcl}
+<p><img src="../../_images/math/65a1467beba4d43138cf22f286836daf311610cc.svg" alt="\begin{array}{llcl}
   \tau \, : &amp; \Nset &amp; \longrightarrow &amp; \Nset^{n_X} \\
   &amp;  j &amp; \longmapsto &amp; \{\alpha_1,\dots, \alpha_{n_X}\} \,
              \equiv \, \{\tau_1(j),\dots,\tau_{n_X}(j)\} \\
 \end{array}"/></p>
 </div><p>such that:</p>
 <div class="math">
-<p><img src="../../_images/math/4e30f763da4ed3a5ee200558462f07ceafcd85ac.svg" alt="\tau(0) = \{0,\dots,0\}"/></p>
+<p><img src="../../_images/math/c506ced2a8014447ca283312c69ad5ab1ebc6f23.svg" alt="\tau(0) = \{0,\dots,0\}"/></p>
 </div><p>and</p>
 <div class="math">
-<p><img src="../../_images/math/94a34ac404347ecdc6bc3319d35f5e56bf1f6f9b.svg" alt="\forall 1 \leq j&lt;k  \quad \, , \quad \, \left\{
+<p><img src="../../_images/math/26e893fc2056dbde27b95e8541c6413c5581dea0.svg" alt="\forall 1 \leq j&lt;k  \quad \, , \quad \, \left\{
 \begin{array}{l}
   \displaystyle{\sum_{i=1}^{n_X} \tau_i(j) &lt; \sum_{i=1}^{n_X} \tau_i(k)}  \\
   \\
@@ -161,7 +161,7 @@ defined by:</p>
 \end{array}
 \right."/></p>
 </div><p>Such an enumeration strategy is illustrated in a two-dimensional case
-(i.e. <img class="math" src="../../_images/math/070d442597fd945bb17721329fde515222d77b81.svg" alt="n_X=2"/>) in the figure below:</p>
+(i.e. <img class="math" src="../../_images/math/656799d919e3d0af6d7574152bad214ee8dc1856.svg" alt="n_X=2"/>) in the figure below:</p>
 <p>(<a class="reference external" href="../../pyplots/LinearEnumerateFunction.py">Source code</a>, <a class="reference external" href="../../pyplots/LinearEnumerateFunction.png">png</a>, <a class="reference external" href="../../pyplots/LinearEnumerateFunction.hires.png">hires.png</a>, <a class="reference external" href="../../pyplots/LinearEnumerateFunction.pdf">pdf</a>)</p>
 <div class="figure">
 <img alt="../../_images/LinearEnumerateFunction.png" src="../../_images/LinearEnumerateFunction.png" />
@@ -174,7 +174,7 @@ defined by:</p>
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">j</th>
-<th class="head"><img class="math" src="../../_images/math/3b840c07482fad89e4a52683d92af8cfaba29ce8.svg" alt="\vect{\alpha} = \{\alpha_1,\alpha_2\}"/></th>
+<th class="head"><img class="math" src="../../_images/math/9d0befcef210bf3ba7e41ae504718668dc996e5e.svg" alt="\vect{\alpha} = \{\alpha_1,\alpha_2\}"/></th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -332,7 +332,7 @@ defined by:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>dim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/20aaf98126ca912d8a272464a64c61f41b847da1.svg" alt="dim \geq 0"/></span></dt>
+<dt><strong>dim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/7672c737d0c3102a6f47f3eb600ac4be47289b67.svg" alt="dim \geq 0"/></span></dt>
 <dd><p class="first last">Dimension of the <em>EnumerateFunction</em>.</p>
 </dd>
 </dl>
@@ -378,7 +378,7 @@ defined by:</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>cardinal</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Cardinal of indices of degree <img class="math" src="../../_images/math/e2fa48672be49c465baa5f26bdd85320ab1a43d7.svg" alt="max \leq maximumDegree"/>.</p>
+<dd><p class="first last">Cardinal of indices of degree <img class="math" src="../../_images/math/86ae2d9c69d0d88dacfb7313b64374bd8edd5078.svg" alt="max \leq maximumDegree"/>.</p>
 </dd>
 </dl>
 </td>
@@ -421,7 +421,7 @@ defined by:</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>index</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Index of the strata of degree <img class="math" src="../../_images/math/e2fa48672be49c465baa5f26bdd85320ab1a43d7.svg" alt="max \leq maximumDegree"/>.</p>
+<dd><p class="first last">Index of the strata of degree <img class="math" src="../../_images/math/86ae2d9c69d0d88dacfb7313b64374bd8edd5078.svg" alt="max \leq maximumDegree"/>.</p>
 </dd>
 </dl>
 </td>
@@ -678,7 +678,7 @@ equal to <em>strataIndex</em>.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>dim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/20aaf98126ca912d8a272464a64c61f41b847da1.svg" alt="dim \geq 0"/></span></dt>
+<dt><strong>dim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/7672c737d0c3102a6f47f3eb600ac4be47289b67.svg" alt="dim \geq 0"/></span></dt>
 <dd><p class="first last">Dimension of the <em>EnumerateFunction</em>.</p>
 </dd>
 </dl>
@@ -775,8 +775,8 @@ equal to <em>strataIndex</em>.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

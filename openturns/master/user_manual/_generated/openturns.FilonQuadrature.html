@@ -106,14 +106,14 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/36dfd7239f71d2c0484f88e4a677ff94d2f83f03.svg" alt="n&gt;0"/></span></dt>
+<dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a61d664a5e455310f0450578fe38e31be64a054c.svg" alt="n&gt;0"/></span></dt>
 <dd><p class="first last">The discretization used by the algorithm. The integration algorithm will
-be regularly discretized by <img class="math" src="../../_images/math/ef80ee2cb5f9bc908544a3f3b20a1389b7cc94fa.svg" alt="2n+1"/> points.</p>
+be regularly discretized by <img class="math" src="../../_images/math/e094499114e26c9b2a2b4f599e19ec017d6e50f9.svg" alt="2n+1"/> points.</p>
 </dd>
 <dt><strong>omega</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">The default pulsation in the oscillating kernel. Default value is 1.0.</p>
 </dd>
-<dt><strong>kind</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/55cc44e21abc5808a508ae26250ea1ac19a69250.svg" alt="kind\geq 0"/></span></dt>
+<dt><strong>kind</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/24a14bdebf1dc04d0edcbc430c3c78898344dfe4.svg" alt="kind\geq 0"/></span></dt>
 <dd><p class="first last">The type of oscillating kernel defining the integral, see notes. Default
 value is 0.</p>
 </dd>
@@ -125,21 +125,21 @@ value is 0.</p>
 <p class="rubric">Notes</p>
 <p>The Filon algorithm enables to approximate the definite integral:</p>
 <div class="math">
-<p><img src="../../_images/math/d8950442c5176e892073a9cc73bef9ddcdf068db.svg" alt="\int_a^b f(t)w(\omega t)\di{t}"/></p>
-</div><p>with <img class="math" src="../../_images/math/2091d386476900f8ebb5cf4a5d88391fc64e17f0.svg" alt="f: \Rset \mapsto \Rset^p"/>, <img class="math" src="../../_images/math/035ae9d58edab19d7900a0259025c3707ccc0a6b.svg" alt="a, b\in\Rset"/>,
-<img class="math" src="../../_images/math/8745c207794bc398cc114208d583d8f4fc0eff0a.svg" alt="\omega\in\Rset"/> and:</p>
+<p><img src="../../_images/math/ef78301493370d5e6a996f098ef21350ade0e8ba.svg" alt="\int_a^b f(t)w(\omega t)\di{t}"/></p>
+</div><p>with <img class="math" src="../../_images/math/21402b1ae8f4900774c9bb39a84ea9bfe9d49ed8.svg" alt="f: \Rset \mapsto \Rset^p"/>, <img class="math" src="../../_images/math/c2835510e436a45c42354fc4d9ee7a4af469dae6.svg" alt="a, b\in\Rset"/>,
+<img class="math" src="../../_images/math/aba11a2cc485b1b3730dad89334c477dd26715e3.svg" alt="\omega\in\Rset"/> and:</p>
 <div class="math">
-<p><img src="../../_images/math/af983ddcb0d3c650891d54ca071789e43bf79179.svg" alt="w(\omega t)=\left\{
+<p><img src="../../_images/math/e521760ba6afbdf524e5e96ae11953edb3dad322.svg" alt="w(\omega t)=\left\{
 \begin{array}{ll}
   \cos(\omega t) &amp; \mathrm{if}\: kind=0 \\
   \sin(\omega t) &amp; \mathrm{if}\: kind=1 \\
   \exp(i \omega t) &amp; \mathrm{if}\: kind\geq 2
 \end{array}
 \right."/></p>
-</div><p>This algorithm is based on a regular partition of the interval <img class="math" src="../../_images/math/d0f50cf2ae2ff3b3edc75504d9e4f572be570163.svg" alt="[a,b]"/>, the
-function <img class="math" src="../../_images/math/68690c6e741b6c06797c7e5bed2d9f89bf5b065a.svg" alt="f"/> being approximated by a quadratic function on three consecutive
-points. This algorithm provides an approximation of order <img class="math" src="../../_images/math/9642ed1032724317465cda36a87aa9f76ca67a7d.svg" alt="\cO(1/\omega^2)"/>
-when <img class="math" src="../../_images/math/9c1c9b70608c8e7446a57e34616161c3548401f8.svg" alt="\omega\rightarrow\infty"/>. When <img class="math" src="../../_images/math/7d2ae8523b64538565b67b1df1dafd7ff2e541ad.svg" alt="w(\omega t)=\exp(i \omega t)"/>,
+</div><p>This algorithm is based on a regular partition of the interval <img class="math" src="../../_images/math/aeace095a54598d09eccf263ecf3bdaa2b46a4ef.svg" alt="[a,b]"/>, the
+function <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> being approximated by a quadratic function on three consecutive
+points. This algorithm provides an approximation of order <img class="math" src="../../_images/math/d4994710c2b2a008b2a592436da28cd0a5a13ae3.svg" alt="\cO(1/\omega^2)"/>
+when <img class="math" src="../../_images/math/c0232eb95f4c77e90aa1d2de127b937476c5317d.svg" alt="\omega\rightarrow\infty"/>. When <img class="math" src="../../_images/math/e0916aac3bbb8c340f1237e67f719b8198beb223.svg" alt="w(\omega t)=\exp(i \omega t)"/>,
 the result is returned as a <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> of dimension 2, the first
 component being the real part of the result and the second component the
 imaginary part.</p>
@@ -188,7 +188,7 @@ imaginary part.</p>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.FilonQuadrature.integrate" title="openturns.FilonQuadrature.integrate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">integrate</span></code></a>(*args)</td>
-<td>Evaluation of the integral of <img class="math" src="../../_images/math/7f28e6d66df97509aba1498f13b5ae1df56a1885.svg" alt="f w"/> on an interval.</td>
+<td>Evaluation of the integral of <img class="math" src="../../_images/math/6e875629ce2064353d13cc5936a6f028467a9d6d.svg" alt="f w"/> on an interval.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.FilonQuadrature.setKind" title="openturns.FilonQuadrature.setKind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setKind</span></code></a>(kind)</td>
 <td>Accessor to the kind of oscillating weight defining the integral.</td>
@@ -409,7 +409,7 @@ imaginary part.</p>
 <dl class="method">
 <dt id="openturns.FilonQuadrature.integrate">
 <code class="descname">integrate</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.FilonQuadrature.integrate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluation of the integral of <img class="math" src="../../_images/math/7f28e6d66df97509aba1498f13b5ae1df56a1885.svg" alt="f w"/> on an interval.</p>
+<dd><p>Evaluation of the integral of <img class="math" src="../../_images/math/6e875629ce2064353d13cc5936a6f028467a9d6d.svg" alt="f w"/> on an interval.</p>
 <dl class="docutils">
 <dt>Available usages:</dt>
 <dd><p class="first">integrate(<em>f, interval</em>)</p>
@@ -421,14 +421,14 @@ imaginary part.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>, <img class="math" src="../../_images/math/2091d386476900f8ebb5cf4a5d88391fc64e17f0.svg" alt="f: \Rset \mapsto \Rset^p"/></span></dt>
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>, <img class="math" src="../../_images/math/21402b1ae8f4900774c9bb39a84ea9bfe9d49ed8.svg" alt="f: \Rset \mapsto \Rset^p"/></span></dt>
 <dd><p class="first last">The integrand function.</p>
 </dd>
 <dt><strong>omega</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">The pulsation in the weight function. This value superseeds the value given
 in the constructor.</p>
 </dd>
-<dt><strong>interval</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a>, <img class="math" src="../../_images/math/691b584a67bac4c9cc4549baf5fe59ab726bfa60.svg" alt="interval \in \Rset"/></span></dt>
+<dt><strong>interval</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a>, <img class="math" src="../../_images/math/8d171e8daaf8fb0319eb0b8c3fcd67584fbe6371.svg" alt="interval \in \Rset"/></span></dt>
 <dd><p class="first last">The integration domain.</p>
 </dd>
 </dl>
@@ -436,8 +436,8 @@ in the constructor.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>value</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Approximation of the integral. Its dimension is <img class="math" src="../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/> if
-<img class="math" src="../../_images/math/a552cfe4cb5e2b3503a086cb7f95e1b69dcc38b3.svg" alt="kind\in\{0,1\}"/>, otherwise it is <img class="math" src="../../_images/math/d0096e24ef592db56abf5562fed686d783fcbd99.svg" alt="2p"/> whith the <img class="math" src="../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/> first
+<dd><p class="first last">Approximation of the integral. Its dimension is <img class="math" src="../../_images/math/0f4c0791a2997f071572e3ee6a344919caea8e95.svg" alt="p"/> if
+<img class="math" src="../../_images/math/01757ea517a8f148ee3e17534c04bbffbe27da12.svg" alt="kind\in\{0,1\}"/>, otherwise it is <img class="math" src="../../_images/math/c5c0bb6029627c259c4d24f09e430c0df4bff461.svg" alt="2p"/> whith the <img class="math" src="../../_images/math/0f4c0791a2997f071572e3ee6a344919caea8e95.svg" alt="p"/> first
 components corresponding to the real part of the integral and the remaining
 ones to the imaginary part.</p>
 </dd>
@@ -503,7 +503,7 @@ ones to the imaginary part.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer, <img class="math" src="../../_images/math/36dfd7239f71d2c0484f88e4a677ff94d2f83f03.svg" alt="n&gt;0"/></span></dt>
+<dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">integer, <img class="math" src="../../_images/math/a61d664a5e455310f0450578fe38e31be64a054c.svg" alt="n&gt;0"/></span></dt>
 <dd><p class="first last">The discretization used by the algorithm.</p>
 </dd>
 </dl>
@@ -619,8 +619,8 @@ ones to the imaginary part.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

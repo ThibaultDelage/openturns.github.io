@@ -133,7 +133,7 @@ number of efficient coefficients of the basis. Its default value is set to
 <dd><p class="first last">Parameter used as a threshold for selecting the efficient coefficients of
 the basis. The real threshold represents the multiplication of the
 significanceFactor with the maximum magnitude of the current determined 
-coefficients. Its default value is equal to <img class="math" src="../../../_images/math/d37d5f52af0ac3c1050cceaccc9ab80cadd2a7b7.svg" alt="1e^{-4}"/>.</p>
+coefficients. Its default value is equal to <img class="math" src="../../../_images/math/060e919959f37c64170dc78bc6e4f7ea463e993d.svg" alt="1e^{-4}"/>.</p>
 </dd>
 <dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
 <dd><p class="first last">Used for the online monitoring of the current basis updates (removed or
@@ -150,23 +150,23 @@ added coefficients).</p>
 </div>
 <p class="rubric">Notes</p>
 <p>The cleaning strategy aims at building a PC expansion containing at most
-<img class="math" src="../../../_images/math/03e63ce75956351d9682f5e6de6cf9f203c89365.svg" alt="P"/> significant coefficients, i.e. at most <img class="math" src="../../../_images/math/03e63ce75956351d9682f5e6de6cf9f203c89365.svg" alt="P"/> significant basis
+<img class="math" src="../../../_images/math/4c21bd0a8df01ae42f62d11fb29cb9ae23746161.svg" alt="P"/> significant coefficients, i.e. at most <img class="math" src="../../../_images/math/4c21bd0a8df01ae42f62d11fb29cb9ae23746161.svg" alt="P"/> significant basis
 functions. It proceeds as follows:</p>
 <ul class="simple">
-<li>Generate an initial PC basis made of the <img class="math" src="../../../_images/math/03e63ce75956351d9682f5e6de6cf9f203c89365.svg" alt="P"/> first polynomials
+<li>Generate an initial PC basis made of the <img class="math" src="../../../_images/math/4c21bd0a8df01ae42f62d11fb29cb9ae23746161.svg" alt="P"/> first polynomials
 (according to the adopted <a class="reference internal" href="../../_generated/openturns.EnumerateFunction.html#openturns.EnumerateFunction" title="openturns.EnumerateFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnumerateFunction</span></code></a>), or
-equivalently an initial set of indices <img class="math" src="../../../_images/math/a943b811c5cd2c61dc8d8d95d171280bcdf00332.svg" alt="K = \{0, \ldots, P-1\}"/>.</li>
-<li>Discard from the basis all those polynomials <img class="math" src="../../../_images/math/973bdf43b401c4d1e6d7b94ae7d939bc7f48bfe6.svg" alt="\Psi_j"/> associated with 
+equivalently an initial set of indices <img class="math" src="../../../_images/math/40816e79d3cb88ba37c1d09b23eb8e0402302601.svg" alt="K = \{0, \ldots, P-1\}"/>.</li>
+<li>Discard from the basis all those polynomials <img class="math" src="../../../_images/math/cc16907339b2d88a8f827a1c14452f1cf3e9fe4c.svg" alt="\Psi_j"/> associated with 
 insignificance coefficients, i.e. the coefficients that satisfy:</li>
 </ul>
 <div class="math">
-<p><img src="../../../_images/math/7312a6c09cab0af165eb7ca52a9761bd2cc09897.svg" alt="|a_j| \leq \epsilon \times \max_{ k \in K } |a_k|"/></p>
-</div><p>where <img class="math" src="../../../_images/math/29d6c0a7c25f8bb27be0c07c78bf5c323768d959.svg" alt="\epsilon"/> is the significance factor, default is
-<img class="math" src="../../../_images/math/e0109599a880059d3977b0d9e84cc9b574ed5af1.svg" alt="\epsilon = 10^{-4}"/>.</p>
+<p><img src="../../../_images/math/498fcdadf1cd8637b3504359d53b7fd21eb858d2.svg" alt="|a_j| \leq \epsilon \times \max_{ k \in K } |a_k|"/></p>
+</div><p>where <img class="math" src="../../../_images/math/384410e6f37eece2ddfb85c2522d8adc600e439d.svg" alt="\epsilon"/> is the significance factor, default is
+<img class="math" src="../../../_images/math/90d6d98268ceea2276bd81473a4799424e29dcc2.svg" alt="\epsilon = 10^{-4}"/>.</p>
 <ul class="simple">
-<li>Add the next basis term <img class="math" src="../../../_images/math/14cbf2246cb9f5a0a0ad08a0372ec69e9b07b4de.svg" alt="\Psi_{k+1}"/> to the current basis <img class="math" src="../../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/>.</li>
-<li>Reiterate the procedure until either <img class="math" src="../../../_images/math/03e63ce75956351d9682f5e6de6cf9f203c89365.svg" alt="P"/> terms have been retained or if
-the given maximum index <img class="math" src="../../../_images/math/e8f3cd53f374f4bf34e0a9b4d72a8f8efabf1745.svg" alt="P_{max}"/> has been reached.</li>
+<li>Add the next basis term <img class="math" src="../../../_images/math/b26bd7a516ede0b208901795c2ca2a9f5db38a47.svg" alt="\Psi_{k+1}"/> to the current basis <img class="math" src="../../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/>.</li>
+<li>Reiterate the procedure until either <img class="math" src="../../../_images/math/4c21bd0a8df01ae42f62d11fb29cb9ae23746161.svg" alt="P"/> terms have been retained or if
+the given maximum index <img class="math" src="../../../_images/math/a55201bd4c56e1ae6b8a6c8722331c7c62271805.svg" alt="P_{max}"/> has been reached.</li>
 </ul>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
@@ -435,7 +435,7 @@ the given maximum index <img class="math" src="../../../_images/math/e8f3cd53f37
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>polynomials</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of polynomials</span></dt>
-<dd><p class="first last">Sequence of <img class="math" src="../../../_images/math/03e63ce75956351d9682f5e6de6cf9f203c89365.svg" alt="P"/> analytical polynomials.</p>
+<dd><p class="first last">Sequence of <img class="math" src="../../../_images/math/4c21bd0a8df01ae42f62d11fb29cb9ae23746161.svg" alt="P"/> analytical polynomials.</p>
 </dd>
 </dl>
 </td>
@@ -761,8 +761,8 @@ the given maximum index <img class="math" src="../../../_images/math/e8f3cd53f37
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

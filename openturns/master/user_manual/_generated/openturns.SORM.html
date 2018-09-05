@@ -133,37 +133,37 @@ space.</p>
 <p>See <a class="reference internal" href="openturns.Analytical.html#openturns.Analytical" title="openturns.Analytical"><code class="xref py py-class docutils literal notranslate"><span class="pre">Analytical</span></code></a> for the description of the first steps of
 the SORM analysis.</p>
 <p>The Second Order Reliability Method (SORM) consists in approximating the limit
-state surface in U-space at the design point <img class="math" src="../../_images/math/ff4ce57d7f933d0d14ef4e2b34817943c1f9d3a3.svg" alt="P^*"/> by a quadratic
+state surface in U-space at the design point <img class="math" src="../../_images/math/67da49bbe7f25bf06a10968bb0cfed2a280dd442.svg" alt="P^*"/> by a quadratic
 surface. SORM is usually more accurate than FORM e.g. in case when the event
 boundary is highly curved.</p>
-<p>Let us denote by <img class="math" src="../../_images/math/08e45b5b78dc9f9b9b0bb177ec4d7ad08054cc73.svg" alt="n"/> the dimension of the random vector <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/>
-and <img class="math" src="../../_images/math/35d2809a0f2c59a60bbbc1127e6580e945cd3bbb.svg" alt="(\kappa_i)_{1 \leq i \leq n-1}"/> the <img class="math" src="../../_images/math/6cc76da67d033691dd7648d408cd64fb3d992fb2.svg" alt="n-1"/> main curvatures of
+<p>Let us denote by <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/> the dimension of the random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>
+and <img class="math" src="../../_images/math/cbc84ce2fdfd97727eb9a77505cf3cf87dc16f30.svg" alt="(\kappa_i)_{1 \leq i \leq n-1}"/> the <img class="math" src="../../_images/math/4067b1cf12c527249e2c4e94ce3c9a8d78017ae1.svg" alt="n-1"/> main curvatures of
 the limit state function at the design point in the standard space.</p>
-<p>Several approximations of the failure probability <img class="math" src="../../_images/math/bc35a54fc919ce5e92af549d591ac3a6236b8468.svg" alt="P_f"/> are available in
+<p>Several approximations of the failure probability <img class="math" src="../../_images/math/5085f93dd5258efdc1edcc3c0efc525f37018906.svg" alt="P_f"/> are available in
 the library, and detailed here in the case where the origin
 of the standard space does not belong to the failure domain:</p>
 <ul>
 <li><p class="first">Breitung’s formula:</p>
 <div class="math" id="breitung-formula">
-<p><img src="../../_images/math/242b8b31fe4c1263ba2a76c7ea701396a9ac9138.svg" alt="P_{Breitung} = E(-\beta_{HL})\prod_{i=1}^{n-1} \frac{1}{\sqrt{1 + \beta_{HL}\kappa_i}}"/></p>
-</div><p><img class="math" src="../../_images/math/b4a4b7fe94696ac1c9f37c936c284e34e903e157.svg" alt="E"/> the marginal cumulative density function of the spherical
-distributions in the standard space and <img class="math" src="../../_images/math/cfe5b6a7b53b8c12ad14ee49a56c886a30a37ce6.svg" alt="\beta_{HL}"/> is the Hasofer-Lind
+<p><img src="../../_images/math/7438151f5624add8a09f60245810ebbdbf0ce397.svg" alt="P_{Breitung} = E(-\beta_{HL})\prod_{i=1}^{n-1} \frac{1}{\sqrt{1 + \beta_{HL}\kappa_i}}"/></p>
+</div><p><img class="math" src="../../_images/math/000f3b0a1812a5044910c90225ec6f6e8f27ec5e.svg" alt="E"/> the marginal cumulative density function of the spherical
+distributions in the standard space and <img class="math" src="../../_images/math/e8dbef7194c6f1c8140b308827468c267372cc7b.svg" alt="\beta_{HL}"/> is the Hasofer-Lind
 reliability index, defined as the distance of the design point
-<img class="math" src="../../_images/math/484669e023b328a8d43f60aeb94469c7331752aa.svg" alt="\vect{u}^*"/> to the origin of the standard space.</p>
+<img class="math" src="../../_images/math/adae06f6b9e64ca84131d478a6b812c4035563bc.svg" alt="\vect{u}^*"/> to the origin of the standard space.</p>
 </li>
 <li><p class="first">Hohen Bichler’s formula is an approximation of the previous equation:</p>
 <div class="math" id="hohenbichler-formula">
-<p><img src="../../_images/math/89d07a0681a8c8aa06f4855239665d0460eef21b.svg" alt="\displaystyle P_{Hohenbichler} = \Phi(-\beta_{HL})
+<p><img src="../../_images/math/5c1316557877a076483cf0fda3183a3652a4ad6e.svg" alt="\displaystyle P_{Hohenbichler} = \Phi(-\beta_{HL})
  \prod_{i=1}^{n-1} \left(
                    1 + \frac{\phi(\beta_{HL})}{\Phi(-\beta_{HL})}\kappa_i
                    \right) ^{-1/2}"/></p>
-</div><p>where <img class="math" src="../../_images/math/7761d30f08dceb85f7129166af1cd74cd75f8c7c.svg" alt="\Phi"/> is the cumulative distribution function of the
-standard 1D normal distribution and <img class="math" src="../../_images/math/763cce6e1820bf4dfd655d302eed976872ead156.svg" alt="\phi"/> is the standard Gaussian
+</div><p>where <img class="math" src="../../_images/math/49102e35b08c15cd6366ba7cc6c6ac708d60398f.svg" alt="\Phi"/> is the cumulative distribution function of the
+standard 1D normal distribution and <img class="math" src="../../_images/math/a252de35dc7cc2d634b8209685155ee835882bb3.svg" alt="\phi"/> is the standard Gaussian
 probability density function.</p>
 </li>
 <li><p class="first">Tvedt’s formula:</p>
 <div class="math" id="tvedt-formula">
-<p><img src="../../_images/math/14e694950bd6ae4b4837124bbeb9313c95ff8837.svg" alt="\left\{
+<p><img src="../../_images/math/c77b6de223f0b214cdfd13e4797671fcc5961470.svg" alt="\left\{
   \begin{array}{lcl}
     \displaystyle P_{Tvedt} &amp; = &amp; A_1 + A_2 + A_3 \\
     \displaystyle A_1 &amp; = &amp; \displaystyle
@@ -180,8 +180,8 @@ probability density function.</p>
       \right)\right ]
   \end{array}
 \right."/></p>
-</div><p>where <img class="math" src="../../_images/math/35567c674a4a3c8d7b960ac87322212a3bd918c3.svg" alt="{\cR}e(z)"/> is the real part of the complex number <img class="math" src="../../_images/math/e5baa4b8e299b1edafd5bd19893d914e429f3b0d.svg" alt="z"/> and
-<img class="math" src="../../_images/math/a3df85ab260449b6b4eca20eb30e8f01a26cb550.svg" alt="i"/> the complex number such that <img class="math" src="../../_images/math/5d4007d8256a43a2bf05bdf8e8586d00246012a1.svg" alt="i^2 = -1"/>.</p>
+</div><p>where <img class="math" src="../../_images/math/0121513a6f87e74fb3cf9629a267ade85cce763d.svg" alt="{\cR}e(z)"/> is the real part of the complex number <img class="math" src="../../_images/math/ad9778422b7245b0e12ce685b87da5a7b9c45f23.svg" alt="z"/> and
+<img class="math" src="../../_images/math/83a1929c1cd341d9476f20e34f0ca7ab802344c3.svg" alt="i"/> the complex number such that <img class="math" src="../../_images/math/887696bfac9a146bf6c0f5d087e9fead927cd4f0.svg" alt="i^2 = -1"/>.</p>
 </li>
 </ul>
 <p>The evaluation of the failure probability is stored in the data structure
@@ -677,8 +677,8 @@ space.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

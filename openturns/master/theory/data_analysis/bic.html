@@ -98,50 +98,50 @@
   <div class="section" id="bayesian-information-criterion-bic">
 <span id="bic"></span><h1>Bayesian Information Criterion (BIC)<a class="headerlink" href="#bayesian-information-criterion-bic" title="Permalink to this headline">¶</a></h1>
 <p>This method deals with the modelling of a probability distribution of a
-random vector <img class="math" src="../../_images/math/8a6a589b116459f8e5cfdf98fa9f1348b44053a7.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/>. It
+random vector <img class="math" src="../../_images/math/80e79f6f56b23b60f04ee768e0b30ca7f2e735fa.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/>. It
 seeks to rank variable candidate distributions by using a sample of data
-<img class="math" src="../../_images/math/14368272e6fa89920f02f957af809c170e9e057c.svg" alt="\left\{ \vect{x}_1,\vect{x}_2,\ldots,\vect{x}_N \right\}"/>.
+<img class="math" src="../../_images/math/082e93c078fdee64957edab9a0398b1e519e3df7.svg" alt="\left\{ \vect{x}_1,\vect{x}_2,\ldots,\vect{x}_N \right\}"/>.
 The Bayesian Information Criterion (BIC) allows to
-answer this question in the one dimensional case <img class="math" src="../../_images/math/354f241de1a6755e64a57c54ba2f568bf19d3509.svg" alt="n_X =1"/>.</p>
-<p>Let us limit the case to <img class="math" src="../../_images/math/c7b2d0f29e805736ede81ec369b82f8c77263598.svg" alt="n_X = 1"/>. Thus we denote
-<img class="math" src="../../_images/math/961c5afcfc44f17525f09da1ac50220541152b02.svg" alt="\vect{X} = X^1 = X"/>. Moreover, let us denote by <img class="math" src="../../_images/math/9fc79efa43fd3053ef7f1ceb0d3c237163dacb76.svg" alt="\cM_1"/>,…,
-<img class="math" src="../../_images/math/9453499d3d27a2c0d44e0af6eaa3b8ee6b94b0c9.svg" alt="\cM_K"/> the parametric models envisaged by user among the
+answer this question in the one dimensional case <img class="math" src="../../_images/math/ee41aa33adbeec8739f7f6d89a85e90e5b967d92.svg" alt="n_X =1"/>.</p>
+<p>Let us limit the case to <img class="math" src="../../_images/math/7d40a8a3cd0555d7c808f27ff9157764ee1c873d.svg" alt="n_X = 1"/>. Thus we denote
+<img class="math" src="../../_images/math/6db54521198df1e2bb8df500025ff5870e706f27.svg" alt="\vect{X} = X^1 = X"/>. Moreover, let us denote by <img class="math" src="../../_images/math/e2c4fb6990a8ef103a7da2eca41bbcb95c972dd4.svg" alt="\cM_1"/>,…,
+<img class="math" src="../../_images/math/32aa052d43d3c70c3b4fd152aa11f79245395fd8.svg" alt="\cM_K"/> the parametric models envisaged by user among the
 <a class="reference internal" href="../../user_manual/statistics_on_sample.html#parametric-distibution-factories"><span class="std std-ref">parametric models</span></a>. We
 suppose here that the parameters of these models have been estimated
 previously by <a class="reference internal" href="maximum_likelihood.html#maximum-likelihood"><span class="std std-ref">Maximum Likelihood</span></a>
 the on the basis of the sample
-<img class="math" src="../../_images/math/1f3926f2666488e23083c89c2d3a612017f5a674.svg" alt="\left\{ \vect{x}_1,\vect{x}_2,\ldots,\vect{x}_n \right\}"/>. We
-denote by <img class="math" src="../../_images/math/847b3e5d42bd83082c39416de1cabf4a846d33e4.svg" alt="L_i"/> the maximized likelihood for the model
-<img class="math" src="../../_images/math/39d0222b8ec92bf27ae37affd976b35740acfa96.svg" alt="\cM_i"/>.</p>
-<p>By definition of the likelihood, the higher <img class="math" src="../../_images/math/847b3e5d42bd83082c39416de1cabf4a846d33e4.svg" alt="L_i"/>, the better the
+<img class="math" src="../../_images/math/5fbbe57074433eb46d2d096c66bbe42d53fca5d1.svg" alt="\left\{ \vect{x}_1,\vect{x}_2,\ldots,\vect{x}_n \right\}"/>. We
+denote by <img class="math" src="../../_images/math/cf782be9541758b068c1d7a9dc2afcf6bd64a61d.svg" alt="L_i"/> the maximized likelihood for the model
+<img class="math" src="../../_images/math/b47881bad9a4b313650bdaf0d29b8dc4dc80387a.svg" alt="\cM_i"/>.</p>
+<p>By definition of the likelihood, the higher <img class="math" src="../../_images/math/cf782be9541758b068c1d7a9dc2afcf6bd64a61d.svg" alt="L_i"/>, the better the
 model describes the sample. However, using the likelihood as a criterion
 to rank the candidate probability distributions would involve a risk:
 one would almost always favour complex models involving many parameters.
 If such models provide indeed a large numbers of degrees-of-freedom that
 can be used to fit the sample, one has to keep in mind that complex
 models may be less robust that simpler models with less parameters.
-Actually, the limited available information (<img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> data points) does
+Actually, the limited available information (<img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> data points) does
 not allow to estimate robustly too many parameters.</p>
 <p>The BIC criterion can be used to avoid this problem. The principle is to
-rank <img class="math" src="../../_images/math/53a1169587f0b42ed42528ba112e39d2560c5cb9.svg" alt="\cM_1,\dots,cM_K"/> according to the following quantity:</p>
+rank <img class="math" src="../../_images/math/7590c7d8fdd93f08ddfadd04e0fbc254c1ed3a24.svg" alt="\cM_1,\dots,cM_K"/> according to the following quantity:</p>
 <div class="math">
-<p><img src="../../_images/math/f4d1bdfa04d01a2b7374b0ec7c6cb2d493dceb28.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/bef7c6145d13d7adade1224419aef4020539733f.svg" alt="\begin{aligned}
     \textrm{BIC}_i = \log \left( L_i \right) - \frac{p_i}{2} \log(n)
   \end{aligned}"/></p>
-</div><p>where <img class="math" src="../../_images/math/ccc30d1b124ff71e789e91a79b637a54645942c3.svg" alt="p_i"/> denotes the number of parameters being adjusted for
-the model <img class="math" src="../../_images/math/39d0222b8ec92bf27ae37affd976b35740acfa96.svg" alt="\cM_i"/>. The larger <img class="math" src="../../_images/math/e7212b282bee5869b8460d6bb812021f284cae74.svg" alt="\textrm{BIC}_i"/>, the better
+</div><p>where <img class="math" src="../../_images/math/b273ebb36ef9c228d24b451c1a12ed14b71747ee.svg" alt="p_i"/> denotes the number of parameters being adjusted for
+the model <img class="math" src="../../_images/math/b47881bad9a4b313650bdaf0d29b8dc4dc80387a.svg" alt="\cM_i"/>. The larger <img class="math" src="../../_images/math/64ab080181f0de909b0fa6323862f86eb8f811da.svg" alt="\textrm{BIC}_i"/>, the better
 the model. Note that the idea is to introduce a penalization term that
 increases with the numbers of parameters to be estimated. A complex
 model will then have a good score only if the gain in terms of
 likelihood is high enough to justify the number of parameters used.</p>
 <p>The term “Bayesian Information Criterion” comes the interpretation of
-the quantity <img class="math" src="../../_images/math/e7212b282bee5869b8460d6bb812021f284cae74.svg" alt="\textrm{BIC}_i"/>. In a bayesian context, the unknow
+the quantity <img class="math" src="../../_images/math/64ab080181f0de909b0fa6323862f86eb8f811da.svg" alt="\textrm{BIC}_i"/>. In a bayesian context, the unknow
 “true” model may be seen as a random variable. Suppose now that the user
 does not have any informative prior information on which model is more
-relevant among <img class="math" src="../../_images/math/9fc79efa43fd3053ef7f1ceb0d3c237163dacb76.svg" alt="\cM_1"/>,…, <img class="math" src="../../_images/math/9453499d3d27a2c0d44e0af6eaa3b8ee6b94b0c9.svg" alt="\cM_K"/>; all the models are thus
+relevant among <img class="math" src="../../_images/math/e2c4fb6990a8ef103a7da2eca41bbcb95c972dd4.svg" alt="\cM_1"/>,…, <img class="math" src="../../_images/math/32aa052d43d3c70c3b4fd152aa11f79245395fd8.svg" alt="\cM_K"/>; all the models are thus
 equally likely from the point of view of the user. Then, one can show
-that <img class="math" src="../../_images/math/e7212b282bee5869b8460d6bb812021f284cae74.svg" alt="\textrm{BIC}_i"/> is an approximation of the posterior
-distribution’s logarithm for the model <img class="math" src="../../_images/math/39d0222b8ec92bf27ae37affd976b35740acfa96.svg" alt="\cM_i"/>.</p>
+that <img class="math" src="../../_images/math/64ab080181f0de909b0fa6323862f86eb8f811da.svg" alt="\textrm{BIC}_i"/> is an approximation of the posterior
+distribution’s logarithm for the model <img class="math" src="../../_images/math/b47881bad9a4b313650bdaf0d29b8dc4dc80387a.svg" alt="\cM_i"/>.</p>
 <div class="topic">
 <p class="topic-title first">API:</p>
 <ul class="simple">
@@ -195,8 +195,8 @@ distribution’s logarithm for the model <img class="math" src="../../_images/ma
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

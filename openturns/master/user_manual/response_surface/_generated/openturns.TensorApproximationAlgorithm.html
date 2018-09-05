@@ -112,12 +112,12 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>inputSample, outputSample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
-<dd><p class="first last">The input random variables <img class="math" src="../../../_images/math/2a4f77456933ce333e4819c12af24dfc3c320e79.svg" alt="\vect{X}=(X_1, \dots, X_{n_X})^T"/>
-and the output samples <img class="math" src="../../../_images/math/b4d1a67d55d68c3f0afdabbb41f86fb00c03dfb5.svg" alt="\vect{Y}"/> of a model evaluated apart.</p>
+<dd><p class="first last">The input random variables <img class="math" src="../../../_images/math/263c2d5cb2a3fa31644843ff3b525a714b6f0aa6.svg" alt="\vect{X}=(X_1, \dots, X_{n_X})^T"/>
+and the output samples <img class="math" src="../../../_images/math/1ca0e315ae4eaf246041889d6a7ed57680d05c35.svg" alt="\vect{Y}"/> of a model evaluated apart.</p>
 </dd>
 <dt><strong>distribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
-<dd><p class="first last">Joint probability density function <img class="math" src="../../../_images/math/8614107d33d6621cdf8d683ed1b9f95866bb9aa6.svg" alt="f_{\vect{X}}(\vect{x})"/>
-of the physical input vector <img class="math" src="../../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/>.</p>
+<dd><p class="first last">Joint probability density function <img class="math" src="../../../_images/math/fec04d810c6b12dc2bda05d1d3d97a37a453a079.svg" alt="f_{\vect{X}}(\vect{x})"/>
+of the physical input vector <img class="math" src="../../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>.</p>
 </dd>
 <dt><strong>functionFactory</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.OrthogonalProductFunctionFactory.html#openturns.OrthogonalProductFunctionFactory" title="openturns.OrthogonalProductFunctionFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrthogonalProductFunctionFactory</span></code></a></span></dt>
 <dd><p class="first last">The basis factory.</p>
@@ -141,16 +141,16 @@ Of size equal to the input dimension.</p>
 <p class="rubric">Notes</p>
 <p>TensorApproximationAlgorithm allows to perform a low-rank approximation in the canonical
 tensor format (refer to <a class="reference internal" href="../../../bibliography.html#rai2015" id="id1">[Rai2015]</a> for other tensor formats and more details).</p>
-<p>The canonical tensor approximation of rank <img class="math" src="../../../_images/math/73c91af0a64463e5bb1d6e539f12c1e3f4fdc257.svg" alt="1"/> reads:</p>
+<p>The canonical tensor approximation of rank <img class="math" src="../../../_images/math/f3d44eee68f965e0c3a97b452cb1cc2898b0cfdd.svg" alt="1"/> reads:</p>
 <div class="math">
-<p><img src="../../../_images/math/a5beb53b8eb539823d0f3ee4b36f42cc25d1f065.svg" alt="f(X_1, \dots, X_d) = \prod_{j=1}^d v_j^{(1)} (x_j)"/></p>
+<p><img src="../../../_images/math/127223b4a62f168320701661f87621e3513a99a8.svg" alt="f(X_1, \dots, X_d) = \prod_{j=1}^d v_j^{(1)} (x_j)"/></p>
 </div><p>The available alternating least-squares algorithm consists in successive approximations
 of the coefficients in the basis of the j-th component:</p>
 <div class="math">
-<p><img src="../../../_images/math/756078ccf2ba3f361db460c739e7f88c6d35973f.svg" alt="v_j^{(i)} (x_j) = \sum_{k=1}^{n_j} \beta_{j,k}^{(i)} \phi_{j,k} (x_j)"/></p>
-</div><p>The full canonical tensor approximation of rank <img class="math" src="../../../_images/math/cbee17603cace45895c0c9786a8a0f2e19a3ec08.svg" alt="m"/> reads:</p>
+<p><img src="../../../_images/math/a14567335ccf9999abd066a6219f927852414b0b.svg" alt="v_j^{(i)} (x_j) = \sum_{k=1}^{n_j} \beta_{j,k}^{(i)} \phi_{j,k} (x_j)"/></p>
+</div><p>The full canonical tensor approximation of rank <img class="math" src="../../../_images/math/93f1437a26e1e140120e1891ad60149cdf21f33d.svg" alt="m"/> reads:</p>
 <div class="math">
-<p><img src="../../../_images/math/9ae2243ee312726f0030ae7c68de5473f013270f.svg" alt="f(X_1, \dots, X_d) = \sum_{i=1}^m \prod_{j=1}^d v_j^{(i)} (x_j)"/></p>
+<p><img src="../../../_images/math/3ffb997037561b1a2c9aee6c66f0095ffc7df232.svg" alt="f(X_1, \dots, X_d) = \sum_{i=1}^m \prod_{j=1}^d v_j^{(i)} (x_j)"/></p>
 </div><p>The decomposition algorithm can be tweaked using the key
 <cite>TensorApproximationAlgorithm-DecompositionMethod</cite>.</p>
 <p class="rubric">Examples</p>
@@ -695,8 +695,8 @@ algorithm used for the rank-1 approximation.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

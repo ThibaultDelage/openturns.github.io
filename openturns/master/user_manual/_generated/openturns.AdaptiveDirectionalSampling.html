@@ -129,22 +129,22 @@ Set to <a class="reference internal" href="openturns.RandomDirection.html#opentu
 <p class="last"><a class="reference internal" href="openturns.EventSimulation.html#openturns.EventSimulation" title="openturns.EventSimulation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EventSimulation</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>Let <img class="math" src="../../_images/math/57578c6b35c07b91e7ca5e4dd95ae633def906d9.svg" alt="\mathcal D_f"/> denote the failure domain defined as
-<img class="math" src="../../_images/math/1ad4e5e7a48c192745413ed0f7029416943775ef.svg" alt="\mathcal D_f = \{\ux \in \mathbb R^{n_X} | g(\ux) \leq 0\}"/>, where
-<img class="math" src="../../_images/math/ebe60a0df4904290cfbd68f24ff549a0be350c94.svg" alt="\ux"/> are realization of the random vector <img class="math" src="../../_images/math/3cc3cf29aa4d8a54d23d769dc601db594a5ac873.svg" alt="\uX"/> and <img class="math" src="../../_images/math/4ea07cca5d980819edb832e735b84a5273a1512e.svg" alt="g"/> is the limit-state
+<p>Let <img class="math" src="../../_images/math/7d65a6563643e85af88e53b40211f2d768a506b1.svg" alt="\mathcal D_f"/> denote the failure domain defined as
+<img class="math" src="../../_images/math/41ecc155afcf0944937212c87847e1989a09d17b.svg" alt="\mathcal D_f = \{\ux \in \mathbb R^{n_X} | g(\ux) \leq 0\}"/>, where
+<img class="math" src="../../_images/math/65759467767669f978195dfdcbf5805c679752c1.svg" alt="\ux"/> are realization of the random vector <img class="math" src="../../_images/math/212decce60675511b55b2031a15007b9b1b4373b.svg" alt="\uX"/> and <img class="math" src="../../_images/math/acd8bd9450f07383a622c4141048e61d5d4593d8.svg" alt="g"/> is the limit-state
 function as defined elsewhere in the documentation.</p>
 <p>The purpose of the ADS-2 algorithm and its variants is to estimate the
 following probability:</p>
 <div class="math">
-<p><img src="../../_images/math/9e915552d77ef487ab400e3c06859ed42fef6737.svg" alt="P_f = \int_{\mathcal D_f} f_{\uX}(\ux)\di{\ux} \\
+<p><img src="../../_images/math/b30538a842b329d1c18db1f15f34828a88ba9fbe.svg" alt="P_f = \int_{\mathcal D_f} f_{\uX}(\ux)\di{\ux} \\
     = \int_{\mathbb R^{n_X}} \mathbf{1}_{\{g(\ux) \:\leq 0\: \}}\,f_{\uX}(\ux)\di{\ux} \\
     = \Prob{\{g(\uX) \leq 0\}}."/></p>
 </div><p>Principles</p>
 <p>The ADS-2 method <a class="reference internal" href="../../bibliography.html#munoz2011" id="id1">[Munoz2011]</a> combines the stratified and directional sampling concepts.
 Stratified sampling consists in splitting the support of the random vector
-<img class="math" src="../../_images/math/ebe60a0df4904290cfbd68f24ff549a0be350c94.svg" alt="\ux"/> into <img class="math" src="../../_images/math/cbee17603cace45895c0c9786a8a0f2e19a3ec08.svg" alt="m"/> mutually exclusive and collectively exhaustive subsets.
-Here, ADS-2 splits the standard space into <img class="math" src="../../_images/math/356550276e662b22d9df0ded0a0830cf9bd05c8f.svg" alt="m = 2^d"/> quadrants, where
-<img class="math" src="../../_images/math/af8ad398de24d3755529da925c1973541741f828.svg" alt="d"/> is the dimension of the random vector <img class="math" src="../../_images/math/3cc3cf29aa4d8a54d23d769dc601db594a5ac873.svg" alt="\uX"/>.
+<img class="math" src="../../_images/math/65759467767669f978195dfdcbf5805c679752c1.svg" alt="\ux"/> into <img class="math" src="../../_images/math/93f1437a26e1e140120e1891ad60149cdf21f33d.svg" alt="m"/> mutually exclusive and collectively exhaustive subsets.
+Here, ADS-2 splits the standard space into <img class="math" src="../../_images/math/a1b1449bec6a3174a0df14fd7c9aa4fe398f8d5c.svg" alt="m = 2^d"/> quadrants, where
+<img class="math" src="../../_images/math/5bedc75d546b74f5c8a9327c072c85fda0fd787f.svg" alt="d"/> is the dimension of the random vector <img class="math" src="../../_images/math/212decce60675511b55b2031a15007b9b1b4373b.svg" alt="\uX"/>.
 Stratified sampling is often run in two steps: (i) a learning step is used for
 polling the input space and detect the subsets that contribute most to the
 probability and (ii) an estimation step is used for estimating
@@ -155,27 +155,27 @@ calculated on directions drawn at random in the standard space.</p>
 <p>The learning step uses an a priori number of random directions that is
 uniformly distributed over the quadrants, meaning the weights are as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/8639f5520b077fae99a57f0e9575974f363a68b7.svg" alt="\omega^1_i = \frac{1}{m}, \quad i = 1, \ldots, m."/></p>
+<p><img src="../../_images/math/65a6376a2c7d0dfa6e57a6d930ae9acefb91f60a.svg" alt="\omega^1_i = \frac{1}{m}, \quad i = 1, \ldots, m."/></p>
 </div><p>Directional sampling is used for estimating the failure probability in each quadrant:</p>
 <div class="math">
-<p><img src="../../_images/math/7ddac278260103136dfe962e3b734e39580ad303.svg" alt="\hat P_i^{DS} = \Prob{\{g(\uX) \leq 0\} \mid \uX \in \mathbb{Q}_i},\,i = 1, \ldots, m."/></p>
-</div><p>and the corresponding estimation variances are denoted as <img class="math" src="../../_images/math/b54a3ccd9af5f453e0aece746acea1ac9bc58d6f.svg" alt="\sigma_i^{DS\,2}"/>.
-These probabilities are estimated using the same number <img class="math" src="../../_images/math/ba7353f3f6078a3f045d8c7d3ec0518c32a9336b.svg" alt="N^0_i"/> of random
+<p><img src="../../_images/math/74c80e550658806d13f9675caaac0e00d91768a0.svg" alt="\hat P_i^{DS} = \Prob{\{g(\uX) \leq 0\} \mid \uX \in \mathbb{Q}_i},\,i = 1, \ldots, m."/></p>
+</div><p>and the corresponding estimation variances are denoted as <img class="math" src="../../_images/math/140b1c91df32a2bd6521044a555f0a6d00edf2b6.svg" alt="\sigma_i^{DS\,2}"/>.
+These probabilities are estimated using the same number <img class="math" src="../../_images/math/08a16720b5ae784166677eb287f47e3f8beb4658.svg" alt="N^0_i"/> of random
 directions per quadrant as told by the uniform weights distribution.</p>
 <p>The probability of interest is then computed as a weighted average of the
 previously defined conditional probabilities:</p>
 <div class="math">
-<p><img src="../../_images/math/851e006b7fc57d2184226954e8930a88ca5d6bdc.svg" alt="\hat P_f = \sum\limits_{i=1}^m \omega_i \hat P_i^{DS}"/></p>
-</div><p>where <img class="math" src="../../_images/math/3cb1ca355591ce2032c9b0cfb470a35bce6bc29b.svg" alt="\hat P_i^{DS}"/> is the conditional probability estimator in the i-th quadrant. The corresponding variance of the stratified estimator reads:</p>
+<p><img src="../../_images/math/84751df94c7c43dff3e244aa10389f636f83ac30.svg" alt="\hat P_f = \sum\limits_{i=1}^m \omega_i \hat P_i^{DS}"/></p>
+</div><p>where <img class="math" src="../../_images/math/c9ead8ee42ea6588ce5df4ca0d297075f9bfe449.svg" alt="\hat P_i^{DS}"/> is the conditional probability estimator in the i-th quadrant. The corresponding variance of the stratified estimator reads:</p>
 <div class="math">
-<p><img src="../../_images/math/814f66b9ad824a6e517d9b5b83a62511158ea6ab.svg" alt="\sigma^2 = \frac{1}{N_l} \left( \sum\limits_{i=1}^m \omega_i \sigma_i^{DS} \right) ^2"/></p>
-</div><p>where <img class="math" src="../../_images/math/b54a3ccd9af5f453e0aece746acea1ac9bc58d6f.svg" alt="\sigma_i^{DS\,2}"/> is the variance of the conditional probability
+<p><img src="../../_images/math/5dc3a1b2c2b88ce48b40ebd694196cdba38fd8b8.svg" alt="\sigma^2 = \frac{1}{N_l} \left( \sum\limits_{i=1}^m \omega_i \sigma_i^{DS} \right) ^2"/></p>
+</div><p>where <img class="math" src="../../_images/math/140b1c91df32a2bd6521044a555f0a6d00edf2b6.svg" alt="\sigma_i^{DS\,2}"/> is the variance of the conditional probability
 estimator in the i-th quadrant.</p>
-<p>At the end of the learning step, the weights <img class="math" src="../../_images/math/437d0c2fde57175639a7fc3c03665c665b17e81b.svg" alt="\omega_i"/> are updated so
+<p>At the end of the learning step, the weights <img class="math" src="../../_images/math/390aed048dd06412685b6cedd42ea17f1afae83f.svg" alt="\omega_i"/> are updated so
 as to minimize the stratified estimator variance.
 Indeed, it can be shown that the updated weights:</p>
 <div class="math">
-<p><img src="../../_images/math/07404d9ea786699b25ec2e9f9638b8b156a7794a.svg" alt="\omega^2_i = \frac{\omega^1_i \sigma_i^{DS}}{\sum\limits_{j=1}^m \omega^1_j \sigma_j^{DS}}, i = 1, \ldots, m,"/></p>
+<p><img src="../../_images/math/076f6de6a5d514c5311538f172624cb181e6e0b2.svg" alt="\omega^2_i = \frac{\omega^1_i \sigma_i^{DS}}{\sum\limits_{j=1}^m \omega^1_j \sigma_j^{DS}}, i = 1, \ldots, m,"/></p>
 </div><p>minimize the final estimation variance in eqref{eq:pf_est_sda2_var}.
 Note that some weights might be zero (due to a somewhat arbitrary rounding of
 the conditional probabilities’ estimation variance). The quadrants associated
@@ -185,28 +185,28 @@ learning step with different weights for the quadrants though.
 eqref{eq:pf_est_sda2} and eqref{eq:pf_est_sda2_var} are used for evaluating
 the final probability probability estimate and its variance.</p>
 <p>The computational budget per step is parametrized by a fraction
-<img class="math" src="../../_images/math/d96a6452e7f3cdd516e4ecb2dbe75089f950c0b0.svg" alt="\gamma_l, l = 1,\,2"/> of the total budget <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/>, such that <img class="math" src="../../_images/math/555fd603a8b8b55db2d2cddf791d2d86d5544c48.svg" alt="\gamma_1 + \gamma_2 = 1"/>.
-The number of directions sampled in quadrant <img class="math" src="../../_images/math/a3df85ab260449b6b4eca20eb30e8f01a26cb550.svg" alt="i"/> at step <img class="math" src="../../_images/math/03dab2a01fb8421b173f84c509bb6227fe4f5469.svg" alt="l"/> is then defined as follows:</p>
+<img class="math" src="../../_images/math/844b6cbba1c393e6eab09dce057ed5d46f68fc6c.svg" alt="\gamma_l, l = 1,\,2"/> of the total budget <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/>, such that <img class="math" src="../../_images/math/50f434a429642a1eb91a96c358a72ac0c731152e.svg" alt="\gamma_1 + \gamma_2 = 1"/>.
+The number of directions sampled in quadrant <img class="math" src="../../_images/math/83a1929c1cd341d9476f20e34f0ca7ab802344c3.svg" alt="i"/> at step <img class="math" src="../../_images/math/84f38ad5daac04c440210799fc67fd7e4b2f36a4.svg" alt="l"/> is then defined as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/dc70e8d715fa404d331f07e90c795f2bb72c285e.svg" alt="N^l_i = N * \gamma_l * \omega_i."/></p>
-</div><p>The number of evaluation of the limit-state function <img class="math" src="../../_images/math/4ea07cca5d980819edb832e735b84a5273a1512e.svg" alt="g"/> is of course
-greater than the total budget <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> since directional sampling is used.</p>
+<p><img src="../../_images/math/a4355874b90b4174651c232e81f3f15fdb361c32.svg" alt="N^l_i = N * \gamma_l * \omega_i."/></p>
+</div><p>The number of evaluation of the limit-state function <img class="math" src="../../_images/math/acd8bd9450f07383a622c4141048e61d5d4593d8.svg" alt="g"/> is of course
+greater than the total budget <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> since directional sampling is used.</p>
 <p>Variants</p>
 <p>The ADS-2+ variant performs a dimension reduction step after the learning step
-for reducing the number of stratified quadrants. The statistic <img class="math" src="../../_images/math/1eddea86b486928bc809a34465f5050041991d7d.svg" alt="\tilde T_k"/>
-aggregates the sensitivity of expectation along dimension <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/>.
+for reducing the number of stratified quadrants. The statistic <img class="math" src="../../_images/math/2b8a4ca6949463f02e7ba77715b7a0f87da4954e.svg" alt="\tilde T_k"/>
+aggregates the sensitivity of expectation along dimension <img class="math" src="../../_images/math/25ccf3f81465c5f61677ee2819c658ad49ef800d.svg" alt="k"/>.
 It is defined as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/611bf2f8a781842363582da3073f1fc046358148.svg" alt="\tilde T_k = \sum\limits_{i_l \in \lbrace -1,1 \rbrace,l \neq k} \lvert \tilde I_{(i_1,\dots,i_{k-1},-1,i_{k+1},\dots,i_p)} - \tilde I_{(i_1,\dots,i_{k-1},1,i_{k+1},\dots,i_p)} \rvert."/></p>
+<p><img src="../../_images/math/564196ecf9615ab06f7bd1eebdeee492b5d1047f.svg" alt="\tilde T_k = \sum\limits_{i_l \in \lbrace -1,1 \rbrace,l \neq k} \lvert \tilde I_{(i_1,\dots,i_{k-1},-1,i_{k+1},\dots,i_p)} - \tilde I_{(i_1,\dots,i_{k-1},1,i_{k+1},\dots,i_p)} \rvert."/></p>
 </div><p>It is used for ranking the contributions of the quadrants.
-Then, only the <img class="math" src="../../_images/math/fb7a10f8f5106e7a0707ec616448f88e843b4ac6.svg" alt="d' &lt; d"/> most influential variables according to
-<img class="math" src="../../_images/math/1eddea86b486928bc809a34465f5050041991d7d.svg" alt="\tilde T_k"/> are stratified, leaving the remaining variables simulated without
+Then, only the <img class="math" src="../../_images/math/290e1f8b84f8f6816e940247c6a9e977eedbbb10.svg" alt="d' &lt; d"/> most influential variables according to
+<img class="math" src="../../_images/math/2b8a4ca6949463f02e7ba77715b7a0f87da4954e.svg" alt="\tilde T_k"/> are stratified, leaving the remaining variables simulated without
 stratification. The corresponding quadrants will not be sampled.</p>
 <p>The DP-ADS-2 variant combines the ADS method with a rotation of the quadrants.
 The idea is to get a possible design point (available e.g. after a
 preliminary FORM analysis) on the bisector of one of the quadrants to make the
 stratification even more efficient and thus save some evaluations of the model.</p>
-<p>This 2-step algorithm can be generalized to <img class="math" src="../../_images/math/5af89c1da1146175a22e877edae9aaf15e7a6e6b.svg" alt="L &gt; 2"/> steps by adding more
+<p>This 2-step algorithm can be generalized to <img class="math" src="../../_images/math/10f220f9dde4a71a65bc270b73997dad78252f85.svg" alt="L &gt; 2"/> steps by adding more
 than one learning step. For now, only ADS-2 is implemented.</p>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
@@ -455,7 +455,7 @@ and its variance during the simulation algorithm.</p>
 <dt id="openturns.AdaptiveDirectionalSampling.getGamma">
 <code class="descname">getGamma</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.AdaptiveDirectionalSampling.getGamma" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gamma accessor.</p>
-<p>The computational budget per step <img class="math" src="../../_images/math/19a830c435144883073153fe20be220850dfdf00.svg" alt="\gamma_l"/>.</p>
+<p>The computational budget per step <img class="math" src="../../_images/math/e36f95c315a535531b043e146073a439a6463863.svg" alt="\gamma_l"/>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -537,7 +537,7 @@ and its variance during the simulation algorithm.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/96143116c58040f73b4c99262f94b9a81f3cd316.svg" alt="\sigma &gt; 0"/></span></dt>
+<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/6b5207bd2183ab5374278d03ca62f7119dec943b.svg" alt="\sigma &gt; 0"/></span></dt>
 <dd><p class="first last">Maximum standard deviation of the estimator.</p>
 </dd>
 </dl>
@@ -704,7 +704,7 @@ by the method <a class="reference internal" href="#openturns.AdaptiveDirectional
 <dt id="openturns.AdaptiveDirectionalSampling.getTStatistic">
 <code class="descname">getTStatistic</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.AdaptiveDirectionalSampling.getTStatistic" title="Permalink to this definition">¶</a></dt>
 <dd><p>T statistic accessor.</p>
-<p>The statistic <img class="math" src="../../_images/math/1eddea86b486928bc809a34465f5050041991d7d.svg" alt="\tilde T_k"/> aggregates the sensitivity of expectation.</p>
+<p>The statistic <img class="math" src="../../_images/math/2b8a4ca6949463f02e7ba77715b7a0f87da4954e.svg" alt="\tilde T_k"/> aggregates the sensitivity of expectation.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -811,7 +811,7 @@ It computes the probability of occurence of the given event by computing the
 empirical mean of a sample of size at most <em>outerSampling * blockSize</em>,
 this sample being built by blocks of size <em>blockSize</em>. It allows to use
 efficiently the distribution of the computation as well as it allows to deal
-with a sample size <img class="math" src="../../_images/math/0c9cbab20b37ef97ad3b43c1e8f1f34c6d882591.svg" alt="&gt; 2^{32}"/> by a combination of <em>blockSize</em> and
+with a sample size <img class="math" src="../../_images/math/9a6aa39a54d6c1926e8fccab4dad4b7662f6ecc2.svg" alt="&gt; 2^{32}"/> by a combination of <em>blockSize</em> and
 <em>outerSampling</em>.</p>
 </dd></dl>
 
@@ -824,7 +824,7 @@ with a sample size <img class="math" src="../../_images/math/0c9cbab20b37ef97ad3
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>blockSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/f65d43c86c6a24135745b62987a7323ca8d56f4f.svg" alt="blockSize \geq 1"/></span></dt>
+<dt><strong>blockSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a3e0bdbffa9f573f54c15f58cb873424153d07a0.svg" alt="blockSize \geq 1"/></span></dt>
 <dd><p class="first last">Number of terms in the probability simulation estimator grouped together.
 It is set by default to 1.</p>
 </dd>
@@ -864,7 +864,7 @@ and its variance during the simulation algorithm.</p>
 <dt id="openturns.AdaptiveDirectionalSampling.setGamma">
 <code class="descname">setGamma</code><span class="sig-paren">(</span><em>gamma</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.AdaptiveDirectionalSampling.setGamma" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gamma accessor.</p>
-<p>The computational budget per step <img class="math" src="../../_images/math/19a830c435144883073153fe20be220850dfdf00.svg" alt="\gamma_l"/>.</p>
+<p>The computational budget per step <img class="math" src="../../_images/math/e36f95c315a535531b043e146073a439a6463863.svg" alt="\gamma_l"/>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -927,7 +927,7 @@ and its variance during the simulation algorithm.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/96143116c58040f73b4c99262f94b9a81f3cd316.svg" alt="\sigma &gt; 0"/></span></dt>
+<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/6b5207bd2183ab5374278d03ca62f7119dec943b.svg" alt="\sigma &gt; 0"/></span></dt>
 <dd><p class="first last">Maximum standard deviation of the estimator.</p>
 </dd>
 </dl>
@@ -1176,8 +1176,8 @@ and its variance during the simulation algorithm.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

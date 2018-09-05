@@ -131,17 +131,17 @@ its variance during the simulation algorithm.</p>
 </div>
 <p class="rubric">Notes</p>
 <p>Base class for sampling methods, using the probability distribution of a random
-vector <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/> to evaluate the failure probability:</p>
+vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> to evaluate the failure probability:</p>
 <div class="math">
-<p><img src="../../_images/math/cf1b185dda88cca2200cad01de155d5433a9fc25.svg" alt="P_f = \int_{\Rset^{n_X}} \mathbf{1}_{\{g(\ux,\underline{d}) \leq 0 \}}f_{\uX}(\ux)\di{\ux}
+<p><img src="../../_images/math/c52edd8d734ab30dc698f4a49a630b154c21e441.svg" alt="P_f = \int_{\Rset^{n_X}} \mathbf{1}_{\{g(\ux,\underline{d}) \leq 0 \}}f_{\uX}(\ux)\di{\ux}
     = \Prob{g\left( \vect{X},\vect{d} \right) \leq 0}"/></p>
-</div><p>Here, <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/> is a random vector, <img class="math" src="../../_images/math/0f083c56e80e288921968fd9aece19a83dee559d.svg" alt="\vect{d}"/> a deterministic
-vector, <img class="math" src="../../_images/math/6f430b479cfa1347d56f298294cec0a3ea81c83c.svg" alt="g(\vect{X},\vect{d})"/> the function known as <em>limit state function</em>
+</div><p>Here, <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> is a random vector, <img class="math" src="../../_images/math/3b84c4ed75f01d36277ef4bef655637e1ea1a34d.svg" alt="\vect{d}"/> a deterministic
+vector, <img class="math" src="../../_images/math/e7d959c9b8b395f4d81cbb7bc878a352995b429a.svg" alt="g(\vect{X},\vect{d})"/> the function known as <em>limit state function</em>
 which enables the definition of the event
-<img class="math" src="../../_images/math/fffbe95e64ece6fbc42ec5d38067bbd0e1618486.svg" alt="\cD_f = \{\vect{X} \in \Rset^n \, | \, g(\vect{X},\vect{d}) \le 0\}"/>.
-<img class="math" src="../../_images/math/3eb39477592feb10357b7e3bd11955e15e2d64eb.svg" alt="\mathbf{1}_{ \left\{ g(\vect{x}_i,\vect{d}) \leq 0 \right\} }"/>
+<img class="math" src="../../_images/math/44a124e6bb209ea04ed9f957148576862ee6f3f1.svg" alt="\cD_f = \{\vect{X} \in \Rset^n \, | \, g(\vect{X},\vect{d}) \le 0\}"/>.
+<img class="math" src="../../_images/math/ac77c3ecb4279179b9397059f9b545563036e783.svg" alt="\mathbf{1}_{ \left\{ g(\vect{x}_i,\vect{d}) \leq 0 \right\} }"/>
 describes the indicator function equal to 1 if
-<img class="math" src="../../_images/math/32536c4031cfd8115bfdaa5a896382e254cd92b5.svg" alt="g(\vect{x}_i,\vect{d}) \leq 0"/> and equal to 0 otherwise.</p>
+<img class="math" src="../../_images/math/54524ba7432d453f972245f4d73ab29e631ea2a5.svg" alt="g(\vect{x}_i,\vect{d}) \leq 0"/> and equal to 0 otherwise.</p>
 <p>The EventSimulation object provides a generic simulation service for non-composite
 events, and its derived classes provide dedicated algorithms:</p>
 <ul class="simple">
@@ -421,7 +421,7 @@ and its variance during the simulation algorithm.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/96143116c58040f73b4c99262f94b9a81f3cd316.svg" alt="\sigma &gt; 0"/></span></dt>
+<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/6b5207bd2183ab5374278d03ca62f7119dec943b.svg" alt="\sigma &gt; 0"/></span></dt>
 <dd><p class="first last">Maximum standard deviation of the estimator.</p>
 </dd>
 </dl>
@@ -580,7 +580,7 @@ It computes the probability of occurence of the given event by computing the
 empirical mean of a sample of size at most <em>outerSampling * blockSize</em>,
 this sample being built by blocks of size <em>blockSize</em>. It allows to use
 efficiently the distribution of the computation as well as it allows to deal
-with a sample size <img class="math" src="../../_images/math/0c9cbab20b37ef97ad3b43c1e8f1f34c6d882591.svg" alt="&gt; 2^{32}"/> by a combination of <em>blockSize</em> and
+with a sample size <img class="math" src="../../_images/math/9a6aa39a54d6c1926e8fccab4dad4b7662f6ecc2.svg" alt="&gt; 2^{32}"/> by a combination of <em>blockSize</em> and
 <em>outerSampling</em>.</p>
 </dd></dl>
 
@@ -593,7 +593,7 @@ with a sample size <img class="math" src="../../_images/math/0c9cbab20b37ef97ad3
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>blockSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/f65d43c86c6a24135745b62987a7323ca8d56f4f.svg" alt="blockSize \geq 1"/></span></dt>
+<dt><strong>blockSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a3e0bdbffa9f573f54c15f58cb873424153d07a0.svg" alt="blockSize \geq 1"/></span></dt>
 <dd><p class="first last">Number of terms in the probability simulation estimator grouped together.
 It is set by default to 1.</p>
 </dd>
@@ -676,7 +676,7 @@ and its variance during the simulation algorithm.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/96143116c58040f73b4c99262f94b9a81f3cd316.svg" alt="\sigma &gt; 0"/></span></dt>
+<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/6b5207bd2183ab5374278d03ca62f7119dec943b.svg" alt="\sigma &gt; 0"/></span></dt>
 <dd><p class="first last">Maximum standard deviation of the estimator.</p>
 </dd>
 </dl>
@@ -830,8 +830,8 @@ and its variance during the simulation algorithm.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>

@@ -107,7 +107,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>distribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
-<dd><p class="first last">The distribution defining the parametric model <img class="math" src="../../_images/math/8ad60c11f2866c3a591eb4bc09238fe200c5d444.svg" alt="p_{\vect{\theta}}"/> to be adjusted to data.</p>
+<dd><p class="first last">The distribution defining the parametric model <img class="math" src="../../_images/math/d17b6fcb55f1e0d81dfeb1508cb5c238ea621f93.svg" alt="p_{\vect{\theta}}"/> to be adjusted to data.</p>
 </dd>
 </dl>
 </td>
@@ -120,15 +120,15 @@
 </div>
 <p class="rubric">Notes</p>
 <p>Implements generic maximum likelihood estimation.</p>
-<p>Let us denote <img class="math" src="../../_images/math/f320a35236682b07917b3220adcaf46d79952e1e.svg" alt="(\vect{x}_1, \dots, \vect{x}_n)"/> the sample, <img class="math" src="../../_images/math/8ad60c11f2866c3a591eb4bc09238fe200c5d444.svg" alt="p_{\vect{\theta}}"/>
+<p>Let us denote <img class="math" src="../../_images/math/8817b40b0041942637e7d9d8a80607c5c1e763fa.svg" alt="(\vect{x}_1, \dots, \vect{x}_n)"/> the sample, <img class="math" src="../../_images/math/d17b6fcb55f1e0d81dfeb1508cb5c238ea621f93.svg" alt="p_{\vect{\theta}}"/>
 the particular distribution of probability density function we want to fit to the sample,
-and <img class="math" src="../../_images/math/3e11a69c4a7751d30e1e7cf25e90db19011b4f27.svg" alt="\vect{\theta} \in \Theta \in \Rset^p"/> its the parameter vector.</p>
-<p>The likelihood of the sample according to <img class="math" src="../../_images/math/8ad60c11f2866c3a591eb4bc09238fe200c5d444.svg" alt="p_{\vect{\theta}}"/> is:</p>
+and <img class="math" src="../../_images/math/e5fa9f12394493e55bd2245360a05124c4799489.svg" alt="\vect{\theta} \in \Theta \in \Rset^p"/> its the parameter vector.</p>
+<p>The likelihood of the sample according to <img class="math" src="../../_images/math/d17b6fcb55f1e0d81dfeb1508cb5c238ea621f93.svg" alt="p_{\vect{\theta}}"/> is:</p>
 <div class="math">
-<p><img src="../../_images/math/cbde685a5e6c4610650bbe515bc1b62b0f17b73a.svg" alt="likelihood(\vect{x}_1, \dots, \vect{x}_n,\vect{\theta}) = \prod_{i=1}^n p_{\vect{\theta}}(\vect{x}_i)"/></p>
-</div><p>The parameters <img class="math" src="../../_images/math/2b723f559e8298e535601bd58966d42fe7e1f7a2.svg" alt="\vect{\theta}"/> are numerically optimized using an optimization algorithm:</p>
+<p><img src="../../_images/math/40eb6e15f751c80ac3c04517af59481a8903aba2.svg" alt="likelihood(\vect{x}_1, \dots, \vect{x}_n,\vect{\theta}) = \prod_{i=1}^n p_{\vect{\theta}}(\vect{x}_i)"/></p>
+</div><p>The parameters <img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/> are numerically optimized using an optimization algorithm:</p>
 <div class="math">
-<p><img src="../../_images/math/877a4e13c05b890cd8c9546f64cad065283c7cb0.svg" alt="\max_{\vect{\theta} \in \Theta} \log likelihood\, (\vect{x}_1, \dots, \vect{x}_n,\vect{\theta}) = \max_{\vect{\theta} \in \Theta} \sum_{i=1}^n log(p_{\vect{\theta}}(\vect{x}_i))"/></p>
+<p><img src="../../_images/math/c95f996ef7f7dca3aa4460f3653d1c222cebfa68.svg" alt="\max_{\vect{\theta} \in \Theta} \log likelihood\, (\vect{x}_1, \dots, \vect{x}_n,\vect{\theta}) = \max_{\vect{\theta} \in \Theta} \sum_{i=1}^n log(p_{\vect{\theta}}(\vect{x}_i))"/></p>
 </div><p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -307,7 +307,7 @@ and <img class="math" src="../../_images/math/3e11a69c4a7751d30e1e7cf25e90db1901
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/73d1520885911cd9f121c0cedc7d91e11efafea8.svg" alt="(\mu, \sigma, a, b)"/>:</p>
+<p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/9c0675243e96235ce54d181013419a9d5dd7ef3b.svg" alt="(\mu, \sigma, a, b)"/>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaMuSigma</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -737,8 +737,8 @@ and <img class="math" src="../../_images/math/3e11a69c4a7751d30e1e7cf25e90db1901
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95101cac.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fb66d797.
     </div>
   </body>
 </html>
