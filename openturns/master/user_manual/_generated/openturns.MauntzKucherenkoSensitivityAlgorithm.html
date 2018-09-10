@@ -263,16 +263,19 @@ U_{-i} = \left(\textsuperscript{c}Y_i^A \left(\textsuperscript{c}Y_i^A - \textsu
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.MauntzKucherenkoSensitivityAlgorithm.setConfidenceLevel" title="openturns.MauntzKucherenkoSensitivityAlgorithm.setConfidenceLevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setConfidenceLevel</span></code></a>(confidenceLevel)</td>
 <td>Set the confidence interval level for confidence intervals.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.MauntzKucherenkoSensitivityAlgorithm.setName" title="openturns.MauntzKucherenkoSensitivityAlgorithm.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MauntzKucherenkoSensitivityAlgorithm.setDesign" title="openturns.MauntzKucherenkoSensitivityAlgorithm.setDesign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDesign</span></code></a>(inputDesign,&nbsp;outputDesign,&nbsp;size)</td>
+<td>Sample accessor.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MauntzKucherenkoSensitivityAlgorithm.setName" title="openturns.MauntzKucherenkoSensitivityAlgorithm.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.MauntzKucherenkoSensitivityAlgorithm.setShadowedId" title="openturns.MauntzKucherenkoSensitivityAlgorithm.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MauntzKucherenkoSensitivityAlgorithm.setShadowedId" title="openturns.MauntzKucherenkoSensitivityAlgorithm.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.MauntzKucherenkoSensitivityAlgorithm.setUseAsymptoticDistribution" title="openturns.MauntzKucherenkoSensitivityAlgorithm.setUseAsymptoticDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUseAsymptoticDistribution</span></code></a>(…)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.MauntzKucherenkoSensitivityAlgorithm.setUseAsymptoticDistribution" title="openturns.MauntzKucherenkoSensitivityAlgorithm.setUseAsymptoticDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUseAsymptoticDistribution</span></code></a>(…)</td>
 <td>Select asymptotic or bootstrap confidence intervals.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.MauntzKucherenkoSensitivityAlgorithm.setVisibility" title="openturns.MauntzKucherenkoSensitivityAlgorithm.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.MauntzKucherenkoSensitivityAlgorithm.setVisibility" title="openturns.MauntzKucherenkoSensitivityAlgorithm.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
 </tbody>
@@ -778,6 +781,33 @@ Computed marginal by marginal (not from the joint distribution).</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>confidenceLevel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Confidence level for confidence intervals</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.MauntzKucherenkoSensitivityAlgorithm.setDesign">
+<code class="descname">setDesign</code><span class="sig-paren">(</span><em>inputDesign</em>, <em>outputDesign</em>, <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MauntzKucherenkoSensitivityAlgorithm.setDesign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample accessor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>inputDesign</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">Design for the evaluation of sensitivity indices, obtained
+thanks to the SobolIndicesAlgorithmImplementation.Generate method</p>
+</dd>
+<dt><strong>outputDesign</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
+<dd><p class="first last">Design for the evaluation of sensitivity indices, obtained as the evaluation
+of a Function (model) on the previous inputDesign</p>
+</dd>
+<dt><strong>N</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Size of samples to generate</p>
 </dd>
 </dl>
 </td>

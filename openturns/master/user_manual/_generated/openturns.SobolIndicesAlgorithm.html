@@ -207,18 +207,19 @@ a_{n,1} &amp; a_{1,2} &amp; \cdots &amp; b_{n,i} &amp; \cdots &amp; a_{n, n_X}
 <p>Note finally that the distribution of indices can be computed for first
 and total order thanks to the <a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getFirstOrderIndicesDistribution" title="openturns.SobolIndicesAlgorithm.getFirstOrderIndicesDistribution"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getFirstOrderIndicesDistribution()</span></code></a> and
 <a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getTotalOrderIndicesDistribution" title="openturns.SobolIndicesAlgorithm.getTotalOrderIndicesDistribution"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getTotalOrderIndicesDistribution()</span></code></a> methods.</p>
-<p>This can be done by either bootstrap or by using an asymptotic estimator,
-this behavior can be changed using <a class="reference internal" href="#openturns.SobolIndicesAlgorithm.setUseAsymptoticDistribution" title="openturns.SobolIndicesAlgorithm.setUseAsymptoticDistribution"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setUseAsymptoticDistribution()</span></code></a>. Its value in initialized by the
+<p>This can be done either by bootstrap or using an asymptotic estimator,
+this behavior can be changed using <a class="reference internal" href="#openturns.SobolIndicesAlgorithm.setUseAsymptoticDistribution" title="openturns.SobolIndicesAlgorithm.setUseAsymptoticDistribution"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setUseAsymptoticDistribution()</span></code></a>.
+Its value in initialized by the
 <cite>SobolIndicesAlgorithm-DefaultUseAsymptoticDistribution</cite> resourcemap key.</p>
 <p>For the bootstrap method the size is set by <a class="reference internal" href="#openturns.SobolIndicesAlgorithm.setBootstrapSize" title="openturns.SobolIndicesAlgorithm.setBootstrapSize"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setBootstrapSize()</span></code></a>
 values and initialized by <cite>SobolIndicesAlgorithm-DefaultBootstrapSize</cite> resourcemap key.</p>
-<p>The asymptotic estimators are computed using the <a class="reference internal" href="../../bibliography.html#janon2014" id="id3">[Janon2014]</a> delta method,
-refer to the documentation of each estimator’s class.</p>
+<p>The asymptotic estimator of the variance are computed using the <a class="reference internal" href="../../bibliography.html#janon2014" id="id3">[Janon2014]</a>
+delta method, in the technical report <a class="reference internal" href="../../bibliography.html#pmfre-01116" id="id4">[PMFRE-01116]</a>.</p>
 <p>The corresponding confidence interval is also provided using
 <a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getFirstOrderIndicesInterval" title="openturns.SobolIndicesAlgorithm.getFirstOrderIndicesInterval"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getFirstOrderIndicesInterval()</span></code></a> and <a class="reference internal" href="#openturns.SobolIndicesAlgorithm.getTotalOrderIndicesInterval" title="openturns.SobolIndicesAlgorithm.getTotalOrderIndicesInterval"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getTotalOrderIndicesInterval()</span></code></a>.
 The confidence level is set by <cite>setConfidenceLevel</cite>
 and is initialized by the <cite>SobolIndicesAlgorithm-DefaultConfidenceLevel</cite> resourcemap key.</p>
-<p>Also note that for numerical stability reasons the ouputs are centered before indices estimation:</p>
+<p>Also note that for numerical stability reasons the outputs are centered before indices estimation:</p>
 <div class="math">
 <p><img src="../../_images/math/18622fa8fd584872229e1049b2fae5ee01232a5f.svg" alt="Y_k = Y_k - \Eset(Y_k)"/></p>
 </div><p class="rubric">Methods</p>
@@ -290,6 +291,17 @@ and is initialized by the <cite>SobolIndicesAlgorithm-DefaultConfidenceLevel</ci
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.setUseAsymptoticDistribution" title="openturns.SobolIndicesAlgorithm.setUseAsymptoticDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUseAsymptoticDistribution</span></code></a>(…)</td>
 <td>Select asymptotic or bootstrap confidence intervals.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="57%" />
+<col width="43%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>setDesign</strong></td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
