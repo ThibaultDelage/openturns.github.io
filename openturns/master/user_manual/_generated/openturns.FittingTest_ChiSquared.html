@@ -111,10 +111,9 @@
 <dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a> or <a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">DistributionFactory</span></code></a></span></dt>
 <dd><p class="first last">Tested distribution.</p>
 </dd>
-<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/c1859530003f05243b2f92060664e95337ac90fd.svg" alt="0 \leq {\rm level} \leq 1"/>, optional</span></dt>
-<dd><p class="first last">This the value such that <img class="math" src="../../_images/math/949d735691010cce168c675f19e8c001a3bb48c1.svg" alt="\alpha = 1 - {\rm level}"/> is the risk of
-committing a Type I error, that is an incorrect rejection of a true
-null hypothesis.</p>
+<dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/99b856b24000e64bd46d751f1542fedcbff30095.svg" alt="0 \leq \alpha \leq 1"/>, optional</span></dt>
+<dd><p class="first last">This is the risk <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/> of committing a Type I error,
+that is an incorrect rejection of a true null hypothesis.</p>
 </dd>
 <dt><strong>n_parameters</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/91865fe7b864cc91c080305222df911825eead87.svg" alt="0 \leq k"/>, optional</span></dt>
 <dd><p class="first last">The number of parameters in the distribution that have been estimated from
@@ -152,7 +151,7 @@ as the second argument, but if it is not, it will be set equal to 0.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Poisson</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">FittingTest</span><span class="o">.</span><span class="n">ChiSquared</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">PoissonFactory</span><span class="p">(),</span> <span class="o">.</span><span class="mi">99</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">FittingTest</span><span class="o">.</span><span class="n">ChiSquared</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">PoissonFactory</span><span class="p">(),</span> <span class="mf">0.01</span><span class="p">)</span>
 <span class="go">class=TestResult name=Unnamed type=ChiSquaredPoisson binaryQualityMeasure=true p-value threshold=0.01 p-value=0.606136 description=[]</span>
 </pre></div>
 </div>

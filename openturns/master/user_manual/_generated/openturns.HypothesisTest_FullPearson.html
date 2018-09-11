@@ -98,7 +98,7 @@
 <h1>HypothesisTest_FullPearson<a class="headerlink" href="#hypothesistest-fullpearson" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="openturns.HypothesisTest_FullPearson">
-<code class="descname">HypothesisTest_FullPearson</code><span class="sig-paren">(</span><em>firstSample</em>, <em>secondSample</em>, <em>level=0.95</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.HypothesisTest_FullPearson" title="Permalink to this definition">¶</a></dt>
+<code class="descname">HypothesisTest_FullPearson</code><span class="sig-paren">(</span><em>firstSample</em>, <em>secondSample</em>, <em>level=0.05</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.HypothesisTest_FullPearson" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test whether two discrete samples are independent.</p>
 <p><strong>Available usages</strong>:</p>
 <blockquote>
@@ -117,8 +117,8 @@
 <dd><p class="first last">Second tested sample, of dimension 1.</p>
 </dd>
 <dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive float <img class="math" src="../../_images/math/31bc6e5e1c88e27cfdcaf300c73a52ab66013ee6.svg" alt="&lt; 1"/></span></dt>
-<dd><p class="first last">Threshold p-value of the test (= 1 - first type risk), it must be
-<img class="math" src="../../_images/math/31bc6e5e1c88e27cfdcaf300c73a52ab66013ee6.svg" alt="&lt; 1"/>, equal to 0.95 by default.</p>
+<dd><p class="first last">Threshold p-value of the test (= first kind risk), it must be
+<img class="math" src="../../_images/math/31bc6e5e1c88e27cfdcaf300c73a52ab66013ee6.svg" alt="&lt; 1"/>, equal to 0.05 by default.</p>
 </dd>
 </dl>
 </td>
@@ -139,8 +139,8 @@
 <p class="rubric">Notes</p>
 <p>The Full Pearson Test is the independence Pearson test between 2 samples :
 <em>firstSample</em> of dimension <em>n</em> and <em>secondSample</em> of dimension 1. If
-<em>firstSample[i]</em> is the numerical sample extracted from <em>firstSample</em>
-(<img class="math" src="../../_images/math/9b3fb7e041ddeea31ab9148572d497bf4e51c592.svg" alt="i^{th}"/> coordinate of each point of the numerical sample), FullPearson
+<em>firstSample[i]</em> is the sample extracted from <em>firstSample</em>
+(<img class="math" src="../../_images/math/9b3fb7e041ddeea31ab9148572d497bf4e51c592.svg" alt="i^{th}"/> coordinate of each point of the sample), FullPearson
 performs the independence Pearson test simultaneously on <em>firstSample[i]</em> and 
 secondSample. For all <em>i</em>, it is supposed that the couple (<em>firstSample[i]</em> and
 <em>secondSample</em>) is issued from a gaussian vector.</p>
