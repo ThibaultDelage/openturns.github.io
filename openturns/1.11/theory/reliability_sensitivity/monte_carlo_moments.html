@@ -97,59 +97,59 @@
   <div class="section" id="estimating-moments-with-monte-carlo">
 <h1>Estimating moments with Monte Carlo<a class="headerlink" href="#estimating-moments-with-monte-carlo" title="Permalink to this headline">¶</a></h1>
 <p>Let us denote
-<img class="math" src="../../_images/math/7f11d6108c1cce0d36f73a26f19b0b5855af6ed9.svg" alt="\underline{Y} = h\left( \vect{X},\vect{d} \right) = \left( Y^1,\ldots,Y^{n_Y} \right)"/>,
-where <img class="math" src="../../_images/math/9f25197bb34746abb2fb1320cfad061622d5ae2f.svg" alt="\vect{X}= \left( X^1,\ldots,X^{n_X} \right)"/> is a random
-vector, and <img class="math" src="../../_images/math/0f083c56e80e288921968fd9aece19a83dee559d.svg" alt="\vect{d}"/> a deterministic vector. We seek here to
+<img class="math" src="../../_images/math/1fba778592bb4dadf45b2a3dcfe3376e56b15313.svg" alt="\underline{Y} = h\left( \vect{X},\vect{d} \right) = \left( Y^1,\ldots,Y^{n_Y} \right)"/>,
+where <img class="math" src="../../_images/math/e45835a5e7e7ee4b26cbf80259d8ab8f7d9c30e0.svg" alt="\vect{X}= \left( X^1,\ldots,X^{n_X} \right)"/> is a random
+vector, and <img class="math" src="../../_images/math/3b84c4ed75f01d36277ef4bef655637e1ea1a34d.svg" alt="\vect{d}"/> a deterministic vector. We seek here to
 evaluate, the characteristics of the central part (central tendency and
 spread i.e. mean and variance) of the probability distribution of a
-variable <img class="math" src="../../_images/math/4f8284dbdcddaf039442417983927bed0500361f.svg" alt="Y^i"/>, using the probability distribution of the random
-vector <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/>.</p>
+variable <img class="math" src="../../_images/math/5e1f03656fe20808bd4b67f2311098e7927589f7.svg" alt="Y^i"/>, using the probability distribution of the random
+vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>.</p>
 <p>The Monte Carlo method is a numerical integration method using sampling,
 which can be used, for example, to determine the mean and standard
-deviation of a random variable <img class="math" src="../../_images/math/4f8284dbdcddaf039442417983927bed0500361f.svg" alt="Y^i"/> (if these quantities exist,
+deviation of a random variable <img class="math" src="../../_images/math/5e1f03656fe20808bd4b67f2311098e7927589f7.svg" alt="Y^i"/> (if these quantities exist,
 which is not the case for all probability distributions):</p>
 <div class="math">
-<p><img src="../../_images/math/4cf661362384bb030b6eaff4c24b5a41a5779b9a.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/ad00c81863bfc3c061f9cd514cd5abe3d55c136c.svg" alt="\begin{aligned}
     m_{Y^i} = \int u \, f_{Y^i}(u) \, du,\ \sigma_{Y^i} = \sqrt{\int \left( u-m_{Y^i} \right)^2 \, f_{Y^i}(u) \, du}
   \end{aligned}"/></p>
-</div><p>where <img class="math" src="../../_images/math/b064741c6b22775ad6e4abe2d60c5817023edcb3.svg" alt="f_{Y^i}"/> represents the probability density function of
-<img class="math" src="../../_images/math/4f8284dbdcddaf039442417983927bed0500361f.svg" alt="Y^i"/>.</p>
+</div><p>where <img class="math" src="../../_images/math/8e373fada532a51fd2be66f78c529e33d6358616.svg" alt="f_{Y^i}"/> represents the probability density function of
+<img class="math" src="../../_images/math/5e1f03656fe20808bd4b67f2311098e7927589f7.svg" alt="Y^i"/>.</p>
 <p>Suppose now that we have the sample
-<img class="math" src="../../_images/math/90c42e9261fd867b0c3632cccd7d36364f6affc7.svg" alt="\left\{ y^i_1,\ldots,y^i_N \right\}"/> of <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> values randomly
+<img class="math" src="../../_images/math/fb3b8b4b247f620eec59629be88d39a915130046.svg" alt="\left\{ y^i_1,\ldots,y^i_N \right\}"/> of <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> values randomly
 and independently sampled from the probability distribution
-<img class="math" src="../../_images/math/b064741c6b22775ad6e4abe2d60c5817023edcb3.svg" alt="f_{Y^i}"/>; this sample can be obtained by drawing a <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/>
-sample <img class="math" src="../../_images/math/68021b98598fa5c082e89eee449f1ee92dcd6ea7.svg" alt="\left\{ \vect{x}_1,\ldots,\vect{x}_N \right\}"/> of the
-random vector <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/> (the distribution of which is known) and
+<img class="math" src="../../_images/math/8e373fada532a51fd2be66f78c529e33d6358616.svg" alt="f_{Y^i}"/>; this sample can be obtained by drawing a <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/>
+sample <img class="math" src="../../_images/math/10d0529d4b858839d9f447a4ca1de284c1edfa43.svg" alt="\left\{ \vect{x}_1,\ldots,\vect{x}_N \right\}"/> of the
+random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> (the distribution of which is known) and
 by computing
-<img class="math" src="../../_images/math/fc537ccbeaa717f387cdf143ec6e3e325b58b081.svg" alt="\vect{y}_j = h \left( \vect{x}_j,\underline{d} \right) \ \forall 1 \leq j \leq N"/>.
+<img class="math" src="../../_images/math/778ed843d87c0323699ba3e2ac675acc1676ab27.svg" alt="\vect{y}_j = h \left( \vect{x}_j,\underline{d} \right) \ \forall 1 \leq j \leq N"/>.
 Then, the Monte-Carlo estimations for the mean and standard deviation
 are the empirical mean and standard deviations of the sample:</p>
 <div class="math">
-<p><img src="../../_images/math/b4f3d195a6acc3e3dda8ac02f30338d5bd380137.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/924166dd5f6d26ac45a52116e99e3cc9869385aa.svg" alt="\begin{aligned}
     \widehat{m}_{Y^i} = \frac{1}{N} \sum_{j=1}^N y^i_j,\ \widehat{\sigma}_{Y^i} = \sqrt{\frac{1}{N} \sum_{j=1}^N \left( y^i_j - \widehat{m}_{Y^i} \right)^2}
   \end{aligned}"/></p>
 </div><p>These are just estimations, but by the law of large numbers their
-convergence to the real values <img class="math" src="../../_images/math/1133db7fabfd3a9d41ca6a0fd78b67939cfd4a3b.svg" alt="m_{Y^i}"/> and <img class="math" src="../../_images/math/31f85a99594c58b1f446ced8a086c749ba495aa6.svg" alt="\sigma_{Y^i}"/>
-is assured as the sample size <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> tends to infinity. The Central
+convergence to the real values <img class="math" src="../../_images/math/709ffbec936d09d3498b865f2da450aeae255f9e.svg" alt="m_{Y^i}"/> and <img class="math" src="../../_images/math/e05dd2232a3347a7fdeb8bac64b260714657627a.svg" alt="\sigma_{Y^i}"/>
+is assured as the sample size <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> tends to infinity. The Central
 Limit Theorem enables the difference between the estimated value and the
 sought value to be controlled by means of a confidence interval
-(especially if N is sufficiently large, typically <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> &gt; a few
+(especially if N is sufficiently large, typically <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> &gt; a few
 dozens even if there is now way to say for sure if the asymptotic
-behaviour is reached). For a probability <img class="math" src="../../_images/math/7b7ebf7e62696ba8c12562a84512553143e94b56.svg" alt="\alpha"/> strictly between
+behaviour is reached). For a probability <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/> strictly between
 0 and 1 chosen by the user, one can, for example, be sure with a
-confidence <img class="math" src="../../_images/math/7b7ebf7e62696ba8c12562a84512553143e94b56.svg" alt="\alpha"/>, that the true value of <img class="math" src="../../_images/math/1133db7fabfd3a9d41ca6a0fd78b67939cfd4a3b.svg" alt="m_{Y^i}"/> is
-between <img class="math" src="../../_images/math/54c0a9373ab32e1e90e10e6c68ba6bab9172ccd6.svg" alt="\widehat{m}_{i,\inf}"/> and <img class="math" src="../../_images/math/a56d72197e67126f0ff9e1855c40f0778aa47b22.svg" alt="\widehat{m}_{i,\sup}"/>
+confidence <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>, that the true value of <img class="math" src="../../_images/math/709ffbec936d09d3498b865f2da450aeae255f9e.svg" alt="m_{Y^i}"/> is
+between <img class="math" src="../../_images/math/566954bb48ae3ca5a8825b9872acb0d524157983.svg" alt="\widehat{m}_{i,\inf}"/> and <img class="math" src="../../_images/math/913840bc9af3d2c8772d4e748617ee6ada502cc7.svg" alt="\widehat{m}_{i,\sup}"/>
 calculated analytically from simple formulae. To illustrate, for
-<img class="math" src="../../_images/math/f02b746c036cf079569c70515cfafc3f30258036.svg" alt="\alpha = 0.95"/>:</p>
+<img class="math" src="../../_images/math/88baf7bbe187d8c87af840abba53ca80b587734d.svg" alt="\alpha = 0.95"/>:</p>
 <div class="math">
-<p><img src="../../_images/math/0b471af37519c752362c799478c43d06ab7b2b24.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/626e6b6b9550f1644b937d7093aa01e9785666aa.svg" alt="\begin{aligned}
     \widehat{m}_{i,\inf} = \widehat{m}_{Y^i} - 1.96 \frac{\displaystyle \widehat{\sigma}_{Y^i}}{\displaystyle \sqrt{N}},\ \widehat{m}_{i,\sup} = \widehat{m}_{Y^i} + 1.96 \frac{\widehat{\sigma}_{Y^i}}{\sqrt{N}},\ \textrm{that is to say}\ \textrm{Pr} \left(  \widehat{m}_{i,\inf} \leq m_{Y^i} \leq \widehat{m}_{i,\sup} \right) = 0.95
   \end{aligned}"/></p>
 </div><p>The size of the confidence interval, which represents the uncertainty
-of this mean estimation, decreases as <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> increases but more
-gradually (the rate is proportional to <img class="math" src="../../_images/math/fa5df3a40c51fd1adadd8291e815d5b60de611b5.svg" alt="\sqrt{N}"/>: multiplying
-<img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> by 100 reduces the length of the confidence interval
-<img class="math" src="../../_images/math/c71f7509bace9f996be161f98e8693f5c6d947d8.svg" alt="\left| \widehat{m}_{i,\inf}-\widehat{m}_{i,\sup} \right|"/> by a
+of this mean estimation, decreases as <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> increases but more
+gradually (the rate is proportional to <img class="math" src="../../_images/math/8a6cf89d435e1d64a5de9ced1922fbd1ddd0e34e.svg" alt="\sqrt{N}"/>: multiplying
+<img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> by 100 reduces the length of the confidence interval
+<img class="math" src="../../_images/math/b397e76fb30aef9e070171c8708a38e4d75e2962.svg" alt="\left| \widehat{m}_{i,\inf}-\widehat{m}_{i,\sup} \right|"/> by a
 factor 10).</p>
 <p>This method is also referred to as Direct sampling, crude Monte Carlo method, Classical Monte Carlo
 integration.</p>
@@ -205,8 +205,8 @@ integration.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>

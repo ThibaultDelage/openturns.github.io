@@ -110,7 +110,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>maximumSubIntervals</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The maximal number of subdivisions of the interval <img class="math" src="../../_images/math/d0f50cf2ae2ff3b3edc75504d9e4f572be570163.svg" alt="[a,b]"/></p>
+<dd><p class="first last">The maximal number of subdivisions of the interval <img class="math" src="../../_images/math/aeace095a54598d09eccf263ecf3bdaa2b46a4ef.svg" alt="[a,b]"/></p>
 </dd>
 <dt><strong>maximumError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">The maximal error between Gauss and Kronrod approximations.</p>
@@ -126,15 +126,15 @@
 <p class="rubric">Notes</p>
 <p>The Gauss-Kronrod algorithm enables to approximate the definite integral:</p>
 <div class="math">
-<p><img src="../../_images/math/a009dab7123a41cfd725535c9d71a1ff4fe8de2f.svg" alt="\int_{a}^b f(t)\di{t}"/></p>
-</div><p>with <img class="math" src="../../_images/math/2091d386476900f8ebb5cf4a5d88391fc64e17f0.svg" alt="f: \Rset \mapsto \Rset^p"/>, using both approximations : Gauss and Kronrod ones defined by:</p>
+<p><img src="../../_images/math/a1d04009f702ca5cefdc7fd7537c3b1359842328.svg" alt="\int_{a}^b f(t)\di{t}"/></p>
+</div><p>with <img class="math" src="../../_images/math/21402b1ae8f4900774c9bb39a84ea9bfe9d49ed8.svg" alt="f: \Rset \mapsto \Rset^p"/>, using both approximations : Gauss and Kronrod ones defined by:</p>
 <div class="math">
-<p><img src="../../_images/math/5ff8133a467cc1e8358dafdd2f4763b3ffbb68b9.svg" alt="\int_{-1}^1 f(t)\di{t} \simeq  \omega_0f(0) + \sum_{k=1}^n \omega_k (f(\xi_k)+f(-\xi_k))"/></p>
+<p><img src="../../_images/math/fe6e318d4d9c1b0022cf24fbba67021612f04388.svg" alt="\int_{-1}^1 f(t)\di{t} \simeq  \omega_0f(0) + \sum_{k=1}^n \omega_k (f(\xi_k)+f(-\xi_k))"/></p>
 </div><p>and:</p>
 <div class="math">
-<p><img src="../../_images/math/3ee05f7fad094cf6e84aad2f0843a3e0f9897b50.svg" alt="\int_{-1}^1 f(t)\di{t}\simeq  \alpha_0f(0) + \sum_{k=1}^{m} \alpha_k (f(\zeta_k)+f(-\zeta_k))"/></p>
-</div><p>where <img class="math" src="../../_images/math/28645504b2535c1ca4d3746d9b460b223e772bed.svg" alt="\xi_k&gt;0"/>,  <img class="math" src="../../_images/math/d01f33f6a4cc95ab2e902cd741d6802135fd5261.svg" alt="\zeta_k&gt;0"/>, <img class="math" src="../../_images/math/1762436b9b1ed3e6a83b0b16af82ac008dfa8f1c.svg" alt="\zeta_{2j}=\xi_j"/>, <img class="math" src="../../_images/math/515f286355645d07d9c39aeb255b2dc70b6a90db.svg" alt="\omega_k&gt;0"/> and <img class="math" src="../../_images/math/d64dc241b2c23d7056f8b26c75d25750c0a25c04.svg" alt="\alpha_k&gt;0"/>.</p>
-<p>The Gauss-Kronrod algorithm evaluates the integral using the Gauss and the Konrod approximations. If the difference between both approximations is greater that <em>maximumError</em>, then the interval <img class="math" src="../../_images/math/d0f50cf2ae2ff3b3edc75504d9e4f572be570163.svg" alt="[a,b]"/> is subdivided into 2 subintervals with the same length. The Gauss-Kronrod algorithm is then applied on both subintervals with the sames rules. The algorithm is iterative until the  difference between both approximations is less that <em>maximumError</em>. In that case, the integral on the subinterval is approximated by the Kronrod sum. The subdivision process is limited by <em>maximumSubIntervals</em> that imposes the maximum number of subintervals.</p>
+<p><img src="../../_images/math/921d4f929ccc5dbc19494d6c2ca8195ba8d81639.svg" alt="\int_{-1}^1 f(t)\di{t}\simeq  \alpha_0f(0) + \sum_{k=1}^{m} \alpha_k (f(\zeta_k)+f(-\zeta_k))"/></p>
+</div><p>where <img class="math" src="../../_images/math/aecac85a040d8accfa917ecc5f84269d12a48b8f.svg" alt="\xi_k&gt;0"/>,  <img class="math" src="../../_images/math/01768a2f217b97b42bef858493cd8d3314f1d843.svg" alt="\zeta_k&gt;0"/>, <img class="math" src="../../_images/math/caee6814b212c318c7e24b1a5961ba24aa39f8f9.svg" alt="\zeta_{2j}=\xi_j"/>, <img class="math" src="../../_images/math/abc652fba955938436493a6386d9840b1f999680.svg" alt="\omega_k&gt;0"/> and <img class="math" src="../../_images/math/e9a583c3b2b5d475f83038d733bc27e8fe28b220.svg" alt="\alpha_k&gt;0"/>.</p>
+<p>The Gauss-Kronrod algorithm evaluates the integral using the Gauss and the Konrod approximations. If the difference between both approximations is greater that <em>maximumError</em>, then the interval <img class="math" src="../../_images/math/aeace095a54598d09eccf263ecf3bdaa2b46a4ef.svg" alt="[a,b]"/> is subdivided into 2 subintervals with the same length. The Gauss-Kronrod algorithm is then applied on both subintervals with the sames rules. The algorithm is iterative until the  difference between both approximations is less that <em>maximumError</em>. In that case, the integral on the subinterval is approximated by the Kronrod sum. The subdivision process is limited by <em>maximumSubIntervals</em> that imposes the maximum number of subintervals.</p>
 <p>The final integral is the sum of the integrals evaluated on the subintervals.</p>
 <p class="rubric">Examples</p>
 <p>Create a Gauss-Kronrod algorithm:</p>
@@ -159,7 +159,7 @@
 <td>Accessor to the maximal error between Gauss and Kronrod approximations.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.GaussKronrod.getMaximumSubIntervals" title="openturns.GaussKronrod.getMaximumSubIntervals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaximumSubIntervals</span></code></a>()</td>
-<td>Accessor to the maximal  number of subdivisions of <img class="math" src="../../_images/math/d0f50cf2ae2ff3b3edc75504d9e4f572be570163.svg" alt="[a,b]"/>.</td>
+<td>Accessor to the maximal  number of subdivisions of <img class="math" src="../../_images/math/aeace095a54598d09eccf263ecf3bdaa2b46a4ef.svg" alt="[a,b]"/>.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.GaussKronrod.getName" title="openturns.GaussKronrod.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
@@ -180,13 +180,13 @@
 <td>Test if the object has a distinguishable name.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.GaussKronrod.integrate" title="openturns.GaussKronrod.integrate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">integrate</span></code></a>(*args)</td>
-<td>Evaluation of the integral of <img class="math" src="../../_images/math/68690c6e741b6c06797c7e5bed2d9f89bf5b065a.svg" alt="f"/> on an interval.</td>
+<td>Evaluation of the integral of <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> on an interval.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.GaussKronrod.setMaximumError" title="openturns.GaussKronrod.setMaximumError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumError</span></code></a>(maximumError)</td>
 <td>Set the maximal error between Gauss and Kronrod approximations.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.GaussKronrod.setMaximumSubIntervals" title="openturns.GaussKronrod.setMaximumSubIntervals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setMaximumSubIntervals</span></code></a>(maximumSubIntervals)</td>
-<td>Set the maximal  number of subdivisions of <img class="math" src="../../_images/math/d0f50cf2ae2ff3b3edc75504d9e4f572be570163.svg" alt="[a,b]"/>.</td>
+<td>Set the maximal  number of subdivisions of <img class="math" src="../../_images/math/aeace095a54598d09eccf263ecf3bdaa2b46a4ef.svg" alt="[a,b]"/>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.GaussKronrod.setName" title="openturns.GaussKronrod.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
@@ -268,14 +268,14 @@
 <dl class="method">
 <dt id="openturns.GaussKronrod.getMaximumSubIntervals">
 <code class="descname">getMaximumSubIntervals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.GaussKronrod.getMaximumSubIntervals" title="Permalink to this definition">¶</a></dt>
-<dd><p>Accessor to the maximal  number of subdivisions of <img class="math" src="../../_images/math/d0f50cf2ae2ff3b3edc75504d9e4f572be570163.svg" alt="[a,b]"/>.</p>
+<dd><p>Accessor to the maximal  number of subdivisions of <img class="math" src="../../_images/math/aeace095a54598d09eccf263ecf3bdaa2b46a4ef.svg" alt="[a,b]"/>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>maximumSubIntervals</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, positive</span></dt>
-<dd><p class="first last">The maximal number of subdivisions of the interval <img class="math" src="../../_images/math/d0f50cf2ae2ff3b3edc75504d9e4f572be570163.svg" alt="[a,b]"/>.</p>
+<dd><p class="first last">The maximal number of subdivisions of the interval <img class="math" src="../../_images/math/aeace095a54598d09eccf263ecf3bdaa2b46a4ef.svg" alt="[a,b]"/>.</p>
 </dd>
 </dl>
 </td>
@@ -401,7 +401,7 @@
 <dl class="method">
 <dt id="openturns.GaussKronrod.integrate">
 <code class="descname">integrate</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.GaussKronrod.integrate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluation of the integral of <img class="math" src="../../_images/math/68690c6e741b6c06797c7e5bed2d9f89bf5b065a.svg" alt="f"/> on an interval.</p>
+<dd><p>Evaluation of the integral of <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> on an interval.</p>
 <dl class="docutils">
 <dt>Available usages:</dt>
 <dd><p class="first">integrate(<em>f, interval</em>)</p>
@@ -414,10 +414,10 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>, <img class="math" src="../../_images/math/2091d386476900f8ebb5cf4a5d88391fc64e17f0.svg" alt="f: \Rset \mapsto \Rset^p"/></span></dt>
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>, <img class="math" src="../../_images/math/21402b1ae8f4900774c9bb39a84ea9bfe9d49ed8.svg" alt="f: \Rset \mapsto \Rset^p"/></span></dt>
 <dd><p class="first last">The integrand function.</p>
 </dd>
-<dt><strong>interval</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a>, <img class="math" src="../../_images/math/691b584a67bac4c9cc4549baf5fe59ab726bfa60.svg" alt="interval \in \Rset"/></span></dt>
+<dt><strong>interval</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a>, <img class="math" src="../../_images/math/8d171e8daaf8fb0319eb0b8c3fcd67584fbe6371.svg" alt="interval \in \Rset"/></span></dt>
 <dd><p class="first last">The integration domain.</p>
 </dd>
 <dt><strong>error</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
@@ -432,7 +432,7 @@
 <p class="last"><em>ei</em> the associated error estimation.</p>
 </dd>
 <dt><strong>fi</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last"><em>fi</em> is the set of <img class="math" src="../../_images/math/c893446246b5cdd498ae2af1ca3db1d3662e8b83.svg" alt="\int_{ai}^{bi} f(t)\di{t}"/></p>
+<dd><p class="first last"><em>fi</em> is the set of <img class="math" src="../../_images/math/c6346eaa372b1fc06e2232688ff1c0bd2f732957.svg" alt="\int_{ai}^{bi} f(t)\di{t}"/></p>
 </dd>
 </dl>
 </td>
@@ -495,14 +495,14 @@
 <dl class="method">
 <dt id="openturns.GaussKronrod.setMaximumSubIntervals">
 <code class="descname">setMaximumSubIntervals</code><span class="sig-paren">(</span><em>maximumSubIntervals</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.GaussKronrod.setMaximumSubIntervals" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the maximal  number of subdivisions of <img class="math" src="../../_images/math/d0f50cf2ae2ff3b3edc75504d9e4f572be570163.svg" alt="[a,b]"/>.</p>
+<dd><p>Set the maximal  number of subdivisions of <img class="math" src="../../_images/math/aeace095a54598d09eccf263ecf3bdaa2b46a4ef.svg" alt="[a,b]"/>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>maximumSubIntervals</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, positive</span></dt>
-<dd><p class="first last">The maximal number of subdivisions of the interval <img class="math" src="../../_images/math/d0f50cf2ae2ff3b3edc75504d9e4f572be570163.svg" alt="[a,b]"/>.</p>
+<dd><p class="first last">The maximal number of subdivisions of the interval <img class="math" src="../../_images/math/aeace095a54598d09eccf263ecf3bdaa2b46a4ef.svg" alt="[a,b]"/>.</p>
 </dd>
 </dl>
 </td>
@@ -617,8 +617,8 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>

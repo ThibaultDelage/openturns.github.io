@@ -98,54 +98,54 @@
 <h1>Functional Chaos Expansion<a class="headerlink" href="#functional-chaos-expansion" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">Accounting for the joint probability density function (PDF)
-<img class="math" src="../../_images/math/7d3d0a3c6c562639c8d0aa6e521976310146960a.svg" alt="f_{\underline{X}}(\underline{x})"/> of the input random vector
-<img class="math" src="../../_images/math/abaf3583f4447868ee35c83099a6e1ccdb65f4c7.svg" alt="\underline{X}"/>, one seeks the joint PDF of the model response
-<img class="math" src="../../_images/math/480c9655bf95b9c52931f9c0cb27c9740f1c3ac1.svg" alt="\underline{Y} = h(\underline{X})"/>. This may be achieved using
-Monte Carlo (MC) simulation, i.e. by evaluating the model <img class="math" src="../../_images/math/7bc3c3b1a2be80b5e49a4bf613a598d81206e9bf.svg" alt="h"/>
-at a large number of realizations <img class="math" src="../../_images/math/8aaacb1349fd32f221059e54a33f0db0159eb67c.svg" alt="\underline{x}^{(i)}"/> of
-<img class="math" src="../../_images/math/abaf3583f4447868ee35c83099a6e1ccdb65f4c7.svg" alt="\underline{X}"/> and then by estimating the empirical
+<img class="math" src="../../_images/math/d3397abc5f425d5c10d1c54d9ae2797e2d68a89b.svg" alt="f_{\underline{X}}(\underline{x})"/> of the input random vector
+<img class="math" src="../../_images/math/437241ed6e9780b45c763f39aa9be4ef109d3e55.svg" alt="\underline{X}"/>, one seeks the joint PDF of the model response
+<img class="math" src="../../_images/math/a45f73f21a78ed13e4cacd3c9ae98409736d8c92.svg" alt="\underline{Y} = h(\underline{X})"/>. This may be achieved using
+Monte Carlo (MC) simulation, i.e. by evaluating the model <img class="math" src="../../_images/math/5e4fd0b7c0b9d8750ca8bc577ddb169a78f8b00f.svg" alt="h"/>
+at a large number of realizations <img class="math" src="../../_images/math/5b13f90056d295fdfb987d8d03cf366ba76ec864.svg" alt="\underline{x}^{(i)}"/> of
+<img class="math" src="../../_images/math/437241ed6e9780b45c763f39aa9be4ef109d3e55.svg" alt="\underline{X}"/> and then by estimating the empirical
 distribution of the corresponding sample of model output
-<img class="math" src="../../_images/math/9fa029c155e1cab5834adcab9ccbe2d5d1ad10fa.svg" alt="h(\underline{x}^{(i)})"/>. However it is well-known that the MC
+<img class="math" src="../../_images/math/ab2af6bdd118a5e623d8c42b24a573826fefbff4.svg" alt="h(\underline{x}^{(i)})"/>. However it is well-known that the MC
 method requires a large number of model evaluations, i.e. a great
 computational cost, in order to obtain accurate results.</div>
 <div class="line">In fact, when using MC simulation, each model run is performed
 independently. Thus, whereas it is expected that
-<img class="math" src="../../_images/math/d5944abc0daba90435012f7de23a616da632b99d.svg" alt="h(\underline{x}^{(i)}) \approx h(\underline{x}^{(j)})"/> if
-<img class="math" src="../../_images/math/75f2fa42b83ae9689ed1874812a18e966504a46b.svg" alt="\underline{x}^{(i)} \approx \underline{x}^{(j)}"/>, the model is
+<img class="math" src="../../_images/math/41df2ed36e15fd8655e9d62950146133f2540ddb.svg" alt="h(\underline{x}^{(i)}) \approx h(\underline{x}^{(j)})"/> if
+<img class="math" src="../../_images/math/2d097ad896d4432456dd431df5fc8d1682ffdd44.svg" alt="\underline{x}^{(i)} \approx \underline{x}^{(j)}"/>, the model is
 evaluated twice without accounting for this information. In other
-words, the functional dependence between <img class="math" src="../../_images/math/abaf3583f4447868ee35c83099a6e1ccdb65f4c7.svg" alt="\underline{X}"/> and
-<img class="math" src="../../_images/math/610ae71bc6155fe9269d9bd6ace1acf1a824de63.svg" alt="\underline{Y}"/> is lost.</div>
+words, the functional dependence between <img class="math" src="../../_images/math/437241ed6e9780b45c763f39aa9be4ef109d3e55.svg" alt="\underline{X}"/> and
+<img class="math" src="../../_images/math/bee9159cbbc4c64ba61d74e4c2d7728c96c2a5b8.svg" alt="\underline{Y}"/> is lost.</div>
 <div class="line">A possible solution to overcome this problem and thereby to reduce the
 computational cost of MC simulation is to represent the random
-response <img class="math" src="../../_images/math/610ae71bc6155fe9269d9bd6ace1acf1a824de63.svg" alt="\underline{Y}"/> in a suitable functional space, such as
-the Hilbert space <img class="math" src="../../_images/math/678e0ce2206232779f6e7e48772f085e6c6233ea.svg" alt="L^2"/> of square-integrable functions with
-respect to the PDF <img class="math" src="../../_images/math/7d3d0a3c6c562639c8d0aa6e521976310146960a.svg" alt="f_{\underline{X}}(\underline{x})"/>.
+response <img class="math" src="../../_images/math/bee9159cbbc4c64ba61d74e4c2d7728c96c2a5b8.svg" alt="\underline{Y}"/> in a suitable functional space, such as
+the Hilbert space <img class="math" src="../../_images/math/b9203476890bf57ea1762a17918740f8a025c275.svg" alt="L^2"/> of square-integrable functions with
+respect to the PDF <img class="math" src="../../_images/math/d3397abc5f425d5c10d1c54d9ae2797e2d68a89b.svg" alt="f_{\underline{X}}(\underline{x})"/>.
 Precisely, an expansion of the model response onto an orthonormal
-basis of <img class="math" src="../../_images/math/678e0ce2206232779f6e7e48772f085e6c6233ea.svg" alt="L^2"/> is of interest.</div>
+basis of <img class="math" src="../../_images/math/b9203476890bf57ea1762a17918740f8a025c275.svg" alt="L^2"/> is of interest.</div>
 </div>
 <div class="line-block">
 <div class="line">The principles of the building of a (infinite numerable) basis of this
 space, i.e. the PC basis, are described in the sequel.</div>
 <div class="line"><strong>Principle of the functional chaos expansion</strong></div>
-<div class="line">Consider a model <img class="math" src="../../_images/math/7bc3c3b1a2be80b5e49a4bf613a598d81206e9bf.svg" alt="h"/> depending on a set of <em>random</em> variables
-<img class="math" src="../../_images/math/f339426622c28192968a27b6422c1b091e5d0ff6.svg" alt="\underline{X} = (X_1,\dots,X_{n_X})^{\textsf{T}}"/>. We call
+<div class="line">Consider a model <img class="math" src="../../_images/math/5e4fd0b7c0b9d8750ca8bc577ddb169a78f8b00f.svg" alt="h"/> depending on a set of <em>random</em> variables
+<img class="math" src="../../_images/math/5637a7aab2d4d0dd8658a312b4f60a5a005da5c9.svg" alt="\underline{X} = (X_1,\dots,X_{n_X})^{\textsf{T}}"/>. We call
 functional chaos expansion the class of spectral methods which gathers
 all types of response surface that can be seen as a projection of the
 physical model in an orthonormal basis. This class of methods uses the
-Hilbertian space (square-integrable space: <img class="math" src="../../_images/math/678e0ce2206232779f6e7e48772f085e6c6233ea.svg" alt="L^2"/>) to construct
+Hilbertian space (square-integrable space: <img class="math" src="../../_images/math/b9203476890bf57ea1762a17918740f8a025c275.svg" alt="L^2"/>) to construct
 the response surface.</div>
 <div class="line">Assuming that the physical model has a finite second order measure
-(i.e. <img class="math" src="../../_images/math/b2bef647176efc13ebbba96691481b9072133ae3.svg" alt="E\left( \|h(\underline{X})\|^2\right)&lt; + \infty"/>), it may
+(i.e. <img class="math" src="../../_images/math/42b7ea3d7b33d0fb37aa72bee22c16ab9ac16db8.svg" alt="E\left( \|h(\underline{X})\|^2\right)&lt; + \infty"/>), it may
 be uniquely represented as a converging series onto an orthonormal
 basis as follows:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/f071ffc639973dba81914704b3e2db764a742a18.svg" alt="h(\underline{x})= \sum_{i=0}^{+\infty}  \underline{y}_{i}\Phi_{i}(\underline{x})."/></p>
+<p><img src="../../_images/math/1c01f620c5ac1beeab23e65fde7baa884648bff6.svg" alt="h(\underline{x})= \sum_{i=0}^{+\infty}  \underline{y}_{i}\Phi_{i}(\underline{x})."/></p>
 </div><p>where the
-<img class="math" src="../../_images/math/5b73d9a566181d314f28e0632eefc85f058a3d50.svg" alt="\underline{y}_{i} = (y_{i,1},\dots,y_{i,n_Y})^{\textsf{T}}"/>’s
+<img class="math" src="../../_images/math/0748e55c45ca269c98e191e44301f4d204a7025f.svg" alt="\underline{y}_{i} = (y_{i,1},\dots,y_{i,n_Y})^{\textsf{T}}"/>’s
 are deterministic vectors that fully characterize the random vector
-<img class="math" src="../../_images/math/610ae71bc6155fe9269d9bd6ace1acf1a824de63.svg" alt="\underline{Y}"/>, and the <img class="math" src="../../_images/math/8cb7248700bc4dde924a5a9cf3ca81817cbb53eb.svg" alt="\Phi_{i}"/>’s are given basis
+<img class="math" src="../../_images/math/bee9159cbbc4c64ba61d74e4c2d7728c96c2a5b8.svg" alt="\underline{Y}"/>, and the <img class="math" src="../../_images/math/c81a1422461946f34638364120dec87bb0876ef8.svg" alt="\Phi_{i}"/>’s are given basis
 functions (e.g. orthonormal polynomials, wavelets).</p>
 </div></blockquote>
 <div class="line-block">
@@ -153,14 +153,14 @@ functions (e.g. orthonormal polynomials, wavelets).</p>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/80b66b9d4219570147f9386dfe044e6c60c2108d.svg" alt="\langle \Phi_{i},\Phi_{j}\rangle = \int_{D}\Phi_{i}(\underline{x}) \Phi_{j}(\underline{x})~f_{\underline{X}}(\underline{x}) d \underline{x} = \delta_{i,j}."/></p>
-</div><p>where <img class="math" src="../../_images/math/9c23fde143742ef9cc7651e0591155c1b03e6882.svg" alt="\delta_{i,j} =1"/> if <img class="math" src="../../_images/math/e9c7ac43d4be8dbb6059df97df20c74cc52a2eb7.svg" alt="i=j"/> and 0 otherwise. The
-metamodel <img class="math" src="../../_images/math/68ade5c9f718d20fc01143ed59cfa1d1ccddb460.svg" alt="\widehat{h}(\underline{x})"/> is represented by a
+<p><img src="../../_images/math/2c05fed523086c8f6060b7c339cb8775345876fb.svg" alt="\langle \Phi_{i},\Phi_{j}\rangle = \int_{D}\Phi_{i}(\underline{x}) \Phi_{j}(\underline{x})~f_{\underline{X}}(\underline{x}) d \underline{x} = \delta_{i,j}."/></p>
+</div><p>where <img class="math" src="../../_images/math/ecee718484e1a77ddb14fa4493f6d55476166f5c.svg" alt="\delta_{i,j} =1"/> if <img class="math" src="../../_images/math/96c63148ac84d6192af52c9bb96b6438dbbe5e11.svg" alt="i=j"/> and 0 otherwise. The
+metamodel <img class="math" src="../../_images/math/bb47dbf604885ba87d764f162e0cc68a33ecc742.svg" alt="\widehat{h}(\underline{x})"/> is represented by a
 <em>finite</em> subset of coefficients
-<img class="math" src="../../_images/math/71336042ca95a9e178cd32401d1f64aa990e1573.svg" alt="\{y_{i}, i \in \cA \subset (N)\}"/> in a <em>truncated</em> basis
-<img class="math" src="../../_images/math/bfb3b31026098e4ce18ecd1624727364ed728743.svg" alt="\{\Phi_{i}, i \in \cA \subset (N)\}"/> as follows:</p>
+<img class="math" src="../../_images/math/661449b22251329364a37159d5ee538fd436e437.svg" alt="\{y_{i}, i \in \cA \subset (N)\}"/> in a <em>truncated</em> basis
+<img class="math" src="../../_images/math/70d04316c69f2b8ec24f007203d997e270db782b.svg" alt="\{\Phi_{i}, i \in \cA \subset (N)\}"/> as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/3500ddd1fe6e3e637263bc714dbf7ac8e841ecb1.svg" alt="\widehat{h}(\underline{x})= \sum_{i \in \cA \subset N}  y_{i}\Phi_{i}(\underline{x})"/></p>
+<p><img src="../../_images/math/22d3ba8fe7396aa6db88be973c8b710057b0133c.svg" alt="\widehat{h}(\underline{x})= \sum_{i \in \cA \subset N}  y_{i}\Phi_{i}(\underline{x})"/></p>
 </div></div></blockquote>
 <p>As an example of this type of expansion, one can mention responses by
 wavelet expansion, polynomial chaos expansion, etc.</p>
@@ -210,8 +210,8 @@ wavelet expansion, polynomial chaos expansion, etc.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>

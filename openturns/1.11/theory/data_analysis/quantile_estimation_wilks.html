@@ -97,92 +97,92 @@
   <div class="section" id="estimating-a-quantile-by-wilks-method">
 <h1>Estimating a quantile by Wilks’ method<a class="headerlink" href="#estimating-a-quantile-by-wilks-method" title="Permalink to this headline">¶</a></h1>
 <p>Let us denote
-<img class="math" src="../../_images/math/7f11d6108c1cce0d36f73a26f19b0b5855af6ed9.svg" alt="\underline{Y} = h\left( \vect{X},\vect{d} \right) = \left( Y^1,\ldots,Y^{n_Y} \right)"/>,
-where <img class="math" src="../../_images/math/9f25197bb34746abb2fb1320cfad061622d5ae2f.svg" alt="\vect{X}= \left( X^1,\ldots,X^{n_X} \right)"/> is a random
-vector, and <img class="math" src="../../_images/math/0f083c56e80e288921968fd9aece19a83dee559d.svg" alt="\vect{d}"/> a deterministic vector. We seek here to
+<img class="math" src="../../_images/math/1fba778592bb4dadf45b2a3dcfe3376e56b15313.svg" alt="\underline{Y} = h\left( \vect{X},\vect{d} \right) = \left( Y^1,\ldots,Y^{n_Y} \right)"/>,
+where <img class="math" src="../../_images/math/e45835a5e7e7ee4b26cbf80259d8ab8f7d9c30e0.svg" alt="\vect{X}= \left( X^1,\ldots,X^{n_X} \right)"/> is a random
+vector, and <img class="math" src="../../_images/math/3b84c4ed75f01d36277ef4bef655637e1ea1a34d.svg" alt="\vect{d}"/> a deterministic vector. We seek here to
 evaluate, using the probability distribution of the random vector
-<img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/>, the <img class="math" src="../../_images/math/7b7ebf7e62696ba8c12562a84512553143e94b56.svg" alt="\alpha"/>-quantile <img class="math" src="../../_images/math/5cf27a9d5652d98df5fcfc28f1208ad6722ceac4.svg" alt="q_{Y^i}(\alpha)"/> of
-<img class="math" src="../../_images/math/4f8284dbdcddaf039442417983927bed0500361f.svg" alt="Y^i"/>, where <img class="math" src="../../_images/math/53cd58c584ebd1cd69dd201e5d0634f3fdfc04cb.svg" alt="\alpha \in (0, 1)"/>:</p>
+<img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>, the <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>-quantile <img class="math" src="../../_images/math/12fa30bc0968b1d66cac997937870595a3784d5f.svg" alt="q_{Y^i}(\alpha)"/> of
+<img class="math" src="../../_images/math/5e1f03656fe20808bd4b67f2311098e7927589f7.svg" alt="Y^i"/>, where <img class="math" src="../../_images/math/e892ab26a86ea5c2878c6332c95d29ebf1630363.svg" alt="\alpha \in (0, 1)"/>:</p>
 <div class="math">
-<p><img src="../../_images/math/42cd96721cfa753c10dbe6e4b565a5620edb774d.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/fa31a4d3aaa4cbcab466647d5e6bb90d8cfe76d9.svg" alt="\begin{aligned}
     \Prob{ Y^i \leq q_{Y^i}(\alpha)} = \alpha
   \end{aligned}"/></p>
 </div><p>If we have a sample
-<img class="math" src="../../_images/math/68021b98598fa5c082e89eee449f1ee92dcd6ea7.svg" alt="\left\{ \vect{x}_1,\ldots,\vect{x}_N \right\}"/> of <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/>
-independent samples of the random vector <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/>,
-<img class="math" src="../../_images/math/5cf27a9d5652d98df5fcfc28f1208ad6722ceac4.svg" alt="q_{Y^i}(\alpha)"/> can be estimated as follows:</p>
+<img class="math" src="../../_images/math/10d0529d4b858839d9f447a4ca1de284c1edfa43.svg" alt="\left\{ \vect{x}_1,\ldots,\vect{x}_N \right\}"/> of <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/>
+independent samples of the random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>,
+<img class="math" src="../../_images/math/12fa30bc0968b1d66cac997937870595a3784d5f.svg" alt="q_{Y^i}(\alpha)"/> can be estimated as follows:</p>
 <ul>
-<li><p class="first">the sample <img class="math" src="../../_images/math/68021b98598fa5c082e89eee449f1ee92dcd6ea7.svg" alt="\left\{ \vect{x}_1,\ldots,\vect{x}_N \right\}"/> of
-vector <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/> is first transformed to a sample
-<img class="math" src="../../_images/math/90c42e9261fd867b0c3632cccd7d36364f6affc7.svg" alt="\left\{ y^i_1,\ldots,y^i_N \right\}"/> of the variable
-<img class="math" src="../../_images/math/4f8284dbdcddaf039442417983927bed0500361f.svg" alt="Y^i"/>, using <img class="math" src="../../_images/math/37ecf12972e9fae854820cb2c2dba0d1f46b35c4.svg" alt="\underline{y} = h(\vect{x}_i,\vect{d})"/>,</p>
+<li><p class="first">the sample <img class="math" src="../../_images/math/10d0529d4b858839d9f447a4ca1de284c1edfa43.svg" alt="\left\{ \vect{x}_1,\ldots,\vect{x}_N \right\}"/> of
+vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> is first transformed to a sample
+<img class="math" src="../../_images/math/fb3b8b4b247f620eec59629be88d39a915130046.svg" alt="\left\{ y^i_1,\ldots,y^i_N \right\}"/> of the variable
+<img class="math" src="../../_images/math/5e1f03656fe20808bd4b67f2311098e7927589f7.svg" alt="Y^i"/>, using <img class="math" src="../../_images/math/22414dfb3a09aa182199fc19d116674e00fb82ac.svg" alt="\underline{y} = h(\vect{x}_i,\vect{d})"/>,</p>
 </li>
-<li><p class="first">the sample <img class="math" src="../../_images/math/90c42e9261fd867b0c3632cccd7d36364f6affc7.svg" alt="\left\{ y^i_1,\ldots,y^i_N \right\}"/> is then placed
+<li><p class="first">the sample <img class="math" src="../../_images/math/fb3b8b4b247f620eec59629be88d39a915130046.svg" alt="\left\{ y^i_1,\ldots,y^i_N \right\}"/> is then placed
 in ascending order, which gives the sample
-<img class="math" src="../../_images/math/8f80a1138c5b2b3b60757841825af14fc691db0a.svg" alt="\left\{ y^{(1)},\ldots,y^{(N)} \right\}"/>,</p>
+<img class="math" src="../../_images/math/6114bea8af866ebad0d95161fc9745a98e2d8f15.svg" alt="\left\{ y^{(1)},\ldots,y^{(N)} \right\}"/>,</p>
 </li>
 <li><p class="first">this empirical estimation of the quantile is then calculated by the
 formula:</p>
 <div class="math">
-<p><img src="../../_images/math/527bad5175663b5ef2b5113118f7e2aea98117ef.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/d219fae945e67dd105717660e1b13f8232845600.svg" alt="\begin{aligned}
       \widehat{q}_{y^i}(\alpha) = y^{([N\alpha]+1)}
     \end{aligned}"/></p>
 </div></li>
 </ul>
-<p>where <img class="math" src="../../_images/math/f3590c19e4866c58ad06a77b8dbb03003a73e037.svg" alt="[N\alpha]"/> denotes the integral part of
-<img class="math" src="../../_images/math/598821165f2202d6618daff04404e867df5efa35.svg" alt="N\alpha"/>.</p>
-<p>For example, if <img class="math" src="../../_images/math/9919707eddd1b13f8c284ae0fc06c4b47f385404.svg" alt="N=100"/> and <img class="math" src="../../_images/math/f02b746c036cf079569c70515cfafc3f30258036.svg" alt="\alpha = 0.95"/>,
-<img class="math" src="../../_images/math/a9ada1cfdbd76b81cf3ff18902f4ff1bc8f3d1f4.svg" alt="\widehat{q}_Z(0.95)"/> is equal to <img class="math" src="../../_images/math/4493ce61eacac167f45e27ffce1376ad2c1816b9.svg" alt="y^{(96)}"/>, which is the
-<img class="math" src="../../_images/math/c7e54284b828a667c0cd67672596c0ace9d155a6.svg" alt="5^\textrm{th}"/> largest value of the sample
-<img class="math" src="../../_images/math/90c42e9261fd867b0c3632cccd7d36364f6affc7.svg" alt="\left\{ y^i_1,\ldots,y^i_N \right\}"/>. We note that this
-estimation has no meaning unless <img class="math" src="../../_images/math/2016f3d7992ee3ccf21615117c187ace9e1bca47.svg" alt="1/N \leq \alpha \leq 1-1/N"/>. For
-example, if <img class="math" src="../../_images/math/9919707eddd1b13f8c284ae0fc06c4b47f385404.svg" alt="N=100"/>, one can only consider values of a to be
+<p>where <img class="math" src="../../_images/math/18559cec0565d728c0d6458d77f5b9a5fc3ac0a1.svg" alt="[N\alpha]"/> denotes the integral part of
+<img class="math" src="../../_images/math/fd488fd2b4f779882ebf6ac2e84bdce79b8e27f0.svg" alt="N\alpha"/>.</p>
+<p>For example, if <img class="math" src="../../_images/math/b2645d0d36068b2aa601163cbbfc2372d340ff70.svg" alt="N=100"/> and <img class="math" src="../../_images/math/88baf7bbe187d8c87af840abba53ca80b587734d.svg" alt="\alpha = 0.95"/>,
+<img class="math" src="../../_images/math/ff53c642561c2fc249ad1a2f8e49d1ccecc464e1.svg" alt="\widehat{q}_Z(0.95)"/> is equal to <img class="math" src="../../_images/math/1226cc885edbdca4483a161ab5715b44e1e7e2d1.svg" alt="y^{(96)}"/>, which is the
+<img class="math" src="../../_images/math/38867eb64ad514b609bf249fc984564686df9328.svg" alt="5^\textrm{th}"/> largest value of the sample
+<img class="math" src="../../_images/math/fb3b8b4b247f620eec59629be88d39a915130046.svg" alt="\left\{ y^i_1,\ldots,y^i_N \right\}"/>. We note that this
+estimation has no meaning unless <img class="math" src="../../_images/math/da162274029475b6d4989f59e6e35d70d7c807e3.svg" alt="1/N \leq \alpha \leq 1-1/N"/>. For
+example, if <img class="math" src="../../_images/math/b2645d0d36068b2aa601163cbbfc2372d340ff70.svg" alt="N=100"/>, one can only consider values of a to be
 between 1% and 99%.</p>
 <p>It is also possible to calculate an upper limit for the quantile with a
-confidence level <img class="math" src="../../_images/math/14af7a5e31ce522938ba14519ad11a0412b02516.svg" alt="\beta"/> chosen by the user; one can then be sure
-with a <img class="math" src="../../_images/math/14af7a5e31ce522938ba14519ad11a0412b02516.svg" alt="\beta"/> level of confidence that the real value of
-<img class="math" src="../../_images/math/7f0149b08f1ab0dceb21342fc1c94189f15c6589.svg" alt="q_{Y^i}(\alpha))"/> is less than or equal to
-<img class="math" src="../../_images/math/70daba0de5ec430351e95423707bf5ec6591af95.svg" alt="\widehat{q}_{Y^i}(\alpha)_{\sup}"/>:</p>
+confidence level <img class="math" src="../../_images/math/5a519ff21b7afd2a20b1dc119bfcd9e5ad50441f.svg" alt="\beta"/> chosen by the user; one can then be sure
+with a <img class="math" src="../../_images/math/5a519ff21b7afd2a20b1dc119bfcd9e5ad50441f.svg" alt="\beta"/> level of confidence that the real value of
+<img class="math" src="../../_images/math/74bce5dcafaede1a7216e962b3057f501e31f23b.svg" alt="q_{Y^i}(\alpha))"/> is less than or equal to
+<img class="math" src="../../_images/math/615a6556cc3e437beffbd5fc52c1aa3737e53d25.svg" alt="\widehat{q}_{Y^i}(\alpha)_{\sup}"/>:</p>
 <div class="math">
-<p><img src="../../_images/math/1e68cd4dbd3994874110569eb4b6a8cce20fe1e7.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/c104744b8b68a7da7ae7452c7d46fcc58d7f090b.svg" alt="\begin{aligned}
     \Prob{q_{Y^i}(\alpha) \leq \widehat{q}_{Y^i}(\alpha)_{\sup}} = \beta
   \end{aligned}"/></p>
 </div><p>The most robust method for calculating this upper limit consists of
 taking
-<img class="math" src="../../_images/math/8470eff30b616964644e9908fbe9cd601fe25f79.svg" alt="\widehat{q}_{Y^i}(\alpha)_{\sup} = y^{(j(\alpha,\beta,N))}"/> where
-<img class="math" src="../../_images/math/c670edf685a3fd446f854179d3cbb45855bd2a03.svg" alt="j(\alpha,\beta,N)"/> is an integer between 2 and <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> found by
+<img class="math" src="../../_images/math/33e9144176bd829b6bffb2b554070e12f5b98cd5.svg" alt="\widehat{q}_{Y^i}(\alpha)_{\sup} = y^{(j(\alpha,\beta,N))}"/> where
+<img class="math" src="../../_images/math/b165a9420d168242d2c7f8d5101f9413df00edb5.svg" alt="j(\alpha,\beta,N)"/> is an integer between 2 and <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> found by
 solving the equation:</p>
 <div class="math">
-<p><img src="../../_images/math/b91f9023b5a76def1cb3aa3187b08ccf8db74a33.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/1c9d987e9a43599bb54fab0c6729b8cf04277b2c.svg" alt="\begin{aligned}
     \sum_{k=1}^{j(\alpha,\beta,N) - 1} C^k_N \alpha^k \left( 1-\alpha \right)^{N-k} = \beta
   \end{aligned}"/></p>
 </div><p>A solution to this does not necessarily exist, i.e. there may be no
-integer value for <img class="math" src="../../_images/math/c670edf685a3fd446f854179d3cbb45855bd2a03.svg" alt="j(\alpha,\beta,N)"/> satisfying this equality;
-one can in this case choose the smallest integer <img class="math" src="../../_images/math/f15551bf91890d82beefb15ba7c7632e63616983.svg" alt="j"/> such that:</p>
+integer value for <img class="math" src="../../_images/math/b165a9420d168242d2c7f8d5101f9413df00edb5.svg" alt="j(\alpha,\beta,N)"/> satisfying this equality;
+one can in this case choose the smallest integer <img class="math" src="../../_images/math/7b7a508058b13846a869ce6ef969e6b797f7b946.svg" alt="j"/> such that:</p>
 <div class="math">
-<p><img src="../../_images/math/12c7977f7cf459604e7e01d2d7babba7fe562b82.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/e49178dc52ae79040370693ae3aaa690dcebe5bb.svg" alt="\begin{aligned}
     \sum_{k=1}^{j(\alpha,\beta,N) - 1} C^k_N \alpha^k \left( 1-\alpha \right)^{N-k} &gt; \beta
   \end{aligned}"/></p>
 </div><p>which ensures that
-<img class="math" src="../../_images/math/44079ce07b123d21e189dbb221830b31de34e3f3.svg" alt="\Prob{q_{Y^i}(\alpha) \leq \widehat{q}_{Y^i}(\alpha)_{\sup}} &gt; \beta"/>;
+<img class="math" src="../../_images/math/e12f48e41e1151a6c2ef76281da447c8c199a20c.svg" alt="\Prob{q_{Y^i}(\alpha) \leq \widehat{q}_{Y^i}(\alpha)_{\sup}} &gt; \beta"/>;
 in other words, the level of confidence of the quantile estimation is
 greater than that initially required.</p>
 <p>This formula of the confidence interval can be used in two ways:</p>
 <ul class="simple">
-<li>either directly to determine <img class="math" src="../../_images/math/c670edf685a3fd446f854179d3cbb45855bd2a03.svg" alt="j(\alpha,\beta,N)"/> for the values
-<img class="math" src="../../_images/math/910d5326cc054c96350075bb2b10be828f61b14a.svg" alt="\alpha,\beta,N"/> chosen by the user,</li>
-<li>or in reverse to determine the number <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> of simulations to be
-carried out for the values <img class="math" src="../../_images/math/dde6189335f9422ddc90fe41699c83ee48a28fac.svg" alt="\alpha,\beta"/> and
-<img class="math" src="../../_images/math/c670edf685a3fd446f854179d3cbb45855bd2a03.svg" alt="j(\alpha,\beta,N)"/> chosen by the user; this is known as Wilks’
+<li>either directly to determine <img class="math" src="../../_images/math/b165a9420d168242d2c7f8d5101f9413df00edb5.svg" alt="j(\alpha,\beta,N)"/> for the values
+<img class="math" src="../../_images/math/b321936443e3b7476144b4f2429c69e70d2626a0.svg" alt="\alpha,\beta,N"/> chosen by the user,</li>
+<li>or in reverse to determine the number <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> of simulations to be
+carried out for the values <img class="math" src="../../_images/math/447d6bce14523fcdfbc9a9aa02c0a87ec4883d45.svg" alt="\alpha,\beta"/> and
+<img class="math" src="../../_images/math/b165a9420d168242d2c7f8d5101f9413df00edb5.svg" alt="j(\alpha,\beta,N)"/> chosen by the user; this is known as Wilks’
 formula.</li>
 </ul>
-<p>For example for <img class="math" src="../../_images/math/eb235ff5ef878e9779e65e0aed24fde64d3e8113.svg" alt="\alpha = \beta = 95\%"/>, we take <img class="math" src="../../_images/math/b948d2f3ba2f8faa719d34b0b36ae41f1f535e51.svg" alt="j=59"/> with
-<img class="math" src="../../_images/math/656f2d8bd42bc4535cf8b9dacb0c22ff604bd29a.svg" alt="N = 59"/> simulations (that is the maximum value out of 59 samples)
-or else <img class="math" src="../../_images/math/d19aff9b13fa63a32cdf2d06a4123db34090a7e0.svg" alt="j = 92"/> with <img class="math" src="../../_images/math/ab6fa5bddba2ffb3ff501225fd15570d471edc8f.svg" alt="N = 93"/> simulations (that is the
-second largest result out of the 93 selections). For values of <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/>
-between <img class="math" src="../../_images/math/631deb61daa10d3c64a007a3c6da1a44001ef8d5.svg" alt="59"/> and <img class="math" src="../../_images/math/22dd1e400ba8e4237e0d517fb875229c431884bb.svg" alt="92"/>, the upper limit is the maximum value
+<p>For example for <img class="math" src="../../_images/math/d22a0240886c8f475f9cec566a534f58c2d52593.svg" alt="\alpha = \beta = 95\%"/>, we take <img class="math" src="../../_images/math/a2552a243d941b31ed5b9de3a55898979b7d5f1f.svg" alt="j=59"/> with
+<img class="math" src="../../_images/math/08edfc725c7de7b8ba642747b49d16ce30c0fa1f.svg" alt="N = 59"/> simulations (that is the maximum value out of 59 samples)
+or else <img class="math" src="../../_images/math/c99f29eb38e62f3fb48e4f686b26b379fbf18c92.svg" alt="j = 92"/> with <img class="math" src="../../_images/math/c01ee2271c050beb68a24abf6ae7f2e6c00af7c8.svg" alt="N = 93"/> simulations (that is the
+second largest result out of the 93 selections). For values of <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/>
+between <img class="math" src="../../_images/math/62530c818f91998f1c2aceb164cf3521b0dcb2f8.svg" alt="59"/> and <img class="math" src="../../_images/math/36bf49932f1b5c9c61e755249c149297aa600ad7.svg" alt="92"/>, the upper limit is the maximum value
 of the sample. The following tabular presents the whole results for
-<img class="math" src="../../_images/math/5671c6488e7af6d736b0bf0b0b6e097e12d97f50.svg" alt="N \leq 1000"/>, still for <img class="math" src="../../_images/math/eb235ff5ef878e9779e65e0aed24fde64d3e8113.svg" alt="\alpha = \beta = 95\%"/>.</p>
+<img class="math" src="../../_images/math/7a746c5519d3d40f24472937a95a2accd309c5c9.svg" alt="N \leq 1000"/>, still for <img class="math" src="../../_images/math/d22a0240886c8f475f9cec566a534f58c2d52593.svg" alt="\alpha = \beta = 95\%"/>.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="14%" />
@@ -190,7 +190,7 @@ of the sample. The following tabular presents the whole results for
 <col width="41%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head"><img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/></th>
+<tr class="row-odd"><th class="head"><img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/></th>
 <th class="head">Rank of the upper bound of the quantile</th>
 <th class="head">Rank of the empirical quantile</th>
 </tr>
@@ -354,8 +354,8 @@ of the sample. The following tabular presents the whole results for
 </tr>
 </tbody>
 </table>
-<p><img class="math" src="../../_images/math/efad6c92025247e9bd609563ab180966d4eae61c.svg" alt="\widehat{q}_{Y^i}(\alpha)"/> is often called the “empirical
-<img class="math" src="../../_images/math/7b7ebf7e62696ba8c12562a84512553143e94b56.svg" alt="\alpha"/>-quantile” for the variable <img class="math" src="../../_images/math/a2519f52dedce3769e2b3ee8d181344a66bd8ef1.svg" alt="{Y^i}"/>.</p>
+<p><img class="math" src="../../_images/math/9d6b0402c6b3d943b83be0aa5297d861226f633c.svg" alt="\widehat{q}_{Y^i}(\alpha)"/> is often called the “empirical
+<img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>-quantile” for the variable <img class="math" src="../../_images/math/15ee8a0e4102327c851ec3b06720eb64ad886d02.svg" alt="{Y^i}"/>.</p>
 <div class="topic">
 <p class="topic-title first">API:</p>
 <ul class="simple">
@@ -404,8 +404,8 @@ of the sample. The following tabular presents the whole results for
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>

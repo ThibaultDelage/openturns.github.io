@@ -106,33 +106,33 @@
 <dd><p>Sensitivity analysis.</p>
 <p class="rubric">Notes</p>
 <p>This method is concerned with analyzing the influence the random vector
-<img class="math" src="../../_images/math/454aeaf173479e8acf837008684513b404cf6a93.svg" alt="\vect{X} = \left( X^1, \ldots, X^{n_X} \right)"/> has on a random variable
-<img class="math" src="../../_images/math/903d33ba5ddf7a9f55f9b14b9fb128100fdf5398.svg" alt="Y^k"/> which is being studied for uncertainty (see also <a class="reference internal" href="../../bibliography.html#sobol1993" id="id1">[Sobol1993]</a>).</p>
-<p>Here we attempt to evaluate the part of variance of <img class="math" src="../../_images/math/903d33ba5ddf7a9f55f9b14b9fb128100fdf5398.svg" alt="Y^k"/> due to the different components <img class="math" src="../../_images/math/75fcbfff0e70987cadf22f956f5908b9a08798bc.svg" alt="X^i"/>.</p>
-<p>We denote G the physical model such as <img class="math" src="../../_images/math/2e7adbaad03df0b6eeb8ca2e97add2a4e68f5e77.svg" alt="\vect{Y}=G(\vect{X})"/>. Let us consider first the case where <img class="math" src="../../_images/math/b4d1a67d55d68c3f0afdabbb41f86fb00c03dfb5.svg" alt="\vect{Y}"/> is of dimension 1.</p>
-<p>The objective here is to develop the variability of the random variable <img class="math" src="../../_images/math/b4d1a67d55d68c3f0afdabbb41f86fb00c03dfb5.svg" alt="\vect{Y}"/> as function of <img class="math" src="../../_images/math/454aeaf173479e8acf837008684513b404cf6a93.svg" alt="\vect{X} = \left( X^1, \ldots, X^{n_X} \right)"/>. Using the Hoeffding decomposition, we got:</p>
+<img class="math" src="../../_images/math/80af8341bb6e5478ec18577873f30d09985ad9e6.svg" alt="\vect{X} = \left( X^1, \ldots, X^{n_X} \right)"/> has on a random variable
+<img class="math" src="../../_images/math/a9e3969737df316a7363485bf3401ba7743d1f6f.svg" alt="Y^k"/> which is being studied for uncertainty (see also <a class="reference internal" href="../../bibliography.html#sobol1993" id="id1">[Sobol1993]</a>).</p>
+<p>Here we attempt to evaluate the part of variance of <img class="math" src="../../_images/math/a9e3969737df316a7363485bf3401ba7743d1f6f.svg" alt="Y^k"/> due to the different components <img class="math" src="../../_images/math/872e7272798823842a1309501c89acd170652ea8.svg" alt="X^i"/>.</p>
+<p>We denote G the physical model such as <img class="math" src="../../_images/math/ce7c2744b7bd324e419024811e0662b015788ad6.svg" alt="\vect{Y}=G(\vect{X})"/>. Let us consider first the case where <img class="math" src="../../_images/math/1ca0e315ae4eaf246041889d6a7ed57680d05c35.svg" alt="\vect{Y}"/> is of dimension 1.</p>
+<p>The objective here is to develop the variability of the random variable <img class="math" src="../../_images/math/1ca0e315ae4eaf246041889d6a7ed57680d05c35.svg" alt="\vect{Y}"/> as function of <img class="math" src="../../_images/math/80af8341bb6e5478ec18577873f30d09985ad9e6.svg" alt="\vect{X} = \left( X^1, \ldots, X^{n_X} \right)"/>. Using the Hoeffding decomposition, we got:</p>
 <div class="math">
-<p><img src="../../_images/math/9847875311911f2308485ba08af1d4d4278e2a88.svg" alt="\Var{\vect{Y}} = \sum_{i=1}^{n_X} V_i + \sum_{i&lt;j} V_{i,j} + \sum_{i&lt;k&lt;j} V_{i,j,k} + \cdots + V_{1,2,..,n_X}"/></p>
+<p><img src="../../_images/math/66fc85f4b2b68ff3b0445cc6bb14e80d6bc2352f.svg" alt="\Var{\vect{Y}} = \sum_{i=1}^{n_X} V_i + \sum_{i&lt;j} V_{i,j} + \sum_{i&lt;k&lt;j} V_{i,j,k} + \cdots + V_{1,2,..,n_X}"/></p>
 </div><p>where :</p>
-<p><img class="math" src="../../_images/math/44d31c5cb84ac07e171de78bc57db62c9b614153.svg" alt="V_i = \Var{\Expect{ Y \vert X_i}}"/> and <img class="math" src="../../_images/math/f76a043b66c94ebdc36c04e4bc8d39af3069a6ea.svg" alt="V_{i,j} = \Var{\Expect{ Y \vert X_i, X_j}} - V_i - V_j"/>. Using the previous decomposition, it follows that sensitivity indices are defined as follow:</p>
+<p><img class="math" src="../../_images/math/efd6d1cf3cf6cbf94859e30d71c799e4f2eda82a.svg" alt="V_i = \Var{\Expect{ Y \vert X_i}}"/> and <img class="math" src="../../_images/math/089f733613d360058797ce92d80673afc7f2ad57.svg" alt="V_{i,j} = \Var{\Expect{ Y \vert X_i, X_j}} - V_i - V_j"/>. Using the previous decomposition, it follows that sensitivity indices are defined as follow:</p>
 <div class="math">
-<p><img src="../../_images/math/f71cac6094b56e5b3778773aac27ba8c33b02a26.svg" alt="\begin{array}{ccc}
+<p><img src="../../_images/math/c446116e2d0cf6ec64f5a1f77893de23a53adf54.svg" alt="\begin{array}{ccc}
  S_i &amp; = &amp; \frac{V_i}{\Var{\vect{Y}}} \\
  S_{i,j} &amp; = &amp; \frac{V_{i,j}}{\Var{\vect{Y}}}
 \end{array}"/></p>
-</div><p><img class="math" src="../../_images/math/1274fde363fbe4d58904851cde82dc2d76baeb23.svg" alt="(S_i)"/> are the first order sensitivity indices and measure the impact of <img class="math" src="../../_images/math/138f39d0c7d18f6de494e85102efc4d65d3c5f0d.svg" alt="X_i"/> in the variance <img class="math" src="../../_images/math/7f50297188e3912f3a50cf36ad55849b9812d604.svg" alt="\Var{\vect{Y}}"/>,
-<img class="math" src="../../_images/math/533df12c1ab256c2e9f84d91b841116c3d855d9a.svg" alt="(S_{i,j})"/> are the second order sensitivity indices and measure the impact of the interaction of <img class="math" src="../../_images/math/138f39d0c7d18f6de494e85102efc4d65d3c5f0d.svg" alt="X_i"/> and <img class="math" src="../../_images/math/036426c97fdf739a76de585545c6af69a7a072c3.svg" alt="X_j"/> in the variance <img class="math" src="../../_images/math/7f50297188e3912f3a50cf36ad55849b9812d604.svg" alt="\Var{\vect{Y}}"/>.</p>
-<p>When <img class="math" src="../../_images/math/7ef77734c888c0f5516667db4ebd01677a4099b9.svg" alt="n_X &gt;&gt; 1"/>, we use total sensitivity indices <img class="math" src="../../_images/math/a89a47d71d4537fb5bb0526ad012dd5e93926f89.svg" alt="ST_i"/>, which is defined as the sum of all indices that count the i-th variable:</p>
+</div><p><img class="math" src="../../_images/math/ac0764373cbb6337e5401b79fdce94eccc3e9ec1.svg" alt="(S_i)"/> are the first order sensitivity indices and measure the impact of <img class="math" src="../../_images/math/b4350659c07de08817a1e30229c7e68f8d5818a5.svg" alt="X_i"/> in the variance <img class="math" src="../../_images/math/609e745a3a094f901a12ea8306f9be7bd6610fa0.svg" alt="\Var{\vect{Y}}"/>,
+<img class="math" src="../../_images/math/93d6b233638b1132bf75c2af75054f3e348e1b49.svg" alt="(S_{i,j})"/> are the second order sensitivity indices and measure the impact of the interaction of <img class="math" src="../../_images/math/b4350659c07de08817a1e30229c7e68f8d5818a5.svg" alt="X_i"/> and <img class="math" src="../../_images/math/e12b2499501a290b41cf9788f8ac4d15a85d21ff.svg" alt="X_j"/> in the variance <img class="math" src="../../_images/math/609e745a3a094f901a12ea8306f9be7bd6610fa0.svg" alt="\Var{\vect{Y}}"/>.</p>
+<p>When <img class="math" src="../../_images/math/fdad104d4efd7cb50176227c259ee5a923340565.svg" alt="n_X &gt;&gt; 1"/>, we use total sensitivity indices <img class="math" src="../../_images/math/f0d9030062e91f571267c455326635bc3b6a095f.svg" alt="ST_i"/>, which is defined as the sum of all indices that count the i-th variable:</p>
 <div class="math">
-<p><img src="../../_images/math/246b44afc10849d34890640d36270522e30b6e5c.svg" alt="ST_i =  1 - \frac{V_{-i}}{\Var{\vect{Y}}} = \frac{VT_i}{\Var{\vect{Y}}}, \forall\ i\in(1,2,...,n_X)"/></p>
-</div><p>where <img class="math" src="../../_images/math/bd1584e560bb9af663f14930c2cfd839611d04ce.svg" alt="V_{-i}"/> is the part of variance of <img class="math" src="../../_images/math/7f50297188e3912f3a50cf36ad55849b9812d604.svg" alt="\Var{\vect{Y}}"/> that do not countain the i-th variable.</p>
+<p><img src="../../_images/math/618007922258f67067897783b4347d47cbc8d4b8.svg" alt="ST_i =  1 - \frac{V_{-i}}{\Var{\vect{Y}}} = \frac{VT_i}{\Var{\vect{Y}}}, \forall\ i\in(1,2,...,n_X)"/></p>
+</div><p>where <img class="math" src="../../_images/math/3616b35623c484b27d8381f8fed427d3b29a89ca.svg" alt="V_{-i}"/> is the part of variance of <img class="math" src="../../_images/math/609e745a3a094f901a12ea8306f9be7bd6610fa0.svg" alt="\Var{\vect{Y}}"/> that do not countain the i-th variable.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>In practice, to estimate these quantities, Sobol proposes to use numerical methods that rely on the two independent realizations of the random vector <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/>.
+<p>In practice, to estimate these quantities, Sobol proposes to use numerical methods that rely on the two independent realizations of the random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>.
 If we consider <cite>A</cite> and <cite>B</cite> two independent samples (of size <cite>n</cite>) of the previous random vector:</p>
 <div class="math">
-<p><img src="../../_images/math/17d2f2887536ba514804ecebcfec4906c755d4ec.svg" alt="A = \left(
+<p><img src="../../_images/math/9cf9adfdf854340395be6cb58e540d178e96779b.svg" alt="A = \left(
 \begin{array}{cccc}
 a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1, n_X} \\
 a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2, n_X} \\
@@ -148,9 +148,9 @@ b_{n,1} &amp; b_{1,2} &amp; \cdots &amp; b_{n, n_X}
 \end{array}
 \right)"/></p>
 </div><p>Each line is a realization of the random vector. The purpose is to mix these two samples to get an estimate of the sensitivities.</p>
-<p><cite>Sobol</cite> method require respectively <img class="math" src="../../_images/math/722f739de642d7ea787488a11c862cba757f668e.svg" alt="C^i"/> and <img class="math" src="../../_images/math/cb2dd94d666129c9055d448260342ca34c3d43aa.svg" alt="D^{i,j}"/> sample designs for the evaluation of first order (respectively second order) sensitivity indices. These are defined as hereafter:</p>
+<p><cite>Sobol</cite> method require respectively <img class="math" src="../../_images/math/a1443215e8253f17b1529bf1159b3878552cc13b.svg" alt="C^i"/> and <img class="math" src="../../_images/math/798c05a6bd1874f11451f1c72aa2b07f9029c1cf.svg" alt="D^{i,j}"/> sample designs for the evaluation of first order (respectively second order) sensitivity indices. These are defined as hereafter:</p>
 <div class="math">
-<p><img src="../../_images/math/eb079abe1bcd32b02ffd1c26518891c9508668ff.svg" alt="C^i = \left(
+<p><img src="../../_images/math/0e6316514e94dfa955bfa2d1764f69d99bde0bd1.svg" alt="C^i = \left(
 \begin{array}{cccccc}
 b_{1,1} &amp; b_{1,2} &amp; \cdots &amp; a_{1,i} &amp; \cdots &amp; b_{1, n_X} \\
 b_{2,1} &amp; b_{2,2} &amp; \cdots &amp; a_{2,i} &amp; \cdots &amp; b_{2, n_X} \\
@@ -165,17 +165,17 @@ b_{2,1} &amp; b_{2,2} &amp; \cdots &amp; a_{2,i} &amp; \cdots &amp; a_{2,j} &amp
 b_{n,1} &amp; b_{n,2} &amp; \cdots &amp; a_{n,i} &amp; \cdots &amp; a_{n,j} &amp; \cdots &amp; b_{n, n_X} \\
 \end{array}
 \right)"/></p>
-</div><p>It follows that <img class="math" src="../../_images/math/a04a2adea22c76b97500204e7f44a80b96ca553c.svg" alt="V_{i}"/> and <img class="math" src="../../_images/math/2a307d6436710aada6e2ed348f66de07d4f9ce68.svg" alt="V_{i,j}"/> terms are defined as follow:</p>
+</div><p>It follows that <img class="math" src="../../_images/math/e314e70cf4083dc90eeb3e27cf02b95521c97f31.svg" alt="V_{i}"/> and <img class="math" src="../../_images/math/f9e83c25ecde0ee22b39067c10062f02b4dbd10b.svg" alt="V_{i,j}"/> terms are defined as follow:</p>
 <div class="math">
-<p><img src="../../_images/math/e29e2a1f549ce32801eb513bd00460040f992876.svg" alt="\begin{array}{ccc}
+<p><img src="../../_images/math/f426941d50aea54a20ab402f87dd904b36f3afeb.svg" alt="\begin{array}{ccc}
  V_i &amp; = &amp; \frac{1}{n} \sum_{k=1}^{n} G(A_k) G(C_k) - V_i - V_j - G_0^2 \\
  V_{i,j} &amp; = &amp; \frac{1}{n} \sum_{k=1}^{n} G(A_k) G(D_k) - G_0^2 \\
  G_0 &amp; = &amp; \frac{1}{n} \sum_{k=1}^{n} G(A_k)
 \end{array}"/></p>
 </div><p>The implemented second order indices use this formula.</p>
-<p>The major methods (<cite>Saltelli</cite>, <cite>Jansen</cite>, <cite>Mauntz-Kucherenko</cite>, <cite>Martinez</cite>) use the <img class="math" src="../../_images/math/a24ee0177a634a9c8cffae72194d9b064e5805a4.svg" alt="E^i"/> matrix to compute the indices (first order and total order). This matrix is defined as follows:</p>
+<p>The major methods (<cite>Saltelli</cite>, <cite>Jansen</cite>, <cite>Mauntz-Kucherenko</cite>, <cite>Martinez</cite>) use the <img class="math" src="../../_images/math/43bb9e53c9184abc9c932e9a096c6bc2764fdc77.svg" alt="E^i"/> matrix to compute the indices (first order and total order). This matrix is defined as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/868c9a93bc9eaa7b64f9b49db78f13eedf12fa9f.svg" alt="E^i = \left(
+<p><img src="../../_images/math/d644309718858388e3f965bf8f1f7224a8bd57f2.svg" alt="E^i = \left(
 \begin{array}{cccccc}
 a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; b_{1,i} &amp; \cdots &amp; a_{1, n_X} \\
 a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; b_{2,i} &amp; \cdots &amp; a_{2, n_X} \\
@@ -195,7 +195,7 @@ a_{n,1} &amp; a_{1,2} &amp; \cdots &amp; b_{n,i} &amp; \cdots &amp; a_{n, n_X}
 </dl>
 <p>For multivariate outputs (see <a class="reference internal" href="../../bibliography.html#gamboa2013" id="id2">[Gamboa2013]</a>), aggregate indices can be computed thanks to the <cite>getAggregatedFirstOrderIndices</cite> and <cite>getAggregatedTotalOrderIndices</cite>. Such indices write as follow:</p>
 <div class="math">
-<p><img src="../../_images/math/fdcff959b45ec8ae1539b1608cd6aeb45cd0cb13.svg" alt="\begin{array}{ccc}
+<p><img src="../../_images/math/3f8524d85e0dc1021ad352489dd25bbda1186e17.svg" alt="\begin{array}{ccc}
  S_i &amp; = &amp; \frac{ \sum_{k=1}^{q} V_{i}^{(k)} }{ \sum_{k=1}^{q} \Var{Y_k} }  \\
  S_{i,j} &amp; = &amp; \frac{ \sum_{k=1}^{q} V_{i,j}^{(k)} }{ \sum_{k=1}^{q} \Var{Y_k} }  \\
  ST_i &amp; = &amp; \frac{ \sum_{k=1}^{q} VT_{i}^{(k)} }{ \sum_{k=1}^{q} \Var{Y_k} }
@@ -220,7 +220,7 @@ The confidence level is set by <cite>setConfidenceLevel</cite>
 and is initialized by the <cite>SobolIndicesAlgorithm-DefaultConfidenceLevel</cite> resourcemap key.</p>
 <p>Also note that for numerical stability reasons the ouputs are centered before indices estimation:</p>
 <div class="math">
-<p><img src="../../_images/math/af67b5c497fd7f98592444858277b54798a18982.svg" alt="Y_k = Y_k - \Eset(Y_k)"/></p>
+<p><img src="../../_images/math/18622fa8fd584872229e1049b2fae5ee01232a5f.svg" alt="Y_k = Y_k - \Eset(Y_k)"/></p>
 </div><p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -455,7 +455,7 @@ the graph includes confidence interval plots in the first usage.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
-<dd><p class="first last">Index of the marginal of the function, equals to <img class="math" src="../../_images/math/9bcfedc969b8fed4016fbc89e2dadf00da6561b9.svg" alt="0"/> by default.</p>
+<dd><p class="first last">Index of the marginal of the function, equals to <img class="math" src="../../_images/math/6770158f1fa6fb569a1764a8180650d5cfcea95c.svg" alt="0"/> by default.</p>
 </dd>
 </dl>
 </td>
@@ -577,7 +577,7 @@ Computed marginal by marginal (not from the joint distribution).</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
-<dd><p class="first last">Index of the marginal of the function, equals to <img class="math" src="../../_images/math/9bcfedc969b8fed4016fbc89e2dadf00da6561b9.svg" alt="0"/> by default.</p>
+<dd><p class="first last">Index of the marginal of the function, equals to <img class="math" src="../../_images/math/6770158f1fa6fb569a1764a8180650d5cfcea95c.svg" alt="0"/> by default.</p>
 </dd>
 </dl>
 </td>
@@ -603,7 +603,7 @@ Computed marginal by marginal (not from the joint distribution).</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
-<dd><p class="first last">Index of the marginal of the function, equals to <img class="math" src="../../_images/math/9bcfedc969b8fed4016fbc89e2dadf00da6561b9.svg" alt="0"/> by default.</p>
+<dd><p class="first last">Index of the marginal of the function, equals to <img class="math" src="../../_images/math/6770158f1fa6fb569a1764a8180650d5cfcea95c.svg" alt="0"/> by default.</p>
 </dd>
 </dl>
 </td>
@@ -785,8 +785,8 @@ Computed marginal by marginal (not from the joint distribution).</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>

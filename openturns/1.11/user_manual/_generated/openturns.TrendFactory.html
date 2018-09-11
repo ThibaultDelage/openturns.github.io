@@ -127,14 +127,14 @@
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>A multivariate stochastic  process <img class="math" src="../../_images/math/6559e71e678128cf536c83203d725a540b2a8569.svg" alt="X: \Omega \times \cD \rightarrow \Rset^d"/> of dimension <em>d</em> where <img class="math" src="../../_images/math/3d7e1160d7e53256036e975e1957c3e2bde7847f.svg" alt="\cD \in \Rset^n"/> can write as the sum of a trend function <img class="math" src="../../_images/math/0e99038af92b46df6ce130038292cdea323718d2.svg" alt="f_{trend}: \Rset^n \rightarrow \Rset^d"/> and a stationary multivariate stochastic process <img class="math" src="../../_images/math/34b581bc75106f8def3b7f10c0747c1be25d6b7b.svg" alt="X_{stat}: \Omega \times \cD \rightarrow \Rset^d"/> of dimension <em>d</em> as follows:</p>
+<p>A multivariate stochastic  process <img class="math" src="../../_images/math/0e1d7c37e2cb3c72888b3b716e0b4825fffd0467.svg" alt="X: \Omega \times \cD \rightarrow \Rset^d"/> of dimension <em>d</em> where <img class="math" src="../../_images/math/2d98a1790a94d717f54c99f9d29f71d8035ed993.svg" alt="\cD \in \Rset^n"/> can write as the sum of a trend function <img class="math" src="../../_images/math/5dffc8382b70213d50c0445d0bd3478e1c4b5a28.svg" alt="f_{trend}: \Rset^n \rightarrow \Rset^d"/> and a stationary multivariate stochastic process <img class="math" src="../../_images/math/0713e0971441fe30dbdf18c17823e496c1bbdd4a.svg" alt="X_{stat}: \Omega \times \cD \rightarrow \Rset^d"/> of dimension <em>d</em> as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/7cc527a6b114e39793cad36f2822d81e30535caa.svg" alt="X(\omega,\vect{t}) = X_{stat}(\omega,\vect{t}) + f_{trend}(\vect{t})"/></p>
-</div><p>The  <a class="reference internal" href="#openturns.TrendFactory" title="openturns.TrendFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrendFactory</span></code></a> enables to identify the trend  function <img class="math" src="../../_images/math/74ebdfa02b124990b78083a25a7fc3d1dacea04e.svg" alt="f_{trend}"/> from a given field of the process <em>X</em> and then to remove this last one from the initial field. The resulting field is a realization of the process <img class="math" src="../../_images/math/9d92155bf40f205474b15149d8d6ba978086637e.svg" alt="X_{stat}"/>.</p>
-<p>We consider the functional basis <img class="math" src="../../_images/math/8deab7da2ef569b1130c6401d7f178e3cb49fd5e.svg" alt="\cB = (f_1, f_2, \ldots, f_K)"/> with <img class="math" src="../../_images/math/0c8d0ffc072a0480a3f0d9fe29b0085d860ae4f6.svg" alt="f_j : \Rset^n \longrightarrow \Rset^d"/>. The trend function <img class="math" src="../../_images/math/74ebdfa02b124990b78083a25a7fc3d1dacea04e.svg" alt="f_{trend}"/> writes:</p>
+<p><img src="../../_images/math/2542394b45c51e1553c2c89ca95efdc28f17f770.svg" alt="X(\omega,\vect{t}) = X_{stat}(\omega,\vect{t}) + f_{trend}(\vect{t})"/></p>
+</div><p>The  <a class="reference internal" href="#openturns.TrendFactory" title="openturns.TrendFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrendFactory</span></code></a> enables to identify the trend  function <img class="math" src="../../_images/math/d46ef0f35de076a541f07559515054b0e0b33f5c.svg" alt="f_{trend}"/> from a given field of the process <em>X</em> and then to remove this last one from the initial field. The resulting field is a realization of the process <img class="math" src="../../_images/math/3f1700c612b56c9717fc34a292649511dbe9fd76.svg" alt="X_{stat}"/>.</p>
+<p>We consider the functional basis <img class="math" src="../../_images/math/2408b351ea419fe46b383ce680d2de1840ba905f.svg" alt="\cB = (f_1, f_2, \ldots, f_K)"/> with <img class="math" src="../../_images/math/16b1c809dc0d2d9a80530a378f06bcb04b75a601.svg" alt="f_j : \Rset^n \longrightarrow \Rset^d"/>. The trend function <img class="math" src="../../_images/math/d46ef0f35de076a541f07559515054b0e0b33f5c.svg" alt="f_{trend}"/> writes:</p>
 <div class="math">
-<p><img src="../../_images/math/ae89900baea5cba9efd214829f77a0869719b0ba.svg" alt="f_{trend}(\vect{t}) = \sum_{j=1}^{K} \alpha_j f_j(\vect{t})"/></p>
-</div><p>The coefficients <img class="math" src="../../_images/math/120983787f6bd5d300425bdabde7986cf8307d44.svg" alt="\alpha_j \in \Rset"/> have to be computed. In the case where the number of available data  is of the same ordre as <em>K</em>, the least square system is ill-posed and a  more complex algorithm should be used. Some algorithms combine cross validation techniques and advanced regression strategies, in order to provide the estimation of the  coefficients associated to the best model among the  basis functions (sparse model). For example, we can use the <em>least angle regression</em> (LARS) method for the choice of sparse models.  Then, some fitting algorithms like the <em>leave one out</em>, coupled to the regression strategy, assess the error on the prediction and enable the selection of the best sparse model.</p>
+<p><img src="../../_images/math/4f1bba3f31d1b0148ef43bad318ceec639b5b91a.svg" alt="f_{trend}(\vect{t}) = \sum_{j=1}^{K} \alpha_j f_j(\vect{t})"/></p>
+</div><p>The coefficients <img class="math" src="../../_images/math/aa4bf3545898e412d367b1312f6f380e791ee860.svg" alt="\alpha_j \in \Rset"/> have to be computed. In the case where the number of available data  is of the same ordre as <em>K</em>, the least square system is ill-posed and a  more complex algorithm should be used. Some algorithms combine cross validation techniques and advanced regression strategies, in order to provide the estimation of the  coefficients associated to the best model among the  basis functions (sparse model). For example, we can use the <em>least angle regression</em> (LARS) method for the choice of sparse models.  Then, some fitting algorithms like the <em>leave one out</em>, coupled to the regression strategy, assess the error on the prediction and enable the selection of the best sparse model.</p>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -236,7 +236,7 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myXProcess</span><span class="o">=</span><span class="n">ot</span><span class="o">.</span><span class="n">GaussianProcess</span><span class="p">(</span><span class="n">myCovModel</span><span class="p">,</span> <span class="n">myGrid</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Create a trend function: <img class="math" src="../../_images/math/e08139eb180bdcb179a4a3bb2054f627faf2b0d8.svg" alt="f_{trend} : \Rset \mapsto \Rset"/> where <img class="math" src="../../_images/math/5a028c52c892490caacff209fb09a6d3f71fda35.svg" alt="f_{trend}(t)=1+2t+t^2"/>:</p>
+<p>Create a trend function: <img class="math" src="../../_images/math/7395a1e8f58e0214a1fff9743704c21e8dbd0a25.svg" alt="f_{trend} : \Rset \mapsto \Rset"/> where <img class="math" src="../../_images/math/86d3f7793903912126cb8799d5f1a65ff7e1e6c3.svg" alt="f_{trend}(t)=1+2t+t^2"/>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fTrend</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;t&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;1+2*t+t^2&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fTemp</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">TrendTransform</span><span class="p">(</span><span class="n">fTrend</span><span class="p">)</span>
 </pre></div>
@@ -281,7 +281,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>myBasisSequenceFactory</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../response_surface/_generated/openturns.BasisSequenceFactory.html#openturns.BasisSequenceFactory" title="openturns.BasisSequenceFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasisSequenceFactory</span></code></a></span></dt>
-<dd><p class="first last">The functional basis <img class="math" src="../../_images/math/08081c5ea10f9af27b50acd6a7d16079ce8d8dff.svg" alt="\cB"/>.</p>
+<dd><p class="first last">The functional basis <img class="math" src="../../_images/math/fcd39284de2cbb5532d4e5c0ee155cc064c475b1.svg" alt="\cB"/>.</p>
 </dd>
 </dl>
 </td>
@@ -452,7 +452,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>myBasisSequenceFactory</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../response_surface/_generated/openturns.BasisSequenceFactory.html#openturns.BasisSequenceFactory" title="openturns.BasisSequenceFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasisSequenceFactory</span></code></a></span></dt>
-<dd><p class="first last">The functional basis <img class="math" src="../../_images/math/08081c5ea10f9af27b50acd6a7d16079ce8d8dff.svg" alt="\cB"/>.</p>
+<dd><p class="first last">The functional basis <img class="math" src="../../_images/math/fcd39284de2cbb5532d4e5c0ee155cc064c475b1.svg" alt="\cB"/>.</p>
 </dd>
 </dl>
 </td>
@@ -567,8 +567,8 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>

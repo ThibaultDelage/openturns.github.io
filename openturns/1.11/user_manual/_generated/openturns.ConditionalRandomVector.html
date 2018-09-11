@@ -104,7 +104,7 @@
 <dt id="openturns.ConditionalRandomVector">
 <em class="property">class </em><code class="descname">ConditionalRandomVector</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ConditionalRandomVector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Conditional random vector.</p>
-<p>Helper class for defining the random vector <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/> such that  <img class="math" src="../../_images/math/32db3b977d00f1fb3fe31fa9678da2d32c966425.svg" alt="\vect{X}|\vect{\Theta}"/> follows the distribution <img class="math" src="../../_images/math/a9c3cf55b3b2ea1a902261e7cc7881fd42665b4d.svg" alt="\mathcal{L}_{\vect{X}|\vect{\Theta}}"/>, with <img class="math" src="../../_images/math/39e6d2942932ac9bc30ab7ec9bbdb02c79c8a266.svg" alt="\vect{\Theta}"/> a random vector of dimension the dimension of <img class="math" src="../../_images/math/39e6d2942932ac9bc30ab7ec9bbdb02c79c8a266.svg" alt="\vect{\Theta}"/>.</p>
+<p>Helper class for defining the random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> such that  <img class="math" src="../../_images/math/7420719208363b16e71a930ea1d846fbe591ff46.svg" alt="\vect{X}|\vect{\Theta}"/> follows the distribution <img class="math" src="../../_images/math/f72c6273aaea11938daae05fc1c075e0bb52714f.svg" alt="\mathcal{L}_{\vect{X}|\vect{\Theta}}"/>, with <img class="math" src="../../_images/math/40aa5edc5ed1e489f82a16be022abbc1e2c155e2.svg" alt="\vect{\Theta}"/> a random vector of dimension the dimension of <img class="math" src="../../_images/math/40aa5edc5ed1e489f82a16be022abbc1e2c155e2.svg" alt="\vect{\Theta}"/>.</p>
 <dl class="docutils">
 <dt>Available constructors:</dt>
 <dd>ConditionalRandomVector(<em>conditionedDist, randomParameters</em>)</dd>
@@ -114,9 +114,9 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>conditionedDist</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a>, the distribution of <img class="math" src="../../_images/math/32db3b977d00f1fb3fe31fa9678da2d32c966425.svg" alt="\vect{X}|\vect{\Theta}"/>, whose parameters will be overwritten by <img class="math" src="../../_images/math/39e6d2942932ac9bc30ab7ec9bbdb02c79c8a266.svg" alt="\vect{\Theta}"/>.</span></dt>
+<dt><strong>conditionedDist</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a>, the distribution of <img class="math" src="../../_images/math/7420719208363b16e71a930ea1d846fbe591ff46.svg" alt="\vect{X}|\vect{\Theta}"/>, whose parameters will be overwritten by <img class="math" src="../../_images/math/40aa5edc5ed1e489f82a16be022abbc1e2c155e2.svg" alt="\vect{\Theta}"/>.</span></dt>
 <dd></dd>
-<dt><strong>randomParameters</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a>, the random parameters <img class="math" src="../../_images/math/39e6d2942932ac9bc30ab7ec9bbdb02c79c8a266.svg" alt="\vect{\Theta}"/> of the <cite>conditionedDist</cite> distribution.</span></dt>
+<dt><strong>randomParameters</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a>, the random parameters <img class="math" src="../../_images/math/40aa5edc5ed1e489f82a16be022abbc1e2c155e2.svg" alt="\vect{\Theta}"/> of the <cite>conditionedDist</cite> distribution.</span></dt>
 <dd></dd>
 </dl>
 </td>
@@ -126,8 +126,8 @@
 <p class="rubric">Notes</p>
 <p>Its probability density function is defined as:</p>
 <div class="math">
-<p><img src="../../_images/math/98474114c7acb232789f9ddfa43755ebf4bb6b72.svg" alt="f_{\vect{X}}(\vect{x}) = \int f_{\vect{X}|\vect{\Theta}=\vect{\theta}}(\vect{x}|\vect{\theta}) f_{\vect{\Theta}}(\vect{\theta})\di{\vect{\theta}}"/></p>
-</div><p>with  <img class="math" src="../../_images/math/61b04fa20bd85f8b847d724c4222364e4705dd0b.svg" alt="f_{\vect{X}|\vect{\Theta}=\vect{\theta}}"/> the PDF of the distribution of <img class="math" src="../../_images/math/32db3b977d00f1fb3fe31fa9678da2d32c966425.svg" alt="\vect{X}|\vect{\Theta}"/>, where <img class="math" src="../../_images/math/39e6d2942932ac9bc30ab7ec9bbdb02c79c8a266.svg" alt="\vect{\Theta}"/> has been replaced by <img class="math" src="../../_images/math/2b723f559e8298e535601bd58966d42fe7e1f7a2.svg" alt="\vect{\theta}"/>, <img class="math" src="../../_images/math/de750850ce6c558360be00262b164838c6303384.svg" alt="f_{\vect{\Theta}}"/> the PDF of <img class="math" src="../../_images/math/39e6d2942932ac9bc30ab7ec9bbdb02c79c8a266.svg" alt="\vect{\Theta}"/>.</p>
+<p><img src="../../_images/math/63698f254bb70ada3988069415c9515ae12aa949.svg" alt="f_{\vect{X}}(\vect{x}) = \int f_{\vect{X}|\vect{\Theta}=\vect{\theta}}(\vect{x}|\vect{\theta}) f_{\vect{\Theta}}(\vect{\theta})\di{\vect{\theta}}"/></p>
+</div><p>with  <img class="math" src="../../_images/math/59abfed03ee9d3896ea44061eb6b581c893b1b06.svg" alt="f_{\vect{X}|\vect{\Theta}=\vect{\theta}}"/> the PDF of the distribution of <img class="math" src="../../_images/math/7420719208363b16e71a930ea1d846fbe591ff46.svg" alt="\vect{X}|\vect{\Theta}"/>, where <img class="math" src="../../_images/math/40aa5edc5ed1e489f82a16be022abbc1e2c155e2.svg" alt="\vect{\Theta}"/> has been replaced by <img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/>, <img class="math" src="../../_images/math/03fdfb7301a09e38a2600f2f9565389557ae344d.svg" alt="f_{\vect{\Theta}}"/> the PDF of <img class="math" src="../../_images/math/40aa5edc5ed1e489f82a16be022abbc1e2c155e2.svg" alt="\vect{\Theta}"/>.</p>
 <p>Note that there exist other (quasi) equivalent modellings using a combination of the classes <a class="reference internal" href="openturns.ConditionalDistribution.html#openturns.ConditionalDistribution" title="openturns.ConditionalDistribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConditionalDistribution</span></code></a> and <a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a> (see the Use Cases Guide).</p>
 <p class="rubric">Examples</p>
 <p>Create a random vector:</p>
@@ -179,7 +179,7 @@
 <td>Accessor to the object’s id.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.ConditionalRandomVector.getMarginal" title="openturns.ConditionalRandomVector.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
-<td>Get the random vector corresponding to the <img class="math" src="../../_images/math/ac006054facb099418a40f4c4558f810e894487f.svg" alt="i^{th}"/> marginal component(s).</td>
+<td>Get the random vector corresponding to the <img class="math" src="../../_images/math/9b3fb7e041ddeea31ab9148572d497bf4e51c592.svg" alt="i^{th}"/> marginal component(s).</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.ConditionalRandomVector.getMean" title="openturns.ConditionalRandomVector.getMean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMean</span></code></a>()</td>
 <td>Accessor to the mean of the RandomVector.</td>
@@ -259,9 +259,9 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>antecedent</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a></span></dt>
-<dd><p class="first last">Antecedent RandomVector <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/> in case of a
+<dd><p class="first last">Antecedent RandomVector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> in case of a
 <a class="reference internal" href="openturns.CompositeRandomVector.html#openturns.CompositeRandomVector" title="openturns.CompositeRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompositeRandomVector</span></code></a> such as:
-<img class="math" src="../../_images/math/ac0283b0f07a8464b8d47fd18a296c8a5b8e34be.svg" alt="\vect{Y}=f(\vect{X})"/>.</p>
+<img class="math" src="../../_images/math/d03a7d71be8d4307eb282a16c5b624dffaddd30c.svg" alt="\vect{Y}=f(\vect{X})"/>.</p>
 </dd>
 </dl>
 </td>
@@ -365,7 +365,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>conditionedDistribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a>, the distribution of <img class="math" src="../../_images/math/32cd98156f834e78b372277c7f7ae65f2e6eef81.svg" alt="\vect{X}|\vect{\Theta}=\vect{\theta}"/>, where the parameters <img class="math" src="../../_images/math/2b723f559e8298e535601bd58966d42fe7e1f7a2.svg" alt="\vect{\theta}"/> are equal to the  values used to generate the last realization of <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/>.</span></dt>
+<dt><strong>conditionedDistribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a>, the distribution of <img class="math" src="../../_images/math/1c2dede89e45d5efdb343711ac1a8785a3fe0aa4.svg" alt="\vect{X}|\vect{\Theta}=\vect{\theta}"/>, where the parameters <img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/> are equal to the  values used to generate the last realization of <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>.</span></dt>
 <dd></dd>
 </dl>
 </td>
@@ -404,8 +404,8 @@
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>function</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
 <dd><p class="first last">Function used to define a <a class="reference internal" href="openturns.CompositeRandomVector.html#openturns.CompositeRandomVector" title="openturns.CompositeRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompositeRandomVector</span></code></a> as the
-image through this function of the antecedent <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/>:
-<img class="math" src="../../_images/math/ac0283b0f07a8464b8d47fd18a296c8a5b8e34be.svg" alt="\vect{Y}=f(\vect{X})"/>.</p>
+image through this function of the antecedent <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>:
+<img class="math" src="../../_images/math/d03a7d71be8d4307eb282a16c5b624dffaddd30c.svg" alt="\vect{Y}=f(\vect{X})"/>.</p>
 </dd>
 </dl>
 </td>
@@ -436,14 +436,14 @@ image through this function of the antecedent <img class="math" src="../../_imag
 <dl class="method">
 <dt id="openturns.ConditionalRandomVector.getMarginal">
 <code class="descname">getMarginal</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ConditionalRandomVector.getMarginal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the random vector corresponding to the <img class="math" src="../../_images/math/ac006054facb099418a40f4c4558f810e894487f.svg" alt="i^{th}"/> marginal component(s).</p>
+<dd><p>Get the random vector corresponding to the <img class="math" src="../../_images/math/9b3fb7e041ddeea31ab9148572d497bf4e51c592.svg" alt="i^{th}"/> marginal component(s).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or list of ints, <img class="math" src="../../_images/math/ba7c4a11baccd0b40869c2cd21943d7d89bdd4dc.svg" alt="0\leq i &lt; dim"/></span></dt>
-<dd><p class="first last">Indicates the component(s) concerned. <img class="math" src="../../_images/math/f60934f3275820c172bed673605af8e243cb0f5f.svg" alt="dim"/> is the dimension of the
+<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or list of ints, <img class="math" src="../../_images/math/b7ed5e57cdedb7e21bd33219d4a97b3ee5c3799c.svg" alt="0\leq i &lt; dim"/></span></dt>
+<dd><p class="first last">Indicates the component(s) concerned. <img class="math" src="../../_images/math/209f44e4174733120d691cfa04c667ee359e55a2.svg" alt="dim"/> is the dimension of the
 RandomVector.</p>
 </dd>
 </dl>
@@ -459,14 +459,14 @@ RandomVector.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>Let’s note <img class="math" src="../../_images/math/c527932c1da02fb68ccc3665513d7b7f8c965823.svg" alt="\vect{Y}=\Tr{(Y_1,\dots,Y_n)}"/> a random vector and
-<img class="math" src="../../_images/math/af6589225695f7bb6b5d7236ccb1a6626b557dbe.svg" alt="I \in [1,n]"/> a set of indices. If <img class="math" src="../../_images/math/b4d1a67d55d68c3f0afdabbb41f86fb00c03dfb5.svg" alt="\vect{Y}"/> is a
+<p>Let’s note <img class="math" src="../../_images/math/485c9c6ec82502b05b0ff96d13a493887bab7de6.svg" alt="\vect{Y}=\Tr{(Y_1,\dots,Y_n)}"/> a random vector and
+<img class="math" src="../../_images/math/29656406fed79a275f5b67974c1be77969cce4e0.svg" alt="I \in [1,n]"/> a set of indices. If <img class="math" src="../../_images/math/1ca0e315ae4eaf246041889d6a7ed57680d05c35.svg" alt="\vect{Y}"/> is a
 <a class="reference internal" href="openturns.UsualRandomVector.html#openturns.UsualRandomVector" title="openturns.UsualRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">UsualRandomVector</span></code></a>, the subvector is defined by
-<img class="math" src="../../_images/math/b3197088ff2355e6fb2444bc5a0bc469396ad875.svg" alt="\tilde{\vect{Y}}=\Tr{(Y_i)}_{i \in I}"/>. If <img class="math" src="../../_images/math/b4d1a67d55d68c3f0afdabbb41f86fb00c03dfb5.svg" alt="\vect{Y}"/> is a
+<img class="math" src="../../_images/math/612322495b4fb0e73b1dab321ffd30442ccf6db1.svg" alt="\tilde{\vect{Y}}=\Tr{(Y_i)}_{i \in I}"/>. If <img class="math" src="../../_images/math/1ca0e315ae4eaf246041889d6a7ed57680d05c35.svg" alt="\vect{Y}"/> is a
 <a class="reference internal" href="openturns.CompositeRandomVector.html#openturns.CompositeRandomVector" title="openturns.CompositeRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompositeRandomVector</span></code></a>, defined by
-<img class="math" src="../../_images/math/ac0283b0f07a8464b8d47fd18a296c8a5b8e34be.svg" alt="\vect{Y}=f(\vect{X})"/> with <img class="math" src="../../_images/math/276d7986137f0802496fdb20569f75bf8c069ea6.svg" alt="f=(f_1,\dots,f_n)"/>,
-<img class="math" src="../../_images/math/83826dafd3081c1d1ce50c8fdc59d788f6efcefa.svg" alt="f_i"/> some scalar functions, the subvector is
-<img class="math" src="../../_images/math/1da5b3e29dffa372de603eb0fdcd6c94839b25e9.svg" alt="\tilde{\vect{Y}}=(f_i(\vect{X}))_{i \in I}"/>.</p>
+<img class="math" src="../../_images/math/d03a7d71be8d4307eb282a16c5b624dffaddd30c.svg" alt="\vect{Y}=f(\vect{X})"/> with <img class="math" src="../../_images/math/3157526868df13c93becafa5c1457106e2d015a1.svg" alt="f=(f_1,\dots,f_n)"/>,
+<img class="math" src="../../_images/math/1c080a9ba89af24a6b486e404f32920dbce26778.svg" alt="f_i"/> some scalar functions, the subvector is
+<img class="math" src="../../_images/math/a3bc9857ab79d76aca7f6b30d9f0dc7dba9ea742.svg" alt="\tilde{\vect{Y}}=(f_i(\vect{X}))_{i \in I}"/>.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
@@ -612,7 +612,7 @@ RandomVector.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>randomParameters</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a>, the random parameters <img class="math" src="../../_images/math/39e6d2942932ac9bc30ab7ec9bbdb02c79c8a266.svg" alt="\vect{\Theta}"/>.</span></dt>
+<dt><strong>randomParameters</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a>, the random parameters <img class="math" src="../../_images/math/40aa5edc5ed1e489f82a16be022abbc1e2c155e2.svg" alt="\vect{\Theta}"/>.</span></dt>
 <dd></dd>
 </dl>
 </td>
@@ -667,7 +667,7 @@ event and 0 else).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/e26cbed71c81a6e6eb5eff3066cf42e7be2b89ae.svg" alt="n \geq 0"/></span></dt>
+<dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/f6d84814c3b7367dcf20f4b3a13f2a05e96969d2.svg" alt="n \geq 0"/></span></dt>
 <dd><p class="first last">Number of realizations needed.</p>
 </dd>
 </dl>
@@ -942,8 +942,8 @@ event and 0 else).</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>

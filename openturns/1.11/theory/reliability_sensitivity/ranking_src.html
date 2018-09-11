@@ -97,42 +97,42 @@
   <div class="section" id="uncertainty-ranking-src">
 <span id="ranking-src"></span><h1>Uncertainty ranking: SRC<a class="headerlink" href="#uncertainty-ranking-src" title="Permalink to this headline">¶</a></h1>
 <p>This method deals with analysing the influence the random vector
-<img class="math" src="../../_images/math/8a6a589b116459f8e5cfdf98fa9f1348b44053a7.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/> has on a random
-variable <img class="math" src="../../_images/math/bf40bd80a21130da88ee12f4bae4c61a902e7e96.svg" alt="Y^j"/> which is being studied for uncertainty. Here we
-attempt to measure linear relationships that exist between <img class="math" src="../../_images/math/bf40bd80a21130da88ee12f4bae4c61a902e7e96.svg" alt="Y^j"/>
-and the different components <img class="math" src="../../_images/math/75fcbfff0e70987cadf22f956f5908b9a08798bc.svg" alt="X^i"/>.</p>
+<img class="math" src="../../_images/math/80e79f6f56b23b60f04ee768e0b30ca7f2e735fa.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/> has on a random
+variable <img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/> which is being studied for uncertainty. Here we
+attempt to measure linear relationships that exist between <img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/>
+and the different components <img class="math" src="../../_images/math/872e7272798823842a1309501c89acd170652ea8.svg" alt="X^i"/>.</p>
 <p>The principle of the multiple linear regression model (see for more
 details) consists of attempting to find the function that links the
-variable <img class="math" src="../../_images/math/bf40bd80a21130da88ee12f4bae4c61a902e7e96.svg" alt="Y^j"/> to the <img class="math" src="../../_images/math/ea8888fc3d9783c7f6905388e00cbdd16d4245e1.svg" alt="n_x"/> variables
-<img class="math" src="../../_images/math/2446817f6f06b85dd4398a2fe4a91e055deccfd1.svg" alt="X^1,\ldots,X^{n_X}"/> by means of a linear model:</p>
+variable <img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/> to the <img class="math" src="../../_images/math/600ba2d0b13e7ef072425609cdd84a2cd2de32c4.svg" alt="n_x"/> variables
+<img class="math" src="../../_images/math/f340f8a1c906733b398d6a472009ae52987920fd.svg" alt="X^1,\ldots,X^{n_X}"/> by means of a linear model:</p>
 <div class="math">
-<p><img src="../../_images/math/df3512f39a2254d0b0507c25a424cfb7d5a245f8.svg" alt="Y^j = a_0^j + \sum_{i=1}^{n_X} a_i^j X^i + \varepsilon^j"/></p>
-</div><p>where <img class="math" src="../../_images/math/b9331d5531d650bd8f058cdd18b954fd17f8f0c1.svg" alt="\varepsilon^j"/> describes a random variable with zero mean
-and standard deviation <img class="math" src="../../_images/math/c18cf094d285eea721ac8f415e3f883ecba12d83.svg" alt="\sigma_{\varepsilon}^j"/> independent of the
-input variables <img class="math" src="../../_images/math/75fcbfff0e70987cadf22f956f5908b9a08798bc.svg" alt="X^i"/>. If the random variables
-<img class="math" src="../../_images/math/2446817f6f06b85dd4398a2fe4a91e055deccfd1.svg" alt="X^1,\ldots,X^{n_X}"/> are independent and with finite variance
-<img class="math" src="../../_images/math/864c50d38cfdc77ff81c32bdbf7a60caea263cfc.svg" alt="\Var{X^k} = (\sigma_k)^2"/>, the variance of <img class="math" src="../../_images/math/bf40bd80a21130da88ee12f4bae4c61a902e7e96.svg" alt="Y^j"/> can be
+<p><img src="../../_images/math/07c50e6e4be877fd39be8ee344df6c4bbd18924b.svg" alt="Y^j = a_0^j + \sum_{i=1}^{n_X} a_i^j X^i + \varepsilon^j"/></p>
+</div><p>where <img class="math" src="../../_images/math/08cde2282d1d6bab01143ef525bac2a2d2a93ed1.svg" alt="\varepsilon^j"/> describes a random variable with zero mean
+and standard deviation <img class="math" src="../../_images/math/6543b897e39165dcb38918f69050fcf74d1b8014.svg" alt="\sigma_{\varepsilon}^j"/> independent of the
+input variables <img class="math" src="../../_images/math/872e7272798823842a1309501c89acd170652ea8.svg" alt="X^i"/>. If the random variables
+<img class="math" src="../../_images/math/f340f8a1c906733b398d6a472009ae52987920fd.svg" alt="X^1,\ldots,X^{n_X}"/> are independent and with finite variance
+<img class="math" src="../../_images/math/4cb3f4d8398662909a0db44cb6ef8261bb5b566a.svg" alt="\Var{X^k} = (\sigma_k)^2"/>, the variance of <img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/> can be
 written as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/2514b9d22879292b8b1756efcd3dc75ea5bf1b20.svg" alt="\Var{Y^j} = \sum_{i=1}^n (a_i^j)^2 \Var{X^i} + (\sigma_{\varepsilon}^j)^2"/></p>
+<p><img src="../../_images/math/d5dc09f4763de38a26eac27bee546d03d7df4677.svg" alt="\Var{Y^j} = \sum_{i=1}^n (a_i^j)^2 \Var{X^i} + (\sigma_{\varepsilon}^j)^2"/></p>
 </div><p>The estimators for the regression coefficients
-<img class="math" src="../../_images/math/2bcebef08b512bfdee4066d4d21eb565611ec5a5.svg" alt="a_0^j,\ldots,a_{n_X}^j"/>, and the standard deviation
-<img class="math" src="../../_images/math/949e289d51ca7f00704c4a21d4f801734b9c5c62.svg" alt="\sigma^j"/> are obtained from a sample of
-<img class="math" src="../../_images/math/e2afe13166bb2053290507082601a683c524df84.svg" alt="(Y^j,X^1,\ldots,X^{n_X})"/>. Uncertainty ranking by linear
-regression ranks the <img class="math" src="../../_images/math/75d84d6b32882c83756bbdd4f879c5aa689a5709.svg" alt="n_X"/> variables <img class="math" src="../../_images/math/2bd3cb4370fc359bf55f2e5c8350d6e0303b56df.svg" alt="X^1,\ldots, X^{n_X}"/>
-in terms of the estimated contribution of each <img class="math" src="../../_images/math/64a5b9951dcb82220ab0c7da6e4d80daa9ce884e.svg" alt="X^k"/> to the
-variance of <img class="math" src="../../_images/math/bf40bd80a21130da88ee12f4bae4c61a902e7e96.svg" alt="Y^j"/>:</p>
+<img class="math" src="../../_images/math/eba364472030960124b763ad3ecdea042ef979b8.svg" alt="a_0^j,\ldots,a_{n_X}^j"/>, and the standard deviation
+<img class="math" src="../../_images/math/08e6d621d7b7d3a246b1bfdeba0bbf8c498ced57.svg" alt="\sigma^j"/> are obtained from a sample of
+<img class="math" src="../../_images/math/c3c991cb58b26d042a6e726ede2971f3a51adc90.svg" alt="(Y^j,X^1,\ldots,X^{n_X})"/>. Uncertainty ranking by linear
+regression ranks the <img class="math" src="../../_images/math/4056a1b2001e6226d1044246e6813d2a3c90eb94.svg" alt="n_X"/> variables <img class="math" src="../../_images/math/337263e913a8c81707c4e6226282c906b8298a90.svg" alt="X^1,\ldots, X^{n_X}"/>
+in terms of the estimated contribution of each <img class="math" src="../../_images/math/e173a454ee91e03966eba5b67d8d52cb13d868fd.svg" alt="X^k"/> to the
+variance of <img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/>:</p>
 <div class="math">
-<p><img src="../../_images/math/52614988e24f5940f08f0a8755b6b4d30dd10787.svg" alt="C^j_k = \frac{\displaystyle (a_k^j)^2  \Var{X^k}}{ \Var{Y^j}}"/></p>
+<p><img src="../../_images/math/3305cda34ad957dafcc0bf1469468869ba239b98.svg" alt="C^j_k = \frac{\displaystyle (a_k^j)^2  \Var{X^k}}{ \Var{Y^j}}"/></p>
 </div><p>which is estimated by:</p>
 <div class="math">
-<p><img src="../../_images/math/191540f370c660a47abd861bf8e3da873f61cb19.svg" alt="\widehat{C}^j_k = \frac{\displaystyle (\widehat{a}_k^j)^2 \widehat{\sigma}_k^2}{\displaystyle \sum_{i=1}^{n_X} (a_i^j)^2 \widehat{\sigma}_i^2 + (\widehat{\sigma}_{\varepsilon}^j)^2}"/></p>
-</div><p>where <img class="math" src="../../_images/math/49372c10f67bc9685ba13a63ac8f7ec9229a4c04.svg" alt="\widehat{\sigma}_i"/> describes the empirical standard
+<p><img src="../../_images/math/5c9de82aaa72b92993541ef1b02f6fbc583a75e4.svg" alt="\widehat{C}^j_k = \frac{\displaystyle (\widehat{a}_k^j)^2 \widehat{\sigma}_k^2}{\displaystyle \sum_{i=1}^{n_X} (a_i^j)^2 \widehat{\sigma}_i^2 + (\widehat{\sigma}_{\varepsilon}^j)^2}"/></p>
+</div><p>where <img class="math" src="../../_images/math/7fdfc80c5cd39640703347cf9af8d54fb767da3f.svg" alt="\widehat{\sigma}_i"/> describes the empirical standard
 deviation of the sample of the input variables. This estimated
 contribution is by definition between 0 and 1. The closer it is to 1,
-the greater the impact the variable <img class="math" src="../../_images/math/75fcbfff0e70987cadf22f956f5908b9a08798bc.svg" alt="X^i"/> has on the dispersion of
-<img class="math" src="../../_images/math/bf40bd80a21130da88ee12f4bae4c61a902e7e96.svg" alt="Y^j"/>.</p>
-<p>The contribution to the variance <img class="math" src="../../_images/math/882bbdbc23287daa54c7e0d6b8c3c84b3a668376.svg" alt="C_i"/> is sometimes described in
+the greater the impact the variable <img class="math" src="../../_images/math/872e7272798823842a1309501c89acd170652ea8.svg" alt="X^i"/> has on the dispersion of
+<img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/>.</p>
+<p>The contribution to the variance <img class="math" src="../../_images/math/c9e3102747454a29b2ec9263be5b09e064a7f4cc.svg" alt="C_i"/> is sometimes described in
 the literature as the “importance factor”, because of the similarity
 between this approach to linear regression and the method of cumulative
 variance quadratic which uses the term importance factor.</p>
@@ -184,8 +184,8 @@ variance quadratic which uses the term importance factor.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>

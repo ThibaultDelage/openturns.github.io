@@ -97,55 +97,55 @@
   <div class="section" id="anderson-darling-goodness-of-fit-test">
 <h1>Anderson-Darling goodness-of-fit test<a class="headerlink" href="#anderson-darling-goodness-of-fit-test" title="Permalink to this headline">¶</a></h1>
 <p>This method deals with the modelling of a probability distribution of a
-random vector <img class="math" src="../../_images/math/8a6a589b116459f8e5cfdf98fa9f1348b44053a7.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/>. It
+random vector <img class="math" src="../../_images/math/80e79f6f56b23b60f04ee768e0b30ca7f2e735fa.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/>. It
 seeks to verify the compatibility between a sample of data
-<img class="math" src="../../_images/math/14368272e6fa89920f02f957af809c170e9e057c.svg" alt="\left\{ \vect{x}_1,\vect{x}_2,\ldots,\vect{x}_N \right\}"/> and a
+<img class="math" src="../../_images/math/082e93c078fdee64957edab9a0398b1e519e3df7.svg" alt="\left\{ \vect{x}_1,\vect{x}_2,\ldots,\vect{x}_N \right\}"/> and a
 candidate probability distribution previous chosen. The Anderson-Darling
 Goodness-of-Fit test allows to answer this
-question in the one dimensional case <img class="math" src="../../_images/math/354f241de1a6755e64a57c54ba2f568bf19d3509.svg" alt="n_X =1"/>, and with a
+question in the one dimensional case <img class="math" src="../../_images/math/ee41aa33adbeec8739f7f6d89a85e90e5b967d92.svg" alt="n_X =1"/>, and with a
 continuous distribution. The current version is limited to the case of
 the Normal distribution.</p>
-<p>Let us limit the case to <img class="math" src="../../_images/math/c7b2d0f29e805736ede81ec369b82f8c77263598.svg" alt="n_X = 1"/>. Thus we denote
-<img class="math" src="../../_images/math/961c5afcfc44f17525f09da1ac50220541152b02.svg" alt="\vect{X} = X^1 = X"/>. This goodness-of-fit test is based on the
+<p>Let us limit the case to <img class="math" src="../../_images/math/7d40a8a3cd0555d7c808f27ff9157764ee1c873d.svg" alt="n_X = 1"/>. Thus we denote
+<img class="math" src="../../_images/math/6db54521198df1e2bb8df500025ff5870e706f27.svg" alt="\vect{X} = X^1 = X"/>. This goodness-of-fit test is based on the
 distance between the cumulative distribution function
-<img class="math" src="../../_images/math/7cf0e3f7d6555503544a1dcb1b51bba27fac0691.svg" alt="\widehat{F}_N"/> of the sample
-<img class="math" src="../../_images/math/f745e694a6a384d6b410f8f90d51c5b26737d211.svg" alt="\left\{ x_1,x_2,\ldots,x_N \right\}"/> and that of the
-candidate distribution, denoted <img class="math" src="../../_images/math/72b1d2aef41fdcd967346f450afcbada1bcf8f67.svg" alt="F"/>. This distance is a quadratic
+<img class="math" src="../../_images/math/09f8ce1e64085dee021c9d0a8e56a529700925dc.svg" alt="\widehat{F}_N"/> of the sample
+<img class="math" src="../../_images/math/3528a02600f55302066693ce40ccec720bc3f906.svg" alt="\left\{ x_1,x_2,\ldots,x_N \right\}"/> and that of the
+candidate distribution, denoted <img class="math" src="../../_images/math/08731955d44101ca9a6eca15f1652d7db4138d8e.svg" alt="F"/>. This distance is a quadratic
 type, as in the <a class="reference internal" href="cramer_vonmises_test.html#cramer-vonmises-test"><span class="std std-ref">Cramer-Von Mises test</span></a>,
 but gives more weight to deviations of extreme values:</p>
 <div class="math">
-<p><img src="../../_images/math/1f99057c82ee4724ff9228b2833f244bb341f124.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/64f75045b023063c29a5447ea94c184c05084993.svg" alt="\begin{aligned}
     D = \int^{\infty}_{-\infty} \frac{\displaystyle \left[F\left(x\right) - \widehat{F}_N\left(x\right)\right]^2 }{\displaystyle F(x) \left( 1-F(x) \right) } \, dF(x)
   \end{aligned}"/></p>
-</div><p>With a sample <img class="math" src="../../_images/math/f745e694a6a384d6b410f8f90d51c5b26737d211.svg" alt="\left\{ x_1,x_2,\ldots,x_N \right\}"/>, the distance
+</div><p>With a sample <img class="math" src="../../_images/math/3528a02600f55302066693ce40ccec720bc3f906.svg" alt="\left\{ x_1,x_2,\ldots,x_N \right\}"/>, the distance
 is estimated by:</p>
 <div class="math">
-<p><img src="../../_images/math/97a4fc8b1118e9ce3f6996a95af7b874c00d3921.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/8bca5fdbf582a92432a946f26707582600a0558f.svg" alt="\begin{aligned}
     \widehat{D}_N = -N-\sum^{N}_{i=1} \frac{2i-1}{N} \left[\ln F(x_{(i)})+\ln\left(1-F(x_{(N+1-i)})\right)\right]
   \end{aligned}"/></p>
-</div><p>where <img class="math" src="../../_images/math/f082909207a166885e64c4a06439789d1f3a7752.svg" alt="\left\{x_{(1)}, \ldots, x_{(N)}\right\}"/> describes the
+</div><p>where <img class="math" src="../../_images/math/c9232403405b778614247742460ebf4e2428fd75.svg" alt="\left\{x_{(1)}, \ldots, x_{(N)}\right\}"/> describes the
 sample placed in increasing order.</p>
-<p>The probability distribution of the distance <img class="math" src="../../_images/math/30d7961c30821311991babf83e800bb6c73a09bd.svg" alt="\widehat{D}_N"/> is
+<p>The probability distribution of the distance <img class="math" src="../../_images/math/de6d3739cfc2d2fc719a8eb84ba3d01632c5de92.svg" alt="\widehat{D}_N"/> is
 asymptotically known (i.e. as the size of the sample tends to infinity).
-If <img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> is sufficiently large, this means that for a probability
-<img class="math" src="../../_images/math/7b7ebf7e62696ba8c12562a84512553143e94b56.svg" alt="\alpha"/> and a candidate distribution type, one can calculate the
-threshold / critical value <img class="math" src="../../_images/math/6290b2e8c8b9361538eba81ff2f88e379c3beb70.svg" alt="d_\alpha"/> such that:</p>
+If <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> is sufficiently large, this means that for a probability
+<img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/> and a candidate distribution type, one can calculate the
+threshold / critical value <img class="math" src="../../_images/math/dd84b03d6a7a615d5b450c1d9a4e38d1be40e04e.svg" alt="d_\alpha"/> such that:</p>
 <ul class="simple">
-<li>if <img class="math" src="../../_images/math/bfd1dc4207f86eae793a2be7b211774ddb045720.svg" alt="\widehat{D}_N&gt;d_{\alpha}"/>, we reject the candidate
-distribution with a risk of error <img class="math" src="../../_images/math/7b7ebf7e62696ba8c12562a84512553143e94b56.svg" alt="\alpha"/>,</li>
-<li>if <img class="math" src="../../_images/math/3781dd83668dd2e46f70761714f7df3a7d2f3efb.svg" alt="\widehat{D}_N \leq d_{\alpha}"/>, the candidate distribution
+<li>if <img class="math" src="../../_images/math/f6ac9a6b1d90f1da78edd200e0ff413cc596e05e.svg" alt="\widehat{D}_N&gt;d_{\alpha}"/>, we reject the candidate
+distribution with a risk of error <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>,</li>
+<li>if <img class="math" src="../../_images/math/2735dd805508beb9510353cb84a5b8e6baaf5889.svg" alt="\widehat{D}_N \leq d_{\alpha}"/>, the candidate distribution
 is considered acceptable.</li>
 </ul>
-<p>Note that <img class="math" src="../../_images/math/6290b2e8c8b9361538eba81ff2f88e379c3beb70.svg" alt="d_\alpha"/> depends on the candidate distribution
-<img class="math" src="../../_images/math/72b1d2aef41fdcd967346f450afcbada1bcf8f67.svg" alt="F"/> being tested; the current version is limited to
+<p>Note that <img class="math" src="../../_images/math/dd84b03d6a7a615d5b450c1d9a4e38d1be40e04e.svg" alt="d_\alpha"/> depends on the candidate distribution
+<img class="math" src="../../_images/math/08731955d44101ca9a6eca15f1652d7db4138d8e.svg" alt="F"/> being tested; the current version is limited to
 the case of the Normal distribution.</p>
-<p>An important notion is the so-called “<img class="math" src="../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/>-value” of the test. This
+<p>An important notion is the so-called “<img class="math" src="../../_images/math/0f4c0791a2997f071572e3ee6a344919caea8e95.svg" alt="p"/>-value” of the test. This
 quantity is equal to the limit error probability
-<img class="math" src="../../_images/math/54f5cd20b0f87e2cd6f86866e0abdb7816c913d2.svg" alt="\alpha_\textrm{lim}"/> under which the candidate distribution is
+<img class="math" src="../../_images/math/746d68b90b015ca51612792cae19291b1b315729.svg" alt="\alpha_\textrm{lim}"/> under which the candidate distribution is
 rejected. Thus, the candidate distribution will be accepted if and only
-if <img class="math" src="../../_images/math/54f5cd20b0f87e2cd6f86866e0abdb7816c913d2.svg" alt="\alpha_\textrm{lim}"/> is greater than the value <img class="math" src="../../_images/math/7b7ebf7e62696ba8c12562a84512553143e94b56.svg" alt="\alpha"/>
+if <img class="math" src="../../_images/math/746d68b90b015ca51612792cae19291b1b315729.svg" alt="\alpha_\textrm{lim}"/> is greater than the value <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>
 desired by the user. Note that the higher
-<img class="math" src="../../_images/math/4969b18861059241901e39f22dfc7a575ef8dca1.svg" alt="\alpha_\textrm{lim} - \alpha"/>, the more robust the decision.</p>
+<img class="math" src="../../_images/math/075a24ecbeb53bb7acdd439f4daaefa395a359e5.svg" alt="\alpha_\textrm{lim} - \alpha"/>, the more robust the decision.</p>
 <div class="topic">
 <p class="topic-title first">API:</p>
 <ul class="simple">
@@ -198,8 +198,8 @@ desired by the user. Note that the higher
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>

@@ -97,41 +97,41 @@
   <div class="section" id="spearman-correlation-test">
 <span id="spearman-test"></span><h1>Spearman correlation test<a class="headerlink" href="#spearman-correlation-test" title="Permalink to this headline">¶</a></h1>
 <p>This method deals with the modelling of a probability distribution of a
-random vector <img class="math" src="../../_images/math/8a6a589b116459f8e5cfdf98fa9f1348b44053a7.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/>. It
+random vector <img class="math" src="../../_images/math/80e79f6f56b23b60f04ee768e0b30ca7f2e735fa.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/>. It
 seeks to find a type of dependency (here a monotonous correlation) which
-may exist between two components <img class="math" src="../../_images/math/75fcbfff0e70987cadf22f956f5908b9a08798bc.svg" alt="X^i"/> and <img class="math" src="../../_images/math/c6e46f136febb2f5d2fd8fc778f0effa6d275af0.svg" alt="X^j"/>.</p>
-<p>The Spearman’s correlation coefficient <img class="math" src="../../_images/math/8a3dcf35ab0a117a73b3c8fa9a53e5c51830af7b.svg" alt="\rho^S_{U,V}"/>, defined in
+may exist between two components <img class="math" src="../../_images/math/872e7272798823842a1309501c89acd170652ea8.svg" alt="X^i"/> and <img class="math" src="../../_images/math/fb87234d1cce542bb396be3780e631356438e2bb.svg" alt="X^j"/>.</p>
+<p>The Spearman’s correlation coefficient <img class="math" src="../../_images/math/acb31e241cb1ea6e372e7fd0c041450f74a3b094.svg" alt="\rho^S_{U,V}"/>, defined in
 <a class="reference internal" href="spearman_coefficient.html#spearman-coefficient"><span class="std std-ref">Spearman’s coefficient</span></a>
 , measures the strength of a monotonous relationship between two random
-variables <img class="math" src="../../_images/math/46e4976b0a8bb19240cc0aee12b44a9729803131.svg" alt="U"/> and <img class="math" src="../../_images/math/1d6b1c4a5aea1d6f418cdab1458ef9c9d59f5dfd.svg" alt="V"/>. If we have a sample made up of
-<img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> pairs <img class="math" src="../../_images/math/927341d4930015a34b3e332561bcc99e1917339e.svg" alt="\left\{ (u_1,v_1),(u_2,v_2),(u_N,v_N) \right\}"/>,
-we denote <img class="math" src="../../_images/math/aaf6cb21e5b33e0f3f398f6fbdf95db6ed2a73da.svg" alt="\widehat{\rho}^S_{U,V}"/> to be the estimated
+variables <img class="math" src="../../_images/math/fcf3135745b5ce36664fa592c02ad81f4849522a.svg" alt="U"/> and <img class="math" src="../../_images/math/36d982a47f56236dbfa26d823c169d699861d3cb.svg" alt="V"/>. If we have a sample made up of
+<img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> pairs <img class="math" src="../../_images/math/d8d6bb66c3bd03fe2dfb8544efd47beba0d1a5c7.svg" alt="\left\{ (u_1,v_1),(u_2,v_2),(u_N,v_N) \right\}"/>,
+we denote <img class="math" src="../../_images/math/ed32bc1cb8e422f8eeb53e147e48b705af45f8db.svg" alt="\widehat{\rho}^S_{U,V}"/> to be the estimated
 coefficient.</p>
-<p>Even in the case where two variables <img class="math" src="../../_images/math/46e4976b0a8bb19240cc0aee12b44a9729803131.svg" alt="U"/> and <img class="math" src="../../_images/math/1d6b1c4a5aea1d6f418cdab1458ef9c9d59f5dfd.svg" alt="V"/> have a
-Spearman’s coefficient <img class="math" src="../../_images/math/8a3dcf35ab0a117a73b3c8fa9a53e5c51830af7b.svg" alt="\rho^S_{U,V}"/> equal to zero, the estimate
-<img class="math" src="../../_images/math/aaf6cb21e5b33e0f3f398f6fbdf95db6ed2a73da.svg" alt="\widehat{\rho}^S_{U,V}"/> obtained from the sample may be non-zero:
+<p>Even in the case where two variables <img class="math" src="../../_images/math/fcf3135745b5ce36664fa592c02ad81f4849522a.svg" alt="U"/> and <img class="math" src="../../_images/math/36d982a47f56236dbfa26d823c169d699861d3cb.svg" alt="V"/> have a
+Spearman’s coefficient <img class="math" src="../../_images/math/acb31e241cb1ea6e372e7fd0c041450f74a3b094.svg" alt="\rho^S_{U,V}"/> equal to zero, the estimate
+<img class="math" src="../../_images/math/ed32bc1cb8e422f8eeb53e147e48b705af45f8db.svg" alt="\widehat{\rho}^S_{U,V}"/> obtained from the sample may be non-zero:
 the limited sample size does not provide the perfect image of the real
 correlation. Pearson’s test nevertheless enables one to determine if the
-value obtained by <img class="math" src="../../_images/math/aaf6cb21e5b33e0f3f398f6fbdf95db6ed2a73da.svg" alt="\widehat{\rho}^S_{U,V}"/> is significantly
+value obtained by <img class="math" src="../../_images/math/ed32bc1cb8e422f8eeb53e147e48b705af45f8db.svg" alt="\widehat{\rho}^S_{U,V}"/> is significantly
 different from zero. More precisely, the user first chooses a
-probability <img class="math" src="../../_images/math/7b7ebf7e62696ba8c12562a84512553143e94b56.svg" alt="\alpha"/>. From this value the critical value
-<img class="math" src="../../_images/math/6290b2e8c8b9361538eba81ff2f88e379c3beb70.svg" alt="d_\alpha"/> is calculated automatically such that:</p>
+probability <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>. From this value the critical value
+<img class="math" src="../../_images/math/dd84b03d6a7a615d5b450c1d9a4e38d1be40e04e.svg" alt="d_\alpha"/> is calculated automatically such that:</p>
 <ul class="simple">
-<li>if <img class="math" src="../../_images/math/7714a7e248369d2837b2dabdbd005126ce9aec18.svg" alt="\left| \widehat{\rho}^S_{U,V} \right| &gt; d_\alpha"/>, one can
+<li>if <img class="math" src="../../_images/math/10a72e63504f57952d429745f71ab38b10f91028.svg" alt="\left| \widehat{\rho}^S_{U,V} \right| &gt; d_\alpha"/>, one can
 conclude that the real Spearman’s correlation coefficient
-<img class="math" src="../../_images/math/8a3dcf35ab0a117a73b3c8fa9a53e5c51830af7b.svg" alt="\rho^S_{U,V}"/> is not zero; the risk of error in making this
-assertion is controlled and equal to <img class="math" src="../../_images/math/7b7ebf7e62696ba8c12562a84512553143e94b56.svg" alt="\alpha"/>;</li>
-<li>if <img class="math" src="../../_images/math/8f529512a7bf3b6742997ec66b5f25523553d758.svg" alt="\left| \widehat{\rho}^S_{U,V} \right| \leq d_\alpha"/>, there
+<img class="math" src="../../_images/math/acb31e241cb1ea6e372e7fd0c041450f74a3b094.svg" alt="\rho^S_{U,V}"/> is not zero; the risk of error in making this
+assertion is controlled and equal to <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>;</li>
+<li>if <img class="math" src="../../_images/math/b04682f13251d91f7104c6abd5a4fa386a98f1cd.svg" alt="\left| \widehat{\rho}^S_{U,V} \right| \leq d_\alpha"/>, there
 is insufficient evidence to reject the null hypothesis
-<img class="math" src="../../_images/math/ab1da28cf05a7c885610eb79ebf712ec0e03a47e.svg" alt="\rho^S_{U,V} = 0"/>.</li>
+<img class="math" src="../../_images/math/60ad0f27beeeb9e09b686371ab6026ceacbdb2a5.svg" alt="\rho^S_{U,V} = 0"/>.</li>
 </ul>
-<p>An important notion is the so-called “<img class="math" src="../../_images/math/27434aeb6e4a6f0853282722d87e3eb12407ed80.svg" alt="p"/>-value” of the test. This
+<p>An important notion is the so-called “<img class="math" src="../../_images/math/0f4c0791a2997f071572e3ee6a344919caea8e95.svg" alt="p"/>-value” of the test. This
 quantity is equal to the limit error probability
-<img class="math" src="../../_images/math/54f5cd20b0f87e2cd6f86866e0abdb7816c913d2.svg" alt="\alpha_\textrm{lim}"/> under which the null correlation hypothesis
+<img class="math" src="../../_images/math/746d68b90b015ca51612792cae19291b1b315729.svg" alt="\alpha_\textrm{lim}"/> under which the null correlation hypothesis
 is rejected. Thus, Spearman’s’s coefficient is supposed non zero if and
-only if <img class="math" src="../../_images/math/54f5cd20b0f87e2cd6f86866e0abdb7816c913d2.svg" alt="\alpha_\textrm{lim}"/> is greater than the value
-<img class="math" src="../../_images/math/7b7ebf7e62696ba8c12562a84512553143e94b56.svg" alt="\alpha"/> desired by the user. Note that the higher
-<img class="math" src="../../_images/math/4969b18861059241901e39f22dfc7a575ef8dca1.svg" alt="\alpha_\textrm{lim} - \alpha"/>, the more robust the decision.</p>
+only if <img class="math" src="../../_images/math/746d68b90b015ca51612792cae19291b1b315729.svg" alt="\alpha_\textrm{lim}"/> is greater than the value
+<img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/> desired by the user. Note that the higher
+<img class="math" src="../../_images/math/075a24ecbeb53bb7acdd439f4daaefa395a359e5.svg" alt="\alpha_\textrm{lim} - \alpha"/>, the more robust the decision.</p>
 <p>(<a class="reference external" href="../../theory/data_analysis/spearman_test-1.py">Source code</a>, <a class="reference external" href="../../theory/data_analysis/spearman_test-1.png">png</a>, <a class="reference external" href="../../theory/data_analysis/spearman_test-1.hires.png">hires.png</a>, <a class="reference external" href="../../theory/data_analysis/spearman_test-1.pdf">pdf</a>)</p>
 <div class="figure">
 <img alt="../../_images/spearman_test-1.png" src="../../_images/spearman_test-1.png" />
@@ -190,8 +190,8 @@ only if <img class="math" src="../../_images/math/54f5cd20b0f87e2cd6f86866e0abdb
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>

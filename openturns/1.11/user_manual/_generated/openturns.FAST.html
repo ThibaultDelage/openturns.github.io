@@ -116,17 +116,17 @@
 <dd><p class="first last">Contains the distributions of each model’s input.
 Its dimension must be equal to the number of inputs.</p>
 </dd>
-<dt><strong>N</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/10ad38341ec8c9719a1a7b8f89b8e27e63e0bad7.svg" alt="N &gt; Nr"/></span></dt>
+<dt><strong>N</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a0607a80c55192f5b898c1b1ab7fc8148ae5fb36.svg" alt="N &gt; Nr"/></span></dt>
 <dd><p class="first last">Size of the sample from which the Fourier series are calculated.
 It represents the length of the discretization of the s-space.</p>
 </dd>
-<dt><strong>Nr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/e2b2932b9743d3d9621bdd5c7421b7f9a8331436.svg" alt="Nr \geq 1"/></span></dt>
+<dt><strong>Nr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a74e60d9f75a491383318726e581c7bbeb28d3bd.svg" alt="Nr \geq 1"/></span></dt>
 <dd><p class="first last">Number of resamplings. The extended FAST method involves a part of
 randomness in the computation of the indices. So it can be asked to
 realize the procedure <em>Nr</em> times and then to calculate the
 arithmetic means of the results over the <em>Nr</em> estimates.</p>
 </dd>
-<dt><strong>M</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/fbcc41b95d187ea4c8bd0ff48de6d2a084086bbc.svg" alt="0 &lt; M &lt; N"/></span></dt>
+<dt><strong>M</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/9e8741d809f51f75d3f07a8f63b214215273046e.svg" alt="0 &lt; M &lt; N"/></span></dt>
 <dd><p class="first last">Interference factor usually equal to 4 or higher.
 It corresponds to the truncation level of the Fourier series, i.e. the
 number of harmonics that are retained in the decomposition.</p>
@@ -138,49 +138,49 @@ number of harmonics that are retained in the decomposition.</p>
 </table>
 <p class="rubric">Notes</p>
 <p>FAST is a sensitivity analysis method which is based upon the ANOVA
-decomposition of the variance of the model response <img class="math" src="../../_images/math/28bcc474693de7646af7a8e58147f8c046abad7b.svg" alt="y = f(\vect{X})"/>,
+decomposition of the variance of the model response <img class="math" src="../../_images/math/8d33b719538df83fd2bc88190bbc27abedaa8adc.svg" alt="y = f(\vect{X})"/>,
 the latter being represented by its Fourier expansion.
-<img class="math" src="../../_images/math/d7f09c84aeab8cf6a165f0fd97160ec7eb68edfa.svg" alt="\vect{X}=\{X^1,\dots,X^{n_X}\}"/> is an input random vector of <img class="math" src="../../_images/math/75d84d6b32882c83756bbdd4f879c5aa689a5709.svg" alt="n_X"/>
+<img class="math" src="../../_images/math/4631f4b286e25163e69d7deaa8744830a2b8941f.svg" alt="\vect{X}=\{X^1,\dots,X^{n_X}\}"/> is an input random vector of <img class="math" src="../../_images/math/4056a1b2001e6226d1044246e6813d2a3c90eb94.svg" alt="n_X"/>
 independent components.</p>
 <p>OpenTURNS implements the extended FAST method consisting in computing
 alternately the first order and the total-effect indices of each input.
 This approach, widely described in the paper by <a class="reference internal" href="../../bibliography.html#saltelli1999" id="id1">[Saltelli1999]</a>, relies upon a
 Fourier decomposition of the model response. Its key idea is to recast this
-representation as a function of a <em>scalar</em> parameter <img class="math" src="../../_images/math/000fd8cf916564635b0a27243af773bb47dee7c4.svg" alt="s"/>, by defining
-parametric curves <img class="math" src="../../_images/math/ab5780220831446e9014e6c3c89fa132bb42a453.svg" alt="s \mapsto x_i(s), i=1, \dots, n_X"/> exploring the
-support of the input random vector <img class="math" src="../../_images/math/4c6bede7e41ce7917969c391a3aad2140771bcda.svg" alt="\vect{X}"/>.</p>
+representation as a function of a <em>scalar</em> parameter <img class="math" src="../../_images/math/6152ab1727a5471b499b19f272492eb14272751c.svg" alt="s"/>, by defining
+parametric curves <img class="math" src="../../_images/math/ee30ac68fb63342c8b7f9e2716a683b45a331fd1.svg" alt="s \mapsto x_i(s), i=1, \dots, n_X"/> exploring the
+support of the input random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>.</p>
 <p>Then the Fourier expansion of the model response is:</p>
 <div class="math">
-<p><img src="../../_images/math/41152a403419afcac62f51ebd73a75ef847d6a20.svg" alt="f(s) = \sum_{k \in \Zset^N} A_k cos(ks) + B_k sin(ks)"/></p>
-</div><p>where <img class="math" src="../../_images/math/abb1f8ea3af3f5ba7a30ff065c7e852d2d656db8.svg" alt="A_k"/> and <img class="math" src="../../_images/math/4e3a87cde6e63f8650ee8bb78d58330f10d058d7.svg" alt="B_k"/> are Fourier coefficients whose estimates are:</p>
+<p><img src="../../_images/math/b3a8fdfa2ee4587dfbcb73b7ccdf7a8793284da3.svg" alt="f(s) = \sum_{k \in \Zset^N} A_k cos(ks) + B_k sin(ks)"/></p>
+</div><p>where <img class="math" src="../../_images/math/5f6cf2dba652634f4bd408ba387cd89a259cffe9.svg" alt="A_k"/> and <img class="math" src="../../_images/math/61fdbca6ca34ebd9062d65b511102d7b36d78ef7.svg" alt="B_k"/> are Fourier coefficients whose estimates are:</p>
 <div class="math">
-<p><img src="../../_images/math/22de012315e3cc254bfe82815f590833f4e8a6af.svg" alt="\hat{A}_k &amp;= \frac{1}{N} \sum_{j=1}^N f(x_j^1,\dots,x_j^{N_X}) cos\left(\frac{2k\pi (j-1)}{N} \right) \quad , \quad -\frac{N}{2} \leq k \leq \frac{N}{2} \\
+<p><img src="../../_images/math/2c08bcc97ada592e8218b7eadbfda993e116ac4f.svg" alt="\hat{A}_k &amp;= \frac{1}{N} \sum_{j=1}^N f(x_j^1,\dots,x_j^{N_X}) cos\left(\frac{2k\pi (j-1)}{N} \right) \quad , \quad -\frac{N}{2} \leq k \leq \frac{N}{2} \\
 \hat{B}_k &amp;= \frac{1}{N} \sum_{j=1}^N f(x_j^1,\dots,x_j^{N_X}) sin\left(\frac{2k\pi (j-1)}{N} \right) \quad , \quad -\frac{N}{2} \leq k \leq \frac{N}{2}"/></p>
 </div><p>The first order indices are estimated by:</p>
 <div class="math">
-<p><img src="../../_images/math/a649154f95299bd924a9b58612aaa5e447f2e5f0.svg" alt="\hat{S}_i = \frac{\hat{D}_i}{\hat{D}}
+<p><img src="../../_images/math/6c9cc5f512dd63816ff4c25e5a51c7dc78c41683.svg" alt="\hat{S}_i = \frac{\hat{D}_i}{\hat{D}}
           = \frac{\sum_{p=1}^M(\hat{A}_{p\omega_i}^2 + \hat{B}_{p\omega_i}^2)^2}
                   {\sum_{n=1}^{(N-1)/2}(\hat{A}_n^2 + \hat{B}_n^2)^2}"/></p>
 </div><p>and the total order indices by:</p>
 <div class="math">
-<p><img src="../../_images/math/83bb5f916fc13b203f8ab6a26626b430d0816a7a.svg" alt="\hat{T}_i = 1 - \frac{\hat{D}_{-i}}{\hat{D}}
+<p><img src="../../_images/math/d719cebbe4a1bbaca56ae5169b1ccecf60057eb2.svg" alt="\hat{T}_i = 1 - \frac{\hat{D}_{-i}}{\hat{D}}
           = 1 - \frac{\sum_{k=1}^{\omega_i/2}(\hat{A}_k^2 + \hat{B}_k^2)^2}
                       {\sum_{n=1}^{(N-1)/2}(\hat{A}_n^2 + \hat{B}_n^2)^2}"/></p>
-</div><p>where <img class="math" src="../../_images/math/db0c8f6fe89240290f377f4cb5bb28c12b215890.svg" alt="\hat{D}"/> is the total variance, <img class="math" src="../../_images/math/830a020eabff3780ba9f5f5e897e277846973f3f.svg" alt="\hat{D}_i"/> the portion
-of <img class="math" src="../../_images/math/a9c7f391737d43f94064ee4d2c034cab589eaecc.svg" alt="D"/> arising from the uncertainty of the <img class="math" src="../../_images/math/ac006054facb099418a40f4c4558f810e894487f.svg" alt="i^{th}"/> input and
-<img class="math" src="../../_images/math/7e6aa77ed34eb1d781b60d163caf3c346c1651fa.svg" alt="\hat{D}_{-i}"/> is the part of the variance due to all the inputs
-except the <img class="math" src="../../_images/math/ac006054facb099418a40f4c4558f810e894487f.svg" alt="i^{th}"/> input.</p>
-<p><img class="math" src="../../_images/math/88a3fb8919f35e0118ecff82c722e5f4dd91c84b.svg" alt="N"/> is the size of the sample using to compute the Fourier series and
-<img class="math" src="../../_images/math/063911fe0928b5aa7856e498e1e5b3a2bb89ed5a.svg" alt="M"/> is the interference factor. <em>Saltelli et al.</em> (1999) recommanded to
-set <img class="math" src="../../_images/math/063911fe0928b5aa7856e498e1e5b3a2bb89ed5a.svg" alt="M"/> to a value in the range <img class="math" src="../../_images/math/cbf5c15801387205ea6744826aadc508f6ef6f81.svg" alt="[4, 6]"/>.
-<img class="math" src="../../_images/math/1f65889b0ed955728cd8fe22a1e3ae3aff717679.svg" alt="\{\omega_i\}, \forall i=1, \dots, n_X"/> is a set of integer frequencies
-assigned to each input <img class="math" src="../../_images/math/75fcbfff0e70987cadf22f956f5908b9a08798bc.svg" alt="X^i"/>. The frequency associated with the input
+</div><p>where <img class="math" src="../../_images/math/2cc31248a8c57a9de2f4452c86fb49aee1b00eac.svg" alt="\hat{D}"/> is the total variance, <img class="math" src="../../_images/math/7e8ffd450f49fbfe56c6334503933f2113d6a264.svg" alt="\hat{D}_i"/> the portion
+of <img class="math" src="../../_images/math/a2a26d140557e51a246c91a2c6ca944d733b12e8.svg" alt="D"/> arising from the uncertainty of the <img class="math" src="../../_images/math/9b3fb7e041ddeea31ab9148572d497bf4e51c592.svg" alt="i^{th}"/> input and
+<img class="math" src="../../_images/math/38f64206561ff452fd33862ea647530eac347eaf.svg" alt="\hat{D}_{-i}"/> is the part of the variance due to all the inputs
+except the <img class="math" src="../../_images/math/9b3fb7e041ddeea31ab9148572d497bf4e51c592.svg" alt="i^{th}"/> input.</p>
+<p><img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> is the size of the sample using to compute the Fourier series and
+<img class="math" src="../../_images/math/aadb4b560f4759eb199cb33c5eb662ffe016dc18.svg" alt="M"/> is the interference factor. <em>Saltelli et al.</em> (1999) recommanded to
+set <img class="math" src="../../_images/math/aadb4b560f4759eb199cb33c5eb662ffe016dc18.svg" alt="M"/> to a value in the range <img class="math" src="../../_images/math/480d06c12339af6b09f19da76ba062aa35bee2df.svg" alt="[4, 6]"/>.
+<img class="math" src="../../_images/math/d70b84b5dd46400b4fe94e2863e418a883934488.svg" alt="\{\omega_i\}, \forall i=1, \dots, n_X"/> is a set of integer frequencies
+assigned to each input <img class="math" src="../../_images/math/872e7272798823842a1309501c89acd170652ea8.svg" alt="X^i"/>. The frequency associated with the input
 for which the sensitivity indices are computed, is set to the maximum admissible
 frequency satisfying the Nyquist criterion (which ensures to avoid aliasing effects):</p>
 <div class="math">
-<p><img src="../../_images/math/d56837b83f985398a6aac67757a0d4d45696174a.svg" alt="\omega_i = \frac{N - 1}{2M}"/></p>
+<p><img src="../../_images/math/a32e220c0d84e024d06c9c040c717673fa91c9fa.svg" alt="\omega_i = \frac{N - 1}{2M}"/></p>
 </div><p>In the paper by Saltelli et al. (1999), for high sample size, it is suggested
-that <img class="math" src="../../_images/math/0551996e68bb109be73ec45c6406207afabefb58.svg" alt="16 \leq \omega_i/N_r \leq 64"/>.</p>
+that <img class="math" src="../../_images/math/61624298d1e7080e1e4cc3494e9100604fa0c458.svg" alt="16 \leq \omega_i/N_r \leq 64"/>.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -274,7 +274,7 @@ the number of available CPUs, set by default to 1.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>marginalIndex</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a3257020dd88acc4529e6521f8288ab5119cc29b.svg" alt="0 \leq i &lt; n"/>, optional</span></dt>
+<dt><strong>marginalIndex</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/352a1c82e6f5691260dbe0c444fb954079ad6ef6.svg" alt="0 \leq i &lt; n"/>, optional</span></dt>
 <dd><p class="first last">Index of the model’s marginal used to estimate the indices.
 By default, marginalIndex is equal to 0.</p>
 </dd>
@@ -301,7 +301,7 @@ By default, marginalIndex is equal to 0.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>marginalIndex</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a3257020dd88acc4529e6521f8288ab5119cc29b.svg" alt="0 \leq i &lt; n"/>, optional</span></dt>
+<dt><strong>marginalIndex</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/352a1c82e6f5691260dbe0c444fb954079ad6ef6.svg" alt="0 \leq i &lt; n"/>, optional</span></dt>
 <dd><p class="first last">Index of the model’s  marginal used to estimate the indices.
 By default, marginalIndex is equal to 0.</p>
 </dd>
@@ -331,7 +331,7 @@ By default, marginalIndex is equal to 0.</p>
 <dt><strong>k</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive int</span></dt>
 <dd><p class="first last">Size of each block the sample is splitted into, this allows to save space
 while allowing multithreading, when available we recommend to use
-the number of available CPUs, set by default to <img class="math" src="../../_images/math/73c91af0a64463e5bb1d6e539f12c1e3f4fdc257.svg" alt="1"/>.</p>
+the number of available CPUs, set by default to <img class="math" src="../../_images/math/f3d44eee68f965e0c3a97b452cb1cc2898b0cfdd.svg" alt="1"/>.</p>
 </dd>
 </dl>
 </td>
@@ -389,8 +389,8 @@ the number of available CPUs, set by default to <img class="math" src="../../_im
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>

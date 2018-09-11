@@ -97,158 +97,158 @@
   <div class="section" id="the-metropolis-hastings-algorithm">
 <span id="metropolis-hastings"></span><h1>The Metropolis-Hastings Algorithm<a class="headerlink" href="#the-metropolis-hastings-algorithm" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
-<div class="line"><strong>Markov chain.</strong> Considering a <img class="math" src="../../_images/math/476018cb68902d0f661dca411cd3f93cde6b4539.svg" alt="\sigma"/>-algebra <img class="math" src="../../_images/math/0f2e33eb8d9d58ac92dd081578f31ece24fbd3a0.svg" alt="\cA"/> on
-<img class="math" src="../../_images/math/345bb5f420fea9d6e99551309fae8150c021f9e7.svg" alt="\Omega"/>, a Markov chain is a process
-<img class="math" src="../../_images/math/988bbe9d3fddaf05e43b2c8cc9ff0619c7af57ca.svg" alt="{(X_k)}_{k\in\Nset}"/> such that</div>
+<div class="line"><strong>Markov chain.</strong> Considering a <img class="math" src="../../_images/math/21f69c83a86be9c7d80bf1d39f76d158a95228af.svg" alt="\sigma"/>-algebra <img class="math" src="../../_images/math/ef036c8db259cc7054c58254e9ae5a667d5cec82.svg" alt="\cA"/> on
+<img class="math" src="../../_images/math/b0e5ddc82cff0b38cb02d69168f578483d074855.svg" alt="\Omega"/>, a Markov chain is a process
+<img class="math" src="../../_images/math/ae7053b4d04472165947d8555670df295870f952.svg" alt="{(X_k)}_{k\in\Nset}"/> such that</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/1a14d164336d818e4a9e3e15a5ada72bf4bd7790.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/bde909af544d6d638ef3fb1f3ced9c02f66ea331.svg" alt="\begin{aligned}
     \forall{}(A,x_0,\ldots,x_{k-1})\in\cA\times\Omega^k
     \quad \Prob{X_k\in A \,|\, X_0=x_0, \ldots, X_{k-1}=x_{k-1}}
     = \Prob{X_k\in A \,|\, X_{k-1}=x_{k-1}}.
   \end{aligned}"/></p>
 </div></div></blockquote>
 <p>An example is the <em>random walk</em> for which
-<img class="math" src="../../_images/math/60eff66991a96db59d841d05b29f2410b2999ce8.svg" alt="X_k = X_{k-1} + \varepsilon_k"/> where the steps
-<img class="math" src="../../_images/math/b71f3999686d6f0931c1c92404def257b1905237.svg" alt="\varepsilon_k"/> are independent and identically distributed.</p>
+<img class="math" src="../../_images/math/f328f969c8879668d9b4fb021b7cdea3b12b2884.svg" alt="X_k = X_{k-1} + \varepsilon_k"/> where the steps
+<img class="math" src="../../_images/math/304420fdaf22b5e4c1c6ada1cc72028b12d59a52.svg" alt="\varepsilon_k"/> are independent and identically distributed.</p>
 <div class="line-block">
-<div class="line"><strong>Transition kernel.</strong> A transition kernel on <img class="math" src="../../_images/math/f99a534027d9aedccadf3b0a0095165a50879ea3.svg" alt="(\Omega, \cA)"/> is
-a mapping <img class="math" src="../../_images/math/9ab3e484664761c65a4baba917ad335a67a653a2.svg" alt="K: (\Omega, \cA) \rightarrow [0, 1]"/> such that</div>
+<div class="line"><strong>Transition kernel.</strong> A transition kernel on <img class="math" src="../../_images/math/a6b10194f2ca52503574b13f1b1eeb3a038d1669.svg" alt="(\Omega, \cA)"/> is
+a mapping <img class="math" src="../../_images/math/826ea2416a118ca83eaff5bc4b08a76c37a574df.svg" alt="K: (\Omega, \cA) \rightarrow [0, 1]"/> such that</div>
 </div>
 <ul>
-<li><p class="first"><img class="math" src="../../_images/math/170daea2781cdb4589816b845342e9d0d718010c.svg" alt="\forall{}A\in\cA \quad K(., A)"/> is measurable;</p>
+<li><p class="first"><img class="math" src="../../_images/math/ebe09dbc5cb90f59032fe70a7bbed16c27a986e9.svg" alt="\forall{}A\in\cA \quad K(., A)"/> is measurable;</p>
 </li>
 <li><div class="first line-block">
-<div class="line"><img class="math" src="../../_images/math/a97cd48761f54a6af53cb6f2f8b1f0df979cd2ca.svg" alt="\forall{}x\in\Omega \quad K(x, .)"/> is a probability
-distribution on <img class="math" src="../../_images/math/f99a534027d9aedccadf3b0a0095165a50879ea3.svg" alt="(\Omega, \cA)"/>.</div>
+<div class="line"><img class="math" src="../../_images/math/7c50726c806150e4c153de9e1afeaeae3533d3cd.svg" alt="\forall{}x\in\Omega \quad K(x, .)"/> is a probability
+distribution on <img class="math" src="../../_images/math/a6b10194f2ca52503574b13f1b1eeb3a038d1669.svg" alt="(\Omega, \cA)"/>.</div>
 </div>
 </li>
 </ul>
-<p>The kernel <img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> has density <img class="math" src="../../_images/math/4fdc6254dc3e018091042c0d2ec476a72b14588d.svg" alt="k"/> if
-<img class="math" src="../../_images/math/2a544a8ee5d96c9a0241bd887131b00163620085.svg" alt="\forall(x,A)\in\Omega\times\cA \quad K(x, A) = \displaystyle\int_A \: k(x, y) \mbox{d}y"/>.</p>
+<p>The kernel <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> has density <img class="math" src="../../_images/math/25ccf3f81465c5f61677ee2819c658ad49ef800d.svg" alt="k"/> if
+<img class="math" src="../../_images/math/347fbed98094a64dfead95d7f62727fb87df558f.svg" alt="\forall(x,A)\in\Omega\times\cA \quad K(x, A) = \displaystyle\int_A \: k(x, y) \mbox{d}y"/>.</p>
 <div class="line-block">
-<div class="line"><img class="math" src="../../_images/math/988bbe9d3fddaf05e43b2c8cc9ff0619c7af57ca.svg" alt="{(X_k)}_{k\in\Nset}"/> is a homogeneous Markov Chain of
-transition <img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> if
-<img class="math" src="../../_images/math/1de151f33614b4c1bbde1a9e976361aea8e82a2f.svg" alt="\forall(A,x)\in\cA\times\Omega \quad \Prob{X_k\in{}A | X_{k-1}=x} = K(x, A)"/>.</div>
-<div class="line"><strong>Some Notations.</strong> Let <img class="math" src="../../_images/math/988bbe9d3fddaf05e43b2c8cc9ff0619c7af57ca.svg" alt="{(X_k)}_{k\in\Nset}"/> be a homogeneous
-Markov Chain of transition <img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> on <img class="math" src="../../_images/math/f99a534027d9aedccadf3b0a0095165a50879ea3.svg" alt="(\Omega, \cA)"/> with
-initial distribution <img class="math" src="../../_images/math/f3d07a9cb88ef7e438a787bad0468ea80db05d57.svg" alt="\nu"/> (that is <img class="math" src="../../_images/math/79ef134fe1d43cb275019ae70e2e861092a48816.svg" alt="X_0 \sim \nu"/>):</div>
+<div class="line"><img class="math" src="../../_images/math/ae7053b4d04472165947d8555670df295870f952.svg" alt="{(X_k)}_{k\in\Nset}"/> is a homogeneous Markov Chain of
+transition <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> if
+<img class="math" src="../../_images/math/f107c72849c54273b5a7f58835f3ff24aa1f3752.svg" alt="\forall(A,x)\in\cA\times\Omega \quad \Prob{X_k\in{}A | X_{k-1}=x} = K(x, A)"/>.</div>
+<div class="line"><strong>Some Notations.</strong> Let <img class="math" src="../../_images/math/ae7053b4d04472165947d8555670df295870f952.svg" alt="{(X_k)}_{k\in\Nset}"/> be a homogeneous
+Markov Chain of transition <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> on <img class="math" src="../../_images/math/a6b10194f2ca52503574b13f1b1eeb3a038d1669.svg" alt="(\Omega, \cA)"/> with
+initial distribution <img class="math" src="../../_images/math/2234964b8d17f62424a40fb2443a15808e9ec16f.svg" alt="\nu"/> (that is <img class="math" src="../../_images/math/99a4d89bb4ff0f0643ee19f7c00e9efaf8fceb78.svg" alt="X_0 \sim \nu"/>):</div>
 </div>
 <ul>
-<li><p class="first"><img class="math" src="../../_images/math/b1f8800006d8b77e9f494fdd36c394912233fa9e.svg" alt="K_\nu"/> denotes the probability distribution of the Markov
-Chain <img class="math" src="../../_images/math/988bbe9d3fddaf05e43b2c8cc9ff0619c7af57ca.svg" alt="{(X_k)}_{k\in\Nset}"/>;</p>
+<li><p class="first"><img class="math" src="../../_images/math/c6b0756a5396c4cf30dd9783a5dbcc855b3b3077.svg" alt="K_\nu"/> denotes the probability distribution of the Markov
+Chain <img class="math" src="../../_images/math/ae7053b4d04472165947d8555670df295870f952.svg" alt="{(X_k)}_{k\in\Nset}"/>;</p>
 </li>
-<li><p class="first"><img class="math" src="../../_images/math/c84495a5f542e1469d66322ff6d43cce7da594e4.svg" alt="\nu{}K^k"/> denotes the probability distribution of <img class="math" src="../../_images/math/1fc142fba181c6b5948fb49028662f6570c69dfa.svg" alt="X_k"/>
-(<img class="math" src="../../_images/math/3ceb418cdc850a203fbac86c6648240fa4e04034.svg" alt="X_k \sim \nu{}K^k"/>);</p>
+<li><p class="first"><img class="math" src="../../_images/math/0e2928241a08f567dc896eb203bdc203a00224cf.svg" alt="\nu{}K^k"/> denotes the probability distribution of <img class="math" src="../../_images/math/6cc26d80b4789982ec74cf3860065fb884953a95.svg" alt="X_k"/>
+(<img class="math" src="../../_images/math/3efdd0f791d77c525c1a778741b57b99b34db464.svg" alt="X_k \sim \nu{}K^k"/>);</p>
 </li>
 <li><div class="first line-block">
-<div class="line"><img class="math" src="../../_images/math/f490c5c96dc433db9cb8b36bf18733ff65f750e7.svg" alt="K^k"/> denotes the mapping defined by
-<img class="math" src="../../_images/math/dbaf227c39194a8fdeefef50bcf776df367e1be3.svg" alt="K^k(x,A) = \Prob{X_k\in{}A|X_0=x}"/> for all
-<img class="math" src="../../_images/math/6d4868ff882a4b0904d9fc76906650c887166427.svg" alt="(x,A)\in\Omega\times\cA"/>.</div>
+<div class="line"><img class="math" src="../../_images/math/072cf10ee316c0599217588a347188c225f7138f.svg" alt="K^k"/> denotes the mapping defined by
+<img class="math" src="../../_images/math/7ebfd7ca3711a09a7535e98a92071d1bb0c3836b.svg" alt="K^k(x,A) = \Prob{X_k\in{}A|X_0=x}"/> for all
+<img class="math" src="../../_images/math/78bca7b665ede0f4cc841e6c0f1ca0dab6015c58.svg" alt="(x,A)\in\Omega\times\cA"/>.</div>
 </div>
 </li>
 </ul>
 <div class="line-block">
 <div class="line"><strong>Total variation convergence.</strong> A Markov Chain of distribution
-<img class="math" src="../../_images/math/b1f8800006d8b77e9f494fdd36c394912233fa9e.svg" alt="K_\nu"/> is said to converge in total variation distance towards
-the distribution <img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/> if</div>
+<img class="math" src="../../_images/math/c6b0756a5396c4cf30dd9783a5dbcc855b3b3077.svg" alt="K_\nu"/> is said to converge in total variation distance towards
+the distribution <img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/> if</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/b022f351c6bca1d2635aa810ca887c1047eeea01.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/c83ff3a3a59b7fb897bcc6f635066152d8be9f3a.svg" alt="\begin{aligned}
     \lim_{k\to+\infty} \sup_{A\in\cA} \left|
     \nu{}K^k(A) - t(A)
     \right| = 0.
   \end{aligned}"/></p>
 </div></div></blockquote>
-<p>Then the notation used here is <img class="math" src="../../_images/math/7f57f349531e622598235d2d6d1060a390e6544a.svg" alt="\nu{}K^k \rightarrow_{TV} t"/>.</p>
+<p>Then the notation used here is <img class="math" src="../../_images/math/2cb09eaaf828c92a765b0937c05a7ace0cf9c2aa.svg" alt="\nu{}K^k \rightarrow_{TV} t"/>.</p>
 <div class="line-block">
-<div class="line"><strong>Some interesting properties.</strong> Let <img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/> be a (target)
-distribution on <img class="math" src="../../_images/math/f99a534027d9aedccadf3b0a0095165a50879ea3.svg" alt="(\Omega, \cA)"/>, then a transition kernel
-<img class="math" src="../../_images/math/86b3360e25ddd90d3fe3394a4186200e6eea0215.svg" alt="K"/> is said to be:</div>
+<div class="line"><strong>Some interesting properties.</strong> Let <img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/> be a (target)
+distribution on <img class="math" src="../../_images/math/a6b10194f2ca52503574b13f1b1eeb3a038d1669.svg" alt="(\Omega, \cA)"/>, then a transition kernel
+<img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> is said to be:</div>
 </div>
 <ul class="simple">
-<li><img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/>-invariant if <img class="math" src="../../_images/math/6d2a8556fb5d49bbdb6405afb636203aa4ae9472.svg" alt="t{}K = t"/>;</li>
-<li><img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/>-irreducible if, <img class="math" src="../../_images/math/3145c24a6e9fa3d2c3267ba64ec7fdcfd5619d80.svg" alt="\forall(A,x)\in\Omega\times\cA"/> such
-that <img class="math" src="../../_images/math/b8f160066243b94bd156f7be0dd7ba29ee10cff0.svg" alt="t(A)&gt;0"/>, <img class="math" src="../../_images/math/abd01dbf788ebf56f19cc2eb5e19e7360f0dcd3a.svg" alt="\exists{}k\in\cN^* \quad {}K^k(x, A) &gt; 0"/>
+<li><img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/>-invariant if <img class="math" src="../../_images/math/45549e1e75b254d77e008016e2504d12dc81f844.svg" alt="t{}K = t"/>;</li>
+<li><img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/>-irreducible if, <img class="math" src="../../_images/math/8280f8171cbd846d50628fcae5aaf7b98b575a19.svg" alt="\forall(A,x)\in\Omega\times\cA"/> such
+that <img class="math" src="../../_images/math/48d8d4531b3fd2a0560b4272da8ca8a9cbe34545.svg" alt="t(A)&gt;0"/>, <img class="math" src="../../_images/math/5e9aaed8b861411140b058d1966bed186bb6070a.svg" alt="\exists{}k\in\cN^* \quad {}K^k(x, A) &gt; 0"/>
 holds.</li>
 </ul>
 <p>Markov Chain Monte-Carlo techniques allows to sample and integrate
-according to a distribution <img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/> which is only known up to a
+according to a distribution <img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/> which is only known up to a
 multiplicative constant. This situation is common in Bayesian statistics
 where the “target” distribution, the posterior one
-<img class="math" src="../../_images/math/c5d4b5f4447341f52cd68038b2e09687eecf2375.svg" alt="t(\vect{\theta})=\pi(\vect{\theta} | \mat{y})"/>, is proportional
+<img class="math" src="../../_images/math/fbe75ffcd9e3306a557b51b8336018a98d33e78b.svg" alt="t(\vect{\theta})=\pi(\vect{\theta} | \mat{y})"/>, is proportional
 to the product of prior and likelihood: see equation <a class="reference internal" href="bayesian_calibration.html#equation-postdistribution">(1)</a>.</p>
-<p>In particular, given a “target” distribution <img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/> and a
-<img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/>-irreducible kernel transition <img class="math" src="../../_images/math/235cfff6a2062be0ab06e2a4c2b639439ed12b46.svg" alt="Q"/>, the
+<p>In particular, given a “target” distribution <img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/> and a
+<img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/>-irreducible kernel transition <img class="math" src="../../_images/math/b66f32e4d00b6dce1166d05393b2a782f459f49e.svg" alt="Q"/>, the
 Metropolis-Hastings algorithm produces a Markov chain
-<img class="math" src="../../_images/math/988bbe9d3fddaf05e43b2c8cc9ff0619c7af57ca.svg" alt="{(X_k)}_{k\in\Nset}"/> of distribution <img class="math" src="../../_images/math/b1f8800006d8b77e9f494fdd36c394912233fa9e.svg" alt="K_\nu"/> with the
+<img class="math" src="../../_images/math/ae7053b4d04472165947d8555670df295870f952.svg" alt="{(X_k)}_{k\in\Nset}"/> of distribution <img class="math" src="../../_images/math/c6b0756a5396c4cf30dd9783a5dbcc855b3b3077.svg" alt="K_\nu"/> with the
 following properties:</p>
 <ul>
-<li><p class="first">the transition kernel of the Markov chain is <img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/>-invariant;</p>
+<li><p class="first">the transition kernel of the Markov chain is <img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/>-invariant;</p>
 </li>
-<li><p class="first"><img class="math" src="../../_images/math/7f57f349531e622598235d2d6d1060a390e6544a.svg" alt="\nu{}K^k \rightarrow_{TV} t"/>;</p>
+<li><p class="first"><img class="math" src="../../_images/math/2cb09eaaf828c92a765b0937c05a7ace0cf9c2aa.svg" alt="\nu{}K^k \rightarrow_{TV} t"/>;</p>
 </li>
-<li><p class="first">the Markov chain satisfies the <em>ergodic theorem</em>: let <img class="math" src="../../_images/math/763cce6e1820bf4dfd655d302eed976872ead156.svg" alt="\phi"/> be
+<li><p class="first">the Markov chain satisfies the <em>ergodic theorem</em>: let <img class="math" src="../../_images/math/a252de35dc7cc2d634b8209685155ee835882bb3.svg" alt="\phi"/> be
 a real-valued function such that
-<img class="math" src="../../_images/math/0554899f26da7639af2d94a7b62ea9b5918b491c.svg" alt="\mathbb{E}_{X\sim{}t}\left[ |\phi(X)| \right] &lt;+\infty"/>, then, whatever the
-initial distribution <img class="math" src="../../_images/math/f3d07a9cb88ef7e438a787bad0468ea80db05d57.svg" alt="\nu"/> is:</p>
+<img class="math" src="../../_images/math/dbd14beac0280354660ffbaf03d9b2e5ed9be276.svg" alt="\mathbb{E}_{X\sim{}t}\left[ |\phi(X)| \right] &lt;+\infty"/>, then, whatever the
+initial distribution <img class="math" src="../../_images/math/2234964b8d17f62424a40fb2443a15808e9ec16f.svg" alt="\nu"/> is:</p>
 <div class="math">
-<p><img src="../../_images/math/ef0cc8fb66571bdb48d10e038efd75810c2a13ca.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/334d46da74711a209085ba81300a63f67b569e0e.svg" alt="\begin{aligned}
       \displaystyle\frac{1}{n} \sum_{k=1}^n \: \phi(X_k) \tendto{k}{+\infty} \mathbb{E}_{X\sim{}t}\left[ |\phi(X)| \right]
       \mbox{ almost surely}.
     \end{aligned}"/></p>
 </div></li>
 </ul>
-<p>In that sense, simulating <img class="math" src="../../_images/math/988bbe9d3fddaf05e43b2c8cc9ff0619c7af57ca.svg" alt="{(X_k)}_{k\in\Nset}"/> amounts to
-sampling according to <img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/> and can be used to integrate relatively
-to the probability measure <img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/>. Let us remark that the ergodic
+<p>In that sense, simulating <img class="math" src="../../_images/math/ae7053b4d04472165947d8555670df295870f952.svg" alt="{(X_k)}_{k\in\Nset}"/> amounts to
+sampling according to <img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/> and can be used to integrate relatively
+to the probability measure <img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/>. Let us remark that the ergodic
 theorem implies that
-<img class="math" src="../../_images/math/e341fa4e38be6634bae194b90b67ff206725db1a.svg" alt="\displaystyle\frac{1}{n} \sum_{k=1}^n \: \fcar{A}{X_k} \tendto{k}{+\infty} \ProbCond{X\sim{}t}{X\in{}A}"/> almost surely.</p>
-<p>By abusing the notation, <img class="math" src="../../_images/math/881973e90df6ddf102fc6150b252da29f0659c8f.svg" alt="t(x)"/> represents, in the remainder of
-this section, a function of <img class="math" src="../../_images/math/146b227458440b864cc6963ad74e5b7349a02a0b.svg" alt="x"/> which is proportional to the PDF
-of the target distribution <img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/>. Given a transition kernel
-<img class="math" src="../../_images/math/235cfff6a2062be0ab06e2a4c2b639439ed12b46.svg" alt="Q"/> of density <img class="math" src="../../_images/math/35746cf962b49b4f684e4910eb1090eeb276647a.svg" alt="q"/>, the scheme of the Metropolis-Hastings
+<img class="math" src="../../_images/math/ff827380e8da01b31000a59400e311d45172aa40.svg" alt="\displaystyle\frac{1}{n} \sum_{k=1}^n \: \fcar{A}{X_k} \tendto{k}{+\infty} \ProbCond{X\sim{}t}{X\in{}A}"/> almost surely.</p>
+<p>By abusing the notation, <img class="math" src="../../_images/math/1ffcd2818c40aa326bb1b04bb54e177714927c23.svg" alt="t(x)"/> represents, in the remainder of
+this section, a function of <img class="math" src="../../_images/math/b46b960b23857f933aea0a650f82daa1bcc3e1b1.svg" alt="x"/> which is proportional to the PDF
+of the target distribution <img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/>. Given a transition kernel
+<img class="math" src="../../_images/math/b66f32e4d00b6dce1166d05393b2a782f459f49e.svg" alt="Q"/> of density <img class="math" src="../../_images/math/d3ff3f8dc62e7ced97541233ffedabb887bc5bb9.svg" alt="q"/>, the scheme of the Metropolis-Hastings
 algorithm is the following (lower case letters are used hereafter for
 both random variables and realizations as usual in the Bayesian
 literature):</p>
 <ol class="arabic simple" start="0">
-<li>Draw <img class="math" src="../../_images/math/bded17e8fa08992d1836539aee28c62c25ae5032.svg" alt="x_0 \sim \nu"/> and set <img class="math" src="../../_images/math/db314232b0030663884e3ec5b7278eb4de2a687f.svg" alt="k = 1"/>.</li>
-<li>Draw a candidate for <img class="math" src="../../_images/math/19771130790f4ba5d9e0501fcc99ce66be578f9a.svg" alt="x_k"/> according to the given transition
-kernel <img class="math" src="../../_images/math/235cfff6a2062be0ab06e2a4c2b639439ed12b46.svg" alt="Q"/>: <img class="math" src="../../_images/math/14ed6226f91889617b04dca9bc5aacbb3b1b00d9.svg" alt="\tilde{x} \sim Q(x_{k-1}, .)"/>.</li>
+<li>Draw <img class="math" src="../../_images/math/015991654acafea8bc8e806d828894c02c2267ca.svg" alt="x_0 \sim \nu"/> and set <img class="math" src="../../_images/math/35547a6e744972bed9f70a7080ac7d78db46891d.svg" alt="k = 1"/>.</li>
+<li>Draw a candidate for <img class="math" src="../../_images/math/f978e96fbf250ba4d6e0e7ba2ca19bee6db67ae0.svg" alt="x_k"/> according to the given transition
+kernel <img class="math" src="../../_images/math/b66f32e4d00b6dce1166d05393b2a782f459f49e.svg" alt="Q"/>: <img class="math" src="../../_images/math/a8d3b07f05ab2486959ac2e0d339a073e59bd7f0.svg" alt="\tilde{x} \sim Q(x_{k-1}, .)"/>.</li>
 <li>Compute the ratio
-<img class="math" src="../../_images/math/935c162f9fafce5cd0491ec5ba5d163ba29d5fc7.svg" alt="\rho = \displaystyle\frac{t(\tilde{x})/q(x_{k-1},\tilde{x})} {t(x_{k-1})/q(\tilde{x},x_{k-1})}"/>.</li>
-<li>Draw <img class="math" src="../../_images/math/8c715686af9ea283da606bf0f7124a075667fcf8.svg" alt="u \sim \cU([0, 1])"/>; if <img class="math" src="../../_images/math/5869f40eebbc2a53fc9e627029ef91fa4449561e.svg" alt="u \leq \rho"/> then set
-<img class="math" src="../../_images/math/de64026e442784586a0014f487369279afe50a4b.svg" alt="x_k = \tilde{x}"/>, otherwise set <img class="math" src="../../_images/math/c6baab6a70005c45918f4fc9df76b07dbf37f288.svg" alt="x_k = x_{k-1}"/>.</li>
-<li>Set <img class="math" src="../../_images/math/b3a6cd877484f4dd826dcfa64bccc7e23c76dec9.svg" alt="k=k+1"/> and go back to 1).</li>
+<img class="math" src="../../_images/math/9980d185e6e1c955f399b9245446b382a638b47d.svg" alt="\rho = \displaystyle\frac{t(\tilde{x})/q(x_{k-1},\tilde{x})} {t(x_{k-1})/q(\tilde{x},x_{k-1})}"/>.</li>
+<li>Draw <img class="math" src="../../_images/math/4c62327b7c58ee6ed6db38af66f3bd629c1bf98e.svg" alt="u \sim \cU([0, 1])"/>; if <img class="math" src="../../_images/math/569fb34aeab9c8a9caeeabd687aa9b904df3f942.svg" alt="u \leq \rho"/> then set
+<img class="math" src="../../_images/math/4301b5829b9b9246eb6eb4f78a07840f7ed33636.svg" alt="x_k = \tilde{x}"/>, otherwise set <img class="math" src="../../_images/math/ae840445f70fc7de5f867aa33176b1ef2435800c.svg" alt="x_k = x_{k-1}"/>.</li>
+<li>Set <img class="math" src="../../_images/math/91aaec0828daa70b2a35529d2f30d7909f49101f.svg" alt="k=k+1"/> and go back to 1).</li>
 </ol>
-<p>Of course, if <img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/> is replaced by a different function of <img class="math" src="../../_images/math/146b227458440b864cc6963ad74e5b7349a02a0b.svg" alt="x"/>
+<p>Of course, if <img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/> is replaced by a different function of <img class="math" src="../../_images/math/b46b960b23857f933aea0a650f82daa1bcc3e1b1.svg" alt="x"/>
 which is proportional to it, the algorithm keeps unchanged, since
-<img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/> only takes part in the latter in the ratio
-<img class="math" src="../../_images/math/e7f2756fd1f2438e6a94da5b98cbbe634c2fb488.svg" alt="\frac{t(\tilde{x})}{t(x_{k-1})}"/>. Moreover, if <img class="math" src="../../_images/math/235cfff6a2062be0ab06e2a4c2b639439ed12b46.svg" alt="Q"/> proposes
-some candidates in a uniform manner (constant density <img class="math" src="../../_images/math/35746cf962b49b4f684e4910eb1090eeb276647a.svg" alt="q"/>), the
-candidate <img class="math" src="../../_images/math/c55c57f9fff8367ca13f2f81f3f25eb33e332c8c.svg" alt="\tilde{x}"/> is accepted according to a ratio
-<img class="math" src="../../_images/math/8932daedb6eddd2b65f2a2d53ab78f7fee6d6005.svg" alt="\rho"/> which reduces to the previous “natural” ratio
-<img class="math" src="../../_images/math/e7f2756fd1f2438e6a94da5b98cbbe634c2fb488.svg" alt="\frac{t(\tilde{x})}{t(x_{k-1})}"/> of PDF. The introduction of
-<img class="math" src="../../_images/math/35746cf962b49b4f684e4910eb1090eeb276647a.svg" alt="q"/> in the ratio <img class="math" src="../../_images/math/8932daedb6eddd2b65f2a2d53ab78f7fee6d6005.svg" alt="\rho"/> prevents from the bias of a
+<img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/> only takes part in the latter in the ratio
+<img class="math" src="../../_images/math/ec3d9dd8bee4e12185f18fd787659de431011f20.svg" alt="\frac{t(\tilde{x})}{t(x_{k-1})}"/>. Moreover, if <img class="math" src="../../_images/math/b66f32e4d00b6dce1166d05393b2a782f459f49e.svg" alt="Q"/> proposes
+some candidates in a uniform manner (constant density <img class="math" src="../../_images/math/d3ff3f8dc62e7ced97541233ffedabb887bc5bb9.svg" alt="q"/>), the
+candidate <img class="math" src="../../_images/math/f20e68eb078736167a6073a728e614bc9451d802.svg" alt="\tilde{x}"/> is accepted according to a ratio
+<img class="math" src="../../_images/math/e5306ea73ad90f3558f0a0b6facc330d9a4522db.svg" alt="\rho"/> which reduces to the previous “natural” ratio
+<img class="math" src="../../_images/math/ec3d9dd8bee4e12185f18fd787659de431011f20.svg" alt="\frac{t(\tilde{x})}{t(x_{k-1})}"/> of PDF. The introduction of
+<img class="math" src="../../_images/math/d3ff3f8dc62e7ced97541233ffedabb887bc5bb9.svg" alt="q"/> in the ratio <img class="math" src="../../_images/math/e5306ea73ad90f3558f0a0b6facc330d9a4522db.svg" alt="\rho"/> prevents from the bias of a
 non-uniform proposition of candidates which would favor some areas of
-<img class="math" src="../../_images/math/345bb5f420fea9d6e99551309fae8150c021f9e7.svg" alt="\Omega"/>.</p>
-<p>The <img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/>-invariance is ensured by the symmetry of the expression of
-<img class="math" src="../../_images/math/8932daedb6eddd2b65f2a2d53ab78f7fee6d6005.svg" alt="\rho"/> (<img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/>-reversibility).</p>
-<p>In practice, <img class="math" src="../../_images/math/235cfff6a2062be0ab06e2a4c2b639439ed12b46.svg" alt="Q"/> is specified as a random walk
-(<img class="math" src="../../_images/math/bf55cc350cf2cd83f9ee35dd6da1c08645bd8c70.svg" alt="\exists{}q_{RW}"/> such that <img class="math" src="../../_images/math/7264ea40a450e9263fa41f63a26be590db920f77.svg" alt="q(x,y)=q_{RW}(x-y)"/>) or as a
-independent sampling (<img class="math" src="../../_images/math/e841a1855d6c208947837b3f88300d8cc0a5b20a.svg" alt="\exists{}q_{IS}"/> such that
-<img class="math" src="../../_images/math/0c844bd267d67104efd3bd4a2f38fa52d3c684d5.svg" alt="q(x,y)=q_{IS}(y)"/>), or as a mixture of random walk and
+<img class="math" src="../../_images/math/b0e5ddc82cff0b38cb02d69168f578483d074855.svg" alt="\Omega"/>.</p>
+<p>The <img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/>-invariance is ensured by the symmetry of the expression of
+<img class="math" src="../../_images/math/e5306ea73ad90f3558f0a0b6facc330d9a4522db.svg" alt="\rho"/> (<img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/>-reversibility).</p>
+<p>In practice, <img class="math" src="../../_images/math/b66f32e4d00b6dce1166d05393b2a782f459f49e.svg" alt="Q"/> is specified as a random walk
+(<img class="math" src="../../_images/math/4794c429879e74b5e08026f4538426a318cd1ec7.svg" alt="\exists{}q_{RW}"/> such that <img class="math" src="../../_images/math/bfd448b710c90f754b01bdf0f3261884f7ca2656.svg" alt="q(x,y)=q_{RW}(x-y)"/>) or as a
+independent sampling (<img class="math" src="../../_images/math/5ff8035a7ff7565b4b58053053e2175065a1ce8b.svg" alt="\exists{}q_{IS}"/> such that
+<img class="math" src="../../_images/math/23a5f8f49f89b5a6cf7a7ade8439123feda04c03.svg" alt="q(x,y)=q_{IS}(y)"/>), or as a mixture of random walk and
 independent sampling.</p>
 <div class="line-block">
 <div class="line">The important property the practitioner have to keep in mind when
-choosing the transition kernel <img class="math" src="../../_images/math/235cfff6a2062be0ab06e2a4c2b639439ed12b46.svg" alt="Q"/> is the
-<img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/>-irreducibility. Moreover, for efficient convergence,
-<img class="math" src="../../_images/math/235cfff6a2062be0ab06e2a4c2b639439ed12b46.svg" alt="Q"/> has to be chosen so as to explore quickly the whole support
-of <img class="math" src="../../_images/math/54bf2529b798d84196611c6fa38b141d70d16440.svg" alt="t"/> without conducting to a too small acceptance ratio (the
-ratio of accepted candidates <img class="math" src="../../_images/math/c55c57f9fff8367ca13f2f81f3f25eb33e332c8c.svg" alt="\tilde{x}"/> ). It is usually
-recommended that this latter ratio is about <img class="math" src="../../_images/math/08b76fe987bbf16c40b68774502c55f4dc38393d.svg" alt="0.2"/> but such a
+choosing the transition kernel <img class="math" src="../../_images/math/b66f32e4d00b6dce1166d05393b2a782f459f49e.svg" alt="Q"/> is the
+<img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/>-irreducibility. Moreover, for efficient convergence,
+<img class="math" src="../../_images/math/b66f32e4d00b6dce1166d05393b2a782f459f49e.svg" alt="Q"/> has to be chosen so as to explore quickly the whole support
+of <img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/> without conducting to a too small acceptance ratio (the
+ratio of accepted candidates <img class="math" src="../../_images/math/f20e68eb078736167a6073a728e614bc9451d802.svg" alt="\tilde{x}"/> ). It is usually
+recommended that this latter ratio is about <img class="math" src="../../_images/math/663c48b2c0b7d8c726cfa5d5fcaa1064434ea3aa.svg" alt="0.2"/> but such a
 ratio is neither a warranty of efficiency, nor a substitute to a
 convergence diagnosis.</div>
 </div>
@@ -299,8 +299,8 @@ convergence diagnosis.</div>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2017 Airbus-EDF-IMACS-Phimeca.
-      Last updated on Jan 01, 2017.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.0+.
+      Last updated on Dec 31, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>
