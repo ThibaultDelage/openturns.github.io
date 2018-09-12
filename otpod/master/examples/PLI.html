@@ -9,7 +9,7 @@
     <title>Perturbation Law Indices &#8212; otpod  documentation</title>
     <link rel="stylesheet" href="../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -286,12 +286,12 @@ div.nboutput div.output_area.stderr {
 metamodel or on the polynomial chaos in order to compute the PLI. It
 also can be used only if the input parameters dimension is greater than
 2 (without counting the defect).</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [4]:
+<span></span>In [1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># import relevant module</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 <span class="kn">import</span> <span class="nn">otpod</span>
@@ -304,15 +304,24 @@ also can be used only if the input parameters dimension is greater than
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/calcul/home/dumas/anaconda/lib/python3.6/site-packages/sklearn/ensemble/weight_boosting.py:29: DeprecationWarning: numpy.core.umath_tests is an internal NumPy module and should not be imported. It will be removed in a future NumPy release.
+  from numpy.core.umath_tests import inner1d
+</pre></div></div>
+</div>
 <div class="section" id="Generate-data">
 <h2>Generate data<a class="headerlink" href="#Generate-data" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [11]:
+<span></span>In [2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">inputSample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">NumericalSample</span><span class="p">(</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">inputSample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span>
     <span class="p">[[</span><span class="mf">4.59626812e+00</span><span class="p">,</span> <span class="mf">7.46143339e-02</span><span class="p">,</span> <span class="mf">1.02231538e+00</span><span class="p">,</span> <span class="mf">8.60042277e+01</span><span class="p">],</span>
     <span class="p">[</span><span class="mf">4.14315790e+00</span><span class="p">,</span> <span class="mf">4.20801346e-02</span><span class="p">,</span> <span class="mf">1.05874908e+00</span><span class="p">,</span> <span class="mf">2.65757364e+01</span><span class="p">],</span>
     <span class="p">[</span><span class="mf">4.76735111e+00</span><span class="p">,</span> <span class="mf">3.72414824e-02</span><span class="p">,</span> <span class="mf">1.05730385e+00</span><span class="p">,</span> <span class="mf">5.76058433e+01</span><span class="p">],</span>
@@ -339,7 +348,7 @@ also can be used only if the input parameters dimension is greater than
     <span class="p">[</span><span class="mf">5.32381954e+00</span><span class="p">,</span> <span class="mf">4.33013582e-02</span><span class="p">,</span> <span class="mf">9.90522007e-01</span><span class="p">,</span> <span class="mf">6.56015973e+01</span><span class="p">],</span>
     <span class="p">[</span><span class="mf">4.35455857e+00</span><span class="p">,</span> <span class="mf">1.23814619e-02</span><span class="p">,</span> <span class="mf">1.01810539e+00</span><span class="p">,</span> <span class="mf">1.10769534e+01</span><span class="p">]])</span>
 
-<span class="n">signals</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">NumericalSample</span><span class="p">(</span>
+<span class="n">signals</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span>
     <span class="p">[[</span> <span class="mf">37.305445</span><span class="p">],</span> <span class="p">[</span> <span class="mf">35.466919</span><span class="p">],</span> <span class="p">[</span> <span class="mf">43.187991</span><span class="p">],</span> <span class="p">[</span> <span class="mf">45.305165</span><span class="p">],</span> <span class="p">[</span> <span class="mf">40.121222</span><span class="p">],</span> <span class="p">[</span> <span class="mf">44.609524</span><span class="p">],</span>
      <span class="p">[</span> <span class="mf">45.14552</span> <span class="p">],</span> <span class="p">[</span> <span class="mf">44.80595</span> <span class="p">],</span> <span class="p">[</span> <span class="mf">35.414039</span><span class="p">],</span> <span class="p">[</span> <span class="mf">39.851778</span><span class="p">],</span> <span class="p">[</span> <span class="mf">42.046049</span><span class="p">],</span> <span class="p">[</span> <span class="mf">34.73469</span> <span class="p">],</span>
      <span class="p">[</span> <span class="mf">39.339349</span><span class="p">],</span> <span class="p">[</span> <span class="mf">40.384559</span><span class="p">],</span> <span class="p">[</span> <span class="mf">38.718623</span><span class="p">],</span> <span class="p">[</span> <span class="mf">46.189709</span><span class="p">],</span> <span class="p">[</span> <span class="mf">36.155737</span><span class="p">],</span> <span class="p">[</span> <span class="mf">31.768369</span><span class="p">],</span>
@@ -350,10 +359,10 @@ also can be used only if the input parameters dimension is greater than
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [12]:
+<span></span>In [3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># signal detection threshold</span>
 <span class="n">detection</span> <span class="o">=</span> <span class="mf">38.</span>
 </pre></div>
@@ -366,10 +375,10 @@ also can be used only if the input parameters dimension is greater than
 <h3>Running the Kriging based POD<a class="headerlink" href="#Running-the-Kriging-based-POD" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [13]:
+<span></span>In [4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">krigingPOD</span> <span class="o">=</span> <span class="n">otpod</span><span class="o">.</span><span class="n">KrigingPOD</span><span class="p">(</span><span class="n">inputSample</span><span class="p">,</span> <span class="n">signals</span><span class="p">,</span> <span class="n">detection</span><span class="p">)</span>
 
 <span class="c1"># we can change all simulation size parameters as we are not interested in having an accurate POD curve</span>
@@ -388,8 +397,6 @@ Start optimizing covariance model parameters...
 Kriging optimizer completed
 kriging validation Q2 (&gt;0.9): 1.0000
 Computing POD per defect: [==================================================] 100.00% Done
-CPU times: user 6.14 s, sys: 4.28 s, total: 10.4 s
-Wall time: 3 s
 </pre></div></div>
 </div>
 </div>
@@ -397,10 +404,10 @@ Wall time: 3 s
 <h3>Show POD graphs<a class="headerlink" href="#Show-POD-graphs" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [14]:
+<span></span>In [5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">krigingPOD</span><span class="o">.</span><span class="n">drawPOD</span><span class="p">(</span><span class="n">probabilityLevel</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">confidenceLevel</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
                       <span class="n">name</span><span class="o">=</span><span class="s1">&#39;figure/PODKriging.png&#39;</span><span class="p">)</span>
 <span class="c1"># The figure is saved in PODPolyChaos.png</span>
@@ -408,11 +415,20 @@ Wall time: 3 s
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/calcul/home/dumas/anaconda/lib/python3.6/site-packages/matplotlib/figure.py:459: UserWarning: matplotlib is currently using a non-GUI backend, so cannot show the figure
+  &#34;matplotlib is currently using a non-GUI backend, &#34;
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_PLI_8_0.png" src="../_images/examples_PLI_8_0.png" />
+<img alt="../_images/examples_PLI_8_1.png" src="../_images/examples_PLI_8_1.png" />
 </div>
 </div>
 </div>
@@ -423,10 +439,10 @@ Wall time: 3 s
 <h3>Running the chaos based POD<a class="headerlink" href="#Running-the-chaos-based-POD" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [15]:
+<span></span>In [6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">chaosPOD</span> <span class="o">=</span> <span class="n">otpod</span><span class="o">.</span><span class="n">PolynomialChaosPOD</span><span class="p">(</span><span class="n">inputSample</span><span class="p">,</span> <span class="n">signals</span><span class="p">,</span> <span class="n">detection</span><span class="p">)</span>
 
 <span class="c1"># we can change all simulation size parameters as we are not interested in having an accurate POD curve</span>
@@ -446,8 +462,6 @@ Polynomial chaos model completed
 Polynomial chaos validation R2 (&gt;0.8) : 0.9999
 Polynomial chaos validation Q2 (&gt;0.8) : 0.9987
 Computing POD per defect: [==================================================] 100.00% Done
-CPU times: user 3.53 s, sys: 596 ms, total: 4.12 s
-Wall time: 1.93 s
 </pre></div></div>
 </div>
 </div>
@@ -455,10 +469,10 @@ Wall time: 1.93 s
 <h3>Show POD graphs<a class="headerlink" href="#Show-POD-graphs" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [16]:
+<span></span>In [7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">chaosPOD</span><span class="o">.</span><span class="n">drawPOD</span><span class="p">(</span><span class="n">probabilityLevel</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">confidenceLevel</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
                       <span class="n">name</span><span class="o">=</span><span class="s1">&#39;figure/PODChaos.png&#39;</span><span class="p">)</span>
 <span class="c1"># The figure is saved in PODPolyChaos.png</span>
@@ -466,11 +480,20 @@ Wall time: 1.93 s
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/calcul/home/dumas/anaconda/lib/python3.6/site-packages/matplotlib/figure.py:459: UserWarning: matplotlib is currently using a non-GUI backend, so cannot show the figure
+  &#34;matplotlib is currently using a non-GUI backend, &#34;
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_PLI_12_0.png" src="../_images/examples_PLI_12_0.png" />
+<img alt="../_images/examples_PLI_12_1.png" src="../_images/examples_PLI_12_1.png" />
 </div>
 </div>
 </div>
@@ -489,18 +512,18 @@ variance. Two dedicated classes exists for each case.</p>
 <p>For the mean perturbation, it is possible to change the type of the mean
 shifting. If <em>sigmaScaled = False</em>, the given delta values are the new
 marginal means. If <em>sigmaScaled = True</em>, then
-<span class="math notranslate">\(newMean = mean + sigma \times delta\)</span>, where sigma is the standard
+<span class="math notranslate nohighlight">\(newMean = mean + sigma \times delta\)</span>, where sigma is the standard
 deviation of each marginals.</p>
 <p>It is adviced to set the <em>sigmaScaled</em> parameter to True when the input
 distribution are not equal.</p>
 <div class="section" id="with-a-Kriging-POD">
 <h4>with a Kriging POD<a class="headerlink" href="#with-a-Kriging-POD" title="Permalink to this headline">¶</a></h4>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [17]:
+<span></span>In [8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># the delta values</span>
 <span class="n">deltas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="c1"># sigma scaled is activated because the input distributions are not the same</span>
@@ -508,6 +531,14 @@ distribution are not equal.</p>
 <span class="n">pliMean</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+WARNING:root:The indices were estimated only for the following defect: 4.14, 4.23, 4.32, 4.41, 4.50, 4.60, 4.69, because the probability estimate is too small or too big for other defect values.
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Draw-the-figure-with-given-labels">
@@ -521,20 +552,20 @@ margin are plotted with respect to the defect size and the delta values.
 It enables you to compare the indices depending of the defect size.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [18]:
+<span></span>In [9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">label</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span> <span class="s1">&#39;variable2&#39;</span><span class="p">,</span> <span class="s1">&#39;param3&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [19]:
+<span></span>In [10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">idefect</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">pliMean</span><span class="o">.</span><span class="n">drawIndices</span><span class="p">(</span><span class="n">idefect</span><span class="p">,</span> <span class="n">confidenceLevel</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
                               <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">hellinger</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -543,30 +574,48 @@ It enables you to compare the indices depending of the defect size.</p>
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/calcul/home/dumas/anaconda/lib/python3.6/site-packages/matplotlib/figure.py:459: UserWarning: matplotlib is currently using a non-GUI backend, so cannot show the figure
+  &#34;matplotlib is currently using a non-GUI backend, &#34;
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_PLI_17_0.png" src="../_images/examples_PLI_17_0.png" />
+<img alt="../_images/examples_PLI_17_1.png" src="../_images/examples_PLI_17_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [20]:
+<span></span>In [11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">marginal</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">pliMean</span><span class="o">.</span><span class="n">drawContourIndices</span><span class="p">(</span><span class="n">marginal</span><span class="p">,</span> <span class="n">label</span><span class="p">[</span><span class="n">marginal</span><span class="p">])</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/calcul/home/dumas/anaconda/lib/python3.6/site-packages/matplotlib/figure.py:459: UserWarning: matplotlib is currently using a non-GUI backend, so cannot show the figure
+  &#34;matplotlib is currently using a non-GUI backend, &#34;
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_PLI_18_0.png" src="../_images/examples_PLI_18_0.png" />
+<img alt="../_images/examples_PLI_18_1.png" src="../_images/examples_PLI_18_1.png" />
 </div>
 </div>
 </div>
@@ -581,10 +630,10 @@ cannot be computed because the probability estimate is too small or too
 large.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [21]:
+<span></span>In [12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Indices for marginal 1: &#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">pliMean</span><span class="o">.</span><span class="n">getIndices</span><span class="p">(</span><span class="n">marginal</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
@@ -596,38 +645,38 @@ large.</p>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Indices for marginal 1:
-[[        nan         nan -5.47183238 -0.43770215 -0.22644964 -0.14562948
-  -0.09611319 -0.09935447 -0.05746253         nan         nan         nan
+[[        nan         nan -5.20484953 -0.46784362 -0.23294571 -0.14515493
+  -0.1235924  -0.08908541 -0.05218406         nan         nan         nan
           nan         nan         nan         nan         nan         nan
           nan         nan]
- [        nan         nan -1.28662173 -0.22180929 -0.12398571 -0.08555665
-  -0.05262299 -0.05717166 -0.03074273         nan         nan         nan
+ [        nan         nan -1.23231505 -0.23064471 -0.12821335 -0.08116785
+  -0.06974791 -0.05172207 -0.02538093         nan         nan         nan
           nan         nan         nan         nan         nan         nan
           nan         nan]
- [        nan         nan -0.25378939 -0.06402069 -0.03767213 -0.02784247
-  -0.01640227 -0.01827718 -0.00922909         nan         nan         nan
+ [        nan         nan -0.24367882 -0.06513973 -0.03950675 -0.02547104
+  -0.02179865 -0.01680401 -0.00708865         nan         nan         nan
           nan         nan         nan         nan         nan         nan
           nan         nan]
- [        nan         nan  0.21614647  0.05992336  0.03567235  0.02796824
-   0.01577573  0.01789474  0.0083912          nan         nan         nan
+ [        nan         nan  0.20573065  0.05971306  0.03811938  0.02472888
+   0.02087097  0.01672381  0.00604371         nan         nan         nan
           nan         nan         nan         nan         nan         nan
           nan         nan]
- [        nan         nan  0.6913383   0.17951681  0.10446151  0.08710083
-   0.04654376  0.05366883  0.02283794         nan         nan         nan
+ [        nan         nan  0.64276482  0.17388364  0.11452088  0.07408223
+   0.06100422  0.05098839  0.01555555         nan         nan         nan
           nan         nan         nan         nan         nan         nan
           nan         nan]
- [        nan         nan  1.23892676  0.30078311  0.16751247  0.1528117
-   0.07658196  0.09002552  0.0336249          nan         nan         nan
+ [        nan         nan  1.10647782  0.27723651  0.18990485  0.12399895
+   0.09843456  0.08696171  0.0226057          nan         nan         nan
           nan         nan         nan         nan         nan         nan
           nan         nan]]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [22]:
+<span></span>In [13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Indices for defect 4: &#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">pliMean</span><span class="o">.</span><span class="n">getIndices</span><span class="p">(</span><span class="n">idefect</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
@@ -639,12 +688,12 @@ Indices for marginal 1:
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Indices for defect 4:
-[[  1.09347293e+00  -2.26449643e-01   5.25736353e-03]
- [  6.48300677e-01  -1.23985710e-01   5.46332364e-04]
- [  2.09390155e-01  -3.76721289e-02  -4.81674899e-04]
- [ -2.50243943e-01   3.56723519e-02   1.04956196e-03]
- [ -1.29198218e+00   1.04461511e-01   4.67552207e-03]
- [ -5.74859136e+00   1.67512468e-01   9.83388899e-03]]
+[[ 1.10336807e+00 -2.32945706e-01 -2.48287972e-02]
+ [ 6.51182636e-01 -1.28213346e-01 -9.51075386e-03]
+ [ 2.09833716e-01 -3.95067466e-02 -2.13429231e-03]
+ [-2.50473569e-01  3.81193815e-02  1.45062730e-03]
+ [-1.29172764e+00  1.14520879e-01  3.04535446e-03]
+ [-5.73347022e+00  1.89904848e-01  4.63723691e-03]]
 </pre></div></div>
 </div>
 </div>
@@ -655,10 +704,10 @@ access to more results : - the confidence interval - the perturbed
 probability estimate - draw the perturbed marginal density</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [23]:
+<span></span>In [14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># get PLI object for the 3rd defect</span>
 <span class="n">pliMeanDefect3</span> <span class="o">=</span> <span class="n">pliMean</span><span class="o">.</span><span class="n">getPLIObject</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
@@ -676,30 +725,39 @@ probability estimate - draw the perturbed marginal density</p>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Perturbed probability estimate :
-[[ 0.58921468  0.14307553  0.2097866 ]
- [ 0.40523398  0.16835688  0.20773887]
- [ 0.26424247  0.19332331  0.20629464]
- [ 0.15418711  0.21802623  0.20515709]
- [ 0.07163711  0.24262661  0.20412897]
- [ 0.01853949  0.26757109  0.20288179]]
+[[0.58159571 0.13891125 0.20724209]
+ [0.4005364  0.16568551 0.20637717]
+ [0.26164943 0.19143028 0.20490247]
+ [0.15302838 0.21607549 0.20270131]
+ [0.07134159 0.23935487 0.19959424]
+ [0.01858485 0.26042852 0.19508161]]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/calcul/home/dumas/anaconda/lib/python3.6/site-packages/matplotlib/figure.py:459: UserWarning: matplotlib is currently using a non-GUI backend, so cannot show the figure
+  &#34;matplotlib is currently using a non-GUI backend, &#34;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_PLI_23_1.png" src="../_images/examples_PLI_23_1.png" />
+<img alt="../_images/examples_PLI_23_2.png" src="../_images/examples_PLI_23_2.png" />
 </div>
 </div>
 </div>
 <div class="section" id="with-polynomial-chaos">
 <h4>with polynomial chaos<a class="headerlink" href="#with-polynomial-chaos" title="Permalink to this headline">¶</a></h4>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [24]:
+<span></span>In [15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># the delta values</span>
 <span class="n">deltas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="c1"># sigma scaled is activated because the input distributions are not the same</span>
@@ -708,23 +766,40 @@ Perturbed probability estimate :
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+WARNING:root:The indices were estimated only for the following defect: 4.14, 4.23, 4.32, 4.41, 4.50, 4.60, 4.69, 4.78, because the probability estimate is too small or too big for other defect values.
+</pre></div></div>
+</div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [25]:
+<span></span>In [16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">marginal</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">pliMean</span><span class="o">.</span><span class="n">drawContourIndices</span><span class="p">(</span><span class="n">marginal</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/calcul/home/dumas/anaconda/lib/python3.6/site-packages/matplotlib/figure.py:459: UserWarning: matplotlib is currently using a non-GUI backend, so cannot show the figure
+  &#34;matplotlib is currently using a non-GUI backend, &#34;
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_PLI_26_0.png" src="../_images/examples_PLI_26_0.png" />
+<img alt="../_images/examples_PLI_26_1.png" src="../_images/examples_PLI_26_1.png" />
 </div>
 </div>
 </div>
@@ -733,17 +808,17 @@ Perturbed probability estimate :
 <h3>Variance perturbation<a class="headerlink" href="#Variance-perturbation" title="Permalink to this headline">¶</a></h3>
 <p>For the variance perturbation, the delta values must be greater than 0.
 The delta values corresponds to: - the new variance if <em>coefScaled =
-False</em> - <span class="math notranslate">\(newCov = delta + cov\)</span> if <em>covScaled = True</em>, this
+False</em> - <span class="math notranslate nohighlight">\(newCov = delta + cov\)</span> if <em>covScaled = True</em>, this
 increases the coefficient of variation by delta. The new variance is
 computed such that the mean does not change.</p>
 <p>It is also possible to define the delta values independently for each
 margin.</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [26]:
+<span></span>In [17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># the delta values</span>
 <span class="n">deltas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
@@ -753,14 +828,23 @@ margin.</p>
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/calcul/home/dumas/anaconda/lib/python3.6/site-packages/otpod-0.3-py3.6.egg/otpod/_pli.py:689: RuntimeWarning: overflow encountered in exp
+WARNING:root:The indices were estimated only for the following defect: 4.14, 4.23, 4.32, 4.41, 4.50, 4.60, 4.69, because the probability estimate is too small or too big for other defect values.
+</pre></div></div>
+</div>
 <p>With the Hellinger distance, we can see that the perturbed variance is
 not equivalent for all margins.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [27]:
+<span></span>In [18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">idefect</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">pliVar</span><span class="o">.</span><span class="n">drawIndices</span><span class="p">(</span><span class="n">idefect</span><span class="p">,</span> <span class="n">confidenceLevel</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
                               <span class="n">hellinger</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
@@ -769,30 +853,58 @@ not equivalent for all margins.</p>
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/calcul/home/dumas/anaconda/lib/python3.6/site-packages/matplotlib/figure.py:459: UserWarning: matplotlib is currently using a non-GUI backend, so cannot show the figure
+  &#34;matplotlib is currently using a non-GUI backend, &#34;
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_PLI_30_0.png" src="../_images/examples_PLI_30_0.png" />
+<img alt="../_images/examples_PLI_30_1.png" src="../_images/examples_PLI_30_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [28]:
+<span></span>In [19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">marginal</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">pliVar</span><span class="o">.</span><span class="n">drawContourIndices</span><span class="p">(</span><span class="n">marginal</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="stderr output_area docutils container">
+<div class="highlight"><pre>
+/calcul/home/dumas/anaconda/lib/python3.6/site-packages/matplotlib/figure.py:459: UserWarning: matplotlib is currently using a non-GUI backend, so cannot show the figure
+  &#34;matplotlib is currently using a non-GUI backend, &#34;
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_PLI_31_0.png" src="../_images/examples_PLI_31_0.png" />
+<img alt="../_images/examples_PLI_31_1.png" src="../_images/examples_PLI_31_1.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -820,8 +932,8 @@ not equivalent for all margins.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017.
-      Last updated on Mar 28, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+      Last updated on Sep 12, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>

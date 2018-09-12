@@ -9,7 +9,7 @@
     <title>AdaptiveHitMissPOD &#8212; otpod  documentation</title>
     <link rel="stylesheet" href="../_static/openturns.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -104,37 +104,32 @@ detection, noiseThres, saturationThres</em>)</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>inputDOE</strong> : 2-d sequence of float</p>
-<blockquote>
-<div><p>Vector of the input values. The first column must correspond with the
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>inputDOE</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
+<dd><p class="first last">Vector of the input values. The first column must correspond with the
 defect sizes.</p>
-</div></blockquote>
-<p><strong>outputDOE</strong> : 2-d sequence of float</p>
-<blockquote>
-<div><p>Vector of the signals, of dimension 1.</p>
-</div></blockquote>
-<p><strong>physicalModel</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.NumericalMathFunction</span></code></p>
-<blockquote>
-<div><p>True model used to compute the real hit miss value of the signal value 
+</dd>
+<dt><strong>outputDOE</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
+<dd><p class="first last">Vector of the signals, of dimension 1.</p>
+</dd>
+<dt><strong>physicalModel</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Function</span></code></a></span></dt>
+<dd><p class="first last">True model used to compute the real hit miss value of the signal value 
 to be added to the DOE.</p>
-</div></blockquote>
-<p><strong>nMorePoints</strong> : positive int</p>
-<blockquote>
-<div><p>The number of points to add to the DOE, computed by the <em>physicalModel</em>.</p>
-</div></blockquote>
-<p><strong>detection</strong> : float</p>
-<blockquote>
-<div><p>Detection value of the signal if the physical model does not return a
+</dd>
+<dt><strong>nMorePoints</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive int</span></dt>
+<dd><p class="first last">The number of points to add to the DOE, computed by the <em>physicalModel</em>.</p>
+</dd>
+<dt><strong>detection</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Detection value of the signal if the physical model does not return a
 hit miss value.</p>
-</div></blockquote>
-<p><strong>noiseThres</strong> : float</p>
-<blockquote>
-<div><p>Value for low censored data. Default is None.</p>
-</div></blockquote>
-<p><strong>saturationThres</strong> : float</p>
-<blockquote class="last">
-<div><p>Value for high censored data. Default is None</p>
-</div></blockquote>
+</dd>
+<dt><strong>noiseThres</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Value for low censored data. Default is None.</p>
+</dd>
+<dt><strong>saturationThres</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Value for high censored data. Default is None</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -283,22 +278,23 @@ the method <em>setVerbose</em>.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>probabilityLevel</strong> : float</p>
-<blockquote>
-<div><p>The probability level for which the defect size is computed.</p>
-</div></blockquote>
-<p><strong>confidenceLevel</strong> : float</p>
-<blockquote>
-<div><p>The confidence level associated to the given probability level the
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>probabilityLevel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The probability level for which the defect size is computed.</p>
+</dd>
+<dt><strong>confidenceLevel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The confidence level associated to the given probability level the
 defect size is computed. Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : collection of <code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.NumericalPointWithDescription</span></code></p>
-<blockquote class="last">
-<div><p>A NumericalPointWithDescription containing the detection size
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>result</strong> <span class="classifier-delimiter">:</span> <span class="classifier">collection of <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.PointWithDescription.html#openturns.PointWithDescription" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.PointWithDescription</span></code></a></span></dt>
+<dd><p class="first last">A PointWithDescription containing the detection size
 computed at the given probability level and confidence level if provided.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -313,22 +309,23 @@ computed at the given probability level and confidence level if provided.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>name</strong> : string</p>
-<blockquote>
-<div><p>name of the figure to be saved with <em>transparent</em> option sets to True
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the figure to be saved with <em>transparent</em> option sets to True
 and <em>bbox_inches=’tight’</em>. It can be only the file name or the 
 full path name. Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>fig</strong> : <a class="reference external" href="http://matplotlib.org/api/figure_api.html">matplotlib.figure</a></p>
-<blockquote>
-<div><p>Matplotlib figure object.</p>
-</div></blockquote>
-<p><strong>ax</strong> : <a class="reference external" href="http://matplotlib.org/api/axes_api.html">matplotlib.axes</a></p>
-<blockquote class="last">
-<div><p>Matplotlib axes object.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fig</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference external" href="http://matplotlib.org/api/figure_api.html">matplotlib.figure</a></span></dt>
+<dd><p class="first last">Matplotlib figure object.</p>
+</dd>
+<dt><strong>ax</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference external" href="http://matplotlib.org/api/axes_api.html">matplotlib.axes</a></span></dt>
+<dd><p class="first last">Matplotlib axes object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -345,41 +342,38 @@ full path name. Default is None.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>probabilityLevel</strong> : float</p>
-<blockquote>
-<div><p>The probability level for which the defect size is computed. Default
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>probabilityLevel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The probability level for which the defect size is computed. Default
 is None.</p>
-</div></blockquote>
-<p><strong>confidenceLevel</strong> : float</p>
-<blockquote>
-<div><p>The confidence level associated to the given probability level the
+</dd>
+<dt><strong>confidenceLevel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The confidence level associated to the given probability level the
 defect size is computed. Default is None.</p>
-</div></blockquote>
-<p><strong>defectMin, defectMax</strong> : float</p>
-<blockquote>
-<div><p>Define the interval where the curve is plotted. Default : min and
+</dd>
+<dt><strong>defectMin, defectMax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Define the interval where the curve is plotted. Default : min and
 max values of the input sample.</p>
-</div></blockquote>
-<p><strong>nbPt</strong> : int</p>
-<blockquote>
-<div><p>The number of points to draw the curves. Default is 100.</p>
-</div></blockquote>
-<p><strong>name</strong> : string</p>
-<blockquote>
-<div><p>name of the figure to be saved with <em>transparent</em> option sets to True
+</dd>
+<dt><strong>nbPt</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of points to draw the curves. Default is 100.</p>
+</dd>
+<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">name of the figure to be saved with <em>transparent</em> option sets to True
 and <em>bbox_inches=’tight’</em>. It can be only the file name or the 
 full path name. Default is None.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>fig</strong> : <a class="reference external" href="http://matplotlib.org/api/figure_api.html">matplotlib.figure</a></p>
-<blockquote>
-<div><p>Matplotlib figure object.</p>
-</div></blockquote>
-<p><strong>ax</strong> : <a class="reference external" href="http://matplotlib.org/api/axes_api.html">matplotlib.axes</a></p>
-<blockquote class="last">
-<div><p>Matplotlib axes object.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fig</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference external" href="http://matplotlib.org/api/figure_api.html">matplotlib.figure</a></span></dt>
+<dd><p class="first last">Matplotlib figure object.</p>
+</dd>
+<dt><strong>ax</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference external" href="http://matplotlib.org/api/axes_api.html">matplotlib.axes</a></span></dt>
+<dd><p class="first last">Matplotlib axes object.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -394,11 +388,12 @@ full path name. Default is None.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>lambdaBoxCox</strong> : float</p>
-<blockquote class="last">
-<div><p>The Box Cox parameter used to transform the data. If the transformation
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>lambdaBoxCox</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The Box Cox parameter used to transform the data. If the transformation
 is not enabled None is returned.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -413,10 +408,11 @@ is not enabled None is returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>size</strong> : int</p>
-<blockquote class="last">
-<div><p>The number of candidate points on which the criterion is computed.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of candidate points on which the criterion is computed.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -431,10 +427,11 @@ is not enabled None is returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : classifier</p>
-<blockquote class="last">
-<div><p>The classifier model, either random forest or svm.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>result</strong> <span class="classifier-delimiter">:</span> <span class="classifier">classifier</span></dt>
+<dd><p class="first last">The classifier model, either random forest or svm.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -467,11 +464,12 @@ is not enabled None is returned.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>defectSize</strong> : sequence of float</p>
-<blockquote class="last">
-<div><p>The defect sizes where the Monte Carlo simulation is performed to
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>defectSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">The defect sizes where the Monte Carlo simulation is performed to
 compute the POD.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -486,11 +484,12 @@ compute the POD.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.ComposedDistribution.html#openturns.ComposedDistribution" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.ComposedDistribution</span></code></a></p>
-<blockquote class="last">
-<div><p>The input parameters distribution, default is a Uniform distribution
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>distribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.ComposedDistribution.html#openturns.ComposedDistribution" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.ComposedDistribution</span></code></a></span></dt>
+<dd><p class="first last">The input parameters distribution, default is a Uniform distribution
 for all parameters.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -505,11 +504,12 @@ for all parameters.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>graphVerbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Enable or disable the display of the POD graph at each iteration. Default
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>graphVerbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Enable or disable the display of the POD graph at each iteration. Default
 is False.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -548,17 +548,19 @@ is False.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>confidenceLevel</strong> : float</p>
-<blockquote>
-<div><p>The confidence level the POD must be computed. Default is 0.95</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>confidenceLevel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The confidence level the POD must be computed. Default is 0.95</p>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>PODModelCl</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.NumericalMathFunction</span></code></p>
-<blockquote class="last">
-<div><p>The function which computes the probability of detection for a given
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>PODModelCl</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Function</span></code></a></span></dt>
+<dd><p class="first last">The function which computes the probability of detection for a given
 defect value at the confidence level given as parameter.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -573,11 +575,12 @@ defect value at the confidence level given as parameter.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>PODModel</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.NumericalMathFunction</span></code></p>
-<blockquote class="last">
-<div><p>The function which computes the probability of detection for a given
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>PODModel</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Function</span></code></a></span></dt>
+<dd><p class="first last">The function which computes the probability of detection for a given
 defect value.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -592,11 +595,12 @@ defect value.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>size</strong> : int</p>
-<blockquote class="last">
-<div><p>The size of the Monte Carlo simulation used to compute the POD for
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The size of the Monte Carlo simulation used to compute the POD for
 each defect size.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -611,10 +615,11 @@ each defect size.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>size</strong> : int</p>
-<blockquote class="last">
-<div><p>The size of the simulation used to compute the confidence interval.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The size of the simulation used to compute the confidence interval.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -629,10 +634,11 @@ each defect size.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>verbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Enable or disable the verbosity. Default is True.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Enable or disable the verbosity. Default is True.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -658,10 +664,11 @@ used to compute the mean POD and the POD at the confidence level.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>size</strong> : int</p>
-<blockquote class="last">
-<div><p>The number of candidate points on which the criterion is computed</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of candidate points on which the criterion is computed</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -688,11 +695,12 @@ used to compute the mean POD and the POD at the confidence level.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>defectSize</strong> : sequence of float</p>
-<blockquote class="last">
-<div><p>The defect sizes where the Monte Carlo simulation is performed to
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>defectSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">The defect sizes where the Monte Carlo simulation is performed to
 compute the POD.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -707,10 +715,11 @@ compute the POD.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>distribution</strong> : <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.ComposedDistribution.html#openturns.ComposedDistribution" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.ComposedDistribution</span></code></a></p>
-<blockquote class="last">
-<div><p>The input parameters distribution.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>distribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.ComposedDistribution.html#openturns.ComposedDistribution" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.ComposedDistribution</span></code></a></span></dt>
+<dd><p class="first last">The input parameters distribution.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -725,24 +734,22 @@ compute the POD.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>graphVerbose</strong> : bool</p>
-<blockquote>
-<div><p>Enable or disable the display of the POD graph at each iteration.</p>
-</div></blockquote>
-<p><strong>probabilityLevel</strong> : float</p>
-<blockquote>
-<div><p>The probability level for which the defect size is computed. Default
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>graphVerbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Enable or disable the display of the POD graph at each iteration.</p>
+</dd>
+<dt><strong>probabilityLevel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The probability level for which the defect size is computed. Default
 is None.</p>
-</div></blockquote>
-<p><strong>confidenceLevel</strong> : float</p>
-<blockquote>
-<div><p>The confidence level associated to the given probability level the
+</dd>
+<dt><strong>confidenceLevel</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The confidence level associated to the given probability level the
 defect size is computed. Default is None.</p>
-</div></blockquote>
-<p><strong>directory</strong> : string</p>
-<blockquote class="last">
-<div><p>Directory where to save the graphs as png files.</p>
-</div></blockquote>
+</dd>
+<dt><strong>directory</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">Directory where to save the graphs as png files.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -769,11 +776,12 @@ defect size is computed. Default is None.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>size</strong> : int</p>
-<blockquote class="last">
-<div><p>The size of the Monte Carlo simulation used to compute the POD for
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The size of the Monte Carlo simulation used to compute the POD for
 each defect size.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -788,10 +796,11 @@ each defect size.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>size</strong> : int</p>
-<blockquote class="last">
-<div><p>The size of the simulation used to compute the confidence interval.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The size of the simulation used to compute the confidence interval.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -806,10 +815,11 @@ each defect size.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>verbose</strong> : bool</p>
-<blockquote class="last">
-<div><p>Enable or disable the verbosity.</p>
-</div></blockquote>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Enable or disable the verbosity.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
@@ -844,8 +854,8 @@ each defect size.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017.
-      Last updated on Mar 28, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+      Last updated on Sep 12, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
     </div>
   </body>
 </html>
