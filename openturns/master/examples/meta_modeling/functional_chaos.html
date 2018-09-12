@@ -266,10 +266,10 @@ div.nboutput div.output_area.stderr {
 model response using functional chaos.</p>
 <p>Here</p>
 <div class="math">
-<p><img src="../../_images/math/e73699ab64fcfd973b56aa0e9252ae3d6386bcd9.svg" alt="h(x) = [cos(x_1 + x_2), (x2 + 1)* e^{x_1 - 2* x_2}]"/></p>
+<p><img src="../../_images/math/da3318106efd0384c076639ce227429c6b14f052.svg" alt="h(x) = [\cos(x_1 + x_2), (x2 + 1) e^{x_1 - 2 x_2}]"/></p>
 </div><div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [9]:
+<span></span>In [7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -280,7 +280,7 @@ model response using functional chaos.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [10]:
+<span></span>In [8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -298,11 +298,13 @@ model response using functional chaos.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [11]:
+<span></span>In [9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create a functional chaos model</span>
+<span class="c1"># we reduce the sampling size for the automatic selection of distribution based on Kolmogorov test</span>
+<span class="n">ot</span><span class="o">.</span><span class="n">ResourceMap</span><span class="o">.</span><span class="n">SetAsUnsignedInteger</span><span class="p">(</span><span class="s2">&quot;FittingTest-KolmogorovSamplingSize&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">algo</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FunctionalChaosAlgorithm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">algo</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span>
@@ -335,7 +337,7 @@ model response using functional chaos.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [13]:
+<span></span>In [10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -348,11 +350,32 @@ model response using functional chaos.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[13]:
+<span></span>Out[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_meta_modeling_functional_chaos_6_0.svg" src="../../_images/examples_meta_modeling_functional_chaos_6_0.svg" /></div>
+<img alt="../../_images/examples_meta_modeling_functional_chaos_6_0.png" src="../../_images/examples_meta_modeling_functional_chaos_6_0.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
 </div>
 </div>
 

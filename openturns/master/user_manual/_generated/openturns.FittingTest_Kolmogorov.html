@@ -121,7 +121,7 @@ the sample.
 This parameter must not be provided if a <a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">DistributionFactory</span></code></a>
 was provided as the second argument (it will internally be set to the
 number of parameters estimated by the <a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">DistributionFactory</span></code></a>).
-It can be specified if  a <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a> was provided
+It can be specified if a <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a> was provided
 as the second argument, but if it is not, it will be set equal to 0.</p>
 </dd>
 </dl>
@@ -146,14 +146,15 @@ as the second argument, but if it is not, it will be set equal to 0.</p>
 <p class="rubric">Notes</p>
 <p>The present implementation of the Kolmogorov goodness-of-fit test is
 two-sided. This uses an external C implementation of the Kolmogorov cumulative
-distribution function by <a class="reference internal" href="../../bibliography.html#simard2011" id="id1">[Simard2011]</a>.</p>
+distribution function by <a class="reference internal" href="../../bibliography.html#simard2011" id="id1">[Simard2011]</a>.
+If it is called with a distribution, it is supposed to be fully specified ie no parameter has been estimated from the given sample. Otherwise, the distribution is estimated using the given factory based on the given sample and the distribution of the test statistics is estimated using a Monte Carlo approach (see the <em>FittingTest-KolmogorovSamplingSize</em> key in <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>).</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">FittingTest</span><span class="o">.</span><span class="n">Kolmogorov</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">NormalFactory</span><span class="p">(),</span> <span class="mf">0.01</span><span class="p">)</span>
-<span class="go">class=TestResult name=Unnamed type=KolmogorovDistribution binaryQualityMeasure=true p-value threshold=0.01 p-value=0.846896 description=[Normal(mu = -0.0944924, sigma = 0.989808) vs sample Normal]</span>
+<span class="go">class=TestResult name=Unnamed type=KolmogorovDistribution binaryQualityMeasure=true p-value threshold=0.01 p-value=0.7 description=[Normal(mu = -0.0944924, sigma = 0.989808) vs sample Normal]</span>
 </pre></div>
 </div>
 </dd></dl>

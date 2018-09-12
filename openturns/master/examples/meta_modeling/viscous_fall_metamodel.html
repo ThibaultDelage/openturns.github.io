@@ -452,13 +452,15 @@ probabilistic:</p>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># First, using the most basic interface</span>
+<span class="c1"># We limit the sampling size of the Kolmogorov selection in order to reduce the computational burden</span>
+<span class="n">ot</span><span class="o">.</span><span class="n">ResourceMap</span><span class="o">.</span><span class="n">SetAsUnsignedInteger</span><span class="p">(</span><span class="s2">&quot;FittingTest-KolmogorovSamplingSize&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">algo</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FunctionalChaosAlgorithm</span><span class="p">(</span><span class="n">inputSampleChaos</span><span class="p">,</span> <span class="n">outputSampleChaos</span><span class="p">)</span>
 <span class="n">algo</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="n">metaModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PointToFieldConnection</span><span class="p">(</span><span class="n">postProcessing</span><span class="p">,</span> <span class="n">algo</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span><span class="o">.</span><span class="n">getMetaModel</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [ ]:
 </pre></div>
@@ -474,6 +476,13 @@ probabilistic:</p>
 <span class="n">graph</span><span class="o">.</span><span class="n">setYTitle</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$z$&#39;</span><span class="p">)</span>
 <span class="n">graph</span>
 </pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/examples_meta_modeling_viscous_fall_metamodel_11_0.png" src="../../_images/examples_meta_modeling_viscous_fall_metamodel_11_0.png" />
 </div>
 </div>
 </div>
