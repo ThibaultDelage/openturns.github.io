@@ -177,7 +177,32 @@ default value is <em>False</em>.</p>
 </div><p>We have:</p>
 <div class="math">
 <p><img src="../../_images/math/c29c5bccd5d2859dc0f171199b7e5758c9dec8d5.svg" alt="\tilde{\vect{\varphi}}_k(\vect{t})= \sum_{\ell=1}^L  C(\vect{t}, \vect{\xi}_\ell) \vect{\phi}_{\ell,k} \quad \mbox{pour} \quad k \leq \tilde{K}"/></p>
-</div><p class="rubric">Examples</p>
+</div><p>The most computationally intensive part of the algorithm is the computation of the
+SVD decomposition. By default, it is done using LAPACK dgesdd routine. While being
+very accurate and reasonably fast for small to medium sized problems, it becomes
+prohibitively slow for large cases. The user can choose to use a stochastic
+algorithm instead, with the constraint that the number of singular values to be
+computed has to be fixed a priori.
+The following keys of <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a> allow to select and tune
+these algorithms:</p>
+<blockquote>
+<div><ul class="simple">
+<li>‘KarhunenLoeveSVDAlgorithm-UseRandomSVD’ which triggers the use of a random
+algorithm. By default, it is set to <em>False</em> and LAPACK is used.</li>
+<li>‘KarhunenLoeveSVDAlgorithm-RandomSVDMaximumRank’ which fixes the number of
+singular values to compute. By default it is set to 1000.</li>
+<li>‘KarhunenLoeveSVDAlgorithm-RandomSVDVariant’ which can be equal to either
+‘Halko2010’ for <a class="reference internal" href="../../bibliography.html#halko2010" id="id1">[Halko2010]</a> (the default) or ‘Halko2011’ for <a class="reference internal" href="../../bibliography.html#halko2011" id="id2">[Halko2011]</a>.
+These two algorithms have very similar structures, the first one being based
+on a random compression of both the rows and columns of <img class="math" src="../../_images/math/64cdb4280596d6928652437575ec9c6c346ceec7.svg" alt="\mat{Y}"/>, the
+second one being based on an iterative compressed sampling of the columns of
+<img class="math" src="../../_images/math/64cdb4280596d6928652437575ec9c6c346ceec7.svg" alt="\mat{Y}"/>.</li>
+<li>‘KarhunenLoeveSVDAlgorithm-Halko2011Margin’ and
+‘KarhunenLoeveSVDAlgorithm-Halko2011Iterations’ to fix the parameters of the
+‘Halko2011’ variant. See <a class="reference internal" href="../../bibliography.html#halko2011" id="id3">[Halko2011]</a> for the details.</li>
+</ul>
+</div></blockquote>
+<p class="rubric">Examples</p>
 <p>Create a Karhunen-Loeve SVD algorithm:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">IntervalMesher</span><span class="p">([</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="o">-</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
