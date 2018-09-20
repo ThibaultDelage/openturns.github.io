@@ -270,7 +270,7 @@ model response using functional chaos.</p>
 <p><img src="../../_images/math/da3318106efd0384c076639ce227429c6b14f052.svg" alt="h(x) = [\cos(x_1 + x_2), (x2 + 1) e^{x_1 - 2 x_2}]"/></p>
 </div><div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [7]:
+<span></span>In [1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -281,7 +281,7 @@ model response using functional chaos.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [8]:
+<span></span>In [2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -299,7 +299,7 @@ model response using functional chaos.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [9]:
+<span></span>In [3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -315,7 +315,7 @@ model response using functional chaos.</p>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [12]:
+<span></span>In [4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -330,52 +330,54 @@ model response using functional chaos.</p>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[12]:
+<span></span>Out[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_meta_modeling_functional_chaos_5_0.svg" src="../../_images/examples_meta_modeling_functional_chaos_5_0.svg" /></div>
+<img alt="../../_images/examples_meta_modeling_functional_chaos_5_0.png" src="../../_images/examples_meta_modeling_functional_chaos_5_0.png" />
+</div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [10]:
+<span></span>In [12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># draw Sobol&#39; indices</span>
 <span class="n">sensitivityAnalysis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FunctionalChaosSobolIndices</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="n">first_order</span> <span class="o">=</span> <span class="p">[</span><span class="n">sensitivityAnalysis</span><span class="o">.</span><span class="n">getSobolIndex</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">)]</span>
-<span class="n">ot</span><span class="o">.</span><span class="n">SaltelliSensitivityAlgorithm</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">first_order</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;1st order Sobol</span><span class="se">\&#39;</span><span class="s1"> indices&#39;</span><span class="p">)</span>
+<span class="n">total_order</span> <span class="o">=</span> <span class="p">[</span><span class="n">sensitivityAnalysis</span><span class="o">.</span><span class="n">getSobolTotalIndex</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">)]</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="s1">&#39;Sobol indices&#39;</span><span class="p">,</span> <span class="s1">&#39;inputs&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">):</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">first_order</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">cloud</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Cloud</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;circle&quot;</span><span class="p">,</span> <span class="s2">&quot;First order&quot;</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cloud</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">):</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.01</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">total_order</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">cloud</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Cloud</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;square&quot;</span><span class="p">,</span> <span class="s2">&quot;Total order&quot;</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cloud</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">):</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.02</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">first_order</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">text</span><span class="o">.</span><span class="n">setColor</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">setLegendPosition</span><span class="p">(</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
+<span class="n">graph</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[10]:
+<span></span>Out[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <img alt="../../_images/examples_meta_modeling_functional_chaos_6_0.png" src="../../_images/examples_meta_modeling_functional_chaos_6_0.png" />
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
 </div>
 </div>
 </div>

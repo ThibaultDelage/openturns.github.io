@@ -56,7 +56,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../theory.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../theory.html" >Theory</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="numerical_methods.html" accesskey="U">Numerical methods</a> &#187;</li> 
       </ul>
     </div>
@@ -96,7 +96,7 @@
           <div class="body" role="main">
             
   <div class="section" id="isoprobabilistic-transformations">
-<h1>Isoprobabilistic transformations<a class="headerlink" href="#isoprobabilistic-transformations" title="Permalink to this headline">¶</a></h1>
+<span id="isoprobabilistic-transformation"></span><h1>Isoprobabilistic transformations<a class="headerlink" href="#isoprobabilistic-transformations" title="Permalink to this headline">¶</a></h1>
 <p>The isoprobabilistic transformation is used in the following context:
 <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> is the input random vector, <img class="math" src="../../_images/math/a4cac6f5081487962e50aaa734a7ffaae3c77a90.svg" alt="F_i"/> the
 cumulative density functions of its components and <img class="math" src="../../_images/math/672a37f589017d9850b03c88d416135b30d4f284.svg" alt="C"/> its
@@ -108,9 +108,8 @@ model,
 the event considered here and g(,) = 0 its boundary.
 One way to evaluate the probability content <img class="math" src="../../_images/math/5085f93dd5258efdc1edcc3c0efc525f37018906.svg" alt="P_f"/> of the event
 <img class="math" src="../../_images/math/252362c991122f578eb1b8a9a9e2af13e42655d8.svg" alt="\cD_f"/>:</p>
-<div class="math">
-<p><img src="../../_images/math/7618a6163b99a1b0bdd279d1101f8b2758452bb9.svg" alt="\label{PfXIsoProb}
-    P_f = \Prob{g(\vect{X}\,,\,\vect{d})\leq 0}=   \int_{\cD_f} \pdf\, d\vect{x}"/></p>
+<div class="math" id="equation-pfxisoprob">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-pfxisoprob" title="Permalink to this equation">¶</a></span><img src="../../_images/math/86c04449719db2f42f5b15fd2232b10214de4ba0.svg" alt="P_f = \Prob{g(\vect{X}\,,\,\vect{d})\leq 0}=   \int_{\cD_f} \pdf\, d\vect{x}"/></p>
 </div><p>is to introduce an isoprobabilistic transformation <img class="math" src="../../_images/math/4713e84c5cb785429002add0db4e40a5e0b9d2f6.svg" alt="T"/> which is
 a diffeomorphism from <img class="math" src="../../_images/math/22d2eb8e96b9933bc0d80c6ddeb762de40c72310.svg" alt="\supp{\vect{X}}"/> into <img class="math" src="../../_images/math/95dc7b2761afb288326306806146dcb52b57fffc.svg" alt="\Rset^n"/>,
 such that the distribution of the random vector
@@ -119,15 +118,14 @@ such that the distribution of the random vector
 distribution for all rotations <img class="math" src="../../_images/math/d2191b2726d83871163285549d59cda7fe7b581a.svg" alt="\mat{R}\in{\cS\cO}_n(\Rset)"/>.
 Such transformations exist and the most widely used are:</p>
 <ul class="simple">
-<li>the Generalized Nataf transformation (refer to ),</li>
-<li>the Rosenblatt transformation (refer to ).</li>
+<li>the Generalized Nataf transformation (refer to <a class="reference internal" href="../../bibliography.html#lebrun2009b" id="id1">[Lebrun2009b]</a>),</li>
+<li>the Rosenblatt transformation (refer to <a class="reference internal" href="../../bibliography.html#rosenblatt1952" id="id2">[Rosenblatt1952]</a>).</li>
 </ul>
 <p>If we suppose that the numerical model <img class="math" src="../../_images/math/acd8bd9450f07383a622c4141048e61d5d4593d8.svg" alt="g"/> has suitable properties
-of differentiability, the evaluation of the probability ([PfXIsoProb])
+of differentiability, the evaluation of the probability <a class="reference internal" href="#equation-pfxisoprob">(1)</a>
 can be transformed in the evaluation of the probability:</p>
-<div class="math">
-<p><img src="../../_images/math/db2e26eb0a11de546300932a04a5f47eca081461.svg" alt="\label{StandardSpace}
-    P_f = \Prob{G(\vect{U}\,,\,\vect{d})\leq 0} = \int_{\Rset^n} \boldsymbol{1}_{G(\vect{u}\,,\,\vect{d}) \leq 0}\,f_{\vect{U}}(\vect{u})\,d\vect{u}"/></p>
+<div class="math" id="equation-standardspace">
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-standardspace" title="Permalink to this equation">¶</a></span><img src="../../_images/math/a68f0e0ab32a0542c424ef449c4a38edfd5c51d7.svg" alt="P_f = \Prob{G(\vect{U}\,,\,\vect{d})\leq 0} = \int_{\Rset^n} \boldsymbol{1}_{G(\vect{u}\,,\,\vect{d}) \leq 0}\,f_{\vect{U}}(\vect{u})\,d\vect{u}"/></p>
 </div><p>where <img class="math" src="../../_images/math/4713e84c5cb785429002add0db4e40a5e0b9d2f6.svg" alt="T"/> is a <img class="math" src="../../_images/math/5959c326ec82c769897cae60d77b9c4da5bf9412.svg" alt="C^1"/>-diffeomorphism called an
 <em>isoprobabilistic transformation</em>, <img class="math" src="../../_images/math/486d131dbb0951acf4a612456c6c01a07a6c2036.svg" alt="f_{\vect{U}}"/> the
 probability density function of <img class="math" src="../../_images/math/f00f3d0ac4a97b8525f1d15f0dc547ab5a4f494d.svg" alt="\vect{U}=T(\vect{X})"/> and
@@ -147,11 +145,11 @@ standard space) is supported by the last axis.</p>
 some specific conditions on the dependence structure of the random
 vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> :</p>
 <ul class="simple">
-<li>the Nataf transformation (see <a class="reference internal" href="../../bibliography.html#nataf1962" id="id1">[Nataf1962]</a>): <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> must
+<li>the Nataf transformation (see <a class="reference internal" href="../../bibliography.html#nataf1962" id="id3">[Nataf1962]</a>, <a class="reference internal" href="../../bibliography.html#lebrun2009a" id="id4">[Lebrun2009a]</a>): <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> must
 have a normal copula,</li>
-<li>the Generalized Nataf transformation (see <a class="reference internal" href="../../bibliography.html#lebrun2009b" id="id2">[Lebrun2009b]</a>):
+<li>the Generalized Nataf transformation (see <a class="reference internal" href="../../bibliography.html#lebrun2009b" id="id5">[Lebrun2009b]</a>):
 <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> must have an elliptical copula,</li>
-<li>the Rosenblatt transformation (see <a class="reference internal" href="../../bibliography.html#rosenblatt1952" id="id3">[Rosenblatt1952]</a>) : there is no
+<li>the Rosenblatt transformation (see <a class="reference internal" href="../../bibliography.html#rosenblatt1952" id="id6">[Rosenblatt1952]</a>, <a class="reference internal" href="../../bibliography.html#lebrun2009c" id="id7">[Lebrun2009c]</a>): there is no
 condition on the copula of <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> .</li>
 </ul>
 <p>The Generalized Nataf transformation is automatically used when
@@ -170,10 +168,11 @@ case.</p>
 <li>Der Kiureghian, P.L. Liu, 1986,”Structural Reliability Under Incomplete Probabilistic Information”, Journal of Engineering Mechanics, vol 112, no. 1, pp85-104.</li>
 </ol>
 </li>
-<li><a class="reference internal" href="../../bibliography.html#lebrun2009b" id="id4">[Lebrun2009b]</a></li>
-<li><a class="reference internal" href="../../bibliography.html#lebrun2009c" id="id5">[Lebrun2009c]</a></li>
-<li><a class="reference internal" href="../../bibliography.html#nataf1962" id="id6">[Nataf1962]</a></li>
-<li><a class="reference internal" href="../../bibliography.html#rosenblatt1952" id="id7">[Rosenblatt1952]</a></li>
+<li><a class="reference internal" href="../../bibliography.html#lebrun2009a" id="id8">[Lebrun2009a]</a></li>
+<li><a class="reference internal" href="../../bibliography.html#lebrun2009b" id="id9">[Lebrun2009b]</a></li>
+<li><a class="reference internal" href="../../bibliography.html#lebrun2009c" id="id10">[Lebrun2009c]</a></li>
+<li><a class="reference internal" href="../../bibliography.html#nataf1962" id="id11">[Nataf1962]</a></li>
+<li><a class="reference internal" href="../../bibliography.html#rosenblatt1952" id="id12">[Rosenblatt1952]</a></li>
 </ul>
 </div>
 </div>
@@ -198,7 +197,7 @@ case.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../theory.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../theory.html" >Theory</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="numerical_methods.html" >Numerical methods</a> &#187;</li> 
       </ul>
     </div>

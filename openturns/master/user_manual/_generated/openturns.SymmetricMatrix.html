@@ -56,7 +56,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" accesskey="U">Base objects</a> &#187;</li> 
       </ul>
     </div>
@@ -174,10 +174,10 @@ Default creates a zero matrix.</p>
 <td>Compute the determinant.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.SymmetricMatrix.computeEV" title="openturns.SymmetricMatrix.computeEV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeEV</span></code></a>([keepIntact])</td>
-<td>Compute the eigen values decomposition (EVD).</td>
+<td>Compute the eigenvalues decomposition (EVD).</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.SymmetricMatrix.computeEigenValues" title="openturns.SymmetricMatrix.computeEigenValues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeEigenValues</span></code></a>([keepIntact])</td>
-<td>Compute eigen values.</td>
+<td>Compute eigenvalues.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.SymmetricMatrix.computeGram" title="openturns.SymmetricMatrix.computeGram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeGram</span></code></a>([transpose])</td>
 <td>Compute the associated Gram matrix.</td>
@@ -310,8 +310,8 @@ Default is <em>True</em> and leaves the present matrix unchanged.</p>
 <dl class="method">
 <dt id="openturns.SymmetricMatrix.computeEV">
 <code class="descname">computeEV</code><span class="sig-paren">(</span><em>keepIntact=True</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SymmetricMatrix.computeEV" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigen values decomposition (EVD).</p>
-<p>The eigen values decomposition of a square matrix <img class="math" src="../../_images/math/88af1d1a3877d1901b6ef3d7c99fd4740041f201.svg" alt="\mat{M}"/> with
+<dd><p>Compute the eigenvalues decomposition (EVD).</p>
+<p>The eigenvalues decomposition of a square matrix <img class="math" src="../../_images/math/88af1d1a3877d1901b6ef3d7c99fd4740041f201.svg" alt="\mat{M}"/> with
 size <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/> reads:</p>
 <div class="math">
 <p><img src="../../_images/math/29bbb10a8e78e4032b00b2561180fd7771f73eac.svg" alt="\mat{M} = \mat{\Phi} \mat{\Lambda} \Tr{\mat{\Phi}}"/></p>
@@ -330,8 +330,8 @@ Default is <em>True</em> and leaves the present matrix unchanged.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>eigen_values</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">The vector of eigen values with size <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/> that form the diagonal of
+<dt><strong>eigenvalues</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
+<dd><p class="first last">The vector of eigenvalues with size <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/> that form the diagonal of
 the <img class="math" src="../../_images/math/f4f2105520d5fa90261700123e66a207a4f26e87.svg" alt="n \times n"/> matrix <img class="math" src="../../_images/math/1282ff063823ef701095b4bdcb5411f9228ea3f7.svg" alt="\mat{\Lambda}"/> of the EVD.</p>
 </dd>
 <dt><strong>Phi</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.SquareComplexMatrix.html#openturns.SquareComplexMatrix" title="openturns.SquareComplexMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">SquareComplexMatrix</span></code></a></span></dt>
@@ -360,7 +360,7 @@ the <img class="math" src="../../_images/math/f4f2105520d5fa90261700123e66a207a4
 <dl class="method">
 <dt id="openturns.SymmetricMatrix.computeEigenValues">
 <code class="descname">computeEigenValues</code><span class="sig-paren">(</span><em>keepIntact=True</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SymmetricMatrix.computeEigenValues" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute eigen values.</p>
+<dd><p>Compute eigenvalues.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -375,7 +375,7 @@ Default is <em>True</em> and leaves the present matrix unchanged.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>eigenvalues</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Eigen values.</p>
+<dd><p class="first last">Eigenvalues.</p>
 </dd>
 </dl>
 </td>
@@ -970,7 +970,7 @@ for vectors.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../user_manual.html" >API</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="../base_objects.html" >Base objects</a> &#187;</li> 
       </ul>
     </div>

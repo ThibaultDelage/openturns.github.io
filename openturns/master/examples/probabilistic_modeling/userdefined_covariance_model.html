@@ -18,8 +18,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Create a custom spectral model" href="userdefined_spectral_model.html" />
-    <link rel="prev" title="Create a gaussian process from a spectral density" href="gaussian_process_spectral.html" />
+    <link rel="next" title="Create a gaussian process from a cov. model" href="gaussian_process_covariance.html" />
+    <link rel="prev" title="Create a custom stationary covariance model" href="user_stationary_covmodel.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -49,10 +49,10 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="userdefined_spectral_model.html" title="Create a custom spectral model"
+          <a href="gaussian_process_covariance.html" title="Create a gaussian process from a cov. model"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="gaussian_process_spectral.html" title="Create a gaussian process from a spectral density"
+          <a href="user_stationary_covmodel.html" title="Create a custom stationary covariance model"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
@@ -63,11 +63,11 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="gaussian_process_spectral.html"
-                        title="previous chapter">Create a gaussian process from a spectral density</a></p>
+  <p class="topless"><a href="user_stationary_covmodel.html"
+                        title="previous chapter">Create a custom stationary covariance model</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="userdefined_spectral_model.html"
-                        title="next chapter">Create a custom spectral model</a></p>
+  <p class="topless"><a href="gaussian_process_covariance.html"
+                        title="next chapter">Create a gaussian process from a cov. model</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -263,11 +263,11 @@ div.nboutput div.output_area.stderr {
 </style>
 <div class="section" id="Create-a-custom-covariance-model">
 <h1>Create a custom covariance model<a class="headerlink" href="#Create-a-custom-covariance-model" title="Permalink to this headline">¶</a></h1>
-<p>In this basic example we are going to build a custom covariance model
-from elementary covariance matrices.</p>
+<p>This example illustrates how the user can define his own covariance
+model.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [5]:
+<span></span>In [1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -279,57 +279,81 @@ from elementary covariance matrices.</p>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [6]:
+<span></span>In [2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Create the covariance function at (s,t):</span>
-<span class="k">def</span> <span class="nf">C</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">m</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span><span class="mf">4.0</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">s</span> <span class="o">+</span> <span class="n">t</span> <span class="o">*</span> <span class="n">t</span><span class="p">)))</span>
-
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [7]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Create the time grid:</span>
+<span></span><span class="c1"># Create the time grid</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">32</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mf">4.0</span>
-<span class="n">myMesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">IntervalMesher</span><span class="p">([</span><span class="n">N</span><span class="p">])</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">IntervalMesher</span><span class="p">([</span><span class="n">N</span><span class="p">])</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [8]:
+<span></span>In [3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Create the collection of elementary covariance matrices</span>
-<span class="n">myCovarianceCollection</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CovarianceMatrixCollection</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">myMesh</span><span class="o">.</span><span class="n">getVerticesNumber</span><span class="p">()):</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">myMesh</span><span class="o">.</span><span class="n">getVertices</span><span class="p">()[</span><span class="n">k</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">s</span> <span class="o">=</span> <span class="n">myMesh</span><span class="o">.</span><span class="n">getVertices</span><span class="p">()[</span><span class="n">l</span><span class="p">]</span>
-        <span class="n">matrix</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CovarianceMatrix</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="n">myCovarianceCollection</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+<span></span><span class="c1"># Create the covariance function at (s,t)</span>
+<span class="k">def</span> <span class="nf">C</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">m</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span><span class="mf">4.0</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">s</span> <span class="o">+</span> <span class="n">t</span> <span class="o">*</span> <span class="n">t</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [9]:
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Create the large covariance matrix</span>
+<span class="n">covariance</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">CovarianceMatrix</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">getVerticesNumber</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">getVerticesNumber</span><span class="p">()):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">getVertices</span><span class="p">()[</span><span class="n">k</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">getVertices</span><span class="p">()[</span><span class="n">l</span><span class="p">]</span>
+        <span class="n">covariance</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create the covariance model</span>
-<span class="n">myCovarianceModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">UserDefinedCovarianceModel</span><span class="p">(</span><span class="n">myMesh</span><span class="p">,</span> <span class="n">myCovarianceCollection</span><span class="p">)</span>
+<span class="n">covmodel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">UserDefinedCovarianceModel</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">covariance</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Draw the covariance model</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">covmodel</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">func</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PythonFunction</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">func</span><span class="o">.</span><span class="n">setDescription</span><span class="p">([</span><span class="s1">&#39;$s$&#39;</span><span class="p">,</span> <span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="s1">&#39;$cov$&#39;</span><span class="p">])</span>
+<span class="n">cov_graph</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">draw</span><span class="p">([</span><span class="o">-</span><span class="n">a</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">512</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cov_graph</span><span class="o">.</span><span class="n">setLegendPosition</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">cov_graph</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/examples_probabilistic_modeling_userdefined_covariance_model_7_0.png" src="../../_images/examples_probabilistic_modeling_userdefined_covariance_model_7_0.png" />
 </div>
 </div>
 </div>
@@ -347,10 +371,10 @@ from elementary covariance matrices.</p>
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="userdefined_spectral_model.html" title="Create a custom spectral model"
+          <a href="gaussian_process_covariance.html" title="Create a gaussian process from a cov. model"
              >next</a> |</li>
         <li class="right" >
-          <a href="gaussian_process_spectral.html" title="Create a gaussian process from a spectral density"
+          <a href="user_stationary_covmodel.html" title="Create a custom stationary covariance model"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>

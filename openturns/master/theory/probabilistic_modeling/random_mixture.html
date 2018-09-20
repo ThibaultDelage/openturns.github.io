@@ -18,7 +18,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Meta modeling" href="../meta_modeling/meta_modeling.html" />
+    <link rel="next" title="Stochastic process definitions" href="process_definitions.html" />
     <link rel="prev" title="Copulas" href="copulas.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
@@ -49,14 +49,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../meta_modeling/meta_modeling.html" title="Meta modeling"
+          <a href="process_definitions.html" title="Stochastic process definitions"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="copulas.html" title="Copulas"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../theory.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../theory.html" >Theory</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="probabilistic_modeling.html" accesskey="U">Probabilistic modeling</a> &#187;</li> 
       </ul>
     </div>
@@ -66,8 +66,8 @@
   <p class="topless"><a href="copulas.html"
                         title="previous chapter">Copulas</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../meta_modeling/meta_modeling.html"
-                        title="next chapter">Meta modeling</a></p>
+  <p class="topless"><a href="process_definitions.html"
+                        title="next chapter">Stochastic process definitions</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -96,7 +96,7 @@
           <div class="body" role="main">
             
   <div class="section" id="random-mixture-affine-combination-of-independent-univariate-distributions">
-<h1>Random Mixture: affine combination of independent univariate distributions<a class="headerlink" href="#random-mixture-affine-combination-of-independent-univariate-distributions" title="Permalink to this headline">¶</a></h1>
+<span id="random-mixture"></span><h1>Random Mixture: affine combination of independent univariate distributions<a class="headerlink" href="#random-mixture-affine-combination-of-independent-univariate-distributions" title="Permalink to this headline">¶</a></h1>
 <p>A multivariate random variable <img class="math" src="../../_images/math/1ca0e315ae4eaf246041889d6a7ed57680d05c35.svg" alt="\vect{Y}"/> may be defined as an
 affine transform of <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/> independent univariate random variable, as
 follows:</p>
@@ -115,9 +115,8 @@ functions, quantiles (in dimension 1 only) …</p>
 characteristic function of <img class="math" src="../../_images/math/1ca0e315ae4eaf246041889d6a7ed57680d05c35.svg" alt="\vect{Y}"/>, denoted <img class="math" src="../../_images/math/b88af51e8db1dd490466ee5ebfd641bd63ef2520.svg" alt="\phi_Y"/>, is
 easily defined from the characteristic function of <img class="math" src="../../_images/math/6cc26d80b4789982ec74cf3860065fb884953a95.svg" alt="X_k"/> denoted
 <img class="math" src="../../_images/math/3489af7a94397d773bfae21cd8666688117b40d2.svg" alt="\phi_{X_k}"/> as follows :</p>
-<div class="math">
-<p><img src="../../_images/math/75d94ed70de133f59be8be7c1f0d86b555306c73.svg" alt="\displaystyle \phi_Y(u_1,\hdots,u_d)=\prod_{j=1}^de^{iu_j{y_0}_j}\prod_{k=1}^n\phi_{X_k}((M^tu)_k), \mbox{  for } \vect{u}\in\mathbb{R}^d
-    \label{CharactFuncY}"/></p>
+<div class="math" id="equation-charactfuncy">
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-charactfuncy" title="Permalink to this equation">¶</a></span><img src="../../_images/math/f6d71b1dd30685e710bf49486e491b5deb0a3439.svg" alt="\displaystyle \phi_Y(u_1,\hdots,u_d)=\prod_{j=1}^de^{iu_j{y_0}_j}\prod_{k=1}^n\phi_{X_k}((M^tu)_k), \mbox{  for } \vect{u}\in\mathbb{R}^d"/></p>
 </div><div class="line-block">
 <div class="line">Once <img class="math" src="../../_images/math/b88af51e8db1dd490466ee5ebfd641bd63ef2520.svg" alt="\phi_Y"/> evaluated, it is possible to evaluate the
 probability density function of <img class="math" src="../../_images/math/19736b8b9764e1a2d2f06ea4084a9573802cba4c.svg" alt="Y"/>, denoted <img class="math" src="../../_images/math/d941630de3605ed9860602b6b967a9af622450aa.svg" alt="p_Y"/> :
@@ -128,7 +127,7 @@ formulation, defined as follows:</div>
 </div>
 <blockquote>
 <div><div class="math" id="equation-poissonsum">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-poissonsum" title="Permalink to this equation">¶</a></span><img src="../../_images/math/7864b3f49fd3c7f367cf42b00eadd3e3c9ce08a8.svg" alt="\displaystyle \sum_{j_1\in\mathbb{Z}}\hdots\sum_{j_d\in\mathbb{Z}} p_Y\left(y_1+\frac{2\pi j_1}{h_1},\hdots,y_d+\frac{2\pi j_d}{h_d}\right)=
+<p><span class="eqno">(3)<a class="headerlink" href="#equation-poissonsum" title="Permalink to this equation">¶</a></span><img src="../../_images/math/7864b3f49fd3c7f367cf42b00eadd3e3c9ce08a8.svg" alt="\displaystyle \sum_{j_1\in\mathbb{Z}}\hdots\sum_{j_d\in\mathbb{Z}} p_Y\left(y_1+\frac{2\pi j_1}{h_1},\hdots,y_d+\frac{2\pi j_d}{h_d}\right)=
      \prod_{j=1}^d \frac{h_j}{2*\pi}\sum_{k_1\in\mathbb{Z}}\hdots\sum_{k_d\in\mathbb{Z}}\phi\left(k_1h_1,\hdots,k_dh_d\right)e^{-\imath(\sum_{m=1}^{d}k_m h_m y_m)}"/></p>
 </div></div></blockquote>
 <div class="line-block">
@@ -136,10 +135,10 @@ formulation, defined as follows:</div>
 <img class="math" src="../../_images/math/1e078c792e26102d12fd4a8bda97ec0be47ba644.svg" alt="\frac{2k\pi}{h_j} \approx +\infty"/> and
 <img class="math" src="../../_images/math/d5ec9a0e7995607542a4462f0aabed127d9fe697.svg" alt="p_Y(\hdots,\frac{2k\pi}{h_j},\hdots) \approx 0"/> because of the
 decreasing properties of <img class="math" src="../../_images/math/d941630de3605ed9860602b6b967a9af622450aa.svg" alt="p_Y"/>. Thus the nested sums of the left
-term of <a class="reference internal" href="#equation-poissonsum">(2)</a> are reduced to the central term
+term of <a class="reference internal" href="#equation-poissonsum">(3)</a> are reduced to the central term
 <img class="math" src="../../_images/math/5aded387139420e353b265cfb57bacb28c06e365.svg" alt="j_1=\hdots=j_d = 0"/>: the left term is approximatively equal to
 <img class="math" src="../../_images/math/d607602984317f7b3c70ed02d4be1ee340ce596b.svg" alt="p_Y(y)"/>.</div>
-<div class="line">Furthermore, the right term of <a class="reference internal" href="#equation-poissonsum">(2)</a> is a series which
+<div class="line">Furthermore, the right term of <a class="reference internal" href="#equation-poissonsum">(3)</a> is a series which
 converges very fast: only few terms of the series are enough to get
 machine-precision accuracy. Let us note that the factors
 <img class="math" src="../../_images/math/dc85e86f1317ac229aa5ce2465624e175cb6fc47.svg" alt="\phi_Y(k_1 h_1,\hdots,k_d,h_d)"/>, which are expensive to
@@ -156,10 +155,9 @@ multivariate normal distribution to the equation&nbsp;, we obtain by
 subtraction:</div>
 </div>
 <blockquote>
-<div><div class="math">
-<p><img src="../../_images/math/e0ecb116121894273f8a67acb5ac092950b313df.svg" alt="\displaystyle  p_Y\left(y\right) = \sum_{j\in\mathbb{Z}^d} q_Y\left(y_1+\frac{2\pi j_1}{h_1},\cdots,y_d+\frac{2\pi j_d}{h_d}\right)+
-  \frac{H}{2^d\pi^d}\sum_{|k_1|\leq N}\cdots\sum_{|k_d|\leq N} \delta_Y\left(k_1h_1,\cdots,k_dh_d\right)e^{-\imath(\sum_{m=1}^{d}k_m h_m y_m)}
-  \label{algoPoisson}"/></p>
+<div><div class="math" id="equation-algopoisson">
+<p><span class="eqno">(4)<a class="headerlink" href="#equation-algopoisson" title="Permalink to this equation">¶</a></span><img src="../../_images/math/1d7611e7c8dd537685bc3d56b7dc12a168f5e03c.svg" alt="\displaystyle  p_Y\left(y\right) = \sum_{j\in\mathbb{Z}^d} q_Y\left(y_1+\frac{2\pi j_1}{h_1},\cdots,y_d+\frac{2\pi j_d}{h_d}\right)+
+   \frac{H}{2^d\pi^d}\sum_{|k_1|\leq N}\cdots\sum_{|k_d|\leq N} \delta_Y\left(k_1h_1,\cdots,k_dh_d\right)e^{-\imath(\sum_{m=1}^{d}k_m h_m y_m)}"/></p>
 </div></div></blockquote>
 <p>where <img class="math" src="../../_images/math/934771ad4b2d877075199eba8c3884b86d5307c0.svg" alt="H = h_1\times\cdots\times h_d"/>,
 <img class="math" src="../../_images/math/80c718a3ea9c4ce61ba918e8825ac5e8a039f214.svg" alt="j=(j_1,\cdots,j_d)"/>, <img class="math" src="../../_images/math/e3bb9c6107c33cec149d367bca66ba5eaa3e6915.svg" alt="\delta_Y:=\phi_Y - \psi_Y"/></p>
@@ -175,9 +173,7 @@ calibrated with respect to <img class="math" src="../../_images/math/0f4c0791a29
 <p>The parameters <img class="math" src="../../_images/math/1c80e68d76cc527754eb25fee63eace729a6c29a.svg" alt="h_1, \dots  h_d"/> are calibrated using the
 following formula:</p>
 <div class="math">
-<p><img src="../../_images/math/6c473d3d8cad71cd92dc3d79e345442f89d3c546.svg" alt="\begin{aligned}
-    h_\ell = \frac{2\pi}{(\beta+4\alpha)\sigma_\ell}
-  \end{aligned}"/></p>
+<p><img src="../../_images/math/33487fa2c943727949d85c9791a9e0277de367c5.svg" alt="h_\ell = \frac{2\pi}{(\beta+4\alpha)\sigma_\ell}"/></p>
 </div><p>where <img class="math" src="../../_images/math/a80daea5d9e5bdf7f2d3ed93f92daf46b4ed27b9.svg" alt="\sigma_\ell=\sqrt{\Cov{\vect{Y}}_{\ell,\ell}}"/> and
 <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>, <img class="math" src="../../_images/math/5a519ff21b7afd2a20b1dc119bfcd9e5ad50441f.svg" alt="\beta"/> are respectively the number of standard
 deviations covered by the marginal distribution (<img class="math" src="../../_images/math/4f831722e1d865875016f7c28b76125161c1f9a1.svg" alt="\alpha=5"/> by
@@ -250,13 +246,13 @@ with the following convention in dimension 1:</p>
 </div><div class="math">
 <p><img src="../../_images/math/9cab0133071ee3d32ea9c17e3856d379ec84b008.svg" alt="A_{m,n,p} = \sum_{k=0}^{N-1}\sum_{l=0}^{N-1}\sum_{s=0}^{N-1} a_{k,l,s} e^{-2i\pi\frac{km}{N}} e^{-2i\pi\frac{ln}{N}} e^{-2i\pi\frac{sp}{N}}"/></p>
 </div><p>We decompose sums of&nbsp; on the interval <img class="math" src="../../_images/math/bd5d9b5c8b22e2360a4b18c9bd31faa0e8b7ae8e.svg" alt="[-N,N]"/> into three parts:</p>
-<div class="math">
-<p><img src="../../_images/math/a4b3a6d6f01c378c0a432bb58d9d15638b5f06ae.svg" alt="\begin{aligned}
-  \sum_{k_j=-N}^{N}\delta\left(k_1h_1,\hdots,k_dh_d\right) E_{m_1,\hdots,m_d}(k_1,\hdots,k_d)
-    = &amp; \sum_{k_j=-N}^{-1} \delta\left(k_1h_1,\hdots,k_dh_d\right) E_{m_1,\hdots,m_d}(k_1,\hdots,k_d) \notag\\
-    &amp; + \delta\left(k_1h_1,\hdots,0,\hdots,k_dh_d\right) E_{m_1,\hdots,0,\hdots,m_d}(k_1,\hdots,0,\hdots,k_d) \notag\\
-    &amp; + \sum_{k_j=1}^{N}\delta\left(k_1h_1,\hdots,k_dh_d\right) E_{m_1,\hdots,m_d}(k_1,\hdots,k_d) \label{Eq:decomposition-sum}
-  \end{aligned}"/></p>
+<div class="math" id="equation-decomposition-sum">
+<p><span class="eqno">(5)<a class="headerlink" href="#equation-decomposition-sum" title="Permalink to this equation">¶</a></span><img src="../../_images/math/71e47052b91dfdf9cb3292cb37f081e8d955e49b.svg" alt="\begin{aligned}
+    \sum_{k_j=-N}^{N}\delta\left(k_1h_1,\hdots,k_dh_d\right) E_{m_1,\hdots,m_d}(k_1,\hdots,k_d)
+      = &amp; \sum_{k_j=-N}^{-1} \delta\left(k_1h_1,\hdots,k_dh_d\right) E_{m_1,\hdots,m_d}(k_1,\hdots,k_d) \notag\\
+      &amp; + \delta\left(k_1h_1,\hdots,0,\hdots,k_dh_d\right) E_{m_1,\hdots,0,\hdots,m_d}(k_1,\hdots,0,\hdots,k_d) \notag\\
+      &amp; + \sum_{k_j=1}^{N}\delta\left(k_1h_1,\hdots,k_dh_d\right) E_{m_1,\hdots,m_d}(k_1,\hdots,k_d)
+    \end{aligned}"/></p>
 </div><p>If we already computed <img class="math" src="../../_images/math/000f3b0a1812a5044910c90225ec6f6e8f27ec5e.svg" alt="E"/> for dimension <img class="math" src="../../_images/math/9b29e677ca36ca22e97bcd1ade8fd42f6647d2ef.svg" alt="d-1"/>, then the
 middle term in this sum is trivial.</p>
 <p>To compute the last sum of equation, we apply a change of variable
@@ -338,7 +334,7 @@ consider <img class="math" src="../../_images/math/00063ee18189705616b00690473e2
 <div class="topic">
 <p class="topic-title first">References:</p>
 <ul class="simple">
-<li>Abate, J. and Whitt, W. (1992). <em>The Fourier-series method for inverting transforms of probability distributions</em>. Queueing Systems 10, 5–88., 1992, formula 5.5.</li>
+<li><a class="reference internal" href="../../bibliography.html#abate1992" id="id1">[Abate1992]</a></li>
 </ul>
 </div>
 </div>
@@ -356,14 +352,14 @@ consider <img class="math" src="../../_images/math/00063ee18189705616b00690473e2
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../meta_modeling/meta_modeling.html" title="Meta modeling"
+          <a href="process_definitions.html" title="Stochastic process definitions"
              >next</a> |</li>
         <li class="right" >
           <a href="copulas.html" title="Copulas"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../theory.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../theory.html" >Theory</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="probabilistic_modeling.html" >Probabilistic modeling</a> &#187;</li> 
       </ul>
     </div>

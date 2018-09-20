@@ -56,7 +56,7 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../theory.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../theory.html" >Theory</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="reliability_sensitivity.html" accesskey="U">Reliability, sensitivity</a> &#187;</li> 
       </ul>
     </div>
@@ -106,7 +106,7 @@
           <div class="body" role="main">
             
   <div class="section" id="optimal-lhs-design">
-<h1>Optimal LHS design<a class="headerlink" href="#optimal-lhs-design" title="Permalink to this headline">¶</a></h1>
+<span id="optimal-lhs"></span><h1>Optimal LHS design<a class="headerlink" href="#optimal-lhs-design" title="Permalink to this headline">¶</a></h1>
 <p>Let <img class="math" src="../../_images/math/27a645c555419648fc2ecf67f82cce44426fcc9c.svg" alt="X=(x_1,\cdots, x_d)"/> be a random vector of input parameters.
 Latin Hypercube Sample (LHS) is a way to distribute N sample points: each
 parameter range is divided into N equal intervals, and sample points are
@@ -170,25 +170,23 @@ he naive criterion evaluation, as is done in Monte Carlo algorithm, has a comple
 <div class="math">
 <p><img src="../../_images/math/8071911d6b81129b2c814925951ad0946172d546.svg" alt="C_2(X_{d}^N)^2 = \left(\frac{13}{12}\right)^{d} +\sum_{i=1}^{N}\sum_{j=1}^{N} c_{ij}"/></p>
 </div><p>with:</p>
-<div class="math">
-<p><img src="../../_images/math/24aa9e59affc3e4be706a8ff1fd7f9abfadc1367.svg" alt="c_{ij}= \,\,\,\left \{
-\begin{aligned}
-&amp;\frac{1}{N^2}\prod_{k=1}^{d}\frac{1}{2}(2+|z_{ik}|+|z_{jk}|-|z_{ik}-z_{jk}|)\,\,\,\, \textrm{if}\,\, i\neq j \\
-&amp;\frac{1}{N^2}\prod_{k=1}^{d}(1+|z_{ik}|)-\frac{2}{N}\prod_{k=1}^{d}(1+\frac{1}{2}|z_{ik}|-\frac{1}{2}z_{ik}^2) \,\,\,\,\textrm{otherwise} \\
-\end{aligned}
-\right.
-\label{prior_GN}"/></p>
+<div class="math" id="equation-prior-gn">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-prior-gn" title="Permalink to this equation">¶</a></span><img src="../../_images/math/bdf2e046ad938333ffedd1f053f7acf2cd24a353.svg" alt="c_{ij}= \,\,\,\left \{
+   \begin{aligned}
+   &amp;\frac{1}{N^2}\prod_{k=1}^{d}\frac{1}{2}(2+|z_{ik}|+|z_{jk}|-|z_{ik}-z_{jk}|)\,\,\,\, \textrm{if}\,\, i\neq j \\
+   &amp;\frac{1}{N^2}\prod_{k=1}^{d}(1+|z_{ik}|)-\frac{2}{N}\prod_{k=1}^{d}(1+\frac{1}{2}|z_{ik}|-\frac{1}{2}z_{ik}^2) \,\,\,\,\textrm{otherwise} \\
+   \end{aligned}
+   \right."/></p>
 </div><p>We set <img class="math" src="../../_images/math/04bb4525a755292607d2bdc55d80aab31e96b8dd.svg" alt="c^{\prime}"/> the elements of a new design <img class="math" src="../../_images/math/fa1c6217b4c937f13f83d31b7da019826448ebea.svg" alt="X^{\prime N}_{d}"/> obtained by permuting a coordinate of sample points <img class="math" src="../../_images/math/ae3346f89e75a37a1dc51da973c9bfeece7b243c.svg" alt="i_1"/> and <img class="math" src="../../_images/math/a85f83a34155dc16d6924c65945dffaacfb8663d.svg" alt="i_2"/>.
 We can see that</p>
-<div class="math">
-<p><img src="../../_images/math/da2f9b3e390cb141fa6b93e97923ece1bd9bd1a1.svg" alt="\left \{
-\begin{aligned}
-&amp; c^{\prime}_{ij}=c_{ij} \;\forall i, j \text{ such that } 1\leq i,j\leq N,\, i\notin \{i_1,i_2\},\, j\notin \{i_1,i_2\}\\
-&amp; c^{\prime}_{i_1i_2}=c_{i_1i_2}\\
-&amp; c_{ij}=c_{ji} \;\forall 1\leq i,j\leq N
-\end{aligned}
-\right.
-\label{cond_update}"/></p>
+<div class="math" id="equation-cond-update">
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-cond-update" title="Permalink to this equation">¶</a></span><img src="../../_images/math/e46d033d1a5cdeeb24de0030585dd1a4adf6633d.svg" alt="\left \{
+   \begin{aligned}
+   &amp; c^{\prime}_{ij}=c_{ij} \;\forall i, j \text{ such that } 1\leq i,j\leq N,\, i\notin \{i_1,i_2\},\, j\notin \{i_1,i_2\}\\
+   &amp; c^{\prime}_{i_1i_2}=c_{i_1i_2}\\
+   &amp; c_{ij}=c_{ji} \;\forall 1\leq i,j\leq N
+   \end{aligned}
+   \right."/></p>
 </div><p>and thus, <img class="math" src="../../_images/math/d7e2cc2ef7a788314a0361b307a9eb3594f1287e.svg" alt="C_2(X')"/> becomes:</p>
 <div class="math">
 <p><img src="../../_images/math/11f6d22209b191826acacd7476337c66d6ef93d9.svg" alt="C_2(X^{\prime N}_{d})^2 = C_2(X^N_d)^2
@@ -264,7 +262,7 @@ Optimization is performed in <img class="math" src="../../_images/math/29cd9ae88
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../theory.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../theory.html" >Theory</a> &#187;</li>
           <li class="nav-item nav-item-3"><a href="reliability_sensitivity.html" >Reliability, sensitivity</a> &#187;</li> 
       </ul>
     </div>
