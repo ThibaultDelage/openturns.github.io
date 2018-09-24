@@ -30,4 +30,4 @@ if dimension <= 2:
         fig = plt.figure(figsize=(10, 4))
         plt.suptitle(str(distribution))
         pdf_axis = fig.add_subplot(111)
-        View(pdf_graph, figure=fig, axes=[pdf_axis], add_legend=False)
+        View(pdf_graph, figure=fig, axes=[pdf_axis], add_legend=False, square_axes=True)
