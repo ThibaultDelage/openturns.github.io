@@ -230,6 +230,12 @@ and is initialized by the <cite>SobolIndicesAlgorithm-DefaultConfidenceLevel</ci
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.DrawImportanceFactors" title="openturns.SobolIndicesAlgorithm.DrawImportanceFactors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DrawImportanceFactors</span></code></a>(*args)</td>
+<td>Draw the importance factors.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.DrawSobolIndices" title="openturns.SobolIndicesAlgorithm.DrawSobolIndices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DrawSobolIndices</span></code></a>(inputDescription,&nbsp;…)</td>
+<td>Draw the Sobol’ indices.</td>
+</tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.SobolIndicesAlgorithm.draw" title="openturns.SobolIndicesAlgorithm.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>(*args)</td>
 <td>Draw sensitivity indices.</td>
 </tr>
@@ -310,6 +316,82 @@ and is initialized by the <cite>SobolIndicesAlgorithm-DefaultConfidenceLevel</ci
 <dt id="openturns.SobolIndicesAlgorithm.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="openturns.SobolIndicesAlgorithm.DrawImportanceFactors">
+<em class="property">static </em><code class="descname">DrawImportanceFactors</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.DrawImportanceFactors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the importance factors.</p>
+<dl class="docutils">
+<dt>Available usages:</dt>
+<dd><p class="first">DrawImportanceFactors(<em>importanceFactors, title=’Importance Factors’</em>)</p>
+<p class="last">DrawImportanceFactors(<em>values, names, title=’Importance Factors’</em>)</p>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>importanceFactors</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.PointWithDescription.html#openturns.PointWithDescription" title="openturns.PointWithDescription"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointWithDescription</span></code></a></span></dt>
+<dd><p class="first last">Sequence containing the importance factors with a description for each
+component. The descriptions are used to build labels for the created Pie.
+If they are not mentioned, default labels will be used.</p>
+</dd>
+<dt><strong>values</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">Importance factors.</p>
+</dd>
+<dt><strong>names</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of str</span></dt>
+<dd><p class="first last">Variables’ names used to build labels for the created Pie.</p>
+</dd>
+<dt><strong>title</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">Title of the graph.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>Graph</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></span></dt>
+<dd><p class="first last">A graph containing a <a class="reference internal" href="openturns.Pie.html#openturns.Pie" title="openturns.Pie"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pie</span></code></a> of the importance factors of
+the variables.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="openturns.SobolIndicesAlgorithm.DrawSobolIndices">
+<em class="property">static </em><code class="descname">DrawSobolIndices</code><span class="sig-paren">(</span><em>inputDescription</em>, <em>firstOrderIndices</em>, <em>secondOrderIndices</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SobolIndicesAlgorithm.DrawSobolIndices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the Sobol’ indices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>inputDescription</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of str</span></dt>
+<dd><p class="first last">Variable names</p>
+</dd>
+<dt><strong>firstOrderIndices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">First order indices values</p>
+</dd>
+<dt><strong>secondOrderIndices</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">Total order indices values</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>Graph</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></span></dt>
+<dd><p class="first last">For each variable, draws first and total indices</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
