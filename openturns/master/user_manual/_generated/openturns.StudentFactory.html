@@ -109,13 +109,17 @@
 <dt>Available constructor:</dt>
 <dd>StudentFactory()</dd>
 </dl>
-<p>The parameters are estimated by method of moments:</p>
+<p>The parameters are estimated by a mixed method of moments and reduces MLE:</p>
 <div class="math">
-<p><img src="../../_images/math/2fa06fee36ed0f69ffd6661f23c15518bce6ba24.svg" alt="\begin{eqnarray*}
-  \displaystyle \Hat{\nu} = 2 + \frac{2}{(\Hat{\sigma}_x)^2 - 1}\\
-  \displaystyle \Hat{\mu} = \Hat{\mu}_x
-\end{eqnarray*}"/></p>
-</div><div class="admonition seealso">
+<p><img src="../../_images/math/211d6e960b48810fc6edb7e684fbf6a9e3410551.svg" alt="\begin{align*}
+  \Hat{\mu} = &amp;\Hat{\mu}_x \\
+  \Hat{\sigma} = &amp;\Hat{\sigma}_x\sqrt{\dfrac{\Hat{\nu}-2}{\Hat{\nu}}} \\
+  \Hat{R}_{ij} = &amp;\dfrac{2}{\pi}\arcsin(\tau_{ij})
+\end{align*}"/></p>
+</div><p>where <img class="math" src="../../_images/math/832ee1e520fefe5649fc240043a4d418d954f6c5.svg" alt="\mat{\tau}"/> is the sample Kendall tau matrix and <img class="math" src="../../_images/math/b26f4680ece9a16a35e2ffc7e010d45a38664b1b.svg" alt="\Hat{\nu}"/>
+maximizes the reduced likelihood associated to <a class="reference internal" href="openturns.Student.html#openturns.Student" title="openturns.Student"><code class="xref py py-class docutils literal notranslate"><span class="pre">Student</span></code></a> with
+parameters <img class="math" src="../../_images/math/ad99d8c73aafa3b0f2df8610c69c771ed49be952.svg" alt="(\Hat{\nu}, \Hat{\mu}, \hat{\sigma}(\Hat{\nu}), \Hat{\mat{R}})"/>.</p>
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DistributionFactory</span></code></a>, <a class="reference internal" href="openturns.Student.html#openturns.Student" title="openturns.Student"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Student</span></code></a></p>
 </div>
