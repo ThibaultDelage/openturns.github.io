@@ -126,7 +126,8 @@ being negative. The computing probability reads :</p>
 <span class="n">bs</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="c1"># Monte Carlo</span>
-<span class="n">myMC</span> <span class="o">=</span> <span class="n">MonteCarlo</span><span class="p">(</span><span class="n">myEvent</span><span class="p">)</span>
+<span class="n">experiment</span> <span class="o">=</span> <span class="n">MonteCarloExperiment</span><span class="p">()</span>
+<span class="n">myMC</span> <span class="o">=</span> <span class="n">ProbabilitySimulationAlgorithm</span><span class="p">(</span><span class="n">myEvent</span><span class="p">,</span> <span class="n">experiment</span><span class="p">)</span>
 <span class="n">myMC</span><span class="o">.</span><span class="n">setMaximumOuterSampling</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e6</span><span class="p">)</span><span class="o">//</span> <span class="n">bs</span><span class="p">)</span>
 <span class="n">myMC</span><span class="o">.</span><span class="n">setBlockSize</span><span class="p">(</span><span class="n">bs</span><span class="p">)</span>
 <span class="n">myMC</span><span class="o">.</span><span class="n">setMaximumCoefficientOfVariation</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
