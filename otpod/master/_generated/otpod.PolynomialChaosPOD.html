@@ -13,7 +13,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -159,19 +159,19 @@ the method <em>setVerbose</em>.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#otpod.PolynomialChaosPOD.computeDetectionSize" title="otpod.PolynomialChaosPOD.computeDetectionSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeDetectionSize</span></code></a>(**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otpod.PolynomialChaosPOD.computeDetectionSize" title="otpod.PolynomialChaosPOD.computeDetectionSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeDetectionSize</span></code></a>(probabilityLevel[,&nbsp;…])</td>
 <td>Compute the detection size for a given probability level.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#otpod.PolynomialChaosPOD.drawBoxCoxLikelihood" title="otpod.PolynomialChaosPOD.drawBoxCoxLikelihood"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawBoxCoxLikelihood</span></code></a>([name])</td>
 <td>Draw the loglikelihood versus the Box Cox parameter.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otpod.PolynomialChaosPOD.drawPOD" title="otpod.PolynomialChaosPOD.drawPOD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawPOD</span></code></a>(**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otpod.PolynomialChaosPOD.drawPOD" title="otpod.PolynomialChaosPOD.drawPOD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawPOD</span></code></a>([probabilityLevel,&nbsp;confidenceLevel,&nbsp;…])</td>
 <td>Draw the POD curve.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#otpod.PolynomialChaosPOD.drawPolynomialChaosModel" title="otpod.PolynomialChaosPOD.drawPolynomialChaosModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawPolynomialChaosModel</span></code></a>([name])</td>
 <td>Draw the polynomial chaos prediction versus the true data.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otpod.PolynomialChaosPOD.drawValidationGraph" title="otpod.PolynomialChaosPOD.drawValidationGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawValidationGraph</span></code></a>(**kwargs)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otpod.PolynomialChaosPOD.drawValidationGraph" title="otpod.PolynomialChaosPOD.drawValidationGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawValidationGraph</span></code></a>([name])</td>
 <td>Draw the validation graph of the metamodel.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#otpod.PolynomialChaosPOD.getAdaptiveStrategy" title="otpod.PolynomialChaosPOD.getAdaptiveStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAdaptiveStrategy</span></code></a>()</td>
@@ -253,7 +253,7 @@ the method <em>setVerbose</em>.</p>
 </table>
 <dl class="method">
 <dt id="otpod.PolynomialChaosPOD.computeDetectionSize">
-<code class="descname">computeDetectionSize</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#otpod.PolynomialChaosPOD.computeDetectionSize" title="Permalink to this definition">¶</a></dt>
+<code class="descname">computeDetectionSize</code><span class="sig-paren">(</span><em>probabilityLevel</em>, <em>confidenceLevel=None</em><span class="sig-paren">)</span><a class="headerlink" href="#otpod.PolynomialChaosPOD.computeDetectionSize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the detection size for a given probability level.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -317,7 +317,7 @@ full path name. Default is None.</p>
 
 <dl class="method">
 <dt id="otpod.PolynomialChaosPOD.drawPOD">
-<code class="descname">drawPOD</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#otpod.PolynomialChaosPOD.drawPOD" title="Permalink to this definition">¶</a></dt>
+<code class="descname">drawPOD</code><span class="sig-paren">(</span><em>probabilityLevel=None</em>, <em>confidenceLevel=None</em>, <em>defectMin=None</em>, <em>defectMax=None</em>, <em>nbPt=100</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#otpod.PolynomialChaosPOD.drawPOD" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw the POD curve.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -396,7 +396,7 @@ full path name. Default is None.</p>
 
 <dl class="method">
 <dt id="otpod.PolynomialChaosPOD.drawValidationGraph">
-<code class="descname">drawValidationGraph</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#otpod.PolynomialChaosPOD.drawValidationGraph" title="Permalink to this definition">¶</a></dt>
+<code class="descname">drawValidationGraph</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#otpod.PolynomialChaosPOD.drawValidationGraph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw the validation graph of the metamodel.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -937,8 +937,8 @@ each defect size.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017.
-      Last updated on Sep 12, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.
+      Last updated on Oct 09, 2018.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
     </div>
   </body>
 </html>
