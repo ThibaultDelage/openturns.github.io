@@ -137,7 +137,7 @@
 <dt><strong>mustScale</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
 <dd><p class="first last">Flag to tell if the bounding box of the weighted experiment and the domain have to be maped or not.</p>
 </dd>
-<dt><strong>s</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/e12ca94f30b06a3515ba26035c37ee353d780ee2.svg" alt="\geq0"/></span></dt>
+<dt><strong>s</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/c7c04fc4031f09365a862efa75e4c4d27616bfc5.svg" alt="\geq0"/></span></dt>
 <dd><p class="first last">The threshold used to select the most significant eigenmodes, defined in  <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a>.</p>
 </dd>
 </dl>
@@ -146,30 +146,30 @@
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The Karhunen-Loeve quadrature algorithm solves the Fredholm problem  associated to the covariance function <img class="math" src="../../_images/math/672a37f589017d9850b03c88d416135b30d4f284.svg" alt="C"/>: see <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a> to get the notations.</p>
-<p>The Karhunen-Loeve quadrature approximation consists in replacing the integral by a quadrature approximation: if <img class="math" src="../../_images/math/c75ea4f061b3df719300fe6401e397e0b715205e.svg" alt="(\omega_\ell, \vect{\xi}_\ell)_{1 \leq \ell \leq L}"/> is the weighted experiment (see <a class="reference internal" href="openturns.WeightedExperiment.html#openturns.WeightedExperiment" title="openturns.WeightedExperiment"><code class="xref py py-class docutils literal notranslate"><span class="pre">WeightedExperiment</span></code></a>) associated to the measure <img class="math" src="../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/>, then for all functions measurable wrt <img class="math" src="../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/>, we have:</p>
+<p>The Karhunen-Loeve quadrature algorithm solves the Fredholm problem  associated to the covariance function <img class="math" src="../../_images/math/97c414cf4f2016be974edd945739defa174cd721.svg" alt="C"/>: see <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#openturns.KarhunenLoeveAlgorithm" title="openturns.KarhunenLoeveAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">KarhunenLoeveAlgorithm</span></code></a> to get the notations.</p>
+<p>The Karhunen-Loeve quadrature approximation consists in replacing the integral by a quadrature approximation: if <img class="math" src="../../_images/math/3072a37e9a7da5f95fa4061900d5e7b85f3702b2.svg" alt="(\omega_\ell, \vect{\xi}_\ell)_{1 \leq \ell \leq L}"/> is the weighted experiment (see <a class="reference internal" href="openturns.WeightedExperiment.html#openturns.WeightedExperiment" title="openturns.WeightedExperiment"><code class="xref py py-class docutils literal notranslate"><span class="pre">WeightedExperiment</span></code></a>) associated to the measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/>, then for all functions measurable wrt <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/>, we have:</p>
 <div class="math">
-<p><img src="../../_images/math/56eb36a1d4abdbe430d9a978193c17b413ca4f69.svg" alt="\int_{\Rset^n} f(\vect{x}) \mu(\vect{x})\, d\vect{x} \simeq \sum_{\ell=1}^{\ell=L} \omega_\ell f(\vect{\xi}_\ell)"/></p>
-</div><p>If we note <img class="math" src="../../_images/math/efe7d1ab3ba9a0dd0971d7323af381ddb44dcbb5.svg" alt="\eta_{\ell}=\omega_{\ell}\dfrac{1_{\cD}(\vect{\xi}_{\ell})}{\mu(\vect{\xi}_{\ell})}"/>, we build a more general quadrature approximation <img class="math" src="../../_images/math/85bc3b0987ccbd6ee027a02f1a7e405604edf2ea.svg" alt="(\eta_\ell, \xi_\ell)_{1 \leq l \leq L}"/> such that:</p>
+<p><img src="../../_images/math/a6db6698cfbd8df8e0c7341a138d827b099d7879.svg" alt="\int_{\Rset^n} f(\vect{x}) \mu(\vect{x})\, d\vect{x} \simeq \sum_{\ell=1}^{\ell=L} \omega_\ell f(\vect{\xi}_\ell)"/></p>
+</div><p>If we note <img class="math" src="../../_images/math/0383aadad9cbb74e6029f8a280994d66f76ea2cf.svg" alt="\eta_{\ell}=\omega_{\ell}\dfrac{1_{\cD}(\vect{\xi}_{\ell})}{\mu(\vect{\xi}_{\ell})}"/>, we build a more general quadrature approximation <img class="math" src="../../_images/math/885b19ca3fbd79008c534eb49f674bb8e3c9043b.svg" alt="(\eta_\ell, \xi_\ell)_{1 \leq l \leq L}"/> such that:</p>
 <div class="math">
-<p><img src="../../_images/math/30d95fd1d36ccc68645b2bcc6b47e4fed487cbb2.svg" alt="\int_{\cD} f(\vect{t})  \, d\vect{t} \simeq \sum_{\ell=1}^L \eta_\ell f(\vect{\xi}_\ell)"/></p>
-</div><p>where only the points <img class="math" src="../../_images/math/35bfbf8f6919a8660496ab4313bb774b08e6f7e1.svg" alt="\vect{\xi}_\ell \in \cD"/> are considered.</p>
-<p>We introduce the matrices <img class="math" src="../../_images/math/cd0064129f11f27d81d74b4cdaa16d244679c3b7.svg" alt="\mat{\Theta}=(\mat{\Theta}_{ij})_{1 \leq i \leq L, 1 \leq j \leq P} \in \cM_{Ld, Pd}(\Rset)"/> such that <img class="math" src="../../_images/math/418e8b61ae4ee9df924e9f987566f108cdc46143.svg" alt="\mat{\Theta}_{ij} = \theta_{j}(\vect{\xi}_i)\mat{I}_d"/>, <img class="math" src="../../_images/math/ee5ad30963ca650e380d554f64f1128cc2f49aa8.svg" alt="\mat{C}_{\ell, \ell'} =  \mat{C}(\vect{\xi}_{\ell},\vect{\xi}_{\ell'})"/> and <img class="math" src="../../_images/math/623c0096dd332fd7d31344ac03811784ec0f5fd5.svg" alt="\mat{W}= \mathrm{diag} (\mat{W}_{ii})_{1 \leq i \leq L} \in \cM_{Ld, Ld}(\Rset)"/> such that <img class="math" src="../../_images/math/6817c8f60427b634961a7068390eba556ee9813a.svg" alt="\mat{W}_{ii} = \eta_i \mat{I}_d"/>.</p>
-<p>The normalisation constraint <img class="math" src="../../_images/math/728cdefbd3b0a8381f376dca2b3cba631cc021ac.svg" alt="\|\vect{\varphi}_k\|^2_{L^2(\cD, \Rset^d)}=1"/> ang the orthogonality of the <img class="math" src="../../_images/math/d01ccefee33a5c87bd17bff0e024c1185dbd4729.svg" alt="\vect{\varphi}_k"/> in <img class="math" src="../../_images/math/ddaeb84d624752ab583cd6c405ac25c7e35cb9c6.svg" alt="L^2(\cD, \Rset^d)"/> leads to:</p>
+<p><img src="../../_images/math/ecc4894282994bb7d7d8ff4a40b9235b1d565acf.svg" alt="\int_{\cD} f(\vect{t})  \, d\vect{t} \simeq \sum_{\ell=1}^L \eta_\ell f(\vect{\xi}_\ell)"/></p>
+</div><p>where only the points <img class="math" src="../../_images/math/664084893026be007d5ad3797eaa2afcb75e3f1e.svg" alt="\vect{\xi}_\ell \in \cD"/> are considered.</p>
+<p>We introduce the matrices <img class="math" src="../../_images/math/5e10dcf5eb6f60c3f427ae80927284e1fba40b57.svg" alt="\mat{\Theta}=(\mat{\Theta}_{ij})_{1 \leq i \leq L, 1 \leq j \leq P} \in \cM_{Ld, Pd}(\Rset)"/> such that <img class="math" src="../../_images/math/6edbeec07c306d00b1917845d91f53fe04e72032.svg" alt="\mat{\Theta}_{ij} = \theta_{j}(\vect{\xi}_i)\mat{I}_d"/>, <img class="math" src="../../_images/math/e3e352539c946f3647e9dc38ac2dfa512da40ec2.svg" alt="\mat{C}_{\ell, \ell'} =  \mat{C}(\vect{\xi}_{\ell},\vect{\xi}_{\ell'})"/> and <img class="math" src="../../_images/math/fbb21586225bf2e062ab6b51a1ff070208170bdc.svg" alt="\mat{W}= \mathrm{diag} (\mat{W}_{ii})_{1 \leq i \leq L} \in \cM_{Ld, Ld}(\Rset)"/> such that <img class="math" src="../../_images/math/8495fc37b8f98873308162f17ecc484ddd6223e8.svg" alt="\mat{W}_{ii} = \eta_i \mat{I}_d"/>.</p>
+<p>The normalisation constraint <img class="math" src="../../_images/math/cdcfd0b5a2beb6f383097fec6ce0ead6e6a18503.svg" alt="\|\vect{\varphi}_k\|^2_{L^2(\cD, \Rset^d)}=1"/> ang the orthogonality of the <img class="math" src="../../_images/math/740dd669b342d5ffbb2ebb100d0ea080f6210116.svg" alt="\vect{\varphi}_k"/> in <img class="math" src="../../_images/math/bb753d7cb9cc9949f16239d402e98e200f540394.svg" alt="L^2(\cD, \Rset^d)"/> leads to:</p>
 <div class="math" id="equation-contnorm">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-contnorm" title="Permalink to this equation">¶</a></span><img src="../../_images/math/0ea5f4ead67b4180bac8970905a189024f662d0d.svg" alt="\Tr{\vect{\Phi}} \,\Tr{\mat{\Theta}} \,\mat{W}\, \mat{\Theta} \,\vect{\Phi}=\mat{I}"/></p>
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-contnorm" title="Permalink to this equation">¶</a></span><img src="../../_images/math/e072ace770f4ff947ea775cc18c3946ca7b95e6f.svg" alt="\Tr{\vect{\Phi}} \,\Tr{\mat{\Theta}} \,\mat{W}\, \mat{\Theta} \,\vect{\Phi}=\mat{I}"/></p>
 </div><p>The  <strong>Galerkin</strong> approach leads to the following generalized eigenvalue problem:</p>
 <div class="math" id="equation-eqfinquadgalerkin">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-eqfinquadgalerkin" title="Permalink to this equation">¶</a></span><img src="../../_images/math/502cf98933d25c728bea0cafdb5a44e3a919d49f.svg" alt="\Tr{\mat{\Theta}} \,\mat{W} \,\mat{C}  \,\mat{W} \,\mat{\Theta}\,\vect{\Phi}_k = \lambda_k  \Tr{\mat{\Theta}}\, \mat{W}\,\mat{\Theta}\,\vect{\Phi}_k"/></p>
-</div><p>where <img class="math" src="../../_images/math/55b50196a0afb0269e51f87322d8b0ee9c2b53d2.svg" alt="\Tr{\mat{\Theta}}\, \mat{W} \,\mat{C} \, \mat{W}\, \mat{\Theta}"/> and <img class="math" src="../../_images/math/f7425eb6710be67fd8500d948ab1ca7692bd0ef0.svg" alt="\Tr{\mat{\Theta}}\, \mat{W}\, \mat{\Theta}\in \cM_{Pd,Pd}(\Rset)"/>.</p>
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-eqfinquadgalerkin" title="Permalink to this equation">¶</a></span><img src="../../_images/math/0034b4ccf66b74589f4a67037fb9f4ec3c3d07f7.svg" alt="\Tr{\mat{\Theta}} \,\mat{W} \,\mat{C}  \,\mat{W} \,\mat{\Theta}\,\vect{\Phi}_k = \lambda_k  \Tr{\mat{\Theta}}\, \mat{W}\,\mat{\Theta}\,\vect{\Phi}_k"/></p>
+</div><p>where <img class="math" src="../../_images/math/4818be81413cd29ac10b8c1beae139707822e3a9.svg" alt="\Tr{\mat{\Theta}}\, \mat{W} \,\mat{C} \, \mat{W}\, \mat{\Theta}"/> and <img class="math" src="../../_images/math/c7f23428020c3248d006dbe65c02c9409359e048.svg" alt="\Tr{\mat{\Theta}}\, \mat{W}\, \mat{\Theta}\in \cM_{Pd,Pd}(\Rset)"/>.</p>
 <p>The  <strong>collocation</strong> approach leads to the following generalized eigenvalue problem:</p>
 <div class="math" id="equation-eqfinquadcollocation">
-<p><span class="eqno">(3)<a class="headerlink" href="#equation-eqfinquadcollocation" title="Permalink to this equation">¶</a></span><img src="../../_images/math/d50a2995f1c46c3368b9afe7f570427227acbcef.svg" alt="\mat{C}\, \mat{W} \,\mat{\Theta}\, \vect{\Phi}_k = \lambda_k \mat{\Theta}\,\vect{\Phi}_k"/></p>
-</div><p>Equations <a class="reference internal" href="#equation-eqfinquadgalerkin">(2)</a> and  <a class="reference internal" href="#equation-eqfinquadcollocation">(3)</a> are equivalent  when <img class="math" src="../../_images/math/10877f5eb452d47721fefbe65325726848489db8.svg" alt="\mat{\Theta}"/> is invertible.</p>
+<p><span class="eqno">(3)<a class="headerlink" href="#equation-eqfinquadcollocation" title="Permalink to this equation">¶</a></span><img src="../../_images/math/c74c43831a62ba6a4e83c2c9939777e7d275f5cd.svg" alt="\mat{C}\, \mat{W} \,\mat{\Theta}\, \vect{\Phi}_k = \lambda_k \mat{\Theta}\,\vect{\Phi}_k"/></p>
+</div><p>Equations <a class="reference internal" href="#equation-eqfinquadgalerkin">(2)</a> and  <a class="reference internal" href="#equation-eqfinquadcollocation">(3)</a> are equivalent  when <img class="math" src="../../_images/math/dbc91eb240ed1a1dcf8a7dbb16c382824a09efed.svg" alt="\mat{\Theta}"/> is invertible.</p>
 <p>OpenTURNS solves the equation <a class="reference internal" href="#equation-eqfinquadgalerkin">(2)</a>.</p>
 <p>The second constructor is a short-hand to the first one, where <em>basis</em> is the tensorized Legendre basis (see <a class="reference internal" href="openturns.OrthogonalProductPolynomialFactory.html#openturns.OrthogonalProductPolynomialFactory" title="openturns.OrthogonalProductPolynomialFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrthogonalProductPolynomialFactory</span></code></a> and <a class="reference internal" href="openturns.LegendreFactory.html#openturns.LegendreFactory" title="openturns.LegendreFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">LegendreFactory</span></code></a>), <em>experiment</em> is a tensorized Gauss-Legendre quadrature (see <a class="reference internal" href="openturns.GaussProductExperiment.html#openturns.GaussProductExperiment" title="openturns.GaussProductExperiment"><code class="xref py py-class docutils literal notranslate"><span class="pre">GaussProductExperiment</span></code></a>), <em>basisSize</em> is equal to <em>marginalDegree</em> to the power the dimension of <em>domain</em> and <em>mustScale</em> is set to <em>True</em>.</p>
 <p class="rubric">Examples</p>
-<p>Discretize the domain <img class="math" src="../../_images/math/5276693b38e3a896189d68c8a2055971be2dd623.svg" alt="\cD"/> and create a covariance model:</p>
+<p>Discretize the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/> and create a covariance model:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bounds</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">([</span><span class="o">-</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">domain</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">IntervalMesher</span><span class="p">([</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
@@ -196,6 +196,19 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.KarhunenLoeveQuadratureAlgorithm.thisown" title="openturns.KarhunenLoeveQuadratureAlgorithm.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -474,7 +487,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>s</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, positive</span></dt>
-<dd><p class="first last">The threshold <img class="math" src="../../_images/math/6152ab1727a5471b499b19f272492eb14272751c.svg" alt="s"/>.</p>
+<dd><p class="first last">The threshold <img class="math" src="../../_images/math/9bce6d499b26997265ba4f99471962bb537f3676.svg" alt="s"/>.</p>
 </dd>
 </dl>
 </td>
@@ -482,7 +495,7 @@
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>OpenTURNS truncates the sequence <img class="math" src="../../_images/math/11494655aa499a021ae4e7d3ff2d90cf30d064d9.svg" alt="(\lambda_k,  \vect{\varphi}_k)_{k \geq 1}"/>  at the index <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#equation-thresholdk">(3)</a>.</p>
+<p>OpenTURNS truncates the sequence <img class="math" src="../../_images/math/7b5453e630f910b85f6292c796b12a48fc86159a.svg" alt="(\lambda_k,  \vect{\varphi}_k)_{k \geq 1}"/>  at the index <img class="math" src="../../_images/math/6fd9fb7901ca12ee0d9cc74d922e7b9614da107c.svg" alt="K"/> defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#equation-thresholdk">(3)</a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -616,8 +629,8 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>s</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/2df8b328a22927498bf54f3abfdad68f6f410ca0.svg" alt="\geq 0"/></span></dt>
-<dd><p class="first last">The threshold <img class="math" src="../../_images/math/6152ab1727a5471b499b19f272492eb14272751c.svg" alt="s"/> defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#equation-thresholdk">(3)</a>.</p>
+<dt><strong>s</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/bfdaf91d2ba18c29f2ae594b605f72fcfeb391df.svg" alt="\geq 0"/></span></dt>
+<dd><p class="first last">The threshold <img class="math" src="../../_images/math/9bce6d499b26997265ba4f99471962bb537f3676.svg" alt="s"/> defined in <a class="reference internal" href="openturns.KarhunenLoeveAlgorithm.html#equation-thresholdk">(3)</a>.</p>
 </dd>
 </dl>
 </td>
@@ -643,6 +656,12 @@
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openturns.KarhunenLoeveQuadratureAlgorithm.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.KarhunenLoeveQuadratureAlgorithm.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
 </dd></dl>
 
 </dd></dl>
@@ -676,7 +695,7 @@
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

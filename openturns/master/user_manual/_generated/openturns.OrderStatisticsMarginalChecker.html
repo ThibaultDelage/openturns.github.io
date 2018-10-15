@@ -107,7 +107,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>coll</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of <a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
-<dd><p class="first last">The marginals <img class="math" src="../../_images/math/61941eea36b697479d956e83fc9938642f40907c.svg" alt="(F_1, \dots, F_n)"/> which are tested with respect to the order <img class="math" src="../../_images/math/d38437b106ba6c0c0d1da54bab8c7c14f0f342da.svg" alt="F_1 &lt; \dots &lt; F_n"/> in the context of the maximum order statistics distribution.</p>
+<dd><p class="first last">The marginals <img class="math" src="../../_images/math/5d45e7c7fe5388c1e4e891e2bd42ed16e3210bf3.svg" alt="(F_1, \dots, F_n)"/> which are tested with respect to the order <img class="math" src="../../_images/math/69b78a8d25e6b27869155907a304967bfd7702ee.svg" alt="F_1 &lt; \dots &lt; F_n"/> in the context of the maximum order statistics distribution.</p>
 </dd>
 </dl>
 </td>
@@ -115,18 +115,18 @@
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>Three tests are performed. We note <img class="math" src="../../_images/math/f0e6ffcbdf2244f9f436fe98655eb9b10c060893.svg" alt="[a_i,b_i]"/> the range of <img class="math" src="../../_images/math/b4350659c07de08817a1e30229c7e68f8d5818a5.svg" alt="X_i"/>. The tests are :</p>
+<p>Three tests are performed. We note <img class="math" src="../../_images/math/eb3aafe671087f046633d7e4352a2e3bc7f50c7e.svg" alt="[a_i,b_i]"/> the range of <img class="math" src="../../_images/math/ba161830a9dc7bd77b7029409e6f0f6985052709.svg" alt="X_i"/>. The tests are :</p>
 <ul>
-<li><p class="first">Test 1 checks that <img class="math" src="../../_images/math/642f4e02213f37aa7a9b883db03b1c46e37b72d4.svg" alt="a_i \leq a_{i+1}"/> and <img class="math" src="../../_images/math/cc3eeae4011563ea377054957f129b892416fe50.svg" alt="b_i \leq b_{i+1}"/> for all <img class="math" src="../../_images/math/83a1929c1cd341d9476f20e34f0ca7ab802344c3.svg" alt="i"/>.</p>
+<li><p class="first">Test 1 checks that <img class="math" src="../../_images/math/2e6907e5aaca631ed5a2c79086448d44fe4de740.svg" alt="a_i \leq a_{i+1}"/> and <img class="math" src="../../_images/math/6c323a09793c4ff9b0e64edfceecd8dc80670948.svg" alt="b_i \leq b_{i+1}"/> for all <img class="math" src="../../_images/math/c47ea0eab9f0f521327c38ece8a0d25e433bbbb2.svg" alt="i"/>.</p>
 </li>
-<li><p class="first">Test 2 discretizes <img class="math" src="../../_images/math/ab3c2125ef32c048108429d54869403bb86f81e0.svg" alt="[0,1]"/> with <img class="math" src="../../_images/math/6d063d6fa41b5b436408ba6efc5a201ca0905079.svg" alt="\{\dfrac{1}{2n},\dfrac{3}{2n}, \dots,\dfrac{2n-1}{2n}\} = \{q_1, \dots, q_{2n-1} \}"/> where <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/> is defined in the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a> with <cite>OSMC-OptimizationEpsilon</cite>. By default, <img class="math" src="../../_images/math/ec7f1079017bf5c485f6fb36d7ce028cb0c65530.svg" alt="n=100"/>. Test 2 checks that:</p>
+<li><p class="first">Test 2 discretizes <img class="math" src="../../_images/math/08769b4acee704b2c98db6232e2baf02be937a91.svg" alt="[0,1]"/> with <img class="math" src="../../_images/math/f593832a59d2d9019141176c1be0fb4096b70ac7.svg" alt="\{\dfrac{1}{2n},\dfrac{3}{2n}, \dots,\dfrac{2n-1}{2n}\} = \{q_1, \dots, q_{2n-1} \}"/> where <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/> is defined in the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a> with <cite>OSMC-OptimizationEpsilon</cite>. By default, <img class="math" src="../../_images/math/dd3d0aef33247b629d0d6b127b350e4432ae9203.svg" alt="n=100"/>. Test 2 checks that:</p>
 <div class="math">
-<p><img src="../../_images/math/948d34bd2ae3d244780fb245bcf32c4784e79a75.svg" alt="F_k^{-1}(q_j) \geq F_{k-1}^{-1}(q_j)+\epsilon, \quad 1 \leq j \leq d"/></p>
-</div><p>where <img class="math" src="../../_images/math/384410e6f37eece2ddfb85c2522d8adc600e439d.svg" alt="\epsilon"/> is defined in the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a> with <cite>OSMC-QuantileIteration</cite>. By default, <img class="math" src="../../_images/math/009d8ced79fbc1e4b390deed1859a7efe4fa051d.svg" alt="\epsilon=10^{-7}"/>.</p>
+<p><img src="../../_images/math/2742a5dfc99d7f190ff84766c0cc2d0e5365973a.svg" alt="F_k^{-1}(q_j) \geq F_{k-1}^{-1}(q_j)+\epsilon, \quad 1 \leq j \leq d"/></p>
+</div><p>where <img class="math" src="../../_images/math/1ddfda23f88fcfeaf8e0de4b95c88d19f8e81fd3.svg" alt="\epsilon"/> is defined in the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a> with <cite>OSMC-QuantileIteration</cite>. By default, <img class="math" src="../../_images/math/b4cd85b363a767dc1a5099fc9047bcbdf0483d8f.svg" alt="\epsilon=10^{-7}"/>.</p>
 </li>
 <li><p class="first">Test 3 checks that:</p>
 <div class="math">
-<p><img src="../../_images/math/0cabef53a6d2297c7f896f45ae7b62d4c7c7ecf3.svg" alt="\min_{q \in [q_{j-1}, q_j]} \{F_k^{-1}(q) - F_{k-1}^{-1}(q) \} \geq \epsilon"/></p>
+<p><img src="../../_images/math/2a2ca5f572046a9feed4918e90fabdcec89b5bfe.svg" alt="\min_{q \in [q_{j-1}, q_j]} \{F_k^{-1}(q) - F_{k-1}^{-1}(q) \} \geq \epsilon"/></p>
 </div><p>using the TNC algorithm.</p>
 </li>
 </ul>
@@ -141,6 +141,19 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">compatibilityResult</span> <span class="o">=</span> <span class="n">testChecker</span><span class="o">.</span><span class="n">isCompatible</span><span class="p">()</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.OrderStatisticsMarginalChecker.thisown" title="openturns.OrderStatisticsMarginalChecker.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -192,7 +205,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>indepMarginals</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></span></dt>
-<dd><p class="first last">Indicates the indices that build some independent sets of marginals. If we note <img class="math" src="../../_images/math/dc09ab852f9bb497e82d5a374bcb6c76b92f2b6b.svg" alt="indepMarginals = [i_1, i_2]"/> then the sub random vectors <img class="math" src="../../_images/math/9e34579ae621b2274a68177d59298088bfe444ff.svg" alt="(X_1, \dots, X_{i_1})"/>,  <img class="math" src="../../_images/math/c67be4d2f834f677ea42aeb87850115412a5a086.svg" alt="(X_{i_1+1}, \dots, X_{i_2})"/> and  <img class="math" src="../../_images/math/a1a172c4d9b00cde8dbbcadfa61268a50984c779.svg" alt="(X_{i_2+1}, \dots, X_n)"/> are independent.
+<dd><p class="first last">Indicates the indices that build some independent sets of marginals. If we note <img class="math" src="../../_images/math/f229d681f64dc5810a67f9e67956447fde9151c1.svg" alt="indepMarginals = [i_1, i_2]"/> then the sub random vectors <img class="math" src="../../_images/math/7d467b6e06cbcc2c83120943df7e5357666b84c2.svg" alt="(X_1, \dots, X_{i_1})"/>,  <img class="math" src="../../_images/math/81872305e502e4ad087dcf9e3f4e499ff6951e17.svg" alt="(X_{i_1+1}, \dots, X_{i_2})"/> and  <img class="math" src="../../_images/math/c9f140839e7445af28161b931931fbf4f8b8a0b5.svg" alt="(X_{i_2+1}, \dots, X_n)"/> are independent.
 This information is automatically used by OpenTURNS to build the appropriated maximum entropy order statistics distribution.</p>
 </dd>
 </dl>
@@ -248,6 +261,12 @@ This information is automatically used by OpenTURNS to build the appropriated ma
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.OrderStatisticsMarginalChecker.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.OrderStatisticsMarginalChecker.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -279,7 +298,7 @@ This information is automatically used by OpenTURNS to build the appropriated ma
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

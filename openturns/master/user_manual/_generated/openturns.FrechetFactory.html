@@ -111,16 +111,29 @@
 </dl>
 <p>The parameters are estimated by likelihood maximization. The starting point is obtained from the estimation of a Gumbel distribution based on the logarithm of the shifted observations:</p>
 <div class="math">
-<p><img src="../../_images/math/bb37016071d3b5bbbb85cceaaf7087ab8cd414e8.svg" alt="\begin{eqnarray*}
+<p><img src="../../_images/math/57d670f2539346baf972f379c0e82c9620e755ec.svg" alt="\begin{eqnarray*}
   \displaystyle\Hat{\alpha} =\frac{\pi}{\Hat{\sigma}_y\sqrt{6}} \\
   \displaystyle\Hat{\beta} =\exp\left\{\bar{y}_n-\frac{\gamma\sqrt{6}}{\pi}\Hat{\sigma}_y\right\} \\
   \displaystyle\Hat{\gamma} =x_{(1)} - \frac{|x_{(1)}|}{n+2}
 \end{eqnarray*}"/></p>
-</div><p>with <img class="math" src="../../_images/math/89735daf26ed39c612497aaeff74d02f60d51bc8.svg" alt="\gamma \simeq 0.57721"/> as Euler’s constant (not to be confused with the location parameter of the Frechet distribution!), <img class="math" src="../../_images/math/aaf74afef91a57d84de35d85d4eef4b43b9e373c.svg" alt="x_{(1)}=\min_{i=1,\dots,n}x_i"/> and <img class="math" src="../../_images/math/86070fbcee1e9be87d1be00c25548518d2a28c4d.svg" alt="y_i=x_i-\Hat{\gamma}"/>.</p>
+</div><p>with <img class="math" src="../../_images/math/35cdec78bc02ee9f063a133882993e83227d03ec.svg" alt="\gamma \simeq 0.57721"/> as Euler’s constant (not to be confused with the location parameter of the Frechet distribution!), <img class="math" src="../../_images/math/90e075a111997c9648754727c6d9db31ab73ae00.svg" alt="x_{(1)}=\min_{i=1,\dots,n}x_i"/> and <img class="math" src="../../_images/math/8b235aeb65b412884f0d9ebd1ade14f0a1c984d6.svg" alt="y_i=x_i-\Hat{\gamma}"/>.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DistributionFactory</span></code></a>, <a class="reference internal" href="openturns.Frechet.html#openturns.Frechet" title="openturns.Frechet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Frechet</span></code></a></p>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.FrechetFactory.thisown" title="openturns.FrechetFactory.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -277,7 +290,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/9c0675243e96235ce54d181013419a9d5dd7ef3b.svg" alt="(\mu, \sigma, a, b)"/>:</p>
+<p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/7708d72f7db4dc9657cbe0067d9492fc988553f0.svg" alt="(\mu, \sigma, a, b)"/>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaMuSigma</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -511,6 +524,12 @@
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.FrechetFactory.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.FrechetFactory.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -542,7 +561,7 @@
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

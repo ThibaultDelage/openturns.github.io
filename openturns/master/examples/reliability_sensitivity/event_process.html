@@ -265,29 +265,29 @@ div.nboutput div.output_area.stderr {
 <h1>Create an event based on a process<a class="headerlink" href="#Create-an-event-based-on-a-process" title="Permalink to this headline">¶</a></h1>
 <p>This example gives elements to create an event based on a multivariate
 stochastic process. Let
-<img class="math" src="../../_images/math/f6cde0899211e7aaa9e9cdfd4ff4127d42e065ae.svg" alt="X: \Omega \times \mathcal{D} \rightarrow \mathbb{R}^d"/> be a
-stochastic process of dimension <img class="math" src="../../_images/math/5bedc75d546b74f5c8a9327c072c85fda0fd787f.svg" alt="d"/>, where
-<img class="math" src="../../_images/math/b0dfb09734d4350de50639bfb0a31b648a5473de.svg" alt="\mathcal{D} \in \mathbb{R}^n"/> is discretized on the mesh
-<img class="math" src="../../_images/math/7100eaadeca47463f1b26d4f489c9ec76bcbd20a.svg" alt="\mathcal{M}"/>. We suppose that <img class="math" src="../../_images/math/7100eaadeca47463f1b26d4f489c9ec76bcbd20a.svg" alt="\mathcal{M}"/> contains
-<img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> vertices.</p>
-<p>We define the event <img class="math" src="../../_images/math/8041fe4924c7a57145cfa6f00f0d4dbabda50ca8.svg" alt="\mathcal{E}"/> as:</p>
+<img class="math" src="../../_images/math/a2f63923505d5f47f0418029f6213c0b750abdb7.svg" alt="X: \Omega \times \mathcal{D} \rightarrow \mathbb{R}^d"/> be a
+stochastic process of dimension <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/>, where
+<img class="math" src="../../_images/math/260ab8fdac7fd61a045bea85d07050f92c62f8d0.svg" alt="\mathcal{D} \in \mathbb{R}^n"/> is discretized on the mesh
+<img class="math" src="../../_images/math/f42b888f157f5bec3a8d9f972d957c85ce63aec0.svg" alt="\mathcal{M}"/>. We suppose that <img class="math" src="../../_images/math/f42b888f157f5bec3a8d9f972d957c85ce63aec0.svg" alt="\mathcal{M}"/> contains
+<img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> vertices.</p>
+<p>We define the event <img class="math" src="../../_images/math/a79bb5fe7ab273a5eea2468fd696e37c9bdc7899.svg" alt="\mathcal{E}"/> as:</p>
 <div class="math">
-<p><img src="../../_images/math/542601af6d7bd85ab6bd62646509e44b9a00372c.svg" alt="\begin{aligned} \displaystyle \mathcal{E}(X) = \bigcup_{\underline{t}\in \mathcal{M}}\left\{X_{\underline{t}} \in \mathcal{A} \right\} \end{aligned}"/></p>
-</div><p>where <img class="math" src="../../_images/math/87f5d77710dde562c6c291359f8be9201fab1c98.svg" alt="\mathcal{A}"/> is a domain of <img class="math" src="../../_images/math/ecb979f064096d2a44a0682157a06de68356ad2b.svg" alt="\mathbb{R}^d"/>.</p>
-<p>A particular domain <img class="math" src="../../_images/math/87f5d77710dde562c6c291359f8be9201fab1c98.svg" alt="\mathcal{A}"/> is the cartesian product of
+<p><img src="../../_images/math/81d12c4e5cdb5cdbe5adcb84038444cadff7967e.svg" alt="\begin{aligned} \displaystyle \mathcal{E}(X) = \bigcup_{\underline{t}\in \mathcal{M}}\left\{X_{\underline{t}} \in \mathcal{A} \right\} \end{aligned}"/></p>
+</div><p>where <img class="math" src="../../_images/math/4d6da4a04e082384c045fdbec65369a74f6095bd.svg" alt="\mathcal{A}"/> is a domain of <img class="math" src="../../_images/math/fd9bebc25b1be9f67f7473713bbe59752d9fdb76.svg" alt="\mathbb{R}^d"/>.</p>
+<p>A particular domain <img class="math" src="../../_images/math/4d6da4a04e082384c045fdbec65369a74f6095bd.svg" alt="\mathcal{A}"/> is the cartesian product of
 type:</p>
 <div class="math">
-<p><img src="../../_images/math/dc4abdbcbf243586ab7c3721ee4137d6085bf428.svg" alt="\begin{aligned} \mathcal{A} = \prod_{i=1}^d [a_i,b_i]\end{aligned}"/></p>
-</div><p>In that case, the library defines <img class="math" src="../../_images/math/87f5d77710dde562c6c291359f8be9201fab1c98.svg" alt="\mathcal{A}"/> by its both
-extreme points : <img class="math" src="../../_images/math/61d245584ff8d99aeb21a3e3aa158cb4547da434.svg" alt="\underline{a}"/> and <img class="math" src="../../_images/math/f22aef8f03e0f8d5ba93de84d7303ef67e371d47.svg" alt="\underline{b}"/>.</p>
-<p>In the general case, <img class="math" src="../../_images/math/87f5d77710dde562c6c291359f8be9201fab1c98.svg" alt="\mathcal{A}"/> is a <em>Domain</em> object that is
-able to check if it contains a given point in <img class="math" src="../../_images/math/ecb979f064096d2a44a0682157a06de68356ad2b.svg" alt="\mathbb{R}^d"/>.</p>
-<p>The library creates an <em>Event</em> object from the process <img class="math" src="../../_images/math/e39fc198cd7e936bd7b824c9b924f7dc377b6975.svg" alt="X"/> and the
-domain <img class="math" src="../../_images/math/87f5d77710dde562c6c291359f8be9201fab1c98.svg" alt="\mathcal{A}"/>. Then, it is possible to get a realization of
-the event <img class="math" src="../../_images/math/8041fe4924c7a57145cfa6f00f0d4dbabda50ca8.svg" alt="\mathcal{E}"/>, which is scalar
-<img class="math" src="../../_images/math/ff8a3336c8ebf80b0b6a44e1dcd66bc09a18b416.svg" alt="1_{\mathcal{E}(X)}(\underline{x}_0, \dots, \underline{x}_{N-1})"/>
-if <img class="math" src="../../_images/math/1773a26b001a30f0fea265a28d555ac51b72e24a.svg" alt="(\underline{x}_0, \dots,\underline{x}_{N-1})"/> is a realization
-of <img class="math" src="../../_images/math/e39fc198cd7e936bd7b824c9b924f7dc377b6975.svg" alt="X"/> on <img class="math" src="../../_images/math/7100eaadeca47463f1b26d4f489c9ec76bcbd20a.svg" alt="\mathcal{M}"/>.</p>
+<p><img src="../../_images/math/73327034f23bb406467abed0059218e92a9be3a4.svg" alt="\begin{aligned} \mathcal{A} = \prod_{i=1}^d [a_i,b_i]\end{aligned}"/></p>
+</div><p>In that case, the library defines <img class="math" src="../../_images/math/4d6da4a04e082384c045fdbec65369a74f6095bd.svg" alt="\mathcal{A}"/> by its both
+extreme points : <img class="math" src="../../_images/math/0475a08a6f9cf86af84ffb1667f4232e285a9299.svg" alt="\underline{a}"/> and <img class="math" src="../../_images/math/6047aa4d3b8143451202f9779a4f9972626e728c.svg" alt="\underline{b}"/>.</p>
+<p>In the general case, <img class="math" src="../../_images/math/4d6da4a04e082384c045fdbec65369a74f6095bd.svg" alt="\mathcal{A}"/> is a <em>Domain</em> object that is
+able to check if it contains a given point in <img class="math" src="../../_images/math/fd9bebc25b1be9f67f7473713bbe59752d9fdb76.svg" alt="\mathbb{R}^d"/>.</p>
+<p>The library creates an <em>Event</em> object from the process <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/> and the
+domain <img class="math" src="../../_images/math/4d6da4a04e082384c045fdbec65369a74f6095bd.svg" alt="\mathcal{A}"/>. Then, it is possible to get a realization of
+the event <img class="math" src="../../_images/math/a79bb5fe7ab273a5eea2468fd696e37c9bdc7899.svg" alt="\mathcal{E}"/>, which is scalar
+<img class="math" src="../../_images/math/fcbd38ee7d50d66a0a77ee40ae7a7cbcb14f9fdd.svg" alt="1_{\mathcal{E}(X)}(\underline{x}_0, \dots, \underline{x}_{N-1})"/>
+if <img class="math" src="../../_images/math/616b1843a9a1fca17b413c646dbeef67dc54944a.svg" alt="(\underline{x}_0, \dots,\underline{x}_{N-1})"/> is a realization
+of <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/> on <img class="math" src="../../_images/math/f42b888f157f5bec3a8d9f972d957c85ce63aec0.svg" alt="\mathcal{M}"/>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [1]:
@@ -380,7 +380,7 @@ of <img class="math" src="../../_images/math/e39fc198cd7e936bd7b824c9b924f7dc377
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

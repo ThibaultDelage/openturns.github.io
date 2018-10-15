@@ -107,22 +107,35 @@
 <dd><p>BoxCox transformation estimator.</p>
 <p class="rubric">Notes</p>
 <p>The class <a class="reference internal" href="#openturns.BoxCoxFactory" title="openturns.BoxCoxFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoxCoxFactory</span></code></a> enables to build a Box Cox transformation from data.</p>
-<p>The Box Cox transformation <img class="math" src="../../_images/math/eda697d9f620c9cd4f7f2dd1fe51a03155bf3a54.svg" alt="h_{\vect{\lambda}, \vect{\alpha}}: \Rset^d \rightarrow \Rset^d"/> maps a sample into a new sample following a normal distribution with independent components. That sample may be the realization of a process as well as the realization of a distribution.</p>
-<p>In the multivariate case, we proceed component by component: <img class="math" src="../../_images/math/f1d764ccc21cfce2b4f154855e62bdbe7d02740d.svg" alt="h_{\lambda_i, \alpha_i}: \Rset \rightarrow \Rset"/> which writes:</p>
+<p>The Box Cox transformation <img class="math" src="../../_images/math/d78ac93cf84d21afb0cabeb255828552f00df811.svg" alt="h_{\vect{\lambda}, \vect{\alpha}}: \Rset^d \rightarrow \Rset^d"/> maps a sample into a new sample following a normal distribution with independent components. That sample may be the realization of a process as well as the realization of a distribution.</p>
+<p>In the multivariate case, we proceed component by component: <img class="math" src="../../_images/math/5fcdc0b4fab63245a149b07f1849cf7d953e665e.svg" alt="h_{\lambda_i, \alpha_i}: \Rset \rightarrow \Rset"/> which writes:</p>
 <div class="math">
-<p><img src="../../_images/math/1a5014b6b98c19644c09c642a9ba09e99cdbf879.svg" alt="h_{\lambda_i, \alpha_i}(x) = 
+<p><img src="../../_images/math/6b720d686a10953cffbd905e6560b0b130d11e75.svg" alt="h_{\lambda_i, \alpha_i}(x) = 
 \left\{
 \begin{array}{ll}
 \dfrac{(x+\alpha_i)^\lambda-1}{\lambda_i} &amp; \lambda_i \neq 0 \\
 \log(x+\alpha_i)                        &amp; \lambda_i = 0
 \end{array}
 \right."/></p>
-</div><p>for all <img class="math" src="../../_images/math/5f2f50ebbed46314a3705c07a5d3d3ab36f19624.svg" alt="x+\alpha_i &gt;0"/>.</p>
+</div><p>for all <img class="math" src="../../_images/math/5967949f9cdb4abacba23cec250a5845c65976b2.svg" alt="x+\alpha_i &gt;0"/>.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <p>BoxCox transformation could alse be performed in the case of the estimation of a general linear model through <a class="reference internal" href="../response_surface/_generated/openturns.GeneralLinearModelAlgorithm.html#openturns.GeneralLinearModelAlgorithm" title="openturns.GeneralLinearModelAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralLinearModelAlgorithm</span></code></a>.
-The objective is to estimate the most likely surrogate model (general linear model) which links input data <img class="math" src="../../_images/math/b46b960b23857f933aea0a650f82daa1bcc3e1b1.svg" alt="x"/> and <img class="math" src="../../_images/math/798ca2ad89fef0c9221e88634c4c4fef67e3f561.svg" alt="h_{\vect{\lambda}, \vect{\alpha}}(y)"/>. <img class="math" src="../../_images/math/ae9ead0d4862367669ade58386a2c925e5e4340d.svg" alt="\vect{\lambda}"/> are to be calibrated such as maximizing the general linear model’s likelihood function. In that context, a <a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a> and a <a class="reference internal" href="openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a> have to be fixed</p>
+The objective is to estimate the most likely surrogate model (general linear model) which links input data <img class="math" src="../../_images/math/5022ac5b5f8f5d1b9a0c33f27f9fb1652700fd71.svg" alt="x"/> and <img class="math" src="../../_images/math/55a7102da266df6a0e60ae774ef18114121a096d.svg" alt="h_{\vect{\lambda}, \vect{\alpha}}(y)"/>. <img class="math" src="../../_images/math/f9109d31ad3b0e2895b10600ca7db5c29db70842.svg" alt="\vect{\lambda}"/> are to be calibrated such as maximizing the general linear model’s likelihood function. In that context, a <a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a> and a <a class="reference internal" href="openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a> have to be fixed</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.BoxCoxFactory.thisown" title="openturns.BoxCoxFactory.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -217,7 +230,7 @@ The objective is to estimate the most likely surrogate model (general linear mod
 By default the opposite of the min vector of the data is used if some data are negative.</p>
 </dd>
 <dt><strong>likelihoodGraph</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></span></dt>
-<dd><p class="first last">An empty graph that is fulfilled later with the log-likelihood of the mapped variables with respect to the <img class="math" src="../../_images/math/1ae312ba273895eb0304e126c56ceda9bc70fc35.svg" alt="lambda"/> parameter for each component.</p>
+<dd><p class="first last">An empty graph that is fulfilled later with the log-likelihood of the mapped variables with respect to the <img class="math" src="../../_images/math/a1a5f37cf9dd449cfccf4d1fd078579b7aebc9f0.svg" alt="lambda"/> parameter for each component.</p>
 </dd>
 <dt><strong>inputSample, outputSample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a> or 2d-array</span></dt>
 <dd><p class="first last">The input and output samples of a model evaluated apart.</p>
@@ -251,23 +264,23 @@ See note for some particular applications.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>We describe the estimation in the univariate case, in the case of no surrogate model estimate. Only the parameter <img class="math" src="../../_images/math/f5d9352d03ee3b64f44cf0ec28565a6cb40475ff.svg" alt="\lambda"/> is estimated. To clarify the notations, we omit the mention of <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/> in <img class="math" src="../../_images/math/252a97d41a2389a0b019ef5398eca60b2d698604.svg" alt="h_\lambda"/>.</p>
-<p>We note <img class="math" src="../../_images/math/9ecefc1d060c52c06d10e3bd1a7860168ff71d26.svg" alt="(x_0, \dots, x_{N-1})"/> a sample of <img class="math" src="../../_images/math/e39fc198cd7e936bd7b824c9b924f7dc377b6975.svg" alt="X"/>. We suppose that <img class="math" src="../../_images/math/1ef053da6d37aaa19ea60c762ed8db4cdd8e4461.svg" alt="h_\lambda(X) \sim \cN(\beta , \sigma^2 )"/>.</p>
-<p>The parameters <img class="math" src="../../_images/math/81880144005f293c781630d4abb662db60503805.svg" alt="(\beta,\sigma,\lambda)"/> are  estimated by the maximum likelihood estimators. We note <img class="math" src="../../_images/math/1e28694825c94ff3741fe822f0b31eeac209bb45.svg" alt="\Phi_{\beta, \sigma}"/> and <img class="math" src="../../_images/math/cf3d65336058821498b77aeab1acb4bf12b46ae3.svg" alt="\phi_{\beta, \sigma}"/> respectively the cumulative distribution function and the density probability function of the <img class="math" src="../../_images/math/eecc8264cf608f837891cd00f21b0f68c8d0e55f.svg" alt="\cN(\beta , \sigma^2)"/> distribution.</p>
+<p>We describe the estimation in the univariate case, in the case of no surrogate model estimate. Only the parameter <img class="math" src="../../_images/math/d9f42c58a6b23b8de25e0f85eb45f31c2f872979.svg" alt="\lambda"/> is estimated. To clarify the notations, we omit the mention of <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/> in <img class="math" src="../../_images/math/5dd63c1c31550108996a595a141c60ff3908c7e7.svg" alt="h_\lambda"/>.</p>
+<p>We note <img class="math" src="../../_images/math/0b720c84ae2e204f52a187469259c3f6cfbf315f.svg" alt="(x_0, \dots, x_{N-1})"/> a sample of <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>. We suppose that <img class="math" src="../../_images/math/212d468d9a4b15e4a887590fc66c4662a00ec80d.svg" alt="h_\lambda(X) \sim \cN(\beta , \sigma^2 )"/>.</p>
+<p>The parameters <img class="math" src="../../_images/math/378485f1fe8b6dcb8e1e8bc313524560a2689bee.svg" alt="(\beta,\sigma,\lambda)"/> are  estimated by the maximum likelihood estimators. We note <img class="math" src="../../_images/math/9b3683d9a14cc7b9c12926c93eeeab27ff946205.svg" alt="\Phi_{\beta, \sigma}"/> and <img class="math" src="../../_images/math/aea8a32b32d3352870ff5e66ce185c05951b3820.svg" alt="\phi_{\beta, \sigma}"/> respectively the cumulative distribution function and the density probability function of the <img class="math" src="../../_images/math/9b1df38660e90fc2e1638d1705f5fe84459f575a.svg" alt="\cN(\beta , \sigma^2)"/> distribution.</p>
 <p>We have :</p>
 <div class="math">
-<p><img src="../../_images/math/01173814b3bab2a34752c4c160c53e6aa6701c81.svg" alt="\begin{array}{lcl}
+<p><img src="../../_images/math/3b6896c48e9646208a6fe69aacaa5356fb02376f.svg" alt="\begin{array}{lcl}
   \forall v \geq 0, \, \Prob{ X \leq v } &amp; = &amp; \Prob{ h_\lambda(X) \leq h_\lambda(v) } \\
   &amp; = &amp; \Phi_{\beta, \sigma} \left(h_\lambda(v)\right)
 \end{array}"/></p>
-</div><p>from which we derive the  density probability function <em>p</em> of <img class="math" src="../../_images/math/e39fc198cd7e936bd7b824c9b924f7dc377b6975.svg" alt="X"/>:</p>
+</div><p>from which we derive the  density probability function <em>p</em> of <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>:</p>
 <div class="math">
-<p><img src="../../_images/math/f1349ac9af0791c4aae3fc8f30e50b42a3623a3e.svg" alt="\begin{array}{lcl}
+<p><img src="../../_images/math/4dcf8cd4bb8ef75c997423be1d5b713d76a163f3.svg" alt="\begin{array}{lcl}
   p(v) &amp; = &amp; h_\lambda'(v)\phi_{\beta, \sigma}(v) = v^{\lambda - 1}\phi_{\beta, \sigma}(v)
 \end{array}"/></p>
-</div><p>which enables to write the likelihood of the values <img class="math" src="../../_images/math/9ecefc1d060c52c06d10e3bd1a7860168ff71d26.svg" alt="(x_0, \dots, x_{N-1})"/>:</p>
+</div><p>which enables to write the likelihood of the values <img class="math" src="../../_images/math/0b720c84ae2e204f52a187469259c3f6cfbf315f.svg" alt="(x_0, \dots, x_{N-1})"/>:</p>
 <div class="math">
-<p><img src="../../_images/math/7d8fcc062aba767b5d62afd8eed304ef5707f2b3.svg" alt="\begin{array}{lcl}
+<p><img src="../../_images/math/d28eb37aab6164cc1422d1ff3123a6c644053be8.svg" alt="\begin{array}{lcl}
   L(\beta,\sigma,\lambda)
   &amp; = &amp;
   \underbrace{ \frac{1}{(2\pi)^{N/2}}
@@ -285,49 +298,49 @@ See note for some particular applications.</p>
   \times
   \prod_{k=0}^{N-1} x_k^{\lambda - 1}
 \end{array}"/></p>
-</div><p>We notice that for each fixed <img class="math" src="../../_images/math/f5d9352d03ee3b64f44cf0ec28565a6cb40475ff.svg" alt="\lambda"/>, the likelihood equation is proportional to the likelihood equation which estimates  <img class="math" src="../../_images/math/1c240068d2c0531a5b60b99377c58d3a0839d055.svg" alt="(\beta, \sigma^2)"/>.</p>
-<p>Thus, the maximum likelihood estimators for <img class="math" src="../../_images/math/7af3490ad8b7beaf56db3545a71c214f73b60797.svg" alt="(\beta(\lambda), \sigma^2(\lambda))"/> for a given <img class="math" src="../../_images/math/f5d9352d03ee3b64f44cf0ec28565a6cb40475ff.svg" alt="\lambda"/>  are :</p>
+</div><p>We notice that for each fixed <img class="math" src="../../_images/math/d9f42c58a6b23b8de25e0f85eb45f31c2f872979.svg" alt="\lambda"/>, the likelihood equation is proportional to the likelihood equation which estimates  <img class="math" src="../../_images/math/04b266d355c050593a8d4df3a0acb051c9726999.svg" alt="(\beta, \sigma^2)"/>.</p>
+<p>Thus, the maximum likelihood estimators for <img class="math" src="../../_images/math/b55e615daeec208b1ca80c6caee7cc8a01711529.svg" alt="(\beta(\lambda), \sigma^2(\lambda))"/> for a given <img class="math" src="../../_images/math/d9f42c58a6b23b8de25e0f85eb45f31c2f872979.svg" alt="\lambda"/>  are :</p>
 <div class="math">
-<p><img src="../../_images/math/5f506521cf90002c01212ea321236ece91a473a3.svg" alt="\begin{array}{lcl}
+<p><img src="../../_images/math/973f2bfdf618cbaf5fab747e8a46718899ecf24c.svg" alt="\begin{array}{lcl}
  \hat{\beta}(\lambda) &amp; = &amp; \frac{1}{N} \sum_{k=0}^{N-1} h_{\lambda}(x_k) \\
  \hat{\sigma}^2(\lambda)  &amp; = &amp;  \frac{1}{N} \sum_{k=0}^{N-1} (h_{\lambda}(x_k) - \beta(\lambda))^2
 \end{array}"/></p>
-</div><p>Substituting these expressions in the likelihood equation and taking the <img class="math" src="../../_images/math/0c35c353027e681d3ed000c5b3b38d4821a257c0.svg" alt="\log-"/> likelihood leads to:</p>
+</div><p>Substituting these expressions in the likelihood equation and taking the <img class="math" src="../../_images/math/76640b313a0e2d88827d580e3638c3ff366df3ca.svg" alt="\log-"/> likelihood leads to:</p>
 <div class="math">
-<p><img src="../../_images/math/7480803325d59b6fed845f2e8eb071e6a28f727e.svg" alt="\begin{array}{lcl}
+<p><img src="../../_images/math/8e9a16dd0b199ccef277b6fe90ad49c89d4255e3.svg" alt="\begin{array}{lcl}
   \ell(\lambda) = \log L( \hat{\beta}(\lambda), \hat{\sigma}(\lambda),\lambda ) &amp; = &amp; C -
   \frac{N}{2}
   \log\left[\hat{\sigma}^2(\lambda)\right]
   \;+\;
   \left(\lambda - 1 \right) \sum_{k=0}^{N-1} \log(x_i)\,,%\qquad mbox{where :math:`C` is a constant.}
 \end{array}"/></p>
-</div><p>The parameter <img class="math" src="../../_images/math/00bb95ef24de080e31cd24552f1dfb3d16e3c4a0.svg" alt="\hat{\lambda}"/> is the one maximising <img class="math" src="../../_images/math/99535da23fc4983c839e7f2a93633650088f5ed8.svg" alt="\ell(\lambda)"/>.</p>
-<p>When the empty graph <em>likelihoodGraph</em> is precised, it is fulfilled with the evolution of the likelihood with respect to the value of <img class="math" src="../../_images/math/f5d9352d03ee3b64f44cf0ec28565a6cb40475ff.svg" alt="\lambda"/> for each component  <em>i</em>. It enables to graphically detect the optimal values.</p>
+</div><p>The parameter <img class="math" src="../../_images/math/4aa32da5961a9b588ebdf55011b12c974826b7c4.svg" alt="\hat{\lambda}"/> is the one maximising <img class="math" src="../../_images/math/692c66d8392dd3a05993f9f925a7c08af2039c67.svg" alt="\ell(\lambda)"/>.</p>
+<p>When the empty graph <em>likelihoodGraph</em> is precised, it is fulfilled with the evolution of the likelihood with respect to the value of <img class="math" src="../../_images/math/d9f42c58a6b23b8de25e0f85eb45f31c2f872979.svg" alt="\lambda"/> for each component  <em>i</em>. It enables to graphically detect the optimal values.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>In the case of surrogate model estimate, we note <img class="math" src="../../_images/math/9ecefc1d060c52c06d10e3bd1a7860168ff71d26.svg" alt="(x_0, \dots, x_{N-1})"/> the input sample of <img class="math" src="../../_images/math/e39fc198cd7e936bd7b824c9b924f7dc377b6975.svg" alt="X"/>, <img class="math" src="../../_images/math/3fc23883e9b7947e6e6a828a1bdaa05cd2cb4a35.svg" alt="(y_0, \dots, y_{N-1})"/> the input sample of <img class="math" src="../../_images/math/19736b8b9764e1a2d2f06ea4084a9573802cba4c.svg" alt="Y"/>.
-We suppose the general linear model link <img class="math" src="../../_images/math/26240810f10e40451e6d3a56d11fcbf4231beef7.svg" alt="h_\lambda(Y) = \vect{F}^t(\vect{x}) \vect{\beta} + \vect{Z}"/> with <img class="math" src="../../_images/math/90d9bb4b6a613446d93fbfa13d7aba11dd182c74.svg" alt="\mat{F} \in \mathcal{M}_{np, M}(\Rset)"/>:</p>
+<p>In the case of surrogate model estimate, we note <img class="math" src="../../_images/math/0b720c84ae2e204f52a187469259c3f6cfbf315f.svg" alt="(x_0, \dots, x_{N-1})"/> the input sample of <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>, <img class="math" src="../../_images/math/1a5b02c5e0b3d789dea6c17306f608307debe174.svg" alt="(y_0, \dots, y_{N-1})"/> the input sample of <img class="math" src="../../_images/math/007c922d3728af255acfd18d1e9c360ae028d713.svg" alt="Y"/>.
+We suppose the general linear model link <img class="math" src="../../_images/math/e0bc5c8639ad238998942646fe3da0dc7e34ecac.svg" alt="h_\lambda(Y) = \vect{F}^t(\vect{x}) \vect{\beta} + \vect{Z}"/> with <img class="math" src="../../_images/math/87b9f85326d86249dd0e51d1445461bf62de1909.svg" alt="\mat{F} \in \mathcal{M}_{np, M}(\Rset)"/>:</p>
 <div class="math">
-<p><img src="../../_images/math/fe7a26bddf2e812e5cc67279c38c8a7c36b0e8ec.svg" alt="\mat{F}(\vect{x}) = \left(
+<p><img src="../../_images/math/d1bd55439769337f8ad359073f393625f5f5b7d8.svg" alt="\mat{F}(\vect{x}) = \left(
   \begin{array}{lcl}
     \vect{f}_1(\vect{x}_1) &amp; \dots &amp; \vect{f}_M(\vect{x}_1) \\
     \dots &amp; \dots &amp; \\
     \vect{f}_1(\vect{x}_n) &amp; \dots &amp; \vect{f}_M(\vect{x}_n)
    \end{array}
  \right)"/></p>
-</div><p><img class="math" src="../../_images/math/f6e0deb006d5dab05cc1be79691a193d0cd63c74.svg" alt="(f_1, \dots, f_M)"/> is a functional basis with <img class="math" src="../../_images/math/2ddfcbc9a4f7658719c13b80e7b36bd1babefb43.svg" alt="f_i: \Rset^d \mapsto \Rset^p"/> for all <em>i</em>, <img class="math" src="../../_images/math/5a519ff21b7afd2a20b1dc119bfcd9e5ad50441f.svg" alt="\beta"/> are the coefficients of the linear combination and <img class="math" src="../../_images/math/ade4e3fd5b9cdda59b2cb9dd2d9ca0d2f61d380d.svg" alt="Z"/> is a zero-mean gaussian process with a stationary covariance function <img class="math" src="../../_images/math/29f75141f70b3fe2eaf0f34cdd4d8ca90b57de1d.svg" alt="C_{\vect{\sigma}, \vect{\theta}}"/>
-Thus implies that <img class="math" src="../../_images/math/e7d9e84e9a5b252d6f62c2175a43f1abc772114c.svg" alt="h_\lambda(Y) \sim \cN(\vect{F}^t(\vect{x}) \vect{\beta}, C_{\vect{\sigma}, \vect{\theta}})"/>.</p>
+</div><p><img class="math" src="../../_images/math/3bf532eb5b151a4b11e727ec3a6246632874f7ee.svg" alt="(f_1, \dots, f_M)"/> is a functional basis with <img class="math" src="../../_images/math/49a82232362dc695d72e3419bfe9bcc74b904a4c.svg" alt="f_i: \Rset^d \mapsto \Rset^p"/> for all <em>i</em>, <img class="math" src="../../_images/math/6cd04136b3bbd07d788c38ddbf25c2466dc04fe1.svg" alt="\beta"/> are the coefficients of the linear combination and <img class="math" src="../../_images/math/4e44182691035bdf8b10b5a8890b6cb291a6e246.svg" alt="Z"/> is a zero-mean gaussian process with a stationary covariance function <img class="math" src="../../_images/math/86ea54f71cba8fdf7e63a3e6ca9212593a67f82b.svg" alt="C_{\vect{\sigma}, \vect{\theta}}"/>
+Thus implies that <img class="math" src="../../_images/math/de4d40d40f71fc50f5a433154ad265c0dece332c.svg" alt="h_\lambda(Y) \sim \cN(\vect{F}^t(\vect{x}) \vect{\beta}, C_{\vect{\sigma}, \vect{\theta}})"/>.</p>
 <p>The likelihood function to be maximized writes as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/871c4e33a2784bb2f8ea4892c34e8c3cdb066859.svg" alt="\begin{array}{lcl}
+<p><img src="../../_images/math/d1b5430d83b6005e4045a8507c237b8d49e035cd.svg" alt="\begin{array}{lcl}
   \ell_{glm}(\lambda) = \log L(\lambda ) &amp; = &amp; C - \log\left( |C^{\lambda}_{\vect{\sigma}, \vect{\theta}} | \right)
   \;-\;
 \left( h_\lambda(Y) - \vect{F}^t(\vect{x}) \vect{\beta} \right) {C^{\lambda}_{\vect{\sigma}, \vect{\theta}}}^{-1}
 \left( h_\lambda(Y) - \vect{F}^t(\vect{x}) \vect{\beta} \right)^t
 \end{array}"/></p>
-</div><p>where <img class="math" src="../../_images/math/8b9ab615aa04130d3ae90644e9085282eec09ad8.svg" alt="C^{\lambda}_{\vect{\sigma}, \vect{\theta}}"/> is the matrix resulted from the discretization of the covariance model over <img class="math" src="../../_images/math/e39fc198cd7e936bd7b824c9b924f7dc377b6975.svg" alt="X"/>.
-The parameter <img class="math" src="../../_images/math/00bb95ef24de080e31cd24552f1dfb3d16e3c4a0.svg" alt="\hat{\lambda}"/> is the one maximising <img class="math" src="../../_images/math/648735737afdc2d461ebdd3c9c82a98f405f7ae4.svg" alt="\ell_{glm}(\lambda)"/>.</p>
+</div><p>where <img class="math" src="../../_images/math/9615aaaf66336c196c74ea2ec29105ed885e60f3.svg" alt="C^{\lambda}_{\vect{\sigma}, \vect{\theta}}"/> is the matrix resulted from the discretization of the covariance model over <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>.
+The parameter <img class="math" src="../../_images/math/4aa32da5961a9b588ebdf55011b12c974826b7c4.svg" alt="\hat{\lambda}"/> is the one maximising <img class="math" src="../../_images/math/163de72eb4604b9b6bc9ec2b406f6509466da854.svg" alt="\ell_{glm}(\lambda)"/>.</p>
 <p class="rubric">Examples</p>
 <p>Estimate the Box Cox transformation from a sample:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
@@ -564,6 +577,12 @@ The parameter <img class="math" src="../../_images/math/00bb95ef24de080e31cd2455
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.BoxCoxFactory.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.BoxCoxFactory.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -595,7 +614,7 @@ The parameter <img class="math" src="../../_images/math/00bb95ef24de080e31cd2455
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

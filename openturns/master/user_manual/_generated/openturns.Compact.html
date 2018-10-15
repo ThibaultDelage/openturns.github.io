@@ -124,21 +124,34 @@
 </div>
 <p class="rubric">Notes</p>
 <p>The compact strategy stores a regularly spaced sub-sample where the minimum size
-of the stored numerical sample is <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/>. OpenTURNS proceeds as follows :</p>
+of the stored numerical sample is <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/>. OpenTURNS proceeds as follows :</p>
 <ol class="arabic simple">
-<li>it stores the first <img class="math" src="../../_images/math/421463341d0a033c4ac265b2defd7b7b6a0f9fc3.svg" alt="2N"/> simulations : the size of the stored
-sample is <img class="math" src="../../_images/math/421463341d0a033c4ac265b2defd7b7b6a0f9fc3.svg" alt="2N"/>,</li>
+<li>it stores the first <img class="math" src="../../_images/math/5eed6ad00c7d81ba7a02b90740219e2e7a30bfd8.svg" alt="2N"/> simulations : the size of the stored
+sample is <img class="math" src="../../_images/math/5eed6ad00c7d81ba7a02b90740219e2e7a30bfd8.svg" alt="2N"/>,</li>
 <li>it selects only 1 out of 2 of the stored simulations : then the size of
-the stored sample decreases to <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> (this is the <em>compact</em> step),</li>
-<li>it stores the next <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> simulations when selecting 1 out of 2 of the
-next simulations : the size of the stored sample is <img class="math" src="../../_images/math/421463341d0a033c4ac265b2defd7b7b6a0f9fc3.svg" alt="2N"/>,</li>
+the stored sample decreases to <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> (this is the <em>compact</em> step),</li>
+<li>it stores the next <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> simulations when selecting 1 out of 2 of the
+next simulations : the size of the stored sample is <img class="math" src="../../_images/math/5eed6ad00c7d81ba7a02b90740219e2e7a30bfd8.svg" alt="2N"/>,</li>
 <li>it selects only 1 out of 2 of the stored simulations : then the size of
-the stored sample decreases to <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/>,</li>
-<li>it stores the next <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> simulations when selecting 1 out of 4 of the
-next simulations : the size of the stored sample is <img class="math" src="../../_images/math/421463341d0a033c4ac265b2defd7b7b6a0f9fc3.svg" alt="2N"/>,</li>
+the stored sample decreases to <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/>,</li>
+<li>it stores the next <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> simulations when selecting 1 out of 4 of the
+next simulations : the size of the stored sample is <img class="math" src="../../_images/math/5eed6ad00c7d81ba7a02b90740219e2e7a30bfd8.svg" alt="2N"/>,</li>
 <li>then it keeps on until reaching the stopping criteria.</li>
 </ol>
-<p>The stored numerical sample will have a size within <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> and <img class="math" src="../../_images/math/421463341d0a033c4ac265b2defd7b7b6a0f9fc3.svg" alt="2N"/> if at least one cycle has been done, else it will be at most <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/>.</p>
+<p>The stored numerical sample will have a size within <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> and <img class="math" src="../../_images/math/5eed6ad00c7d81ba7a02b90740219e2e7a30bfd8.svg" alt="2N"/> if at least one cycle has been done, else it will be at most <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.Compact.thisown" title="openturns.Compact.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -502,6 +515,12 @@ strategy.</p>
 the history.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.Compact.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.Compact.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -533,7 +552,7 @@ the history.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

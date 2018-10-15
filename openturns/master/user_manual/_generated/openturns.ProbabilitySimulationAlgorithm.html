@@ -136,36 +136,36 @@ its variance during the simulation algorithm.</p>
 <p class="last"><a class="reference internal" href="openturns.EventSimulation.html#openturns.EventSimulation" title="openturns.EventSimulation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EventSimulation</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>Using the probability distribution of a random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>, we seek
+<p>Using the probability distribution of a random vector <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/>, we seek
 to evaluate the following probability:</p>
 <div class="math">
-<p><img src="../../_images/math/50f8b2cafc34da60d4acd1fb9c66b52fb3fc8fbd.svg" alt="P_f = \Prob{g\left( \vect{X},\vect{d} \right) \leq 0}"/></p>
-</div><p>Here, <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> is a random vector, <img class="math" src="../../_images/math/3b84c4ed75f01d36277ef4bef655637e1ea1a34d.svg" alt="\vect{d}"/> a deterministic
-vector, <img class="math" src="../../_images/math/e7d959c9b8b395f4d81cbb7bc878a352995b429a.svg" alt="g(\vect{X},\vect{d})"/> the function known as <em>limit state function</em>
+<p><img src="../../_images/math/1acb4293a317872afb399a25afa08b54ed71fc0c.svg" alt="P_f = \Prob{g\left( \vect{X},\vect{d} \right) \leq 0}"/></p>
+</div><p>Here, <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/> is a random vector, <img class="math" src="../../_images/math/69c918895529fa1f9990a8bc659fd6da72902600.svg" alt="\vect{d}"/> a deterministic
+vector, <img class="math" src="../../_images/math/75ec63b4014ce27162529b652daa96eaa69c2547.svg" alt="g(\vect{X},\vect{d})"/> the function known as <em>limit state function</em>
 which enables the definition of the event</p>
 <div class="math">
-<p><img src="../../_images/math/c3ce6bcd9eb4c2a2bb46ea2d7be648e542e411a2.svg" alt="\cD_f = \{\vect{X} \in \Rset^n \, | \, g(\vect{X},\vect{d}) \le 0\}"/></p>
-</div><p>If we have the set <img class="math" src="../../_images/math/10d0529d4b858839d9f447a4ca1de284c1edfa43.svg" alt="\left\{ \vect{x}_1,\ldots,\vect{x}_N \right\}"/> of
-<img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> independent samples of the random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>, we can
-estimate <img class="math" src="../../_images/math/024a75f4b1c55d9ca50c2cbbdbd70d0959ee0a18.svg" alt="\widehat{P}_f"/> as follows:</p>
+<p><img src="../../_images/math/097fee0c5b59cdee134b3b013615e7c08cf2934e.svg" alt="\cD_f = \{\vect{X} \in \Rset^n \, | \, g(\vect{X},\vect{d}) \le 0\}"/></p>
+</div><p>If we have the set <img class="math" src="../../_images/math/85c649529d2b171a1632fc0c3bd3f3c532919738.svg" alt="\left\{ \vect{x}_1,\ldots,\vect{x}_N \right\}"/> of
+<img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> independent samples of the random vector <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/>, we can
+estimate <img class="math" src="../../_images/math/40c9fdb3b6821e245bed541a6f670da5c31634cf.svg" alt="\widehat{P}_f"/> as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/bf02f8ad08021b3fc2111f8b4cf510d016f7925d.svg" alt="\widehat{P}_{f,MC} = \frac{1}{N}
+<p><img src="../../_images/math/5de4aae0ba6a3f0cce43fa569855a5b7cb9e1688.svg" alt="\widehat{P}_{f,MC} = \frac{1}{N}
                      \sum_{i=1}^N \mathbf{1}_{ \left\{ g(\vect{x}_i,\vect{d}) \leq 0 \right\} }"/></p>
-</div><p>where <img class="math" src="../../_images/math/ac77c3ecb4279179b9397059f9b545563036e783.svg" alt="\mathbf{1}_{ \left\{ g(\vect{x}_i,\vect{d}) \leq 0 \right\} }"/>
+</div><p>where <img class="math" src="../../_images/math/dbf2672ed5a435e1b849bd557f8a858b268b237e.svg" alt="\mathbf{1}_{ \left\{ g(\vect{x}_i,\vect{d}) \leq 0 \right\} }"/>
 describes the indicator function equal to 1 if
-<img class="math" src="../../_images/math/54524ba7432d453f972245f4d73ab29e631ea2a5.svg" alt="g(\vect{x}_i,\vect{d}) \leq 0"/> and equal to 0 otherwise;
+<img class="math" src="../../_images/math/7b36be34de7b3b8ddfdc842278acecf19ea3e0e9.svg" alt="g(\vect{x}_i,\vect{d}) \leq 0"/> and equal to 0 otherwise;
 the idea here is in fact to estimate the required probability by the proportion
-of cases, among the <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> samples of <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>, for which the event
-<img class="math" src="../../_images/math/252362c991122f578eb1b8a9a9e2af13e42655d8.svg" alt="\cD_f"/> occurs.</p>
+of cases, among the <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> samples of <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/>, for which the event
+<img class="math" src="../../_images/math/61c3b562be11872d5ced43d2cc4b3b7f89b22c38.svg" alt="\cD_f"/> occurs.</p>
 <p>By the law of large numbers, we know that this estimation converges to the
-required value <img class="math" src="../../_images/math/5085f93dd5258efdc1edcc3c0efc525f37018906.svg" alt="P_f"/> as the sample size <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> tends to infinity.</p>
+required value <img class="math" src="../../_images/math/8835888ad0ee040f6edf8ccec54dba3d69d1b364.svg" alt="P_f"/> as the sample size <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> tends to infinity.</p>
 <p>The Central Limit Theorem allows to build an asymptotic confidence interval
 using the normal limit distribution as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/0d662f7cb3b397eba169c3732b3e63682cfe83d5.svg" alt="\lim_{N\rightarrow\infty}\Prob{P_f\in[\widehat{P}_{f,\inf},\widehat{P}_{f,\sup}]}=\alpha"/></p>
-</div><p>with <img class="math" src="../../_images/math/accbe1472c887c0171b404429bfac928abe8f69c.svg" alt="\widehat{P}_{f,\inf}=\widehat{P}_f - q_{\alpha}\sqrt{\frac{\widehat{P}_f(1-\widehat{P}_f)}{N}}"/>,
-<img class="math" src="../../_images/math/867cbe557eb26e437955aac3e05e515c1a52e1c3.svg" alt="\widehat{P}_{f,\sup}=\widehat{P}_f + q_{\alpha}\sqrt{\frac{\widehat{P}_f(1-\widehat{P}_f)}{N}}"/>
-and <img class="math" src="../../_images/math/da11fac9be4b096089267629a0ed3fe93e2a1dab.svg" alt="q_\alpha"/> is the <img class="math" src="../../_images/math/1d862813c12c93054b7b2c689a889cf743514a1c.svg" alt="(1+\alpha)/2"/>-quantile of the standard
+<p><img src="../../_images/math/6d07cfe60700fc61f142db5cb6e734431c0dcde4.svg" alt="\lim_{N\rightarrow\infty}\Prob{P_f\in[\widehat{P}_{f,\inf},\widehat{P}_{f,\sup}]}=\alpha"/></p>
+</div><p>with <img class="math" src="../../_images/math/bf1f9cb3bf3aab94d046868df9c015466a33ef32.svg" alt="\widehat{P}_{f,\inf}=\widehat{P}_f - q_{\alpha}\sqrt{\frac{\widehat{P}_f(1-\widehat{P}_f)}{N}}"/>,
+<img class="math" src="../../_images/math/3366b4397d34f3ded20cd1281a40e1ced943f395.svg" alt="\widehat{P}_{f,\sup}=\widehat{P}_f + q_{\alpha}\sqrt{\frac{\widehat{P}_f(1-\widehat{P}_f)}{N}}"/>
+and <img class="math" src="../../_images/math/8f734db05407dbf8aaff6ca16b60c1f47aae11b3.svg" alt="q_\alpha"/> is the <img class="math" src="../../_images/math/3bcccac2437561123c95b27cfc48e227f2fe5859.svg" alt="(1+\alpha)/2"/>-quantile of the standard
 normal distribution.</p>
 <p>A ProbabilitySimulationAlgorithm object makes sense with the following sequential experiments:</p>
 <ul class="simple">
@@ -176,36 +176,36 @@ normal distribution.</p>
 </ul>
 <p>The estimator built by Monte Carlo method is:</p>
 <div class="math">
-<p><img src="../../_images/math/bf02f8ad08021b3fc2111f8b4cf510d016f7925d.svg" alt="\widehat{P}_{f,MC} = \frac{1}{N}
+<p><img src="../../_images/math/5de4aae0ba6a3f0cce43fa569855a5b7cb9e1688.svg" alt="\widehat{P}_{f,MC} = \frac{1}{N}
                      \sum_{i=1}^N \mathbf{1}_{ \left\{ g(\vect{x}_i,\vect{d}) \leq 0 \right\} }"/></p>
-</div><p>where <img class="math" src="../../_images/math/ac77c3ecb4279179b9397059f9b545563036e783.svg" alt="\mathbf{1}_{ \left\{ g(\vect{x}_i,\vect{d}) \leq 0 \right\} }"/>
+</div><p>where <img class="math" src="../../_images/math/dbf2672ed5a435e1b849bd557f8a858b268b237e.svg" alt="\mathbf{1}_{ \left\{ g(\vect{x}_i,\vect{d}) \leq 0 \right\} }"/>
 describes the indicator function equal to 1 if
-<img class="math" src="../../_images/math/54524ba7432d453f972245f4d73ab29e631ea2a5.svg" alt="g(\vect{x}_i,\vect{d}) \leq 0"/> and equal to 0 otherwise;
+<img class="math" src="../../_images/math/7b36be34de7b3b8ddfdc842278acecf19ea3e0e9.svg" alt="g(\vect{x}_i,\vect{d}) \leq 0"/> and equal to 0 otherwise;
 the idea here is in fact to estimate the required probability by the proportion
-of cases, among the <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> samples of <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>, for which the event
-<img class="math" src="../../_images/math/252362c991122f578eb1b8a9a9e2af13e42655d8.svg" alt="\cD_f"/> occurs.</p>
+of cases, among the <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> samples of <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/>, for which the event
+<img class="math" src="../../_images/math/61c3b562be11872d5ced43d2cc4b3b7f89b22c38.svg" alt="\cD_f"/> occurs.</p>
 <p>By the law of large numbers, we know that this estimation converges to the
-required value <img class="math" src="../../_images/math/5085f93dd5258efdc1edcc3c0efc525f37018906.svg" alt="P_f"/> as the sample size <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> tends to infinity.</p>
+required value <img class="math" src="../../_images/math/8835888ad0ee040f6edf8ccec54dba3d69d1b364.svg" alt="P_f"/> as the sample size <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> tends to infinity.</p>
 <p>The Central Limit Theorem allows to build an asymptotic confidence interval
 using the normal limit distribution as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/0d662f7cb3b397eba169c3732b3e63682cfe83d5.svg" alt="\lim_{N\rightarrow\infty}\Prob{P_f\in[\widehat{P}_{f,\inf},\widehat{P}_{f,\sup}]}=\alpha"/></p>
-</div><p>with <img class="math" src="../../_images/math/accbe1472c887c0171b404429bfac928abe8f69c.svg" alt="\widehat{P}_{f,\inf}=\widehat{P}_f - q_{\alpha}\sqrt{\frac{\widehat{P}_f(1-\widehat{P}_f)}{N}}"/>,
-<img class="math" src="../../_images/math/867cbe557eb26e437955aac3e05e515c1a52e1c3.svg" alt="\widehat{P}_{f,\sup}=\widehat{P}_f + q_{\alpha}\sqrt{\frac{\widehat{P}_f(1-\widehat{P}_f)}{N}}"/>
-and <img class="math" src="../../_images/math/da11fac9be4b096089267629a0ed3fe93e2a1dab.svg" alt="q_\alpha"/> is the <img class="math" src="../../_images/math/1d862813c12c93054b7b2c689a889cf743514a1c.svg" alt="(1+\alpha)/2"/>-quantile of the standard
+<p><img src="../../_images/math/6d07cfe60700fc61f142db5cb6e734431c0dcde4.svg" alt="\lim_{N\rightarrow\infty}\Prob{P_f\in[\widehat{P}_{f,\inf},\widehat{P}_{f,\sup}]}=\alpha"/></p>
+</div><p>with <img class="math" src="../../_images/math/bf1f9cb3bf3aab94d046868df9c015466a33ef32.svg" alt="\widehat{P}_{f,\inf}=\widehat{P}_f - q_{\alpha}\sqrt{\frac{\widehat{P}_f(1-\widehat{P}_f)}{N}}"/>,
+<img class="math" src="../../_images/math/3366b4397d34f3ded20cd1281a40e1ced943f395.svg" alt="\widehat{P}_{f,\sup}=\widehat{P}_f + q_{\alpha}\sqrt{\frac{\widehat{P}_f(1-\widehat{P}_f)}{N}}"/>
+and <img class="math" src="../../_images/math/8f734db05407dbf8aaff6ca16b60c1f47aae11b3.svg" alt="q_\alpha"/> is the <img class="math" src="../../_images/math/3bcccac2437561123c95b27cfc48e227f2fe5859.svg" alt="(1+\alpha)/2"/>-quantile of the standard
 normal distribution.</p>
 <p>The estimator built by Importance Sampling method is:</p>
 <div class="math">
-<p><img src="../../_images/math/597a14dae707810709bc930f9d9e530b1c6ee2ff.svg" alt="\widehat{P}_{f,IS} = \frac{1}{N}
+<p><img src="../../_images/math/7305ef39e4603e30d048cc8faae85028409e9f01.svg" alt="\widehat{P}_{f,IS} = \frac{1}{N}
                      \sum_{i=1}^N \mathbf{1}_{\{g(\vect{Y}_{\:i}),\vect{d}) \leq 0 \}}
                                   \frac{f_{\uX}(\vect{Y}_{\:i})}
                                        {f_{\vect{Y}}(\vect{Y}_{\:i})}"/></p>
 </div><p>where:</p>
 <ul class="simple">
-<li><img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> is the total number of computations,</li>
-<li>the random vectors <img class="math" src="../../_images/math/4c32c2b70944f90850df2fe253eb8a73787bc31b.svg" alt="\{\vect{Y}_i, i=1\hdots N\}"/> are independent,
+<li><img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> is the total number of computations,</li>
+<li>the random vectors <img class="math" src="../../_images/math/df46aeadf2276303d315e45fa9af2a267233b48b.svg" alt="\{\vect{Y}_i, i=1\hdots N\}"/> are independent,
 identically distributed and following the probability density function
-<img class="math" src="../../_images/math/2575c398a1416ebbee2cf303c227b6a5c0b1b38a.svg" alt="f_{\uY}"/>.</li>
+<img class="math" src="../../_images/math/8c573842b3b0aaa3294d0f333c07543303b524f3.svg" alt="f_{\uY}"/>.</li>
 </ul>
 <p class="rubric">Examples</p>
 <p>Estimate a probability by Monte Carlo</p>
@@ -286,6 +286,19 @@ identically distributed and following the probability density function
 <span class="go">Probability estimate=0.140000</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.ProbabilitySimulationAlgorithm.thisown" title="openturns.ProbabilitySimulationAlgorithm.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -581,7 +594,7 @@ and its variance during the simulation algorithm.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/6b5207bd2183ab5374278d03ca62f7119dec943b.svg" alt="\sigma &gt; 0"/></span></dt>
+<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/14f901f927f8322e84ea973d68a256fb19cd6a49.svg" alt="\sigma &gt; 0"/></span></dt>
 <dd><p class="first last">Maximum standard deviation of the estimator.</p>
 </dd>
 </dl>
@@ -740,7 +753,7 @@ It computes the probability of occurence of the given event by computing the
 empirical mean of a sample of size at most <em>outerSampling * blockSize</em>,
 this sample being built by blocks of size <em>blockSize</em>. It allows to use
 efficiently the distribution of the computation as well as it allows to deal
-with a sample size <img class="math" src="../../_images/math/9a6aa39a54d6c1926e8fccab4dad4b7662f6ecc2.svg" alt="&gt; 2^{32}"/> by a combination of <em>blockSize</em> and
+with a sample size <img class="math" src="../../_images/math/09c5f8ae0d4a633ab5d5f91d701933e6bfccef3d.svg" alt="&gt; 2^{32}"/> by a combination of <em>blockSize</em> and
 <em>outerSampling</em>.</p>
 </dd></dl>
 
@@ -753,7 +766,7 @@ with a sample size <img class="math" src="../../_images/math/9a6aa39a54d6c1926e8
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>blockSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a3e0bdbffa9f573f54c15f58cb873424153d07a0.svg" alt="blockSize \geq 1"/></span></dt>
+<dt><strong>blockSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/19abd1ac865baa3e80a16373c55d3b9d431b5457.svg" alt="blockSize \geq 1"/></span></dt>
 <dd><p class="first last">Number of terms in the probability simulation estimator grouped together.
 It is set by default to 1.</p>
 </dd>
@@ -855,7 +868,7 @@ and its variance during the simulation algorithm.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/6b5207bd2183ab5374278d03ca62f7119dec943b.svg" alt="\sigma &gt; 0"/></span></dt>
+<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/14f901f927f8322e84ea973d68a256fb19cd6a49.svg" alt="\sigma &gt; 0"/></span></dt>
 <dd><p class="first last">Maximum standard deviation of the estimator.</p>
 </dd>
 </dl>
@@ -979,6 +992,12 @@ and its variance during the simulation algorithm.</p>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.ProbabilitySimulationAlgorithm.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.ProbabilitySimulationAlgorithm.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1010,7 +1029,7 @@ and its variance during the simulation algorithm.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

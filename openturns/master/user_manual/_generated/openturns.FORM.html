@@ -134,24 +134,24 @@ space.</p>
 <p>See <a class="reference internal" href="openturns.Analytical.html#openturns.Analytical" title="openturns.Analytical"><code class="xref py py-class docutils literal notranslate"><span class="pre">Analytical</span></code></a> for the description of the first steps of
 the FORM analysis.</p>
 <p>The First Order Reliability Method (FORM) consists in linearizing the limit state
-function <img class="math" src="../../_images/math/a128b1486fffc54e8ba41112934b62bc132684b7.svg" alt="G(\vect{U}\,,\,\vect{d})"/> at the design point, denoted
-<img class="math" src="../../_images/math/67da49bbe7f25bf06a10968bb0cfed2a280dd442.svg" alt="P^*"/>, which is the point on the limit state surface
-<img class="math" src="../../_images/math/2a9f91c9b10317f0c7d3d84cda2c04b4bbc8e965.svg" alt="G(\vect{U}\,,\,\vect{d})=0"/> that is closest to the origin of the
+function <img class="math" src="../../_images/math/98f5b0318d38727cebb0e9e3b16ce129e910ade9.svg" alt="G(\vect{U}\,,\,\vect{d})"/> at the design point, denoted
+<img class="math" src="../../_images/math/be54c480f37ef52a42a69b65933f1857e08363f3.svg" alt="P^*"/>, which is the point on the limit state surface
+<img class="math" src="../../_images/math/91b43989c6f318cb480e59f450a8f2b55f8d0a2f.svg" alt="G(\vect{U}\,,\,\vect{d})=0"/> that is closest to the origin of the
 standard space.</p>
-<p>Then, the probability <img class="math" src="../../_images/math/5085f93dd5258efdc1edcc3c0efc525f37018906.svg" alt="P_f"/> where the limit state surface has been
+<p>Then, the probability <img class="math" src="../../_images/math/8835888ad0ee040f6edf8ccec54dba3d69d1b364.svg" alt="P_f"/> where the limit state surface has been
 approximated by a linear surface (hyperplane) can be obtained exactly, thanks
-to the rotation invariance of the standard distribution <img class="math" src="../../_images/math/486d131dbb0951acf4a612456c6c01a07a6c2036.svg" alt="f_{\vect{U}}"/> :</p>
+to the rotation invariance of the standard distribution <img class="math" src="../../_images/math/2b08de9c5aa21b182dbc5685727aad3bb90975a4.svg" alt="f_{\vect{U}}"/> :</p>
 <div class="math">
-<p><img src="../../_images/math/6bca442a73acc0f3e9782296901568bb7d56d577.svg" alt="P_f = \left\{
+<p><img src="../../_images/math/bbe8b9fe07af5d158ba1f1e02a2535b4ef9b9694.svg" alt="P_f = \left\{
           \begin{array}{ll}
           \displaystyle E(-\beta_{HL})
           &amp; \text{if the origin of the }\vect{u}\text{-space lies in the domain }\cD_f \\
           \displaystyle E(+\beta_{HL}) &amp; \text{otherwise}
           \end{array}
       \right."/></p>
-</div><p>where <img class="math" src="../../_images/math/e8dbef7194c6f1c8140b308827468c267372cc7b.svg" alt="\beta_{HL}"/> is the Hasofer-Lind reliability index, defined as the
-distance of the design point <img class="math" src="../../_images/math/adae06f6b9e64ca84131d478a6b812c4035563bc.svg" alt="\vect{u}^*"/> to the origin of the standard
-space and <img class="math" src="../../_images/math/000f3b0a1812a5044910c90225ec6f6e8f27ec5e.svg" alt="E"/> the marginal cumulative density function of the spherical
+</div><p>where <img class="math" src="../../_images/math/a3e69766ae6d2e30bfb645e086a326909e5ba7bd.svg" alt="\beta_{HL}"/> is the Hasofer-Lind reliability index, defined as the
+distance of the design point <img class="math" src="../../_images/math/406db1521b055c27745d6d166dfb813471a915c9.svg" alt="\vect{u}^*"/> to the origin of the standard
+space and <img class="math" src="../../_images/math/ef6b5efbe5786c99109dd27043e2c9fc008982ef.svg" alt="E"/> the marginal cumulative density function of the spherical
 distributions in the standard space.</p>
 <p>The evaluation of the failure probability is stored in the data structure
 <a class="reference internal" href="openturns.FORMResult.html#openturns.FORMResult" title="openturns.FORMResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">FORMResult</span></code></a> recoverable with the <a class="reference internal" href="#openturns.FORM.getResult" title="openturns.FORM.getResult"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getResult()</span></code></a> method.</p>
@@ -169,6 +169,19 @@ distributions in the standard space.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.FORM.thisown" title="openturns.FORM.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -616,6 +629,12 @@ space.</p>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.FORM.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.FORM.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -647,7 +666,7 @@ space.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

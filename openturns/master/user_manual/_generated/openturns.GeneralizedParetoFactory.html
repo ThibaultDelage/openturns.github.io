@@ -119,44 +119,57 @@ from a scalar sample (see <a class="reference internal" href="../../bibliography
 <p><strong>Moments based estimator:</strong></p>
 <p>Lets denote:</p>
 <ul class="simple">
-<li><img class="math" src="../../_images/math/2fe280cae2b48f3ecb39e9fdc882460169e5d2a4.svg" alt="\displaystyle \overline{x}_n = \frac{1}{n} \sum_{i=1}^n x_i"/> the empirical
+<li><img class="math" src="../../_images/math/29e72931da7354f1aa517dbcd8b1847bee05a118.svg" alt="\displaystyle \overline{x}_n = \frac{1}{n} \sum_{i=1}^n x_i"/> the empirical
 mean of the sample,</li>
-<li><img class="math" src="../../_images/math/ba907b6ed209de7910a0eaeed986fdf5658bfc00.svg" alt="\displaystyle s_n^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i - \overline{x}_n)^2"/>
+<li><img class="math" src="../../_images/math/faca5e784d4ec273881ca936c314e3dda0b605d3.svg" alt="\displaystyle s_n^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i - \overline{x}_n)^2"/>
 its empirical variance,</li>
 </ul>
-<p>Then we estimate <img class="math" src="../../_images/math/4c76811c0cd4fb580c36910f11d07bf248224991.svg" alt="(\hat{\sigma}, \hat{\xi})"/>
+<p>Then we estimate <img class="math" src="../../_images/math/1d523f8a1ff42d44f5ca6f29253dc6460f122739.svg" alt="(\hat{\sigma}, \hat{\xi})"/>
 using:</p>
 <div class="math" id="equation-gpd-moment-estimator">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-gpd-moment-estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/461ca2c8609fb30221650f2fe7b58b14e74886d3.svg" alt="\hat{\xi} &amp;= \dfrac{1}{2}\left(\dfrac{\overline{x}_n^2}{s_n^2}-1\right) \\
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-gpd-moment-estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/dc7ca2596db29c4f3188c2b689ce7c7a74d61e63.svg" alt="\hat{\xi} &amp;= \dfrac{1}{2}\left(\dfrac{\overline{x}_n^2}{s_n^2}-1\right) \\
 \hat{\sigma} &amp;= \dfrac{\overline{x}_n}{2}\left(\dfrac{\overline{x}_n^2}{s_n^2}+1\right)"/></p>
-</div><p>this estimator is well-defined only if <img class="math" src="../../_images/math/5c7914f15ee6f6c1ae7f7f6eb4aa3ed1ab5d46b0.svg" alt="\hat{\xi}&gt;-1/4"/>, otherwise the second moment does not exist.</p>
+</div><p>this estimator is well-defined only if <img class="math" src="../../_images/math/3d121136d0b35feb4206bfdd77237f373112f4be.svg" alt="\hat{\xi}&gt;-1/4"/>, otherwise the second moment does not exist.</p>
 <p><strong>Probability weighted moments based estimator:</strong></p>
 <p>Lets denote:</p>
 <ul class="simple">
-<li><img class="math" src="../../_images/math/61a40ca62a967d719710e1a40c32408f2d22fe1e.svg" alt="\left(x_{(i)}\right)_{i\in\{1,\dots,n\}}"/> the sample sorted in ascending order</li>
-<li><img class="math" src="../../_images/math/8bdb40ebfc8edce6809e031ee3def0dcb3754897.svg" alt="m=\dfrac{1}{n}\sum_{i=1}^n\left(1-\dfrac{i-7/20}{n}\right)x_{(i)}"/></li>
-<li><img class="math" src="../../_images/math/3fd4efed0f31a819da2b58916429d706006213fb.svg" alt="\rho=\dfrac{m}{\overline{x}_n}"/></li>
+<li><img class="math" src="../../_images/math/a21d82228ef5b0f29d26b70a80497d28ba6f81c1.svg" alt="\left(x_{(i)}\right)_{i\in\{1,\dots,n\}}"/> the sample sorted in ascending order</li>
+<li><img class="math" src="../../_images/math/62cebe297e971db60464b595c93cbd6360cce140.svg" alt="m=\dfrac{1}{n}\sum_{i=1}^n\left(1-\dfrac{i-7/20}{n}\right)x_{(i)}"/></li>
+<li><img class="math" src="../../_images/math/279d198f6f0b4251296d2a49ea3f75e659603ba4.svg" alt="\rho=\dfrac{m}{\overline{x}_n}"/></li>
 </ul>
-<p>Then we estimate <img class="math" src="../../_images/math/4c76811c0cd4fb580c36910f11d07bf248224991.svg" alt="(\hat{\sigma}, \hat{\xi})"/>
+<p>Then we estimate <img class="math" src="../../_images/math/1d523f8a1ff42d44f5ca6f29253dc6460f122739.svg" alt="(\hat{\sigma}, \hat{\xi})"/>
 using:</p>
 <div class="math" id="equation-gpd-probability-weighted-moment-estimator">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-gpd-probability-weighted-moment-estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/d28278121620b2b55f70e6359c94a1bd9e59f36d.svg" alt="\hat{\xi} &amp;= \dfrac{1-4\rho}{1-2\rho} \\
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-gpd-probability-weighted-moment-estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/96403ff3e79bcb996825f319b3316da3e39abe3b.svg" alt="\hat{\xi} &amp;= \dfrac{1-4\rho}{1-2\rho} \\
 \hat{\sigma} &amp;= \dfrac{2\overline{x}_n}{1-2\rho}"/></p>
-</div><p>this estimator is well-defined only if <img class="math" src="../../_images/math/92e5020bba942d3211efa9de61867300ca0dc46f.svg" alt="\hat{\xi}&gt;-1/2"/>, otherwise the first moment does not exist.</p>
+</div><p>this estimator is well-defined only if <img class="math" src="../../_images/math/6854f86d248cf80c6bead893408848c3ca31220a.svg" alt="\hat{\xi}&gt;-1/2"/>, otherwise the first moment does not exist.</p>
 <p><strong>Exponential regression based estimator:</strong></p>
 <p>Lets denote:</p>
 <ul class="simple">
-<li><img class="math" src="../../_images/math/e116658355bf0d9944f192b5178bd6ac379b44aa.svg" alt="y_{i}=i\log\left(\dfrac{x_{(n-i)}-x_{(1)}}{x_{(n-i-1)}-x_{(1)}}\right)"/> for <img class="math" src="../../_images/math/23c5c5a479e281742aecca5c2c2f82c02cb24182.svg" alt="i\in\{1,n-3\}"/></li>
+<li><img class="math" src="../../_images/math/d989a2c64f82ee69aaff3b8201799c2b53924e45.svg" alt="y_{i}=i\log\left(\dfrac{x_{(n-i)}-x_{(1)}}{x_{(n-i-1)}-x_{(1)}}\right)"/> for <img class="math" src="../../_images/math/3fcbb30365afe459d7b9b57a9cafaf614349ddfe.svg" alt="i\in\{1,n-3\}"/></li>
 </ul>
-<p>Then we estimate <img class="math" src="../../_images/math/4c76811c0cd4fb580c36910f11d07bf248224991.svg" alt="(\hat{\sigma}, \hat{\xi})"/>
+<p>Then we estimate <img class="math" src="../../_images/math/1d523f8a1ff42d44f5ca6f29253dc6460f122739.svg" alt="(\hat{\sigma}, \hat{\xi})"/>
 using:</p>
 <div class="math" id="equation-gpd-exponential-estimator">
-<p><span class="eqno">(3)<a class="headerlink" href="#equation-gpd-exponential-estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/19d0c84e1790b01c60060ebddf8219aa9016c998.svg" alt="\hat{\xi} &amp;= \xi^* \\
+<p><span class="eqno">(3)<a class="headerlink" href="#equation-gpd-exponential-estimator" title="Permalink to this equation">¶</a></span><img src="../../_images/math/ff2af3f381afb0958c49055ec815791e103a828e.svg" alt="\hat{\xi} &amp;= \xi^* \\
 \hat{\sigma} &amp;= \dfrac{2\overline{x}_n}{1-2\rho}"/></p>
-</div><p>Where <img class="math" src="../../_images/math/a925633dc6f604165409957418c9f99150c3b197.svg" alt="\xi^*"/> maximizes:</p>
+</div><p>Where <img class="math" src="../../_images/math/687ca749dc0ed47019b8daee99dd45063b587cf4.svg" alt="\xi^*"/> maximizes:</p>
 <div class="math" id="equation-gpd-xi-relation">
-<p><span class="eqno">(4)<a class="headerlink" href="#equation-gpd-xi-relation" title="Permalink to this equation">¶</a></span><img src="../../_images/math/b3eb019c4f0d53b833632ffbb0e7149bb829f2b2.svg" alt="\sum_{i=1}^{n-2}\log\left(\dfrac{1-(j/n)^{\xi}}{\xi}\right)-\dfrac{1-(j/n)^{\xi}}{\xi}y_i"/></p>
-</div><p>under the constraint <img class="math" src="../../_images/math/0c97ed712c140855b7adedfb145975943594f87f.svg" alt="-1 \leq \xi \leq 1"/>.</p>
+<p><span class="eqno">(4)<a class="headerlink" href="#equation-gpd-xi-relation" title="Permalink to this equation">¶</a></span><img src="../../_images/math/1dca1ce3973090061d77cb66127e6ffd77aff7e8.svg" alt="\sum_{i=1}^{n-2}\log\left(\dfrac{1-(j/n)^{\xi}}{\xi}\right)-\dfrac{1-(j/n)^{\xi}}{\xi}y_i"/></p>
+</div><p>under the constraint <img class="math" src="../../_images/math/a8343cb96c92f99a1d4772f5f1ab37bbd777b907.svg" alt="-1 \leq \xi \leq 1"/>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.GeneralizedParetoFactory.thisown" title="openturns.GeneralizedParetoFactory.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -350,7 +363,7 @@ using:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/9c0675243e96235ce54d181013419a9d5dd7ef3b.svg" alt="(\mu, \sigma, a, b)"/>:</p>
+<p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/7708d72f7db4dc9657cbe0067d9492fc988553f0.svg" alt="(\mu, \sigma, a, b)"/>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaMuSigma</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -679,6 +692,12 @@ using:</p>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.GeneralizedParetoFactory.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.GeneralizedParetoFactory.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -710,7 +729,7 @@ using:</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

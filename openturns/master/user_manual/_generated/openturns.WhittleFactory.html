@@ -114,21 +114,21 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Order of the AR part of the <img class="math" src="../../_images/math/a479d346e36ff64597129df803a6f5f8920866f7.svg" alt="ARMA(p,q)"/> process of dimension <img class="math" src="../../_images/math/5bedc75d546b74f5c8a9327c072c85fda0fd787f.svg" alt="d"/>.</p>
+<dd><p class="first last">Order of the AR part of the <img class="math" src="../../_images/math/adb143c11f795a9ceae3cef4eb6c0c1bd784b515.svg" alt="ARMA(p,q)"/> process of dimension <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/>.</p>
 </dd>
 <dt><strong>q</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Order of the MA part of the <img class="math" src="../../_images/math/a479d346e36ff64597129df803a6f5f8920866f7.svg" alt="ARMA(p,q)"/> process of dimension <img class="math" src="../../_images/math/5bedc75d546b74f5c8a9327c072c85fda0fd787f.svg" alt="d"/>.</p>
+<dd><p class="first last">Order of the MA part of the <img class="math" src="../../_images/math/adb143c11f795a9ceae3cef4eb6c0c1bd784b515.svg" alt="ARMA(p,q)"/> process of dimension <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/>.</p>
 </dd>
 <dt><strong>invertible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
 <dd><p class="first">Restrict the estimation to invertible ARMA processes.</p>
 <p class="last">By default: True.</p>
 </dd>
 <dt><strong>indP</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></span></dt>
-<dd><p class="first last">All the <img class="math" src="../../_images/math/0f4c0791a2997f071572e3ee6a344919caea8e95.svg" alt="p"/> orders that will be investigated.
+<dd><p class="first last">All the <img class="math" src="../../_images/math/0a51f74fdb12efb40f2b40e8036cbf0f13c8d667.svg" alt="p"/> orders that will be investigated.
 Care: not yet implemented.</p>
 </dd>
 <dt><strong>indQ</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></span></dt>
-<dd><p class="first last">All the <img class="math" src="../../_images/math/0f4c0791a2997f071572e3ee6a344919caea8e95.svg" alt="p"/> orders that will be investigated.
+<dd><p class="first last">All the <img class="math" src="../../_images/math/0a51f74fdb12efb40f2b40e8036cbf0f13c8d667.svg" alt="p"/> orders that will be investigated.
 Care: not yet implemented.</p>
 </dd>
 </dl>
@@ -137,42 +137,42 @@ Care: not yet implemented.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>We suppose here that the white noise is normal with zero mean and  variance <img class="math" src="../../_images/math/a022726969cc93f1125b3cb472f088678ee0a846.svg" alt="\sigma^2"/>. It implies that the ARMA process estimated is normal.</p>
-<p>For each order <img class="math" src="../../_images/math/f5997194b8285005855a94703bfa7623b2f0eef0.svg" alt="(p,q)"/>, the estimation of the coefficients <img class="math" src="../../_images/math/22137e45f71cdc92efeffbe10421eb16f930efa9.svg" alt="(a_k)_{1\leq k\leq p}"/>, <img class="math" src="../../_images/math/847b94295793aaa4fd006b71a1bdabc94f5700d8.svg" alt="(b_k)_{1\leq k\leq q}"/> and the variance <img class="math" src="../../_images/math/a022726969cc93f1125b3cb472f088678ee0a846.svg" alt="\sigma^2"/> is done using the Whittle estimator which is based on the maximization of the likelihood function in the frequency domain.</p>
+<p>We suppose here that the white noise is normal with zero mean and  variance <img class="math" src="../../_images/math/002d90acc565bb880580c5a4e2763e96dc01839d.svg" alt="\sigma^2"/>. It implies that the ARMA process estimated is normal.</p>
+<p>For each order <img class="math" src="../../_images/math/6c1c67dc9e44172fa021c67b17a95fbf954d3972.svg" alt="(p,q)"/>, the estimation of the coefficients <img class="math" src="../../_images/math/4eb00a978d14d6efdcfaa09c95706dfef2901a81.svg" alt="(a_k)_{1\leq k\leq p}"/>, <img class="math" src="../../_images/math/fa8be53f39f52820c60ce506b0358d35196250f7.svg" alt="(b_k)_{1\leq k\leq q}"/> and the variance <img class="math" src="../../_images/math/002d90acc565bb880580c5a4e2763e96dc01839d.svg" alt="\sigma^2"/> is done using the Whittle estimator which is based on the maximization of the likelihood function in the frequency domain.</p>
 <p>The principle is detailed hereafter for the case of a time series : in the case of a process sample, the estimator is similar except for the periodogram which is computed differently.</p>
-<p>Let <img class="math" src="../../_images/math/e0707c819f3ff88f630436151145a297e6b84af9.svg" alt="(t_i, \vect{X}_i)_{0\leq i \leq n-1}"/> be a multivariate time series of dimension <img class="math" src="../../_images/math/5bedc75d546b74f5c8a9327c072c85fda0fd787f.svg" alt="d"/> from an <img class="math" src="../../_images/math/a479d346e36ff64597129df803a6f5f8920866f7.svg" alt="ARMA(p,q)"/> process.</p>
-<p>The spectral density function of the <img class="math" src="../../_images/math/a479d346e36ff64597129df803a6f5f8920866f7.svg" alt="ARMA(p,q)"/> process writes :</p>
+<p>Let <img class="math" src="../../_images/math/6037a76cd67db571d06418f4395cf500cc5d0461.svg" alt="(t_i, \vect{X}_i)_{0\leq i \leq n-1}"/> be a multivariate time series of dimension <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/> from an <img class="math" src="../../_images/math/adb143c11f795a9ceae3cef4eb6c0c1bd784b515.svg" alt="ARMA(p,q)"/> process.</p>
+<p>The spectral density function of the <img class="math" src="../../_images/math/adb143c11f795a9ceae3cef4eb6c0c1bd784b515.svg" alt="ARMA(p,q)"/> process writes :</p>
 <div class="math">
-<p><img src="../../_images/math/106cdbd3a5081cdb932320ff09dd547a9d068721.svg" alt="f(\lambda, \vect{\theta}, \sigma^2) = \frac{\sigma^2}{2 \pi} \frac{|1 + b_1 \exp(-i \lambda) + \ldots + b_q \exp(-i q \lambda)|^2}{|1 + a_1 \exp(-i \lambda) + \ldots + a_p \exp(-i p \lambda)|^2} = \frac{\sigma^2}{2 \pi} g(\lambda, \vect{\theta})"/></p>
-</div><p>where  <img class="math" src="../../_images/math/3cceb88ed53e07229a704350d8e89dc3b4d0dd0f.svg" alt="\vect{\theta} = (a_1, a_2,...,a_p,b_1,...,b_q)"/> and <img class="math" src="../../_images/math/f5d9352d03ee3b64f44cf0ec28565a6cb40475ff.svg" alt="\lambda"/> is the frequency value.</p>
+<p><img src="../../_images/math/d1d636dd7253d2f1b2f40383556e0a3e92c2adfc.svg" alt="f(\lambda, \vect{\theta}, \sigma^2) = \frac{\sigma^2}{2 \pi} \frac{|1 + b_1 \exp(-i \lambda) + \ldots + b_q \exp(-i q \lambda)|^2}{|1 + a_1 \exp(-i \lambda) + \ldots + a_p \exp(-i p \lambda)|^2} = \frac{\sigma^2}{2 \pi} g(\lambda, \vect{\theta})"/></p>
+</div><p>where  <img class="math" src="../../_images/math/6faa074c30f98c8e5de916cd06ef54873382926b.svg" alt="\vect{\theta} = (a_1, a_2,...,a_p,b_1,...,b_q)"/> and <img class="math" src="../../_images/math/d9f42c58a6b23b8de25e0f85eb45f31c2f872979.svg" alt="\lambda"/> is the frequency value.</p>
 <p>The Whittle log-likelihood writes :</p>
 <div class="math">
-<p><img src="../../_images/math/e563d586136b92fb57d612cfeb7769c653007e56.svg" alt="\log L_w(\vect{\theta}, \sigma^2) = - \sum_{j=1}^{m} \log f(\lambda_j,  \vect{\theta}, \sigma^2) - \frac{1}{2 \pi} \sum_{j=1}^{m} \frac{I(\lambda_j)}{f(\lambda_j,  \vect{\theta}, \sigma^2)}"/></p>
+<p><img src="../../_images/math/f05312441079c0b11b5e818036211888156d4dd8.svg" alt="\log L_w(\vect{\theta}, \sigma^2) = - \sum_{j=1}^{m} \log f(\lambda_j,  \vect{\theta}, \sigma^2) - \frac{1}{2 \pi} \sum_{j=1}^{m} \frac{I(\lambda_j)}{f(\lambda_j,  \vect{\theta}, \sigma^2)}"/></p>
 </div><p>where :</p>
 <ul class="simple">
-<li><img class="math" src="../../_images/math/8474c4d12f2efb5398a3e33b53f455ea839886ed.svg" alt="I"/> is the non parametric estimate of the spectral density, expressed in the Fourier space (frequencies in <img class="math" src="../../_images/math/4077bebedb6aed7d558ef3027888023c71a7b660.svg" alt="[0,2\pi]"/> instead of <img class="math" src="../../_images/math/196c2f848f463d5d89b153b737d998c9fc7fad56.svg" alt="[-f_{max}, f_{max}]"/>). OpenTURNS uses by default the Welch estimator.</li>
-<li><img class="math" src="../../_images/math/cfff1c98610aa818b91f44bed2ea8bbbe082d1ba.svg" alt="\lambda_j"/> is the <img class="math" src="../../_images/math/f01b2fd520fd0343bc4c66e7ac929f74080d18d0.svg" alt="j-th"/> Fourier frequency, <img class="math" src="../../_images/math/261fcdf1a7c8a6de43225f1680e0b6be46e5f7b7.svg" alt="\lambda_j = \frac{2 \pi j}{n}"/>, <img class="math" src="../../_images/math/561805b91f87141d4d5ac118e6416856ad3fe516.svg" alt="j=1 \ldots m"/> with <img class="math" src="../../_images/math/93f1437a26e1e140120e1891ad60149cdf21f33d.svg" alt="m"/> the largest integer  <img class="math" src="../../_images/math/0d6f6dc34435c7114d2d0c6872b06c58bd0bde57.svg" alt="\leq \frac{n-1}{2}"/>.</li>
+<li><img class="math" src="../../_images/math/a3f2e24d1a634e375c70fd6760093e58904e0fd1.svg" alt="I"/> is the non parametric estimate of the spectral density, expressed in the Fourier space (frequencies in <img class="math" src="../../_images/math/62463b22f3ec72cd74add0f200e76eb8f73199a0.svg" alt="[0,2\pi]"/> instead of <img class="math" src="../../_images/math/9ed724db7d15e24d5048944feac409e8425bb0c6.svg" alt="[-f_{max}, f_{max}]"/>). OpenTURNS uses by default the Welch estimator.</li>
+<li><img class="math" src="../../_images/math/e67ed055e54f4e8b8f14a1794b506119e1f64692.svg" alt="\lambda_j"/> is the <img class="math" src="../../_images/math/a9384f67909fee67caf58716ccd19acc5f1ea630.svg" alt="j-th"/> Fourier frequency, <img class="math" src="../../_images/math/2455fd1432c60e73d6b993704f4c08c76b9afe8d.svg" alt="\lambda_j = \frac{2 \pi j}{n}"/>, <img class="math" src="../../_images/math/2f95ef6d0d031b017da0d205af0d464dee0482e7.svg" alt="j=1 \ldots m"/> with <img class="math" src="../../_images/math/2a81e6ac78721d1aa548c835cc5880c8f3880375.svg" alt="m"/> the largest integer  <img class="math" src="../../_images/math/7e494a46ef237b5aab4f1debf45eaee3b7deadad.svg" alt="\leq \frac{n-1}{2}"/>.</li>
 </ul>
-<p>We estimate the <img class="math" src="../../_images/math/b8fd2c5df13fb9eadb562aafb783c3fc1032c2d6.svg" alt="(p+q+1)"/> scalar coefficients by maximizing the log-likelihood function. The corresponding equations lead to the following relation :</p>
+<p>We estimate the <img class="math" src="../../_images/math/2868beea4fd0036c76f355a85c2d739027b76d92.svg" alt="(p+q+1)"/> scalar coefficients by maximizing the log-likelihood function. The corresponding equations lead to the following relation :</p>
 <div class="math">
-<p><img src="../../_images/math/cf81a814d0be1577578641e2ede6682f6e42f1b3.svg" alt="\sigma^{2*} = \frac{1}{m} \sum_{j=1}^{m} \frac{I(\lambda_j)}{g(\lambda_j, \vect{\theta}^{*})}"/></p>
-</div><p>where <img class="math" src="../../_images/math/6838d3722e4064e36e8cf659ef41a9210d23e403.svg" alt="\vect{\theta}^{*}"/> maximizes :</p>
+<p><img src="../../_images/math/fe62147ca3df410eff4ae74fbd33ed785ffefda3.svg" alt="\sigma^{2*} = \frac{1}{m} \sum_{j=1}^{m} \frac{I(\lambda_j)}{g(\lambda_j, \vect{\theta}^{*})}"/></p>
+</div><p>where <img class="math" src="../../_images/math/24be2ecd172efce64b6035e8df66d797fe236cc4.svg" alt="\vect{\theta}^{*}"/> maximizes :</p>
 <div class="math">
-<p><img src="../../_images/math/d736a8dc64270ec2f20cb1607f3abb544b48acee.svg" alt="\log L_w(\vect{\theta}) = m (\log(2 \pi) - 1) - m \log\left( \frac{1}{m} \sum_{j=1}^{m} \frac{I(\lambda_j)}{g(\lambda_j, \vect{\theta})}\right) - \sum_{j=1}^{m} g(\lambda_j, \vect{\theta})"/></p>
+<p><img src="../../_images/math/0e277ab8368d8a7abad8a7c306a157589510c573.svg" alt="\log L_w(\vect{\theta}) = m (\log(2 \pi) - 1) - m \log\left( \frac{1}{m} \sum_{j=1}^{m} \frac{I(\lambda_j)}{g(\lambda_j, \vect{\theta})}\right) - \sum_{j=1}^{m} g(\lambda_j, \vect{\theta})"/></p>
 </div><p>The Whitle estimation requires that :</p>
 <ul class="simple">
-<li>the determinant of the eigenvalues of the companion matrix associated to the polynomial  <img class="math" src="../../_images/math/d322c13acb465a84118cdef1f1ede39251c2307e.svg" alt="1 + a_1X + \dots + a_pX^p"/> are  outside the unit disc, which guarantees the stationarity of the process;</li>
-<li>the determinant of the eigenvalues of the companion matrix associated to the polynomial  <img class="math" src="../../_images/math/9ff7ac9096908077e4c79a4430f5778883a7b731.svg" alt="1 + ba_1X + \dots + b_qX^q"/> are outside the unit disc, which guarantees the invertibility of the process.</li>
+<li>the determinant of the eigenvalues of the companion matrix associated to the polynomial  <img class="math" src="../../_images/math/62ec3faf7f13fe0e3bb017a38308913c250287ae.svg" alt="1 + a_1X + \dots + a_pX^p"/> are  outside the unit disc, which guarantees the stationarity of the process;</li>
+<li>the determinant of the eigenvalues of the companion matrix associated to the polynomial  <img class="math" src="../../_images/math/420d9b47133824c60165c13667a1ae09d1f6b296.svg" alt="1 + ba_1X + \dots + b_qX^q"/> are outside the unit disc, which guarantees the invertibility of the process.</li>
 </ul>
-<p>The criteria <em>AIC</em>, <img class="math" src="../../_images/math/308b3e3708640103f5e58cfaee798cf41082f35c.svg" alt="AIC_c"/> (corrected AIC) and <em>BIC</em> are evaluated to help the model selection:</p>
+<p>The criteria <em>AIC</em>, <img class="math" src="../../_images/math/ffe0f3b24067fe825260b8168e49c8fa22b4df98.svg" alt="AIC_c"/> (corrected AIC) and <em>BIC</em> are evaluated to help the model selection:</p>
 <div class="math">
-<p><img src="../../_images/math/c41faf826ffc4ca040bada85ac504d8f9837e3e0.svg" alt="\begin{eqnarray*}
+<p><img src="../../_images/math/6de214d69bf856f20fd1b7d42caaa604796b6863.svg" alt="\begin{eqnarray*}
     AIC_c  &amp; = &amp;  -2\log L_w + 2(p + q + 1)\frac{m}{m - p - q - 2}\\
     AIC &amp; = &amp; -2\log L_w + 2(p + q + 1)\\
     BIC &amp; = &amp; -2\log L_w + 2(p + q + 1)\log(p + q + 1)
 \end{eqnarray*}"/></p>
-</div><p>where <img class="math" src="../../_images/math/93f1437a26e1e140120e1891ad60149cdf21f33d.svg" alt="m"/> is half the number of points of the time grid of the process sample (if the data are a process sample) or in a block of the time series (if the data are a time series).</p>
-<p>The <em>BIC</em> criterion leads to a model that gives a better prediction. The <em>AIC</em> criterion selects the best model that fits the given data. The <img class="math" src="../../_images/math/308b3e3708640103f5e58cfaee798cf41082f35c.svg" alt="AIC_c"/> criterion improves the previous one by penalizing a too high order that would artificially fit to the data.</p>
+</div><p>where <img class="math" src="../../_images/math/2a81e6ac78721d1aa548c835cc5880c8f3880375.svg" alt="m"/> is half the number of points of the time grid of the process sample (if the data are a process sample) or in a block of the time series (if the data are a time series).</p>
+<p>The <em>BIC</em> criterion leads to a model that gives a better prediction. The <em>AIC</em> criterion selects the best model that fits the given data. The <img class="math" src="../../_images/math/ffe0f3b24067fe825260b8168e49c8fa22b4df98.svg" alt="AIC_c"/> criterion improves the previous one by penalizing a too high order that would artificially fit to the data.</p>
 <p class="rubric">Examples</p>
 <p>Create a time series from a scalar ARMA(4,2) and a normal white noise:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
@@ -213,6 +213,19 @@ Care: not yet implemented.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">AICc</span><span class="p">,</span> <span class="n">AIC</span><span class="p">,</span> <span class="n">BIC</span> <span class="o">=</span> <span class="n">myCriterion</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.WhittleFactory.thisown" title="openturns.WhittleFactory.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -448,7 +461,7 @@ Care: not yet implemented.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Order of the AR part of the <img class="math" src="../../_images/math/a479d346e36ff64597129df803a6f5f8920866f7.svg" alt="ARMA(p,q)"/> process of dimension <img class="math" src="../../_images/math/5bedc75d546b74f5c8a9327c072c85fda0fd787f.svg" alt="d"/>.</p>
+<dd><p class="first last">Order of the AR part of the <img class="math" src="../../_images/math/adb143c11f795a9ceae3cef4eb6c0c1bd784b515.svg" alt="ARMA(p,q)"/> process of dimension <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/>.</p>
 </dd>
 </dl>
 </td>
@@ -467,7 +480,7 @@ Care: not yet implemented.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>q</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Order of the MA part of the <img class="math" src="../../_images/math/a479d346e36ff64597129df803a6f5f8920866f7.svg" alt="ARMA(p,q)"/> process of dimension <img class="math" src="../../_images/math/5bedc75d546b74f5c8a9327c072c85fda0fd787f.svg" alt="d"/>.</p>
+<dd><p class="first last">Order of the MA part of the <img class="math" src="../../_images/math/adb143c11f795a9ceae3cef4eb6c0c1bd784b515.svg" alt="ARMA(p,q)"/> process of dimension <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/>.</p>
 </dd>
 </dl>
 </td>
@@ -562,7 +575,7 @@ Care: not yet implemented.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>indP</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></span></dt>
-<dd><p class="first last">All the <img class="math" src="../../_images/math/0f4c0791a2997f071572e3ee6a344919caea8e95.svg" alt="p"/> orders that will be investigated.</p>
+<dd><p class="first last">All the <img class="math" src="../../_images/math/0a51f74fdb12efb40f2b40e8036cbf0f13c8d667.svg" alt="p"/> orders that will be investigated.</p>
 </dd>
 </dl>
 </td>
@@ -581,7 +594,7 @@ Care: not yet implemented.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>indQ</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a></span></dt>
-<dd><p class="first last">All the <img class="math" src="../../_images/math/0f4c0791a2997f071572e3ee6a344919caea8e95.svg" alt="p"/> orders that will be investigated.</p>
+<dd><p class="first last">All the <img class="math" src="../../_images/math/0a51f74fdb12efb40f2b40e8036cbf0f13c8d667.svg" alt="p"/> orders that will be investigated.</p>
 </dd>
 </dl>
 </td>
@@ -876,6 +889,12 @@ Care: not yet implemented.</p>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.WhittleFactory.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.WhittleFactory.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -907,7 +926,7 @@ Care: not yet implemented.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

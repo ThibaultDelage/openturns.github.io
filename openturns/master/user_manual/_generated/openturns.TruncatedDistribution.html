@@ -121,30 +121,30 @@
 <dd><p class="first last">The distribution to be truncated.</p>
 </dd>
 <dt><strong>lowerBound, upperBound</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Define a new distribution range <img class="math" src="../../_images/math/65aac0e8c9a4a8208895a2922857fabe2f8efe24.svg" alt="[lowerBound, upperBound]"/> with
+<dd><p class="first last">Define a new distribution range <img class="math" src="../../_images/math/a1e12f53888e9f3d6854666e21b46153194d04b8.svg" alt="[lowerBound, upperBound]"/> with
 finite bounds. The upper bound must be strictly greater than the lower
 bound.</p>
 </dd>
 <dt><strong>bound</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first">Scalar used when one of the bounds of the distribution is not finite.</p>
 <p>If <em>side = ot.TruncatedDistribution.LOWER</em>: the interval
-<img class="math" src="../../_images/math/fb70745fe11f1772c589ea0ae3ce8924aae5c43f.svg" alt="[bound, +\infty)"/> is used to bound the distribution.</p>
+<img class="math" src="../../_images/math/00e4e1d7fac1280abbe7751a6c9b121b90b26df2.svg" alt="[bound, +\infty)"/> is used to bound the distribution.</p>
 <p class="last">If <em>side = ot.TruncatedDistribution.UPPER</em>: the interval
-<img class="math" src="../../_images/math/d88af065004760b62898f5a1b3bc75d1783cfb56.svg" alt="(-\infty, bound]"/> is used to bound the distribution.</p>
+<img class="math" src="../../_images/math/b0b445765701d9e75d8bf636022730abe7fce2ac.svg" alt="(-\infty, bound]"/> is used to bound the distribution.</p>
 </dd>
 <dt><strong>side</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
 <dd><p class="first last">Integer used when one of the bounds of the distribution is not finite.
 (Amongst ot.TruncatedDistribution.LOWER and ot.TruncatedDistribution.UPPER).</p>
 </dd>
 <dt><strong>truncationInterval</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt>
-<dd><p class="first last">Define a new distribution range <img class="math" src="../../_images/math/65aac0e8c9a4a8208895a2922857fabe2f8efe24.svg" alt="[lowerBound, upperBound]"/> with
+<dd><p class="first last">Define a new distribution range <img class="math" src="../../_images/math/a1e12f53888e9f3d6854666e21b46153194d04b8.svg" alt="[lowerBound, upperBound]"/> with
 finite bounds.</p>
 </dd>
-<dt><strong>threshold</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/91541d6fb1b07c85dfce299ac6b4ac42bb94e2fd.svg" alt="\tau \in [0, 1]"/></span></dt>
+<dt><strong>threshold</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/b9c1451147f463a60e55f85e5b8d01ee3751dca3.svg" alt="\tau \in [0, 1]"/></span></dt>
 <dd><p class="first">This threshold is used when generating an evaluation of the distribution.
-We note <img class="math" src="../../_images/math/08731955d44101ca9a6eca15f1652d7db4138d8e.svg" alt="F"/> the CDF of the non truncated distribution:</p>
-<p>If <img class="math" src="../../_images/math/3be2667d0ee511f1d3763ef64434748387328a5e.svg" alt="F(upperBound)-F(lowerBound)&lt;\tau"/>: a CDF inversion is performed.</p>
-<p class="last">If <img class="math" src="../../_images/math/b392a960f654de01d31715ec487cf981fc7ad101.svg" alt="F(upperBound)-F(lowerBound)&gt;\tau"/>: rejection.</p>
+We note <img class="math" src="../../_images/math/89ad8f2e375cb588588660b16852cce0a4a98a01.svg" alt="F"/> the CDF of the non truncated distribution:</p>
+<p>If <img class="math" src="../../_images/math/a26a642e1008fd75cd99801014f59e5857ff07e6.svg" alt="F(upperBound)-F(lowerBound)&lt;\tau"/>: a CDF inversion is performed.</p>
+<p class="last">If <img class="math" src="../../_images/math/a37397edefd3cdfa5ab9e579983cf298a1400e30.svg" alt="F(upperBound)-F(lowerBound)&gt;\tau"/>: rejection.</p>
 </dd>
 </dl>
 </td>
@@ -155,14 +155,14 @@ We note <img class="math" src="../../_images/math/08731955d44101ca9a6eca15f1652d
 <p>Assuming a random variable <em>X</em> is truncated with two bounds <em>a</em> and <em>b</em>,
 its probability density function is defined as:</p>
 <div class="math">
-<p><img src="../../_images/math/5fc9e61b2885a2e7d19d250310a7c9fb6f5e2e46.svg" alt="\forall y \in \Rset, p_Y(y) =
+<p><img src="../../_images/math/fc641ba1914010d54fc217640e5e685cc35c4222.svg" alt="\forall y \in \Rset, p_Y(y) =
 \begin{array}{|ll}
   0 &amp;  \mbox{for } y \geq b  \mbox{ or }  y \leq a\\
   \displaystyle \frac{1}{F_X(b) - F_X(a)}\, p_X(y) &amp; \mbox{for } y\in[a,b]
 \end{array}"/></p>
 </div><p>and its cumulative density function is defined as:</p>
 <div class="math">
-<p><img src="../../_images/math/cdfaade62039e116d9d98bbed3946ba2073a0061.svg" alt="\forall y \in \Rset, F_Y(y) = \Prob{X&lt;y\, / \, X\in[a,b]} =
+<p><img src="../../_images/math/9490d82a9335e89b778b4ebb47664c1459ac5483.svg" alt="\forall y \in \Rset, F_Y(y) = \Prob{X&lt;y\, / \, X\in[a,b]} =
 \begin{array}{|ll}
   1 &amp; \mbox{for } y \geq b, \\
   0 &amp; \mbox{for } y \leq a, \\
@@ -177,6 +177,19 @@ its probability density function is defined as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.TruncatedDistribution.thisown" title="openturns.TruncatedDistribution.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -760,7 +773,7 @@ its probability density function is defined as:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/f1a7f0c62d01228b58d075cfb6eaf67879f567ab.svg" alt="\alpha \in [0,1]"/></span></dt>
+<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/9ed03f17c1b55daae57d91d26d45a165810381e5.svg" alt="\alpha \in [0,1]"/></span></dt>
 <dd><p class="first last">The confidence level.</p>
 </dd>
 </dl>
@@ -768,7 +781,7 @@ its probability density function is defined as:</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>confInterval</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt>
-<dd><p class="first last">The confidence interval of level <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>.</p>
+<dd><p class="first last">The confidence interval of level <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/>.</p>
 </dd>
 </dl>
 </td>
@@ -776,8 +789,8 @@ its probability density function is defined as:</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/> with density function <cite>p</cite>.</p>
-<p>The bilateral confidence interval <img class="math" src="../../_images/math/5d73952e4bd87964d26e6d2b73fee93f28c9efcf.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/9fa69f780335d17dda624cc261941aa2a12657f8.svg" alt="I^*_{\alpha} = [a_1, b_1] \times \dots \times [a_d, b_d]"/> where <img class="math" src="../../_images/math/2f2de255a59c430560a7ec7d2651323f1fe9fb91.svg" alt="a_i = F_i^{-1}((1-\beta)/2)"/> and <img class="math" src="../../_images/math/c0004e8c59d29d886609a6570e6bf7664b6ed8fe.svg" alt="b_i = F_i^{-1}((1+\beta)/2)"/> for all <cite>i</cite> and which verifies <img class="math" src="../../_images/math/5632d45f78e2d21d3c3ab70316fe74d9d50294e1.svg" alt="\mu(I^*_{\alpha}) = \alpha"/>.</p>
+<p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> with density function <cite>p</cite>.</p>
+<p>The bilateral confidence interval <img class="math" src="../../_images/math/1e98ba05437b95da2976c8b8cca75acaa265ed60.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/6d693706d6b596ee0801eb3e0c49ad626ba054bd.svg" alt="I^*_{\alpha} = [a_1, b_1] \times \dots \times [a_d, b_d]"/> where <img class="math" src="../../_images/math/ae0fa3c4ee21807d2209d5a676b90c1f8804b46b.svg" alt="a_i = F_i^{-1}((1-\beta)/2)"/> and <img class="math" src="../../_images/math/6599bc4e45af27d38da0d216a76b68cd093989ea.svg" alt="b_i = F_i^{-1}((1+\beta)/2)"/> for all <cite>i</cite> and which verifies <img class="math" src="../../_images/math/1d8d6ce4f55fc68f2e77f9555657a91ebf4f5fd1.svg" alt="\mu(I^*_{\alpha}) = \alpha"/>.</p>
 <p class="rubric">Examples</p>
 <p>Create a sample from a Normal distribution:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
@@ -806,7 +819,7 @@ its probability density function is defined as:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/f1a7f0c62d01228b58d075cfb6eaf67879f567ab.svg" alt="\alpha \in [0,1]"/></span></dt>
+<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/9ed03f17c1b55daae57d91d26d45a165810381e5.svg" alt="\alpha \in [0,1]"/></span></dt>
 <dd><p class="first last">The confidence level.</p>
 </dd>
 </dl>
@@ -814,10 +827,10 @@ its probability density function is defined as:</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>confInterval</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt>
-<dd><p class="first last">The confidence interval of level <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>.</p>
+<dd><p class="first last">The confidence interval of level <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/>.</p>
 </dd>
 <dt><strong>marginalProb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The value <img class="math" src="../../_images/math/5a519ff21b7afd2a20b1dc119bfcd9e5ad50441f.svg" alt="\beta"/> which is the common marginal probability of each marginal interval.</p>
+<dd><p class="first last">The value <img class="math" src="../../_images/math/6cd04136b3bbd07d788c38ddbf25c2466dc04fe1.svg" alt="\beta"/> which is the common marginal probability of each marginal interval.</p>
 </dd>
 </dl>
 </td>
@@ -869,7 +882,7 @@ its probability density function is defined as:</p>
 <p class="rubric">Notes</p>
 <p>The cumulative distribution function is defined as:</p>
 <div class="math">
-<p><img src="../../_images/math/cf9788ebbd2e73a18acaab714a6ab722fdf7ef3b.svg" alt="F_{\vect{X}}(\vect{x}) = \Prob{\bigcap_{i=1}^n X_i \leq x_i},
+<p><img src="../../_images/math/554dae3ad65b86454b65fcb87c2d6e15046cbbb0.svg" alt="F_{\vect{X}}(\vect{x}) = \Prob{\bigcap_{i=1}^n X_i \leq x_i},
                          \quad \vect{x} \in \supp{\vect{X}}"/></p>
 </div></dd></dl>
 
@@ -927,7 +940,7 @@ parameters at input <cite>X</cite>.</p>
 <p class="rubric">Notes</p>
 <p>The characteristic function is defined as:</p>
 <div class="math">
-<p><img src="../../_images/math/8a20137d486522bb1e6b7b91d0b81c1287e00b2c.svg" alt="\phi_X(t) = \mathbb{E}\left[\exp(- i t X)\right],
+<p><img src="../../_images/math/b107c6f185b9069aee5db095666c3854a49a4870.svg" alt="\phi_X(t) = \mathbb{E}\left[\exp(- i t X)\right],
             \quad t \in \Rset"/></p>
 </div><p>OpenTURNS features a generic implementation of the characteristic function for
 all its univariate distributions (both continuous and discrete). This default
@@ -967,7 +980,7 @@ implementations.</p>
 <p class="rubric">Notes</p>
 <p>The complementary cumulative distribution function.</p>
 <div class="math">
-<p><img src="../../_images/math/57198437d8bd1aa37ce97fc7e1941f5b245cdd99.svg" alt="1 - F_{\vect{X}}(\vect{x}) = 1 - \Prob{\bigcap_{i=1}^n X_i \leq x_i}, \quad \vect{x} \in \supp{\vect{X}}"/></p>
+<p><img src="../../_images/math/74c6e531b178ac49d3f8eaaf026a4d95ba0b9da5.svg" alt="1 - F_{\vect{X}}(\vect{x}) = 1 - \Prob{\bigcap_{i=1}^n X_i \leq x_i}, \quad \vect{x} \in \supp{\vect{X}}"/></p>
 </div><div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">This is not the survival function (except for 1-dimensional
@@ -987,7 +1000,7 @@ distributions).</p>
 <dt><strong>Xn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, sequence of float</span></dt>
 <dd><p class="first last">Conditional CDF input (last component).</p>
 </dd>
-<dt><strong>Xcond</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, 2-d sequence of float with size <img class="math" src="../../_images/math/4067b1cf12c527249e2c4e94ce3c9a8d78017ae1.svg" alt="n-1"/></span></dt>
+<dt><strong>Xcond</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, 2-d sequence of float with size <img class="math" src="../../_images/math/bfe3cf473407a167ccd2d856a663c27dbab81f8e.svg" alt="n-1"/></span></dt>
 <dd><p class="first last">Conditionning values for the other components.</p>
 </dd>
 </dl>
@@ -1006,7 +1019,7 @@ distributions).</p>
 <p>The conditional cumulative distribution function of the last component with
 respect to the other fixed components is defined as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/2406080e7924e1ba6b66be2c5f624bc4c60e9ef3.svg" alt="F_{X_n \mid X_1, \ldots, X_{n - 1}}(x_n) =
+<p><img src="../../_images/math/1f2ec1b1151e0ac4e5fa12dc6ebdc59e9fac9725.svg" alt="F_{X_n \mid X_1, \ldots, X_{n - 1}}(x_n) =
     \Prob{X_n \leq x_n \mid X_1=x_1, \ldots, X_{n-1}=x_{n-1}},
     \quad x_n \in \supp{X_n}"/></p>
 </div></dd></dl>
@@ -1024,7 +1037,7 @@ respect to the other fixed components is defined as follows:</p>
 <dt><strong>Xn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Conditional DDF input (last component).</p>
 </dd>
-<dt><strong>Xcond</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float with dimension <img class="math" src="../../_images/math/4067b1cf12c527249e2c4e94ce3c9a8d78017ae1.svg" alt="n-1"/></span></dt>
+<dt><strong>Xcond</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float with dimension <img class="math" src="../../_images/math/bfe3cf473407a167ccd2d856a663c27dbab81f8e.svg" alt="n-1"/></span></dt>
 <dd><p class="first last">Conditionning values for the other components.</p>
 </dd>
 </dl>
@@ -1058,7 +1071,7 @@ respect to the other fixed components is defined as follows:</p>
 <dt><strong>Xn</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, sequence of float</span></dt>
 <dd><p class="first last">Conditional PDF input (last component).</p>
 </dd>
-<dt><strong>Xcond</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, 2-d sequence of float with size <img class="math" src="../../_images/math/4067b1cf12c527249e2c4e94ce3c9a8d78017ae1.svg" alt="n-1"/></span></dt>
+<dt><strong>Xcond</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, 2-d sequence of float with size <img class="math" src="../../_images/math/bfe3cf473407a167ccd2d856a663c27dbab81f8e.svg" alt="n-1"/></span></dt>
 <dd><p class="first last">Conditionning values for the other components.</p>
 </dd>
 </dl>
@@ -1089,10 +1102,10 @@ respect to the other fixed components is defined as follows:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, sequence of float, <img class="math" src="../../_images/math/a93a24594a15b2b0f507d38bb1497e75ee7424f1.svg" alt="0 &lt; p &lt; 1"/></span></dt>
+<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, sequence of float, <img class="math" src="../../_images/math/2955c371cd9864cb79705d34cb756f4f845e645d.svg" alt="0 &lt; p &lt; 1"/></span></dt>
 <dd><p class="first last">Conditional quantile function input.</p>
 </dd>
-<dt><strong>Xcond</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, 2-d sequence of float with size <img class="math" src="../../_images/math/4067b1cf12c527249e2c4e94ce3c9a8d78017ae1.svg" alt="n-1"/></span></dt>
+<dt><strong>Xcond</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, 2-d sequence of float with size <img class="math" src="../../_images/math/bfe3cf473407a167ccd2d856a663c27dbab81f8e.svg" alt="n-1"/></span></dt>
 <dd><p class="first last">Conditionning values for the other components.</p>
 </dd>
 </dl>
@@ -1139,9 +1152,9 @@ respect to the other fixed components is defined as follows:</p>
 </table>
 <p class="rubric">Notes</p>
 <p>The derivative density function is the gradient of the probability density
-function with respect to <img class="math" src="../../_images/math/a3a6f1956f635861141cf384d3945161297b4301.svg" alt="\vect{x}"/>:</p>
+function with respect to <img class="math" src="../../_images/math/fbb3eda62de652737a946e0ab194aac246375d90.svg" alt="\vect{x}"/>:</p>
 <div class="math">
-<p><img src="../../_images/math/26ed40205c56ef7ae9d489d4cbed7b11d48baf1a.svg" alt="\vect{\nabla}_{\vect{x}} f_{\vect{X}}(\vect{x}) =
+<p><img src="../../_images/math/7cbca1303a45b485c11a0386344973915b976db4.svg" alt="\vect{\nabla}_{\vect{x}} f_{\vect{X}}(\vect{x}) =
     \Tr{\left(\frac{\partial f_{\vect{X}}(\vect{x})}{\partial x_i},
               \quad i = 1, \ldots, n\right)},
     \quad \vect{x} \in \supp{\vect{X}}"/></p>
@@ -1177,10 +1190,10 @@ function with respect to <img class="math" src="../../_images/math/a3a6f1956f635
 <p class="last"><a class="reference internal" href="#openturns.TruncatedDistribution.isElliptical" title="openturns.TruncatedDistribution.isElliptical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isElliptical</span></code></a>, <a class="reference internal" href="#openturns.TruncatedDistribution.computePDF" title="openturns.TruncatedDistribution.computePDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computePDF</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>This is the function <img class="math" src="../../_images/math/a252de35dc7cc2d634b8209685155ee835882bb3.svg" alt="\phi"/> such that the probability density function
+<p>This is the function <img class="math" src="../../_images/math/2690c4aaac6819794a4b67110d42c977b26f960e.svg" alt="\phi"/> such that the probability density function
 rewrites:</p>
 <div class="math">
-<p><img src="../../_images/math/518ba931902f40d67d5925091fc821ba41c435ea.svg" alt="f_{\vect{X}}(\vect{x}) =
+<p><img src="../../_images/math/32a2ed332c94fc451692d82f86169318ea407eae.svg" alt="f_{\vect{X}}(\vect{x}) =
     \phi\left(\Tr{\left(\vect{x} - \vect{\mu}\right)}
                   \mat{\Sigma}^{-1}
                   \left(\vect{x} - \vect{\mu}\right)
@@ -1275,10 +1288,10 @@ rewrites:</p>
 <p class="rubric">Notes</p>
 <p>The entropy of a distribution is defined by:</p>
 <div class="math">
-<p><img src="../../_images/math/a2e9bf15678eadf7c77c57fb31c8b8cb2e536509.svg" alt="\cE_X = \Expect{-\log(p_X(\vect{X}))}"/></p>
-</div><p>Where the random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> follows the probability
-distribution of interest, and <img class="math" src="../../_images/math/0536f5bc8acc4d90d0db0f9110af132c652ce21c.svg" alt="p_X"/> is either the <em>probability
-density function</em> of <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> if it is continuous or the
+<p><img src="../../_images/math/87a8b5c4069b2ef36213726ea46359d4c6f5eca9.svg" alt="\cE_X = \Expect{-\log(p_X(\vect{X}))}"/></p>
+</div><p>Where the random vector <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/> follows the probability
+distribution of interest, and <img class="math" src="../../_images/math/678f4aa4732e0594232f76fa2de8255f8e1d2cac.svg" alt="p_X"/> is either the <em>probability
+density function</em> of <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/> if it is continuous or the
 <em>probability distribution function</em> if it is discrete.</p>
 </dd></dl>
 
@@ -1313,7 +1326,7 @@ density function</em> of <img class="math" src="../../_images/math/3fdfffe1d8434
 <p class="rubric">Notes</p>
 <p>The probability-generating function is defined as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/5a0a52d75bdc9401c20db512c48c0900b5dd7102.svg" alt="G_X(z) = \Expect{z^X}, \quad z \in \Cset"/></p>
+<p><img src="../../_images/math/4a17fa55d844376b98e3b440b9d31346e959aff7.svg" alt="G_X(z) = \Expect{z^X}, \quad z \in \Cset"/></p>
 </div><p>This function only exists for discrete distributions. OpenTURNS implements
 this method for univariate distributions only.</p>
 </dd></dl>
@@ -1327,7 +1340,7 @@ this method for univariate distributions only.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/9613d34aa95817f0a3deed21e23a1037fa0518af.svg" alt="p \in [0; 1]"/></span></dt>
+<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/a765020e802fee312c1ff0fb6d75d7e2bed66580.svg" alt="p \in [0; 1]"/></span></dt>
 <dd><p class="first last">Level of the survival function.</p>
 </dd>
 </dl>
@@ -1335,7 +1348,7 @@ this method for univariate distributions only.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Point <img class="math" src="../../_images/math/a3a6f1956f635861141cf384d3945161297b4301.svg" alt="\vect{x}"/> such that <img class="math" src="../../_images/math/44b1db94cdb487652959ec089e1885d6b3f918bc.svg" alt="S_{\vect{X}}(\vect{x}) = p"/> with iso-quantile components.</p>
+<dd><p class="first last">Point <img class="math" src="../../_images/math/fbb3eda62de652737a946e0ab194aac246375d90.svg" alt="\vect{x}"/> such that <img class="math" src="../../_images/math/a312e4810375efe9c5142e921563f8fec5311e2f.svg" alt="S_{\vect{X}}(\vect{x}) = p"/> with iso-quantile components.</p>
 </dd>
 </dl>
 </td>
@@ -1347,8 +1360,8 @@ this method for univariate distributions only.</p>
 <p class="last"><a class="reference internal" href="#openturns.TruncatedDistribution.computeQuantile" title="openturns.TruncatedDistribution.computeQuantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeQuantile</span></code></a>, <a class="reference internal" href="#openturns.TruncatedDistribution.computeSurvivalFunction" title="openturns.TruncatedDistribution.computeSurvivalFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSurvivalFunction</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>The inverse survival function writes: <img class="math" src="../../_images/math/0bbf32e63008d29614586abb58eb3eaa93b001f7.svg" alt="S^{-1}(p)  =  \vect{x}^p"/> where <img class="math" src="../../_images/math/7683f7ca6bcda1606f1be94de5a1d130286ddfa4.svg" alt="S( \vect{x}^p) = \Prob{\bigcap_{i=1}^d X_i &gt; x_i^p}"/>. OpenTURNS returns the point <img class="math" src="../../_images/math/656142ba7fea273f97c6d3257ba996993104a800.svg" alt="\vect{x}^p"/> such that 
-<img class="math" src="../../_images/math/2e23575e11f2e3b6b63aad0588bd8b512888492c.svg" alt="\Prob{ X_1 &gt; x_1^p}   =  \dots = \Prob{ X_d &gt; x_d^p}"/>.</p>
+<p>The inverse survival function writes: <img class="math" src="../../_images/math/1bd7b848ad95f29c3c31d265c01df54f108d2785.svg" alt="S^{-1}(p)  =  \vect{x}^p"/> where <img class="math" src="../../_images/math/a3f5b1543aad7c93dd9cb03852d07990a9e2f035.svg" alt="S( \vect{x}^p) = \Prob{\bigcap_{i=1}^d X_i &gt; x_i^p}"/>. OpenTURNS returns the point <img class="math" src="../../_images/math/5ba313b84fe2a31bf09b3a4d5bc03cfec7595c9e.svg" alt="\vect{x}^p"/> such that 
+<img class="math" src="../../_images/math/1b7fd3b663b9697642c6436092057d312140f562.svg" alt="\Prob{ X_1 &gt; x_1^p}   =  \dots = \Prob{ X_d &gt; x_d^p}"/>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1482,7 +1495,7 @@ parameters at input <cite>X</cite>.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/f1a7f0c62d01228b58d075cfb6eaf67879f567ab.svg" alt="\alpha \in [0,1]"/></span></dt>
+<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/9ed03f17c1b55daae57d91d26d45a165810381e5.svg" alt="\alpha \in [0,1]"/></span></dt>
 <dd><p class="first last">The confidence level.</p>
 </dd>
 </dl>
@@ -1490,7 +1503,7 @@ parameters at input <cite>X</cite>.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>confInterval</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt>
-<dd><p class="first last">The confidence interval of level <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>.</p>
+<dd><p class="first last">The confidence interval of level <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1498,18 +1511,18 @@ parameters at input <cite>X</cite>.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/> with density function <cite>p</cite>.</p>
-<p>The minimum volume confidence interval <img class="math" src="../../_images/math/5d73952e4bd87964d26e6d2b73fee93f28c9efcf.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/9fa69f780335d17dda624cc261941aa2a12657f8.svg" alt="I^*_{\alpha} = [a_1, b_1] \times \dots \times [a_d, b_d]"/> where <img class="math" src="../../_images/math/c0211d78c13b1135e34d68c45aa1ae003a4589ad.svg" alt="[a_i, b_i]   = \argmin_{I \in \Rset \, | \, \mu_i(I) = \beta} \lambda_i(I)"/> and <img class="math" src="../../_images/math/6f64f06af233352d59aa9b0d211660ea7e3c58d1.svg" alt="\mu(I^*_{\alpha})  =  \alpha"/> with <img class="math" src="../../_images/math/f5d9352d03ee3b64f44cf0ec28565a6cb40475ff.svg" alt="\lambda"/> is the Lebesgue measure on <img class="math" src="../../_images/math/9c4f3a98c8225b7a8394637f1b9511f5eb9d15bb.svg" alt="\Rset^d"/>.</p>
-<p>This problem resorts to solving  <cite>d</cite> univariate non linear equations: for a fixed value <img class="math" src="../../_images/math/5a519ff21b7afd2a20b1dc119bfcd9e5ad50441f.svg" alt="\beta"/>, we find each intervals <img class="math" src="../../_images/math/ea8739ae445b6391a397da93ca4df85cffd33bad.svg" alt="[a_i, b_i]"/> such that:</p>
+<p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> with density function <cite>p</cite>.</p>
+<p>The minimum volume confidence interval <img class="math" src="../../_images/math/1e98ba05437b95da2976c8b8cca75acaa265ed60.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/6d693706d6b596ee0801eb3e0c49ad626ba054bd.svg" alt="I^*_{\alpha} = [a_1, b_1] \times \dots \times [a_d, b_d]"/> where <img class="math" src="../../_images/math/004aa802cb3b8d07fdb0cbfee0acc8586c7b935f.svg" alt="[a_i, b_i]   = \argmin_{I \in \Rset \, | \, \mu_i(I) = \beta} \lambda_i(I)"/> and <img class="math" src="../../_images/math/0e066beec0b0b3680d85abea80afc4750e830121.svg" alt="\mu(I^*_{\alpha})  =  \alpha"/> with <img class="math" src="../../_images/math/d9f42c58a6b23b8de25e0f85eb45f31c2f872979.svg" alt="\lambda"/> is the Lebesgue measure on <img class="math" src="../../_images/math/c09c205cbba607b4d5951cf884dd1d369e9d0be2.svg" alt="\Rset^d"/>.</p>
+<p>This problem resorts to solving  <cite>d</cite> univariate non linear equations: for a fixed value <img class="math" src="../../_images/math/6cd04136b3bbd07d788c38ddbf25c2466dc04fe1.svg" alt="\beta"/>, we find each intervals <img class="math" src="../../_images/math/2fcb4ba1234177ad59a3df99eda599f1ee8da8e2.svg" alt="[a_i, b_i]"/> such that:</p>
 <div class="math">
-<p><img src="../../_images/math/3d347f3e9c08b9e70286b59decd4544a2597f74b.svg" alt="\begin{eqnarray*}
+<p><img src="../../_images/math/bc606293975e4db219a35395ced6bfd4a590a2ad.svg" alt="\begin{eqnarray*}
 F_i(b_i) - F_i(a_i) &amp; = &amp; \beta \\
 p_i(b_i) &amp; = &amp; p_i(a_i)
 \end{eqnarray*}"/></p>
-</div><p>which consists of finding the bound <img class="math" src="../../_images/math/b362b5ab45286b5fc03b04e567eb2fc6bb39f0aa.svg" alt="a_i"/> such that:</p>
+</div><p>which consists of finding the bound <img class="math" src="../../_images/math/b4667011c5aaf80be81b428b007ed826bad54806.svg" alt="a_i"/> such that:</p>
 <div class="math">
-<p><img src="../../_images/math/85ed57ae86030f1bb69720408652062b950e55cc.svg" alt="p_i(a_i) =  p_i(F_i^{-1}(\beta + F_i(a_i)))"/></p>
-</div><p>To find <img class="math" src="../../_images/math/5a519ff21b7afd2a20b1dc119bfcd9e5ad50441f.svg" alt="\beta"/>, we use the Brent algorithm:  <img class="math" src="../../_images/math/c763d2b3a12aabba0d2095e6792b74d6ba0b4bed.svg" alt="\mu([\vect{a}(\beta); \vect{b}(\beta)] = g(\beta) = \alpha"/> with <cite>g</cite> a non linear function.</p>
+<p><img src="../../_images/math/c04d162800d00864e9d6ede52c7580f5f20596fc.svg" alt="p_i(a_i) =  p_i(F_i^{-1}(\beta + F_i(a_i)))"/></p>
+</div><p>To find <img class="math" src="../../_images/math/6cd04136b3bbd07d788c38ddbf25c2466dc04fe1.svg" alt="\beta"/>, we use the Brent algorithm:  <img class="math" src="../../_images/math/8b237feb0c5d9f1a3a1e966fa604a1a0d792ae3d.svg" alt="\mu([\vect{a}(\beta); \vect{b}(\beta)] = g(\beta) = \alpha"/> with <cite>g</cite> a non linear function.</p>
 <p class="rubric">Examples</p>
 <p>Create a sample from a Normal distribution:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
@@ -1539,7 +1552,7 @@ p_i(b_i) &amp; = &amp; p_i(a_i)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/f1a7f0c62d01228b58d075cfb6eaf67879f567ab.svg" alt="\alpha \in [0,1]"/></span></dt>
+<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/9ed03f17c1b55daae57d91d26d45a165810381e5.svg" alt="\alpha \in [0,1]"/></span></dt>
 <dd><p class="first last">The confidence level.</p>
 </dd>
 </dl>
@@ -1547,10 +1560,10 @@ p_i(b_i) &amp; = &amp; p_i(a_i)
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>confInterval</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt>
-<dd><p class="first last">The confidence interval of level <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>.</p>
+<dd><p class="first last">The confidence interval of level <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/>.</p>
 </dd>
 <dt><strong>marginalProb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The value <img class="math" src="../../_images/math/5a519ff21b7afd2a20b1dc119bfcd9e5ad50441f.svg" alt="\beta"/> which is the common marginal probability of each marginal interval.</p>
+<dd><p class="first last">The value <img class="math" src="../../_images/math/6cd04136b3bbd07d788c38ddbf25c2466dc04fe1.svg" alt="\beta"/> which is the common marginal probability of each marginal interval.</p>
 </dd>
 </dl>
 </td>
@@ -1585,7 +1598,7 @@ p_i(b_i) &amp; = &amp; p_i(a_i)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/f1a7f0c62d01228b58d075cfb6eaf67879f567ab.svg" alt="\alpha \in [0,1]"/></span></dt>
+<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/9ed03f17c1b55daae57d91d26d45a165810381e5.svg" alt="\alpha \in [0,1]"/></span></dt>
 <dd><p class="first last">The confidence level.</p>
 </dd>
 </dl>
@@ -1593,7 +1606,7 @@ p_i(b_i) &amp; = &amp; p_i(a_i)
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>levelSet</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.LevelSet.html#openturns.LevelSet" title="openturns.LevelSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelSet</span></code></a></span></dt>
-<dd><p class="first last">The minimum volume domain of measure <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>.</p>
+<dd><p class="first last">The minimum volume domain of measure <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1601,18 +1614,18 @@ p_i(b_i) &amp; = &amp; p_i(a_i)
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/> with density function <cite>p</cite>.</p>
-<p>The minimum volume confidence domain <img class="math" src="../../_images/math/58da49a0bd20c60ce0768a85029543b643f0d7ea.svg" alt="A^*_{\alpha}"/> is the set of minimum volume and which measure is at least <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>. It is defined by:</p>
+<p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> with density function <cite>p</cite>.</p>
+<p>The minimum volume confidence domain <img class="math" src="../../_images/math/b86ae095daca1c44399fefb5bafd11894b1c8339.svg" alt="A^*_{\alpha}"/> is the set of minimum volume and which measure is at least <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/>. It is defined by:</p>
 <div class="math">
-<p><img src="../../_images/math/f98bd5072c857668cb9fcb33689e6c70296079d6.svg" alt="A^*_{\alpha} = \argmin_{A \in \Rset^d\, | \, \mu(A) \geq \alpha} \lambda(A)"/></p>
-</div><p>where <img class="math" src="../../_images/math/f5d9352d03ee3b64f44cf0ec28565a6cb40475ff.svg" alt="\lambda"/> is the Lebesgue measure on <img class="math" src="../../_images/math/9c4f3a98c8225b7a8394637f1b9511f5eb9d15bb.svg" alt="\Rset^d"/>. Under some general conditions on <img class="math" src="../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/> (for example, no flat regions), the set  <img class="math" src="../../_images/math/58da49a0bd20c60ce0768a85029543b643f0d7ea.svg" alt="A^*_{\alpha}"/> is unique and realises the minimum: <img class="math" src="../../_images/math/8e95bf1c35ed6eaa231fa2904e4d732ed4708ae1.svg" alt="\mu(A^*_{\alpha}) = \alpha"/>. We show that <img class="math" src="../../_images/math/58da49a0bd20c60ce0768a85029543b643f0d7ea.svg" alt="A^*_{\alpha}"/> writes:</p>
+<p><img src="../../_images/math/1d09d1579e4a5c9b2cd7af28a2ba20025ce9fdbd.svg" alt="A^*_{\alpha} = \argmin_{A \in \Rset^d\, | \, \mu(A) \geq \alpha} \lambda(A)"/></p>
+</div><p>where <img class="math" src="../../_images/math/d9f42c58a6b23b8de25e0f85eb45f31c2f872979.svg" alt="\lambda"/> is the Lebesgue measure on <img class="math" src="../../_images/math/c09c205cbba607b4d5951cf884dd1d369e9d0be2.svg" alt="\Rset^d"/>. Under some general conditions on <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> (for example, no flat regions), the set  <img class="math" src="../../_images/math/b86ae095daca1c44399fefb5bafd11894b1c8339.svg" alt="A^*_{\alpha}"/> is unique and realises the minimum: <img class="math" src="../../_images/math/1194e8e2d78f540ba4b53778bfe84132ec967563.svg" alt="\mu(A^*_{\alpha}) = \alpha"/>. We show that <img class="math" src="../../_images/math/b86ae095daca1c44399fefb5bafd11894b1c8339.svg" alt="A^*_{\alpha}"/> writes:</p>
 <div class="math">
-<p><img src="../../_images/math/d3001edb877a16baf91bdd828e507d26c53defc6.svg" alt="A^*_{\alpha} = \{ \vect{x} \in \Rset^d \, | \, p(\vect{x}) \geq p_{\alpha} \}"/></p>
-</div><p>for a certain <img class="math" src="../../_images/math/bb086cac94605c98a14c4bb7855e0b0b0bdf6eac.svg" alt="p_{\alpha} &gt;0"/>.</p>
-<p>If we consider the random variable <img class="math" src="../../_images/math/25a90f06edae698a6085bb46a500f1ff5c6a77bf.svg" alt="Y = p(\vect{X})"/>, with cumulative distribution function <img class="math" src="../../_images/math/524d78e57c83a5f9152b9585d2528ae56102ceac.svg" alt="F_Y"/>, then <img class="math" src="../../_images/math/bcea4fce4d22418d4a92f42bf397a29ca521c1ef.svg" alt="p_{\alpha}"/> is defined by:</p>
+<p><img src="../../_images/math/44cf6e2768dc4b91a0622c41bb2c60fc811eec0d.svg" alt="A^*_{\alpha} = \{ \vect{x} \in \Rset^d \, | \, p(\vect{x}) \geq p_{\alpha} \}"/></p>
+</div><p>for a certain <img class="math" src="../../_images/math/afec76ec958e48466fe442ee4817c231a59671c6.svg" alt="p_{\alpha} &gt;0"/>.</p>
+<p>If we consider the random variable <img class="math" src="../../_images/math/e149b0d3b1d75250771bc9dabb17cdd75822c5f8.svg" alt="Y = p(\vect{X})"/>, with cumulative distribution function <img class="math" src="../../_images/math/d60cbf5a01a551779ed6890521ca7656ae73d2b9.svg" alt="F_Y"/>, then <img class="math" src="../../_images/math/9bda60879e51a6d3a9efa4d53abeb614992c71b8.svg" alt="p_{\alpha}"/> is defined by:</p>
 <div class="math">
-<p><img src="../../_images/math/647e83ef05d813319d3eeb38279a615a384ef43c.svg" alt="1-F_Y(p_{\alpha}) = \alpha"/></p>
-</div><p>Thus the minimum volume domain of confidence <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/> is the interior of the domain which frontier is the <img class="math" src="../../_images/math/5771e0b6e3fc17a9d95a4869a1cccd6becaa21d2.svg" alt="1-\alpha"/> quantile of <img class="math" src="../../_images/math/19736b8b9764e1a2d2f06ea4084a9573802cba4c.svg" alt="Y"/>. It can be determined with simulations of <img class="math" src="../../_images/math/19736b8b9764e1a2d2f06ea4084a9573802cba4c.svg" alt="Y"/>.</p>
+<p><img src="../../_images/math/bd0736ef3aa9f98ed7395b4d9587f5bb346a005c.svg" alt="1-F_Y(p_{\alpha}) = \alpha"/></p>
+</div><p>Thus the minimum volume domain of confidence <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/> is the interior of the domain which frontier is the <img class="math" src="../../_images/math/6736630e294a512b93692952241280258f868eae.svg" alt="1-\alpha"/> quantile of <img class="math" src="../../_images/math/007c922d3728af255acfd18d1e9c360ae028d713.svg" alt="Y"/>. It can be determined with simulations of <img class="math" src="../../_images/math/007c922d3728af255acfd18d1e9c360ae028d713.svg" alt="Y"/>.</p>
 <p class="rubric">Examples</p>
 <p>Create a sample from a Normal distribution:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
@@ -1641,7 +1654,7 @@ p_i(b_i) &amp; = &amp; p_i(a_i)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/f1a7f0c62d01228b58d075cfb6eaf67879f567ab.svg" alt="\alpha \in [0,1]"/></span></dt>
+<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/9ed03f17c1b55daae57d91d26d45a165810381e5.svg" alt="\alpha \in [0,1]"/></span></dt>
 <dd><p class="first last">The confidence level.</p>
 </dd>
 </dl>
@@ -1649,10 +1662,10 @@ p_i(b_i) &amp; = &amp; p_i(a_i)
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>levelSet</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.LevelSet.html#openturns.LevelSet" title="openturns.LevelSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">LevelSet</span></code></a></span></dt>
-<dd><p class="first last">The minimum volume domain of measure <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>.</p>
+<dd><p class="first last">The minimum volume domain of measure <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/>.</p>
 </dd>
 <dt><strong>level</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The value <img class="math" src="../../_images/math/bcea4fce4d22418d4a92f42bf397a29ca521c1ef.svg" alt="p_{\alpha}"/> of the density function defining the frontier of the domain.</p>
+<dd><p class="first last">The value <img class="math" src="../../_images/math/9bda60879e51a6d3a9efa4d53abeb614992c71b8.svg" alt="p_{\alpha}"/> of the density function defining the frontier of the domain.</p>
 </dd>
 </dl>
 </td>
@@ -1704,7 +1717,7 @@ p_i(b_i) &amp; = &amp; p_i(a_i)
 <p class="rubric">Notes</p>
 <p>The probability density function is defined as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/71c4c7429f00761e865ef7aee66526fe6e92aa0e.svg" alt="f_{\vect{X}}(\vect{x}) = \frac{\partial^n F_{\vect{X}}(\vect{x})}
+<p><img src="../../_images/math/8a87824c8b5cb79490590e64debbe41887379ccd.svg" alt="f_{\vect{X}}(\vect{x}) = \frac{\partial^n F_{\vect{X}}(\vect{x})}
                               {\prod_{i=1}^n \partial x_i},
                          \quad \vect{x} \in \supp{\vect{X}}"/></p>
 </div></dd></dl>
@@ -1761,17 +1774,17 @@ parameters at input <cite>X</cite>.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>This computes the probability that the random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> lies in
-the hyper-rectangular region formed by the vectors <img class="math" src="../../_images/math/0a3bdb01c516a1448f9b7927705d92f333738050.svg" alt="\vect{a}"/> and
-<img class="math" src="../../_images/math/effc85d683f2edf5a7beaf90bd82504e7cee47bd.svg" alt="\vect{b}"/>:</p>
+<p>This computes the probability that the random vector <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/> lies in
+the hyper-rectangular region formed by the vectors <img class="math" src="../../_images/math/0c75782a40f97e84ce5d79ce725003e9a9d5af67.svg" alt="\vect{a}"/> and
+<img class="math" src="../../_images/math/f03012197dcd50ba31524fabd715413c2fb9d6e4.svg" alt="\vect{b}"/>:</p>
 <div class="math">
-<p><img src="../../_images/math/ddf098b8fe26d53663a30a519347bed0c459c1ec.svg" alt="\Prob{\bigcap\limits_{i=1}^n a_i &lt; X_i \leq b_i} =
+<p><img src="../../_images/math/37d604d8f3c54f10f081dbab68f0187da6d4a067.svg" alt="\Prob{\bigcap\limits_{i=1}^n a_i &lt; X_i \leq b_i} =
     \sum\limits_{\vect{c}} (-1)^{n(\vect{c})}
         F_{\vect{X}}\left(\vect{c}\right)"/></p>
-</div><p>where the sum runs over the <img class="math" src="../../_images/math/30e6bf2d828fc42bc8fe95a0a54dc0e599b4946b.svg" alt="2^n"/> vectors such that
-<img class="math" src="../../_images/math/94ba97ff5a7fa69c24a32fa30c8cab8e5aeb3407.svg" alt="\vect{c} = \Tr{(c_i, i = 1, \ldots, n)}"/> with <img class="math" src="../../_images/math/4adc78d6ffa35a21bb5e2e19972b6563dd21e42c.svg" alt="c_i \in [a_i, b_i]"/>,
-and <img class="math" src="../../_images/math/42b87fb74438b64911b2b1912f4302c3b26fb30f.svg" alt="n(\vect{c})"/> is the number of components in
-<img class="math" src="../../_images/math/01db3fd5fa27ca42524700776ec5d179126d1d0d.svg" alt="\vect{c}"/> such that <img class="math" src="../../_images/math/6c43448fac03add9ca87de06ce5a54ab63c86861.svg" alt="c_i = a_i"/>.</p>
+</div><p>where the sum runs over the <img class="math" src="../../_images/math/e081b22592ecc152638474a61bc6aa159125d2bf.svg" alt="2^n"/> vectors such that
+<img class="math" src="../../_images/math/b442c251def1a3840b2bc0f5ed15668a607c8b96.svg" alt="\vect{c} = \Tr{(c_i, i = 1, \ldots, n)}"/> with <img class="math" src="../../_images/math/35f7945dfbef8746200c13b9f1526fe9b6218a36.svg" alt="c_i \in [a_i, b_i]"/>,
+and <img class="math" src="../../_images/math/026532f243150af94fa400645c373b40fef324b6.svg" alt="n(\vect{c})"/> is the number of components in
+<img class="math" src="../../_images/math/d9148ae2c9911976794f3982dada7f2699718af3.svg" alt="\vect{c}"/> such that <img class="math" src="../../_images/math/a22ac8add7bda06e2615cb6f3616c298944909df.svg" alt="c_i = a_i"/>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1783,7 +1796,7 @@ and <img class="math" src="../../_images/math/42b87fb74438b64911b2b1912f4302c3b2
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/a93a24594a15b2b0f507d38bb1497e75ee7424f1.svg" alt="0 &lt; p &lt; 1"/></span></dt>
+<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/2955c371cd9864cb79705d34cb756f4f845e645d.svg" alt="0 &lt; p &lt; 1"/></span></dt>
 <dd><p class="first last">Quantile function input (a probability).</p>
 </dd>
 </dl>
@@ -1802,7 +1815,7 @@ and <img class="math" src="../../_images/math/42b87fb74438b64911b2b1912f4302c3b2
 <p>The quantile function is also known as the inverse cumulative distribution
 function:</p>
 <div class="math">
-<p><img src="../../_images/math/d25d992f8b335eec359dbd2316474bb2244dd533.svg" alt="Q_{\vect{X}}(p) = F_{\vect{X}}^{-1}(p),
+<p><img src="../../_images/math/449d5c04148f88fa209022203f4693e658289040.svg" alt="Q_{\vect{X}}(p) = F_{\vect{X}}^{-1}(p),
                   \quad p \in [0; 1]"/></p>
 </div></dd></dl>
 
@@ -1817,7 +1830,7 @@ distributions only).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>r2</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/21e410bbda299f9cd7767b17c5d35d2062d8b98b.svg" alt="0 \leq r^2"/></span></dt>
+<dt><strong>r2</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/3775a27e473fe9511af1cb824318bb2493e5a7aa.svg" alt="0 \leq r^2"/></span></dt>
 <dd><p class="first last">Squared radius.</p>
 </dd>
 </dl>
@@ -1836,7 +1849,7 @@ distributions only).</p>
 <p>This is the CDF of the sum of the squared independent, standard, identically
 distributed components:</p>
 <div class="math">
-<p><img src="../../_images/math/7dbfcf0ff50a0f7801595d7dc1236a17c491329d.svg" alt="R^2 = \sqrt{\sum\limits_{i=1}^n U_i^2}"/></p>
+<p><img src="../../_images/math/8b908fb2bdc508a0baa31e047593288294a4c3b7.svg" alt="R^2 = \sqrt{\sum\limits_{i=1}^n U_i^2}"/></p>
 </div></dd></dl>
 
 <dl class="method">
@@ -1848,7 +1861,7 @@ distributed components:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/a93a24594a15b2b0f507d38bb1497e75ee7424f1.svg" alt="0 &lt; p &lt; 1"/></span></dt>
+<dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/2955c371cd9864cb79705d34cb756f4f845e645d.svg" alt="0 &lt; p &lt; 1"/></span></dt>
 <dd><p class="first last">Quantile function input (a probability).</p>
 </dd>
 </dl>
@@ -1871,7 +1884,7 @@ distributed components:</p>
 <p>The quantile function is also known as the inverse cumulative distribution
 function:</p>
 <div class="math">
-<p><img src="../../_images/math/229911c6254e3984c0dc5b76e39b01523a4a4343.svg" alt="Q_X(p) = F_X^{-1}(p), \quad p \in [0; 1]"/></p>
+<p><img src="../../_images/math/56a38720c0abe98635f5fd32ee3daca3959af7b6.svg" alt="Q_X(p) = F_X^{-1}(p), \quad p \in [0; 1]"/></p>
 </div></dd></dl>
 
 <dl class="method">
@@ -1903,9 +1916,9 @@ function:</p>
 <p class="last"><a class="reference internal" href="#openturns.TruncatedDistribution.computeComplementaryCDF" title="openturns.TruncatedDistribution.computeComplementaryCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeComplementaryCDF</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>The survival function of the random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> is defined as follows:</p>
+<p>The survival function of the random vector <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/> is defined as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/2183e14219ef6a990ba85a07af2013b04d1dac31.svg" alt="S_{\vect{X}}(\vect{x}) = \Prob{\bigcap_{i=1}^d X_i &gt; x_i}
+<p><img src="../../_images/math/6b27d35517a718273a2133e87d347826cd51a855.svg" alt="S_{\vect{X}}(\vect{x}) = \Prob{\bigcap_{i=1}^d X_i &gt; x_i}
          \quad \forall \vect{x} \in \Rset^d"/></p>
 </div><div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -1923,7 +1936,7 @@ function:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/f1a7f0c62d01228b58d075cfb6eaf67879f567ab.svg" alt="\alpha \in [0,1]"/></span></dt>
+<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/9ed03f17c1b55daae57d91d26d45a165810381e5.svg" alt="\alpha \in [0,1]"/></span></dt>
 <dd><p class="first last">The confidence level.</p>
 </dd>
 <dt><strong>tail</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
@@ -1936,7 +1949,7 @@ Default value is <cite>False</cite>.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>confInterval</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt>
-<dd><p class="first last">The unilateral confidence interval of level <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>.</p>
+<dd><p class="first last">The unilateral confidence interval of level <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1944,11 +1957,11 @@ Default value is <cite>False</cite>.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/>.</p>
-<p>The left unilateral confidence interval <img class="math" src="../../_images/math/5d73952e4bd87964d26e6d2b73fee93f28c9efcf.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/085de5a5a5b77645297a498e37df7ce6dc0fd944.svg" alt="I^*_{\alpha} = ]-\infty, b_1] \times \dots \times ]-\infty, b_d]"/> where <img class="math" src="../../_images/math/ef69bb19775546feb4f57315d5d53fd541a1202a.svg" alt="b_i = F_i^{-1}(\beta)"/> for all <cite>i</cite> and which verifies <img class="math" src="../../_images/math/5632d45f78e2d21d3c3ab70316fe74d9d50294e1.svg" alt="\mu(I^*_{\alpha}) = \alpha"/>. 
-It means that <img class="math" src="../../_images/math/effc85d683f2edf5a7beaf90bd82504e7cee47bd.svg" alt="\vect{b}"/> is the quantile of level <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/> of the measure <img class="math" src="../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/>, with iso-quantile components.</p>
-<p>The right unilateral confidence interval <img class="math" src="../../_images/math/5d73952e4bd87964d26e6d2b73fee93f28c9efcf.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/ccc3676e67f07f651f3ca116eb9204ee37509428.svg" alt="I^*_{\alpha} = ]a_1; +\infty[ \times \dots \times ]a_d; +\infty["/> where <img class="math" src="../../_images/math/d77375736ccf8b241622591c0b17be3fad6eea87.svg" alt="a_i = F_i^{-1}(1-\beta)"/> for all <cite>i</cite> and which verifies <img class="math" src="../../_images/math/5632d45f78e2d21d3c3ab70316fe74d9d50294e1.svg" alt="\mu(I^*_{\alpha}) = \alpha"/>. 
-It means that <img class="math" src="../../_images/math/26939745a62ee49e39103e2ef3876295710b0797.svg" alt="S_{\mu}^{-1}(\vect{a}) = \alpha"/> with iso-quantile components, where <img class="math" src="../../_images/math/ed0f4f44ad04264406f65b2ff1e4ba30fad02877.svg" alt="S_{\mu}"/> is the survival function of the measure <img class="math" src="../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/>.</p>
+<p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/>.</p>
+<p>The left unilateral confidence interval <img class="math" src="../../_images/math/1e98ba05437b95da2976c8b8cca75acaa265ed60.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/f0fddbd8b6fa6f34596edf7c21b8f7032fae96fc.svg" alt="I^*_{\alpha} = ]-\infty, b_1] \times \dots \times ]-\infty, b_d]"/> where <img class="math" src="../../_images/math/51bf6d9367976d396da802fc50b657bf1acdc3de.svg" alt="b_i = F_i^{-1}(\beta)"/> for all <cite>i</cite> and which verifies <img class="math" src="../../_images/math/1d8d6ce4f55fc68f2e77f9555657a91ebf4f5fd1.svg" alt="\mu(I^*_{\alpha}) = \alpha"/>. 
+It means that <img class="math" src="../../_images/math/f03012197dcd50ba31524fabd715413c2fb9d6e4.svg" alt="\vect{b}"/> is the quantile of level <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/> of the measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/>, with iso-quantile components.</p>
+<p>The right unilateral confidence interval <img class="math" src="../../_images/math/1e98ba05437b95da2976c8b8cca75acaa265ed60.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/47abf9954c9ded8f979a686e47dd46265a1adaa9.svg" alt="I^*_{\alpha} = ]a_1; +\infty[ \times \dots \times ]a_d; +\infty["/> where <img class="math" src="../../_images/math/021db717fa902ef2dd5aaefefd5d91f973594c9a.svg" alt="a_i = F_i^{-1}(1-\beta)"/> for all <cite>i</cite> and which verifies <img class="math" src="../../_images/math/1d8d6ce4f55fc68f2e77f9555657a91ebf4f5fd1.svg" alt="\mu(I^*_{\alpha}) = \alpha"/>. 
+It means that <img class="math" src="../../_images/math/4a362bc56f4a0219f2358f1e2e3852b88b76cd66.svg" alt="S_{\mu}^{-1}(\vect{a}) = \alpha"/> with iso-quantile components, where <img class="math" src="../../_images/math/e67ec5d351c1afbf9198ab19b7d191864d2ea466.svg" alt="S_{\mu}"/> is the survival function of the measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/>.</p>
 <p class="rubric">Examples</p>
 <p>Create a sample from a Normal distribution:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
@@ -1981,7 +1994,7 @@ It means that <img class="math" src="../../_images/math/26939745a62ee49e39103e2e
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/f1a7f0c62d01228b58d075cfb6eaf67879f567ab.svg" alt="\alpha \in [0,1]"/></span></dt>
+<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/9ed03f17c1b55daae57d91d26d45a165810381e5.svg" alt="\alpha \in [0,1]"/></span></dt>
 <dd><p class="first last">The confidence level.</p>
 </dd>
 <dt><strong>tail</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
@@ -1994,10 +2007,10 @@ Default value is <cite>False</cite>.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>confInterval</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></span></dt>
-<dd><p class="first last">The unilateral confidence interval of level <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>.</p>
+<dd><p class="first last">The unilateral confidence interval of level <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/>.</p>
 </dd>
 <dt><strong>marginalProb</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The value <img class="math" src="../../_images/math/5a519ff21b7afd2a20b1dc119bfcd9e5ad50441f.svg" alt="\beta"/> which is the common marginal probability of each marginal interval.</p>
+<dd><p class="first last">The value <img class="math" src="../../_images/math/6cd04136b3bbd07d788c38ddbf25c2466dc04fe1.svg" alt="\beta"/> which is the common marginal probability of each marginal interval.</p>
 </dd>
 </dl>
 </td>
@@ -2085,7 +2098,7 @@ Default value is <cite>False</cite>.</p>
 Defaults uses the quantile associated to the probability level
 <cite>Distribution-QMin</cite> from the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </dd>
-<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, optional, <img class="math" src="../../_images/math/e65c741abbd936f803e7381bfd0902542a357d59.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
+<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, optional, <img class="math" src="../../_images/math/20976cc71c9c50ce41bea8c10752a861c7c20908.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
 <dd><p class="first last">The max-value of the mesh of the y-axis.
 Defaults uses the quantile associated to the probability level
 <cite>Distribution-QMax</cite> from the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
@@ -2096,10 +2109,10 @@ Defaults uses <cite>DistributionImplementation-DefaultPointNumber</cite> from th
 <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </dd>
 <dt><strong>lowerCorner</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, of dimension 2, optional</span></dt>
-<dd><p class="first last">The lower corner <img class="math" src="../../_images/math/c5e962e34868c66da70381f2728cf6007a2f606e.svg" alt="[x_{min}, y_{min}]"/>.</p>
+<dd><p class="first last">The lower corner <img class="math" src="../../_images/math/b3b96482bc1e6bd0e58a3bd2866acd59504446a8.svg" alt="[x_{min}, y_{min}]"/>.</p>
 </dd>
 <dt><strong>upperCorner</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, of dimension 2, optional</span></dt>
-<dd><p class="first last">The upper corner <img class="math" src="../../_images/math/8e031eb50547ab1abaff0081fe482510c1012a00.svg" alt="[x_{max}, y_{max}]"/>.</p>
+<dd><p class="first last">The upper corner <img class="math" src="../../_images/math/f09caa6b26dcfd3b4266284d727339f8d8ea7d39.svg" alt="[x_{max}, y_{max}]"/>.</p>
 </dd>
 <dt><strong>pointNbrInd</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a>, of dimension 2</span></dt>
 <dd><p class="first last">Number of points that is used for meshing each axis.</p>
@@ -2161,7 +2174,7 @@ Defaults uses <cite>DistributionImplementation-DefaultPointNumber</cite> from th
 Defaults uses the quantile associated to the probability level
 <cite>Distribution-QMin</cite> from the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </dd>
-<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, optional, <img class="math" src="../../_images/math/e65c741abbd936f803e7381bfd0902542a357d59.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
+<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, optional, <img class="math" src="../../_images/math/20976cc71c9c50ce41bea8c10752a861c7c20908.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
 <dd><p class="first last">The max-value of the mesh of the y-axis.
 Defaults uses the quantile associated to the probability level
 <cite>Distribution-QMax</cite> from the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
@@ -2172,10 +2185,10 @@ Defaults uses <cite>DistributionImplementation-DefaultPointNumber</cite> from th
 <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </dd>
 <dt><strong>lowerCorner</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, of dimension 2, optional</span></dt>
-<dd><p class="first last">The lower corner <img class="math" src="../../_images/math/c5e962e34868c66da70381f2728cf6007a2f606e.svg" alt="[x_{min}, y_{min}]"/>.</p>
+<dd><p class="first last">The lower corner <img class="math" src="../../_images/math/b3b96482bc1e6bd0e58a3bd2866acd59504446a8.svg" alt="[x_{min}, y_{min}]"/>.</p>
 </dd>
 <dt><strong>upperCorner</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, of dimension 2, optional</span></dt>
-<dd><p class="first last">The upper corner <img class="math" src="../../_images/math/8e031eb50547ab1abaff0081fe482510c1012a00.svg" alt="[x_{max}, y_{max}]"/>.</p>
+<dd><p class="first last">The upper corner <img class="math" src="../../_images/math/f09caa6b26dcfd3b4266284d727339f8d8ea7d39.svg" alt="[x_{max}, y_{max}]"/>.</p>
 </dd>
 <dt><strong>pointNbrInd</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a>, of dimension 2</span></dt>
 <dd><p class="first last">Number of points that is used for meshing each axis.</p>
@@ -2225,13 +2238,13 @@ Defaults uses <cite>DistributionImplementation-DefaultPointNumber</cite> from th
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/b29e8595a8a29d38f50f3aa9afbe10495ed146d5.svg" alt="1 \leq i \leq n"/></span></dt>
+<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/4aff7b6d619251ebaae9db6117f0de304fc0cf79.svg" alt="1 \leq i \leq n"/></span></dt>
 <dd><p class="first last">The index of the margin of interest.</p>
 </dd>
 <dt><strong>x_min</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">The starting value that is used for meshing the x-axis.</p>
 </dd>
-<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/e65c741abbd936f803e7381bfd0902542a357d59.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
+<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/20976cc71c9c50ce41bea8c10752a861c7c20908.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
 <dd><p class="first last">The ending value that is used for meshing the x-axis.</p>
 </dd>
 <dt><strong>n_points</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
@@ -2273,13 +2286,13 @@ Defaults uses <cite>DistributionImplementation-DefaultPointNumber</cite> from th
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/b29e8595a8a29d38f50f3aa9afbe10495ed146d5.svg" alt="1 \leq i \leq n"/></span></dt>
+<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/4aff7b6d619251ebaae9db6117f0de304fc0cf79.svg" alt="1 \leq i \leq n"/></span></dt>
 <dd><p class="first last">The index of the margin of interest.</p>
 </dd>
 <dt><strong>x_min</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">The starting value that is used for meshing the x-axis.</p>
 </dd>
-<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/e65c741abbd936f803e7381bfd0902542a357d59.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
+<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/20976cc71c9c50ce41bea8c10752a861c7c20908.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
 <dd><p class="first last">The ending value that is used for meshing the x-axis.</p>
 </dd>
 <dt><strong>n_points</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
@@ -2321,13 +2334,13 @@ Defaults uses <cite>DistributionImplementation-DefaultPointNumber</cite> from th
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/b29e8595a8a29d38f50f3aa9afbe10495ed146d5.svg" alt="1 \leq i \leq n"/></span></dt>
+<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/4aff7b6d619251ebaae9db6117f0de304fc0cf79.svg" alt="1 \leq i \leq n"/></span></dt>
 <dd><p class="first last">The index of the margin of interest.</p>
 </dd>
 <dt><strong>x_min</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">The starting value that is used for meshing the x-axis.</p>
 </dd>
-<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/e65c741abbd936f803e7381bfd0902542a357d59.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
+<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/20976cc71c9c50ce41bea8c10752a861c7c20908.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
 <dd><p class="first last">The ending value that is used for meshing the x-axis.</p>
 </dd>
 <dt><strong>n_points</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
@@ -2369,16 +2382,16 @@ Defaults uses <cite>DistributionImplementation-DefaultPointNumber</cite> from th
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/b29e8595a8a29d38f50f3aa9afbe10495ed146d5.svg" alt="1 \leq i \leq n"/></span></dt>
+<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/4aff7b6d619251ebaae9db6117f0de304fc0cf79.svg" alt="1 \leq i \leq n"/></span></dt>
 <dd><p class="first last">The index of the first margin of interest.</p>
 </dd>
-<dt><strong>j</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/e2174fc697b4a3c5ae168e99242d649f1d56910d.svg" alt="1 \leq i \neq j \leq n"/></span></dt>
+<dt><strong>j</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/dd9b15717937d9d576855984028d962c5cb2d592.svg" alt="1 \leq i \neq j \leq n"/></span></dt>
 <dd><p class="first last">The index of the second margin of interest.</p>
 </dd>
 <dt><strong>x_min</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of 2 floats</span></dt>
 <dd><p class="first last">The starting values that are used for meshing the x- and y- axes.</p>
 </dd>
-<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of 2 floats, <img class="math" src="../../_images/math/e65c741abbd936f803e7381bfd0902542a357d59.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
+<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of 2 floats, <img class="math" src="../../_images/math/20976cc71c9c50ce41bea8c10752a861c7c20908.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
 <dd><p class="first last">The ending values that are used for meshing the x- and y- axes.</p>
 </dd>
 <dt><strong>n_points</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of 2 ints</span></dt>
@@ -2421,16 +2434,16 @@ margins.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/b29e8595a8a29d38f50f3aa9afbe10495ed146d5.svg" alt="1 \leq i \leq n"/></span></dt>
+<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/4aff7b6d619251ebaae9db6117f0de304fc0cf79.svg" alt="1 \leq i \leq n"/></span></dt>
 <dd><p class="first last">The index of the first margin of interest.</p>
 </dd>
-<dt><strong>j</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/e2174fc697b4a3c5ae168e99242d649f1d56910d.svg" alt="1 \leq i \neq j \leq n"/></span></dt>
+<dt><strong>j</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/dd9b15717937d9d576855984028d962c5cb2d592.svg" alt="1 \leq i \neq j \leq n"/></span></dt>
 <dd><p class="first last">The index of the second margin of interest.</p>
 </dd>
 <dt><strong>x_min</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of 2 floats</span></dt>
 <dd><p class="first last">The starting values that are used for meshing the x- and y- axes.</p>
 </dd>
-<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of 2 floats, <img class="math" src="../../_images/math/e65c741abbd936f803e7381bfd0902542a357d59.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
+<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of 2 floats, <img class="math" src="../../_images/math/20976cc71c9c50ce41bea8c10752a861c7c20908.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
 <dd><p class="first last">The ending values that are used for meshing the x- and y- axes.</p>
 </dd>
 <dt><strong>n_points</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of 2 ints</span></dt>
@@ -2473,16 +2486,16 @@ margins.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/b29e8595a8a29d38f50f3aa9afbe10495ed146d5.svg" alt="1 \leq i \leq n"/></span></dt>
+<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/4aff7b6d619251ebaae9db6117f0de304fc0cf79.svg" alt="1 \leq i \leq n"/></span></dt>
 <dd><p class="first last">The index of the first margin of interest.</p>
 </dd>
-<dt><strong>j</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/e2174fc697b4a3c5ae168e99242d649f1d56910d.svg" alt="1 \leq i \neq j \leq n"/></span></dt>
+<dt><strong>j</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/dd9b15717937d9d576855984028d962c5cb2d592.svg" alt="1 \leq i \neq j \leq n"/></span></dt>
 <dd><p class="first last">The index of the second margin of interest.</p>
 </dd>
 <dt><strong>x_min</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of 2 floats</span></dt>
 <dd><p class="first last">The starting values that are used for meshing the x- and y- axes.</p>
 </dd>
-<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of 2 floats, <img class="math" src="../../_images/math/e65c741abbd936f803e7381bfd0902542a357d59.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
+<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of 2 floats, <img class="math" src="../../_images/math/20976cc71c9c50ce41bea8c10752a861c7c20908.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
 <dd><p class="first last">The ending values that are used for meshing the x- and y- axes.</p>
 </dd>
 <dt><strong>n_points</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of 2 ints</span></dt>
@@ -2537,7 +2550,7 @@ margins.</p>
 Defaults uses the quantile associated to the probability level
 <cite>Distribution-QMin</cite> from the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </dd>
-<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, optional, <img class="math" src="../../_images/math/e65c741abbd936f803e7381bfd0902542a357d59.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
+<dt><strong>x_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, optional, <img class="math" src="../../_images/math/20976cc71c9c50ce41bea8c10752a861c7c20908.svg" alt="x_{\max} &gt; x_{\min}"/></span></dt>
 <dd><p class="first last">The max-value of the mesh of the y-axis.
 Defaults uses the quantile associated to the probability level
 <cite>Distribution-QMax</cite> from the <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
@@ -2548,10 +2561,10 @@ Defaults uses <cite>DistributionImplementation-DefaultPointNumber</cite> from th
 <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </dd>
 <dt><strong>lowerCorner</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, of dimension 2, optional</span></dt>
-<dd><p class="first last">The lower corner <img class="math" src="../../_images/math/c5e962e34868c66da70381f2728cf6007a2f606e.svg" alt="[x_{min}, y_{min}]"/>.</p>
+<dd><p class="first last">The lower corner <img class="math" src="../../_images/math/b3b96482bc1e6bd0e58a3bd2866acd59504446a8.svg" alt="[x_{min}, y_{min}]"/>.</p>
 </dd>
 <dt><strong>upperCorner</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, of dimension 2, optional</span></dt>
-<dd><p class="first last">The upper corner <img class="math" src="../../_images/math/8e031eb50547ab1abaff0081fe482510c1012a00.svg" alt="[x_{max}, y_{max}]"/>.</p>
+<dd><p class="first last">The upper corner <img class="math" src="../../_images/math/f09caa6b26dcfd3b4266284d727339f8d8ea7d39.svg" alt="[x_{max}, y_{max}]"/>.</p>
 </dd>
 <dt><strong>pointNbrInd</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Indices.html#openturns.Indices" title="openturns.Indices"><code class="xref py py-class docutils literal notranslate"><span class="pre">Indices</span></code></a>, of dimension 2</span></dt>
 <dd><p class="first last">Number of points that is used for meshing each axis.</p>
@@ -2601,10 +2614,10 @@ Defaults uses <cite>DistributionImplementation-DefaultPointNumber</cite> from th
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>q_min</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, in <img class="math" src="../../_images/math/ab3c2125ef32c048108429d54869403bb86f81e0.svg" alt="[0,1]"/></span></dt>
+<dt><strong>q_min</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, in <img class="math" src="../../_images/math/08769b4acee704b2c98db6232e2baf02be937a91.svg" alt="[0,1]"/></span></dt>
 <dd><p class="first last">The min value of the mesh of the x-axis.</p>
 </dd>
-<dt><strong>q_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, in <img class="math" src="../../_images/math/ab3c2125ef32c048108429d54869403bb86f81e0.svg" alt="[0,1]"/></span></dt>
+<dt><strong>q_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, in <img class="math" src="../../_images/math/08769b4acee704b2c98db6232e2baf02be937a91.svg" alt="[0,1]"/></span></dt>
 <dd><p class="first last">The max value of the mesh of the x-axis.</p>
 </dd>
 <dt><strong>n_points</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
@@ -2630,9 +2643,9 @@ Defaults uses <cite>DistributionImplementation-DefaultPointNumber</cite> from th
 </div>
 <p class="rubric">Notes</p>
 <p>This is implemented for univariate and bivariate distributions only.
-In the case of bivariate distributions, defined by its CDF <img class="math" src="../../_images/math/08731955d44101ca9a6eca15f1652d7db4138d8e.svg" alt="F"/> and its marginals <img class="math" src="../../_images/math/9d89222499493145314346ffff910234e91c5f18.svg" alt="(F_1, F_2)"/>, the quantile of order <img class="math" src="../../_images/math/d3ff3f8dc62e7ced97541233ffedabb887bc5bb9.svg" alt="q"/> is the point <img class="math" src="../../_images/math/4f41daeb93b938ce9eb08051fb07966e164586e2.svg" alt="(F_1(u),F_2(u))"/> defined by</p>
+In the case of bivariate distributions, defined by its CDF <img class="math" src="../../_images/math/89ad8f2e375cb588588660b16852cce0a4a98a01.svg" alt="F"/> and its marginals <img class="math" src="../../_images/math/f3468c47dd791397ea2efb8fe65b07e764121f14.svg" alt="(F_1, F_2)"/>, the quantile of order <img class="math" src="../../_images/math/b755e5095e35304df53eb04c4d02fba5cd990320.svg" alt="q"/> is the point <img class="math" src="../../_images/math/f96b3eafb024591727582d482ba6bb1c50c67904.svg" alt="(F_1(u),F_2(u))"/> defined by</p>
 <div class="math">
-<p><img src="../../_images/math/c3fcbe8c4320f936f83885af2c9eb0e5e613c66a.svg" alt="F(F_1(u), F_2(u)) = q"/></p>
+<p><img src="../../_images/math/0d5582560d3849f669d979579c63d1f6df2550be.svg" alt="F(F_1(u), F_2(u)) = q"/></p>
 </div><p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">openturns.viewer</span> <span class="k">import</span> <span class="n">View</span>
@@ -2722,7 +2735,7 @@ In the case of bivariate distributions, defined by its CDF <img class="math" src
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Componentwise centered moment of order <img class="math" src="../../_images/math/25ccf3f81465c5f61677ee2819c658ad49ef800d.svg" alt="k"/>.</p>
+<dd><p class="first last">Componentwise centered moment of order <img class="math" src="../../_images/math/a3d2afe19489776a703d7832f19a676d23032d92.svg" alt="k"/>.</p>
 </dd>
 </dl>
 </td>
@@ -2736,7 +2749,7 @@ In the case of bivariate distributions, defined by its CDF <img class="math" src
 <p class="rubric">Notes</p>
 <p>Centered moments are centered with respect to the first-order moment:</p>
 <div class="math">
-<p><img src="../../_images/math/ad07d094eff5a3bf87b05ffe2a90a29e8f55da96.svg" alt="\vect{m}^{(k)}_0 = \Tr{\left(\Expect{\left(X_i - \mu_i\right)^k},
+<p><img src="../../_images/math/ef113bc5e8dd630ef264b01b63c956a8da060683.svg" alt="\vect{m}^{(k)}_0 = \Tr{\left(\Expect{\left(X_i - \mu_i\right)^k},
                              \quad i = 1, \ldots, n\right)}"/></p>
 </div></dd></dl>
 
@@ -2831,7 +2844,7 @@ In the case of bivariate distributions, defined by its CDF <img class="math" src
 <p class="rubric">Notes</p>
 <p>The covariance is the second-order centered moment. It is defined as:</p>
 <div class="math">
-<p><img src="../../_images/math/05c05184f6a29cd4b2afa9989762772cfeb13c57.svg" alt="\mat{\Sigma} &amp; = \Cov{\vect{X}} \\
+<p><img src="../../_images/math/d52ff0e20e15ba2d25b75fb49558d8d005636337.svg" alt="\mat{\Sigma} &amp; = \Cov{\vect{X}} \\
              &amp; = \Expect{\left(\vect{X} - \vect{\mu}\right)
                          \Tr{\left(\vect{X} - \vect{\mu}\right)}}"/></p>
 </div></dd></dl>
@@ -3004,7 +3017,7 @@ Only available for 1-d distributions.</p>
 <p class="rubric">Notes</p>
 <p>The inverse iso-probabilistic transformation is defined as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/46ebbccd9f4e42be07d8f78c785c9b441fe1af27.svg" alt="T^{-1}: \left|\begin{array}{rcl}
+<p><img src="../../_images/math/15f14683ca882c36ef27a5bc4848c3ee4873fae4.svg" alt="T^{-1}: \left|\begin{array}{rcl}
             \Rset^n &amp; \rightarrow &amp; \supp{\vect{X}} \\
             \vect{u} &amp; \mapsto &amp; \vect{x}
         \end{array}\right."/></p>
@@ -3035,25 +3048,25 @@ Only available for 1-d distributions.</p>
 <p class="rubric">Notes</p>
 <p>The iso-probabilistic transformation is defined as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/da959b8f39ab4e7fbb816841e5382fee474e316e.svg" alt="T: \left|\begin{array}{rcl}
+<p><img src="../../_images/math/51d093ec2a4dd92399949428cbd6ea094cd77292.svg" alt="T: \left|\begin{array}{rcl}
         \supp{\vect{X}} &amp; \rightarrow &amp; \Rset^n \\
         \vect{x} &amp; \mapsto &amp; \vect{u}
    \end{array}\right."/></p>
 </div><p><strong>An</strong> iso-probabilistic transformation is a <em>diffeomorphism</em> <a class="footnote-reference" href="#diff" id="id1">[1]</a> from
-<img class="math" src="../../_images/math/22d2eb8e96b9933bc0d80c6ddeb762de40c72310.svg" alt="\supp{\vect{X}}"/> to <img class="math" src="../../_images/math/9c4f3a98c8225b7a8394637f1b9511f5eb9d15bb.svg" alt="\Rset^d"/> that maps realizations
-<img class="math" src="../../_images/math/a3a6f1956f635861141cf384d3945161297b4301.svg" alt="\vect{x}"/> of a random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> into realizations
-<img class="math" src="../../_images/math/2c1c23708420501de3642731a286d601c8f7b498.svg" alt="\vect{y}"/> of another random vector <img class="math" src="../../_images/math/1ca0e315ae4eaf246041889d6a7ed57680d05c35.svg" alt="\vect{Y}"/> while
+<img class="math" src="../../_images/math/537347e60d0e34fd8e8c46cc32241dbf5104b88f.svg" alt="\supp{\vect{X}}"/> to <img class="math" src="../../_images/math/c09c205cbba607b4d5951cf884dd1d369e9d0be2.svg" alt="\Rset^d"/> that maps realizations
+<img class="math" src="../../_images/math/fbb3eda62de652737a946e0ab194aac246375d90.svg" alt="\vect{x}"/> of a random vector <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/> into realizations
+<img class="math" src="../../_images/math/140e94d6ec46b27903fa6aa10e72094e93e0d547.svg" alt="\vect{y}"/> of another random vector <img class="math" src="../../_images/math/08e2dd88c947c17551cdad4317eadfbe6755e04d.svg" alt="\vect{Y}"/> while
 preserving probabilities. It is hence defined so that it satisfies:</p>
 <div class="math">
-<p><img src="../../_images/math/d9db725963bd416adb701301e2828c2a8dac6c10.svg" alt="\begin{eqnarray*}
+<p><img src="../../_images/math/30c4970f1735f29eaee194feb6355ee84f076483.svg" alt="\begin{eqnarray*}
     \Prob{\bigcap_{i=1}^d X_i \leq x_i}
         &amp; = &amp; \Prob{\bigcap_{i=1}^d Y_i \leq y_i} \\
     F_{\vect{X}}(\vect{x})
         &amp; = &amp; F_{\vect{Y}}(\vect{y})
 \end{eqnarray*}"/></p>
 </div><p><strong>The present</strong> implementation of the iso-probabilistic transformation maps
-realizations <img class="math" src="../../_images/math/a3a6f1956f635861141cf384d3945161297b4301.svg" alt="\vect{x}"/> into realizations <img class="math" src="../../_images/math/14e29881fc717aa74f64a77d8948ffef153658dd.svg" alt="\vect{u}"/> of a
-random vector <img class="math" src="../../_images/math/c25b9666adfa3b52dd545a352b71b0ba515cd60b.svg" alt="\vect{U}"/> with <em>spherical distribution</em> <a class="footnote-reference" href="#spherical" id="id2">[2]</a>.
+realizations <img class="math" src="../../_images/math/fbb3eda62de652737a946e0ab194aac246375d90.svg" alt="\vect{x}"/> into realizations <img class="math" src="../../_images/math/2f36983e07f239ba8bfdb37cd22d6847851d466d.svg" alt="\vect{u}"/> of a
+random vector <img class="math" src="../../_images/math/4fd2ae0159da70f319ca484590adab2791431f52.svg" alt="\vect{U}"/> with <em>spherical distribution</em> <a class="footnote-reference" href="#spherical" id="id2">[2]</a>.
 To be more specific:</p>
 <blockquote>
 <div><ul class="simple">
@@ -3071,8 +3084,8 @@ transformation</strong> <a class="reference internal" href="../../bibliography.h
 <table class="docutils footnote" frame="void" id="diff" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>A differentiable map <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> is called a <em>diffeomorphism</em> if it
-is a bijection and its inverse <img class="math" src="../../_images/math/ec9a60eeef89f0534977cda5f244bdd9ea55b7e2.svg" alt="f^{-1}"/> is differentiable as well.
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>A differentiable map <img class="math" src="../../_images/math/bf8af465e21be611f4cc50154e2fa28e5455230b.svg" alt="f"/> is called a <em>diffeomorphism</em> if it
+is a bijection and its inverse <img class="math" src="../../_images/math/dfb3f01c45a7a3c0c97d77394a91daf99609219d.svg" alt="f^{-1}"/> is differentiable as well.
 Hence, the iso-probabilistic transformation implements a gradient (and
 even a Hessian).</td></tr>
 </tbody>
@@ -3081,10 +3094,10 @@ even a Hessian).</td></tr>
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><p class="first">A distribution is said to be <em>spherical</em> if is invariant by
-rotation. Mathematically, <img class="math" src="../../_images/math/c25b9666adfa3b52dd545a352b71b0ba515cd60b.svg" alt="\vect{U}"/> has a spherical distribution
+rotation. Mathematically, <img class="math" src="../../_images/math/4fd2ae0159da70f319ca484590adab2791431f52.svg" alt="\vect{U}"/> has a spherical distribution
 if:</p>
 <div class="last math">
-<p><img src="../../_images/math/9c395956f0e008ad55e8854fa518890e046f9314.svg" alt="\mat{R}\,\vect{U} \sim \vect{U},
+<p><img src="../../_images/math/e9f9e78036b699ebb78ea5b7901c06891f2fc47f.svg" alt="\mat{R}\,\vect{U} \sim \vect{U},
 \quad \forall \mat{R} \in \cS\cP_n(\Rset)"/></p>
 </div></td></tr>
 </tbody>
@@ -3115,7 +3128,7 @@ if:</p>
 <p class="rubric">Notes</p>
 <p>The Kendall coefficients matrix is defined as:</p>
 <div class="math">
-<p><img src="../../_images/math/2b04c6acc5f3493da80a88a1d8fc115753f20ed6.svg" alt="\mat{\tau} = \Big[&amp; \Prob{X_i &lt; x_i \cap X_j &lt; x_j
+<p><img src="../../_images/math/6e7ca77a0ee687b558d80f4daa92d9169d4eeb5f.svg" alt="\mat{\tau} = \Big[&amp; \Prob{X_i &lt; x_i \cap X_j &lt; x_j
                           \cup
                           X_i &gt; x_i \cap X_j &gt; x_j} \\
                   &amp; - \Prob{X_i &lt; x_i \cap X_j &gt; x_j
@@ -3144,7 +3157,7 @@ if:</p>
 <p class="rubric">Notes</p>
 <p>The kurtosis is the fourth-order centered moment standardized by the standard deviation:</p>
 <div class="math">
-<p><img src="../../_images/math/7bd1f3746d03153b423852c67c7a2ad969e7d984.svg" alt="\vect{\kappa} = \Tr{\left(\Expect{\left(\frac{X_i - \mu_i}
+<p><img src="../../_images/math/d89c937de5808d2043fe598dd7711ed83faa560f.svg" alt="\vect{\kappa} = \Tr{\left(\Expect{\left(\frac{X_i - \mu_i}
                                              {\sigma_i}\right)^4},
                           \quad i = 1, \ldots, n\right)}"/></p>
 </div></dd></dl>
@@ -3164,7 +3177,7 @@ if:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or list of ints, <img class="math" src="../../_images/math/b29e8595a8a29d38f50f3aa9afbe10495ed146d5.svg" alt="1 \leq i \leq n"/></span></dt>
+<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or list of ints, <img class="math" src="../../_images/math/4aff7b6d619251ebaae9db6117f0de304fc0cf79.svg" alt="1 \leq i \leq n"/></span></dt>
 <dd><p class="first last">Component(s) indice(s).</p>
 </dd>
 </dl>
@@ -3201,7 +3214,7 @@ if:</p>
 <p class="rubric">Notes</p>
 <p>The mean is the first-order moment:</p>
 <div class="math">
-<p><img src="../../_images/math/e9e262f15f982b2460bfe7d56d61d5583c1a0b69.svg" alt="\vect{\mu} = \Tr{\left(\Expect{X_i}, \quad i = 1, \ldots, n\right)}"/></p>
+<p><img src="../../_images/math/4857dd77e6eda3dc451c171f0a97b47bb25ba822.svg" alt="\vect{\mu} = \Tr{\left(\Expect{X_i}, \quad i = 1, \ldots, n\right)}"/></p>
 </div></dd></dl>
 
 <dl class="method">
@@ -3229,9 +3242,9 @@ if:</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The componentwise moment of order <img class="math" src="../../_images/math/25ccf3f81465c5f61677ee2819c658ad49ef800d.svg" alt="k"/> is defined as:</p>
+<p>The componentwise moment of order <img class="math" src="../../_images/math/a3d2afe19489776a703d7832f19a676d23032d92.svg" alt="k"/> is defined as:</p>
 <div class="math">
-<p><img src="../../_images/math/185822c1bfd5a31ca21eadaf9db816ff668fe7e7.svg" alt="\vect{m}^{(k)} = \Tr{\left(\Expect{X_i^k}, \quad i = 1, \ldots, n\right)}"/></p>
+<p><img src="../../_images/math/8d2cd69da3cd216fcabf9230af15148e83ab1be1.svg" alt="\vect{m}^{(k)} = \Tr{\left(\Expect{X_i^k}, \quad i = 1, \ldots, n\right)}"/></p>
 </div></dd></dl>
 
 <dl class="method">
@@ -3376,7 +3389,7 @@ if:</p>
 <p class="rubric">Notes</p>
 <p>Pearson’s correlation is defined as the normalized covariance matrix:</p>
 <div class="math">
-<p><img src="../../_images/math/fbf85fe12356104dee675b2c54a59ea476398993.svg" alt="\mat{\rho} &amp; = \left[\frac{\Cov{X_i, X_j}}{\sqrt{\Var{X_i}\Var{X_j}}},
+<p><img src="../../_images/math/6e02bc52c55793de8d369e80328b2f7c0c219ced.svg" alt="\mat{\rho} &amp; = \left[\frac{\Cov{X_i, X_j}}{\sqrt{\Var{X_i}\Var{X_j}}},
                      \quad i,j = 1, \ldots, n\right] \\
            &amp; = \left[\frac{\Sigma_{i,j}}{\sqrt{\Sigma_{i,i}\Sigma_{j,j}}},
                      \quad i,j = 1, \ldots, n\right]"/></p>
@@ -3496,10 +3509,10 @@ rounded to zero in double precision.</p>
 <p class="last"><a class="reference internal" href="#openturns.TruncatedDistribution.computePDF" title="openturns.TruncatedDistribution.computePDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computePDF</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>The roughness of the distribution is defined as the <img class="math" src="../../_images/math/4fd43b808c8fad8ccd1945c47cff1a209f4d6c53.svg" alt="\cL^2"/>-norm of its
+<p>The roughness of the distribution is defined as the <img class="math" src="../../_images/math/c5a9a33d2b874f9eaf9ad8eeea1c9fb2fb0c16f5.svg" alt="\cL^2"/>-norm of its
 PDF:</p>
 <div class="math">
-<p><img src="../../_images/math/7c985e3a8416a25218979116fd137619d678b504.svg" alt="r = \int_{\supp{\vect{X}}} f_{\vect{X}}(\vect{x})^2 \di{\vect{x}}"/></p>
+<p><img src="../../_images/math/c1543f2f349679c54b325fe7ffa3c2e11e4ecca3.svg" alt="r = \int_{\supp{\vect{X}}} f_{\vect{X}}(\vect{x})^2 \di{\vect{x}}"/></p>
 </div></dd></dl>
 
 <dl class="method">
@@ -3596,7 +3609,7 @@ PDF:</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Componentwise centered moment of order <img class="math" src="../../_images/math/25ccf3f81465c5f61677ee2819c658ad49ef800d.svg" alt="k"/>.</p>
+<dd><p class="first last">Componentwise centered moment of order <img class="math" src="../../_images/math/a3d2afe19489776a703d7832f19a676d23032d92.svg" alt="k"/>.</p>
 </dd>
 </dl>
 </td>
@@ -3610,7 +3623,7 @@ PDF:</p>
 <p class="rubric">Notes</p>
 <p>The moments are centered with respect to the given shift :math:<cite>vect{s}</cite>:</p>
 <div class="math">
-<p><img src="../../_images/math/8e7a544d7e95fce87df72fb810f7de3c7c878ac0.svg" alt="\vect{m}^{(k)}_0 = \Tr{\left(\Expect{\left(X_i - s_i\right)^k},
+<p><img src="../../_images/math/d752f7f1b294534fe001463993c6f0e8728d6125.svg" alt="\vect{m}^{(k)}_0 = \Tr{\left(\Expect{\left(X_i - s_i\right)^k},
                              \quad i = 1, \ldots, n\right)}"/></p>
 </div></dd></dl>
 
@@ -3654,7 +3667,7 @@ PDF:</p>
 <p class="rubric">Notes</p>
 <p>The skewness is the third-order centered moment standardized by the standard deviation:</p>
 <div class="math">
-<p><img src="../../_images/math/8e6c63d041b8b38cd9f4bdef3e0971bad117fd10.svg" alt="\vect{\delta} = \Tr{\left(\Expect{\left(\frac{X_i - \mu_i}
+<p><img src="../../_images/math/0bf52f7d9c3a9bf0cd5920c50eabcab753c3c58b.svg" alt="\vect{\delta} = \Tr{\left(\Expect{\left(\frac{X_i - \mu_i}
                                              {\sigma_i}\right)^3},
                           \quad i = 1, \ldots, n\right)}"/></p>
 </div></dd></dl>
@@ -3684,7 +3697,7 @@ PDF:</p>
 <p>Spearman’s (rank) correlation is defined as the normalized covariance matrix
 of the copula (ie that of the uniform margins):</p>
 <div class="math">
-<p><img src="../../_images/math/a4391435993af8b806f0b22914b813f9ecccf0ba.svg" alt="\mat{\rho_S} = \left[\frac{\Cov{F_{X_i}(X_i), F_{X_j}(X_j)}}
+<p><img src="../../_images/math/d5c8a6767b829808b95c1b1c895ff455eb3d57ad.svg" alt="\mat{\rho_S} = \left[\frac{\Cov{F_{X_i}(X_i), F_{X_j}(X_j)}}
                           {\sqrt{\Var{F_{X_i}(X_i)} \Var{F_{X_j}(X_j)}}},
                      \quad i,j = 1, \ldots, n\right]"/></p>
 </div></dd></dl>
@@ -3790,7 +3803,7 @@ transformation.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The standard representative distribution is defined on a distribution by distribution basis, most of the time by scaling the distribution with bounded support to <img class="math" src="../../_images/math/ab3c2125ef32c048108429d54869403bb86f81e0.svg" alt="[0,1]"/> or by standardizing (ie zero mean, unit variance) the distributions with unbounded support. It is the member of the family for which orthonormal polynomials will be built using generic algorithms of orthonormalization.</p>
+<p>The standard representative distribution is defined on a distribution by distribution basis, most of the time by scaling the distribution with bounded support to <img class="math" src="../../_images/math/08769b4acee704b2c98db6232e2baf02be937a91.svg" alt="[0,1]"/> or by standardizing (ie zero mean, unit variance) the distributions with unbounded support. It is the member of the family for which orthonormal polynomials will be built using generic algorithms of orthonormalization.</p>
 </dd></dl>
 
 <dl class="method">
@@ -3822,7 +3835,7 @@ transformation.</p>
 <p class="last"><a class="reference internal" href="#openturns.TruncatedDistribution.getRange" title="openturns.TruncatedDistribution.getRange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRange</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>The mathematical support <img class="math" src="../../_images/math/22d2eb8e96b9933bc0d80c6ddeb762de40c72310.svg" alt="\supp{\vect{X}}"/> of the discrete part of a distribution is the collection of points with nonzero probability.</p>
+<p>The mathematical support <img class="math" src="../../_images/math/537347e60d0e34fd8e8c46cc32241dbf5104b88f.svg" alt="\supp{\vect{X}}"/> of the discrete part of a distribution is the collection of points with nonzero probability.</p>
 <p>This is yet implemented for discrete distributions only.</p>
 </dd></dl>
 
@@ -3835,11 +3848,11 @@ transformation.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>threshold</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/91541d6fb1b07c85dfce299ac6b4ac42bb94e2fd.svg" alt="\tau \in [0, 1]"/></span></dt>
+<dt><strong>threshold</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/b9c1451147f463a60e55f85e5b8d01ee3751dca3.svg" alt="\tau \in [0, 1]"/></span></dt>
 <dd><p class="first">This threshold is used when generating an evaluation of the distribution.
-We note <img class="math" src="../../_images/math/08731955d44101ca9a6eca15f1652d7db4138d8e.svg" alt="F"/> the CDF of the non truncated distribution:</p>
-<p>If <img class="math" src="../../_images/math/3be2667d0ee511f1d3763ef64434748387328a5e.svg" alt="F(upperBound)-F(lowerBound)&lt;\tau"/>: a CDF inversion is performed.</p>
-<p class="last">If <img class="math" src="../../_images/math/b392a960f654de01d31715ec487cf981fc7ad101.svg" alt="F(upperBound)-F(lowerBound)&gt;\tau"/>: rejection.</p>
+We note <img class="math" src="../../_images/math/89ad8f2e375cb588588660b16852cce0a4a98a01.svg" alt="F"/> the CDF of the non truncated distribution:</p>
+<p>If <img class="math" src="../../_images/math/a26a642e1008fd75cd99801014f59e5857ff07e6.svg" alt="F(upperBound)-F(lowerBound)&lt;\tau"/>: a CDF inversion is performed.</p>
+<p class="last">If <img class="math" src="../../_images/math/a37397edefd3cdfa5ab9e579983cf298a1400e30.svg" alt="F(upperBound)-F(lowerBound)&gt;\tau"/>: rejection.</p>
 </dd>
 </dl>
 </td>
@@ -4046,11 +4059,11 @@ We note <img class="math" src="../../_images/math/08731955d44101ca9a6eca15f1652d
 <p>A multivariate distribution is said to be <em>elliptical</em> if its characteristic
 function is of the form:</p>
 <div class="math">
-<p><img src="../../_images/math/9ae6e4b5bf646b196dd90b1a04f9226e0da789e4.svg" alt="\phi(\vect{t}) = \exp\left(i \Tr{\vect{t}} \vect{\mu}\right)
+<p><img src="../../_images/math/99d7d2a8efd348558d709f7348eabc27cde7f331.svg" alt="\phi(\vect{t}) = \exp\left(i \Tr{\vect{t}} \vect{\mu}\right)
                  \Psi\left(\Tr{\vect{t}} \mat{\Sigma} \vect{t}\right),
                  \quad \vect{t} \in \Rset^n"/></p>
-</div><p>for specified vector <img class="math" src="../../_images/math/7155fa77403ab87ab11207cca0b5330da3a8425e.svg" alt="\vect{\mu}"/> and positive-definite matrix
-<img class="math" src="../../_images/math/cb76e65a6cc1d6cf156aae5de0649e524a309916.svg" alt="\mat{\Sigma}"/>. The function <img class="math" src="../../_images/math/44c9acf6d49b3d932d455f400a65209730e2df6b.svg" alt="\Psi"/> is known as the
+</div><p>for specified vector <img class="math" src="../../_images/math/77160f4fd5da62df73b797cbea1f01dee7c7352f.svg" alt="\vect{\mu}"/> and positive-definite matrix
+<img class="math" src="../../_images/math/9b444c8ae36fb66f31be82b3f5175c453d3404d8.svg" alt="\mat{\Sigma}"/>. The function <img class="math" src="../../_images/math/8219280331d7f43f03c444c92512f0b5bed620ae.svg" alt="\Psi"/> is known as the
 <em>characteristic generator</em> of the elliptical distribution.</p>
 </dd></dl>
 
@@ -4272,11 +4285,11 @@ function is of the form:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>threshold</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/91541d6fb1b07c85dfce299ac6b4ac42bb94e2fd.svg" alt="\tau \in [0, 1]"/></span></dt>
+<dt><strong>threshold</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/b9c1451147f463a60e55f85e5b8d01ee3751dca3.svg" alt="\tau \in [0, 1]"/></span></dt>
 <dd><p class="first">This threshold is used when generating an evaluation of the distribution.
-We note <img class="math" src="../../_images/math/08731955d44101ca9a6eca15f1652d7db4138d8e.svg" alt="F"/> the CDF of the non truncated distribution:</p>
-<p>If <img class="math" src="../../_images/math/3be2667d0ee511f1d3763ef64434748387328a5e.svg" alt="F(upperBound)-F(lowerBound)&lt;\tau"/>: a CDF inversion is performed.</p>
-<p class="last">If <img class="math" src="../../_images/math/b392a960f654de01d31715ec487cf981fc7ad101.svg" alt="F(upperBound)-F(lowerBound)&gt;\tau"/>: rejection.</p>
+We note <img class="math" src="../../_images/math/89ad8f2e375cb588588660b16852cce0a4a98a01.svg" alt="F"/> the CDF of the non truncated distribution:</p>
+<p>If <img class="math" src="../../_images/math/a26a642e1008fd75cd99801014f59e5857ff07e6.svg" alt="F(upperBound)-F(lowerBound)&lt;\tau"/>: a CDF inversion is performed.</p>
+<p class="last">If <img class="math" src="../../_images/math/a37397edefd3cdfa5ab9e579983cf298a1400e30.svg" alt="F(upperBound)-F(lowerBound)&gt;\tau"/>: rejection.</p>
 </dd>
 </dl>
 </td>
@@ -4418,6 +4431,12 @@ We note <img class="math" src="../../_images/math/08731955d44101ca9a6eca15f1652d
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.TruncatedDistribution.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.TruncatedDistribution.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -4449,7 +4468,7 @@ We note <img class="math" src="../../_images/math/08731955d44101ca9a6eca15f1652d
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

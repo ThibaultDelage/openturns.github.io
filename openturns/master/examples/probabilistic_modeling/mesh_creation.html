@@ -264,21 +264,21 @@ div.nboutput div.output_area.stderr {
 <div class="section" id="Creation-of-a-mesh">
 <h1>Creation of a mesh<a class="headerlink" href="#Creation-of-a-mesh" title="Permalink to this headline">¶</a></h1>
 <p>In this example we will demonstrate how to create a mesh
-<img class="math" src="../../_images/math/7100eaadeca47463f1b26d4f489c9ec76bcbd20a.svg" alt="\mathcal{M}"/> associated to a domain
-<img class="math" src="../../_images/math/b0dfb09734d4350de50639bfb0a31b648a5473de.svg" alt="\mathcal{D} \in \mathbb{R}^n"/>.</p>
-<p>A mesh is defined from vertices in <img class="math" src="../../_images/math/0054056d81dce021b097c66357a5422af04b8f0b.svg" alt="\mathbb{R}^n"/> and a topology
+<img class="math" src="../../_images/math/f42b888f157f5bec3a8d9f972d957c85ce63aec0.svg" alt="\mathcal{M}"/> associated to a domain
+<img class="math" src="../../_images/math/260ab8fdac7fd61a045bea85d07050f92c62f8d0.svg" alt="\mathcal{D} \in \mathbb{R}^n"/>.</p>
+<p>A mesh is defined from vertices in <img class="math" src="../../_images/math/2faac05dfbf7333cc5eb6961689ce2681e0645cd.svg" alt="\mathbb{R}^n"/> and a topology
 that connects the vertices: the simplices. The simplex
-<img class="math" src="../../_images/math/c9a733d95325aff2970fcf42f14267b1c83d5ee5.svg" alt="Indices([i_1,\dots, i_{n+1}])"/> relies the vertices of index
-<img class="math" src="../../_images/math/28281ff9dc26b28d208868216f4b3517b241714e.svg" alt="(i_1,\dots, i_{n+1})"/> in <img class="math" src="../../_images/math/ad77c58aadaf0e8a2cd2b22d2cc0faebadbcdb62.svg" alt="\mathbb{N}^n"/>. In dimension 1, a
-simplex is an interval <img class="math" src="../../_images/math/d7c469666b5d4ca356c28ad0ede2971b21fc5a82.svg" alt="Indices([i_1,i_2])"/>; in dimension 2, it is
-a triangle <img class="math" src="../../_images/math/8eacd5721600507cc2a7855e26def8fb72de1f01.svg" alt="Indices([i_1,i_2, i_3])"/>.</p>
+<img class="math" src="../../_images/math/caed0dc9d47acab7a5e8decc63102794d4852ded.svg" alt="Indices([i_1,\dots, i_{n+1}])"/> relies the vertices of index
+<img class="math" src="../../_images/math/b0c66d01861e1b1cb02699093bb42e62be2da121.svg" alt="(i_1,\dots, i_{n+1})"/> in <img class="math" src="../../_images/math/1194099083c92a6f85888f4578f5252491b1f83c.svg" alt="\mathbb{N}^n"/>. In dimension 1, a
+simplex is an interval <img class="math" src="../../_images/math/785ad361d365f4edcadfc9ac9d00c905f12e2e56.svg" alt="Indices([i_1,i_2])"/>; in dimension 2, it is
+a triangle <img class="math" src="../../_images/math/87bff65a1dc8e0676e298ece33c5fd172e519f1d.svg" alt="Indices([i_1,i_2, i_3])"/>.</p>
 <p>The library enables to easily create a mesh which is a box of dimension
-<img class="math" src="../../_images/math/ceeee39186b1a2311bb5902f32d5c933037e95e1.svg" alt="d=1"/> or <img class="math" src="../../_images/math/895cee02ec0a9bf345a83f83fe3e84df2e7106df.svg" alt="d=2"/> regularly meshed in all its directions,
+<img class="math" src="../../_images/math/4a8b9e80bce9c93eb506330d8c97754b274a99f1.svg" alt="d=1"/> or <img class="math" src="../../_images/math/c1338ad6ce7bd6ab02d8d48aa7f8a791f4ef5f62.svg" alt="d=2"/> regularly meshed in all its directions,
 thanks to the object IntervalMesher.</p>
-<p>Consider <img class="math" src="../../_images/math/f6cde0899211e7aaa9e9cdfd4ff4127d42e065ae.svg" alt="X: \Omega \times \mathcal{D} \rightarrow \mathbb{R}^d"/> a
-multivariate stochastic process of dimension <img class="math" src="../../_images/math/5bedc75d546b74f5c8a9327c072c85fda0fd787f.svg" alt="d"/>, where
-<img class="math" src="../../_images/math/b0dfb09734d4350de50639bfb0a31b648a5473de.svg" alt="\mathcal{D} \in \mathbb{R}^n"/>. The mesh <img class="math" src="../../_images/math/7100eaadeca47463f1b26d4f489c9ec76bcbd20a.svg" alt="\mathcal{M}"/> is a
-discretization of the domain <img class="math" src="../../_images/math/23a0f77cf53633b29ed689ed7e6c8fc8269b23bf.svg" alt="\mathcal{D}"/>.</p>
+<p>Consider <img class="math" src="../../_images/math/a2f63923505d5f47f0418029f6213c0b750abdb7.svg" alt="X: \Omega \times \mathcal{D} \rightarrow \mathbb{R}^d"/> a
+multivariate stochastic process of dimension <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/>, where
+<img class="math" src="../../_images/math/260ab8fdac7fd61a045bea85d07050f92c62f8d0.svg" alt="\mathcal{D} \in \mathbb{R}^n"/>. The mesh <img class="math" src="../../_images/math/f42b888f157f5bec3a8d9f972d957c85ce63aec0.svg" alt="\mathcal{M}"/> is a
+discretization of the domain <img class="math" src="../../_images/math/776044fc6c4e758d1e429893e4f6612415a301a9.svg" alt="\mathcal{D}"/>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [1]:
@@ -505,7 +505,7 @@ discretization of the domain <img class="math" src="../../_images/math/23a0f77cf
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

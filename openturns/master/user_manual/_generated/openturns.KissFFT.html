@@ -110,6 +110,19 @@
 are the same as the FFT class (there is no additional method). This class
 interacts with the kissfft implemented and return results as OpenTURNS objects
 (<a class="reference internal" href="openturns.ComplexCollection.html#openturns.ComplexCollection" title="openturns.ComplexCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">ComplexCollection</span></code></a>).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.KissFFT.thisown" title="openturns.KissFFT.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -333,8 +346,8 @@ interacts with the kissfft implemented and return results as OpenTURNS objects
 <p class="rubric">Notes</p>
 <p>The Inverse Fast Fourier Transform writes as following:</p>
 <div class="math">
-<p><img src="../../_images/math/0b00a15398e171ea8fb4bbaa04f9847928f1090f.svg" alt="{\rm y_k} = \sum_{n=0}^{N-1} \frac{1}{N} x_n exp(2 i \pi \frac{kn}{N})"/></p>
-</div><p>where <img class="math" src="../../_images/math/b46b960b23857f933aea0a650f82daa1bcc3e1b1.svg" alt="x"/> denotes the data, of size <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/>, to be transformed.</p>
+<p><img src="../../_images/math/186b58504be0a029ece774a32a37e8ab0b8544cf.svg" alt="{\rm y_k} = \sum_{n=0}^{N-1} \frac{1}{N} x_n exp(2 i \pi \frac{kn}{N})"/></p>
+</div><p>where <img class="math" src="../../_images/math/5022ac5b5f8f5d1b9a0c33f27f9fb1652700fd71.svg" alt="x"/> denotes the data, of size <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/>, to be transformed.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fft</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FFT</span><span class="p">()</span>
@@ -371,8 +384,8 @@ interacts with the kissfft implemented and return results as OpenTURNS objects
 <p class="rubric">Notes</p>
 <p>The 2D Fast Inverse Fourier Transform writes as following:</p>
 <div class="math">
-<p><img src="../../_images/math/0196f7879481eb3cc954db1772a7241c4747773d.svg" alt="{\rm Y_{k,l}} = \frac{1}{M\times N}\sum_{m=0}^{M-1}\sum_{n=0}^{N-1} Z_{m,n} exp(2 i \pi \frac{km}{M}) exp(2 i \pi \frac{ln}{N})"/></p>
-</div><p>where <img class="math" src="../../_images/math/ade4e3fd5b9cdda59b2cb9dd2d9ca0d2f61d380d.svg" alt="Z"/> denotes the data to be transformed with shape (<img class="math" src="../../_images/math/aadb4b560f4759eb199cb33c5eb662ffe016dc18.svg" alt="M"/>,:math:<cite>N</cite>)</p>
+<p><img src="../../_images/math/40010f789be68007cf00b4d3dd338a54db5689ec.svg" alt="{\rm Y_{k,l}} = \frac{1}{M\times N}\sum_{m=0}^{M-1}\sum_{n=0}^{N-1} Z_{m,n} exp(2 i \pi \frac{km}{M}) exp(2 i \pi \frac{ln}{N})"/></p>
+</div><p>where <img class="math" src="../../_images/math/4e44182691035bdf8b10b5a8890b6cb291a6e246.svg" alt="Z"/> denotes the data to be transformed with shape (<img class="math" src="../../_images/math/7f1057286184ff78da020559a1fa880141be89ad.svg" alt="M"/>,:math:<cite>N</cite>)</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fft</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FFT</span><span class="p">()</span>
@@ -409,8 +422,8 @@ interacts with the kissfft implemented and return results as OpenTURNS objects
 <p class="rubric">Notes</p>
 <p>The 3D Inverse Fast Fourier Transform writes as following:</p>
 <div class="math">
-<p><img src="../../_images/math/0015e5ce274a8581be7990f9ae4f4f7112dfcbf1.svg" alt="{\rm Y_{k,l,r}} = \sum_{m=0}^{M-1}\sum_{n=0}^{N-1}\sum_{p=0}^{P-1} \frac{1}{M\times N \times P} Z_{m,n,p} exp(2 i \pi \frac{km}{M}) exp(2 i \pi \frac{ln}{N}) exp(2 i \pi \frac{rp}{P})"/></p>
-</div><p>where <img class="math" src="../../_images/math/ade4e3fd5b9cdda59b2cb9dd2d9ca0d2f61d380d.svg" alt="Z"/> denotes the data to be transformed with shape (<img class="math" src="../../_images/math/aadb4b560f4759eb199cb33c5eb662ffe016dc18.svg" alt="M"/>, <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/>, <img class="math" src="../../_images/math/4c21bd0a8df01ae42f62d11fb29cb9ae23746161.svg" alt="P"/>)</p>
+<p><img src="../../_images/math/877c55467b71d99c1097376f44b385625f2a9c4e.svg" alt="{\rm Y_{k,l,r}} = \sum_{m=0}^{M-1}\sum_{n=0}^{N-1}\sum_{p=0}^{P-1} \frac{1}{M\times N \times P} Z_{m,n,p} exp(2 i \pi \frac{km}{M}) exp(2 i \pi \frac{ln}{N}) exp(2 i \pi \frac{rp}{P})"/></p>
+</div><p>where <img class="math" src="../../_images/math/4e44182691035bdf8b10b5a8890b6cb291a6e246.svg" alt="Z"/> denotes the data to be transformed with shape (<img class="math" src="../../_images/math/7f1057286184ff78da020559a1fa880141be89ad.svg" alt="M"/>, <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/>, <img class="math" src="../../_images/math/e0fde8ec3d50ff9a9427da10ed550f58e0c8e397.svg" alt="P"/>)</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fft</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FFT</span><span class="p">()</span>
@@ -481,6 +494,12 @@ interacts with the kissfft implemented and return results as OpenTURNS objects
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.KissFFT.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.KissFFT.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="openturns.KissFFT.transform">
 <code class="descname">transform</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.KissFFT.transform" title="Permalink to this definition">¶</a></dt>
@@ -508,8 +527,8 @@ interacts with the kissfft implemented and return results as OpenTURNS objects
 <p class="rubric">Notes</p>
 <p>The Fast Fourier Transform writes as following:</p>
 <div class="math">
-<p><img src="../../_images/math/35aa4d623a7fa62bca0220138ad28caa11f0b621.svg" alt="{\rm y_k} = \sum_{n=0}^{N-1} x_n exp(-2 i \pi \frac{kn}{N})"/></p>
-</div><p>where <img class="math" src="../../_images/math/b46b960b23857f933aea0a650f82daa1bcc3e1b1.svg" alt="x"/> denotes the data to be transformed, of size <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/>.</p>
+<p><img src="../../_images/math/d70b2b35f2b5cbe3300acc7bb5282d6a38f4db58.svg" alt="{\rm y_k} = \sum_{n=0}^{N-1} x_n exp(-2 i \pi \frac{kn}{N})"/></p>
+</div><p>where <img class="math" src="../../_images/math/5022ac5b5f8f5d1b9a0c33f27f9fb1652700fd71.svg" alt="x"/> denotes the data to be transformed, of size <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/>.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fft</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FFT</span><span class="p">()</span>
@@ -545,8 +564,8 @@ interacts with the kissfft implemented and return results as OpenTURNS objects
 <p class="rubric">Notes</p>
 <p>The 2D Fast Fourier Transform writes as following:</p>
 <div class="math">
-<p><img src="../../_images/math/9712798ec4ed5fe33e0b091f87b5c0753c4bbbab.svg" alt="{\rm Z_{k,l}} = \sum_{m=0}^{M-1}\sum_{n=0}^{N-1} X_{m,n} exp(-2 i \pi \frac{km}{M}) exp(-2 i \pi \frac{ln}{N})"/></p>
-</div><p>where <img class="math" src="../../_images/math/e39fc198cd7e936bd7b824c9b924f7dc377b6975.svg" alt="X"/> denotes the data to be transformed with shape (<img class="math" src="../../_images/math/aadb4b560f4759eb199cb33c5eb662ffe016dc18.svg" alt="M"/>,:math:<cite>N</cite>)</p>
+<p><img src="../../_images/math/d7c22a9e13f6f8b8e9f13d000d3edd3f683b583d.svg" alt="{\rm Z_{k,l}} = \sum_{m=0}^{M-1}\sum_{n=0}^{N-1} X_{m,n} exp(-2 i \pi \frac{km}{M}) exp(-2 i \pi \frac{ln}{N})"/></p>
+</div><p>where <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/> denotes the data to be transformed with shape (<img class="math" src="../../_images/math/7f1057286184ff78da020559a1fa880141be89ad.svg" alt="M"/>,:math:<cite>N</cite>)</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fft</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FFT</span><span class="p">()</span>
@@ -583,8 +602,8 @@ interacts with the kissfft implemented and return results as OpenTURNS objects
 <p class="rubric">Notes</p>
 <p>The 3D Fast Fourier Transform writes as following:</p>
 <div class="math">
-<p><img src="../../_images/math/86da56907bea830d7f9f03501a714eb6bb19ad53.svg" alt="{\rm Z_{k,l,r}} = \sum_{m=0}^{M-1}\sum_{n=0}^{N-1}\sum_{p=0}^{P-1} X_{m,n,p} exp(-2 i \pi \frac{km}{M}) exp(-2 i \pi \frac{ln}{N}) exp(-2 i \pi \frac{rp}{P})"/></p>
-</div><p>where <img class="math" src="../../_images/math/e39fc198cd7e936bd7b824c9b924f7dc377b6975.svg" alt="X"/> denotes the data to be transformed with shape (<img class="math" src="../../_images/math/aadb4b560f4759eb199cb33c5eb662ffe016dc18.svg" alt="M"/>,:math:<cite>N</cite>, <img class="math" src="../../_images/math/4c21bd0a8df01ae42f62d11fb29cb9ae23746161.svg" alt="P"/>)</p>
+<p><img src="../../_images/math/7451ca5e9430d778dfe72fa1b5b2d808b6429a93.svg" alt="{\rm Z_{k,l,r}} = \sum_{m=0}^{M-1}\sum_{n=0}^{N-1}\sum_{p=0}^{P-1} X_{m,n,p} exp(-2 i \pi \frac{km}{M}) exp(-2 i \pi \frac{ln}{N}) exp(-2 i \pi \frac{rp}{P})"/></p>
+</div><p>where <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/> denotes the data to be transformed with shape (<img class="math" src="../../_images/math/7f1057286184ff78da020559a1fa880141be89ad.svg" alt="M"/>,:math:<cite>N</cite>, <img class="math" src="../../_images/math/e0fde8ec3d50ff9a9427da10ed550f58e0c8e397.svg" alt="P"/>)</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fft</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FFT</span><span class="p">()</span>
@@ -629,7 +648,7 @@ interacts with the kissfft implemented and return results as OpenTURNS objects
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

@@ -124,59 +124,59 @@ the class <a class="reference internal" href="openturns.CompositeRandomVector.ht
 </table>
 <p class="rubric">Notes</p>
 <p>In a probabilistic approach the Taylor expansion can be used
-propagate the uncertainties of the input variables <img class="math" src="../../_images/math/212decce60675511b55b2031a15007b9b1b4373b.svg" alt="\uX"/> through the
-model <img class="math" src="../../_images/math/5e4fd0b7c0b9d8750ca8bc577ddb169a78f8b00f.svg" alt="h"/> towards the output variables <img class="math" src="../../_images/math/eddd053b94cf5f3d2834eee4f390d174da451496.svg" alt="\uY"/>. It enables to access
+propagate the uncertainties of the input variables <img class="math" src="../../_images/math/2a4f4ef0bef52fc617eb8bf86f28c9d9a800a720.svg" alt="\uX"/> through the
+model <img class="math" src="../../_images/math/962b9c7896d68050c28006820718e08af192b141.svg" alt="h"/> towards the output variables <img class="math" src="../../_images/math/24976cb2ec329147e41e80a5073e09ac852c2c56.svg" alt="\uY"/>. It enables to access
 the central dispersion (Expectation, Variance) of the output variables.</p>
 <p>This method is based on a Taylor decomposition of the output variable
-<img class="math" src="../../_images/math/eddd053b94cf5f3d2834eee4f390d174da451496.svg" alt="\uY"/> towards the <img class="math" src="../../_images/math/212decce60675511b55b2031a15007b9b1b4373b.svg" alt="\uX"/> random vectors around the mean point
-<img class="math" src="../../_images/math/baace181e8f8658bbc24813497ec0d525d20df8f.svg" alt="\muX"/>. Depending on the order of the Taylor decomposition (classically
+<img class="math" src="../../_images/math/24976cb2ec329147e41e80a5073e09ac852c2c56.svg" alt="\uY"/> towards the <img class="math" src="../../_images/math/2a4f4ef0bef52fc617eb8bf86f28c9d9a800a720.svg" alt="\uX"/> random vectors around the mean point
+<img class="math" src="../../_images/math/bd9c9decf831afcc9ff37dce485226f18fa3bcd4.svg" alt="\muX"/>. Depending on the order of the Taylor decomposition (classically
 first order or second order), one can obtain different formulas introduced
 hereafter.</p>
-<p>As <img class="math" src="../../_images/math/c01f4b8bf653d39e6bad2cdff1335b71bc2a3f98.svg" alt="\uY=h(\uX)"/>, the Taylor decomposition around <img class="math" src="../../_images/math/1877ef2999dac46a659f144837b7b95b29e504bd.svg" alt="\ux = \muX"/> at
+<p>As <img class="math" src="../../_images/math/d0a43d02b74ee45e872b6cc5eab6954925b96a85.svg" alt="\uY=h(\uX)"/>, the Taylor decomposition around <img class="math" src="../../_images/math/8604ff2ac1749b10937945300a8b541e3a4bf0e4.svg" alt="\ux = \muX"/> at
 the second order yields to:</p>
 <div class="math">
-<p><img src="../../_images/math/7689730931bf22627a3c69364e748b0fec73d3cf.svg" alt="\uY = h(\muX) + &lt;\vect{\vect{\nabla}}h(\muX) , \: \uX - \muX&gt; + \frac{1}{2}&lt;&lt;\vect{\vect{\vect{\nabla }}}^2 h(\muX,\: \vect{\mu}_{\:X}),\: \uX - \muX&gt;,\: \uX - \muX&gt; + o(\Cov \uX)"/></p>
+<p><img src="../../_images/math/fb9f4341d98be1e0a03da74750179ab91d52c1c0.svg" alt="\uY = h(\muX) + &lt;\vect{\vect{\nabla}}h(\muX) , \: \uX - \muX&gt; + \frac{1}{2}&lt;&lt;\vect{\vect{\vect{\nabla }}}^2 h(\muX,\: \vect{\mu}_{\:X}),\: \uX - \muX&gt;,\: \uX - \muX&gt; + o(\Cov \uX)"/></p>
 </div><p>where:</p>
 <ul>
-<li><p class="first"><img class="math" src="../../_images/math/f7c2de6b588d0a4a0c8e8a141965fe6b4354df96.svg" alt="\muX = \Expect{\uX}"/> is the vector of the input variables at the mean
+<li><p class="first"><img class="math" src="../../_images/math/289cfebd06cdfdfe41ad497ad20262cf099bcbb4.svg" alt="\muX = \Expect{\uX}"/> is the vector of the input variables at the mean
 values of each component.</p>
 </li>
-<li><p class="first"><img class="math" src="../../_images/math/2cb27b109571cfc0e8214080858bf9af25e893b9.svg" alt="\Cov \uX"/> is the covariance matrix of the random vector <cite>uX</cite>. The
+<li><p class="first"><img class="math" src="../../_images/math/5e8dd9f9eed72a29f758662502b91f9cd437cc4d.svg" alt="\Cov \uX"/> is the covariance matrix of the random vector <cite>uX</cite>. The
 elements are the followings :
-<img class="math" src="../../_images/math/c3e8a9c4d03767195ef32a5e9e20c8610fa82d19.svg" alt="(\Cov \uX)_{ij} = \Expect{\left(X^i - \Expect{X^i} \right)^2}"/></p>
+<img class="math" src="../../_images/math/1531b3f8e197e1968f33c67b879b587e9c9c0833.svg" alt="(\Cov \uX)_{ij} = \Expect{\left(X^i - \Expect{X^i} \right)^2}"/></p>
 </li>
-<li><p class="first"><img class="math" src="../../_images/math/92c69df48289e1794f0d8fc8b269cc9ab7fa6743.svg" alt="\vect{\vect{\nabla}} h(\muX) = \: \Tr{\left( \frac{\partial y^i}{\partial x^j}\right)}_{\ux\: =\: \muX} = \: \Tr{\left( \frac{\partial h^i(\ux)}{\partial x^j}\right)}_{\ux\: =\: \muX}"/>
-is the transposed Jacobian matrix with <img class="math" src="../../_images/math/0eda8f03710d5719193e810c4584e3e21ce2fa76.svg" alt="i=1,\ldots,n_Y"/> and
-<img class="math" src="../../_images/math/70bf246ed776fc4ef6890735eadd67999037087e.svg" alt="j=1,\ldots,n_X"/>.</p>
+<li><p class="first"><img class="math" src="../../_images/math/9d565407fdf80cd1784ddb083fbc005f623dffa4.svg" alt="\vect{\vect{\nabla}} h(\muX) = \: \Tr{\left( \frac{\partial y^i}{\partial x^j}\right)}_{\ux\: =\: \muX} = \: \Tr{\left( \frac{\partial h^i(\ux)}{\partial x^j}\right)}_{\ux\: =\: \muX}"/>
+is the transposed Jacobian matrix with <img class="math" src="../../_images/math/1ebaba29a26c14a92b8dbc7a85cf07505daa7e21.svg" alt="i=1,\ldots,n_Y"/> and
+<img class="math" src="../../_images/math/bcc029dece2941806c37bea593b1c5654ce683dd.svg" alt="j=1,\ldots,n_X"/>.</p>
 </li>
-<li><p class="first"><img class="math" src="../../_images/math/3fd5bfd5e7df07a96cc5b7d7274d19dcea7b534d.svg" alt="\vect{\vect{\vect{\nabla^2}}} h(\ux\:,\ux)"/> is a tensor of order 3. It
-is composed by the second order derivative towards the <img class="math" src="../../_images/math/81675c517c3754a5c64259476c92fe88221399ed.svg" alt="i^\textrm{th}"/>
-and <img class="math" src="../../_images/math/b5f3645b3ad3bb61f9b5ea9ebb46bbef726d54c6.svg" alt="j^\textrm{th}"/> components of <img class="math" src="../../_images/math/65759467767669f978195dfdcbf5805c679752c1.svg" alt="\ux"/> of the
-<img class="math" src="../../_images/math/2bf4ea53c18ed89e656f51cf97cecac4212eca78.svg" alt="k^\textrm{th}"/> component of the output vector <img class="math" src="../../_images/math/0f2b8ae3f29917fcc48d74dea3c2213701219d3d.svg" alt="h(\ux)"/>. It
+<li><p class="first"><img class="math" src="../../_images/math/bcfc910d5fb948e6ab322538c8afae4fad6463d5.svg" alt="\vect{\vect{\vect{\nabla^2}}} h(\ux\:,\ux)"/> is a tensor of order 3. It
+is composed by the second order derivative towards the <img class="math" src="../../_images/math/187f5202eef824acc515272047d5962e92050b64.svg" alt="i^\textrm{th}"/>
+and <img class="math" src="../../_images/math/32f963cb273cb20b1a948e685f8fac09ed443fd3.svg" alt="j^\textrm{th}"/> components of <img class="math" src="../../_images/math/11f5e94c7ecdb1620140e2d2dd694a332eb5170a.svg" alt="\ux"/> of the
+<img class="math" src="../../_images/math/056b4f9a676d01f701304417c33639497f89d176.svg" alt="k^\textrm{th}"/> component of the output vector <img class="math" src="../../_images/math/502b661998ade4b6e8c77ece6647cfcb57256743.svg" alt="h(\ux)"/>. It
 yields to:
-<img class="math" src="../../_images/math/c63356ea091c6873265ff0481dc1cb6d4786955a.svg" alt="\left( \nabla^2 h(\ux) \right)_{ijk} = \frac{\partial^2 (h^k(\ux))}{\partial x^i \partial x^j}"/></p>
+<img class="math" src="../../_images/math/d6827187276e4a92bff56dabe791c03284284c85.svg" alt="\left( \nabla^2 h(\ux) \right)_{ijk} = \frac{\partial^2 (h^k(\ux))}{\partial x^i \partial x^j}"/></p>
 </li>
-<li><p class="first"><img class="math" src="../../_images/math/429d3b55a6621bb7791e3de096389e573d31224b.svg" alt="&lt;\vect{\vect{\nabla}}h(\muX) , \: \uX - \muX&gt; = \sum_{j=1}^{n_X} \left( \frac{\partial {\uy}}{\partial {x^j}}\right)_{\ux = \muX} . \left( X^j-\muX^j \right)"/></p>
+<li><p class="first"><img class="math" src="../../_images/math/d9d4308a6873ea4cf7093d67db1af6d120ae368d.svg" alt="&lt;\vect{\vect{\nabla}}h(\muX) , \: \uX - \muX&gt; = \sum_{j=1}^{n_X} \left( \frac{\partial {\uy}}{\partial {x^j}}\right)_{\ux = \muX} . \left( X^j-\muX^j \right)"/></p>
 </li>
 <li><div class="first math">
-<p><img src="../../_images/math/ea8d3742ed023cd220f4af50e6c14cd8be8ac72f.svg" alt="&lt;&lt;\vect{\vect{\vect{\nabla }}}^2 h(\muX,\: \vect{\mu}_{X}),\: \uX - \muX&gt;,\: \uX - \muX&gt; = \left( \Tr{(\uX^i - \muX^i)}. \left(\frac{\partial^2 y^k}{\partial x^i \partial x^k}\right)_{\ux = \muX}. (\uX^j - \muX^j) \right)_{ijk}"/></p>
+<p><img src="../../_images/math/f848c87266eb531882d285ae0850240cdbef1d83.svg" alt="&lt;&lt;\vect{\vect{\vect{\nabla }}}^2 h(\muX,\: \vect{\mu}_{X}),\: \uX - \muX&gt;,\: \uX - \muX&gt; = \left( \Tr{(\uX^i - \muX^i)}. \left(\frac{\partial^2 y^k}{\partial x^i \partial x^k}\right)_{\ux = \muX}. (\uX^j - \muX^j) \right)_{ijk}"/></p>
 </div></li>
 </ul>
 <p><strong>Approximation at the order 1:</strong></p>
 <p>Expectation:</p>
 <div class="math">
-<p><img src="../../_images/math/2aa6e11cf42df2989b994204e9dff07a2aec3bb7.svg" alt="\Expect{\uY} \approx \vect{h}(\muX)"/></p>
-</div><p>Pay attention that <img class="math" src="../../_images/math/c3b68078d9e7a67728f311cc2b99db0db8a1739c.svg" alt="\Expect{\uY}"/> is a vector. The <img class="math" src="../../_images/math/2bf4ea53c18ed89e656f51cf97cecac4212eca78.svg" alt="k^\textrm{th}"/>
-component of this vector is equal to the <img class="math" src="../../_images/math/2bf4ea53c18ed89e656f51cf97cecac4212eca78.svg" alt="k^\textrm{th}"/> component of the
-output vector computed by the model <img class="math" src="../../_images/math/5e4fd0b7c0b9d8750ca8bc577ddb169a78f8b00f.svg" alt="h"/> at the mean value.
-<img class="math" src="../../_images/math/c3b68078d9e7a67728f311cc2b99db0db8a1739c.svg" alt="\Expect{\uY}"/> is thus the computation of the model at mean.</p>
+<p><img src="../../_images/math/0904689d14ed66c065b471fbb71968a483d471a4.svg" alt="\Expect{\uY} \approx \vect{h}(\muX)"/></p>
+</div><p>Pay attention that <img class="math" src="../../_images/math/5e751cd753b7ef78668f7337ff4bfed7e7284df0.svg" alt="\Expect{\uY}"/> is a vector. The <img class="math" src="../../_images/math/056b4f9a676d01f701304417c33639497f89d176.svg" alt="k^\textrm{th}"/>
+component of this vector is equal to the <img class="math" src="../../_images/math/056b4f9a676d01f701304417c33639497f89d176.svg" alt="k^\textrm{th}"/> component of the
+output vector computed by the model <img class="math" src="../../_images/math/962b9c7896d68050c28006820718e08af192b141.svg" alt="h"/> at the mean value.
+<img class="math" src="../../_images/math/5e751cd753b7ef78668f7337ff4bfed7e7284df0.svg" alt="\Expect{\uY}"/> is thus the computation of the model at mean.</p>
 <p>Variance:</p>
 <div class="math">
-<p><img src="../../_images/math/a0b16570f6cd07aa3e855b5fa2a3315778c8a493.svg" alt="\Cov \uY \approx \Tr{\vect{\vect{\nabla}}}\:\vect{h}(\muX).\Cov \uX.\vect{\vect{\nabla}}\:\vect{h}(\muX)"/></p>
+<p><img src="../../_images/math/3ff77d2cc2a254845983e219e164f6a6b8acc30c.svg" alt="\Cov \uY \approx \Tr{\vect{\vect{\nabla}}}\:\vect{h}(\muX).\Cov \uX.\vect{\vect{\nabla}}\:\vect{h}(\muX)"/></p>
 </div><p><strong>Approximation at the order 2:</strong></p>
 <p>Expectation:</p>
 <div class="math">
-<p><img src="../../_images/math/17d5d0ecdb0088a2019658224d2b46f241943e4b.svg" alt="(\Expect{\uY})_k \approx (\vect{h}(\muX))_k +
+<p><img src="../../_images/math/8983716c1ec82f4b13f21eb1c4865ff9ad230b37.svg" alt="(\Expect{\uY})_k \approx (\vect{h}(\muX))_k +
                           \left(
                           \sum_{i=1}^{n_X}\frac{1}{2} (\Cov \uX)_{ii}.{(\nabla^2\:h(\uX))}_{iik} +
                           \sum_{i=1}^{n_X} \sum_{j=1}^{i-1} (\Cov X)_{ij}.{(\nabla^2\:h(\uX))}_{ijk}
@@ -204,6 +204,19 @@ knowledge of moments of order strictly greater than 2 of the PDF.</p>
 <span class="go">[0.0384615,0.932544]</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.TaylorExpansionMoments.thisown" title="openturns.TaylorExpansionMoments.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -643,6 +656,12 @@ the mean point of the input random vector.</p>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.TaylorExpansionMoments.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.TaylorExpansionMoments.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -674,7 +693,7 @@ the mean point of the input random vector.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

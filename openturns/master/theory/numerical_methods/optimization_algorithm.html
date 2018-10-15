@@ -98,12 +98,12 @@
   <div class="section" id="optimization-algorithms">
 <span id="optimization-algorithm"></span><h1>Optimization Algorithms<a class="headerlink" href="#optimization-algorithms" title="Permalink to this headline">¶</a></h1>
 <p>The method is used in the following context:
-<img class="math" src="../../_images/math/6d0cca19b2cfe81746d0526912d1ef9750885489.svg" alt="\vect{x}= \left( x^1,\ldots,x^{n_X} \right)"/> is a vector of
-unknown variables, <img class="math" src="../../_images/math/3b84c4ed75f01d36277ef4bef655637e1ea1a34d.svg" alt="\vect{d}"/> a vector considered to be well known
+<img class="math" src="../../_images/math/2c46466bb617c3d821222b17c57be6a93ade7596.svg" alt="\vect{x}= \left( x^1,\ldots,x^{n_X} \right)"/> is a vector of
+unknown variables, <img class="math" src="../../_images/math/69c918895529fa1f9990a8bc659fd6da72902600.svg" alt="\vect{d}"/> a vector considered to be well known
 or where uncertainty is negligible, and
-<img class="math" src="../../_images/math/f6a97a23f26395e2c1ed49eefcc3fe601e4d73f9.svg" alt="y = h(\vect{x},\vect{d})"/> is the scalar variable of interest.
+<img class="math" src="../../_images/math/32bac2bddc54192c165d24431c776d0263ade9b9.svg" alt="y = h(\vect{x},\vect{d})"/> is the scalar variable of interest.
 The objective here is to determine the extreme (minimum and maximum)
-values of <img class="math" src="../../_images/math/911a4ab2427f3b2a45f7b20c036b487cbad9c175.svg" alt="y"/> when <img class="math" src="../../_images/math/a3a6f1956f635861141cf384d3945161297b4301.svg" alt="\vect{x}"/> varies.</p>
+values of <img class="math" src="../../_images/math/681f29e6f502f2b5bd5f256789636e99499f594f.svg" alt="y"/> when <img class="math" src="../../_images/math/fbb3eda62de652737a946e0ab194aac246375d90.svg" alt="\vect{x}"/> varies.</p>
 <div class="line-block">
 <div class="line">It is possible to use some optimization algorithms. We give the
 principle of the TNC (Truncated Newton Constrained) algorithm which
@@ -118,13 +118,13 @@ optimization problem and an inner iteration for the Newton equations.
 The inner iteration is typically stopped or <em>truncated</em> before the
 solution to the Newton equations is obtained.</div>
 <div class="line">The TNC algorithm resolves:
-<img class="math" src="../../_images/math/fdd24d592fa73283035c662eb26bc87236928cda.svg" alt="\min_{\vect{x} \in [\vect{a},\vect{b}] \in \overline{\Rset}^n} f(\vect{x})"/>
+<img class="math" src="../../_images/math/a582d14734c727c42f370ce36bcbc42d638008ff.svg" alt="\min_{\vect{x} \in [\vect{a},\vect{b}] \in \overline{\Rset}^n} f(\vect{x})"/>
 and proceeds as follows under the proper regularity of the objective
-function <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/>:</div>
+function <img class="math" src="../../_images/math/bf8af465e21be611f4cc50154e2fa28e5455230b.svg" alt="f"/>:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/42b9471685856f457656beffd3ae383896fc79e5.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/8c179fd8161c76e8f223a151bc7880e872a6e542.svg" alt="\begin{aligned}
     \left\{
     \begin{array}{l}
       \vect{\nabla f}(\vect{x}) =\vect{0}  \\
@@ -133,25 +133,25 @@ function <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b
     \right.
   \end{aligned}"/></p>
 </div></div></blockquote>
-<p>The Taylor development of second order of <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> around
-<img class="math" src="../../_images/math/ff93c6e9f837f22a2bb4436acf52922b655da732.svg" alt="\vect{x}_k"/> leads to the determination of the iterate
-<img class="math" src="../../_images/math/39f31f4d3f7a53141c41efe1af0ccf94df65976b.svg" alt="\vect{x}_{k+1}"/> such as:</p>
+<p>The Taylor development of second order of <img class="math" src="../../_images/math/bf8af465e21be611f4cc50154e2fa28e5455230b.svg" alt="f"/> around
+<img class="math" src="../../_images/math/d1cb926ee40ce72e1e4a3fc39e074bf2418dadcf.svg" alt="\vect{x}_k"/> leads to the determination of the iterate
+<img class="math" src="../../_images/math/5414a570fd9b41379c367906bd1bafff901b5075.svg" alt="\vect{x}_{k+1}"/> such as:</p>
 <div class="math" id="equation-linearsystem">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-linearsystem" title="Permalink to this equation">¶</a></span><img src="../../_images/math/4079929c0121d41ce507dc226586578fa1d6a34b.svg" alt="\left\{
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-linearsystem" title="Permalink to this equation">¶</a></span><img src="../../_images/math/4239e1d85177579526e38279ffa7c0bfd0c3cfc8.svg" alt="\left\{
   \begin{array}{lcl}
     \vect{\Delta}_k &amp; = &amp; \vect{x}_{k+1} - \vect{x}_k  \\
     \mat{\nabla_2} f(\vect{x}_k)\vect{\Delta}_k &amp; = &amp; -\vect{\nabla f}(\vect{x}_k)
   \end{array}
   \right."/></p>
 </div><p>The equation <a class="reference internal" href="#equation-linearsystem">(1)</a> is truncated: the iterative research of
-<img class="math" src="../../_images/math/b2926b453c98c52a0b9d1bd1b92c3436bb42f2fa.svg" alt="\vect{\Delta}_k"/> is stopped as soon as <img class="math" src="../../_images/math/b2926b453c98c52a0b9d1bd1b92c3436bb42f2fa.svg" alt="\vect{\Delta}_k"/>
+<img class="math" src="../../_images/math/6580f5c12fbef0594cde91f043230bfa28c76722.svg" alt="\vect{\Delta}_k"/> is stopped as soon as <img class="math" src="../../_images/math/6580f5c12fbef0594cde91f043230bfa28c76722.svg" alt="\vect{\Delta}_k"/>
 verifies :</p>
 <div class="math">
-<p><img src="../../_images/math/e0db4f6f67d7592a1e63814bd6943f864ef20ed8.svg" alt="|| \mat{\nabla_2} f(\vect{x}_k)\vect{\Delta}_k + \vect{\nabla f}(\vect{x}_k) || \leq \eta ||\vect{\nabla f}(\vect{x}_k) ||"/></p>
-</div><p>At last, the iteration <img class="math" src="../../_images/math/b9cc8236999985eeced9624a00451f7ebc42e2d6.svg" alt="k+1"/> is defined by:</p>
+<p><img src="../../_images/math/1c05dc3f72e9ca946c2596fb3931702837a329eb.svg" alt="|| \mat{\nabla_2} f(\vect{x}_k)\vect{\Delta}_k + \vect{\nabla f}(\vect{x}_k) || \leq \eta ||\vect{\nabla f}(\vect{x}_k) ||"/></p>
+</div><p>At last, the iteration <img class="math" src="../../_images/math/b092fb207115b15339b9dc42683a667ca26ff51f.svg" alt="k+1"/> is defined by:</p>
 <div class="math">
-<p><img src="../../_images/math/cd5c9d872244ee3f9198b81e14f1f891b4111013.svg" alt="\vect{x}_{k+1} = \vect{x}_k + \alpha_k \vect{\Delta}_k"/></p>
-</div><p>where <img class="math" src="../../_images/math/bf7d32fbc1e6260ebf84cf232fe6e89f0bb76947.svg" alt="\alpha_k"/> is the parameter <em>stepmx</em>.</p>
+<p><img src="../../_images/math/5596e1abdf933536b0a9aade8c55210140be30a2.svg" alt="\vect{x}_{k+1} = \vect{x}_k + \alpha_k \vect{\Delta}_k"/></p>
+</div><p>where <img class="math" src="../../_images/math/4fb55d2063e286ca5bd90c27d8949ef41fb104eb.svg" alt="\alpha_k"/> is the parameter <em>stepmx</em>.</p>
 <div class="topic">
 <p class="topic-title first">API:</p>
 <ul class="simple">
@@ -201,7 +201,7 @@ verifies :</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

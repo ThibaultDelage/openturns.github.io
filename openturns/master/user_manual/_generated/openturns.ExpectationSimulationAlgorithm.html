@@ -101,8 +101,8 @@
 <dt id="openturns.ExpectationSimulationAlgorithm">
 <em class="property">class </em><code class="descname">ExpectationSimulationAlgorithm</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ExpectationSimulationAlgorithm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Expectation computation using sampling.</p>
-<p>Incremental Monte Carlo sampling algorithm to estimate the mean <img class="math" src="../../_images/math/2924ac32d85f20f55ded8c2e0720ef2b976b840d.svg" alt="\Expect{\vect{X}}"/> of a random vector
-<img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>.</p>
+<p>Incremental Monte Carlo sampling algorithm to estimate the mean <img class="math" src="../../_images/math/37b3dfbf32d206140b76ffcb69e754386777d3d5.svg" alt="\Expect{\vect{X}}"/> of a random vector
+<img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -121,7 +121,7 @@
 <p class="last"><a class="reference internal" href="openturns.ExpectationSimulationResult.html#openturns.ExpectationSimulationResult" title="openturns.ExpectationSimulationResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExpectationSimulationResult</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>The algorithm can operate on a multivariate random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>.</p>
+<p>The algorithm can operate on a multivariate random vector <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/>.</p>
 <p>There are 3 mathematical stopping criteria available:</p>
 <ul class="simple">
 <li>through an operator on the coefficient of variation</li>
@@ -131,30 +131,30 @@
 <p>The criterion on the coefficient of variation is defined using either:</p>
 <blockquote>
 <div><ul class="simple">
-<li>The maximum: <img class="math" src="../../_images/math/dfee62a7ab95b5ab1fea4ce3f62130d0e28db59c.svg" alt="\max_i \frac{\sigma_i}{|\mu_i|} \leq \max_{cov}"/></li>
-<li>The norm-1: <img class="math" src="../../_images/math/4ca64227a1f71a32692b4971c672f851aef6a6c6.svg" alt="\frac{1}{d} \sum_1^{d} \frac{\sigma_i}{|\mu_i|} \leq \max_{cov}"/></li>
-<li>The norm-2: <img class="math" src="../../_images/math/2d9f22e067257a768207ef712c950601a94a7baf.svg" alt="\sqrt{\frac{1}{d} \sum_1^{d} \left(\frac{\sigma_i}{|\mu_i|}\right)^2} \leq \max_{cov}"/></li>
+<li>The maximum: <img class="math" src="../../_images/math/ff465ed063d21f5bcf73595dee734b72da03e032.svg" alt="\max_i \frac{\sigma_i}{|\mu_i|} \leq \max_{cov}"/></li>
+<li>The norm-1: <img class="math" src="../../_images/math/e7b5a259b9b9718ec449b89ce5f2f5c22a4b92e8.svg" alt="\frac{1}{d} \sum_1^{d} \frac{\sigma_i}{|\mu_i|} \leq \max_{cov}"/></li>
+<li>The norm-2: <img class="math" src="../../_images/math/3af4cbe9fc1828a22d86d96d1204b89e589e9c61.svg" alt="\sqrt{\frac{1}{d} \sum_1^{d} \left(\frac{\sigma_i}{|\mu_i|}\right)^2} \leq \max_{cov}"/></li>
 </ul>
 <p>The type of operator on the coefficient of variation is set using <a class="reference internal" href="#openturns.ExpectationSimulationAlgorithm.setCoefficientOfVariationCriterionType" title="openturns.ExpectationSimulationAlgorithm.setCoefficientOfVariationCriterionType"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setCoefficientOfVariationCriterionType()</span></code></a>.</p>
 <p>The default type is set by the <cite>ExpectationSimulationAlgorithm-DefaultCoefficientOfVariationCriterionType</cite>
 <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a> key.</p>
-<p>The threshold <img class="math" src="../../_images/math/ec5f9192c854ea7a47784ee1dc8b1d497a6d7d7f.svg" alt="\max_{cov}"/> can be set using <a class="reference internal" href="#openturns.ExpectationSimulationAlgorithm.setMaximumCoefficientOfVariation" title="openturns.ExpectationSimulationAlgorithm.setMaximumCoefficientOfVariation"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setMaximumCoefficientOfVariation()</span></code></a>.</p>
+<p>The threshold <img class="math" src="../../_images/math/12538eed5922633b31122f0d749c5c32493ad4d2.svg" alt="\max_{cov}"/> can be set using <a class="reference internal" href="#openturns.ExpectationSimulationAlgorithm.setMaximumCoefficientOfVariation" title="openturns.ExpectationSimulationAlgorithm.setMaximumCoefficientOfVariation"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setMaximumCoefficientOfVariation()</span></code></a>.</p>
 </div></blockquote>
 <p>The criterion on the standard deviation is defined using either:</p>
 <blockquote>
 <div><ul class="simple">
-<li>The maximum: <img class="math" src="../../_images/math/0625f245928342ddb0001e22544378bc9fb5cc03.svg" alt="\max_i \sigma_i \leq \max_{\sigma}"/></li>
-<li>The norm-1: <img class="math" src="../../_images/math/734f0e83a5a2b45c2cc0074e785173fd80a85128.svg" alt="\frac{1}{d} \sum_1^{d} |\sigma_i| \leq \max_{\sigma}"/></li>
-<li>The norm-2: <img class="math" src="../../_images/math/d90096c721db5c8f480ef9f94226026e58deba82.svg" alt="\sqrt{\frac{1}{d} \sum_1^{d} \sigma_i^2} \leq \max_{\sigma}"/></li>
+<li>The maximum: <img class="math" src="../../_images/math/f1b1e64fcbf899100bf4e537cb5fb3df8fce2309.svg" alt="\max_i \sigma_i \leq \max_{\sigma}"/></li>
+<li>The norm-1: <img class="math" src="../../_images/math/4d14c6bdbd7a6db453201a6b32ed15ccbec575af.svg" alt="\frac{1}{d} \sum_1^{d} |\sigma_i| \leq \max_{\sigma}"/></li>
+<li>The norm-2: <img class="math" src="../../_images/math/f073e25a327e678d635e1d79ece0674671dcab99.svg" alt="\sqrt{\frac{1}{d} \sum_1^{d} \sigma_i^2} \leq \max_{\sigma}"/></li>
 </ul>
 <p>The type of operator on the coefficient of variation can be set using <a class="reference internal" href="#openturns.ExpectationSimulationAlgorithm.setStandardDeviationCriterionType" title="openturns.ExpectationSimulationAlgorithm.setStandardDeviationCriterionType"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setStandardDeviationCriterionType()</span></code></a>.</p>
 <p>The default type is set by the <cite>ExpectationSimulationAlgorithm-DefaultStandardDeviationCriterionType</cite>
 <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a> key.</p>
-<p>The threshold <img class="math" src="../../_images/math/ab2d858bfcbc3290c8542da4f5c200ae4581c33b.svg" alt="\max_{\sigma}"/> can be set using <a class="reference internal" href="#openturns.ExpectationSimulationAlgorithm.setMaximumStandardDeviation" title="openturns.ExpectationSimulationAlgorithm.setMaximumStandardDeviation"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setMaximumStandardDeviation()</span></code></a>.</p>
+<p>The threshold <img class="math" src="../../_images/math/d9dad2a80706c74a1da77686f0ad1ba689efd45b.svg" alt="\max_{\sigma}"/> can be set using <a class="reference internal" href="#openturns.ExpectationSimulationAlgorithm.setMaximumStandardDeviation" title="openturns.ExpectationSimulationAlgorithm.setMaximumStandardDeviation"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setMaximumStandardDeviation()</span></code></a>.</p>
 </div></blockquote>
-<p>The criterion on the maximum deviation per component is defined by <img class="math" src="../../_images/math/4b690036d739fc2875873ba41df9588de9b2a4b2.svg" alt="\sigma_i \leq \max_{\sigma_i}"/></p>
+<p>The criterion on the maximum deviation per component is defined by <img class="math" src="../../_images/math/7c3840504acd624bb695f4df2f0ac28184492f92.svg" alt="\sigma_i \leq \max_{\sigma_i}"/></p>
 <blockquote>
-<div><p>The thresholds <img class="math" src="../../_images/math/f0a71136233f0d896df5fe2eb3efbc4bfd3620f6.svg" alt="\max_{\sigma_i}"/> can be set using <a class="reference internal" href="#openturns.ExpectationSimulationAlgorithm.setMaximumStandardDeviationPerComponent" title="openturns.ExpectationSimulationAlgorithm.setMaximumStandardDeviationPerComponent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setMaximumStandardDeviationPerComponent()</span></code></a>.</p>
+<div><p>The thresholds <img class="math" src="../../_images/math/c2c90da408c780b3c0e35de44c48777a86bd3d44.svg" alt="\max_{\sigma_i}"/> can be set using <a class="reference internal" href="#openturns.ExpectationSimulationAlgorithm.setMaximumStandardDeviationPerComponent" title="openturns.ExpectationSimulationAlgorithm.setMaximumStandardDeviationPerComponent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setMaximumStandardDeviationPerComponent()</span></code></a>.</p>
 <p>By default this criterion is disabled.</p>
 </div></blockquote>
 <p class="rubric">Examples</p>
@@ -177,6 +177,19 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">expectationDistribution</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">getExpectationDistribution</span><span class="p">()</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.ExpectationSimulationAlgorithm.thisown" title="openturns.ExpectationSimulationAlgorithm.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -468,7 +481,7 @@ and its variance during the simulation algorithm.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/6b5207bd2183ab5374278d03ca62f7119dec943b.svg" alt="\sigma &gt; 0"/></span></dt>
+<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/14f901f927f8322e84ea973d68a256fb19cd6a49.svg" alt="\sigma &gt; 0"/></span></dt>
 <dd><p class="first last">Maximum standard deviation of the estimator.</p>
 </dd>
 </dl>
@@ -680,7 +693,7 @@ and its variance during the simulation algorithm.</p>
 <p>It launches the simulation on a sample of size at most <em>outerSampling * blockSize</em>,
 this sample being built by blocks of size <em>blockSize</em>. It allows to use
 efficiently the distribution of the computation as well as it allows to deal
-with a sample size <img class="math" src="../../_images/math/9a6aa39a54d6c1926e8fccab4dad4b7662f6ecc2.svg" alt="&gt; 2^{32}"/> by a combination of <em>blockSize</em> and
+with a sample size <img class="math" src="../../_images/math/09c5f8ae0d4a633ab5d5f91d701933e6bfccef3d.svg" alt="&gt; 2^{32}"/> by a combination of <em>blockSize</em> and
 <em>outerSampling</em>.</p>
 </dd></dl>
 
@@ -693,7 +706,7 @@ with a sample size <img class="math" src="../../_images/math/9a6aa39a54d6c1926e8
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>blockSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a3e0bdbffa9f573f54c15f58cb873424153d07a0.svg" alt="blockSize \geq 1"/></span></dt>
+<dt><strong>blockSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/19abd1ac865baa3e80a16373c55d3b9d431b5457.svg" alt="blockSize \geq 1"/></span></dt>
 <dd><p class="first last">Number of terms in the probability simulation estimator grouped together.
 It is set by default to 1.</p>
 </dd>
@@ -795,7 +808,7 @@ and its variance during the simulation algorithm.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/6b5207bd2183ab5374278d03ca62f7119dec943b.svg" alt="\sigma &gt; 0"/></span></dt>
+<dt><strong>sigma</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/14f901f927f8322e84ea973d68a256fb19cd6a49.svg" alt="\sigma &gt; 0"/></span></dt>
 <dd><p class="first last">Maximum standard deviation of the estimator.</p>
 </dd>
 </dl>
@@ -958,6 +971,12 @@ and its variance during the simulation algorithm.</p>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.ExpectationSimulationAlgorithm.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.ExpectationSimulationAlgorithm.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -989,7 +1008,7 @@ and its variance during the simulation algorithm.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

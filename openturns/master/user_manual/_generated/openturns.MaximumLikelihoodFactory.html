@@ -108,7 +108,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>distribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
-<dd><p class="first last">The distribution defining the parametric model <img class="math" src="../../_images/math/d17b6fcb55f1e0d81dfeb1508cb5c238ea621f93.svg" alt="p_{\vect{\theta}}"/> to be adjusted to data.</p>
+<dd><p class="first last">The distribution defining the parametric model <img class="math" src="../../_images/math/5cd319cb1212ad6b7efcc38125df913124e1615b.svg" alt="p_{\vect{\theta}}"/> to be adjusted to data.</p>
 </dd>
 </dl>
 </td>
@@ -121,15 +121,15 @@
 </div>
 <p class="rubric">Notes</p>
 <p>Implements generic maximum likelihood estimation.</p>
-<p>Let us denote <img class="math" src="../../_images/math/8817b40b0041942637e7d9d8a80607c5c1e763fa.svg" alt="(\vect{x}_1, \dots, \vect{x}_n)"/> the sample, <img class="math" src="../../_images/math/d17b6fcb55f1e0d81dfeb1508cb5c238ea621f93.svg" alt="p_{\vect{\theta}}"/>
+<p>Let us denote <img class="math" src="../../_images/math/c3d4b0a686a4fb48116b849c283bf146d03157e3.svg" alt="(\vect{x}_1, \dots, \vect{x}_n)"/> the sample, <img class="math" src="../../_images/math/5cd319cb1212ad6b7efcc38125df913124e1615b.svg" alt="p_{\vect{\theta}}"/>
 the particular distribution of probability density function we want to fit to the sample,
-and <img class="math" src="../../_images/math/e5fa9f12394493e55bd2245360a05124c4799489.svg" alt="\vect{\theta} \in \Theta \in \Rset^p"/> its the parameter vector.</p>
-<p>The likelihood of the sample according to <img class="math" src="../../_images/math/d17b6fcb55f1e0d81dfeb1508cb5c238ea621f93.svg" alt="p_{\vect{\theta}}"/> is:</p>
+and <img class="math" src="../../_images/math/b3c4d0523f184e1611ebcb11041e557058bc4143.svg" alt="\vect{\theta} \in \Theta \in \Rset^p"/> its the parameter vector.</p>
+<p>The likelihood of the sample according to <img class="math" src="../../_images/math/5cd319cb1212ad6b7efcc38125df913124e1615b.svg" alt="p_{\vect{\theta}}"/> is:</p>
 <div class="math">
-<p><img src="../../_images/math/40eb6e15f751c80ac3c04517af59481a8903aba2.svg" alt="likelihood(\vect{x}_1, \dots, \vect{x}_n,\vect{\theta}) = \prod_{i=1}^n p_{\vect{\theta}}(\vect{x}_i)"/></p>
-</div><p>The parameters <img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/> are numerically optimized using an optimization algorithm:</p>
+<p><img src="../../_images/math/53cc55e45862b0aa416d1021e55f4aadc2d9c79b.svg" alt="likelihood(\vect{x}_1, \dots, \vect{x}_n,\vect{\theta}) = \prod_{i=1}^n p_{\vect{\theta}}(\vect{x}_i)"/></p>
+</div><p>The parameters <img class="math" src="../../_images/math/7f8d6d830d1bda48ea6068b9801613dfe3a00263.svg" alt="\vect{\theta}"/> are numerically optimized using an optimization algorithm:</p>
 <div class="math">
-<p><img src="../../_images/math/c95f996ef7f7dca3aa4460f3653d1c222cebfa68.svg" alt="\max_{\vect{\theta} \in \Theta} \log likelihood\, (\vect{x}_1, \dots, \vect{x}_n,\vect{\theta}) = \max_{\vect{\theta} \in \Theta} \sum_{i=1}^n log(p_{\vect{\theta}}(\vect{x}_i))"/></p>
+<p><img src="../../_images/math/656ffb78841d225a45abcac120c294fad41b33e5.svg" alt="\max_{\vect{\theta} \in \Theta} \log likelihood\, (\vect{x}_1, \dots, \vect{x}_n,\vect{\theta}) = \max_{\vect{\theta} \in \Theta} \sum_{i=1}^n log(p_{\vect{\theta}}(\vect{x}_i))"/></p>
 </div><p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -139,6 +139,19 @@ and <img class="math" src="../../_images/math/e5fa9f12394493e55bd2245360a05124c4
 <span class="gp">&gt;&gt;&gt; </span><span class="n">inf_distribution</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.MaximumLikelihoodFactory.thisown" title="openturns.MaximumLikelihoodFactory.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -308,7 +321,7 @@ and <img class="math" src="../../_images/math/e5fa9f12394493e55bd2245360a05124c4
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/9c0675243e96235ce54d181013419a9d5dd7ef3b.svg" alt="(\mu, \sigma, a, b)"/>:</p>
+<p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/7708d72f7db4dc9657cbe0067d9492fc988553f0.svg" alt="(\mu, \sigma, a, b)"/>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaMuSigma</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -708,6 +721,12 @@ and <img class="math" src="../../_images/math/e5fa9f12394493e55bd2245360a05124c4
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.MaximumLikelihoodFactory.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.MaximumLikelihoodFactory.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -739,7 +758,7 @@ and <img class="math" src="../../_images/math/e5fa9f12394493e55bd2245360a05124c4
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

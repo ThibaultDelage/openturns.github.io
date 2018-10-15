@@ -141,32 +141,32 @@ based.</p>
 <p class="rubric">Notes</p>
 <p>MCMC provides a implementation of the concept of sampler, using a Monte-Carlo
 Markov Chain (MCMC) algorithm starting from <em>initialState</em>. More precisely,
-let <img class="math" src="../../_images/math/a509cd492f655787f97412c973c6f5ed72bd5bb1.svg" alt="t(.)"/> be the PDF of its target distribution and <img class="math" src="../../_images/math/a176cbeeaa0b7ea510453b9876cbab8767dee502.svg" alt="d_{\theta}"/>
-its dimension, <img class="math" src="../../_images/math/4812797fdd9b809ddacc04806b00a0c1f5398b77.svg" alt="\pi(.)"/> be the PDF of the <em>prior</em> distribution,
-<img class="math" src="../../_images/math/7116ae65194b8d60f33fae80366ea122cb5bb59d.svg" alt="f(.|\vect{w})"/> be the PDF of the <em>conditional</em> distribution
-when its parameters are set to <img class="math" src="../../_images/math/04138b5ca90d217817fc8b849dfa9285ecb57385.svg" alt="\vect{w}"/>, <img class="math" src="../../_images/math/8116f3a5f8da27829ea508ea25886315309f1672.svg" alt="d_w"/> be the number of
+let <img class="math" src="../../_images/math/9bf7c666b0a2f88e4e181d813b87e5abdf82d513.svg" alt="t(.)"/> be the PDF of its target distribution and <img class="math" src="../../_images/math/70da48ed5afbd47c6e713b66ee0264e89b5a120a.svg" alt="d_{\theta}"/>
+its dimension, <img class="math" src="../../_images/math/2b6779e1e7ef4e50437e2c612d47973387b7d3ad.svg" alt="\pi(.)"/> be the PDF of the <em>prior</em> distribution,
+<img class="math" src="../../_images/math/9b8293b52810a25e15412118251ed15adca24d99.svg" alt="f(.|\vect{w})"/> be the PDF of the <em>conditional</em> distribution
+when its parameters are set to <img class="math" src="../../_images/math/9e5fa35ee306d6624cfc4bde71b8bf77e7fec243.svg" alt="\vect{w}"/>, <img class="math" src="../../_images/math/b1ca5699d012f23357a86693bcf8cb591c848856.svg" alt="d_w"/> be the number of
 scalar parameters of <em>conditional</em> distribution (which corresponds to the
-dimension of the above <img class="math" src="../../_images/math/04138b5ca90d217817fc8b849dfa9285ecb57385.svg" alt="\vect{w}"/>), <img class="math" src="../../_images/math/c712f8b680cbe4fd15107c2e6ee0f1e1e53aefbe.svg" alt="g(.)"/> be the function
-corresponding to model and <img class="math" src="../../_images/math/108d57e4d6fa1f75e1f86063f20d579136ce51e5.svg" alt="(\vect{y}^1, \dots, \vect{y}^n)"/> be the
-sample <em>observations</em> (of size <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/>):</p>
+dimension of the above <img class="math" src="../../_images/math/9e5fa35ee306d6624cfc4bde71b8bf77e7fec243.svg" alt="\vect{w}"/>), <img class="math" src="../../_images/math/2832ff1f2274d791dd963351ef14df52a4d0d101.svg" alt="g(.)"/> be the function
+corresponding to model and <img class="math" src="../../_images/math/344395145f4a14f7b29f71e72f3ff9b72029d8d6.svg" alt="(\vect{y}^1, \dots, \vect{y}^n)"/> be the
+sample <em>observations</em> (of size <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/>):</p>
 <p>In the first usage, it creates a sampler based on a MCMC algorithm whose target
 distribution is defined by:</p>
 <div class="math" id="pdf-target-formula">
-<p><img src="../../_images/math/0db8ee314fbb03bec2d5a9e63f7e8045ad16030c.svg" alt="t(\vect{\theta})
+<p><img src="../../_images/math/f078cdb79735062113065f4e546e6dec885dc748.svg" alt="t(\vect{\theta})
 \quad \propto \quad
 \underbrace{~\pi(\vect{\theta})~}_{\mbox{prior}} \quad
 \underbrace{~\prod_{i=1}^n f(\vect{y}^i|\vect{\theta})~}_{\mbox{likelihood}}"/></p>
 </div><p>In the second usage, it creates a sampler based on a MCMC algorithm whose target
 distribution is defined by:</p>
 <div class="math" id="second-pdf-target-formula">
-<p><img src="../../_images/math/442412f9cbb86930346a08680ade6d0ac5a01983.svg" alt="t(\vect{\theta})
+<p><img src="../../_images/math/b320f273fada0e5cdcd39721f90d56ea33cdd5c7.svg" alt="t(\vect{\theta})
 \quad \propto \quad
 \underbrace{~\pi(\vect{\theta})~}_{\mbox{prior}} \quad
 \underbrace{~\prod_{i=1}^n f(\vect{y}^i|g^i(\vect{\theta}))~}_{\mbox{likelihood}}"/></p>
-</div><p>where the <img class="math" src="../../_images/math/cef5afd3be57bfaba17d66c3817a1c3ee38d2827.svg" alt="g^i: \Rset^{d_{\theta}} \rightarrow\Rset^{d_w}"/>
-(<img class="math" src="../../_images/math/139dae6cd2b76874ce076b57be85dbf200a222cf.svg" alt="1\leq{}i\leq{}n"/>) are such that:</p>
+</div><p>where the <img class="math" src="../../_images/math/fdcbca74ebd34bf181ab217fca8e2d5f891834fc.svg" alt="g^i: \Rset^{d_{\theta}} \rightarrow\Rset^{d_w}"/>
+(<img class="math" src="../../_images/math/feec25c3d262eecab799a5c5dfd4a17e1a6e106e.svg" alt="1\leq{}i\leq{}n"/>) are such that:</p>
 <div class="math">
-<p><img src="../../_images/math/6830b1ff5b6cf07590708eae1650b8b86ad352fc.svg" alt="\begin{array}{rcl}
+<p><img src="../../_images/math/9e8f4743b843452026026c28e83561dfbdc80bad.svg" alt="\begin{array}{rcl}
     g:\Rset^{d_\theta} &amp; \longrightarrow &amp; \Rset^{n\,d_w}\\
     \vect{\theta} &amp; \longmapsto &amp;
     g(\vect{\theta}) = \Tr{(\Tr{g^1(\vect{\theta})}, \cdots, \Tr{g^n(\vect{\theta})})}
@@ -175,6 +175,19 @@ distribution is defined by:</p>
 <p>The MCMC method implemented is the Random Walk Metropolis-Hastings
 algorithm. A sample can be generated only through the MCMC’s derived class:
 <a class="reference internal" href="openturns.RandomWalkMetropolisHastings.html#openturns.RandomWalkMetropolisHastings" title="openturns.RandomWalkMetropolisHastings"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomWalkMetropolisHastings</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.MCMC.thisown" title="openturns.MCMC.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -222,7 +235,7 @@ algorithm. A sample can be generated only through the MCMC’s derived class:
 <td>Accessor to the object’s id.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.MCMC.getMarginal" title="openturns.MCMC.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(*args)</td>
-<td>Get the random vector corresponding to the <img class="math" src="../../_images/math/9b3fb7e041ddeea31ab9148572d497bf4e51c592.svg" alt="i^{th}"/> marginal component(s).</td>
+<td>Get the random vector corresponding to the <img class="math" src="../../_images/math/8e3f44f37eaed85ce78c3c44e0107507f245190f.svg" alt="i^{th}"/> marginal component(s).</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.MCMC.getMean" title="openturns.MCMC.getMean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMean</span></code></a>()</td>
 <td>Accessor to the mean of the RandomVector.</td>
@@ -352,7 +365,7 @@ algorithm. A sample can be generated only through the MCMC’s derived class:
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>logLikelihood</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd><p class="first last">Logarithm of the likelihood w.r.t. observations
-<img class="math" src="../../_images/math/108d57e4d6fa1f75e1f86063f20d579136ce51e5.svg" alt="(\vect{y}^1, \dots, \vect{y}^n)"/>.</p>
+<img class="math" src="../../_images/math/344395145f4a14f7b29f71e72f3ff9b72029d8d6.svg" alt="(\vect{y}^1, \dots, \vect{y}^n)"/>.</p>
 </dd>
 </dl>
 </td>
@@ -371,9 +384,9 @@ algorithm. A sample can be generated only through the MCMC’s derived class:
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>antecedent</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RandomVector.html#openturns.RandomVector" title="openturns.RandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomVector</span></code></a></span></dt>
-<dd><p class="first last">Antecedent RandomVector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> in case of a
+<dd><p class="first last">Antecedent RandomVector <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/> in case of a
 <a class="reference internal" href="openturns.CompositeRandomVector.html#openturns.CompositeRandomVector" title="openturns.CompositeRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompositeRandomVector</span></code></a> such as:
-<img class="math" src="../../_images/math/d03a7d71be8d4307eb282a16c5b624dffaddd30c.svg" alt="\vect{Y}=f(\vect{X})"/>.</p>
+<img class="math" src="../../_images/math/45f461d0dca6764b2fa6d3985eb02ffb75dd4f79.svg" alt="\vect{Y}=f(\vect{X})"/>.</p>
 </dd>
 </dl>
 </td>
@@ -432,7 +445,7 @@ MCMC chain which will be thrown away when generating the sample.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>conditional</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
 <dd><p class="first last">Distribution taken into account in the definition of the likelihood, whose
-PDF with parameters <img class="math" src="../../_images/math/04138b5ca90d217817fc8b849dfa9285ecb57385.svg" alt="\vect{w}"/> corresponds to <img class="math" src="../../_images/math/7116ae65194b8d60f33fae80366ea122cb5bb59d.svg" alt="f(.|\vect{w})"/>
+PDF with parameters <img class="math" src="../../_images/math/9e5fa35ee306d6624cfc4bde71b8bf77e7fec243.svg" alt="\vect{w}"/> corresponds to <img class="math" src="../../_images/math/9b8293b52810a25e15412118251ed15adca24d99.svg" alt="f(.|\vect{w})"/>
 in the equations of the
 <a class="reference internal" href="#pdf-target-formula"><span class="std std-ref">target distribution’s PDF</span></a>.</p>
 </dd>
@@ -569,8 +582,8 @@ in the equations of the
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>function</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
 <dd><p class="first last">Function used to define a <a class="reference internal" href="openturns.CompositeRandomVector.html#openturns.CompositeRandomVector" title="openturns.CompositeRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompositeRandomVector</span></code></a> as the
-image through this function of the antecedent <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>:
-<img class="math" src="../../_images/math/d03a7d71be8d4307eb282a16c5b624dffaddd30c.svg" alt="\vect{Y}=f(\vect{X})"/>.</p>
+image through this function of the antecedent <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/>:
+<img class="math" src="../../_images/math/45f461d0dca6764b2fa6d3985eb02ffb75dd4f79.svg" alt="\vect{Y}=f(\vect{X})"/>.</p>
 </dd>
 </dl>
 </td>
@@ -620,14 +633,14 @@ image through this function of the antecedent <img class="math" src="../../_imag
 <dl class="method">
 <dt id="openturns.MCMC.getMarginal">
 <code class="descname">getMarginal</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.MCMC.getMarginal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the random vector corresponding to the <img class="math" src="../../_images/math/9b3fb7e041ddeea31ab9148572d497bf4e51c592.svg" alt="i^{th}"/> marginal component(s).</p>
+<dd><p>Get the random vector corresponding to the <img class="math" src="../../_images/math/8e3f44f37eaed85ce78c3c44e0107507f245190f.svg" alt="i^{th}"/> marginal component(s).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or list of ints, <img class="math" src="../../_images/math/b7ed5e57cdedb7e21bd33219d4a97b3ee5c3799c.svg" alt="0\leq i &lt; dim"/></span></dt>
-<dd><p class="first last">Indicates the component(s) concerned. <img class="math" src="../../_images/math/209f44e4174733120d691cfa04c667ee359e55a2.svg" alt="dim"/> is the dimension of the
+<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or list of ints, <img class="math" src="../../_images/math/93a548dde1aac0bf289d5ff85cb2ad07992e38fa.svg" alt="0\leq i &lt; dim"/></span></dt>
+<dd><p class="first last">Indicates the component(s) concerned. <img class="math" src="../../_images/math/c0e9ed167daa45dab05b640da0b8034b15f0e4c8.svg" alt="dim"/> is the dimension of the
 RandomVector.</p>
 </dd>
 </dl>
@@ -643,14 +656,14 @@ RandomVector.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>Let’s note <img class="math" src="../../_images/math/485c9c6ec82502b05b0ff96d13a493887bab7de6.svg" alt="\vect{Y}=\Tr{(Y_1,\dots,Y_n)}"/> a random vector and
-<img class="math" src="../../_images/math/29656406fed79a275f5b67974c1be77969cce4e0.svg" alt="I \in [1,n]"/> a set of indices. If <img class="math" src="../../_images/math/1ca0e315ae4eaf246041889d6a7ed57680d05c35.svg" alt="\vect{Y}"/> is a
+<p>Let’s note <img class="math" src="../../_images/math/77c094ee4e798bbf8e89c9d0ceda55dffa80aa21.svg" alt="\vect{Y}=\Tr{(Y_1,\dots,Y_n)}"/> a random vector and
+<img class="math" src="../../_images/math/adc173ecc0bbbd33419f42e83c017301fd114152.svg" alt="I \in [1,n]"/> a set of indices. If <img class="math" src="../../_images/math/08e2dd88c947c17551cdad4317eadfbe6755e04d.svg" alt="\vect{Y}"/> is a
 <a class="reference internal" href="openturns.UsualRandomVector.html#openturns.UsualRandomVector" title="openturns.UsualRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">UsualRandomVector</span></code></a>, the subvector is defined by
-<img class="math" src="../../_images/math/612322495b4fb0e73b1dab321ffd30442ccf6db1.svg" alt="\tilde{\vect{Y}}=\Tr{(Y_i)}_{i \in I}"/>. If <img class="math" src="../../_images/math/1ca0e315ae4eaf246041889d6a7ed57680d05c35.svg" alt="\vect{Y}"/> is a
+<img class="math" src="../../_images/math/73330e9a5e5bd4b5b1a9bec5a78d48632e83fda5.svg" alt="\tilde{\vect{Y}}=\Tr{(Y_i)}_{i \in I}"/>. If <img class="math" src="../../_images/math/08e2dd88c947c17551cdad4317eadfbe6755e04d.svg" alt="\vect{Y}"/> is a
 <a class="reference internal" href="openturns.CompositeRandomVector.html#openturns.CompositeRandomVector" title="openturns.CompositeRandomVector"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompositeRandomVector</span></code></a>, defined by
-<img class="math" src="../../_images/math/d03a7d71be8d4307eb282a16c5b624dffaddd30c.svg" alt="\vect{Y}=f(\vect{X})"/> with <img class="math" src="../../_images/math/3157526868df13c93becafa5c1457106e2d015a1.svg" alt="f=(f_1,\dots,f_n)"/>,
-<img class="math" src="../../_images/math/1c080a9ba89af24a6b486e404f32920dbce26778.svg" alt="f_i"/> some scalar functions, the subvector is
-<img class="math" src="../../_images/math/a3bc9857ab79d76aca7f6b30d9f0dc7dba9ea742.svg" alt="\tilde{\vect{Y}}=(f_i(\vect{X}))_{i \in I}"/>.</p>
+<img class="math" src="../../_images/math/45f461d0dca6764b2fa6d3985eb02ffb75dd4f79.svg" alt="\vect{Y}=f(\vect{X})"/> with <img class="math" src="../../_images/math/e99418f19e7464e878c06630f53f4c2e328b7f69.svg" alt="f=(f_1,\dots,f_n)"/>,
+<img class="math" src="../../_images/math/26808c84c2344cab1fe488860f6e2764064e3d13.svg" alt="f_i"/> some scalar functions, the subvector is
+<img class="math" src="../../_images/math/ec6a71271bae1efd8445ac8ea2603932abec3fc7.svg" alt="\tilde{\vect{Y}}=(f_i(\vect{X}))_{i \in I}"/>.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">ot</span><span class="o">.</span><span class="n">CorrelationMatrix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
@@ -703,8 +716,8 @@ RandomVector.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>model</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
 <dd><p class="first last">Model take into account in the definition of the likelihood, which
-corresponds to <img class="math" src="../../_images/math/acd8bd9450f07383a622c4141048e61d5d4593d8.svg" alt="g"/>, that is the functions <img class="math" src="../../_images/math/36b0a9c47fe980dbe52a8e96aca4554386c42475.svg" alt="g^i"/>
-(<img class="math" src="../../_images/math/e486a519dc2ad878170edd6f5be918368414f07c.svg" alt="1\leq i \leq n"/>) in the equation of the
+corresponds to <img class="math" src="../../_images/math/f487d47f3f53fc6c6a3567ec99bf8077018c38b7.svg" alt="g"/>, that is the functions <img class="math" src="../../_images/math/fcb113ca2e07b15708910e96d16c6c6e06e29b4e.svg" alt="g^i"/>
+(<img class="math" src="../../_images/math/6729aeea49353c884b04c6a2197225e90fe8224a.svg" alt="1\leq i \leq n"/>) in the equation of the
 <a class="reference internal" href="#second-pdf-target-formula"><span class="std std-ref">target distribution’s PDF</span></a>.</p>
 </dd>
 </dl>
@@ -766,8 +779,8 @@ tuned variables.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>observations</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
 <dd><p class="first last">Sample taken into account in the definition of the likelihood, which
-corresponds to the <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/>-tuple of the <img class="math" src="../../_images/math/9e92027e1d91f60a8178bddb620e283a289826fe.svg" alt="\vect{y}^i"/>
-(<img class="math" src="../../_images/math/e486a519dc2ad878170edd6f5be918368414f07c.svg" alt="1\leq i \leq n"/>) in equations of the
+corresponds to the <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/>-tuple of the <img class="math" src="../../_images/math/5fa06b5461486741396f4c219472caef1159b8c4.svg" alt="\vect{y}^i"/>
+(<img class="math" src="../../_images/math/6729aeea49353c884b04c6a2197225e90fe8224a.svg" alt="1\leq i \leq n"/>) in equations of the
 <a class="reference internal" href="#pdf-target-formula"><span class="std std-ref">target distribution’s PDF</span></a>.</p>
 </dd>
 </dl>
@@ -844,7 +857,7 @@ corresponds to the <img class="math" src="../../_images/math/3492afb5563cde1aa48
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>parameters</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Fixed parameters of the model <img class="math" src="../../_images/math/acd8bd9450f07383a622c4141048e61d5d4593d8.svg" alt="g"/> required to define the likelihood.</p>
+<dd><p class="first last">Fixed parameters of the model <img class="math" src="../../_images/math/f487d47f3f53fc6c6a3567ec99bf8077018c38b7.svg" alt="g"/> required to define the likelihood.</p>
 </dd>
 </dl>
 </td>
@@ -864,7 +877,7 @@ corresponds to the <img class="math" src="../../_images/math/3492afb5563cde1aa48
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>prior</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
 <dd><p class="first last">The prior distribution of the parameter of the underlying Bayesian
-statistical model, whose PDF corresponds to <img class="math" src="../../_images/math/e2b31664102a8c06ac1677e1d1f164e19dd88d43.svg" alt="\pi"/> in the equations of
+statistical model, whose PDF corresponds to <img class="math" src="../../_images/math/ca8e27f3a7a4fa156648309547731fcf42984762.svg" alt="\pi"/> in the equations of
 the <a class="reference internal" href="#pdf-target-formula"><span class="std std-ref">target distribution’s PDF</span></a>.</p>
 </dd>
 </dl>
@@ -939,7 +952,7 @@ event and 0 else).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/f6d84814c3b7367dcf20f4b3a13f2a05e96969d2.svg" alt="n \geq 0"/></span></dt>
+<dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/1a13735264424681d43b78e82d1e77aa7380d1e3.svg" alt="n \geq 0"/></span></dt>
 <dd><p class="first last">Number of realizations needed.</p>
 </dd>
 </dl>
@@ -1004,7 +1017,7 @@ event and 0 else).</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>thinning</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Thinning parameter: storing only every <img class="math" src="../../_images/math/9e13f2aa1906ee95ab0e9da428e161a6d0c46e9c.svg" alt="k^{th}"/> point after the
+<dd><p class="first last">Thinning parameter: storing only every <img class="math" src="../../_images/math/b571bf56361a4fc8439ac1f8cd466828b8dba528.svg" alt="k^{th}"/> point after the
 burn-in period.</p>
 </dd>
 </dl>
@@ -1013,9 +1026,9 @@ burn-in period.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>When generating a sample of size <img class="math" src="../../_images/math/d3ff3f8dc62e7ced97541233ffedabb887bc5bb9.svg" alt="q"/>, the number of MCMC iterations
-performed is <img class="math" src="../../_images/math/553b0f4e8e47175354149d8d9dcea5533b48d1f7.svg" alt="l+1+(q-1)k"/> where <img class="math" src="../../_images/math/84f38ad5daac04c440210799fc67fd7e4b2f36a4.svg" alt="l"/> is the burn-in period length
-and <img class="math" src="../../_images/math/25ccf3f81465c5f61677ee2819c658ad49ef800d.svg" alt="k"/> the thinning parameter.</p>
+<p>When generating a sample of size <img class="math" src="../../_images/math/b755e5095e35304df53eb04c4d02fba5cd990320.svg" alt="q"/>, the number of MCMC iterations
+performed is <img class="math" src="../../_images/math/8211f48c63d92f11d4180ce5e4749f5c3925e408.svg" alt="l+1+(q-1)k"/> where <img class="math" src="../../_images/math/1b5b1bc3f2c70d27d1b530ef2c54113031fd9fe0.svg" alt="l"/> is the burn-in period length
+and <img class="math" src="../../_images/math/a3d2afe19489776a703d7832f19a676d23032d92.svg" alt="k"/> the thinning parameter.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1242,8 +1255,8 @@ tuned variables.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>observations</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
 <dd><p class="first last">Sample taken into account in the definition of the likelihood, which
-corresponds to the <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/>-tuple of the <img class="math" src="../../_images/math/9e92027e1d91f60a8178bddb620e283a289826fe.svg" alt="\vect{y}^i"/>
-(<img class="math" src="../../_images/math/e486a519dc2ad878170edd6f5be918368414f07c.svg" alt="1\leq i \leq n"/>) in the equations of the
+corresponds to the <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/>-tuple of the <img class="math" src="../../_images/math/5fa06b5461486741396f4c219472caef1159b8c4.svg" alt="\vect{y}^i"/>
+(<img class="math" src="../../_images/math/6729aeea49353c884b04c6a2197225e90fe8224a.svg" alt="1\leq i \leq n"/>) in the equations of the
 <a class="reference internal" href="#pdf-target-formula"><span class="std std-ref">target distribution’s PDF</span></a>.</p>
 </dd>
 </dl>
@@ -1282,7 +1295,7 @@ corresponds to the <img class="math" src="../../_images/math/3492afb5563cde1aa48
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>parameters</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
-<dd><p class="first last">Fixed parameters of the model <img class="math" src="../../_images/math/acd8bd9450f07383a622c4141048e61d5d4593d8.svg" alt="g"/> required to define the likelihood.</p>
+<dd><p class="first last">Fixed parameters of the model <img class="math" src="../../_images/math/f487d47f3f53fc6c6a3567ec99bf8077018c38b7.svg" alt="g"/> required to define the likelihood.</p>
 </dd>
 </dl>
 </td>
@@ -1302,7 +1315,7 @@ corresponds to the <img class="math" src="../../_images/math/3492afb5563cde1aa48
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>prior</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
 <dd><p class="first last">The prior distribution of the parameter of the underlying Bayesian
-statistical model, whose PDF corresponds to <img class="math" src="../../_images/math/e2b31664102a8c06ac1677e1d1f164e19dd88d43.svg" alt="\pi"/> in the equations of
+statistical model, whose PDF corresponds to <img class="math" src="../../_images/math/ca8e27f3a7a4fa156648309547731fcf42984762.svg" alt="\pi"/> in the equations of
 the <a class="reference internal" href="#pdf-target-formula"><span class="std std-ref">target distribution’s PDF</span></a>.</p>
 </dd>
 </dl>
@@ -1340,8 +1353,8 @@ the <a class="reference internal" href="#pdf-target-formula"><span class="std st
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>thinning</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/bd202a519b4f1ca9522d02284a4e1a9306690249.svg" alt="k \geq 0"/></span></dt>
-<dd><p class="first last">Thinning parameter: storing only every <img class="math" src="../../_images/math/9e13f2aa1906ee95ab0e9da428e161a6d0c46e9c.svg" alt="k^{th}"/> point after the
+<dt><strong>thinning</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/6f9b02447831c5b6abef4aec27235643ae9648f4.svg" alt="k \geq 0"/></span></dt>
+<dd><p class="first last">Thinning parameter: storing only every <img class="math" src="../../_images/math/b571bf56361a4fc8439ac1f8cd466828b8dba528.svg" alt="k^{th}"/> point after the
 burn-in period.</p>
 </dd>
 </dl>
@@ -1350,9 +1363,9 @@ burn-in period.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>When generating a sample of size <img class="math" src="../../_images/math/d3ff3f8dc62e7ced97541233ffedabb887bc5bb9.svg" alt="q"/>, the number of MCMC iterations
-performed is <img class="math" src="../../_images/math/553b0f4e8e47175354149d8d9dcea5533b48d1f7.svg" alt="l+1+(q-1)k"/> where <img class="math" src="../../_images/math/84f38ad5daac04c440210799fc67fd7e4b2f36a4.svg" alt="l"/> is the burn-in period length
-and <img class="math" src="../../_images/math/25ccf3f81465c5f61677ee2819c658ad49ef800d.svg" alt="k"/> the thinning parameter.</p>
+<p>When generating a sample of size <img class="math" src="../../_images/math/b755e5095e35304df53eb04c4d02fba5cd990320.svg" alt="q"/>, the number of MCMC iterations
+performed is <img class="math" src="../../_images/math/8211f48c63d92f11d4180ce5e4749f5c3925e408.svg" alt="l+1+(q-1)k"/> where <img class="math" src="../../_images/math/1b5b1bc3f2c70d27d1b530ef2c54113031fd9fe0.svg" alt="l"/> is the burn-in period length
+and <img class="math" src="../../_images/math/a3d2afe19489776a703d7832f19a676d23032d92.svg" alt="k"/> the thinning parameter.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1393,6 +1406,12 @@ and <img class="math" src="../../_images/math/25ccf3f81465c5f61677ee2819c658ad49
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.MCMC.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.MCMC.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1424,7 +1443,7 @@ and <img class="math" src="../../_images/math/25ccf3f81465c5f61677ee2819c658ad49
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

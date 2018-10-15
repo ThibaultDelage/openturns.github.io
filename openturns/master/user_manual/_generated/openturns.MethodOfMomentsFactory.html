@@ -127,9 +127,9 @@
 <p>The underlying optimization problem seeks to minimize the sum of slacks between the
 centered moments of the sample and the centered moments of the parametric model:</p>
 <div class="math">
-<p><img src="../../_images/math/e007c8769bc9651e919ba05e0c30444338915aa0.svg" alt="\Delta = \argmin_{\vect{\theta} \in \Rset^K} [ |\mu_1-m_1|/\sigma ]^2 + \sum_{i=2}^K[ (|\mu_i|^{1/i}-|m_i|^{1/i})/\sigma ]^2"/></p>
-</div><p>with <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/> the number of parameters of the distribution, <img class="math" src="../../_images/math/29987ade1dbf5ed529c34ce0a1a95b231efab0b9.svg" alt="\mu_i"/> and
-<img class="math" src="../../_images/math/eb3ab34d3c1bedc5d9fe6c64db6144fe5a26077a.svg" alt="m_i"/> the centered moments of the sample and the parametric model.</p>
+<p><img src="../../_images/math/4ed2f7cf293d0e7aefd2e236e1d7d2e93e494761.svg" alt="\Delta = \argmin_{\vect{\theta} \in \Rset^K} [ |\mu_1-m_1|/\sigma ]^2 + \sum_{i=2}^K[ (|\mu_i|^{1/i}-|m_i|^{1/i})/\sigma ]^2"/></p>
+</div><p>with <img class="math" src="../../_images/math/6fd9fb7901ca12ee0d9cc74d922e7b9614da107c.svg" alt="K"/> the number of parameters of the distribution, <img class="math" src="../../_images/math/9d49b6d441bc9c90cb045c1030cb6e490eeeda63.svg" alt="\mu_i"/> and
+<img class="math" src="../../_images/math/8f9219bec126491541327c955985a839a241a861.svg" alt="m_i"/> the centered moments of the sample and the parametric model.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -139,6 +139,19 @@ centered moments of the sample and the centered moments of the parametric model:
 <span class="gp">&gt;&gt;&gt; </span><span class="n">inf_distribution</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.MethodOfMomentsFactory.thisown" title="openturns.MethodOfMomentsFactory.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -305,7 +318,7 @@ centered moments of the sample and the centered moments of the parametric model:
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/9c0675243e96235ce54d181013419a9d5dd7ef3b.svg" alt="(\mu, \sigma, a, b)"/>:</p>
+<p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/7708d72f7db4dc9657cbe0067d9492fc988553f0.svg" alt="(\mu, \sigma, a, b)"/>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaMuSigma</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -686,6 +699,12 @@ centered moments of the sample and the centered moments of the parametric model:
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.MethodOfMomentsFactory.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.MethodOfMomentsFactory.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -717,7 +736,7 @@ centered moments of the sample and the centered moments of the parametric model:
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

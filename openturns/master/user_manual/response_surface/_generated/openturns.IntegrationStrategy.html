@@ -121,19 +121,19 @@
 OpenTURNS uses a <a class="reference internal" href="../../_generated/openturns.MonteCarloExperiment.html#openturns.MonteCarloExperiment" title="openturns.MonteCarloExperiment"><code class="xref py py-class docutils literal notranslate"><span class="pre">MonteCarloExperiment</span></code></a>.</p>
 </dd>
 <dt><strong>measure</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
-<dd><p class="first last">Distribution <img class="math" src="../../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/> with respect to which the basis is orthonormal.
+<dd><p class="first last">Distribution <img class="math" src="../../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> with respect to which the basis is orthonormal.
 When not precised, OpenTURNS uses the limit measure defined within the
 <a class="reference internal" href="../../_generated/openturns.WeightedExperiment.html#openturns.WeightedExperiment" title="openturns.WeightedExperiment"><code class="xref py py-class docutils literal notranslate"><span class="pre">WeightedExperiment</span></code></a>.</p>
 </dd>
 <dt><strong>inputSample, outputSample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
-<dd><p class="first last">The input random variables <img class="math" src="../../../_images/math/263c2d5cb2a3fa31644843ff3b525a714b6f0aa6.svg" alt="\vect{X}=(X_1, \dots, X_{n_X})^T"/>
-and the output samples <img class="math" src="../../../_images/math/1ca0e315ae4eaf246041889d6a7ed57680d05c35.svg" alt="\vect{Y}"/> that describe the model.</p>
+<dd><p class="first last">The input random variables <img class="math" src="../../../_images/math/fcae562528987e888be6f097a7ab895b562e48cb.svg" alt="\vect{X}=(X_1, \dots, X_{n_X})^T"/>
+and the output samples <img class="math" src="../../../_images/math/08e2dd88c947c17551cdad4317eadfbe6755e04d.svg" alt="\vect{Y}"/> that describe the model.</p>
 </dd>
 <dt><strong>weights</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
 <dd><p class="first last">Numerical point that are the weights associated to the input sample points
 such that the corresponding weighted experiment is a good approximation of
-<img class="math" src="../../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/>. If not precised, all weights are equals to 
-<img class="math" src="../../../_images/math/89cec643dd5aa1bab789700b73d353ca929beff4.svg" alt="\omega_i = \frac{1}{size}"/>, where <img class="math" src="../../../_images/math/178d0e944148a914cae84f832341194b828443f1.svg" alt="size"/> is the size of the
+<img class="math" src="../../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/>. If not precised, all weights are equals to 
+<img class="math" src="../../../_images/math/0965e1588f2d4452f29e7bc54a4b0921c1a290ca.svg" alt="\omega_i = \frac{1}{size}"/>, where <img class="math" src="../../../_images/math/99c055aebd53c444259f5328d52c91ae98288884.svg" alt="size"/> is the size of the
 sample.</p>
 </dd>
 </dl>
@@ -148,20 +148,33 @@ sample.</p>
 <p class="rubric">Notes</p>
 <p>This class is not usable because it has sense only within the
 <a class="reference internal" href="openturns.FunctionalChaosAlgorithm.html#openturns.FunctionalChaosAlgorithm" title="openturns.FunctionalChaosAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">FunctionalChaosAlgorithm</span></code></a> : the integration strategy
-evaluates the coefficients <img class="math" src="../../../_images/math/20be090875bbb78c21b8612a76ac416dbd7a71c6.svg" alt="(a_k)_{k \in K}"/> of the polynomials
+evaluates the coefficients <img class="math" src="../../../_images/math/59988de14dd424e0be8f375521326eb000bb3020.svg" alt="(a_k)_{k \in K}"/> of the polynomials
 decomposition as follows:</p>
 <div class="math">
-<p><img src="../../../_images/math/544293919288ffde94473f03a42b0453d3ea17fd.svg" alt="\vect{a} = E_{\mu} \left[ g \circ T^{-1} (\vect{U}) \vect{\Psi}(\vect{U}) \right]"/></p>
-</div><p>where <img class="math" src="../../../_images/math/d5d4a287f065f3075a9d3b9a3ed2069841adc290.svg" alt="\vect{U} = T(\vect{X})"/>.</p>
-<p>The mean expectation <img class="math" src="../../../_images/math/89fc93141e269100e069aba5f9b83fdd2ff3b66b.svg" alt="E_{\mu}"/> is approximated by a relation of type:</p>
+<p><img src="../../../_images/math/85041dc4d7833a829525c983ed68df87a284d89f.svg" alt="\vect{a} = E_{\mu} \left[ g \circ T^{-1} (\vect{U}) \vect{\Psi}(\vect{U}) \right]"/></p>
+</div><p>where <img class="math" src="../../../_images/math/94bd023ce6aa6c5d8efd5d2ee3cf7d8988faa4d0.svg" alt="\vect{U} = T(\vect{X})"/>.</p>
+<p>The mean expectation <img class="math" src="../../../_images/math/af43edc5df91ffc01694035052de610311219e32.svg" alt="E_{\mu}"/> is approximated by a relation of type:</p>
 <div class="math">
-<p><img src="../../../_images/math/0ce29529000488d1a076fb75244f71b6840c57b9.svg" alt="E_{\mu} \left[ f(\vect{U}) \right] \approx \sum_{i \in I} \omega_i f(\Xi_i)"/></p>
-</div><p>where is a function <img class="math" src="../../../_images/math/e561d8d0194e37d4e311767802bed513b1c3269d.svg" alt="L_1(\mu)"/> defined as:</p>
+<p><img src="../../../_images/math/85a1086537661b2da3f049fa872609264b2d31e9.svg" alt="E_{\mu} \left[ f(\vect{U}) \right] \approx \sum_{i \in I} \omega_i f(\Xi_i)"/></p>
+</div><p>where is a function <img class="math" src="../../../_images/math/938c921583d8250d3e4dd5b29b52342362818349.svg" alt="L_1(\mu)"/> defined as:</p>
 <div class="math">
-<p><img src="../../../_images/math/226f058a00ec5331fa40aafa6f76d4d28155325a.svg" alt="f(\vect{U} = g \circ T^{-1} (\vect{U}) \vect{\Psi}(\vect{U})"/></p>
+<p><img src="../../../_images/math/816d3ace129cb89f179238e921b9579b6168eb8e.svg" alt="f(\vect{U} = g \circ T^{-1} (\vect{U}) \vect{\Psi}(\vect{U})"/></p>
 </div><p>In the approximation of the mean expectation, the set <em>I</em>, the points 
-<img class="math" src="../../../_images/math/dc3ddf53c6a10eb104ffae1b6ca3b6e7bf60540f.svg" alt="(\Xi_i)_{i \in I}"/> and the weights <img class="math" src="../../../_images/math/d00783e9169c0cb6eef15d161ba173814d5f6735.svg" alt="(\omega_i)_{i \in I}"/> are
+<img class="math" src="../../../_images/math/49c59ae0df2559f28d11d5557e66963231003e54.svg" alt="(\Xi_i)_{i \in I}"/> and the weights <img class="math" src="../../../_images/math/33e550767a1c9b1f9168a1abbdb26afbaae5db15.svg" alt="(\omega_i)_{i \in I}"/> are
 evaluated from methods implemented in the <a class="reference internal" href="../../_generated/openturns.WeightedExperiment.html#openturns.WeightedExperiment" title="openturns.WeightedExperiment"><code class="xref py py-class docutils literal notranslate"><span class="pre">WeightedExperiment</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.IntegrationStrategy.thisown" title="openturns.IntegrationStrategy.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -286,7 +299,7 @@ evaluated from methods implemented in the <a class="reference internal" href="..
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>coef</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Coefficients <img class="math" src="../../../_images/math/777443dc5aaf113ec1095aaa04a7df34c8e5bf6f.svg" alt="(\alpha_k)_{k \in K}"/>.</p>
+<dd><p class="first last">Coefficients <img class="math" src="../../../_images/math/f2b700972ef325efecfd9f6d3de57fc854491cf6.svg" alt="(\alpha_k)_{k \in K}"/>.</p>
 </dd>
 </dl>
 </td>
@@ -362,7 +375,7 @@ evaluated from methods implemented in the <a class="reference internal" href="..
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>mu</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Distribution</span></dt>
-<dd><p class="first last">Measure <img class="math" src="../../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/> defining the scalar product.</p>
+<dd><p class="first last">Measure <img class="math" src="../../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> defining the scalar product.</p>
 </dd>
 </dl>
 </td>
@@ -590,7 +603,7 @@ evaluated from methods implemented in the <a class="reference internal" href="..
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Distribution</span></dt>
-<dd><p class="first last">Measure <img class="math" src="../../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/> defining the scalar product.</p>
+<dd><p class="first last">Measure <img class="math" src="../../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> defining the scalar product.</p>
 </dd>
 </dl>
 </td>
@@ -694,6 +707,12 @@ evaluated from methods implemented in the <a class="reference internal" href="..
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.IntegrationStrategy.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.IntegrationStrategy.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -726,7 +745,7 @@ evaluated from methods implemented in the <a class="reference internal" href="..
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

@@ -98,58 +98,58 @@
   <div class="section" id="uncertainty-ranking-using-prcc">
 <span id="ranking-prcc"></span><h1>Uncertainty ranking using PRCC<a class="headerlink" href="#uncertainty-ranking-using-prcc" title="Permalink to this headline">¶</a></h1>
 <p>This method deals with analyzing the influence the random vector
-<img class="math" src="../../_images/math/80e79f6f56b23b60f04ee768e0b30ca7f2e735fa.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/> has on the random
-variable <img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/> which is being studied for uncertainty. Here we
+<img class="math" src="../../_images/math/4efc1e2de19d56b11de1473bb5b776e974003d9e.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/> has on the random
+variable <img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050341880ed592b66.svg" alt="Y^j"/> which is being studied for uncertainty. Here we
 attempt to measure monotonic relationships that exist between
-<img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/> and the different components <img class="math" src="../../_images/math/872e7272798823842a1309501c89acd170652ea8.svg" alt="X^i"/>.</p>
+<img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050341880ed592b66.svg" alt="Y^j"/> and the different components <img class="math" src="../../_images/math/9ca2297a9208cc5df7c70101c052869f6e010295.svg" alt="X^i"/>.</p>
 <p>The basic method of hierarchical ordering using Spearman’s coefficients
-deals with the case where the variable <img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/> monotonically
-depends on <img class="math" src="../../_images/math/4056a1b2001e6226d1044246e6813d2a3c90eb94.svg" alt="n_X"/> variables
-<img class="math" src="../../_images/math/ae8eed36614c43223c3266536694a20fa87b9d14.svg" alt="\left\{ X^1,\ldots,X^{n_X} \right\}"/> but this can be misleading
-when statistical dependencies between the variables <img class="math" src="../../_images/math/872e7272798823842a1309501c89acd170652ea8.svg" alt="X^i"/> exist.
+deals with the case where the variable <img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050341880ed592b66.svg" alt="Y^j"/> monotonically
+depends on <img class="math" src="../../_images/math/18f433fcab0734815e8be7f6303812f711e98b29.svg" alt="n_X"/> variables
+<img class="math" src="../../_images/math/31a34b06a21669cdce9abf6d01fa6759669e7e3c.svg" alt="\left\{ X^1,\ldots,X^{n_X} \right\}"/> but this can be misleading
+when statistical dependencies between the variables <img class="math" src="../../_images/math/9ca2297a9208cc5df7c70101c052869f6e010295.svg" alt="X^i"/> exist.
 In such a situation, the partial rank correlation coefficients can be
 more useful in ordering the uncertainty hierarchically: the partial rank
-correlation coefficients <img class="math" src="../../_images/math/5865cd893a631db8c7b85fb5d3bda4a2fab2e12c.svg" alt="\textrm{PRCC}_{X^i,Y^j}"/> between the
-variables <img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/> and <img class="math" src="../../_images/math/872e7272798823842a1309501c89acd170652ea8.svg" alt="X^i"/> attempts to measure the residual
-influence of <img class="math" src="../../_images/math/872e7272798823842a1309501c89acd170652ea8.svg" alt="X^i"/> on <img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/> once influences from all other
-variables <img class="math" src="../../_images/math/fb87234d1cce542bb396be3780e631356438e2bb.svg" alt="X^j"/> have been eliminated.</p>
+correlation coefficients <img class="math" src="../../_images/math/02350b7047bdb75cd5cfcb344728b0b77783c4fa.svg" alt="\textrm{PRCC}_{X^i,Y^j}"/> between the
+variables <img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050341880ed592b66.svg" alt="Y^j"/> and <img class="math" src="../../_images/math/9ca2297a9208cc5df7c70101c052869f6e010295.svg" alt="X^i"/> attempts to measure the residual
+influence of <img class="math" src="../../_images/math/9ca2297a9208cc5df7c70101c052869f6e010295.svg" alt="X^i"/> on <img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050341880ed592b66.svg" alt="Y^j"/> once influences from all other
+variables <img class="math" src="../../_images/math/67a28bfc4d3dbfd34cd69d96fe27b24248841ca6.svg" alt="X^j"/> have been eliminated.</p>
 <p>The estimation for each partial rank correlation coefficient
-<img class="math" src="../../_images/math/5865cd893a631db8c7b85fb5d3bda4a2fab2e12c.svg" alt="\textrm{PRCC}_{X^i,Y^j}"/> uses a set made up of <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> values
-<img class="math" src="../../_images/math/25699550b8993047e2870845dd6c4da91f26210d.svg" alt="\left\{ (y^j1,x_1^1,\ldots,x_1^{n_X}),\ldots,(y^jN,x_N^1,\ldots,x_N^{n_X}) \right\}"/>
-of the vector <img class="math" src="../../_images/math/c3c991cb58b26d042a6e726ede2971f3a51adc90.svg" alt="(Y^j,X^1,\ldots,X^{n_X})"/>. This requires the
+<img class="math" src="../../_images/math/02350b7047bdb75cd5cfcb344728b0b77783c4fa.svg" alt="\textrm{PRCC}_{X^i,Y^j}"/> uses a set made up of <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> values
+<img class="math" src="../../_images/math/69fb3dfd89800d24ef99e6714f1c7dc2f007cd0c.svg" alt="\left\{ (y^j1,x_1^1,\ldots,x_1^{n_X}),\ldots,(y^jN,x_N^1,\ldots,x_N^{n_X}) \right\}"/>
+of the vector <img class="math" src="../../_images/math/95061502278f9b91f204d0c701ed6955978fac82.svg" alt="(Y^j,X^1,\ldots,X^{n_X})"/>. This requires the
 following three steps to be carried out:</p>
 <ol class="arabic">
 <li><p class="first">Determine the effect of other variables
-<img class="math" src="../../_images/math/c2c3be0084caffef619f395e557bec0b6c072f50.svg" alt="\left\{ X^j,\ j\neq i \right\}"/> on <img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/> by linear
+<img class="math" src="../../_images/math/015d0051c41c79af2a3a3bb2a8d2a3907f8bf1e9.svg" alt="\left\{ X^j,\ j\neq i \right\}"/> on <img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050341880ed592b66.svg" alt="Y^j"/> by linear
 regression (see ); when the values of variable
-<img class="math" src="../../_images/math/c2c3be0084caffef619f395e557bec0b6c072f50.svg" alt="\left\{ X^j,\ j\neq i \right\}"/> are known, the average
-forecast for the value of <img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/> is then available in the form
+<img class="math" src="../../_images/math/015d0051c41c79af2a3a3bb2a8d2a3907f8bf1e9.svg" alt="\left\{ X^j,\ j\neq i \right\}"/> are known, the average
+forecast for the value of <img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050341880ed592b66.svg" alt="Y^j"/> is then available in the form
 of the equation:</p>
 <div class="math">
-<p><img src="../../_images/math/6304b059279d05b557fab70cc528fe4c193c8211.svg" alt="\widehat{Y^j} = \sum_{k \neq i,\ 1 \leq k \leq n_X} \widehat{a}_k X^k"/></p>
+<p><img src="../../_images/math/2b6a92c0e69f716ed9a6d3d8963c816668fc4556.svg" alt="\widehat{Y^j} = \sum_{k \neq i,\ 1 \leq k \leq n_X} \widehat{a}_k X^k"/></p>
 </div></li>
 <li><p class="first">Determine the effect of other variables
-<img class="math" src="../../_images/math/c2c3be0084caffef619f395e557bec0b6c072f50.svg" alt="\left\{ X^j,\ j\neq i \right\}"/> on <img class="math" src="../../_images/math/872e7272798823842a1309501c89acd170652ea8.svg" alt="X^i"/> by linear
+<img class="math" src="../../_images/math/015d0051c41c79af2a3a3bb2a8d2a3907f8bf1e9.svg" alt="\left\{ X^j,\ j\neq i \right\}"/> on <img class="math" src="../../_images/math/9ca2297a9208cc5df7c70101c052869f6e010295.svg" alt="X^i"/> by linear
 regression; when the values of variable
-<img class="math" src="../../_images/math/c2c3be0084caffef619f395e557bec0b6c072f50.svg" alt="\left\{ X^j,\ j\neq i \right\}"/> are known, the average
-forecast for the value of <img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/> is then available in the form
+<img class="math" src="../../_images/math/015d0051c41c79af2a3a3bb2a8d2a3907f8bf1e9.svg" alt="\left\{ X^j,\ j\neq i \right\}"/> are known, the average
+forecast for the value of <img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050341880ed592b66.svg" alt="Y^j"/> is then available in the form
 of the equation:</p>
 <div class="math">
-<p><img src="../../_images/math/e022160572eda1301dd78ff5b3ee176664df8f20.svg" alt="\widehat{X}^i = \sum_{k \neq i,\ 1 \leq k \leq n_X} \widehat{b}_k X^k"/></p>
+<p><img src="../../_images/math/2dec5bada8ecf8c706d681846d7d42d0e9a83614.svg" alt="\widehat{X}^i = \sum_{k \neq i,\ 1 \leq k \leq n_X} \widehat{b}_k X^k"/></p>
 </div></li>
-<li><p class="first"><img class="math" src="../../_images/math/5865cd893a631db8c7b85fb5d3bda4a2fab2e12c.svg" alt="\textrm{PRCC}_{X^i,Y^j}"/> is then equal to the Spearman’s
+<li><p class="first"><img class="math" src="../../_images/math/02350b7047bdb75cd5cfcb344728b0b77783c4fa.svg" alt="\textrm{PRCC}_{X^i,Y^j}"/> is then equal to the Spearman’s
 correlation coefficient
-<img class="math" src="../../_images/math/225448106aab645a8d7f79265700f79dc48883b4.svg" alt="\widehat{\rho}^S_{Y^j-\widehat{Y^j},X^i-\widehat{X}^i}"/>
-estimated for the variables <img class="math" src="../../_images/math/7a24c6ef23b1023756f05c8b7f07522f5b6f1934.svg" alt="Y^j-\widehat{Y^j}"/> and
-<img class="math" src="../../_images/math/bfeee8f6ddf9b73a02972a4dd112d4a193109eb0.svg" alt="X^i-\widehat{X}^i"/> on the <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/>-sample of simulations (see
+<img class="math" src="../../_images/math/a56f18e68d7d908a853d731b65578c27ddc2ee2a.svg" alt="\widehat{\rho}^S_{Y^j-\widehat{Y^j},X^i-\widehat{X}^i}"/>
+estimated for the variables <img class="math" src="../../_images/math/091dc68618bc669051eb62e3be00990a02f140d0.svg" alt="Y^j-\widehat{Y^j}"/> and
+<img class="math" src="../../_images/math/c5bb69ab3498de255633a88a1bc59756fe609775.svg" alt="X^i-\widehat{X}^i"/> on the <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/>-sample of simulations (see
 ).</p>
 </li>
 </ol>
-<p>One can then class the <img class="math" src="../../_images/math/4056a1b2001e6226d1044246e6813d2a3c90eb94.svg" alt="n_X"/> variables <img class="math" src="../../_images/math/337263e913a8c81707c4e6226282c906b8298a90.svg" alt="X^1,\ldots, X^{n_X}"/>
+<p>One can then class the <img class="math" src="../../_images/math/18f433fcab0734815e8be7f6303812f711e98b29.svg" alt="n_X"/> variables <img class="math" src="../../_images/math/4ec9bee2bde7ca96e609c6fd9d37503c1abd0d3a.svg" alt="X^1,\ldots, X^{n_X}"/>
 according to the absolute value of the partial rank correlation
 coefficients: the higher the value of
-<img class="math" src="../../_images/math/3d6539abec67d864957aeabe616f38bebf38f7bc.svg" alt="\left| \textrm{PRCC}_{X^i,Y^j} \right|"/>, the greater the impact
-the variable <img class="math" src="../../_images/math/872e7272798823842a1309501c89acd170652ea8.svg" alt="X^i"/> has on <img class="math" src="../../_images/math/dea5469523aafcafcd54651e039dd09daa2fc1af.svg" alt="Y^j"/>.</p>
+<img class="math" src="../../_images/math/462dae590e890ffad04d24bc1fe11fefca87149d.svg" alt="\left| \textrm{PRCC}_{X^i,Y^j} \right|"/>, the greater the impact
+the variable <img class="math" src="../../_images/math/9ca2297a9208cc5df7c70101c052869f6e010295.svg" alt="X^i"/> has on <img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050341880ed592b66.svg" alt="Y^j"/>.</p>
 <div class="topic">
 <p class="topic-title first">API:</p>
 <ul class="simple">
@@ -199,7 +199,7 @@ the variable <img class="math" src="../../_images/math/872e7272798823842a1309501
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

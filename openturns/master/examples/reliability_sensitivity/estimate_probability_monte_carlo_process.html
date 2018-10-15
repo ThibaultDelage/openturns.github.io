@@ -265,46 +265,46 @@ div.nboutput div.output_area.stderr {
 <h1>Estimate a process event probability<a class="headerlink" href="#Estimate-a-process-event-probability" title="Permalink to this headline">¶</a></h1>
 <p>The objective of this example is to evaluate the probability of an event
 based on a stochastic process, using the Monte Carlo estimator.</p>
-<p>Let <img class="math" src="../../_images/math/f6cde0899211e7aaa9e9cdfd4ff4127d42e065ae.svg" alt="X: \Omega \times \mathcal{D} \rightarrow \mathbb{R}^d"/> be a
-stochastic process of dimension <img class="math" src="../../_images/math/5bedc75d546b74f5c8a9327c072c85fda0fd787f.svg" alt="d"/>, where
-<img class="math" src="../../_images/math/b0dfb09734d4350de50639bfb0a31b648a5473de.svg" alt="\mathcal{D} \in \mathbb{R}^n"/> is discretized on the mesh
-<img class="math" src="../../_images/math/7100eaadeca47463f1b26d4f489c9ec76bcbd20a.svg" alt="\mathcal{M}"/>.</p>
-<p>We define the event <img class="math" src="../../_images/math/8041fe4924c7a57145cfa6f00f0d4dbabda50ca8.svg" alt="\mathcal{E}"/> as:</p>
+<p>Let <img class="math" src="../../_images/math/a2f63923505d5f47f0418029f6213c0b750abdb7.svg" alt="X: \Omega \times \mathcal{D} \rightarrow \mathbb{R}^d"/> be a
+stochastic process of dimension <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/>, where
+<img class="math" src="../../_images/math/260ab8fdac7fd61a045bea85d07050f92c62f8d0.svg" alt="\mathcal{D} \in \mathbb{R}^n"/> is discretized on the mesh
+<img class="math" src="../../_images/math/f42b888f157f5bec3a8d9f972d957c85ce63aec0.svg" alt="\mathcal{M}"/>.</p>
+<p>We define the event <img class="math" src="../../_images/math/a79bb5fe7ab273a5eea2468fd696e37c9bdc7899.svg" alt="\mathcal{E}"/> as:</p>
 <div class="math">
-<p><img src="../../_images/math/69e22480440333ae5080f9c6aa9c183a5fe6ab6e.svg" alt="\begin{aligned} \displaystyle \mathcal{E}(X) = \bigcup_{\underline{t}\in \mathcal{M}}\left\{X_{\underline{t}}  \in \mathcal{A}  \right\}\end{aligned}"/></p>
-</div><p>where <img class="math" src="../../_images/math/87f5d77710dde562c6c291359f8be9201fab1c98.svg" alt="\mathcal{A}"/> is a domain of <img class="math" src="../../_images/math/ecb979f064096d2a44a0682157a06de68356ad2b.svg" alt="\mathbb{R}^d"/>.</p>
+<p><img src="../../_images/math/24706e6a646009e4576b70e3775916409b20846c.svg" alt="\begin{aligned} \displaystyle \mathcal{E}(X) = \bigcup_{\underline{t}\in \mathcal{M}}\left\{X_{\underline{t}}  \in \mathcal{A}  \right\}\end{aligned}"/></p>
+</div><p>where <img class="math" src="../../_images/math/4d6da4a04e082384c045fdbec65369a74f6095bd.svg" alt="\mathcal{A}"/> is a domain of <img class="math" src="../../_images/math/fd9bebc25b1be9f67f7473713bbe59752d9fdb76.svg" alt="\mathbb{R}^d"/>.</p>
 <p>We estimate the probabilty
-<img class="math" src="../../_images/math/89ff409388a5e77aabc75f7e2bcbad7166698a06.svg" alt="p=\mathbb{P}\left(\mathcal{E}(X)\right)"/> with the Monte Carlo
+<img class="math" src="../../_images/math/445d485a5e4deff25d3b98dc87efbddc465aeb42.svg" alt="p=\mathbb{P}\left(\mathcal{E}(X)\right)"/> with the Monte Carlo
 estimator.</p>
 <p>The Monte Carlo algorithm is manipulated the same way as in the case
 where the event is based on a random variable independent of time.</p>
 <p>We illustrate the algorithm on the example of the bidimensionnal white
 noise process
-<img class="math" src="../../_images/math/cc035f28f0c69d53b4467039a321a7d97c6e1dbb.svg" alt="\varepsilon: \Omega \times \mathcal{D} \rightarrow \mathbb{R}^2"/>
-where <img class="math" src="../../_images/math/b11aa87de91918f5166a9b6f63a6cc121cf9cbee.svg" alt="\mathcal{D}\in \mathbb{R}"/>, distributed according to the
+<img class="math" src="../../_images/math/5f5cd3ccb1bb72e0303dae1494bf8a251be75890.svg" alt="\varepsilon: \Omega \times \mathcal{D} \rightarrow \mathbb{R}^2"/>
+where <img class="math" src="../../_images/math/6ef742bc3586c3bbbf786c3c778d600d945b01aa.svg" alt="\mathcal{D}\in \mathbb{R}"/>, distributed according to the
 bidimensionnal standard normal distribution (with zero mean, unit
 variance and independent marginals).</p>
-<p>We consider the domain <img class="math" src="../../_images/math/f453a409a6fe314f5437f4eb10e6c97dde648512.svg" alt="\mathcal{A} =  [1,2] \times [1,2]"/>. Then
-the event <img class="math" src="../../_images/math/8041fe4924c7a57145cfa6f00f0d4dbabda50ca8.svg" alt="\mathcal{E}"/> writes:</p>
+<p>We consider the domain <img class="math" src="../../_images/math/6ffcd7c66bc6c9eb4f62db8ad6d28dc7c4d84021.svg" alt="\mathcal{A} = [1,2] \times [1,2]"/>. Then
+the event <img class="math" src="../../_images/math/a79bb5fe7ab273a5eea2468fd696e37c9bdc7899.svg" alt="\mathcal{E}"/> writes:</p>
 <div class="math">
-<p><img src="../../_images/math/2af2da2069fe4796019e83cb47733d0c330c402b.svg" alt="\begin{aligned} \displaystyle \mathcal{E}(\varepsilon) = \bigcup_{\underline{t}\in \mathcal{M}}\left\{\varepsilon_{t}  \in \mathcal{A}  \right\}\end{aligned}"/></p>
-</div><p>For all time stamps <img class="math" src="../../_images/math/c9fc2e74b36a31ef1398a675d1d2e0f05b41fd95.svg" alt="t \in \mathcal{M}"/>, the probability
-<img class="math" src="../../_images/math/95c24411140fd77e8b44b769b880d31e3179125b.svg" alt="p_1"/> that the process enters into the domain <img class="math" src="../../_images/math/87f5d77710dde562c6c291359f8be9201fab1c98.svg" alt="\mathcal{A}"/>
-at time <img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/> writes, using the independence property of the
+<p><img src="../../_images/math/a670dc23fa87ea6ade01c57c0df7c5659b8f6689.svg" alt="\begin{aligned} \displaystyle \mathcal{E}(\varepsilon) = \bigcup_{\underline{t}\in \mathcal{M}}\left\{\varepsilon_{t}  \in \mathcal{A}  \right\}\end{aligned}"/></p>
+</div><p>For all time stamps <img class="math" src="../../_images/math/de683d0b44065c480a1268ab79c1315a22745dac.svg" alt="t \in \mathcal{M}"/>, the probability
+<img class="math" src="../../_images/math/29b9e457c4054beb6e4237e77b9064b9ffbfbe41.svg" alt="p_1"/> that the process enters into the domain <img class="math" src="../../_images/math/4d6da4a04e082384c045fdbec65369a74f6095bd.svg" alt="\mathcal{A}"/>
+at time <img class="math" src="../../_images/math/eb169b6b0e185fc9abf4111d16ceb787a940d013.svg" alt="t"/> writes, using the independence property of the
 marginals:</p>
 <div class="math">
-<p><img src="../../_images/math/2d94f9516437fda9074ae584cd8032b494fb5dd7.svg" alt="\begin{aligned} p_1 = \mathbb{P}\left(\varepsilon_t  \in \mathcal{A}\right) = (\Phi(2) - \Phi(1))^2\end{aligned}"/></p>
-</div><p>with <img class="math" src="../../_images/math/49102e35b08c15cd6366ba7cc6c6ac708d60398f.svg" alt="\Phi"/> the cumulative distribution function of the scalar
+<p><img src="../../_images/math/26b38018ef93de04d837ca1492338d7b906e1e90.svg" alt="\begin{aligned} p_1 = \mathbb{P}\left(\varepsilon_t  \in \mathcal{A}\right) = (\Phi(2) - \Phi(1))^2\end{aligned}"/></p>
+</div><p>with <img class="math" src="../../_images/math/f86b7a3b359d8e5a4bda9b378588eea6753ad28d.svg" alt="\Phi"/> the cumulative distribution function of the scalar
 standard <em>Normal</em> distribution.</p>
-<p>As the proces is discretized on a time grid of size <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> and using
+<p>As the proces is discretized on a time grid of size <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> and using
 the independance property of the white noise between two different time
 stamps and the fact that the white noise follows the same distribution
-at each time <img class="math" src="../../_images/math/b8f3cd7b2a7ca5c242e1b911c21a669ba6c96b03.svg" alt="t"/>, the final probability <img class="math" src="../../_images/math/0f4c0791a2997f071572e3ee6a344919caea8e95.svg" alt="p"/> writes:</p>
+at each time <img class="math" src="../../_images/math/eb169b6b0e185fc9abf4111d16ceb787a940d013.svg" alt="t"/>, the final probability <img class="math" src="../../_images/math/0a51f74fdb12efb40f2b40e8036cbf0f13c8d667.svg" alt="p"/> writes:</p>
 <div class="math">
-<p><img src="../../_images/math/ae150af857a95aebaac5035b43b4fb0712940538.svg" alt="p = \mathbb{P}\left(\mathcal{E}(\varepsilon)\right) = 1 - (1 - p_1)^{N}"/></p>
-</div><p>With <img class="math" src="../../_images/math/08a635e9af6da23e4149972457e180f4794011eb.svg" alt="K=10^4"/> realizations, using the Monte Carlo estimator, we
-obtain <img class="math" src="../../_images/math/f98e2383d09c14e603344d96fc16c92dd9ee1fa7.svg" alt="p_K = 0.1627"/>, to be compared to the exact value
-<img class="math" src="../../_images/math/0a5f0fe7e76ac478dfc2fc0b9360041e662306b5.svg" alt="p=0.17008"/> for a time grid of size <img class="math" src="../../_images/math/6a62e00f258257323910e874de884647ebcb01ed.svg" alt="N=10"/>.</p>
+<p><img src="../../_images/math/35dfd2d8cfb2db792e0c02a80371285d62730b9a.svg" alt="p = \mathbb{P}\left(\mathcal{E}(\varepsilon)\right) = 1 - (1 - p_1)^{N}"/></p>
+</div><p>With <img class="math" src="../../_images/math/06c1028f3bf1beefac8b8e2cf3b86a89fc0803b7.svg" alt="K=10^4"/> realizations, using the Monte Carlo estimator, we
+obtain <img class="math" src="../../_images/math/c2ce7121c4a58acb060629a3f8023a730954ef46.svg" alt="p_K = 0.1627"/>, to be compared to the exact value
+<img class="math" src="../../_images/math/78e1f848bd3210396031827602fdb4b8f56aef85.svg" alt="p=0.17008"/> for a time grid of size <img class="math" src="../../_images/math/693ed5f4eb6b9bf41da0cd63b1da59c17b1c7459.svg" alt="N=10"/>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [11]:
@@ -450,7 +450,7 @@ obtain <img class="math" src="../../_images/math/f98e2383d09c14e603344d96fc16c92
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

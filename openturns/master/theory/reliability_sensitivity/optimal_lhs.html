@@ -107,7 +107,7 @@
             
   <div class="section" id="optimal-lhs-design">
 <span id="optimal-lhs"></span><h1>Optimal LHS design<a class="headerlink" href="#optimal-lhs-design" title="Permalink to this headline">¶</a></h1>
-<p>Let <img class="math" src="../../_images/math/27a645c555419648fc2ecf67f82cce44426fcc9c.svg" alt="X=(x_1,\cdots, x_d)"/> be a random vector of input parameters.
+<p>Let <img class="math" src="../../_images/math/96d530a92c3203c608249e76fc35c2b37d8ddcaf.svg" alt="X=(x_1,\cdots, x_d)"/> be a random vector of input parameters.
 Latin Hypercube Sample (LHS) is a way to distribute N sample points: each
 parameter range is divided into N equal intervals, and sample points are
 chosen such that any hyperplane in that dimension contains one and only one
@@ -121,33 +121,33 @@ a space filling criterion.</p>
 <li>Centered design is obtained by choosing for each point the center of the corresponding cell</li>
 <li>Randomized LHS is obtained by adding random perturbations inside each cell</li>
 </ul>
-<p>Let the input vector X whose marginals are independent and associated probabilistic measure <img class="math" src="../../_images/math/76deb405e73f48a0f23d3a5899fe2816012f38c3.svg" alt="\mathcal{L}_{X}(x_1,...,x_d)"/></p>
-<p>In practice, we look for a design in the space <img class="math" src="../../_images/math/29cd9ae8873bd3210e07adb1c59e3bff1f4a38d9.svg" alt="[0,1]^d"/> and we use an inverse
+<p>Let the input vector X whose marginals are independent and associated probabilistic measure <img class="math" src="../../_images/math/887a995267bf3f0115fb94b1d94f881332000eaa.svg" alt="\mathcal{L}_{X}(x_1,...,x_d)"/></p>
+<p>In practice, we look for a design in the space <img class="math" src="../../_images/math/cdcb6c07314384a4e921670b52c57c66dec565c7.svg" alt="[0,1]^d"/> and we use an inverse
 iso-probabilistic transformation to get the result in the original domain.</p>
-<p>Let <img class="math" src="../../_images/math/2ecc3842262d492c8d2a33a311a020f2893f7b1d.svg" alt="\phi : [0,1]^d \rightarrow \mathbb{R}^{+}"/> be a a space filling criterion, which is a measure of <em>accuracy</em> of an optimal LHS design.
+<p>Let <img class="math" src="../../_images/math/06c2da4bc4889d726b231eb248930ca243037e7e.svg" alt="\phi : [0,1]^d \rightarrow \mathbb{R}^{+}"/> be a a space filling criterion, which is a measure of <em>accuracy</em> of an optimal LHS design.
 Most of these criteria focus on discrepancy, which measures how far a given distribution of points deviates from a perfectly uniform one.</p>
 <p>Two space filling criteria are implemented:</p>
 <ul class="simple">
-<li>The centered <img class="math" src="../../_images/math/b9203476890bf57ea1762a17918740f8a025c275.svg" alt="L^2"/>-discrepancy, called <img class="math" src="../../_images/math/9484c9ab993e17df2306380eb95b05b60847ab56.svg" alt="C_2"/> and given by:</li>
+<li>The centered <img class="math" src="../../_images/math/54fe991f4e91a75120e520fdd09e50a4a37a41ef.svg" alt="L^2"/>-discrepancy, called <img class="math" src="../../_images/math/1b83953c3b8732dfd979bdbbc16595b7356ac91d.svg" alt="C_2"/> and given by:</li>
 </ul>
 <div class="math">
-<p><img src="../../_images/math/0cda756980c97df1331b6a5c32b8d54a7b77fa49.svg" alt="C_2(X_{d}^N)^2 = \left(\frac{13}{12}\right)^{d} - \frac{2}{N} \sum_{i=1}^{N} \prod_{k=1}^{d} \left( 1 + \frac{1}{2} |x_k^{(i)} - 0.5| - \frac{1}{2} |x_k^{(i)} - 0.5|^2 \right)\\
+<p><img src="../../_images/math/b02cda8837db0ff6f0b73cc59870c3ee80659a29.svg" alt="C_2(X_{d}^N)^2 = \left(\frac{13}{12}\right)^{d} - \frac{2}{N} \sum_{i=1}^{N} \prod_{k=1}^{d} \left( 1 + \frac{1}{2} |x_k^{(i)} - 0.5| - \frac{1}{2} |x_k^{(i)} - 0.5|^2 \right)\\
             + \frac{1}{N^2} \sum_{i,j=1}^{N} \prod_{k=1}^{d} \left( 1 + \frac{1}{2} |x_k^{(i)} - 0.5| + \frac{1}{2} |x_k^{(j)} - 0.5| - \frac{1}{2} |x_k^{(i)} - x_k^{(j)}| \right)"/></p>
 </div><p>This discrepancy is to be minimized to get an optimal design.</p>
 <ul class="simple">
 <li>The mindist criterion (minimal distance between two points in the design):</li>
 </ul>
 <div class="math">
-<p><img src="../../_images/math/fbb5f32eeceb82e311fa15cf91b17bddcbbd1cad.svg" alt="\phi(X) = min_{} ||x^{(i)} - x^{(j)} ||_{L^2}, \forall i\neq j=1,\cdots N"/></p>
+<p><img src="../../_images/math/0800abd53042fb690e8ae53306b481cf7caad4b1.svg" alt="\phi(X) = min_{} ||x^{(i)} - x^{(j)} ||_{L^2}, \forall i\neq j=1,\cdots N"/></p>
 </div><p>This criterion is to be maximized.</p>
 <ul class="simple">
-<li>In practice, the <img class="math" src="../../_images/math/ad1b1997ca8fd08fc7c0c11aafbc7ef80dc7c675.svg" alt="\phi_p"/> criterion is used instead of mindist and writes:</li>
+<li>In practice, the <img class="math" src="../../_images/math/4fd4a2ef6361e7e054a9f3207279d34ac9948588.svg" alt="\phi_p"/> criterion is used instead of mindist and writes:</li>
 </ul>
 <div class="math">
-<p><img src="../../_images/math/ed8efd6fa44dfa2ac80e0f130d4befd3d8b082c3.svg" alt="\phi_p(X) = \left( \sum_{1\leq i &lt; j \leq N} ||x^{(i)} - x^{(j)}||^{-p}_{L^2} \right)^{\frac{1}{p}}"/></p>
-</div><p>This is supposed to be more robust. When p tends to infinity, optimizing a design with <img class="math" src="../../_images/math/ad1b1997ca8fd08fc7c0c11aafbc7ef80dc7c675.svg" alt="\phi_p"/> is equivalent to optimizing a design with <em>mindist</em>.
+<p><img src="../../_images/math/6465828dcbfe70bf86ad06e6a80dcd32bf379b8a.svg" alt="\phi_p(X) = \left( \sum_{1\leq i &lt; j \leq N} ||x^{(i)} - x^{(j)}||^{-p}_{L^2} \right)^{\frac{1}{p}}"/></p>
+</div><p>This is supposed to be more robust. When p tends to infinity, optimizing a design with <img class="math" src="../../_images/math/4fd4a2ef6361e7e054a9f3207279d34ac9948588.svg" alt="\phi_p"/> is equivalent to optimizing a design with <em>mindist</em>.
 This criterion is to be minimized to get an optimal design.</p>
-<p>The objective is to generate an LHS design <img class="math" src="../../_images/math/33fe228fca0a9590b0963e9589ee17264a9dab53.svg" alt="X_{d}^{N}"/> that minimizes a space filling criterion <img class="math" src="../../_images/math/a252de35dc7cc2d634b8209685155ee835882bb3.svg" alt="\phi"/> (or maximizes mindist).
+<p>The objective is to generate an LHS design <img class="math" src="../../_images/math/27bdea477212627bfe3d2f1f7a286cbf060d8828.svg" alt="X_{d}^{N}"/> that minimizes a space filling criterion <img class="math" src="../../_images/math/2690c4aaac6819794a4b67110d42c977b26f960e.svg" alt="\phi"/> (or maximizes mindist).
 For that purpose, two techniques are implemented and presented
 hereafter.</p>
 </div>
@@ -165,55 +165,55 @@ If the new design is better than the previous one, it is kept.
 If it is worse, it may anyway be kept with some probability, which depends on how these designs compare, but also on a temperature profile T which decreases over time.
 This means that jumping away from local extrema becomes less probable over time.</p>
 <p>It is important to highlight here that this specific permutation has been chosen in this algorithm because it allows highly efficient computations of criterion during simulated annealing process.
-he naive criterion evaluation, as is done in Monte Carlo algorithm, has a complexity of <img class="math" src="../../_images/math/da531f701ffd74a01896db6902b3286039196789.svg" alt="\mathcal{O}(d\times N^2)"/> for <img class="math" src="../../_images/math/9484c9ab993e17df2306380eb95b05b60847ab56.svg" alt="C_2"/> and <img class="math" src="../../_images/math/ad1b1997ca8fd08fc7c0c11aafbc7ef80dc7c675.svg" alt="\phi_p"/> criteria.</p>
-<p>Let us first illustrate with the <img class="math" src="../../_images/math/9484c9ab993e17df2306380eb95b05b60847ab56.svg" alt="C_2"/> criterion. We set <img class="math" src="../../_images/math/4ba68db22e8390917ce830d76fabe050e0a66f3b.svg" alt="z_{ik}=x_{ik}-0.5"/>, equation rewrites:</p>
+he naive criterion evaluation, as is done in Monte Carlo algorithm, has a complexity of <img class="math" src="../../_images/math/0b1c803cafb59d1b40fe93aa586c229eb327a8ce.svg" alt="\mathcal{O}(d\times N^2)"/> for <img class="math" src="../../_images/math/1b83953c3b8732dfd979bdbbc16595b7356ac91d.svg" alt="C_2"/> and <img class="math" src="../../_images/math/4fd4a2ef6361e7e054a9f3207279d34ac9948588.svg" alt="\phi_p"/> criteria.</p>
+<p>Let us first illustrate with the <img class="math" src="../../_images/math/1b83953c3b8732dfd979bdbbc16595b7356ac91d.svg" alt="C_2"/> criterion. We set <img class="math" src="../../_images/math/bfd29ec1e5df8884b7c27ca32f09285a3c82dbb3.svg" alt="z_{ik}=x_{ik}-0.5"/>, equation rewrites:</p>
 <div class="math">
-<p><img src="../../_images/math/8071911d6b81129b2c814925951ad0946172d546.svg" alt="C_2(X_{d}^N)^2 = \left(\frac{13}{12}\right)^{d} +\sum_{i=1}^{N}\sum_{j=1}^{N} c_{ij}"/></p>
+<p><img src="../../_images/math/f4c8edc15791369ed2f1dbe2cbae67b4f751e33c.svg" alt="C_2(X_{d}^N)^2 = \left(\frac{13}{12}\right)^{d} +\sum_{i=1}^{N}\sum_{j=1}^{N} c_{ij}"/></p>
 </div><p>with:</p>
 <div class="math" id="equation-prior-gn">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-prior-gn" title="Permalink to this equation">¶</a></span><img src="../../_images/math/bdf2e046ad938333ffedd1f053f7acf2cd24a353.svg" alt="c_{ij}= \,\,\,\left \{
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-prior-gn" title="Permalink to this equation">¶</a></span><img src="../../_images/math/8bbb45363ad6c044496de365821cdcc34cfa4490.svg" alt="c_{ij}= \,\,\,\left \{
    \begin{aligned}
    &amp;\frac{1}{N^2}\prod_{k=1}^{d}\frac{1}{2}(2+|z_{ik}|+|z_{jk}|-|z_{ik}-z_{jk}|)\,\,\,\, \textrm{if}\,\, i\neq j \\
    &amp;\frac{1}{N^2}\prod_{k=1}^{d}(1+|z_{ik}|)-\frac{2}{N}\prod_{k=1}^{d}(1+\frac{1}{2}|z_{ik}|-\frac{1}{2}z_{ik}^2) \,\,\,\,\textrm{otherwise} \\
    \end{aligned}
    \right."/></p>
-</div><p>We set <img class="math" src="../../_images/math/04bb4525a755292607d2bdc55d80aab31e96b8dd.svg" alt="c^{\prime}"/> the elements of a new design <img class="math" src="../../_images/math/fa1c6217b4c937f13f83d31b7da019826448ebea.svg" alt="X^{\prime N}_{d}"/> obtained by permuting a coordinate of sample points <img class="math" src="../../_images/math/ae3346f89e75a37a1dc51da973c9bfeece7b243c.svg" alt="i_1"/> and <img class="math" src="../../_images/math/a85f83a34155dc16d6924c65945dffaacfb8663d.svg" alt="i_2"/>.
+</div><p>We set <img class="math" src="../../_images/math/53f6b3e8eb20b89edd573fe9ba98b4dde41f4a0f.svg" alt="c^{\prime}"/> the elements of a new design <img class="math" src="../../_images/math/1b03f476480985810415c95a9b9e121ca6b44b76.svg" alt="X^{\prime N}_{d}"/> obtained by permuting a coordinate of sample points <img class="math" src="../../_images/math/a55ea1c62b7935462bcf013aaf8455dfc1dbb4ec.svg" alt="i_1"/> and <img class="math" src="../../_images/math/51ab8318eb1161d77d16e6693dcffa962630a32b.svg" alt="i_2"/>.
 We can see that</p>
 <div class="math" id="equation-cond-update">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-cond-update" title="Permalink to this equation">¶</a></span><img src="../../_images/math/e46d033d1a5cdeeb24de0030585dd1a4adf6633d.svg" alt="\left \{
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-cond-update" title="Permalink to this equation">¶</a></span><img src="../../_images/math/5e619a1ca9f2e10ddd2ccb553902bcac1a1e65f2.svg" alt="\left \{
    \begin{aligned}
    &amp; c^{\prime}_{ij}=c_{ij} \;\forall i, j \text{ such that } 1\leq i,j\leq N,\, i\notin \{i_1,i_2\},\, j\notin \{i_1,i_2\}\\
    &amp; c^{\prime}_{i_1i_2}=c_{i_1i_2}\\
    &amp; c_{ij}=c_{ji} \;\forall 1\leq i,j\leq N
    \end{aligned}
    \right."/></p>
-</div><p>and thus, <img class="math" src="../../_images/math/d7e2cc2ef7a788314a0361b307a9eb3594f1287e.svg" alt="C_2(X')"/> becomes:</p>
+</div><p>and thus, <img class="math" src="../../_images/math/9d29247d904cbded017912a2d8cc4e3b5fb0dd69.svg" alt="C_2(X')"/> becomes:</p>
 <div class="math">
-<p><img src="../../_images/math/11f6d22209b191826acacd7476337c66d6ef93d9.svg" alt="C_2(X^{\prime N}_{d})^2 = C_2(X^N_d)^2
+<p><img src="../../_images/math/9f87932ffb16ac03ba4a495096bd2e98347350b9.svg" alt="C_2(X^{\prime N}_{d})^2 = C_2(X^N_d)^2
     + c^{\prime}_{i_1i_1} + c^{\prime}_{i_2i_2} + 2\sum_{\substack{1\leq j\leq N\\j\neq i_1,i_2}} (c^{\prime}_{i_1j}+c^{\prime}_{i_2j})\\
   {} - c_{i_1i_1} - c_{i_2i_2} - 2\sum_{\substack{1\leq j\leq N\\j\neq i_1,i_2}} (c_{i_1j}+c_{i_2j})"/></p>
-</div><p>Updating <img class="math" src="../../_images/math/9484c9ab993e17df2306380eb95b05b60847ab56.svg" alt="C_2"/> criterion can be performed by a <img class="math" src="../../_images/math/785b416fa0df2b7f1df87437134d2cf091cdc29f.svg" alt="\mathcal{O}(N)"/> algorithm, which has a much better complexity than a naive computation.</p>
-<p>The same trick can also be applied on <img class="math" src="../../_images/math/ad1b1997ca8fd08fc7c0c11aafbc7ef80dc7c675.svg" alt="\phi_p"/> criterion, because we can write</p>
+</div><p>Updating <img class="math" src="../../_images/math/1b83953c3b8732dfd979bdbbc16595b7356ac91d.svg" alt="C_2"/> criterion can be performed by a <img class="math" src="../../_images/math/b8debc4382a674b75ec2cabddfa4db97c766cfc5.svg" alt="\mathcal{O}(N)"/> algorithm, which has a much better complexity than a naive computation.</p>
+<p>The same trick can also be applied on <img class="math" src="../../_images/math/4fd4a2ef6361e7e054a9f3207279d34ac9948588.svg" alt="\phi_p"/> criterion, because we can write</p>
 <div class="math">
-<p><img src="../../_images/math/09718f3060c7e65617725c133fe338d5023f8b7f.svg" alt="\phi_p(X)^p
+<p><img src="../../_images/math/05b1a0edb93c8243a63fcbc9fc008d0e7bbafc55.svg" alt="\phi_p(X)^p
 = \sum_{1\leq i &lt; j \leq N} ||x^{(i)} - x^{(j)}||^{-p}_{L^2}
 = \frac{1}{2} \sum_{i=1}^N \sum_{\substack{1\leq j\leq N\\j\neq i}} ||x^{(i)} - x^{(j)}||^{-p}_{L^2}
 = \sum_{i=1}^N \sum_{j=1}^N f_{ij}"/></p>
 </div><p>with</p>
 <div class="math">
-<p><img src="../../_images/math/2b3f5f38eb79034d80844b28e5f389a2b8f14ace.svg" alt="f_{ij}= \,\,\,\left \{
+<p><img src="../../_images/math/995823e69ac30f4ed854707c308e3c740f064921.svg" alt="f_{ij}= \,\,\,\left \{
 \begin{aligned}
 &amp; \frac{||x^{(i)} - x^{(j)}||^{-p}_{L^2}}{2}, &amp; i \neq j\\
 &amp; 0, &amp; i=j
 \end{aligned}
 \right."/></p>
-</div><p>These <img class="math" src="../../_images/math/a84698dbcbe51a27499a9838fb30fcb32e6f84d8.svg" alt="f_{ij}"/> coefficients satisfy the same conditions, so the same computations give:</p>
+</div><p>These <img class="math" src="../../_images/math/171b6629bd97645f49bf6c9fc010975143660e6e.svg" alt="f_{ij}"/> coefficients satisfy the same conditions, so the same computations give:</p>
 <div class="math">
-<p><img src="../../_images/math/121ed8fd5e90d3d6878053288660c86a39bf2c30.svg" alt="\phi_p(X_{d}^{\prime N})^p = \phi_p(X_{d}^N)^p
+<p><img src="../../_images/math/0f482573dcee37ab1e354e6f5cc1ff12b6a0013c.svg" alt="\phi_p(X_{d}^{\prime N})^p = \phi_p(X_{d}^N)^p
   + 2\sum_{\substack{1\leq j\leq N\\j\neq i_1,i_2}} (f^{\prime}_{i_1j}+f^{\prime}_{i_2j})
   - 2\sum_{\substack{1\leq j\leq N\\j\neq i_1,i_2}} (f_{i_1j}+f_{i_2j})"/></p>
-</div><p>In practice, a marginal transformation is performed to map the initial multivariate distribution into <img class="math" src="../../_images/math/29cd9ae8873bd3210e07adb1c59e3bff1f4a38d9.svg" alt="[0,1]^d"/>.
-Optimization is performed in <img class="math" src="../../_images/math/29cd9ae8873bd3210e07adb1c59e3bff1f4a38d9.svg" alt="[0,1]^d"/> and the inverse transformation maps the design into the initial space.</p>
+</div><p>In practice, a marginal transformation is performed to map the initial multivariate distribution into <img class="math" src="../../_images/math/cdcb6c07314384a4e921670b52c57c66dec565c7.svg" alt="[0,1]^d"/>.
+Optimization is performed in <img class="math" src="../../_images/math/cdcb6c07314384a4e921670b52c57c66dec565c7.svg" alt="[0,1]^d"/> and the inverse transformation maps the design into the initial space.</p>
 <div class="topic">
 <p class="topic-title first">API:</p>
 <ul class="simple">
@@ -269,7 +269,7 @@ Optimization is performed in <img class="math" src="../../_images/math/29cd9ae88
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

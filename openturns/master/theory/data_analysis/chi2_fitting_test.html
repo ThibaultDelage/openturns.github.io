@@ -98,58 +98,58 @@
   <div class="section" id="chi-squared-goodness-of-fit-test">
 <span id="chi2-fitting-test"></span><h1>Chi-squared goodness of fit test<a class="headerlink" href="#chi-squared-goodness-of-fit-test" title="Permalink to this headline">¶</a></h1>
 <p>This method deals with the modelling of a probability distribution of a
-random vector <img class="math" src="../../_images/math/80e79f6f56b23b60f04ee768e0b30ca7f2e735fa.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/>. It
+random vector <img class="math" src="../../_images/math/4efc1e2de19d56b11de1473bb5b776e974003d9e.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/>. It
 seeks to verify the compatibility between a sample of data
-<img class="math" src="../../_images/math/082e93c078fdee64957edab9a0398b1e519e3df7.svg" alt="\left\{ \vect{x}_1,\vect{x}_2,\ldots,\vect{x}_N \right\}"/> and a
+<img class="math" src="../../_images/math/70f540002e2d6aa22452c4c2aabb0bd0fd108897.svg" alt="\left\{ \vect{x}_1,\vect{x}_2,\ldots,\vect{x}_N \right\}"/> and a
 candidate probability distribution previous chosen. The use of the
-<img class="math" src="../../_images/math/232507524d8ed6ab5bd3a9c2aee472ef858addf4.svg" alt="\chi^2"/> Goodness-of-Fit test allows to answer this
-question in the one dimensional case <img class="math" src="../../_images/math/ee41aa33adbeec8739f7f6d89a85e90e5b967d92.svg" alt="n_X =1"/>, and with a discrete
+<img class="math" src="../../_images/math/b3f2f924e2b23e581a2136994f729675b99dc975.svg" alt="\chi^2"/> Goodness-of-Fit test allows to answer this
+question in the one dimensional case <img class="math" src="../../_images/math/d5c7e0c9b660082e589cdf429e2463332907f65e.svg" alt="n_X =1"/>, and with a discrete
 distribution.</p>
-<p>Let us limit the case to <img class="math" src="../../_images/math/7d40a8a3cd0555d7c808f27ff9157764ee1c873d.svg" alt="n_X = 1"/>. Thus we denote
-<img class="math" src="../../_images/math/6db54521198df1e2bb8df500025ff5870e706f27.svg" alt="\vect{X} = X^1 = X"/>. We also note that as we are considering
+<p>Let us limit the case to <img class="math" src="../../_images/math/e233e12cf7342b234b7400209970640c40ac2ded.svg" alt="n_X = 1"/>. Thus we denote
+<img class="math" src="../../_images/math/0e4f87e7d716aba870f7652c3cba1c7fc5542d0d.svg" alt="\vect{X} = X^1 = X"/>. We also note that as we are considering
 discrete distributions i.e. those for which the possible values of
-<img class="math" src="../../_images/math/e39fc198cd7e936bd7b824c9b924f7dc377b6975.svg" alt="X"/> belong to a discrete set <img class="math" src="../../_images/math/ef0dfe086dfdbce7b72f265aa0587ea70afd002b.svg" alt="\cE"/>, the candidate
+<img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/> belong to a discrete set <img class="math" src="../../_images/math/42a58db38fcb4cf90b653f46e6fb33e8ffc5fc85.svg" alt="\cE"/>, the candidate
 distribution is characterised by the probabilities
-<img class="math" src="../../_images/math/5ae3560d32d364c9918e2268b4d332a3d94dabad.svg" alt="\left\{ p(x;\vect{\theta}) \right\}_{x \in \cE}"/>.</p>
+<img class="math" src="../../_images/math/6f39ae37f12ab5297b42d7b8445c5f033c624648.svg" alt="\left\{ p(x;\vect{\theta}) \right\}_{x \in \cE}"/>.</p>
 <div class="line-block">
 <div class="line">The chi squared test is based on the fact that if the candidate
 distribution is appropriate, the number of values in the sample x1,
-x2, …, xN that are equal to <img class="math" src="../../_images/math/b46b960b23857f933aea0a650f82daa1bcc3e1b1.svg" alt="x"/> should be on average equal to
-<img class="math" src="../../_images/math/94adfc7e0f168889c29bd11e6aa63a391284bfb0.svg" alt="N p(x;\vect{\theta})"/>. The idea is therefore to compare the
+x2, …, xN that are equal to <img class="math" src="../../_images/math/5022ac5b5f8f5d1b9a0c33f27f9fb1652700fd71.svg" alt="x"/> should be on average equal to
+<img class="math" src="../../_images/math/e1846b3b706f466923d35ef165b4813c51ca1cff.svg" alt="N p(x;\vect{\theta})"/>. The idea is therefore to compare the
 “theoretical values” with the actual observed values. This comparison
 is performed with the aid of the following “distance”.</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/43b881d6665bd3f570680c10b6aa9b63b1140e87.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/8a88fcd312b3317ebf3c1524428e0fb9e8cf55a3.svg" alt="\begin{aligned}
     \widehat{D}_N^2 = \sum_{x \in \cE_N} \frac{\left(Np(x)-n(x)\right)^2}{n(x)}
   \end{aligned}"/></p>
 </div></div></blockquote>
-<p>where <img class="math" src="../../_images/math/4f43bceb7d5ac71826cb6d2762793239dc13be20.svg" alt="\cE_N"/> denotes the elements of <img class="math" src="../../_images/math/ef0dfe086dfdbce7b72f265aa0587ea70afd002b.svg" alt="\cE"/> which have
-been observed at least once in the data sample and where <img class="math" src="../../_images/math/6fc8d342948499de8958f50c33324dfb38d1572f.svg" alt="n(x)"/>
+<p>where <img class="math" src="../../_images/math/cbe0a3a1112d5dc037e460f22a54e907ea3511cb.svg" alt="\cE_N"/> denotes the elements of <img class="math" src="../../_images/math/42a58db38fcb4cf90b653f46e6fb33e8ffc5fc85.svg" alt="\cE"/> which have
+been observed at least once in the data sample and where <img class="math" src="../../_images/math/a6ac8fbd352dc8143d77237714285b0b3bc0b95f.svg" alt="n(x)"/>
 denotes the number of data values in the sample that are equal to
-<img class="math" src="../../_images/math/b46b960b23857f933aea0a650f82daa1bcc3e1b1.svg" alt="x"/>.</p>
+<img class="math" src="../../_images/math/5022ac5b5f8f5d1b9a0c33f27f9fb1652700fd71.svg" alt="x"/>.</p>
 <div class="line-block">
-<div class="line">The probability distribution of the distance <img class="math" src="../../_images/math/c9864df1d358bc4608d313410b540537e2022030.svg" alt="\widehat{D}_N^2"/>
+<div class="line">The probability distribution of the distance <img class="math" src="../../_images/math/bbf4f5dc033f49e0f184829230c7d7e8c9b89429.svg" alt="\widehat{D}_N^2"/>
 is asymptotically known (i.e. as the size of the sample tends to
 infinity), and this asymptotic distribution does not depend on the
-candidate distribution being tested. If <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> is sufficiently
-large, this means that for a probability <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>, one can
-calculate the threshold / critical value) <img class="math" src="../../_images/math/dd84b03d6a7a615d5b450c1d9a4e38d1be40e04e.svg" alt="d_\alpha"/> such that:</div>
+candidate distribution being tested. If <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> is sufficiently
+large, this means that for a probability <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/>, one can
+calculate the threshold / critical value) <img class="math" src="../../_images/math/5d9b72606092d28e0da0114bc32a75241348037b.svg" alt="d_\alpha"/> such that:</div>
 </div>
 <ul class="simple">
-<li>if <img class="math" src="../../_images/math/f6ac9a6b1d90f1da78edd200e0ff413cc596e05e.svg" alt="\widehat{D}_N&gt;d_{\alpha}"/>, we reject the candidate
-distribution with a risk of error <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>,</li>
-<li>if <img class="math" src="../../_images/math/2735dd805508beb9510353cb84a5b8e6baaf5889.svg" alt="\widehat{D}_N \leq d_{\alpha}"/>, the candidate distribution
+<li>if <img class="math" src="../../_images/math/c7185f57e4425c92f992c15e7446305ad15121f1.svg" alt="\widehat{D}_N&gt;d_{\alpha}"/>, we reject the candidate
+distribution with a risk of error <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/>,</li>
+<li>if <img class="math" src="../../_images/math/7838f9f3597600de8dd4d7a7701412d8a2442020.svg" alt="\widehat{D}_N \leq d_{\alpha}"/>, the candidate distribution
 is considered acceptable.</li>
 </ul>
-<p>An important notion is the so-called “<img class="math" src="../../_images/math/0f4c0791a2997f071572e3ee6a344919caea8e95.svg" alt="p"/>-value” of the test. This
+<p>An important notion is the so-called “<img class="math" src="../../_images/math/0a51f74fdb12efb40f2b40e8036cbf0f13c8d667.svg" alt="p"/>-value” of the test. This
 quantity is equal to the limit error probability
-<img class="math" src="../../_images/math/746d68b90b015ca51612792cae19291b1b315729.svg" alt="\alpha_\textrm{lim}"/> under which the candidate distribution is
+<img class="math" src="../../_images/math/9a974ac9a8693a22bc2efa9966505aa64b4c98a5.svg" alt="\alpha_\textrm{lim}"/> under which the candidate distribution is
 rejected. Thus, the candidate distribution will be accepted if and only
-if <img class="math" src="../../_images/math/746d68b90b015ca51612792cae19291b1b315729.svg" alt="\alpha_\textrm{lim}"/> is greater than the value <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>
+if <img class="math" src="../../_images/math/9a974ac9a8693a22bc2efa9966505aa64b4c98a5.svg" alt="\alpha_\textrm{lim}"/> is greater than the value <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/>
 desired by the user. Note that the higher
-<img class="math" src="../../_images/math/075a24ecbeb53bb7acdd439f4daaefa395a359e5.svg" alt="\alpha_\textrm{lim} - \alpha"/>, the more robust the decision.</p>
+<img class="math" src="../../_images/math/7ef4cfb089a25d31ff71a3cba1bda4b789d000e3.svg" alt="\alpha_\textrm{lim} - \alpha"/>, the more robust the decision.</p>
 <div class="topic">
 <p class="topic-title first">API:</p>
 <ul class="simple">
@@ -203,7 +203,7 @@ desired by the user. Note that the higher
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

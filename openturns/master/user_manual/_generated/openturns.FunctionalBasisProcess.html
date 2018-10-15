@@ -111,13 +111,13 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>distribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
-<dd><p class="first last">The distribution of the random vector <img class="math" src="../../_images/math/563234c71c34847c8a55a515444f17bbbd4a2a89.svg" alt="\vect{A}=(A_1,\dots, A_K)"/>.</p>
+<dd><p class="first last">The distribution of the random vector <img class="math" src="../../_images/math/5a45ef443aac1cf3df3ae4f8e9dee9a7bf87e9cf.svg" alt="\vect{A}=(A_1,\dots, A_K)"/>.</p>
 </dd>
 <dt><strong>basis</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
 <dd><p class="first last">Collection of deterministic functions.</p>
 </dd>
 <dt><strong>mesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
-<dd><p class="first last">Mesh <img class="math" src="../../_images/math/c3722bfc0db59fd0c6a78ca12864321cd8f6ac2a.svg" alt="\cM"/> over which the domain <img class="math" src="../../_images/math/5276693b38e3a896189d68c8a2055971be2dd623.svg" alt="\cD"/> is discretized.</p>
+<dd><p class="first last">Mesh <img class="math" src="../../_images/math/c511ceffe8f1b66f120113c930db60916e1833a9.svg" alt="\cM"/> over which the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/> is discretized.</p>
 </dd>
 </dl>
 </td>
@@ -125,10 +125,10 @@
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>A functional basis process <img class="math" src="../../_images/math/28de8ab59bf2d5e1f963ba8df1bdc579bc346ec9.svg" alt="X: \Omega \times\cD \mapsto \Rset^d"/> where <img class="math" src="../../_images/math/2d98a1790a94d717f54c99f9d29f71d8035ed993.svg" alt="\cD \in \Rset^n"/>, writes:</p>
+<p>A functional basis process <img class="math" src="../../_images/math/79c3d00cbc2e00f4211adb98ed438cb15e9967be.svg" alt="X: \Omega \times\cD \mapsto \Rset^d"/> where <img class="math" src="../../_images/math/cbfb1053cfa7ada3d421635b030809df31bb0b7f.svg" alt="\cD \in \Rset^n"/>, writes:</p>
 <div class="math">
-<p><img src="../../_images/math/c3d39831289dcf2417283e9ae9ee5756c49079d4.svg" alt="X(\omega,\vect{t})=\sum_{i=1}^K A_i(\omega)\phi_i(\vect{t}) \quad  \forall \omega \in \Omega and \forall \vect{t} \in \cD"/></p>
-</div><p>with <img class="math" src="../../_images/math/bbdee8de43724d9935defeda33b9527969aa800f.svg" alt="\phi_i: \Rset^n \rightarrow \Rset^d"/> for <img class="math" src="../../_images/math/6fa3f107069040fb50e8259298e45f48da896525.svg" alt="1 \leq i \leq K"/> and <img class="math" src="../../_images/math/563234c71c34847c8a55a515444f17bbbd4a2a89.svg" alt="\vect{A}=(A_1,\dots, A_K)"/> a random vector of dimension <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/>.</p>
+<p><img src="../../_images/math/9cb4664ee458d35a8dbc50cb1720153d15b24665.svg" alt="X(\omega,\vect{t})=\sum_{i=1}^K A_i(\omega)\phi_i(\vect{t}) \quad  \forall \omega \in \Omega and \forall \vect{t} \in \cD"/></p>
+</div><p>with <img class="math" src="../../_images/math/9714a2902406612a4dcf2ca1edd6398663c1d3cc.svg" alt="\phi_i: \Rset^n \rightarrow \Rset^d"/> for <img class="math" src="../../_images/math/1c08dfd20d98bcca3f8ed9ba11ccfecae365e78b.svg" alt="1 \leq i \leq K"/> and <img class="math" src="../../_images/math/5a45ef443aac1cf3df3ae4f8e9dee9a7bf87e9cf.svg" alt="\vect{A}=(A_1,\dots, A_K)"/> a random vector of dimension <img class="math" src="../../_images/math/6fd9fb7901ca12ee0d9cc74d922e7b9614da107c.svg" alt="K"/>.</p>
 <p class="rubric">Examples</p>
 <p>Create the coefficients distribution:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
@@ -149,6 +149,19 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myFBProcess</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FunctionalBasisProcess</span><span class="p">(</span><span class="n">coefDist</span><span class="p">,</span> <span class="n">myBasis</span><span class="p">,</span> <span class="n">myMesh</span><span class="p">)</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.FunctionalBasisProcess.thisown" title="openturns.FunctionalBasisProcess.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -175,16 +188,16 @@
 <td>Get the coefficients distribution.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.FunctionalBasisProcess.getFuture" title="openturns.FunctionalBasisProcess.getFuture"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFuture</span></code></a>(*args)</td>
-<td>Prediction of the <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> future iterations of the process.</td>
+<td>Prediction of the <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> future iterations of the process.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.FunctionalBasisProcess.getId" title="openturns.FunctionalBasisProcess.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.FunctionalBasisProcess.getInputDimension" title="openturns.FunctionalBasisProcess.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
-<td>Get the dimension of the domain <img class="math" src="../../_images/math/5276693b38e3a896189d68c8a2055971be2dd623.svg" alt="\cD"/>.</td>
+<td>Get the dimension of the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.FunctionalBasisProcess.getMarginal" title="openturns.FunctionalBasisProcess.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(indices)</td>
-<td>Get the <img class="math" src="../../_images/math/9e13f2aa1906ee95ab0e9da428e161a6d0c46e9c.svg" alt="k^{th}"/> marginal of the random process.</td>
+<td>Get the <img class="math" src="../../_images/math/b571bf56361a4fc8439ac1f8cd466828b8dba528.svg" alt="k^{th}"/> marginal of the random process.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.FunctionalBasisProcess.getMesh" title="openturns.FunctionalBasisProcess.getMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMesh</span></code></a>()</td>
 <td>Get the mesh.</td>
@@ -193,13 +206,13 @@
 <td>Accessor to the object’s name.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.FunctionalBasisProcess.getOutputDimension" title="openturns.FunctionalBasisProcess.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
-<td>Get the dimension of the domain <img class="math" src="../../_images/math/5276693b38e3a896189d68c8a2055971be2dd623.svg" alt="\cD"/>.</td>
+<td>Get the dimension of the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/>.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.FunctionalBasisProcess.getRealization" title="openturns.FunctionalBasisProcess.getRealization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRealization</span></code></a>()</td>
 <td>Get a realization of the process.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.FunctionalBasisProcess.getSample" title="openturns.FunctionalBasisProcess.getSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSample</span></code></a>(size)</td>
-<td>Get <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/> realizations of the process.</td>
+<td>Get <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/> realizations of the process.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.FunctionalBasisProcess.getShadowedId" title="openturns.FunctionalBasisProcess.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
@@ -270,7 +283,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>basis</strong> <span class="classifier-delimiter">:</span> <span class="classifier">collection of <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
-<dd><p class="first last">Collection of functions <img class="math" src="../../_images/math/2550a9a54c8a04511f4cb2fccc823db9838eb667.svg" alt="(\phi_i)_{1 \leq i \leq K}"/>.</p>
+<dd><p class="first last">Collection of functions <img class="math" src="../../_images/math/5ab9b629cc133a5863c73926e85a0a3df6548e11.svg" alt="(\phi_i)_{1 \leq i \leq K}"/>.</p>
 </dd>
 </dl>
 </td>
@@ -313,8 +326,8 @@
 <li>either using a dedicated functional model if it exists: e.g. a functional
 basis process.</li>
 <li>or using an interpolation from a discrete realization of the process on
-<img class="math" src="../../_images/math/c3722bfc0db59fd0c6a78ca12864321cd8f6ac2a.svg" alt="\cM"/>: in dimension <img class="math" src="../../_images/math/ceeee39186b1a2311bb5902f32d5c933037e95e1.svg" alt="d=1"/>, a linear interpolation and in
-dimension <img class="math" src="../../_images/math/af1f21e708e150fb03a2d1fec592d3e2fb01868a.svg" alt="d \geq 2"/>, a piecewise constant function (the value at a
+<img class="math" src="../../_images/math/c511ceffe8f1b66f120113c930db60916e1833a9.svg" alt="\cM"/>: in dimension <img class="math" src="../../_images/math/4a8b9e80bce9c93eb506330d8c97754b274a99f1.svg" alt="d=1"/>, a linear interpolation and in
+dimension <img class="math" src="../../_images/math/2f554bd0344cedc5391bfc58033c3e94eb73e60e.svg" alt="d \geq 2"/>, a piecewise constant function (the value at a
 given position is equal to the value at the nearest vertex of the mesh of
 the process).</li>
 </ul>
@@ -374,7 +387,7 @@ the process).</li>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>distribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
-<dd><p class="first last">The distribution of the random vector <img class="math" src="../../_images/math/563234c71c34847c8a55a515444f17bbbd4a2a89.svg" alt="\vect{A}=(A_1,\dots, A_K)"/> of dimension <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/>.</p>
+<dd><p class="first last">The distribution of the random vector <img class="math" src="../../_images/math/5a45ef443aac1cf3df3ae4f8e9dee9a7bf87e9cf.svg" alt="\vect{A}=(A_1,\dots, A_K)"/> of dimension <img class="math" src="../../_images/math/6fd9fb7901ca12ee0d9cc74d922e7b9614da107c.svg" alt="K"/>.</p>
 </dd>
 </dl>
 </td>
@@ -386,16 +399,16 @@ the process).</li>
 <dl class="method">
 <dt id="openturns.FunctionalBasisProcess.getFuture">
 <code class="descname">getFuture</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.FunctionalBasisProcess.getFuture" title="Permalink to this definition">¶</a></dt>
-<dd><p>Prediction of the <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> future iterations of the process.</p>
+<dd><p>Prediction of the <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> future iterations of the process.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>stepNumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/c71058d94c634cad4c0b5b4e5b96588d8e4fb24a.svg" alt="N \geq 0"/></span></dt>
+<dt><strong>stepNumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/e7f019bb38e5f2b79da3957eb98d219975516b4f.svg" alt="N \geq 0"/></span></dt>
 <dd><p class="first last">Number of future steps.</p>
 </dd>
-<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/ab614f1455ee5c3aa8f6275ed851d5051831d616.svg" alt="size \geq 0"/>, optional</span></dt>
+<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/9c6a0f491d7bd5c900da2f9461d37e2e350c4740.svg" alt="size \geq 0"/>, optional</span></dt>
 <dd><p class="first last">Number of futures needed. Default is 1.</p>
 </dd>
 </dl>
@@ -403,8 +416,8 @@ the process).</li>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>prediction</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a> or <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSeries</span></code></a></span></dt>
-<dd><p class="first last"><img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> future iterations of the process.
-If <img class="math" src="../../_images/math/3e99a61be6bd9ca6a51bd92e87f1908d387ccd4a.svg" alt="size = 1"/>, <em>prediction</em> is a <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSeries</span></code></a>.
+<dd><p class="first last"><img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> future iterations of the process.
+If <img class="math" src="../../_images/math/1aa8aad951f83ec795a41c8faa186dacc52b8228.svg" alt="size = 1"/>, <em>prediction</em> is a <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSeries</span></code></a>.
 Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a>.</p>
 </dd>
 </dl>
@@ -436,14 +449,14 @@ Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.h
 <dl class="method">
 <dt id="openturns.FunctionalBasisProcess.getInputDimension">
 <code class="descname">getInputDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.FunctionalBasisProcess.getInputDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the dimension of the domain <img class="math" src="../../_images/math/5276693b38e3a896189d68c8a2055971be2dd623.svg" alt="\cD"/>.</p>
+<dd><p>Get the dimension of the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Dimension of the domain <img class="math" src="../../_images/math/5276693b38e3a896189d68c8a2055971be2dd623.svg" alt="\cD"/>: <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/>.</p>
+<dd><p class="first last">Dimension of the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/>: <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/>.</p>
 </dd>
 </dl>
 </td>
@@ -455,13 +468,13 @@ Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.h
 <dl class="method">
 <dt id="openturns.FunctionalBasisProcess.getMarginal">
 <code class="descname">getMarginal</code><span class="sig-paren">(</span><em>indices</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.FunctionalBasisProcess.getMarginal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the <img class="math" src="../../_images/math/9e13f2aa1906ee95ab0e9da428e161a6d0c46e9c.svg" alt="k^{th}"/> marginal of the random process.</p>
+<dd><p>Get the <img class="math" src="../../_images/math/b571bf56361a4fc8439ac1f8cd466828b8dba528.svg" alt="k^{th}"/> marginal of the random process.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>k</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or list of ints <img class="math" src="../../_images/math/d9a57d7d1c506cfdf82cfccc98b0654aae6bb70f.svg" alt="0 \leq k &lt; d"/></span></dt>
+<dt><strong>k</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or list of ints <img class="math" src="../../_images/math/9dab5e747eac3e606b0e3d618ec845f76e72d35c.svg" alt="0 \leq k &lt; d"/></span></dt>
 <dd><p class="first last">Index of the marginal(s) needed.</p>
 </dd>
 </dl>
@@ -488,7 +501,7 @@ Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.h
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>mesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
-<dd><p class="first last">Mesh over which the domain <img class="math" src="../../_images/math/5276693b38e3a896189d68c8a2055971be2dd623.svg" alt="\cD"/> is discretized.</p>
+<dd><p class="first last">Mesh over which the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/> is discretized.</p>
 </dd>
 </dl>
 </td>
@@ -519,14 +532,14 @@ Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.h
 <dl class="method">
 <dt id="openturns.FunctionalBasisProcess.getOutputDimension">
 <code class="descname">getOutputDimension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.FunctionalBasisProcess.getOutputDimension" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the dimension of the domain <img class="math" src="../../_images/math/5276693b38e3a896189d68c8a2055971be2dd623.svg" alt="\cD"/>.</p>
+<dd><p>Get the dimension of the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>d</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Dimension of the domain <img class="math" src="../../_images/math/5276693b38e3a896189d68c8a2055971be2dd623.svg" alt="\cD"/>.</p>
+<dd><p class="first last">Dimension of the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/>.</p>
 </dd>
 </dl>
 </td>
@@ -558,13 +571,13 @@ process at the vertices of the mesh.</p>
 <dl class="method">
 <dt id="openturns.FunctionalBasisProcess.getSample">
 <code class="descname">getSample</code><span class="sig-paren">(</span><em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.FunctionalBasisProcess.getSample" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/> realizations of the process.</p>
+<dd><p>Get <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/> realizations of the process.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/f6d84814c3b7367dcf20f4b3a13f2a05e96969d2.svg" alt="n \geq 0"/></span></dt>
+<dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/1a13735264424681d43b78e82d1e77aa7380d1e3.svg" alt="n \geq 0"/></span></dt>
 <dd><p class="first last">Number of realizations of the process needed.</p>
 </dd>
 </dl>
@@ -572,8 +585,8 @@ process at the vertices of the mesh.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>processSample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a></span></dt>
-<dd><p class="first last"><img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/> realizations of the random process. A process sample is a
-collection of fields which share the same mesh <img class="math" src="../../_images/math/322de579079b259a3891e38d89d882723e093ece.svg" alt="\cM \in \Rset^n"/>.</p>
+<dd><p class="first last"><img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/> realizations of the random process. A process sample is a
+collection of fields which share the same mesh <img class="math" src="../../_images/math/c33c2cb85d5c5072d1448d2ab9f97d82dcaeddf1.svg" alt="\cM \in \Rset^n"/>.</p>
 </dd>
 </dl>
 </td>
@@ -614,7 +627,7 @@ collection of fields which share the same mesh <img class="math" src="../../_ima
 <dd><p class="first last">Time grid of a process when the mesh associated to the
 process can be interpreted as a <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a>. We check
 if the vertices of the mesh are scalar and are regularly spaced in
-<img class="math" src="../../_images/math/0c151f27f0c4a17fe5eac10a70e81212e55b79f6.svg" alt="\Rset"/> but we don’t check if the connectivity of the mesh is conform
+<img class="math" src="../../_images/math/96a966ab4ed01ac508b4289f06ae3725d39ddd3a.svg" alt="\Rset"/> but we don’t check if the connectivity of the mesh is conform
 to the one of a regular grid (without any hole and composed of ordered
 instants).</p>
 </dd>
@@ -739,19 +752,19 @@ instants).</p>
 </table>
 <p class="rubric">Notes</p>
 <p>A stochastic process is normal if all its finite dimensional joint
-distributions are normal, which means that for all <img class="math" src="../../_images/math/68084de77438b46cda939045b392a457b467edc6.svg" alt="k \in \Nset"/> and
-<img class="math" src="../../_images/math/0d6bc38bf425013a28441c25b053c0fabe498cf1.svg" alt="I_k \in \Nset^*"/>, with <img class="math" src="../../_images/math/3f4a28ad26fe2b7aa9b96130ba90ed5be9c5eada.svg" alt="cardI_k=k"/>, there is
-<img class="math" src="../../_images/math/d469cd3e15103103b78f4606aaa8ba6c517eb585.svg" alt="\vect{m}_1, \dots, \vect{m}_k \in \Rset^d"/> and
-<img class="math" src="../../_images/math/950f8179fc346e75614389fd0d23254c8e776006.svg" alt="\mat{C}_{1,\dots,k}\in\mathcal{M}_{kd,kd}(\Rset)"/> such that:</p>
+distributions are normal, which means that for all <img class="math" src="../../_images/math/1485682efce24d352e70663527841680c0693a8b.svg" alt="k \in \Nset"/> and
+<img class="math" src="../../_images/math/82669d77409cb02759e53d4eee27ac3be0125bc9.svg" alt="I_k \in \Nset^*"/>, with <img class="math" src="../../_images/math/ecc8b0a551210294b749f193efa9677ca5430fa1.svg" alt="cardI_k=k"/>, there is
+<img class="math" src="../../_images/math/848f38b3922ab7280fbf140960ba9329f6f80895.svg" alt="\vect{m}_1, \dots, \vect{m}_k \in \Rset^d"/> and
+<img class="math" src="../../_images/math/5524a37bad5991e056f1247ceeb1f3b2f6852066.svg" alt="\mat{C}_{1,\dots,k}\in\mathcal{M}_{kd,kd}(\Rset)"/> such that:</p>
 <div class="math">
-<p><img src="../../_images/math/931fa5ef63760176cfdfdad3bc486feb6ab75bf6.svg" alt="\Expect{\exp\left\{i\Tr{\vect{X}}_{I_k} \vect{U}_{k}  \right\}} =
+<p><img src="../../_images/math/dfd5c95a51f0b0a803a019d90526284e4a720ee7.svg" alt="\Expect{\exp\left\{i\Tr{\vect{X}}_{I_k} \vect{U}_{k}  \right\}} =
 \exp{\left\{i\Tr{\vect{U}}_{k}\vect{M}_{k}-\frac{1}{2}\Tr{\vect{U}}_{k}\mat{C}_{1,\dots,k}\vect{U}_{k}\right\}}"/></p>
-</div><p>where <img class="math" src="../../_images/math/b5d2e941d0c7c72f1d3a7b7f069dfdc9a9b542a6.svg" alt="\Tr{\vect{X}}_{I_k} = (\Tr{X}_{\vect{t}_1}, \hdots, \Tr{X}_{\vect{t}_k})"/>,
-<img class="math" src="../../_images/math/ab7d0f11eda8cc576c00ea7ba267a68be57d108c.svg" alt="\\Tr{vect{U}}_{k} = (\Tr{\vect{u}}_{1}, \hdots, \Tr{\vect{u}}_{k})"/> and
-<img class="math" src="../../_images/math/830fb215bded9a366a1f7d6e3349201c3f6ad4fe.svg" alt="\Tr{\vect{M}}_{k} = (\Tr{\vect{m}}_{1}, \hdots, \Tr{\vect{m}}_{k})"/> and
-<img class="math" src="../../_images/math/7410036dcfbee42ec9d0db8bec5a6b40e2809056.svg" alt="\mat{C}_{1,\dots,k}"/> is the symmetric matrix:</p>
+</div><p>where <img class="math" src="../../_images/math/8ccd42a33997d535fbab04992b7b9630689a9078.svg" alt="\Tr{\vect{X}}_{I_k} = (\Tr{X}_{\vect{t}_1}, \hdots, \Tr{X}_{\vect{t}_k})"/>,
+<img class="math" src="../../_images/math/791ac1b475ed7fda3f3b54439693d270ae0e0e3a.svg" alt="\\Tr{vect{U}}_{k} = (\Tr{\vect{u}}_{1}, \hdots, \Tr{\vect{u}}_{k})"/> and
+<img class="math" src="../../_images/math/1d7d3ceaa64557fe389a8dada04c4e3074b22093.svg" alt="\Tr{\vect{M}}_{k} = (\Tr{\vect{m}}_{1}, \hdots, \Tr{\vect{m}}_{k})"/> and
+<img class="math" src="../../_images/math/5dabd314dc3111eccdb3d06b93ada4444ac5155a.svg" alt="\mat{C}_{1,\dots,k}"/> is the symmetric matrix:</p>
 <div class="math">
-<p><img src="../../_images/math/30ed9a2f36f131bd0bd7be7d7489001abb523849.svg" alt="\mat{C}_{1,\dots,k} = \left(
+<p><img src="../../_images/math/125944ddfcd10a4c5837b17b48abfa61efa50ac5.svg" alt="\mat{C}_{1,\dots,k} = \left(
 \begin{array}{cccc}
   C(\vect{t}_1, \vect{t}_1) &amp;C(\vect{t}_1, \vect{t}_2) &amp; \hdots &amp; C(\vect{t}_1, \vect{t}_{k}) \\
   \hdots &amp; C(\vect{t}_2, \vect{t}_2)  &amp; \hdots &amp; C(\vect{t}_2, \vect{t}_{k}) \\
@@ -759,8 +772,8 @@ distributions are normal, which means that for all <img class="math" src="../../
   \hdots &amp; \hdots &amp; \hdots &amp; C(\vect{t}_{k}, \vect{t}_{k})
 \end{array}
 \right)"/></p>
-</div><p>A Gaussian process is entirely defined by its mean function <img class="math" src="../../_images/math/93f1437a26e1e140120e1891ad60149cdf21f33d.svg" alt="m"/> and its
-covariance function <img class="math" src="../../_images/math/672a37f589017d9850b03c88d416135b30d4f284.svg" alt="C"/> (or correlation function <img class="math" src="../../_images/math/5184fc174e08f95104ada8e814562210aed5b478.svg" alt="R"/>).</p>
+</div><p>A Gaussian process is entirely defined by its mean function <img class="math" src="../../_images/math/2a81e6ac78721d1aa548c835cc5880c8f3880375.svg" alt="m"/> and its
+covariance function <img class="math" src="../../_images/math/97c414cf4f2016be974edd945739defa174cd721.svg" alt="C"/> (or correlation function <img class="math" src="../../_images/math/eab94276fb98b30d7dd4cce9067b0ebe69376132.svg" alt="R"/>).</p>
 </dd></dl>
 
 <dl class="method">
@@ -781,12 +794,12 @@ covariance function <img class="math" src="../../_images/math/672a37f589017d9850
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>A process <img class="math" src="../../_images/math/e39fc198cd7e936bd7b824c9b924f7dc377b6975.svg" alt="X"/> is stationary if its distribution is invariant by
-translation: <img class="math" src="../../_images/math/17cb9c2e958fafd7a388c1792374034e59775a9d.svg" alt="\forall k \in \Nset"/>,
-<img class="math" src="../../_images/math/bd486602a07c583a6d272eb90969e498a505d131.svg" alt="\forall (\vect{t}_1, \dots, \vect{t}_k) \in \cD"/>,
-<img class="math" src="../../_images/math/b78c417f35bfdc094dfe5361f8713636eeef236c.svg" alt="\forall \vect{h}\in \Rset^n"/>, we have:</p>
+<p>A process <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/> is stationary if its distribution is invariant by
+translation: <img class="math" src="../../_images/math/c8e1f70b208858a8120e51ee57c08da96ac44877.svg" alt="\forall k \in \Nset"/>,
+<img class="math" src="../../_images/math/9a12b8a4c92998c0f1a2f03ca8767d7ce17f9511.svg" alt="\forall (\vect{t}_1, \dots, \vect{t}_k) \in \cD"/>,
+<img class="math" src="../../_images/math/2d007920380007aa7938b219f0a016eec5263b62.svg" alt="\forall \vect{h}\in \Rset^n"/>, we have:</p>
 <div class="math">
-<p><img src="../../_images/math/aa23905955c337464c5c53af0910a6dabef431e0.svg" alt="(X_{\vect{t}_1}, \dots, X_{\vect{t}_k})
+<p><img src="../../_images/math/baaf4dff24986805abc43708e28f373cd595eb5f.svg" alt="(X_{\vect{t}_1}, \dots, X_{\vect{t}_k})
 \stackrel{\mathcal{D}}{=} (X_{\vect{t}_1+\vect{h}}, \dots, X_{\vect{t}_k+\vect{h}})"/></p>
 </div></dd></dl>
 
@@ -800,7 +813,7 @@ translation: <img class="math" src="../../_images/math/17cb9c2e958fafd7a388c1792
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>basis</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of <a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
-<dd><p class="first last">Collection of functions <img class="math" src="../../_images/math/2550a9a54c8a04511f4cb2fccc823db9838eb667.svg" alt="(\phi_i)_{1 \leq i \leq K}"/>.</p>
+<dd><p class="first last">Collection of functions <img class="math" src="../../_images/math/5ab9b629cc133a5863c73926e85a0a3df6548e11.svg" alt="(\phi_i)_{1 \leq i \leq K}"/>.</p>
 </dd>
 </dl>
 </td>
@@ -838,7 +851,7 @@ translation: <img class="math" src="../../_images/math/17cb9c2e958fafd7a388c1792
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>distribution</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
-<dd><p class="first last">The distribution of the random vector <img class="math" src="../../_images/math/563234c71c34847c8a55a515444f17bbbd4a2a89.svg" alt="\vect{A}=(A_1,\dots, A_K)"/> of dimension <img class="math" src="../../_images/math/df09eeeda0b5b6cac35d7c61128baabb5f41ab6c.svg" alt="K"/>.</p>
+<dd><p class="first last">The distribution of the random vector <img class="math" src="../../_images/math/5a45ef443aac1cf3df3ae4f8e9dee9a7bf87e9cf.svg" alt="\vect{A}=(A_1,\dots, A_K)"/> of dimension <img class="math" src="../../_images/math/6fd9fb7901ca12ee0d9cc74d922e7b9614da107c.svg" alt="K"/>.</p>
 </dd>
 </dl>
 </td>
@@ -857,7 +870,7 @@ translation: <img class="math" src="../../_images/math/17cb9c2e958fafd7a388c1792
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>mesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
-<dd><p class="first last">Mesh over which the domain <img class="math" src="../../_images/math/5276693b38e3a896189d68c8a2055971be2dd623.svg" alt="\cD"/> is discretized.</p>
+<dd><p class="first last">Mesh over which the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/> is discretized.</p>
 </dd>
 </dl>
 </td>
@@ -917,7 +930,7 @@ translation: <img class="math" src="../../_images/math/17cb9c2e958fafd7a388c1792
 <dd><p class="first last">Time grid of observation of the process when the mesh associated to the
 process can be interpreted as a <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a>. We check
 if the vertices of the mesh are scalar and are regularly spaced in
-<img class="math" src="../../_images/math/0c151f27f0c4a17fe5eac10a70e81212e55b79f6.svg" alt="\Rset"/> but we don’t check if the connectivity of the mesh is conform
+<img class="math" src="../../_images/math/96a966ab4ed01ac508b4289f06ae3725d39ddd3a.svg" alt="\Rset"/> but we don’t check if the connectivity of the mesh is conform
 to the one of a regular grid (without any hole and composed of ordered
 instants).</p>
 </dd>
@@ -945,6 +958,12 @@ instants).</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openturns.FunctionalBasisProcess.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.FunctionalBasisProcess.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
 </dd></dl>
 
 </dd></dl>
@@ -978,7 +997,7 @@ instants).</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

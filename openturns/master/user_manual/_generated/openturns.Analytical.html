@@ -134,16 +134,16 @@ space.</p>
 methods <a class="reference internal" href="openturns.FORM.html#openturns.FORM" title="openturns.FORM"><code class="xref py py-class docutils literal notranslate"><span class="pre">FORM</span></code></a> and <a class="reference internal" href="openturns.SORM.html#openturns.SORM" title="openturns.SORM"><code class="xref py py-class docutils literal notranslate"><span class="pre">SORM</span></code></a> enabling to
 evaluate the failure probability of a system.
 A failure event is defined as follows :
-<img class="math" src="../../_images/math/44a124e6bb209ea04ed9f957148576862ee6f3f1.svg" alt="\cD_f = \{\vect{X} \in \Rset^n \, | \, g(\vect{X},\vect{d}) \le 0\}"/>
-where <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> denotes a random input vector representing the sources
-of uncertainties, <img class="math" src="../../_images/math/3b84c4ed75f01d36277ef4bef655637e1ea1a34d.svg" alt="\vect{d}"/> is a determinist vector representing the
-fixed variables. <img class="math" src="../../_images/math/e7d959c9b8b395f4d81cbb7bc878a352995b429a.svg" alt="g(\vect{X},\vect{d})"/> is the limit state function of
+<img class="math" src="../../_images/math/aea7dcbea716fdd76bc25b245c93ed09970a3d19.svg" alt="\cD_f = \{\vect{X} \in \Rset^n \, | \, g(\vect{X},\vect{d}) \le 0\}"/>
+where <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/> denotes a random input vector representing the sources
+of uncertainties, <img class="math" src="../../_images/math/69c918895529fa1f9990a8bc659fd6da72902600.svg" alt="\vect{d}"/> is a determinist vector representing the
+fixed variables. <img class="math" src="../../_images/math/75ec63b4014ce27162529b652daa96eaa69c2547.svg" alt="g(\vect{X},\vect{d})"/> is the limit state function of
 the model separating the failure domain from the safe domain.
-Considering <img class="math" src="../../_images/math/edde53234044962cc55e2709a2c1f0727858f7f0.svg" alt="f_\vect{X}(\vect{x})"/> the joint probability density function
-of the random variables <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>, the probability of failure of the
-event <img class="math" src="../../_images/math/252362c991122f578eb1b8a9a9e2af13e42655d8.svg" alt="\cD_f"/> is :</p>
+Considering <img class="math" src="../../_images/math/5e302a13cfc39e5190abd18da3ae868fc6777770.svg" alt="f_\vect{X}(\vect{x})"/> the joint probability density function
+of the random variables <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/>, the probability of failure of the
+event <img class="math" src="../../_images/math/61c3b562be11872d5ced43d2cc4b3b7f89b22c38.svg" alt="\cD_f"/> is :</p>
 <div class="math">
-<p><img src="../../_images/math/0c1dcc38875e4b61b3ff77e0f4dda6f1cdce8d3c.svg" alt="P_f = \int_{g(\vect{X},\vect{d})\le 0}f_\vect{X}(\vect{x})\di{\vect{x}}"/></p>
+<p><img src="../../_images/math/c5b23624fb93063397527e8b14e8dccd6d09af33.svg" alt="P_f = \int_{g(\vect{X},\vect{d})\le 0}f_\vect{X}(\vect{x})\di{\vect{x}}"/></p>
 </div><p>The analytical methods use an isoprobabilistic transformation to move from
 the physical space to the standard normal space (U-space) where distributions
 are spherical (invariant by rotation by definition), with zero mean, unit
@@ -151,26 +151,26 @@ variance and unit correlation matrix. The usual isoprobabilistic
 transformations are the Generalized Nataf transformation and the Rosenblatt one.</p>
 <p>In that new U-space, the event has the new expression defined
 from the transformed limit state function of the model
-<img class="math" src="../../_images/math/1029377cb78ff8ef56b7d71717c2debd5a909fb1.svg" alt="G : \cD_f = \{\vect{U} \in \Rset^n \, | \, G(\vect{U}\,,\,\vect{d}) \le 0\}"/>
+<img class="math" src="../../_images/math/949036219b7ab12f6f607f9a6d3da53cdd51ff76.svg" alt="G : \cD_f = \{\vect{U} \in \Rset^n \, | \, G(\vect{U}\,,\,\vect{d}) \le 0\}"/>
 and its boundary :
-<img class="math" src="../../_images/math/5920325ee7979f0dee151ea6b9cded1fd3239586.svg" alt="\{\vect{U} \in \Rset^n \, | \,G(\vect{U}\,,\,\vect{d}) = 0\}"/>.
-Then, the event probability <img class="math" src="../../_images/math/5085f93dd5258efdc1edcc3c0efc525f37018906.svg" alt="P_f"/> rewrites :</p>
+<img class="math" src="../../_images/math/ed30535311e1380d1bc3748a991f0671bbdb4dc1.svg" alt="\{\vect{U} \in \Rset^n \, | \,G(\vect{U}\,,\,\vect{d}) = 0\}"/>.
+Then, the event probability <img class="math" src="../../_images/math/8835888ad0ee040f6edf8ccec54dba3d69d1b364.svg" alt="P_f"/> rewrites :</p>
 <div class="math">
-<p><img src="../../_images/math/1b98653ca57c91278fec58baf82cc8cb9246faf0.svg" alt="P_f = \Prob{G(\vect{U}\,,\,\vect{d})\leq 0}
+<p><img src="../../_images/math/504648ea8c4646f36d7375c02a4319537c1cdf59.svg" alt="P_f = \Prob{G(\vect{U}\,,\,\vect{d})\leq 0}
     = \int_{\Rset^n} \boldsymbol{1}_{G(\vect{u}\,,\,\vect{d}) \leq 0}\,f_{\vect{U}}(\vect{u})\di{\vect{u}}"/></p>
-</div><p>where <img class="math" src="../../_images/math/486d131dbb0951acf4a612456c6c01a07a6c2036.svg" alt="f_{\vect{U}}"/> is the density function of the distribution in the
+</div><p>where <img class="math" src="../../_images/math/2b08de9c5aa21b182dbc5685727aad3bb90975a4.svg" alt="f_{\vect{U}}"/> is the density function of the distribution in the
 standard space.</p>
 <p>The analytical methods rely on the assumption that most of the contribution
-to <img class="math" src="../../_images/math/5085f93dd5258efdc1edcc3c0efc525f37018906.svg" alt="P_f"/> comes from points located in the vicinity of a particular point
-<img class="math" src="../../_images/math/67da49bbe7f25bf06a10968bb0cfed2a280dd442.svg" alt="P^*"/>, the <strong>design point</strong>, defined in the U-space as the point located
+to <img class="math" src="../../_images/math/8835888ad0ee040f6edf8ccec54dba3d69d1b364.svg" alt="P_f"/> comes from points located in the vicinity of a particular point
+<img class="math" src="../../_images/math/be54c480f37ef52a42a69b65933f1857e08363f3.svg" alt="P^*"/>, the <strong>design point</strong>, defined in the U-space as the point located
 on the limit state surface verifying the event of maximum likelihood. Given the
-probabilistic characteristics of the U-space, <img class="math" src="../../_images/math/67da49bbe7f25bf06a10968bb0cfed2a280dd442.svg" alt="P^*"/> has a geometrical
+probabilistic characteristics of the U-space, <img class="math" src="../../_images/math/be54c480f37ef52a42a69b65933f1857e08363f3.svg" alt="P^*"/> has a geometrical
 interpretation: it is the point located on the event boundary and at minimal
-distance from the origin of the U-space. Thus, considering <img class="math" src="../../_images/math/adae06f6b9e64ca84131d478a6b812c4035563bc.svg" alt="\vect{u}^*"/>
+distance from the origin of the U-space. Thus, considering <img class="math" src="../../_images/math/406db1521b055c27745d6d166dfb813471a915c9.svg" alt="\vect{u}^*"/>
 its coordinates in the U-space, the design point is the result of the
 constrained optimization problem :</p>
 <div class="math">
-<p><img src="../../_images/math/265cbcbde1cec4c07f5f0f814ebc28492025b6f7.svg" alt="\vect{u}^* = argmin \{||\vect{u}|| \, | \, G(\vect{u}) = 0 \}"/></p>
+<p><img src="../../_images/math/01e15cc5cd9fdfbd9754b304c5701bd914f93ac7.svg" alt="\vect{u}^* = argmin \{||\vect{u}|| \, | \, G(\vect{u}) = 0 \}"/></p>
 </div><p>Then the limit state surface is approximated in the standard space by a linear
 surface (<a class="reference internal" href="openturns.FORM.html#openturns.FORM" title="openturns.FORM"><code class="xref py py-class docutils literal notranslate"><span class="pre">FORM</span></code></a>) or by a quadratic surface
 (<a class="reference internal" href="openturns.SORM.html#openturns.SORM" title="openturns.SORM"><code class="xref py py-class docutils literal notranslate"><span class="pre">SORM</span></code></a>) at the design point in order to evaluate the
@@ -192,6 +192,19 @@ documentation associated with these two methods.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myAlgo</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Analytical</span><span class="p">(</span><span class="n">myOptim</span><span class="p">,</span> <span class="n">myEvent</span><span class="p">,</span> <span class="p">[</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">])</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.Analytical.thisown" title="openturns.Analytical.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -596,6 +609,12 @@ space.</p>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.Analytical.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.Analytical.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -627,7 +646,7 @@ space.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

@@ -116,7 +116,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>dimension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/73f432c9ea46384172d502e03616db817759c825.svg" alt="dimension&gt;0"/></span></dt>
+<dt><strong>dimension</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/a68b97b89261f0654a27b6368a3abac39249ce0d.svg" alt="dimension&gt;0"/></span></dt>
 <dd><p class="first last">The dimension of the functions to integrate. The default discretization is <em>GaussLegendre-DefaultMarginalIntegrationPointsNumber</em> in each dimension, see <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
 </dd>
 <dt><strong>discretization</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of int</span></dt>
@@ -130,11 +130,11 @@
 <p class="rubric">Notes</p>
 <p>The Gauss-Legendre algorithm enables to approximate the definite integral:</p>
 <div class="math">
-<p><img src="../../_images/math/92cf4ef865f19f32519165ee25f9b1032ae79e91.svg" alt="\int_{\vect{a}}^\vect{b} f(\vect{t})\di{\vect{t}}"/></p>
-</div><p>with <img class="math" src="../../_images/math/2d2b617f7deec97b69af4c69bbef170dbcf5c803.svg" alt="f: \Rset^d \mapsto \Rset^p"/>, <img class="math" src="../../_images/math/9b2d9cb5b35f18ecfd05c762513268a11cd47a7e.svg" alt="\vect{a}, \vect{b}\in\Rset^d"/> using a fixed tensorized Gauss-Legendre approximation:</p>
+<p><img src="../../_images/math/80ee587027351ec297115f6120aba37727f1fa0d.svg" alt="\int_{\vect{a}}^\vect{b} f(\vect{t})\di{\vect{t}}"/></p>
+</div><p>with <img class="math" src="../../_images/math/9fe2ccee5b5f735123bd7f4f0a21eb3b23d0b70a.svg" alt="f: \Rset^d \mapsto \Rset^p"/>, <img class="math" src="../../_images/math/12fd5a90a3338614243a389a4aa6efafac208b51.svg" alt="\vect{a}, \vect{b}\in\Rset^d"/> using a fixed tensorized Gauss-Legendre approximation:</p>
 <div class="math">
-<p><img src="../../_images/math/f4592acaee6ff0226af451bee7b86786557ab48f.svg" alt="\int_{\vect{a}}^\vect{b} f(\vect{t})\di{\vect{t}} = \sum_{\vect{n}\in \cN}\left(\prod_{i=1}^d w^{N_i}_{n_i}\right)f(\xi^{N_1}_{n_1},\dots,\xi^{N_d}_{n_d})"/></p>
-</div><p>where <img class="math" src="../../_images/math/b255f992933192a9ddad2d4a62ff53cf107cd6a9.svg" alt="\xi^{N_i}_{n_i}"/> is the <img class="math" src="../../_images/math/b0fc15172a04a33940f772b51a4f4fffc26f675a.svg" alt="n_i"/>-points Gauss-Legendre 1D integration rule and <img class="math" src="../../_images/math/1ed60f31c4699b5255437b3acf24e96115c3d0e0.svg" alt="w^{N_i}_{n_i}"/> the associated weight.</p>
+<p><img src="../../_images/math/e99d88071047e5bca839bcb85ca9d6e0c5cbc936.svg" alt="\int_{\vect{a}}^\vect{b} f(\vect{t})\di{\vect{t}} = \sum_{\vect{n}\in \cN}\left(\prod_{i=1}^d w^{N_i}_{n_i}\right)f(\xi^{N_1}_{n_1},\dots,\xi^{N_d}_{n_d})"/></p>
+</div><p>where <img class="math" src="../../_images/math/39f091c9625f2e178bb7d7b0ca7d8f82646d0262.svg" alt="\xi^{N_i}_{n_i}"/> is the <img class="math" src="../../_images/math/e0138a4cb77c1a6d35368925f0378e45166ec9d9.svg" alt="n_i"/>-points Gauss-Legendre 1D integration rule and <img class="math" src="../../_images/math/15226a205d80d5426ea22b02ba7d5aca09342fae.svg" alt="w^{N_i}_{n_i}"/> the associated weight.</p>
 <p class="rubric">Examples</p>
 <p>Create a Gauss-Legendre algorithm:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
@@ -142,6 +142,19 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">algo</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GaussLegendre</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.GaussLegendre.thisown" title="openturns.GaussLegendre.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -180,7 +193,7 @@
 <td>Test if the object has a distinguishable name.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.GaussLegendre.integrate" title="openturns.GaussLegendre.integrate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">integrate</span></code></a>(*args)</td>
-<td>Evaluation of the integral of <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> on an interval.</td>
+<td>Evaluation of the integral of <img class="math" src="../../_images/math/bf8af465e21be611f4cc50154e2fa28e5455230b.svg" alt="f"/> on an interval.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.GaussLegendre.setName" title="openturns.GaussLegendre.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
@@ -296,7 +309,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>nodes</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">The tensorized Gauss-Legendre integration nodes on <img class="math" src="../../_images/math/29cd9ae8873bd3210e07adb1c59e3bff1f4a38d9.svg" alt="[0,1]^d"/> where <img class="math" src="../../_images/math/06903d4b283643080a7efca7aa9df3f196924f4d.svg" alt="d&gt;0"/> is the dimension of the integration algorithm.</p>
+<dd><p class="first last">The tensorized Gauss-Legendre integration nodes on <img class="math" src="../../_images/math/cdcb6c07314384a4e921670b52c57c66dec565c7.svg" alt="[0,1]^d"/> where <img class="math" src="../../_images/math/122976f264d72c672f0e1bec573b73d6ebe934c4.svg" alt="d&gt;0"/> is the dimension of the integration algorithm.</p>
 </dd>
 </dl>
 </td>
@@ -353,7 +366,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>weights</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">The tensorized Gauss-Legendre integration weights on <img class="math" src="../../_images/math/29cd9ae8873bd3210e07adb1c59e3bff1f4a38d9.svg" alt="[0,1]^d"/> where <img class="math" src="../../_images/math/06903d4b283643080a7efca7aa9df3f196924f4d.svg" alt="d&gt;0"/> is the dimension of the integration algorithm.</p>
+<dd><p class="first last">The tensorized Gauss-Legendre integration weights on <img class="math" src="../../_images/math/cdcb6c07314384a4e921670b52c57c66dec565c7.svg" alt="[0,1]^d"/> where <img class="math" src="../../_images/math/122976f264d72c672f0e1bec573b73d6ebe934c4.svg" alt="d&gt;0"/> is the dimension of the integration algorithm.</p>
 </dd>
 </dl>
 </td>
@@ -403,7 +416,7 @@
 <dl class="method">
 <dt id="openturns.GaussLegendre.integrate">
 <code class="descname">integrate</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.GaussLegendre.integrate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluation of the integral of <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> on an interval.</p>
+<dd><p>Evaluation of the integral of <img class="math" src="../../_images/math/bf8af465e21be611f4cc50154e2fa28e5455230b.svg" alt="f"/> on an interval.</p>
 <dl class="docutils">
 <dt>Available usages:</dt>
 <dd><p class="first">integrate(<em>f, interval</em>)</p>
@@ -415,10 +428,10 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>, <img class="math" src="../../_images/math/2d2b617f7deec97b69af4c69bbef170dbcf5c803.svg" alt="f: \Rset^d \mapsto \Rset^p"/></span></dt>
+<dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a>, <img class="math" src="../../_images/math/9fe2ccee5b5f735123bd7f4f0a21eb3b23d0b70a.svg" alt="f: \Rset^d \mapsto \Rset^p"/></span></dt>
 <dd><p class="first last">The integrand function.</p>
 </dd>
-<dt><strong>interval</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a>, <img class="math" src="../../_images/math/7d7061cb27c3d6de72b912437074df10985b7cb9.svg" alt="interval \in \Rset^d"/></span></dt>
+<dt><strong>interval</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a>, <img class="math" src="../../_images/math/d46a73cf82199742464a642281919ad746a9a926.svg" alt="interval \in \Rset^d"/></span></dt>
 <dd><p class="first last">The integration domain.</p>
 </dd>
 <dt><strong>xi</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
@@ -506,6 +519,12 @@
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.GaussLegendre.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.GaussLegendre.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -537,7 +556,7 @@
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

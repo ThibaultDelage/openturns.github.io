@@ -98,31 +98,31 @@
   <div class="section" id="sensivity-analysis-using-sobol-indices">
 <span id="sensitivity-sobol"></span><h1>Sensivity analysis using Sobol indices<a class="headerlink" href="#sensivity-analysis-using-sobol-indices" title="Permalink to this headline">¶</a></h1>
 <p>This method deals with analysing the influence the random vector
-<img class="math" src="../../_images/math/80e79f6f56b23b60f04ee768e0b30ca7f2e735fa.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/> has on a random variable
-<img class="math" src="../../_images/math/a9e3969737df316a7363485bf3401ba7743d1f6f.svg" alt="Y^k"/> which is being studied for uncertainty. Here we attempt to evaluate the
-part of variance of <img class="math" src="../../_images/math/a9e3969737df316a7363485bf3401ba7743d1f6f.svg" alt="Y^k"/> due to the different components <img class="math" src="../../_images/math/872e7272798823842a1309501c89acd170652ea8.svg" alt="X^i"/>.</p>
-<p>The estimators for the mean of  <img class="math" src="../../_images/math/b031407c319ea5efedb190d4113209953396d796.svg" alt="m_{Y^j}"/> and the standard deviation
-<img class="math" src="../../_images/math/21f69c83a86be9c7d80bf1d39f76d158a95228af.svg" alt="\sigma"/> of <img class="math" src="../../_images/math/a9e3969737df316a7363485bf3401ba7743d1f6f.svg" alt="Y^k"/> can be obtained from a first sample, as Sobol
-indices estimation requires two samples of the input variables : <img class="math" src="../../_images/math/63c0500b4997a4361745bfb6c004d5fbdbd7efb7.svg" alt="(X^1,\ldots,X^{n_X})"/>,
-that is two sets of <em>N</em> vectors of dimension <img class="math" src="../../_images/math/4056a1b2001e6226d1044246e6813d2a3c90eb94.svg" alt="n_X"/>
-<img class="math" src="../../_images/math/801b35ddc44eb6d7b1d52295e6d80addc61725c4.svg" alt="(x_{11}^{(1)},\ldots,x_{1n_X})^{(1)},\ldots,(x_{N^1}^{(1)},\ldots,x_{Nn_X}^{(1)})"/>
-and <img class="math" src="../../_images/math/9f67fc2b7b7f9258b39046b0a52b00169681e7e4.svg" alt="(x_{11}^{(2)},\ldots,x_{1n_X})^{(2)},\ldots,(x_{N^1}^{(2)},\ldots,x_{Nn_X}^{(2)})"/></p>
+<img class="math" src="../../_images/math/4efc1e2de19d56b11de1473bb5b776e974003d9e.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/> has on a random variable
+<img class="math" src="../../_images/math/7d8b206deee1fd740d8bb82bdb252ac76cf83d0a.svg" alt="Y^k"/> which is being studied for uncertainty. Here we attempt to evaluate the
+part of variance of <img class="math" src="../../_images/math/7d8b206deee1fd740d8bb82bdb252ac76cf83d0a.svg" alt="Y^k"/> due to the different components <img class="math" src="../../_images/math/9ca2297a9208cc5df7c70101c052869f6e010295.svg" alt="X^i"/>.</p>
+<p>The estimators for the mean of  <img class="math" src="../../_images/math/ebeb9650ddb97be68fcc8346ea9ac3f712893e97.svg" alt="m_{Y^j}"/> and the standard deviation
+<img class="math" src="../../_images/math/2f14eaca2f1cdf83c7edf2e38cd80738b4f31ae8.svg" alt="\sigma"/> of <img class="math" src="../../_images/math/7d8b206deee1fd740d8bb82bdb252ac76cf83d0a.svg" alt="Y^k"/> can be obtained from a first sample, as Sobol
+indices estimation requires two samples of the input variables : <img class="math" src="../../_images/math/6a57fd93062f6ca8fdf899faff503174788fde08.svg" alt="(X^1,\ldots,X^{n_X})"/>,
+that is two sets of <em>N</em> vectors of dimension <img class="math" src="../../_images/math/18f433fcab0734815e8be7f6303812f711e98b29.svg" alt="n_X"/>
+<img class="math" src="../../_images/math/94010d6a3b704ad07254a1bd272bfd8fe9e40e34.svg" alt="(x_{11}^{(1)},\ldots,x_{1n_X})^{(1)},\ldots,(x_{N^1}^{(1)},\ldots,x_{Nn_X}^{(1)})"/>
+and <img class="math" src="../../_images/math/42a2e41159c29a75d75656b90ad1027e1ececb58.svg" alt="(x_{11}^{(2)},\ldots,x_{1n_X})^{(2)},\ldots,(x_{N^1}^{(2)},\ldots,x_{Nn_X}^{(2)})"/></p>
 <p>The estimation of sensivity indices for first order consists in estimating the quantity</p>
 <div class="math">
-<p><img src="../../_images/math/6223f5aa26376a9d775ac3b21d652817ee7ba7df.svg" alt="V_i = \Var{\Expect{ Y^k \vert X_i}} = \Expect{ \Expect{Y^k \vert X_i}^2}  - \Expect{\Expect{ Y^k \vert X_i }} ^2 = U_i - \Expect{Y^k} ^2"/></p>
-</div><p>Sobol proposes to estimate the quantity <img class="math" src="../../_images/math/c909aa899798d4d78fc72303c71a66d27c551ed6.svg" alt="U_i = \Expect{\Expect{ Y^k \vert X_i}^2}"/>
-by swapping every variables in the two samples except the variable <img class="math" src="../../_images/math/b4350659c07de08817a1e30229c7e68f8d5818a5.svg" alt="X_i"/> between the two calls of the function:</p>
+<p><img src="../../_images/math/055044be07a8dee2547ec725a9ccb84c7c72a301.svg" alt="V_i = \Var{\Expect{ Y^k \vert X_i}} = \Expect{ \Expect{Y^k \vert X_i}^2}  - \Expect{\Expect{ Y^k \vert X_i }} ^2 = U_i - \Expect{Y^k} ^2"/></p>
+</div><p>Sobol proposes to estimate the quantity <img class="math" src="../../_images/math/d557f98fd6ac45d593540bcaa048a99bf4ef9111.svg" alt="U_i = \Expect{\Expect{ Y^k \vert X_i}^2}"/>
+by swapping every variables in the two samples except the variable <img class="math" src="../../_images/math/ba161830a9dc7bd77b7029409e6f0f6985052709.svg" alt="X_i"/> between the two calls of the function:</p>
 <div class="math">
-<p><img src="../../_images/math/36de739822e3f358b46cacf8201045be2fbb54a2.svg" alt="\hat U_i = \frac{1}{N}\sum_{k=1}^N{ Y^k\left( x_{k1}^{(1)},\dots, x_{k(i-1)}^{(1)},x_{ki}^{(1)},x_{k(i+1)}^{(1)},\dots,x_{kn_X}^{(1)}\right) \times Y^k\left( x_{k1}^{(2)},\dots,x_{k(i-1)}^{(2)},x_{ki}^{(1)},x_{k(i+1)}^{(2)},\dots,x_{kn_X}^{(2)}\right)}"/></p>
-</div><p>Then the <img class="math" src="../../_images/math/4056a1b2001e6226d1044246e6813d2a3c90eb94.svg" alt="n_X"/> first order indices are estimated by</p>
+<p><img src="../../_images/math/4398b920d276e575ec103c60bf589d2a1542bb6a.svg" alt="\hat U_i = \frac{1}{N}\sum_{k=1}^N{ Y^k\left( x_{k1}^{(1)},\dots, x_{k(i-1)}^{(1)},x_{ki}^{(1)},x_{k(i+1)}^{(1)},\dots,x_{kn_X}^{(1)}\right) \times Y^k\left( x_{k1}^{(2)},\dots,x_{k(i-1)}^{(2)},x_{ki}^{(1)},x_{k(i+1)}^{(2)},\dots,x_{kn_X}^{(2)}\right)}"/></p>
+</div><p>Then the <img class="math" src="../../_images/math/18f433fcab0734815e8be7f6303812f711e98b29.svg" alt="n_X"/> first order indices are estimated by</p>
 <div class="math">
-<p><img src="../../_images/math/6f6ffab6daf5bdc19f74433930d209240b562d91.svg" alt="\hat S_i = \frac{\hat V_i}{\hat \sigma^2} = \frac{\hat U_i - m_{Y^k}^2}{\hat \sigma^2}"/></p>
-</div><p>For the second order, the two variables <img class="math" src="../../_images/math/b4350659c07de08817a1e30229c7e68f8d5818a5.svg" alt="X_i"/> and <img class="math" src="../../_images/math/e12b2499501a290b41cf9788f8ac4d15a85d21ff.svg" alt="X_j"/> are not swapped to estimate <img class="math" src="../../_images/math/869d9960ace221eaeab93e2fdc0130615e55e746.svg" alt="U_{ij}"/>,
-and so on for higher orders, assuming that order <img class="math" src="../../_images/math/764eda4ca32fafe47a2c11b7c9e2363f1ee98de0.svg" alt="&lt; n_X"/>.
-Then the <img class="math" src="../../_images/math/e0dae4d7b77de8599722da784cd538bde5fb4f1e.svg" alt="\binom {n_X}{2}"/> second order indices are estimated by</p>
+<p><img src="../../_images/math/2b81f41a055251135379495e9e24ddfe215d877b.svg" alt="\hat S_i = \frac{\hat V_i}{\hat \sigma^2} = \frac{\hat U_i - m_{Y^k}^2}{\hat \sigma^2}"/></p>
+</div><p>For the second order, the two variables <img class="math" src="../../_images/math/ba161830a9dc7bd77b7029409e6f0f6985052709.svg" alt="X_i"/> and <img class="math" src="../../_images/math/17938ca97410f2b6d318b8ac1496d74c8a232904.svg" alt="X_j"/> are not swapped to estimate <img class="math" src="../../_images/math/65f9c90e87e02f39749a1b3dd66e209c88b94dbc.svg" alt="U_{ij}"/>,
+and so on for higher orders, assuming that order <img class="math" src="../../_images/math/fdcea99e57f22ed91e6cadfb07aa757c5a1370e9.svg" alt="&lt; n_X"/>.
+Then the <img class="math" src="../../_images/math/0d8b85c292ba5e8e759a55147559b9b47b0c0c3c.svg" alt="\binom {n_X}{2}"/> second order indices are estimated by</p>
 <div class="math">
-<p><img src="../../_images/math/425875ea36760941f2f18d20a7b2356b0296e325.svg" alt="\hat S_{ij} = \frac{\hat V_{ij}}{\hat \sigma^2} = \frac{\hat U_{ij} - m_{Y^k}^2 - \hat V_i - \hat V_j}{\hat \sigma^2}"/></p>
-</div><p>For the <img class="math" src="../../_images/math/4056a1b2001e6226d1044246e6813d2a3c90eb94.svg" alt="n_X"/> total order indices <img class="math" src="../../_images/math/695610a4675b43051dd0be6982a608a3127db416.svg" alt="T_i"/>, we only swap the variable <img class="math" src="../../_images/math/b4350659c07de08817a1e30229c7e68f8d5818a5.svg" alt="X_i"/> between the two samples.</p>
+<p><img src="../../_images/math/0255f6e035199c1f9efb99e5fa4b397d1d452d17.svg" alt="\hat S_{ij} = \frac{\hat V_{ij}}{\hat \sigma^2} = \frac{\hat U_{ij} - m_{Y^k}^2 - \hat V_i - \hat V_j}{\hat \sigma^2}"/></p>
+</div><p>For the <img class="math" src="../../_images/math/18f433fcab0734815e8be7f6303812f711e98b29.svg" alt="n_X"/> total order indices <img class="math" src="../../_images/math/67c8df063e82f030245ed93371f226f83f7b9e7f.svg" alt="T_i"/>, we only swap the variable <img class="math" src="../../_images/math/ba161830a9dc7bd77b7029409e6f0f6985052709.svg" alt="X_i"/> between the two samples.</p>
 <div class="topic">
 <p class="topic-title first">API:</p>
 <ul class="simple">
@@ -172,7 +172,7 @@ Then the <img class="math" src="../../_images/math/e0dae4d7b77de8599722da784cd53
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

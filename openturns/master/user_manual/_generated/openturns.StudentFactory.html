@@ -111,18 +111,31 @@
 </dl>
 <p>The parameters are estimated by a mixed method of moments and reduces MLE:</p>
 <div class="math">
-<p><img src="../../_images/math/211d6e960b48810fc6edb7e684fbf6a9e3410551.svg" alt="\begin{align*}
+<p><img src="../../_images/math/60e23dc7ffb226a2af98e77cd470164d711f1adc.svg" alt="\begin{align*}
   \Hat{\mu} = &amp;\Hat{\mu}_x \\
   \Hat{\sigma} = &amp;\Hat{\sigma}_x\sqrt{\dfrac{\Hat{\nu}-2}{\Hat{\nu}}} \\
   \Hat{R}_{ij} = &amp;\dfrac{2}{\pi}\arcsin(\tau_{ij})
 \end{align*}"/></p>
-</div><p>where <img class="math" src="../../_images/math/832ee1e520fefe5649fc240043a4d418d954f6c5.svg" alt="\mat{\tau}"/> is the sample Kendall tau matrix and <img class="math" src="../../_images/math/b26f4680ece9a16a35e2ffc7e010d45a38664b1b.svg" alt="\Hat{\nu}"/>
+</div><p>where <img class="math" src="../../_images/math/0d3eddec8e116a471c9de5aa8a1616f61b90bf6f.svg" alt="\mat{\tau}"/> is the sample Kendall tau matrix and <img class="math" src="../../_images/math/af5e855c98bef6a9654502cc3932a2c1da3928e9.svg" alt="\Hat{\nu}"/>
 maximizes the reduced likelihood associated to <a class="reference internal" href="openturns.Student.html#openturns.Student" title="openturns.Student"><code class="xref py py-class docutils literal notranslate"><span class="pre">Student</span></code></a> with
-parameters <img class="math" src="../../_images/math/ad99d8c73aafa3b0f2df8610c69c771ed49be952.svg" alt="(\Hat{\nu}, \Hat{\mu}, \hat{\sigma}(\Hat{\nu}), \Hat{\mat{R}})"/>.</p>
+parameters <img class="math" src="../../_images/math/b4321914b9a58e09bc91dedb91bec63896851601.svg" alt="(\Hat{\nu}, \Hat{\mu}, \hat{\sigma}(\Hat{\nu}), \Hat{\mat{R}})"/>.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="openturns.DistributionFactory.html#openturns.DistributionFactory" title="openturns.DistributionFactory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DistributionFactory</span></code></a>, <a class="reference internal" href="openturns.Student.html#openturns.Student" title="openturns.Student"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Student</span></code></a></p>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.StudentFactory.thisown" title="openturns.StudentFactory.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -279,7 +292,7 @@ parameters <img class="math" src="../../_images/math/ad99d8c73aafa3b0f2df8610c69
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/9c0675243e96235ce54d181013419a9d5dd7ef3b.svg" alt="(\mu, \sigma, a, b)"/>:</p>
+<p>Fit a Beta distribution  in the alternative parametrization <img class="math" src="../../_images/math/7708d72f7db4dc9657cbe0067d9492fc988553f0.svg" alt="(\mu, \sigma, a, b)"/>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fittedRes2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">()</span><span class="o">.</span><span class="n">buildEstimator</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">BetaMuSigma</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -513,6 +526,12 @@ parameters <img class="math" src="../../_images/math/ad99d8c73aafa3b0f2df8610c69
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.StudentFactory.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.StudentFactory.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -544,7 +563,7 @@ parameters <img class="math" src="../../_images/math/ad99d8c73aafa3b0f2df8610c69
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

@@ -97,60 +97,60 @@
             
   <div class="section" id="directional-simulation">
 <span id="id1"></span><h1>Directional Simulation<a class="headerlink" href="#directional-simulation" title="Permalink to this headline">¶</a></h1>
-<p>Using the probability distribution of a random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>,
+<p>Using the probability distribution of a random vector <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/>,
 we seek to evaluate the following probability:</p>
 <div class="math">
-<p><img src="../../_images/math/be5d1334cf736a5d84ec1ff10ef33384b0ddaf04.svg" alt="P_f = \Prob{g\left( \vect{X},\vect{d} \right) &lt; 0}"/></p>
-</div><p>Here, <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/> is a random vector, <img class="math" src="../../_images/math/3b84c4ed75f01d36277ef4bef655637e1ea1a34d.svg" alt="\vect{d}"/> a
-deterministic vector, <img class="math" src="../../_images/math/e7d959c9b8b395f4d81cbb7bc878a352995b429a.svg" alt="g(\vect{X},\vect{d})"/> the function known as
+<p><img src="../../_images/math/edd0f9b976a2707fa3b032a8bcf1cad03e87c29f.svg" alt="P_f = \Prob{g\left( \vect{X},\vect{d} \right) &lt; 0}"/></p>
+</div><p>Here, <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/> is a random vector, <img class="math" src="../../_images/math/69c918895529fa1f9990a8bc659fd6da72902600.svg" alt="\vect{d}"/> a
+deterministic vector, <img class="math" src="../../_images/math/75ec63b4014ce27162529b652daa96eaa69c2547.svg" alt="g(\vect{X},\vect{d})"/> the function known as
 “limit state function” which enables the definition of the event
-<img class="math" src="../../_images/math/b279e0c1d7dabe8567fbacdeb50c7b81ed88a9ee.svg" alt="\cD_f = \{\vect{X} \in \Rset^n \, / \, g(\vect{X},\vect{d}) \le 0\}"/>.</p>
+<img class="math" src="../../_images/math/34f98900a4f9e9d11a36aa02d035095d3a4add6d.svg" alt="\cD_f = \{\vect{X} \in \Rset^n \, / \, g(\vect{X},\vect{d}) \le 0\}"/>.</p>
 <p>The directional simulation method is an accelerated sampling method. It
 implies a preliminary iso-probabilistic transformation, as for FORM and SORM methods;
 however, it remains based on sampling and is thus not an approximation method.
-In the transformed space, the (transformed) uncertain variables <img class="math" src="../../_images/math/c25b9666adfa3b52dd545a352b71b0ba515cd60b.svg" alt="\vect{U}"/> are
+In the transformed space, the (transformed) uncertain variables <img class="math" src="../../_images/math/4fd2ae0159da70f319ca484590adab2791431f52.svg" alt="\vect{U}"/> are
 independent standard Gaussian variables (mean equal to zero and standard
 deviation equal to 1).</p>
 <p>Roughly speaking, each simulation of the directional simulation
-algorithm is made of three steps. For the <img class="math" src="../../_images/math/81675c517c3754a5c64259476c92fe88221399ed.svg" alt="i^\textrm{th}"/>
+algorithm is made of three steps. For the <img class="math" src="../../_images/math/187f5202eef824acc515272047d5962e92050b64.svg" alt="i^\textrm{th}"/>
 iteration, these steps are the following:</p>
 <ul class="simple">
-<li>Let <img class="math" src="../../_images/math/762ea0c548d0333e11e014d642b8adcf8f2be49e.svg" alt="\cS = \big\{ \vect{u} \big| ||\vect{u}|| = 1 \big\}"/>. A
-point <img class="math" src="../../_images/math/3edf0f1e01be8345fb831d969d33c4b39a4164ea.svg" alt="P_i"/> is drawn randomly on <img class="math" src="../../_images/math/8dc063e9ba822df8099d3fe4168c3734a063f46a.svg" alt="\cS"/> according to an
+<li>Let <img class="math" src="../../_images/math/aa3223e2fbb78ede5916f16c59c82fe51c73d4b1.svg" alt="\cS = \big\{ \vect{u} \big| ||\vect{u}|| = 1 \big\}"/>. A
+point <img class="math" src="../../_images/math/4ab64a55c0be0578e4925589b3eca352725df62d.svg" alt="P_i"/> is drawn randomly on <img class="math" src="../../_images/math/36509214145ab9025611dd96627fefbf32bd3030.svg" alt="\cS"/> according to an
 uniform distribution.</li>
 <li>In the direction starting from the origin and passing through
-<img class="math" src="../../_images/math/3edf0f1e01be8345fb831d969d33c4b39a4164ea.svg" alt="P_i"/>, solutions of the equation
-<img class="math" src="../../_images/math/e6ffa35c5326691d62daa2a67d1ea20a5e256132.svg" alt="g(\vect{X},\vect{d}) = 0"/> (i.e. limits of <img class="math" src="../../_images/math/252362c991122f578eb1b8a9a9e2af13e42655d8.svg" alt="\cD_f"/>) are
-searched. The set of values of <img class="math" src="../../_images/math/38d877af6ef72e62568d9b70f53ec857b12140fb.svg" alt="\underline{u}"/> that belong to
-<img class="math" src="../../_images/math/252362c991122f578eb1b8a9a9e2af13e42655d8.svg" alt="\cD_f"/> is deduced for these solutions: it is a subset
-<img class="math" src="../../_images/math/b67909f7562f55a009e876a88aff80a39e7f7ae7.svg" alt="I_i \subset \Rset"/>.</li>
+<img class="math" src="../../_images/math/4ab64a55c0be0578e4925589b3eca352725df62d.svg" alt="P_i"/>, solutions of the equation
+<img class="math" src="../../_images/math/c85d05aa000a881dcd214916d5cfe0a40b6f2f3d.svg" alt="g(\vect{X},\vect{d}) = 0"/> (i.e. limits of <img class="math" src="../../_images/math/61c3b562be11872d5ced43d2cc4b3b7f89b22c38.svg" alt="\cD_f"/>) are
+searched. The set of values of <img class="math" src="../../_images/math/e657f0c7342792e72fadcdc4926c0b5bb294e6ee.svg" alt="\underline{u}"/> that belong to
+<img class="math" src="../../_images/math/61c3b562be11872d5ced43d2cc4b3b7f89b22c38.svg" alt="\cD_f"/> is deduced for these solutions: it is a subset
+<img class="math" src="../../_images/math/de5a2326e2d8dbeb3137036a61e5496b8e9aa4fd.svg" alt="I_i \subset \Rset"/>.</li>
 <li>Then, one calculates the probability
-<img class="math" src="../../_images/math/99f302a8e7fd46864aba9f062dc15944fbbbc3ff.svg" alt="q_i = \Prob{ ||\vect{U}|| \in I_i }"/>. By property of
-independent standard variable, <img class="math" src="../../_images/math/107583432594088c5f01fd7ee92111ee5d8ed07f.svg" alt="||\vect{U}||^2"/> is a random
+<img class="math" src="../../_images/math/c6e1aecbe268b44f62f9b34f50d620bd71765419.svg" alt="q_i = \Prob{ ||\vect{U}|| \in I_i }"/>. By property of
+independent standard variable, <img class="math" src="../../_images/math/21ee21b75f0ae5b04bcc5d99a99c1450273a10ea.svg" alt="||\vect{U}||^2"/> is a random
 variable distributed according to a chi-square distribution, which
 makes the computation effortless.</li>
 </ul>
-<p>Finally, the estimate of the probability <img class="math" src="../../_images/math/5085f93dd5258efdc1edcc3c0efc525f37018906.svg" alt="P_f"/> after <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/>
+<p>Finally, the estimate of the probability <img class="math" src="../../_images/math/8835888ad0ee040f6edf8ccec54dba3d69d1b364.svg" alt="P_f"/> after <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/>
 simulations is the following:</p>
 <div class="math">
-<p><img src="../../_images/math/6a47c229a93e1736071980191b127b2da99c05b6.svg" alt="\widehat{P}_{f,DS} = \frac{1}{N} \sum_{i=1}^N q_i"/></p>
+<p><img src="../../_images/math/e4fb6833aa9048c9c9362eb6aba82f86a7c04bbf.svg" alt="\widehat{P}_{f,DS} = \frac{1}{N} \sum_{i=1}^N q_i"/></p>
 </div><p>The following figure illustrates the principle of an iteration in
 dimension 2.</p>
 <p>The Central Limit Theorem enables the difference between the estimated
 value and the sought value to be controlled by means of a confidence
-interval (if N is sufficiently large, typically <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> &gt; a few dozens
+interval (if N is sufficiently large, typically <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> &gt; a few dozens
 even if there is now way to say for sure if the asymptotic behaviour is
-reached). For a probability <img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/> strictly between 0 and 1
+reached). For a probability <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/> strictly between 0 and 1
 chosen by the user, one can, for example, be sure with a confidence
-<img class="math" src="../../_images/math/e00bdcfbfef394a10115af1348cf8b8e36c63615.svg" alt="\alpha"/>, that the true value of <img class="math" src="../../_images/math/5085f93dd5258efdc1edcc3c0efc525f37018906.svg" alt="P_f"/> is between
-<img class="math" src="../../_images/math/f262000bd3fbc1c150e3d2462115e30dc2a63fbe.svg" alt="\widehat{P}_{f,\inf}"/> and <img class="math" src="../../_images/math/09fc98ace6eedfba7a33669272b867dc259eaa69.svg" alt="\widehat{P}_{f,\sup}"/> calculated
-analytically from simple formulae. To illustrate, for <img class="math" src="../../_images/math/88baf7bbe187d8c87af840abba53ca80b587734d.svg" alt="\alpha = 0.95"/>:</p>
+<img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/>, that the true value of <img class="math" src="../../_images/math/8835888ad0ee040f6edf8ccec54dba3d69d1b364.svg" alt="P_f"/> is between
+<img class="math" src="../../_images/math/2eb89fdc45635f64ac536709e51e15020dbe3927.svg" alt="\widehat{P}_{f,\inf}"/> and <img class="math" src="../../_images/math/014f4e0f91403d5b83ef5d855d2b534170aaa4d6.svg" alt="\widehat{P}_{f,\sup}"/> calculated
+analytically from simple formulae. To illustrate, for <img class="math" src="../../_images/math/ed7b41ab494b94921ac09b65be9eb82b9bbd78a8.svg" alt="\alpha = 0.95"/>:</p>
 <div class="math">
-<p><img src="../../_images/math/adf23db5a640f16e6ce439874bc0ef56e7013a9b.svg" alt="\widehat{P}_{f,\inf} = \widehat{P}_{f,DS} - 1.96 \frac{\sigma_q}{\sqrt{N}},\ \widehat{P}_{f,\sup} = \widehat{P}_{f,DS} + 1.96 \frac{\sigma_q}{\sqrt{N}}"/></p>
+<p><img src="../../_images/math/77dfeb3aa8a909177448f9347d3c1a003b601694.svg" alt="\widehat{P}_{f,\inf} = \widehat{P}_{f,DS} - 1.96 \frac{\sigma_q}{\sqrt{N}},\ \widehat{P}_{f,\sup} = \widehat{P}_{f,DS} + 1.96 \frac{\sigma_q}{\sqrt{N}}"/></p>
 </div><div class="math">
-<p><img src="../../_images/math/2757305b8859da625aa7ebd9e27dffe0d271ff6a.svg" alt="\textrm{that is to say}\ \Prob{ \widehat{P}_{f,\inf} \leq P_f \leq \widehat{P}_{f,\sup}} = 0.95"/></p>
-</div><p>where <img class="math" src="../../_images/math/083e86ac2fb0c88750dc2641e32634835873d9d6.svg" alt="\sigma_q"/> denotes the empirical standard deviation of the
-sample <img class="math" src="../../_images/math/926d45ddf9baf950bcb62c85d0fd5fc557d18dbe.svg" alt="\left\{ q_1,\ldots,q_N \right\}"/>.</p>
+<p><img src="../../_images/math/eea463640ae83d406b5664f95a31dec71f25841a.svg" alt="\textrm{that is to say}\ \Prob{ \widehat{P}_{f,\inf} \leq P_f \leq \widehat{P}_{f,\sup}} = 0.95"/></p>
+</div><p>where <img class="math" src="../../_images/math/df365b3456e93a9426da0a0c79a8d1c2f91b10af.svg" alt="\sigma_q"/> denotes the empirical standard deviation of the
+sample <img class="math" src="../../_images/math/3358567b04bcf43e80c0f098317feeb7befbef78.svg" alt="\left\{ q_1,\ldots,q_N \right\}"/>.</p>
 <p>In practice the Directional Sampling simulation requires
 the choice of:</p>
 <ul>
@@ -217,17 +217,17 @@ opposite directions so formed.</p>
 </li>
 <li><div class="first line-block">
 <div class="line">OrthogonalDirection: this strategy is parameterized by
-<img class="math" src="../../_images/math/e39e999412454c8100fc0dbd1811a91996bc3c57.svg" alt="k\in \{1,\dots,n\}"/>, where <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/> is the dimension of
-the input random vector <img class="math" src="../../_images/math/3fdfffe1d843437fafd6881a099fdf19eff9e194.svg" alt="\vect{X}"/>. We generate one direct
-ortho-normalized basis <img class="math" src="../../_images/math/c285e54c0a72986f3d21a2d273dc57da8b23e01a.svg" alt="(e_1, \dots, e_n)"/> uniformly
+<img class="math" src="../../_images/math/ae71afce18a54abde9be0da29619a61e268b12f1.svg" alt="k\in \{1,\dots,n\}"/>, where <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/> is the dimension of
+the input random vector <img class="math" src="../../_images/math/f42d6d904ce64df0fa70524fe51b71ddfdcd2254.svg" alt="\vect{X}"/>. We generate one direct
+ortho-normalized basis <img class="math" src="../../_images/math/8654843deade38c663a5fac9e0cace50b864ac3b.svg" alt="(e_1, \dots, e_n)"/> uniformly
 distributed in the set of direct orthonormal bases. We consider
-all the normalized linear combinations of <img class="math" src="../../_images/math/25ccf3f81465c5f61677ee2819c658ad49ef800d.svg" alt="k"/> vectors
-chosen within the <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/> vectors of the basis, where the
+all the normalized linear combinations of <img class="math" src="../../_images/math/a3d2afe19489776a703d7832f19a676d23032d92.svg" alt="k"/> vectors
+chosen within the <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/> vectors of the basis, where the
 coefficients of the linear combinations are in
-<img class="math" src="../../_images/math/9f9037af6d1ebb5563419e0f3ba0aba472236d7b.svg" alt="\{+1, -1\}"/>. This generates <img class="math" src="../../_images/math/f8073e849dc808dca1d21e64eb4706a39aa5d5a2.svg" alt="C_n^k 2^k"/> new vectors
-<img class="math" src="../../_images/math/3f38d8f30a66a8da89fc0c081d329001a2ab975b.svg" alt="v_i"/>. We sample according to all the directions defined
-by the vectors <img class="math" src="../../_images/math/3f38d8f30a66a8da89fc0c081d329001a2ab975b.svg" alt="v_i"/>.</div>
-<div class="line">If <img class="math" src="../../_images/math/6e32324bcfac6d09d0cfee8ffe693010fdce2b33.svg" alt="k=1"/>, we consider all the axes of the standard space.</div>
+<img class="math" src="../../_images/math/d9c39ca02d3855b53477de4f8fbb205ede321722.svg" alt="\{+1, -1\}"/>. This generates <img class="math" src="../../_images/math/797e7643792d264bf093ae122295a42d8a69c9aa.svg" alt="C_n^k 2^k"/> new vectors
+<img class="math" src="../../_images/math/29f5cfb2b49622016e060fdffd115c0edc4d1652.svg" alt="v_i"/>. We sample according to all the directions defined
+by the vectors <img class="math" src="../../_images/math/29f5cfb2b49622016e060fdffd115c0edc4d1652.svg" alt="v_i"/>.</div>
+<div class="line">If <img class="math" src="../../_images/math/a814f767006a88ca673644fdfb8df11fd425a798.svg" alt="k=1"/>, we consider all the axes of the standard space.</div>
 </div>
 </li>
 </ul>
@@ -282,7 +282,7 @@ by the vectors <img class="math" src="../../_images/math/3f38d8f30a66a8da89fc0c0
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

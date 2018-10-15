@@ -125,46 +125,59 @@ an <a class="reference internal" href="openturns.IntegrationStrategy.html#opentu
 <p class="last"><a class="reference internal" href="openturns.FunctionalChaosAlgorithm.html#openturns.FunctionalChaosAlgorithm" title="openturns.FunctionalChaosAlgorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FunctionalChaosAlgorithm</span></code></a>, <a class="reference internal" href="openturns.LeastSquaresStrategy.html#openturns.LeastSquaresStrategy" title="openturns.LeastSquaresStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LeastSquaresStrategy</span></code></a>, <a class="reference internal" href="openturns.IntegrationStrategy.html#openturns.IntegrationStrategy" title="openturns.IntegrationStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IntegrationStrategy</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p>Consider <img class="math" src="../../../_images/math/e3c65c257bac8d71b6dea04bd083a7e7b9db610f.svg" alt="\vect{Y} = g(\vect{X})"/> with <img class="math" src="../../../_images/math/45427da0669b55ba1a04c3eefeca72db6cf9277f.svg" alt="g: \Rset^d \rightarrow \Rset^p"/>,
-<img class="math" src="../../../_images/math/e966efa0fd2656878940edb6e3c4000cf741fdc4.svg" alt="\vect{X} \sim \cL_{\vect{X}}"/> and <img class="math" src="../../../_images/math/1ca0e315ae4eaf246041889d6a7ed57680d05c35.svg" alt="\vect{Y}"/> with finite variance:
-<img class="math" src="../../../_images/math/fbb478f41ab5e6f3d54772a852d5fc9db9e31ebd.svg" alt="g\in L_{\cL_{\vect{X}}}^2(\Rset^d, \Rset^p)"/>.</p>
-<p>The functional chaos  expansion approximates <img class="math" src="../../../_images/math/1ca0e315ae4eaf246041889d6a7ed57680d05c35.svg" alt="\vect{Y}"/> using an isoprobabilistic 
-transformation <em>T</em> and an orthonormal multivariate basis <img class="math" src="../../../_images/math/40cdc3f2bbce5250579478cbe29cdbe0193e5a7f.svg" alt="(\Psi_k)_{k \in \Nset}"/> 
-of <img class="math" src="../../../_images/math/285d0c3f576482e78a3ef9d0dfbd7c288774e1a6.svg" alt="L^2_{\mu}(\Rset^d,\Rset)"/>. See <a class="reference internal" href="openturns.FunctionalChaosAlgorithm.html#openturns.FunctionalChaosAlgorithm" title="openturns.FunctionalChaosAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">FunctionalChaosAlgorithm</span></code></a> 
+<p>Consider <img class="math" src="../../../_images/math/96f7205568506d597919bcf6c5f471388dbd9928.svg" alt="\vect{Y} = g(\vect{X})"/> with <img class="math" src="../../../_images/math/505978be65b24ccef0cbf886ced958f329beb16e.svg" alt="g: \Rset^d \rightarrow \Rset^p"/>,
+<img class="math" src="../../../_images/math/8fc1205c5d14cc5721955e6932c26d3e181ebb5e.svg" alt="\vect{X} \sim \cL_{\vect{X}}"/> and <img class="math" src="../../../_images/math/08e2dd88c947c17551cdad4317eadfbe6755e04d.svg" alt="\vect{Y}"/> with finite variance:
+<img class="math" src="../../../_images/math/3871af595b2f3518726bc84f74e1d92fca73c92e.svg" alt="g\in L_{\cL_{\vect{X}}}^2(\Rset^d, \Rset^p)"/>.</p>
+<p>The functional chaos  expansion approximates <img class="math" src="../../../_images/math/08e2dd88c947c17551cdad4317eadfbe6755e04d.svg" alt="\vect{Y}"/> using an isoprobabilistic 
+transformation <em>T</em> and an orthonormal multivariate basis <img class="math" src="../../../_images/math/aaaf8966b3e7cd7d4e6b56c7addf17982688bd9b.svg" alt="(\Psi_k)_{k \in \Nset}"/> 
+of <img class="math" src="../../../_images/math/e947e895700b6e73eb9868298ca2432f9e68090a.svg" alt="L^2_{\mu}(\Rset^d,\Rset)"/>. See <a class="reference internal" href="openturns.FunctionalChaosAlgorithm.html#openturns.FunctionalChaosAlgorithm" title="openturns.FunctionalChaosAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">FunctionalChaosAlgorithm</span></code></a> 
 to get more details.</p>
-<p>The meta model of <img class="math" src="../../../_images/math/acd8bd9450f07383a622c4141048e61d5d4593d8.svg" alt="g"/>, based on the functional chaos decomposition of 
-<img class="math" src="../../../_images/math/6c0db8feeb8c9719b8c703e1fed25382b50d52f9.svg" alt="f = g \circ T^{-1}"/> writes:</p>
+<p>The meta model of <img class="math" src="../../../_images/math/f487d47f3f53fc6c6a3567ec99bf8077018c38b7.svg" alt="g"/>, based on the functional chaos decomposition of 
+<img class="math" src="../../../_images/math/153e1027e46413ab03293c6576e0fc565d954042.svg" alt="f = g \circ T^{-1}"/> writes:</p>
 <div class="math">
-<p><img src="../../../_images/math/1a0a3d45945cfe2369ddc64ec3610e7420dc53c6.svg" alt="\tilde{g} = \sum_{k \in K} \vect{\alpha}_k \Psi_k  \circ T"/></p>
+<p><img src="../../../_images/math/d41be719694c9821e6ca816c85236166caf6a4fc.svg" alt="\tilde{g} = \sum_{k \in K} \vect{\alpha}_k \Psi_k  \circ T"/></p>
 </div><p>where <em>K</em> is a non empty finite set of indices, whose cardinality is denoted by <em>P</em>.</p>
-<p>We detail the case where <img class="math" src="../../../_images/math/9486c14bcd5a483aeeed1725270abf97d2dfcb30.svg" alt="p=1"/>.</p>
-<p>The vector  <img class="math" src="../../../_images/math/8505c7cb5ef7d64e0579ffa1c50c23e90a195d6f.svg" alt="\vect{\alpha} = (\alpha_k)_{k \in K}"/>  is  equivalently defined by:</p>
+<p>We detail the case where <img class="math" src="../../../_images/math/c42f563d789fe4f05e7735ec2628268bb8bbc63a.svg" alt="p=1"/>.</p>
+<p>The vector  <img class="math" src="../../../_images/math/d873e945cb9ad8e135eaaf00b5ae926ed688cbfb.svg" alt="\vect{\alpha} = (\alpha_k)_{k \in K}"/>  is  equivalently defined by:</p>
 <div class="math" id="equation-defargmin">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-defargmin" title="Permalink to this equation">¶</a></span><img src="../../../_images/math/39a74461bcdc8f8652044905dd6415c07133b39f.svg" alt="\vect{\alpha} = \argmin_{\vect{\alpha} \in \Rset^K} \Expect{ \left( g \circ T^{-1}(\vect{Z}) -  \sum_{k \in K} \alpha_k \Psi_k (\vect{Z})\right)^2 }"/></p>
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-defargmin" title="Permalink to this equation">¶</a></span><img src="../../../_images/math/4e9adeb0e536c36b889e9d90cafcfb3e5fd28d20.svg" alt="\vect{\alpha} = \argmin_{\vect{\alpha} \in \Rset^K} \Expect{ \left( g \circ T^{-1}(\vect{Z}) -  \sum_{k \in K} \alpha_k \Psi_k (\vect{Z})\right)^2 }"/></p>
 </div><p>and:</p>
 <div class="math" id="equation-defesp">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-defesp" title="Permalink to this equation">¶</a></span><img src="../../../_images/math/14e7d6921b750e7d1167017773a15c8c29cea8c9.svg" alt="\alpha_k =  &lt;g \circ T^{-1}(\vect{Z}), \Psi_k (\vect{Z})&gt;_{\mu} = \Expect{  g \circ T^{-1}(\vect{Z}) \Psi_k (\vect{Z}) }"/></p>
-</div><p>where <img class="math" src="../../../_images/math/7a170deffa75ef89a8ab7d175d09c24c65998ac9.svg" alt="\vect{Z} = T(\vect{X})"/> and the mean <img class="math" src="../../../_images/math/799cfbe601a861642ef8b7804dfa68b50898ddb9.svg" alt="\Expect{.}"/> is evaluated with respect to the measure <img class="math" src="../../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/>.</p>
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-defesp" title="Permalink to this equation">¶</a></span><img src="../../../_images/math/84eec6e7b36d33d79ced61282298e036a9192d67.svg" alt="\alpha_k =  &lt;g \circ T^{-1}(\vect{Z}), \Psi_k (\vect{Z})&gt;_{\mu} = \Expect{  g \circ T^{-1}(\vect{Z}) \Psi_k (\vect{Z}) }"/></p>
+</div><p>where <img class="math" src="../../../_images/math/604ec3ace46f0fa9c0f24ec5997934072846a36d.svg" alt="\vect{Z} = T(\vect{X})"/> and the mean <img class="math" src="../../../_images/math/173d67cfcde9ec230c6cb699038e2978ecdd9c34.svg" alt="\Expect{.}"/> is evaluated with respect to the measure <img class="math" src="../../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/>.</p>
 <p>It corresponds to two points of view:</p>
 <blockquote>
 <div><ul class="simple">
 <li>relation <a class="reference internal" href="#equation-defargmin">(1)</a>  means that the coefficients 
-<img class="math" src="../../../_images/math/777443dc5aaf113ec1095aaa04a7df34c8e5bf6f.svg" alt="(\alpha_k)_{k \in K}"/> minimize the quadratic error between  the model and 
+<img class="math" src="../../../_images/math/f2b700972ef325efecfd9f6d3de57fc854491cf6.svg" alt="(\alpha_k)_{k \in K}"/> minimize the quadratic error between  the model and 
 the polynomial approximation. Use <a class="reference internal" href="openturns.LeastSquaresStrategy.html#openturns.LeastSquaresStrategy" title="openturns.LeastSquaresStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">LeastSquaresStrategy</span></code></a>.</li>
-<li>relation <a class="reference internal" href="#equation-defesp">(2)</a> means that <img class="math" src="../../../_images/math/bf7d32fbc1e6260ebf84cf232fe6e89f0bb76947.svg" alt="\alpha_k"/> is the scalar product of the 
-model with the <em>k-th</em> element of the orthonormal basis <img class="math" src="../../../_images/math/40cdc3f2bbce5250579478cbe29cdbe0193e5a7f.svg" alt="(\Psi_k)_{k \in \Nset}"/>.
+<li>relation <a class="reference internal" href="#equation-defesp">(2)</a> means that <img class="math" src="../../../_images/math/4fb55d2063e286ca5bd90c27d8949ef41fb104eb.svg" alt="\alpha_k"/> is the scalar product of the 
+model with the <em>k-th</em> element of the orthonormal basis <img class="math" src="../../../_images/math/aaaf8966b3e7cd7d4e6b56c7addf17982688bd9b.svg" alt="(\Psi_k)_{k \in \Nset}"/>.
 Use <a class="reference internal" href="openturns.IntegrationStrategy.html#openturns.IntegrationStrategy" title="openturns.IntegrationStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntegrationStrategy</span></code></a>.</li>
 </ul>
 </div></blockquote>
-<p>In both cases, the mean <img class="math" src="../../../_images/math/799cfbe601a861642ef8b7804dfa68b50898ddb9.svg" alt="\Expect{.}"/> is approximated by a linear quadrature formula:</p>
+<p>In both cases, the mean <img class="math" src="../../../_images/math/173d67cfcde9ec230c6cb699038e2978ecdd9c34.svg" alt="\Expect{.}"/> is approximated by a linear quadrature formula:</p>
 <div class="math" id="equation-approxesp">
-<p><span class="eqno">(3)<a class="headerlink" href="#equation-approxesp" title="Permalink to this equation">¶</a></span><img src="../../../_images/math/ad057fce2a2a91d3fdac9ff1218df58c5ff08ff1.svg" alt="\Expect{ f(\vect{Z})} \simeq \sum_{i \in I} \omega_i f(\Xi_i)"/></p>
-</div><p>where <em>f</em> is a function in <img class="math" src="../../../_images/math/27a62adb4a8b1f96f24c5a32f2f8b309d028fb03.svg" alt="L^1(\mu)"/>.</p>
-<p>In the approximation <a class="reference internal" href="#equation-approxesp">(3)</a>, the set <em>I</em>, the points <img class="math" src="../../../_images/math/dc3ddf53c6a10eb104ffae1b6ca3b6e7bf60540f.svg" alt="(\Xi_i)_{i \in I}"/> 
-and the weights <img class="math" src="../../../_images/math/d00783e9169c0cb6eef15d161ba173814d5f6735.svg" alt="(\omega_i)_{i \in I}"/> are evaluated from different methods 
+<p><span class="eqno">(3)<a class="headerlink" href="#equation-approxesp" title="Permalink to this equation">¶</a></span><img src="../../../_images/math/fae93ac03026c4b767419b67f305140cd1836c4e.svg" alt="\Expect{ f(\vect{Z})} \simeq \sum_{i \in I} \omega_i f(\Xi_i)"/></p>
+</div><p>where <em>f</em> is a function in <img class="math" src="../../../_images/math/f1ded45f5b0220e2b6a9105248a7582ac8005c49.svg" alt="L^1(\mu)"/>.</p>
+<p>In the approximation <a class="reference internal" href="#equation-approxesp">(3)</a>, the set <em>I</em>, the points <img class="math" src="../../../_images/math/49c59ae0df2559f28d11d5557e66963231003e54.svg" alt="(\Xi_i)_{i \in I}"/> 
+and the weights <img class="math" src="../../../_images/math/33e550767a1c9b1f9168a1abbdb26afbaae5db15.svg" alt="(\omega_i)_{i \in I}"/> are evaluated from different methods 
 implemented in the <a class="reference internal" href="../../_generated/openturns.WeightedExperiment.html#openturns.WeightedExperiment" title="openturns.WeightedExperiment"><code class="xref py py-class docutils literal notranslate"><span class="pre">WeightedExperiment</span></code></a>.</p>
 <p>The convergence criterion used to evaluate the coefficients is based on the residual value 
 defined in the <a class="reference internal" href="openturns.FunctionalChaosAlgorithm.html#openturns.FunctionalChaosAlgorithm" title="openturns.FunctionalChaosAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">FunctionalChaosAlgorithm</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.ProjectionStrategy.thisown" title="openturns.ProjectionStrategy.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -274,7 +287,7 @@ defined in the <a class="reference internal" href="openturns.FunctionalChaosAlgo
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>coef</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../../_generated/openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Coefficients <img class="math" src="../../../_images/math/777443dc5aaf113ec1095aaa04a7df34c8e5bf6f.svg" alt="(\alpha_k)_{k \in K}"/>.</p>
+<dd><p class="first last">Coefficients <img class="math" src="../../../_images/math/f2b700972ef325efecfd9f6d3de57fc854491cf6.svg" alt="(\alpha_k)_{k \in K}"/>.</p>
 </dd>
 </dl>
 </td>
@@ -369,7 +382,7 @@ defined in the <a class="reference internal" href="openturns.FunctionalChaosAlgo
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>mu</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Distribution</span></dt>
-<dd><p class="first last">Measure <img class="math" src="../../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/> defining the scalar product.</p>
+<dd><p class="first last">Measure <img class="math" src="../../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> defining the scalar product.</p>
 </dd>
 </dl>
 </td>
@@ -521,7 +534,7 @@ defined in the <a class="reference internal" href="openturns.FunctionalChaosAlgo
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier">Distribution</span></dt>
-<dd><p class="first last">Measure <img class="math" src="../../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/> defining the scalar product.</p>
+<dd><p class="first last">Measure <img class="math" src="../../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> defining the scalar product.</p>
 </dd>
 </dl>
 </td>
@@ -587,6 +600,12 @@ defined in the <a class="reference internal" href="openturns.FunctionalChaosAlgo
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.ProjectionStrategy.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.ProjectionStrategy.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -619,7 +638,7 @@ defined in the <a class="reference internal" href="openturns.FunctionalChaosAlgo
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

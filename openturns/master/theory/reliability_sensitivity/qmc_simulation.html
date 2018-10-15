@@ -99,12 +99,12 @@
 <span id="qmc-simulation"></span><h1>Quasi Monte Carlo<a class="headerlink" href="#quasi-monte-carlo" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">Let us note
-<img class="math" src="../../_images/math/edb21654287c24136de1fc4832bad06dbfaec6ba.svg" alt="\cD_f = \{\ux \in \Rset^{n} \: | \:  g(\ux,\underline{d}) \leq 0\}"/>.
+<img class="math" src="../../_images/math/b5d4209e8c5d9ebabb40f693e71b3441e0b67ee4.svg" alt="\cD_f = \{\ux \in \Rset^{n} \: | \:  g(\ux,\underline{d}) \leq 0\}"/>.
 The goal is to estimate the following probability:</div>
 </div>
 <blockquote>
 <div><div class="math" id="equation-integ">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-integ" title="Permalink to this equation">¶</a></span><img src="../../_images/math/74ec9a5f8faeb490f805b4f9b3076d6f3e877897.svg" alt="\begin{aligned}
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-integ" title="Permalink to this equation">¶</a></span><img src="../../_images/math/30c32568890bc008d09f206838a389ac5679de74.svg" alt="\begin{aligned}
      P_f &amp;=&amp; \int_{\cD_f} f_{\uX}(\ux)d\ux\\
      &amp;=&amp; \int_{\Rset^{n}} \mathbf{1}_{\{g(\ux,\underline{d}) \leq 0 \}}f_{\uX}(\ux)d\ux\\
      &amp;=&amp; \Prob {\{\:g(\uX,\underline{d}) \leq 0 \}}
@@ -113,55 +113,55 @@ The goal is to estimate the following probability:</div>
 <div class="line-block">
 <div class="line">Quasi-Monte Carlo is a technique which approximates the integral
 <a class="reference internal" href="#equation-integ">(1)</a> using low discrepancy sequences
-<img class="math" src="../../_images/math/79f4ff0ceca50a2c846bf1dfe01ed4f98b156754.svg" alt="\{\vect{x}^1, ..., \vect{x}^N\}"/> instead of randomly generated
+<img class="math" src="../../_images/math/6a94d3b42e7a59282b6da2ca464b62e90a0ed7cc.svg" alt="\{\vect{x}^1, ..., \vect{x}^N\}"/> instead of randomly generated
 sequences, as follows:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/500cee970d045ab76df65254ca1c43770446e2c3.svg" alt="P_f \approx \frac{1}{N}\,\sum_{i=1}^N  \mathbf{1}_{\cD_f}(\ux_i) f(\ux_i)."/></p>
+<p><img src="../../_images/math/2c02813080ff200ade3d0b82da1393dcf1e1ec60.svg" alt="P_f \approx \frac{1}{N}\,\sum_{i=1}^N  \mathbf{1}_{\cD_f}(\ux_i) f(\ux_i)."/></p>
 </div></div></blockquote>
 <div class="line-block">
-<div class="line">In general, the integral of a function <img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> on
-<img class="math" src="../../_images/math/fd23453f39299be3faa73502101f2b78c2599032.svg" alt="\Delta = [0,1]^s"/> can be approximated by using some low
-discrepancy sequence <img class="math" src="../../_images/math/3101c5291452f2cf90a98bead3851f38d1515f40.svg" alt="\{\vect{x}_1, \hdots, \vect{x}_N\}"/> as
+<div class="line">In general, the integral of a function <img class="math" src="../../_images/math/bf8af465e21be611f4cc50154e2fa28e5455230b.svg" alt="f"/> on
+<img class="math" src="../../_images/math/17e62adf44b257b7536036985d4da75e9c8c3735.svg" alt="\Delta = [0,1]^s"/> can be approximated by using some low
+discrepancy sequence <img class="math" src="../../_images/math/e91869e67b40ccd357c639012db8030e421e40d5.svg" alt="\{\vect{x}_1, \hdots, \vect{x}_N\}"/> as
 follows:</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/0dceea40e58910982166805bb892d5bdc330a54c.svg" alt="\int_{\Delta} f(\vect{u})\,d\vect{u} \approx \frac{1}{N}\,\sum_{i=1}^N f(\vect{x}_i)."/></p>
+<p><img src="../../_images/math/ff3913ed81da14b43e1d28a38ef3491262489b00.svg" alt="\int_{\Delta} f(\vect{u})\,d\vect{u} \approx \frac{1}{N}\,\sum_{i=1}^N f(\vect{x}_i)."/></p>
 </div></div></blockquote>
-<p>The low discrepancy sequence is generated on <img class="math" src="../../_images/math/63b8e48c90dd6cddc9af87c0ca9a14df46d0c64c.svg" alt="\Delta"/> according to
-the Lebesgue measure then may be transformed to any measure <img class="math" src="../../_images/math/47c032752104a7899182f1369bec82b48a1754ae.svg" alt="\mu"/>
+<p>The low discrepancy sequence is generated on <img class="math" src="../../_images/math/9c1afd1b9105b51e64c1d7a757765743a5cf3973.svg" alt="\Delta"/> according to
+the Lebesgue measure then may be transformed to any measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/>
 thanks to the inverse CDF technique in order to approximate the integral
 :</p>
 <div class="math">
-<p><img src="../../_images/math/624481d71b1d5055d34e2e7bb3d842a859d5e62a.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/96cbb9284164e21fb4844052dac89d4963fa490e.svg" alt="\begin{aligned}
     \int_{\Rset^s} f(\vect{u})\,d\vect{u} \approx \frac{1}{N}\,\sum_{i=1}^N f(\vect{x}_i).
   \end{aligned}"/></p>
 </div><p>As the sequence is not randomly generated, we can not use the Central
 Limit Theorem in order to control the quality of the approximation. This
 quality is given by the Koksma-Hlawka inequality that we recall here :</p>
 <div class="math">
-<p><img src="../../_images/math/e990656ddc5ab625bb99b31e28dc12c3af7f507c.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/696241c95f7a9d4062c0f24006c6ab8d14136b96.svg" alt="\begin{aligned}
     \left\lvert \frac{1}{N}\sum_{i=1}^Nf(\vect{x}_i) - \int_If(\vect{x})d\vect{x} \right\rvert \le Var(f)D^N(\vect{x}_1, ..., \vect{x}_N)
   \end{aligned}"/></p>
-</div><p>where <img class="math" src="../../_images/math/ef51c0fd2baa2823f53453acf8b5710ebad44827.svg" alt="D^N(\vect{x}_1, ..., \vect{x}_N)"/> is the discrepancy of
-the sequence <img class="math" src="../../_images/math/3101c5291452f2cf90a98bead3851f38d1515f40.svg" alt="\{\vect{x}_1, \hdots, \vect{x}_N\}"/>.</p>
+</div><p>where <img class="math" src="../../_images/math/eb2cc00400869a23a1dcfef9ba3bdb5ddc2c5ca8.svg" alt="D^N(\vect{x}_1, ..., \vect{x}_N)"/> is the discrepancy of
+the sequence <img class="math" src="../../_images/math/e91869e67b40ccd357c639012db8030e421e40d5.svg" alt="\{\vect{x}_1, \hdots, \vect{x}_N\}"/>.</p>
 <div class="line-block">
 <div class="line">For Halton, Inverse Halton and Sobol sequences, we have :</div>
 </div>
 <blockquote>
 <div><div class="math">
-<p><img src="../../_images/math/d1592b150b28776a3f4736c7ac09bda3a3b6fc5f.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/973bc51c8d8b32bbbdf99bdb330b094e47f9df14.svg" alt="\begin{aligned}
     D^N = O\biggl(\frac{\log^s{N}}{N}\biggr)
   \end{aligned}"/></p>
 </div></div></blockquote>
 <div class="line-block">
 <div class="line">Thus, asymptotically the error converges in
-<img class="math" src="../../_images/math/3ca426e2b6c97a408e2d6fe0750bc1cd1543df7c.svg" alt="O\biggl(\frac{\log^s{N}}{N}\biggr)"/>, instead of
-<img class="math" src="../../_images/math/d759b7b7b144fef53b9ec2dfd83962b161dcdc9d.svg" alt="O\biggl(\frac{1}{\sqrt{N}}\biggr)"/> for traditional Monte Carlo.
-The convergence rate depends on the dimension <img class="math" src="../../_images/math/6152ab1727a5471b499b19f272492eb14272751c.svg" alt="s"/> so one must
-have <img class="math" src="../../_images/math/fd532356f736d971617cc73c6cda28a9170e1200.svg" alt="N &gt;&gt; e^s"/>.</div>
+<img class="math" src="../../_images/math/0045e8f37243d59b3b323613b9beb7793e13cd7c.svg" alt="O\biggl(\frac{\log^s{N}}{N}\biggr)"/>, instead of
+<img class="math" src="../../_images/math/92220c49eb7305fee0d7f2c0fa22813f0459de64.svg" alt="O\biggl(\frac{1}{\sqrt{N}}\biggr)"/> for traditional Monte Carlo.
+The convergence rate depends on the dimension <img class="math" src="../../_images/math/9bce6d499b26997265ba4f99471962bb537f3676.svg" alt="s"/> so one must
+have <img class="math" src="../../_images/math/b9a9aec7b41c0ec4653d1d261195ebf1c318c699.svg" alt="N &gt;&gt; e^s"/>.</div>
 </div>
 <div class="topic">
 <p class="topic-title first">API:</p>
@@ -205,7 +205,7 @@ have <img class="math" src="../../_images/math/fd532356f736d971617cc73c6cda28a91
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

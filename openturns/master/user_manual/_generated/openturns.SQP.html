@@ -147,6 +147,19 @@ subject to a linearization of the constraints.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.SQP.thisown" title="openturns.SQP.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -307,27 +320,27 @@ subject to a linearization of the constraints.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The Lagrange multipliers <img class="math" src="../../_images/math/ae9ead0d4862367669ade58386a2c925e5e4340d.svg" alt="\vect{\lambda}"/> are associated with the following Lagrangian formulation of the optimization problem:</p>
+<p>The Lagrange multipliers <img class="math" src="../../_images/math/f9109d31ad3b0e2895b10600ca7db5c29db70842.svg" alt="\vect{\lambda}"/> are associated with the following Lagrangian formulation of the optimization problem:</p>
 <div class="math">
-<p><img src="../../_images/math/412f7b89c69b6f8076e342a62521d01f62ed6d65.svg" alt="\cL(\vect{x}, \vect{\lambda}_{eq}, \vect{\lambda}_{\ell}, \vect{\lambda}_{u}, \vect{\lambda}_{ineq}) = J(\vect{x}) + \Tr{\vect{\lambda}}_{eq} g(\vect{x}) + \Tr{\vect{\lambda}}_{\ell} (\vect{x}-\vect{\ell})^{+} + \Tr{\vect{\lambda}}_{u} (\vect{u}-\vect{x})^{+} + \Tr{\vect{\lambda}}_{ineq}  h^{+}(\vect{x})"/></p>
-</div><p>where <img class="math" src="../../_images/math/76cfbc79d671791c577f0fdceb7591eb1322fa98.svg" alt="\vect{\alpha}^{+}=(\max(0,\alpha_1),\hdots,\max(0,\alpha_n))"/>.</p>
+<p><img src="../../_images/math/7efaeb7fed33aea09cd34333184864fa806cc1d8.svg" alt="\cL(\vect{x}, \vect{\lambda}_{eq}, \vect{\lambda}_{\ell}, \vect{\lambda}_{u}, \vect{\lambda}_{ineq}) = J(\vect{x}) + \Tr{\vect{\lambda}}_{eq} g(\vect{x}) + \Tr{\vect{\lambda}}_{\ell} (\vect{x}-\vect{\ell})^{+} + \Tr{\vect{\lambda}}_{u} (\vect{u}-\vect{x})^{+} + \Tr{\vect{\lambda}}_{ineq}  h^{+}(\vect{x})"/></p>
+</div><p>where <img class="math" src="../../_images/math/e18b19774aac8d709d49fbbdbc4f828d63c9270c.svg" alt="\vect{\alpha}^{+}=(\max(0,\alpha_1),\hdots,\max(0,\alpha_n))"/>.</p>
 <dl class="docutils">
-<dt>The Lagrange multipliers are stored as <img class="math" src="../../_images/math/c0cdc6180f8684bb29712c58ad8c4f7e9d68247b.svg" alt="(\vect{\lambda}_{eq}, \vect{\lambda}_{\ell}, \vect{\lambda}_{u}, \vect{\lambda}_{ineq})"/>, where:</dt>
+<dt>The Lagrange multipliers are stored as <img class="math" src="../../_images/math/2d2e97bd67f35e658ae6b8f68c3fb6c57e8feb4c.svg" alt="(\vect{\lambda}_{eq}, \vect{\lambda}_{\ell}, \vect{\lambda}_{u}, \vect{\lambda}_{ineq})"/>, where:</dt>
 <dd><ul class="first last simple">
-<li><img class="math" src="../../_images/math/d0f0ebeff963c454cac1261dec73e767703f3d34.svg" alt="\vect{\lambda}_{eq}"/> is of dimension 0 if there is no equality
-constraint, else of dimension the dimension of <img class="math" src="../../_images/math/262f41658a293cf4a8be7320c63ee21e866d429e.svg" alt="g(\vect{x})"/> ie the number of scalar equality constraints</li>
-<li><img class="math" src="../../_images/math/2367a74937d50d48909ec60a15327657ec6c9025.svg" alt="\vect{\lambda}_{\ell}"/> and <img class="math" src="../../_images/math/596de395121a0d9d4c383ddbb746a28d87fb4b0c.svg" alt="\vect{\lambda}_{u}"/> are of dimension 0 if there is no bound constraint, else of dimension of <img class="math" src="../../_images/math/a3a6f1956f635861141cf384d3945161297b4301.svg" alt="\vect{x}"/></li>
-<li><img class="math" src="../../_images/math/d0f0ebeff963c454cac1261dec73e767703f3d34.svg" alt="\vect{\lambda}_{eq}"/> is of dimension 0 if there is no inequality constraint, else of dimension the dimension of <img class="math" src="../../_images/math/d39c3b1c1c5c0bf520f59dbd3ccc77be16fb56b3.svg" alt="h(\vect{x})"/> ie the number of scalar inequality constraints</li>
+<li><img class="math" src="../../_images/math/e2ccc310a1cf6b5ce0889fc6225d0ca63fc1823b.svg" alt="\vect{\lambda}_{eq}"/> is of dimension 0 if there is no equality
+constraint, else of dimension the dimension of <img class="math" src="../../_images/math/a3385fc7211e1577deff15ff240997f0545ae42b.svg" alt="g(\vect{x})"/> ie the number of scalar equality constraints</li>
+<li><img class="math" src="../../_images/math/b11b2320a18b9102306b9234b9f86de1d66392b5.svg" alt="\vect{\lambda}_{\ell}"/> and <img class="math" src="../../_images/math/edf173aa84dc31e96814fe51d73dc39fec00fd8c.svg" alt="\vect{\lambda}_{u}"/> are of dimension 0 if there is no bound constraint, else of dimension of <img class="math" src="../../_images/math/fbb3eda62de652737a946e0ab194aac246375d90.svg" alt="\vect{x}"/></li>
+<li><img class="math" src="../../_images/math/e2ccc310a1cf6b5ce0889fc6225d0ca63fc1823b.svg" alt="\vect{\lambda}_{eq}"/> is of dimension 0 if there is no inequality constraint, else of dimension the dimension of <img class="math" src="../../_images/math/d8489561a6d7e94c326c5af98e086b31a6f7c043.svg" alt="h(\vect{x})"/> ie the number of scalar inequality constraints</li>
 </ul>
 </dd>
 </dl>
-<p>The vector <img class="math" src="../../_images/math/ae9ead0d4862367669ade58386a2c925e5e4340d.svg" alt="\vect{\lambda}"/> is solution of the following linear system:</p>
+<p>The vector <img class="math" src="../../_images/math/f9109d31ad3b0e2895b10600ca7db5c29db70842.svg" alt="\vect{\lambda}"/> is solution of the following linear system:</p>
 <div class="math">
-<p><img src="../../_images/math/9d91de0e738c9acc62e11372f3d0bf9d53a939f9.svg" alt="\Tr{\vect{\lambda}}_{eq}\left[\dfrac{\partial g}{\partial\vect{x}}(\vect{x})\right]+
+<p><img src="../../_images/math/2810950c1c365bc4f987d3b13217e4bda9b9f792.svg" alt="\Tr{\vect{\lambda}}_{eq}\left[\dfrac{\partial g}{\partial\vect{x}}(\vect{x})\right]+
 \Tr{\vect{\lambda}}_{\ell}\left[\dfrac{\partial (\vect{x}-\vect{\ell})^{+}}{\partial\vect{x}}(\vect{x})\right]+
 \Tr{\vect{\lambda}}_{u}\left[\dfrac{\partial (\vect{u}-\vect{x})^{+}}{\partial\vect{x}}(\vect{x})\right]+
 \Tr{\vect{\lambda}}_{ineq}\left[\dfrac{\partial h}{\partial\vect{x}}(\vect{x})\right]=-\dfrac{\partial J}{\partial\vect{x}}(\vect{x})"/></p>
-</div><p>If there is no constraint of any kind, <img class="math" src="../../_images/math/ae9ead0d4862367669ade58386a2c925e5e4340d.svg" alt="\vect{\lambda}"/> is of dimension 0, as well as if no constraint is active.</p>
+</div><p>If there is no constraint of any kind, <img class="math" src="../../_images/math/f9109d31ad3b0e2895b10600ca7db5c29db70842.svg" alt="\vect{\lambda}"/> is of dimension 0, as well as if no constraint is active.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1062,6 +1075,12 @@ constraint, else of dimension the dimension of <img class="math" src="../../_ima
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.SQP.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.SQP.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1093,7 +1112,7 @@ constraint, else of dimension the dimension of <img class="math" src="../../_ima
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

@@ -112,21 +112,21 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>range</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a> of dimension 1 <img class="math" src="../../_images/math/72659be85b4975bf0bcbcad9f777be0ec202d85f.svg" alt="[m,M]"/></span></dt>
+<dt><strong>range</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a> of dimension 1 <img class="math" src="../../_images/math/e9a1d7b6fef26ef6fffeb55122ea9d22a8cd9137.svg" alt="[m,M]"/></span></dt>
 <dd><p class="first last">Acceptance rate values for which no update of the <em>calibration</em> coefficient
 is performed.</p>
 </dd>
-<dt><strong>expansionFactor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/b3a28c3a37cf5adcdf1878972d81c5219724f42c.svg" alt="e &gt; 1"/></span></dt>
-<dd><p class="first last">Expansion factor <img class="math" src="../../_images/math/d34500951a257b6e66bb492066bb6964493f4719.svg" alt="e"/> to use to rescale the <em>calibration</em> coefficient
+<dt><strong>expansionFactor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/29385d1d0a4a044f1f67249e75bcf68c67508fd5.svg" alt="e &gt; 1"/></span></dt>
+<dd><p class="first last">Expansion factor <img class="math" src="../../_images/math/07f8480a4cbcb8be9b49cb8d286970bdf2e1356b.svg" alt="e"/> to use to rescale the <em>calibration</em> coefficient
 if the latter is too high (greater than the upper bound of range).</p>
 </dd>
-<dt><strong>shrinkFactor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/337e926c4533c0c1a2ca68dc2a579c6f08bea829.svg" alt="0 &lt; s &lt; 1"/></span></dt>
-<dd><p class="first last">Shrink factor <img class="math" src="../../_images/math/6152ab1727a5471b499b19f272492eb14272751c.svg" alt="s"/> to use to rescale the <em>calibration</em> coefficient if
+<dt><strong>shrinkFactor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/e90d30a398d3b39ef8a799f163a6d43696b9b0ea.svg" alt="0 &lt; s &lt; 1"/></span></dt>
+<dd><p class="first last">Shrink factor <img class="math" src="../../_images/math/9bce6d499b26997265ba4f99471962bb537f3676.svg" alt="s"/> to use to rescale the <em>calibration</em> coefficient if
 the latter is too low (smaller than the lower bound of range). If
 <em>expansionFactor</em> is specified, <em>shrinkFactor</em> must be mentioned too.</p>
 </dd>
 <dt><strong>calibrationStep</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive int</span></dt>
-<dd><p class="first last">Calibration step corresponding for example to <img class="math" src="../../_images/math/d3ff3f8dc62e7ced97541233ffedabb887bc5bb9.svg" alt="q"/> in the description
+<dd><p class="first last">Calibration step corresponding for example to <img class="math" src="../../_images/math/b755e5095e35304df53eb04c4d02fba5cd990320.svg" alt="q"/> in the description
 of the method
 <a class="reference internal" href="openturns.RandomWalkMetropolisHastings.html#openturns.RandomWalkMetropolisHastings.getCalibrationStrategyPerComponent" title="openturns.RandomWalkMetropolisHastings.getCalibrationStrategyPerComponent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getCalibrationStrategyPerComponent()</span></code></a>
 of the RandomWalkMetropolisHastings class.</p>
@@ -142,6 +142,19 @@ of the RandomWalkMetropolisHastings class.</p>
 description of the method
 <a class="reference internal" href="openturns.RandomWalkMetropolisHastings.html#openturns.RandomWalkMetropolisHastings.getCalibrationStrategyPerComponent" title="openturns.RandomWalkMetropolisHastings.getCalibrationStrategyPerComponent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getCalibrationStrategyPerComponent()</span></code></a>
 ).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.CalibrationStrategy.thisown" title="openturns.CalibrationStrategy.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -209,26 +222,26 @@ description of the method
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>rho</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Acceptance rate <img class="math" src="../../_images/math/e5306ea73ad90f3558f0a0b6facc330d9a4522db.svg" alt="\rho"/> to take into account.</p>
+<dd><p class="first last">Acceptance rate <img class="math" src="../../_images/math/87ace8ea2f1a9d6d4af85f73522c31b119b05e95.svg" alt="\rho"/> to take into account.</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>lambda</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first">Let <img class="math" src="../../_images/math/f5d9352d03ee3b64f44cf0ec28565a6cb40475ff.svg" alt="\lambda"/> be the <em>calibration</em> coefficient to update, it gives a
-factor <img class="math" src="../../_images/math/325ef6ca76e42322e32b39176666a82f0d12b558.svg" alt="\phi(\rho)"/> such that <img class="math" src="../../_images/math/29022f33c2832f9a91833ce9348df5d88a08feb1.svg" alt="\phi(\rho) \lambda"/> is the
+<dd><p class="first">Let <img class="math" src="../../_images/math/d9f42c58a6b23b8de25e0f85eb45f31c2f872979.svg" alt="\lambda"/> be the <em>calibration</em> coefficient to update, it gives a
+factor <img class="math" src="../../_images/math/3677e6f587f89b920028281efec1876090844daa.svg" alt="\phi(\rho)"/> such that <img class="math" src="../../_images/math/c2e58507a1b710b99f717e8a31ea2a570babe5c3.svg" alt="\phi(\rho) \lambda"/> is the
 updated <em>calibration</em> coefficient according to the strategy. The value is
 computed as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/7d76f38e0f8f284091584db36b3ab57125e4efe4.svg" alt="\phi(\rho) = \left\{
+<p><img src="../../_images/math/07f868f4b1c533a6ce33f1cdd2451d03e4d151f1.svg" alt="\phi(\rho) = \left\{
          \begin{array}{l}
              \displaystyle s  \quad if \; \rho &lt; m \\
              \displaystyle e  \quad if \; \rho &gt; M \\
              \displaystyle 1  \quad otherwise
          \end{array}
          \right."/></p>
-</div><p class="last">with <img class="math" src="../../_images/math/89f97f287ead4f1098c2144e71998c13c7669144.svg" alt="s \in ]0, 1[, e &gt; 1"/> and <img class="math" src="../../_images/math/72659be85b4975bf0bcbcad9f777be0ec202d85f.svg" alt="[m,M]"/> the values given,
+</div><p class="last">with <img class="math" src="../../_images/math/17de262fb77fdbec6bdbf8bdb18c84d1c40a8172.svg" alt="s \in ]0, 1[, e &gt; 1"/> and <img class="math" src="../../_images/math/e9a1d7b6fef26ef6fffeb55122ea9d22a8cd9137.svg" alt="[m,M]"/> the values given,
 respectively, by the methods <a class="reference internal" href="#openturns.CalibrationStrategy.getShrinkFactor" title="openturns.CalibrationStrategy.getShrinkFactor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getShrinkFactor()</span></code></a>,
 <a class="reference internal" href="#openturns.CalibrationStrategy.getExpansionFactor" title="openturns.CalibrationStrategy.getExpansionFactor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getExpansionFactor()</span></code></a> and <a class="reference internal" href="#openturns.CalibrationStrategy.getRange" title="openturns.CalibrationStrategy.getRange"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getRange()</span></code></a>.</p>
 </dd>
@@ -260,7 +273,7 @@ respectively, by the methods <a class="reference internal" href="#openturns.Cali
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>step</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive int</span></dt>
-<dd><p class="first last">Calibration step corresponding for example to <img class="math" src="../../_images/math/d3ff3f8dc62e7ced97541233ffedabb887bc5bb9.svg" alt="q"/> in the description
+<dd><p class="first last">Calibration step corresponding for example to <img class="math" src="../../_images/math/b755e5095e35304df53eb04c4d02fba5cd990320.svg" alt="q"/> in the description
 of the method
 <a class="reference internal" href="openturns.RandomWalkMetropolisHastings.html#openturns.RandomWalkMetropolisHastings.getCalibrationStrategyPerComponent" title="openturns.RandomWalkMetropolisHastings.getCalibrationStrategyPerComponent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getCalibrationStrategyPerComponent()</span></code></a>
 of the RandomWalkMetropolisHastings class.</p>
@@ -301,7 +314,7 @@ of the RandomWalkMetropolisHastings class.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>expansionFactor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Expansion factor <img class="math" src="../../_images/math/d34500951a257b6e66bb492066bb6964493f4719.svg" alt="e"/>. See the description of the method
+<dd><p class="first last">Expansion factor <img class="math" src="../../_images/math/07f8480a4cbcb8be9b49cb8d286970bdf2e1356b.svg" alt="e"/>. See the description of the method
 <a class="reference internal" href="#openturns.CalibrationStrategy.computeUpdateFactor" title="openturns.CalibrationStrategy.computeUpdateFactor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">computeUpdateFactor()</span></code></a>.</p>
 </dd>
 </dl>
@@ -378,7 +391,7 @@ of the RandomWalkMetropolisHastings class.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>range</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a> of dimension 1</span></dt>
-<dd><p class="first last">Range <img class="math" src="../../_images/math/72659be85b4975bf0bcbcad9f777be0ec202d85f.svg" alt="[m,M]"/> in the description of the method
+<dd><p class="first last">Range <img class="math" src="../../_images/math/e9a1d7b6fef26ef6fffeb55122ea9d22a8cd9137.svg" alt="[m,M]"/> in the description of the method
 <a class="reference internal" href="#openturns.CalibrationStrategy.computeUpdateFactor" title="openturns.CalibrationStrategy.computeUpdateFactor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">computeUpdateFactor()</span></code></a>.</p>
 </dd>
 </dl>
@@ -398,7 +411,7 @@ of the RandomWalkMetropolisHastings class.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>shrinkFactor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Shrink factor <img class="math" src="../../_images/math/6152ab1727a5471b499b19f272492eb14272751c.svg" alt="s"/> in the description of the method
+<dd><p class="first last">Shrink factor <img class="math" src="../../_images/math/9bce6d499b26997265ba4f99471962bb537f3676.svg" alt="s"/> in the description of the method
 <a class="reference internal" href="#openturns.CalibrationStrategy.computeUpdateFactor" title="openturns.CalibrationStrategy.computeUpdateFactor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">computeUpdateFactor()</span></code></a>.</p>
 </dd>
 </dl>
@@ -418,7 +431,7 @@ of the RandomWalkMetropolisHastings class.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>step</strong> <span class="classifier-delimiter">:</span> <span class="classifier">positive int</span></dt>
-<dd><p class="first last">Calibration step corresponding for example to <img class="math" src="../../_images/math/d3ff3f8dc62e7ced97541233ffedabb887bc5bb9.svg" alt="q"/> in the description
+<dd><p class="first last">Calibration step corresponding for example to <img class="math" src="../../_images/math/b755e5095e35304df53eb04c4d02fba5cd990320.svg" alt="q"/> in the description
 of the method
 <a class="reference internal" href="openturns.RandomWalkMetropolisHastings.html#openturns.RandomWalkMetropolisHastings.getCalibrationStrategyPerComponent" title="openturns.RandomWalkMetropolisHastings.getCalibrationStrategyPerComponent"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getCalibrationStrategyPerComponent()</span></code></a>
 of the RandomWalkMetropolisHastings class.</p>
@@ -439,8 +452,8 @@ of the RandomWalkMetropolisHastings class.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>expansionFactor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/b3a28c3a37cf5adcdf1878972d81c5219724f42c.svg" alt="e &gt; 1"/></span></dt>
-<dd><p class="first last">Expansion factor <img class="math" src="../../_images/math/d34500951a257b6e66bb492066bb6964493f4719.svg" alt="e"/>. See the description of the method
+<dt><strong>expansionFactor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/29385d1d0a4a044f1f67249e75bcf68c67508fd5.svg" alt="e &gt; 1"/></span></dt>
+<dd><p class="first last">Expansion factor <img class="math" src="../../_images/math/07f8480a4cbcb8be9b49cb8d286970bdf2e1356b.svg" alt="e"/>. See the description of the method
 <a class="reference internal" href="#openturns.CalibrationStrategy.computeUpdateFactor" title="openturns.CalibrationStrategy.computeUpdateFactor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">computeUpdateFactor()</span></code></a>.</p>
 </dd>
 </dl>
@@ -479,7 +492,7 @@ of the RandomWalkMetropolisHastings class.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>range</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Interval.html#openturns.Interval" title="openturns.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a> of dimension 1</span></dt>
-<dd><p class="first last">Range <img class="math" src="../../_images/math/72659be85b4975bf0bcbcad9f777be0ec202d85f.svg" alt="[m,M]"/> in the description of the method
+<dd><p class="first last">Range <img class="math" src="../../_images/math/e9a1d7b6fef26ef6fffeb55122ea9d22a8cd9137.svg" alt="[m,M]"/> in the description of the method
 <a class="reference internal" href="#openturns.CalibrationStrategy.computeUpdateFactor" title="openturns.CalibrationStrategy.computeUpdateFactor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">computeUpdateFactor()</span></code></a>.</p>
 </dd>
 </dl>
@@ -498,8 +511,8 @@ of the RandomWalkMetropolisHastings class.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>shrinkFactor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/337e926c4533c0c1a2ca68dc2a579c6f08bea829.svg" alt="0 &lt; s &lt; 1"/></span></dt>
-<dd><p class="first last">Shrink factor <img class="math" src="../../_images/math/6152ab1727a5471b499b19f272492eb14272751c.svg" alt="s"/> in the description of the method
+<dt><strong>shrinkFactor</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <img class="math" src="../../_images/math/e90d30a398d3b39ef8a799f163a6d43696b9b0ea.svg" alt="0 &lt; s &lt; 1"/></span></dt>
+<dd><p class="first last">Shrink factor <img class="math" src="../../_images/math/9bce6d499b26997265ba4f99471962bb537f3676.svg" alt="s"/> in the description of the method
 <a class="reference internal" href="#openturns.CalibrationStrategy.computeUpdateFactor" title="openturns.CalibrationStrategy.computeUpdateFactor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">computeUpdateFactor()</span></code></a>.</p>
 </dd>
 </dl>
@@ -507,6 +520,12 @@ of the RandomWalkMetropolisHastings class.</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="openturns.CalibrationStrategy.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.CalibrationStrategy.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
 </dd></dl>
 
 </dd></dl>
@@ -540,7 +559,7 @@ of the RandomWalkMetropolisHastings class.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

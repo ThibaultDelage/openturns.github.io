@@ -268,32 +268,32 @@ time series using the Whittle estimator and a centered normal white
 noise.</p>
 <p>The data can be a unique time series or several time series collected in
 a process sample.</p>
-<p>If the user specifies the order <img class="math" src="../../_images/math/f5997194b8285005855a94703bfa7623b2f0eef0.svg" alt="(p,q)"/>, OpenTURNS fits a model
-<img class="math" src="../../_images/math/a479d346e36ff64597129df803a6f5f8920866f7.svg" alt="ARMA(p,q)"/> to the data by estimating the coefficients
-<img class="math" src="../../_images/math/59e8ffa80a65a7cc4bcaaee6c5594941f375d5aa.svg" alt="(a_1, \dots, a_p), (b_1, \dots, b_q)"/> and the variance
-<img class="math" src="../../_images/math/21f69c83a86be9c7d80bf1d39f76d158a95228af.svg" alt="\sigma"/> of the white noise.</p>
+<p>If the user specifies the order <img class="math" src="../../_images/math/6c1c67dc9e44172fa021c67b17a95fbf954d3972.svg" alt="(p,q)"/>, OpenTURNS fits a model
+<img class="math" src="../../_images/math/adb143c11f795a9ceae3cef4eb6c0c1bd784b515.svg" alt="ARMA(p,q)"/> to the data by estimating the coefficients
+<img class="math" src="../../_images/math/ffc4a8efe28afe890aebae7c9e41f4cc657dc84c.svg" alt="(a_1, \dots, a_p), (b_1, \dots, b_q)"/> and the variance
+<img class="math" src="../../_images/math/2f14eaca2f1cdf83c7edf2e38cd80738b4f31ae8.svg" alt="\sigma"/> of the white noise.</p>
 <p>If the User specifies a range of orders
-<img class="math" src="../../_images/math/0ae373854ce2cdc9b3b8a4ec4ba6542edd2679b3.svg" alt="(p,q) \in Ind_p \times Ind_q"/>, where <img class="math" src="../../_images/math/6182a0552198d7268141421cddcd68c40ca2c386.svg" alt="Ind_p = [p_1, p_2]"/>
-and <img class="math" src="../../_images/math/2a4afb8eb5a8e0fa38c8685fc32dbba09011bffe.svg" alt="Ind_q = [q_1, q_2]"/>, We find the <em>best</em> model
-<img class="math" src="../../_images/math/a479d346e36ff64597129df803a6f5f8920866f7.svg" alt="ARMA(p,q)"/> that fits to the data and estimates the corresponding
+<img class="math" src="../../_images/math/78001fe95e60aed6fe328b50ce3f743730f9d4b2.svg" alt="(p,q) \in Ind_p \times Ind_q"/>, where <img class="math" src="../../_images/math/ba1236067b2dfc9aa7caf58f063bbdea97cf35c5.svg" alt="Ind_p = [p_1, p_2]"/>
+and <img class="math" src="../../_images/math/6b1391363b584a186b5a0c651d37542e9ce41221.svg" alt="Ind_q = [q_1, q_2]"/>, We find the <em>best</em> model
+<img class="math" src="../../_images/math/adb143c11f795a9ceae3cef4eb6c0c1bd784b515.svg" alt="ARMA(p,q)"/> that fits to the data and estimates the corresponding
 coefficients.</p>
 <p>We proceed as follows:</p>
 <ul class="simple">
 <li>the object <em>WhittleFactory</em> is created with either a specified order
-<img class="math" src="../../_images/math/f5997194b8285005855a94703bfa7623b2f0eef0.svg" alt="(p,q)"/> or a range <img class="math" src="../../_images/math/3f10d81ff0f44632466a11149aa77746161ac53a.svg" alt="Ind_p \times Ind_q"/>. By default, the
+<img class="math" src="../../_images/math/6c1c67dc9e44172fa021c67b17a95fbf954d3972.svg" alt="(p,q)"/> or a range <img class="math" src="../../_images/math/60aaa7ff0009af57f87a655a83ef6445e404789a.svg" alt="Ind_p \times Ind_q"/>. By default, the
 Welch estimator (object <em>Welch</em>) is used with its default parameters.</li>
-<li>for each order <img class="math" src="../../_images/math/f5997194b8285005855a94703bfa7623b2f0eef0.svg" alt="(p,q)"/>, the estimation of the parameters is
+<li>for each order <img class="math" src="../../_images/math/6c1c67dc9e44172fa021c67b17a95fbf954d3972.svg" alt="(p,q)"/>, the estimation of the parameters is
 done by maximizing the reduced equation of the Whittle likelihood
 function ([lik2]), thanks to the method <em>build</em> of the object
 <em>WhittleFactory</em>. This method applies to a time series or a process
 sample. If the user wants to get the quantified criteria
-<img class="math" src="../../_images/math/540c303c1aef9c85f769046bd3042028bf6f9ae6.svg" alt="AIC_c, AIC"/> and <em>BIC</em> of the model <img class="math" src="../../_images/math/a479d346e36ff64597129df803a6f5f8920866f7.svg" alt="ARMA(p,q)"/>, he has
+<img class="math" src="../../_images/math/a5c9caad8f821f65f0d261e5360aa31fb52abce4.svg" alt="AIC_c, AIC"/> and <em>BIC</em> of the model <img class="math" src="../../_images/math/adb143c11f795a9ceae3cef4eb6c0c1bd784b515.svg" alt="ARMA(p,q)"/>, he has
 to specify it by giving a <em>Point</em> of size 0 (<em>Point()</em>) as input
 parameter of the method <em>build</em>.</li>
 <li>the output of the estimation is, in all the cases, one unique ARMA:
 the ARMA with the specified order or the optimal one with respect to
-the <img class="math" src="../../_images/math/308b3e3708640103f5e58cfaee798cf41082f35c.svg" alt="AIC_c"/> criterion.</li>
-<li>in the case of a range <img class="math" src="../../_images/math/3f10d81ff0f44632466a11149aa77746161ac53a.svg" alt="Ind_p \times Ind_q"/>, the user can get
+the <img class="math" src="../../_images/math/ffe0f3b24067fe825260b8168e49c8fa22b4df98.svg" alt="AIC_c"/> criterion.</li>
+<li>in the case of a range <img class="math" src="../../_images/math/60aaa7ff0009af57f87a655a83ef6445e404789a.svg" alt="Ind_p \times Ind_q"/>, the user can get
 all the estimated models thanks to the method <em>getHistory</em> of the
 object <em>WhittleFactory</em>. If the <em>build</em> has been parameterized by a
 <em>Point</em> of size 0, the user also has access to all the quantified
@@ -301,10 +301,10 @@ criteria.</li>
 </ul>
 <p>The synthetic data is generated using the following 1-d ARMA process:</p>
 <div class="math">
-<p><img src="../../_images/math/55cccc5588e483de213707fb30190171e17f87eb.svg" alt="X_{0,t} + 0.4 X_{0,t-1} + 0.3 X_{0,t-2} + 0.2 X_{0,t-3} + 0.1 X_{0,t-4} = E_{0,t} + 0.4 E_{0,t-1} + 0.3 E_{0,t-2}"/></p>
-</div><p>with the noise <img class="math" src="../../_images/math/000f3b0a1812a5044910c90225ec6f6e8f27ec5e.svg" alt="E"/> defined as:</p>
+<p><img src="../../_images/math/10e91cc4e9b972aa6190c7393eb186ece422def6.svg" alt="X_{0,t} + 0.4 X_{0,t-1} + 0.3 X_{0,t-2} + 0.2 X_{0,t-3} + 0.1 X_{0,t-4} = E_{0,t} + 0.4 E_{0,t-1} + 0.3 E_{0,t-2}"/></p>
+</div><p>with the noise <img class="math" src="../../_images/math/ef6b5efbe5786c99109dd27043e2c9fc008982ef.svg" alt="E"/> defined as:</p>
 <div class="math">
-<p><img src="../../_images/math/acbef9aaa9604c50a6d395cb755fd9ef7c3c952b.svg" alt="E \sim Triangular(-1, 0, 1)"/></p>
+<p><img src="../../_images/math/8b44165fa4e6f542384b5f0e9f60fe51a5f9a92b.svg" alt="E \sim Triangular(-1, 0, 1)"/></p>
 </div><div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [5]:
@@ -488,7 +488,7 @@ AICc= 4443.4456045627585 AIC= 4443.217962286336 BIC= 4516.222475664246
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

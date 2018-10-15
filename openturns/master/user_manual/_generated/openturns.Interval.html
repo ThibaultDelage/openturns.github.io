@@ -112,16 +112,16 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>dim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/7672c737d0c3102a6f47f3eb600ac4be47289b67.svg" alt="dim \geq 0"/></span></dt>
+<dt><strong>dim</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/85f2234553dab7a4699972f58fe839e4436b7510.svg" alt="dim \geq 0"/></span></dt>
 <dd><p class="first last">Dimension of the interval. If only <em>dim</em> is mentioned, it leads to create
-the finite interval <img class="math" src="../../_images/math/487ca550f4a887b8a54b773acdb6b7e8d6d6ba85.svg" alt="[0, 1]^{dim}"/>.
+the finite interval <img class="math" src="../../_images/math/aa8e1afb1ec73cd21fa7958823fadde05d0651f7.svg" alt="[0, 1]^{dim}"/>.
 By default, an empty interval is created.</p>
 </dd>
 <dt><strong>lowerBound, upperBound</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float or sequence of float of dimension <em>dim</em></span></dt>
 <dd><p class="first last">Define an interval
-<img class="math" src="../../_images/math/b70e920b6987f0d1798b7c069c4e6c685631ae0f.svg" alt="[lowerBound_0, upperBound_0]\times \dots \times [lowerBound_{dim-1}, upperBound_{dim-1}]"/>.
-It is allowed to have <img class="math" src="../../_images/math/58d6308c199f60c021175a6dddc9efa9b1ecfdad.svg" alt="lowerBound_i \geq upperBound_i"/> for some
-<img class="math" src="../../_images/math/83a1929c1cd341d9476f20e34f0ca7ab802344c3.svg" alt="i"/>: it simply defines an empty interval.
+<img class="math" src="../../_images/math/1f3135179e16743d243b117e38f5c0281f72ac11.svg" alt="[lowerBound_0, upperBound_0]\times \dots \times [lowerBound_{dim-1}, upperBound_{dim-1}]"/>.
+It is allowed to have <img class="math" src="../../_images/math/e5a5bf01a9245aebebd1b17ce1a242d746b45c8f.svg" alt="lowerBound_i \geq upperBound_i"/> for some
+<img class="math" src="../../_images/math/c47ea0eab9f0f521327c38ece8a0d25e433bbbb2.svg" alt="i"/>: it simply defines an empty interval.
 The <em>lowerBound</em> and the <em>upperBound</em> must be of the same type. If
 <em>finiteLowerBound</em> and <em>finiteUpperBound</em> are mentioned, they must be
 sequences.</p>
@@ -140,11 +140,11 @@ not.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The meaning of a flag is: if flag <img class="math" src="../../_images/math/83a1929c1cd341d9476f20e34f0ca7ab802344c3.svg" alt="i"/> is <em>True</em>, the corresponding
+<p>The meaning of a flag is: if flag <img class="math" src="../../_images/math/c47ea0eab9f0f521327c38ece8a0d25e433bbbb2.svg" alt="i"/> is <em>True</em>, the corresponding
 component of the given bound is finite and its value is given by bound
-<img class="math" src="../../_images/math/83a1929c1cd341d9476f20e34f0ca7ab802344c3.svg" alt="i"/>. If not, the corresponding component is infinite and its value is
-either <img class="math" src="../../_images/math/7706184244504c92bde987449efd8f9c5d498362.svg" alt="-\infty"/> if bound <img class="math" src="../../_images/math/673b82190a795ba3d541601012ff18cc08c6335d.svg" alt="i &lt; 0"/> or <img class="math" src="../../_images/math/d8e4bba2f82d6c5df867687dece9cc2bc0c2947e.svg" alt="+\infty"/> if bound
-<img class="math" src="../../_images/math/dc3f4b3d57dd6bb7dd6b35f9403b6a53601b7a8b.svg" alt="i \geq 0"/>.</p>
+<img class="math" src="../../_images/math/c47ea0eab9f0f521327c38ece8a0d25e433bbbb2.svg" alt="i"/>. If not, the corresponding component is infinite and its value is
+either <img class="math" src="../../_images/math/c955d3e8f67da9cce0f0cec248dffb047dbc4a5d.svg" alt="-\infty"/> if bound <img class="math" src="../../_images/math/718c5cddf00a8f7c2d2b5290c52e9179473416bf.svg" alt="i &lt; 0"/> or <img class="math" src="../../_images/math/aaf53f52baa19bea3f6de75ea394f52aba6ac8b5.svg" alt="+\infty"/> if bound
+<img class="math" src="../../_images/math/7e54259ed0e9dd959ae74138bcd9d832299d66ae.svg" alt="i \geq 0"/>.</p>
 <p>It is possible to add or subtract two intervals and multiply an interval by a
 scalar.</p>
 <p class="rubric">Examples</p>
@@ -176,6 +176,19 @@ scalar.</p>
 <span class="go">[9, 24]</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
+<dt><a class="reference internal" href="#openturns.Interval.thisown" title="openturns.Interval.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
+<dd><p class="first last">The membership flag</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -346,7 +359,7 @@ scalar.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>flags</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.BoolCollection.html#openturns.BoolCollection" title="openturns.BoolCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoolCollection</span></code></a></span></dt>
-<dd><p class="first last">If the <img class="math" src="../../_images/math/9b3fb7e041ddeea31ab9148572d497bf4e51c592.svg" alt="i^{th}"/> element is <em>False</em>, the corresponding component of
+<dd><p class="first last">If the <img class="math" src="../../_images/math/8e3f44f37eaed85ce78c3c44e0107507f245190f.svg" alt="i^{th}"/> element is <em>False</em>, the corresponding component of
 the lower bound is infinite. Otherwise, it is finite.</p>
 </dd>
 </dl>
@@ -373,7 +386,7 @@ the lower bound is infinite. Otherwise, it is finite.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>flags</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.BoolCollection.html#openturns.BoolCollection" title="openturns.BoolCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoolCollection</span></code></a></span></dt>
-<dd><p class="first last">If the <img class="math" src="../../_images/math/9b3fb7e041ddeea31ab9148572d497bf4e51c592.svg" alt="i^{th}"/> element is <em>False</em>, the corresponding component of
+<dd><p class="first last">If the <img class="math" src="../../_images/math/8e3f44f37eaed85ce78c3c44e0107507f245190f.svg" alt="i^{th}"/> element is <em>False</em>, the corresponding component of
 the upper bound is infinite. Otherwise, it is finite.</p>
 </dd>
 </dl>
@@ -682,9 +695,9 @@ the upper bound is infinite. Otherwise, it is finite.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>isEmpty</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
 <dd><p class="first last">Flag telling whether the interval is numerically empty, i.e. if its numerical
-volume is inferior or equal to <img class="math" src="../../_images/math/384410e6f37eece2ddfb85c2522d8adc600e439d.svg" alt="\epsilon"/> (defined in the
+volume is inferior or equal to <img class="math" src="../../_images/math/1ddfda23f88fcfeaf8e0de4b95c88d19f8e81fd3.svg" alt="\epsilon"/> (defined in the
 <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>:
-<img class="math" src="../../_images/math/384410e6f37eece2ddfb85c2522d8adc600e439d.svg" alt="\epsilon"/> = Domain-SmallVolume).</p>
+<img class="math" src="../../_images/math/1ddfda23f88fcfeaf8e0de4b95c88d19f8e81fd3.svg" alt="\epsilon"/> = Domain-SmallVolume).</p>
 </dd>
 </dl>
 </td>
@@ -773,7 +786,7 @@ into account whether bounds are finite or not.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>flags</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of bool</span></dt>
-<dd><p class="first last">If the <img class="math" src="../../_images/math/9b3fb7e041ddeea31ab9148572d497bf4e51c592.svg" alt="i^{th}"/> element is <em>False</em>, the corresponding component of
+<dd><p class="first last">If the <img class="math" src="../../_images/math/8e3f44f37eaed85ce78c3c44e0107507f245190f.svg" alt="i^{th}"/> element is <em>False</em>, the corresponding component of
 the lower bound is infinite. Otherwise, it is finite.</p>
 </dd>
 </dl>
@@ -802,7 +815,7 @@ the lower bound is infinite. Otherwise, it is finite.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>flags</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of bool</span></dt>
-<dd><p class="first last">If the <img class="math" src="../../_images/math/9b3fb7e041ddeea31ab9148572d497bf4e51c592.svg" alt="i^{th}"/> element is <em>False</em>, the corresponding component of
+<dd><p class="first last">If the <img class="math" src="../../_images/math/8e3f44f37eaed85ce78c3c44e0107507f245190f.svg" alt="i^{th}"/> element is <em>False</em>, the corresponding component of
 the upper bound is infinite. Otherwise, it is finite.</p>
 </dd>
 </dl>
@@ -934,6 +947,12 @@ the upper bound is infinite. Otherwise, it is finite.</p>
 </table>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="openturns.Interval.thisown">
+<code class="descname">thisown</code><a class="headerlink" href="#openturns.Interval.thisown" title="Permalink to this definition">¶</a></dt>
+<dd><p>The membership flag</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -965,7 +984,7 @@ the upper bound is infinite. Otherwise, it is finite.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

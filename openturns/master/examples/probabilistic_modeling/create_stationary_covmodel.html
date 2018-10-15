@@ -266,32 +266,32 @@ div.nboutput div.output_area.stderr {
 <p>This use case illustrates how the User can create a covariance function
 from parametric models. The library implements the <em>multivariate
 Exponential model</em> as a parametric model for the covariance function
-where the spatial covariance function <img class="math" src="../../_images/math/e5306ea73ad90f3558f0a0b6facc330d9a4522db.svg" alt="\rho"/> writes:</p>
+where the spatial covariance function <img class="math" src="../../_images/math/87ace8ea2f1a9d6d4af85f73522c31b119b05e95.svg" alt="\rho"/> writes:</p>
 <div class="math">
-<p><img src="../../_images/math/0d34e5481562681de5382ff115bf85581d5e504d.svg" alt="\rho(\underline{s}, \underline{t} ) = e^{-\left\| \underline{s}- \underline{t} \right\|_2} \quad \forall (\underline{s}, \underline{t}) \in \mathcal{D}"/></p>
+<p><img src="../../_images/math/1a4170fd98cb86c006b2b5730b55a7f274ded03f.svg" alt="\rho(\underline{s}, \underline{t} ) = e^{-\left\| \underline{s}- \underline{t} \right\|_2} \quad \forall (\underline{s}, \underline{t}) \in \mathcal{D}"/></p>
 </div><p>It is possible to define the exponential model from the spatial
-covariance matrix <img class="math" src="../../_images/math/b06b274bcd15d981fa1a565ca1e7db63eecbc8eb.svg" alt="\underline{\underline{C}}^{spat}"/> rather than
-the correlation matrix <img class="math" src="../../_images/math/b58d3bd06bc3f8d8234391b17e4216c71e56c78f.svg" alt="\underline{\underline{R}}"/>:</p>
+covariance matrix <img class="math" src="../../_images/math/69e9185e90e0bcecf2d29c864b88096631572340.svg" alt="\underline{\underline{C}}^{spat}"/> rather than
+the correlation matrix <img class="math" src="../../_images/math/4c024b27ec96b1f6a32cd64592159e68461a6ec6.svg" alt="\underline{\underline{R}}"/>:</p>
 <div class="math">
-<p><img src="../../_images/math/7d979f78e0c14d5d5de90ad7197ba5607eedb2f7.svg" alt="\forall \underline{t} \in \mathcal{D},\quad \underline{\underline{C}}^{spat} = \mathbb{E} \left[ X_{\underline{t}} X^t_{\underline{t}} \right] = \underline{\underline{A}}\,\underline{\underline{R}}\, \underline{\underline{A}}"/></p>
+<p><img src="../../_images/math/9c7b203288d7c7933ba8398fcc6a823ace41d31a.svg" alt="\forall \underline{t} \in \mathcal{D},\quad \underline{\underline{C}}^{spat} = \mathbb{E} \left[ X_{\underline{t}} X^t_{\underline{t}} \right] = \underline{\underline{A}}\,\underline{\underline{R}}\, \underline{\underline{A}}"/></p>
 </div><p>with:</p>
 <div class="math">
-<p><img src="../../_images/math/c1b8c316b02126e1bf712774880c0f7d97036aa9.svg" alt="\underline{\underline{A}} = \mbox{Diag}(a_1, \dots, a_d)"/></p>
-</div><p>We call <img class="math" src="../../_images/math/61d245584ff8d99aeb21a3e3aa158cb4547da434.svg" alt="\underline{a}"/> the amplitude vector and
-<img class="math" src="../../_images/math/91b981b37d9e63e8d422926f2e1e2d896f006526.svg" alt="\underline{\lambda}"/> the scale vector.</p>
+<p><img src="../../_images/math/90e90b8fd5ca98f45082aab1a6e7858bf24c1030.svg" alt="\underline{\underline{A}} = \mbox{Diag}(a_1, \dots, a_d)"/></p>
+</div><p>We call <img class="math" src="../../_images/math/0475a08a6f9cf86af84ffb1667f4232e285a9299.svg" alt="\underline{a}"/> the amplitude vector and
+<img class="math" src="../../_images/math/3b4344ddcfd8707b09322d6dc7950d437e371d80.svg" alt="\underline{\lambda}"/> the scale vector.</p>
 <p>The library implements the multivariate exponential model thanks to the
 object <em>ExponentialModel</em> which is created from:</p>
 <ul class="simple">
 <li>the scale and amplitude vectors
-<img class="math" src="../../_images/math/25a5aff444f2110666312ce60652e4484931bf0a.svg" alt="(\underline{\lambda}, \underline{a})"/>: in that case, by
+<img class="math" src="../../_images/math/6e1b466faebeae50844e9acb0cf2e18fc5037f6f.svg" alt="(\underline{\lambda}, \underline{a})"/>: in that case, by
 default
-<img class="math" src="../../_images/math/53e8ac41d4eac7e3355cd8a978ed23a148914f4a.svg" alt="\underline{\underline{R}} = \underline{\underline{I}}"/>;</li>
+<img class="math" src="../../_images/math/8bc37d2ade80db66af4a509d7e5edc708f73b596.svg" alt="\underline{\underline{R}} = \underline{\underline{I}}"/>;</li>
 <li>the scale and amplitude vectors and the spatial correlation matrix
-<img class="math" src="../../_images/math/55b7bb93f9fae8378d2029418a80622eba2eed7a.svg" alt="(\underline{\lambda}, \underline{a},\underline{\underline{R}})"/>;</li>
+<img class="math" src="../../_images/math/da0106299a1a353f6ecacad7db69c41750566ea8.svg" alt="(\underline{\lambda}, \underline{a},\underline{\underline{R}})"/>;</li>
 <li>the scale and amplitude vectors and the spatial covariance matrix
-<img class="math" src="../../_images/math/bd9910228d451891cab76af2146c1bec41d2e45d.svg" alt="(\underline{\lambda}, \underline{a},\underline{\underline{C}})"/>;
-Then <img class="math" src="../../_images/math/453143cfb05e06f924ea7afc93345a60b7ed36a6.svg" alt="\underline{\underline{C}}"/> is mapped into the associated
-correlation matrix <img class="math" src="../../_images/math/b58d3bd06bc3f8d8234391b17e4216c71e56c78f.svg" alt="\underline{\underline{R}}"/> and the previous
+<img class="math" src="../../_images/math/7e3850a6e02781a1c1831a5f317da1687c08193d.svg" alt="(\underline{\lambda}, \underline{a},\underline{\underline{C}})"/>;
+Then <img class="math" src="../../_images/math/0f9e773ed0bc640e719825199dfe4c2b9fd68811.svg" alt="\underline{\underline{C}}"/> is mapped into the associated
+correlation matrix <img class="math" src="../../_images/math/4c024b27ec96b1f6a32cd64592159e68461a6ec6.svg" alt="\underline{\underline{R}}"/> and the previous
 constructor is used.</li>
 </ul>
 <div class="nbinput nblast docutils container">
@@ -424,7 +424,7 @@ constructor is used.</li>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

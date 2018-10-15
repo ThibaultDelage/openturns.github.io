@@ -99,65 +99,65 @@
 <span id="spearman-coefficient"></span><h1>Spearman correlation coefficient<a class="headerlink" href="#spearman-correlation-coefficient" title="Permalink to this headline">¶</a></h1>
 <p>This method deals with the parametric modelling of a probability
 distribution for a random vector
-<img class="math" src="../../_images/math/80e79f6f56b23b60f04ee768e0b30ca7f2e735fa.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/>. It aims to measure
+<img class="math" src="../../_images/math/4efc1e2de19d56b11de1473bb5b776e974003d9e.svg" alt="\vect{X} = \left( X^1,\ldots,X^{n_X} \right)"/>. It aims to measure
 a type of dependence (here a monotonous correlation) which may exist
-between two components <img class="math" src="../../_images/math/872e7272798823842a1309501c89acd170652ea8.svg" alt="X^i"/> and <img class="math" src="../../_images/math/fb87234d1cce542bb396be3780e631356438e2bb.svg" alt="X^j"/>.</p>
-<p>The Spearman’s correlation coefficient <img class="math" src="../../_images/math/acb31e241cb1ea6e372e7fd0c041450f74a3b094.svg" alt="\rho^S_{U,V}"/> aims to
+between two components <img class="math" src="../../_images/math/9ca2297a9208cc5df7c70101c052869f6e010295.svg" alt="X^i"/> and <img class="math" src="../../_images/math/67a28bfc4d3dbfd34cd69d96fe27b24248841ca6.svg" alt="X^j"/>.</p>
+<p>The Spearman’s correlation coefficient <img class="math" src="../../_images/math/4fec8f3afdcbe64fe0b5cf85a4a18ed9f35d831a.svg" alt="\rho^S_{U,V}"/> aims to
 measure the strength of a monotonic relationship between two random
-variables <img class="math" src="../../_images/math/fcf3135745b5ce36664fa592c02ad81f4849522a.svg" alt="U"/> and <img class="math" src="../../_images/math/36d982a47f56236dbfa26d823c169d699861d3cb.svg" alt="V"/>. It is in fact equivalent to the
-Pearson’s correlation coefficient after having transformed <img class="math" src="../../_images/math/fcf3135745b5ce36664fa592c02ad81f4849522a.svg" alt="U"/> and
-<img class="math" src="../../_images/math/36d982a47f56236dbfa26d823c169d699861d3cb.svg" alt="V"/> to linearize any monotonic relationship (remember that
+variables <img class="math" src="../../_images/math/bf124a66574486a39ad361c6648bb0debe8312e0.svg" alt="U"/> and <img class="math" src="../../_images/math/6c8383c50c8be856cb1d995b6fdba115bb365da5.svg" alt="V"/>. It is in fact equivalent to the
+Pearson’s correlation coefficient after having transformed <img class="math" src="../../_images/math/bf124a66574486a39ad361c6648bb0debe8312e0.svg" alt="U"/> and
+<img class="math" src="../../_images/math/6c8383c50c8be856cb1d995b6fdba115bb365da5.svg" alt="V"/> to linearize any monotonic relationship (remember that
 Pearson’s correlation coefficient may only be used to measure the
 strength of linear relationships, see <a class="reference internal" href="pearson_coefficient.html#pearson-coefficient"><span class="std std-ref">Pearson’s correlation coefficient</span></a>):</p>
 <div class="math">
-<p><img src="../../_images/math/67b7c6a690ec54e7532569696c6f87929da84e92.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/1c846cd251b4198f0423c46c19309c8342b2a0b7.svg" alt="\begin{aligned}
     \rho^S_{U,V} = \rho_{F_U(U),F_V(V)}
   \end{aligned}"/></p>
-</div><p>where <img class="math" src="../../_images/math/b4c5762cc31e8c7996bbd177dc39cf5676905ba4.svg" alt="F_U"/> and <img class="math" src="../../_images/math/0b2458ee4ddc7e5f1d74c32346908f286dc313f7.svg" alt="F_V"/> denote the cumulative distribution
-functions of <img class="math" src="../../_images/math/fcf3135745b5ce36664fa592c02ad81f4849522a.svg" alt="U"/> and <img class="math" src="../../_images/math/36d982a47f56236dbfa26d823c169d699861d3cb.svg" alt="V"/>.</p>
-<p>If we arrange a sample made up of <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> pairs
-<img class="math" src="../../_images/math/afd071991d6fdc4baf60a036015a42035212843f.svg" alt="\left\{ (u_1,v_1),(u_2,v_2),\ldots,(u_N,v_N) \right\}"/>, the
+</div><p>where <img class="math" src="../../_images/math/c32f01d7e478531353020fffb5a502babf9abdb1.svg" alt="F_U"/> and <img class="math" src="../../_images/math/03fd139fba9c74e80b35de795d6dd1d9287f023d.svg" alt="F_V"/> denote the cumulative distribution
+functions of <img class="math" src="../../_images/math/bf124a66574486a39ad361c6648bb0debe8312e0.svg" alt="U"/> and <img class="math" src="../../_images/math/6c8383c50c8be856cb1d995b6fdba115bb365da5.svg" alt="V"/>.</p>
+<p>If we arrange a sample made up of <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> pairs
+<img class="math" src="../../_images/math/658e757c0c0fa791b31c02cd315c6f3f21604446.svg" alt="\left\{ (u_1,v_1),(u_2,v_2),\ldots,(u_N,v_N) \right\}"/>, the
 estimation of Spearman’s correlation coefficient first of all requires a
-ranking to produce two samples <img class="math" src="../../_images/math/4ae693db9fcc68be3b21ed944e0b86fb9d5adcbd.svg" alt="(u_1,\ldots,u_N)"/> and
-<img class="math" src="../../_images/math/2c8ee7500b55d0f3b23815ca0f93df61d83bfa78.svg" alt="(v_1,\ldots,v_N)"/>. The ranking <img class="math" src="../../_images/math/6fcc2340a30026a1affb9997bb774613c1c26a95.svg" alt="u_{[i]}"/> of the observation
-<img class="math" src="../../_images/math/764856d6b753bf4d126dc8876e3f488524cd6232.svg" alt="u_i"/> is defined as the position of <img class="math" src="../../_images/math/764856d6b753bf4d126dc8876e3f488524cd6232.svg" alt="u_i"/> in the sample
-reordered in ascending order: if <img class="math" src="../../_images/math/764856d6b753bf4d126dc8876e3f488524cd6232.svg" alt="u_i"/> is the smallest value in
-the sample <img class="math" src="../../_images/math/4ae693db9fcc68be3b21ed944e0b86fb9d5adcbd.svg" alt="(u_1,\ldots,u_N)"/>, its ranking would equal 1; if
-<img class="math" src="../../_images/math/764856d6b753bf4d126dc8876e3f488524cd6232.svg" alt="u_i"/> is the second smallest value in the sample, its ranking
+ranking to produce two samples <img class="math" src="../../_images/math/28040a657b286b448ae8a7bf447e4f7384f8f0bc.svg" alt="(u_1,\ldots,u_N)"/> and
+<img class="math" src="../../_images/math/39aa47a65fc37e2a76b92f797d2bf57bc23d35d8.svg" alt="(v_1,\ldots,v_N)"/>. The ranking <img class="math" src="../../_images/math/47ba971b028bcbbbed2e2e32d0887eea05766521.svg" alt="u_{[i]}"/> of the observation
+<img class="math" src="../../_images/math/08452d0278a4f7cf90f8339ec1b5537d42a89fc7.svg" alt="u_i"/> is defined as the position of <img class="math" src="../../_images/math/08452d0278a4f7cf90f8339ec1b5537d42a89fc7.svg" alt="u_i"/> in the sample
+reordered in ascending order: if <img class="math" src="../../_images/math/08452d0278a4f7cf90f8339ec1b5537d42a89fc7.svg" alt="u_i"/> is the smallest value in
+the sample <img class="math" src="../../_images/math/28040a657b286b448ae8a7bf447e4f7384f8f0bc.svg" alt="(u_1,\ldots,u_N)"/>, its ranking would equal 1; if
+<img class="math" src="../../_images/math/08452d0278a4f7cf90f8339ec1b5537d42a89fc7.svg" alt="u_i"/> is the second smallest value in the sample, its ranking
 would equal 2, and so forth. The ranking transformation is a procedure
-that takes the sample <img class="math" src="../../_images/math/4ae693db9fcc68be3b21ed944e0b86fb9d5adcbd.svg" alt="(u_1,\ldots,u_N)"/>) as input data and
-produces the sample <img class="math" src="../../_images/math/02ce091cc36187171e2d41f772909214c35d42f1.svg" alt="(u_{[1]},\ldots,u_{[N]})"/> as an output
+that takes the sample <img class="math" src="../../_images/math/28040a657b286b448ae8a7bf447e4f7384f8f0bc.svg" alt="(u_1,\ldots,u_N)"/>) as input data and
+produces the sample <img class="math" src="../../_images/math/a418be661583e1a23d1e2e5fc77a261246b8b572.svg" alt="(u_{[1]},\ldots,u_{[N]})"/> as an output
 result.</p>
 <p>For example, let us consider the sample
-<img class="math" src="../../_images/math/181caa69f4a445f3c8c95d8db006ae1f848f0497.svg" alt="(u_1,u_2,u_3,u_4) = (1.5,0.7,5.1,4.3)"/>. We therefore have
-<img class="math" src="../../_images/math/ee9a67973124264f9de1ed8cf786de4ea5d3b07b.svg" alt="(u_{[1]},u_{[2]}u_{[3]},u_{[4]}) = (2,1,4,3)"/>. <img class="math" src="../../_images/math/ee414133b10e92aaa691c67d395936a407e3058a.svg" alt="u_1 = 1.5"/>
-is in fact the second smallest value in the original, <img class="math" src="../../_images/math/17dc235fd30c1721fcb7793818608fefb33a7ff7.svg" alt="u_2 = 0.7"/>
+<img class="math" src="../../_images/math/419d920dbb8823fc2ba53894fa148c7052294a35.svg" alt="(u_1,u_2,u_3,u_4) = (1.5,0.7,5.1,4.3)"/>. We therefore have
+<img class="math" src="../../_images/math/75232c65b91c516d4b33311fc3fad2cf23f1afd8.svg" alt="(u_{[1]},u_{[2]}u_{[3]},u_{[4]}) = (2,1,4,3)"/>. <img class="math" src="../../_images/math/6777be81c64dc04b06e774215d3dfb77d992826c.svg" alt="u_1 = 1.5"/>
+is in fact the second smallest value in the original, <img class="math" src="../../_images/math/0aaa66c9f80c51d792f9384d6756305754064d2e.svg" alt="u_2 = 0.7"/>
 the smallest, etc.</p>
 <p>The estimation of Spearman’s correlation coefficient is therefore equal
-to Pearson’s coefficient estimated with the aid of the <img class="math" src="../../_images/math/590e62c4db8a892c9b9a0c6f58bb7e2f1ec99e9b.svg" alt="N"/> pairs
-<img class="math" src="../../_images/math/a2e2d6df8b2e1525026a0b5a03f080bdb0c8dfa0.svg" alt="(u_{[1]},v_{[1]})"/>, <img class="math" src="../../_images/math/edb1b87e804296fe0ca5bfd818b9272f2d6e3978.svg" alt="(u_{[2]},v_{[2]})"/>, …,
-<img class="math" src="../../_images/math/e99344e4236362e12806e3e1efe94413d23bc6bb.svg" alt="(u_{[N]},v_{[N]})"/>:</p>
+to Pearson’s coefficient estimated with the aid of the <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> pairs
+<img class="math" src="../../_images/math/15de87e60fadadaf78f135b4a8ec7f76a5134950.svg" alt="(u_{[1]},v_{[1]})"/>, <img class="math" src="../../_images/math/4edac723a8cdc3eae594489ecb0858dff6c95e44.svg" alt="(u_{[2]},v_{[2]})"/>, …,
+<img class="math" src="../../_images/math/41509519f1540a158628430c57c7c6183eddd53a.svg" alt="(u_{[N]},v_{[N]})"/>:</p>
 <div class="math">
-<p><img src="../../_images/math/129917d34513eda56a9c5c02f8325fbcb1b3d0bc.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/df5074ad7c43a54cbe5de2c7032e09b7dcd2e70a.svg" alt="\begin{aligned}
     \widehat{\rho}^S_{U,V} = \frac{ \displaystyle \sum_{i=1}^N \left( u_{[i]} - \overline{u}_{[]} \right) \left( v_{[i]} - \overline{v}_{[]} \right) }{ \sqrt{\displaystyle \sum_{i=1}^N \left( u_{[i]} - \overline{u}_{[]} \right)^2 \left( v_{[i]} - \overline{v}_{[]} \right)^2} }
   \end{aligned}"/></p>
-</div><p>where <img class="math" src="../../_images/math/d56c2c881b2e101ac497b3ba8bee61acb65a968c.svg" alt="\overline{u}_{[]}"/> and <img class="math" src="../../_images/math/481c57aaf134ae7a4cdfe85d5214ccec8605c3f4.svg" alt="\overline{v}_{[]}"/> represent
-the empirical means of the samples <img class="math" src="../../_images/math/02ce091cc36187171e2d41f772909214c35d42f1.svg" alt="(u_{[1]},\ldots,u_{[N]})"/> and
-<img class="math" src="../../_images/math/b8774c4ac9766be5cfe75139360e978045c4a03b.svg" alt="(v_{[1]},\ldots,v_{[N]})"/>.</p>
+</div><p>where <img class="math" src="../../_images/math/e5498f656237cf1ab88aa83fcad358f6ac20bcd9.svg" alt="\overline{u}_{[]}"/> and <img class="math" src="../../_images/math/146c90b3f619189dcfaee63b3a1b6f3c9e680a3d.svg" alt="\overline{v}_{[]}"/> represent
+the empirical means of the samples <img class="math" src="../../_images/math/a418be661583e1a23d1e2e5fc77a261246b8b572.svg" alt="(u_{[1]},\ldots,u_{[N]})"/> and
+<img class="math" src="../../_images/math/b1890c0d6adccb5e9d00b66feb09b9d7f1aa5a74.svg" alt="(v_{[1]},\ldots,v_{[N]})"/>.</p>
 <p>The Spearman’s correlation coefficient takes values between -1 and 1.
 The closer its absolute value is to 1, the stronger the indication is
-that a monotonic relationship exists between variables <img class="math" src="../../_images/math/fcf3135745b5ce36664fa592c02ad81f4849522a.svg" alt="U"/> and
-<img class="math" src="../../_images/math/36d982a47f56236dbfa26d823c169d699861d3cb.svg" alt="V"/>. The sign of Spearman’s coefficient indicates if the two
+that a monotonic relationship exists between variables <img class="math" src="../../_images/math/bf124a66574486a39ad361c6648bb0debe8312e0.svg" alt="U"/> and
+<img class="math" src="../../_images/math/6c8383c50c8be856cb1d995b6fdba115bb365da5.svg" alt="V"/>. The sign of Spearman’s coefficient indicates if the two
 variables increase or decrease in the same direction (positive
 coefficient) or in opposite directions (negative coefficient). We note
 that a correlation coefficient equal to 0 does not necessarily imply the
-independence of variables <img class="math" src="../../_images/math/fcf3135745b5ce36664fa592c02ad81f4849522a.svg" alt="U"/> and <img class="math" src="../../_images/math/36d982a47f56236dbfa26d823c169d699861d3cb.svg" alt="V"/>. There are two
+independence of variables <img class="math" src="../../_images/math/bf124a66574486a39ad361c6648bb0debe8312e0.svg" alt="U"/> and <img class="math" src="../../_images/math/6c8383c50c8be856cb1d995b6fdba115bb365da5.svg" alt="V"/>. There are two
 possible situations in the event of a zero Spearman’s correlation
 coefficient:</p>
 <ul class="simple">
-<li>the variables <img class="math" src="../../_images/math/fcf3135745b5ce36664fa592c02ad81f4849522a.svg" alt="U"/> and <img class="math" src="../../_images/math/36d982a47f56236dbfa26d823c169d699861d3cb.svg" alt="V"/> are in fact independent,</li>
-<li>or a non-monotonic relationship exists between <img class="math" src="../../_images/math/fcf3135745b5ce36664fa592c02ad81f4849522a.svg" alt="U"/> and
-<img class="math" src="../../_images/math/36d982a47f56236dbfa26d823c169d699861d3cb.svg" alt="V"/>.</li>
+<li>the variables <img class="math" src="../../_images/math/bf124a66574486a39ad361c6648bb0debe8312e0.svg" alt="U"/> and <img class="math" src="../../_images/math/6c8383c50c8be856cb1d995b6fdba115bb365da5.svg" alt="V"/> are in fact independent,</li>
+<li>or a non-monotonic relationship exists between <img class="math" src="../../_images/math/bf124a66574486a39ad361c6648bb0debe8312e0.svg" alt="U"/> and
+<img class="math" src="../../_images/math/6c8383c50c8be856cb1d995b6fdba115bb365da5.svg" alt="V"/>.</li>
 </ul>
 <p>(<a class="reference external" href="../../theory/data_analysis/spearman_coefficient-1.py">Source code</a>, <a class="reference external" href="../../theory/data_analysis/spearman_coefficient-1.png">png</a>, <a class="reference external" href="../../theory/data_analysis/spearman_coefficient-1.hires.png">hires.png</a>, <a class="reference external" href="../../theory/data_analysis/spearman_coefficient-1.pdf">pdf</a>)</p>
 <div class="figure">
@@ -231,7 +231,7 @@ coefficient.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>

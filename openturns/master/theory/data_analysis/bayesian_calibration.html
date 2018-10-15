@@ -97,118 +97,118 @@
             
   <div class="section" id="bayesian-calibration">
 <span id="id1"></span><h1>Bayesian calibration<a class="headerlink" href="#bayesian-calibration" title="Permalink to this headline">¶</a></h1>
-<p>We consider a computer model <img class="math" src="../../_images/math/5e4fd0b7c0b9d8750ca8bc577ddb169a78f8b00f.svg" alt="h"/> (<em>i.e.</em> a deterministic function)
+<p>We consider a computer model <img class="math" src="../../_images/math/962b9c7896d68050c28006820718e08af192b141.svg" alt="h"/> (<em>i.e.</em> a deterministic function)
 to calibrate:</p>
 <div class="math">
-<p><img src="../../_images/math/18b7acc5ba89998c1a6e0ddfd08e785d458666d6.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/53b54edba0ae186fcb3726fbd4ecc4e84c3507f7.svg" alt="\begin{aligned}
     \vect{z} = h(\vect{x}, \vect{\theta}_h),
   \end{aligned}"/></p>
 </div><p>where</p>
 <ul class="simple">
-<li><img class="math" src="../../_images/math/93f92d0c4cd01962a940648d4eb0079bc15c4117.svg" alt="\vect{x} \in \Rset^{d_x}"/> is the input vector;</li>
-<li><img class="math" src="../../_images/math/1254c6f5e6617d16becf4382bbb95099da57e126.svg" alt="\vect{z} \in \Rset^{d_z}"/> is the output vector;</li>
-<li><img class="math" src="../../_images/math/96dfa7c7b966466986fb090af72c053057518b6f.svg" alt="\vect{\theta}_h \in \Rset^{d_h}"/> are the unknown parameters of
-<img class="math" src="../../_images/math/5e4fd0b7c0b9d8750ca8bc577ddb169a78f8b00f.svg" alt="h"/> to calibrate.</li>
+<li><img class="math" src="../../_images/math/275e3dafc739c605fd19ef16a6ad79ff822b4976.svg" alt="\vect{x} \in \Rset^{d_x}"/> is the input vector;</li>
+<li><img class="math" src="../../_images/math/0c61f4ce6c1f5225cc38c73c4bdaa9eb0aac17ee.svg" alt="\vect{z} \in \Rset^{d_z}"/> is the output vector;</li>
+<li><img class="math" src="../../_images/math/807ccdbcebcab2430b0e06666fbe7a7ca046b12c.svg" alt="\vect{\theta}_h \in \Rset^{d_h}"/> are the unknown parameters of
+<img class="math" src="../../_images/math/962b9c7896d68050c28006820718e08af192b141.svg" alt="h"/> to calibrate.</li>
 </ul>
-<p>Our goal here is to estimate <img class="math" src="../../_images/math/07be66284bbb4f59f17abadf50d39c26e08348da.svg" alt="\vect{\theta}_h"/>, based on a certain
-set of <img class="math" src="../../_images/math/3492afb5563cde1aa48c3366d238465a2fd06173.svg" alt="n"/> inputs <img class="math" src="../../_images/math/a7ce63bbbce324009f9f4983017351001899cfaf.svg" alt="(\vect{x}^1, \ldots, \vect{x}^n)"/> (an
+<p>Our goal here is to estimate <img class="math" src="../../_images/math/57012ea59324245e15f838b7277f7f8aca8c33ec.svg" alt="\vect{\theta}_h"/>, based on a certain
+set of <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/> inputs <img class="math" src="../../_images/math/00105513d7c25e554833cd86616f88ee3b6fc1f5.svg" alt="(\vect{x}^1, \ldots, \vect{x}^n)"/> (an
 experimental design) and some associated observations
-<img class="math" src="../../_images/math/498d6e19fad6c11af39ec99ff370fe939b789619.svg" alt="(\vect{y}^1, \ldots, \vect{y}^n)"/> which are regarded as the
+<img class="math" src="../../_images/math/96ae4da22ec43c4efdb37b5a5148f0b52952a0e8.svg" alt="(\vect{y}^1, \ldots, \vect{y}^n)"/> which are regarded as the
 realizations of some random vectors
-<img class="math" src="../../_images/math/4ef96c24fd6154f2bfb039e5381727b00f7414c3.svg" alt="(\vect{Y}^1, \ldots, \vect{Y}^n)"/>, such that, for all <img class="math" src="../../_images/math/83a1929c1cd341d9476f20e34f0ca7ab802344c3.svg" alt="i"/>,
-the distribution of <img class="math" src="../../_images/math/6d20aae91fec7ac2c9d84c7f054c3c6720396848.svg" alt="\vect{Y}^i"/> depends on
-<img class="math" src="../../_images/math/e1b6734fc2f0efe8a0e8103cc987f11d2fcae658.svg" alt="\vect{z}^i = h(\vect{x}^i, \vect{\theta}_h)"/>. Typically,
-<img class="math" src="../../_images/math/783564c72daea1a7f40bbd3d314910128e6039f0.svg" alt="\vect{Y}^i = \vect{z}^i + \vect{\varepsilon}^i"/> where
-<img class="math" src="../../_images/math/a164fc3542bd8c5c6e7fde926108dd49a238f902.svg" alt="\vect{\varepsilon}^i"/> is a random measurement error.</p>
+<img class="math" src="../../_images/math/9591d304a5a86998188d45b9bf7755289459bcd3.svg" alt="(\vect{Y}^1, \ldots, \vect{Y}^n)"/>, such that, for all <img class="math" src="../../_images/math/c47ea0eab9f0f521327c38ece8a0d25e433bbbb2.svg" alt="i"/>,
+the distribution of <img class="math" src="../../_images/math/c9c14650d3222091f299f97d9ec77c56e326417e.svg" alt="\vect{Y}^i"/> depends on
+<img class="math" src="../../_images/math/2257303779d71da477f4437d001fdede59abaf60.svg" alt="\vect{z}^i = h(\vect{x}^i, \vect{\theta}_h)"/>. Typically,
+<img class="math" src="../../_images/math/df5ea9f78338dff8b8a0cebfb91ecca13089281d.svg" alt="\vect{Y}^i = \vect{z}^i + \vect{\varepsilon}^i"/> where
+<img class="math" src="../../_images/math/c9cea349025845aa0b088bbdd873b2ef6c54c976.svg" alt="\vect{\varepsilon}^i"/> is a random measurement error.</p>
 <p>For the sake of clarity, lower case letters are used for both random
 variables and realizations in the following (the notation does not
 distinguish the two anymore), as usual in the bayesian literature.</p>
 <p>In fact, the bayesian procedure which is implemented allows to infer
-some unknown parameters <img class="math" src="../../_images/math/960a4809b3516a3e859d2b58f3424891d926830e.svg" alt="\vect{\theta}\in\Rset^{d_\theta}"/> from
-some data <img class="math" src="../../_images/math/ca923e149f0c7da17a37c5a2651fd44fa024eae0.svg" alt="\mat{y} = (\vect{y}^1, \ldots, \vect{y}^n)"/> as soon as
-the conditional distribution of each <img class="math" src="../../_images/math/9e92027e1d91f60a8178bddb620e283a289826fe.svg" alt="\vect{y}^i"/> given
-<img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/> is specified. Therefore <img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/> can
-be made up with some computer model parameters <img class="math" src="../../_images/math/07be66284bbb4f59f17abadf50d39c26e08348da.svg" alt="\vect{\theta}_h"/>
-together with some others <img class="math" src="../../_images/math/77d90c43715511f163500cb5bef56e2530f30f99.svg" alt="\vect{\theta}_\varepsilon"/>:
-<img class="math" src="../../_images/math/75effb409c7c277ab7b0cd74b3bea1c1382c8d49.svg" alt="\vect{\theta} = \Tr{(\Tr{\vect{\theta}_h}, \Tr{\vect{\theta}_\varepsilon})}"/>.
-For example, <img class="math" src="../../_images/math/77d90c43715511f163500cb5bef56e2530f30f99.svg" alt="\vect{\theta}_\varepsilon"/> may represent the unknown
-standard deviation <img class="math" src="../../_images/math/21f69c83a86be9c7d80bf1d39f76d158a95228af.svg" alt="\sigma"/> of an additive centered gaussian
+some unknown parameters <img class="math" src="../../_images/math/6203b56593259bcefaee3de8c39ec522a41b0c61.svg" alt="\vect{\theta}\in\Rset^{d_\theta}"/> from
+some data <img class="math" src="../../_images/math/f60519e3d892550843e7c2b4bff8421e4be6e787.svg" alt="\mat{y} = (\vect{y}^1, \ldots, \vect{y}^n)"/> as soon as
+the conditional distribution of each <img class="math" src="../../_images/math/5fa06b5461486741396f4c219472caef1159b8c4.svg" alt="\vect{y}^i"/> given
+<img class="math" src="../../_images/math/7f8d6d830d1bda48ea6068b9801613dfe3a00263.svg" alt="\vect{\theta}"/> is specified. Therefore <img class="math" src="../../_images/math/7f8d6d830d1bda48ea6068b9801613dfe3a00263.svg" alt="\vect{\theta}"/> can
+be made up with some computer model parameters <img class="math" src="../../_images/math/57012ea59324245e15f838b7277f7f8aca8c33ec.svg" alt="\vect{\theta}_h"/>
+together with some others <img class="math" src="../../_images/math/9c6d5ec7fc180f48116f292f23b4326334912455.svg" alt="\vect{\theta}_\varepsilon"/>:
+<img class="math" src="../../_images/math/23c6b4d68b6ef371dfd95247f0e71cb5622b8de1.svg" alt="\vect{\theta} = \Tr{(\Tr{\vect{\theta}_h}, \Tr{\vect{\theta}_\varepsilon})}"/>.
+For example, <img class="math" src="../../_images/math/9c6d5ec7fc180f48116f292f23b4326334912455.svg" alt="\vect{\theta}_\varepsilon"/> may represent the unknown
+standard deviation <img class="math" src="../../_images/math/2f14eaca2f1cdf83c7edf2e38cd80738b4f31ae8.svg" alt="\sigma"/> of an additive centered gaussian
 measurement error affecting the data (see the example hereafter).
 Besides the procedure can be used to estimate the parameters of a
 distribution from direct observations (no computer model to calibrate:
-<img class="math" src="../../_images/math/0451c0d3454c21940372f969794f22593f0c91c2.svg" alt="\vect{\theta} = \vect{\theta}_\varepsilon"/>).</p>
-<p>More formally, the likelihood <img class="math" src="../../_images/math/4c396acd5f71e49670feccfca98e7fdfdb6db635.svg" alt="L(\mat{y} | \vect{\theta})"/> is
+<img class="math" src="../../_images/math/bc9e23daf7893f47144b9ed8d80b9bedb06b3f84.svg" alt="\vect{\theta} = \vect{\theta}_\varepsilon"/>).</p>
+<p>More formally, the likelihood <img class="math" src="../../_images/math/89570834d41af7baac81532055398a0a3199b49e.svg" alt="L(\mat{y} | \vect{\theta})"/> is
 defined by, firstly, a family
-<img class="math" src="../../_images/math/c24d0cbab5fe123598c3d0a886e840df18038046.svg" alt="\{\cP_{\vect{w}}, \vect{w} \in \Rset^{d_w}\}"/> of probability
-distributions parametrized by <img class="math" src="../../_images/math/04138b5ca90d217817fc8b849dfa9285ecb57385.svg" alt="\vect{w}"/>, which is specified in
-practice by a conditional distribution <img class="math" src="../../_images/math/7116ae65194b8d60f33fae80366ea122cb5bb59d.svg" alt="f(.|\vect{w})"/> given
-<img class="math" src="../../_images/math/04138b5ca90d217817fc8b849dfa9285ecb57385.svg" alt="\vect{w}"/> (<img class="math" src="../../_images/math/f4a0d602d0175d7f069a2706ccb2b7150c87bbc2.svg" alt="f"/> is a PDF or a probability mass function),
+<img class="math" src="../../_images/math/d3d61da532e78e5939d330802e106bb4d468d8c1.svg" alt="\{\cP_{\vect{w}}, \vect{w} \in \Rset^{d_w}\}"/> of probability
+distributions parametrized by <img class="math" src="../../_images/math/9e5fa35ee306d6624cfc4bde71b8bf77e7fec243.svg" alt="\vect{w}"/>, which is specified in
+practice by a conditional distribution <img class="math" src="../../_images/math/9b8293b52810a25e15412118251ed15adca24d99.svg" alt="f(.|\vect{w})"/> given
+<img class="math" src="../../_images/math/9e5fa35ee306d6624cfc4bde71b8bf77e7fec243.svg" alt="\vect{w}"/> (<img class="math" src="../../_images/math/bf8af465e21be611f4cc50154e2fa28e5455230b.svg" alt="f"/> is a PDF or a probability mass function),
 and, secondly, a function
-<img class="math" src="../../_images/math/5cb0c680d37823c884cdefe67e39a1d62e209cf4.svg" alt="g:\Rset^{d_\theta} \longrightarrow \Rset^{n\,d_w}"/> such that
-<img class="math" src="../../_images/math/989449a7f56a71ce963f28ef6cd4da74ebeddfa3.svg" alt="g(\theta) = \Tr{(\Tr{g^1(\vect{\theta})}, \ldots, \Tr{g^n(\vect{\theta})})}"/>
-which enables to express the parameter <img class="math" src="../../_images/math/30c6bc99b2ea4643244be290393528bfaadf3a68.svg" alt="\vect{w}^i"/> of the i-th
-observation <img class="math" src="../../_images/math/932becd3143ffe1d3b2000b471eea030298bfe93.svg" alt="\vect{y}^i \sim f(.|\vect{w}^i)"/> in function of
-<img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/>: <img class="math" src="../../_images/math/f9602cd723a3b17661e2685f5909e53bc032354f.svg" alt="g^i(\vect{\theta}) = \vect{w}^i"/> thus
-<img class="math" src="../../_images/math/3ca3e59986c51551349f7f94243dec77de863f6b.svg" alt="\vect{y}^i \sim f(.|g^i(\vect{\theta}))"/> and</p>
+<img class="math" src="../../_images/math/ba6e6113cee8f6640cc804d009a9aa2da5698262.svg" alt="g:\Rset^{d_\theta} \longrightarrow \Rset^{n\,d_w}"/> such that
+<img class="math" src="../../_images/math/98dded6d6bade933f716fed9e3f1c0a1e2b04f19.svg" alt="g(\theta) = \Tr{(\Tr{g^1(\vect{\theta})}, \ldots, \Tr{g^n(\vect{\theta})})}"/>
+which enables to express the parameter <img class="math" src="../../_images/math/a827e95fd2eca69dd3b6f36d53518332d583e492.svg" alt="\vect{w}^i"/> of the i-th
+observation <img class="math" src="../../_images/math/7d6872b2064d4910e51aec54e735f1bc64f3388a.svg" alt="\vect{y}^i \sim f(.|\vect{w}^i)"/> in function of
+<img class="math" src="../../_images/math/7f8d6d830d1bda48ea6068b9801613dfe3a00263.svg" alt="\vect{\theta}"/>: <img class="math" src="../../_images/math/5aed441aca406a5bec51b93b8cf876199c893d3b.svg" alt="g^i(\vect{\theta}) = \vect{w}^i"/> thus
+<img class="math" src="../../_images/math/6f35b3a8c9da9e32fc73c238490a65cf7b7447c2.svg" alt="\vect{y}^i \sim f(.|g^i(\vect{\theta}))"/> and</p>
 <div class="math">
-<p><img src="../../_images/math/64419454723c1c3df99e3ec60108f3eb2de2a362.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/4ec7f0e17625d625ccdd08b9c38e41b2c4a65593.svg" alt="\begin{aligned}
     L(\mat{y} | \vect{\theta}) = \prod_{i=1}^n f(\vect{y}^i|g^i(\vect{\theta})).
   \end{aligned}"/></p>
 </div><p>Considering the issue of the calibration of some computer model
-parameters <img class="math" src="../../_images/math/07be66284bbb4f59f17abadf50d39c26e08348da.svg" alt="\vect{\theta}_h"/>, the full statistical model can be
+parameters <img class="math" src="../../_images/math/57012ea59324245e15f838b7277f7f8aca8c33ec.svg" alt="\vect{\theta}_h"/>, the full statistical model can be
 seen as a two-level hierarchical model, with a single level of latent
-variables <img class="math" src="../../_images/math/91dee50a7ea7a248f11c9d4307984681b94ebac2.svg" alt="\vect{z}"/>. A classical example is given by the
+variables <img class="math" src="../../_images/math/55a838c2b59107483d340519c840f7ff4f0f7fc6.svg" alt="\vect{z}"/>. A classical example is given by the
 nonlinear Gaussian regression model:</p>
 <div class="math">
-<p><img src="../../_images/math/5aa454b441a71ecd395def39a166edf223d5bd7a.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/6b29283ddd44186af9b5b3bc46112a7a89c6095d.svg" alt="\begin{aligned}
     y_i &amp;=&amp; h(\vect{x}_i|\vect{\theta}_h) + \varepsilon_i,
     \mbox{ where } \varepsilon_i \stackrel{i.i.d.}{\sim} \cN(0, \sigma^2),
     \quad i = 1,\ldots, n.
   \end{aligned}"/></p>
-</div><p>It can be implemented with <img class="math" src="../../_images/math/fe0749ea4b2fcb45c20cc4f9e0158e813838f90b.svg" alt="f(.|\Tr{(\mu, \sigma)})"/> the PDF of
-the Gaussian distribution <img class="math" src="../../_images/math/9b73722543b422358e7159365adc9cd953858c1a.svg" alt="\cN(\mu, \sigma^2)"/>, with
-<img class="math" src="../../_images/math/ae6576363fb4e88dceda71b43b65b2f42ba2b226.svg" alt="g^i(\vect{\theta}) = \Tr{(h(\vect{x}^i, \vect{\theta}_h), \:\sigma)}"/>,
-and with <img class="math" src="../../_images/math/d3c63640f3bd3aaa135418056b2f4c65df1a13ca.svg" alt="\vect{\theta} = \vect{\theta}_h"/>, respectively
-<img class="math" src="../../_images/math/18c3a845641a77a134a70e32c7e16bc492d19efa.svg" alt="\vect{\theta} = \Tr{(\Tr{\vect{\theta}_h}, \sigma)}"/>, if
-<img class="math" src="../../_images/math/21f69c83a86be9c7d80bf1d39f76d158a95228af.svg" alt="\sigma"/> is considered known, respectively unknown.</p>
-<p>Given a distribution modelling the uncertainty on <img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/>
+</div><p>It can be implemented with <img class="math" src="../../_images/math/87b59e0f281ee9bc4337b245f3a0509fee866b3a.svg" alt="f(.|\Tr{(\mu, \sigma)})"/> the PDF of
+the Gaussian distribution <img class="math" src="../../_images/math/47551981e8a83cfe12033f629e215134831b433a.svg" alt="\cN(\mu, \sigma^2)"/>, with
+<img class="math" src="../../_images/math/a2e02e005a8bf1dcfc80f40a9db6206a9f0c4b87.svg" alt="g^i(\vect{\theta}) = \Tr{(h(\vect{x}^i, \vect{\theta}_h), \:\sigma)}"/>,
+and with <img class="math" src="../../_images/math/14f3aeda5b5130b3c4a75846550073756c5bbe13.svg" alt="\vect{\theta} = \vect{\theta}_h"/>, respectively
+<img class="math" src="../../_images/math/7d9a580ed417fc441f43b7ade31a768981783e68.svg" alt="\vect{\theta} = \Tr{(\Tr{\vect{\theta}_h}, \sigma)}"/>, if
+<img class="math" src="../../_images/math/2f14eaca2f1cdf83c7edf2e38cd80738b4f31ae8.svg" alt="\sigma"/> is considered known, respectively unknown.</p>
+<p>Given a distribution modelling the uncertainty on <img class="math" src="../../_images/math/7f8d6d830d1bda48ea6068b9801613dfe3a00263.svg" alt="\vect{\theta}"/>
 prior to the data, Bayesian inference is used to perform the inference
-of <img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/>, hence the name Bayesian calibration.</p>
+of <img class="math" src="../../_images/math/7f8d6d830d1bda48ea6068b9801613dfe3a00263.svg" alt="\vect{\theta}"/>, hence the name Bayesian calibration.</p>
 <p>Contrary to the maximum likelihood approach described in <a class="reference internal" href="maximum_likelihood.html#maximum-likelihood"><span class="std std-ref">Maximum Likelihood Principle</span></a>, which
-provides a single ‘best estimate’ value <img class="math" src="../../_images/math/a755434aece71d75b30568358b67447d5513b2da.svg" alt="\hat{\vect{\theta}}"/>,
+provides a single ‘best estimate’ value <img class="math" src="../../_images/math/6863a00aca777c8fb4a4a9e117b09a6131e499bf.svg" alt="\hat{\vect{\theta}}"/>,
 together with confidence bounds accounting for the uncertainty remaining
-on the true value <img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/>, the Bayesian approach derives a
-full distribution of possible values for <img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/> given the
-available data <img class="math" src="../../_images/math/4e89f9135a11b29c81f4d6e3d8df4f37af49788f.svg" alt="\mat{y}"/>. Known as the <em>posterior distribution</em> of
-<img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/> given the data <img class="math" src="../../_images/math/4e89f9135a11b29c81f4d6e3d8df4f37af49788f.svg" alt="\mat{y}"/>, its density can be
+on the true value <img class="math" src="../../_images/math/7f8d6d830d1bda48ea6068b9801613dfe3a00263.svg" alt="\vect{\theta}"/>, the Bayesian approach derives a
+full distribution of possible values for <img class="math" src="../../_images/math/7f8d6d830d1bda48ea6068b9801613dfe3a00263.svg" alt="\vect{\theta}"/> given the
+available data <img class="math" src="../../_images/math/a59078674ed72291ff64adf994e88c78279a1f2e.svg" alt="\mat{y}"/>. Known as the <em>posterior distribution</em> of
+<img class="math" src="../../_images/math/7f8d6d830d1bda48ea6068b9801613dfe3a00263.svg" alt="\vect{\theta}"/> given the data <img class="math" src="../../_images/math/a59078674ed72291ff64adf994e88c78279a1f2e.svg" alt="\mat{y}"/>, its density can be
 expressed according to Bayes’ theorem:</p>
 <div class="math" id="equation-postdistribution">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-postdistribution" title="Permalink to this equation">¶</a></span><img src="../../_images/math/e81e7ca64f9517904437b13921a1efd7966e7da9.svg" alt="\begin{aligned}
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-postdistribution" title="Permalink to this equation">¶</a></span><img src="../../_images/math/5a70d5b968441b638b9d558c8bd8937a0c1d85ae.svg" alt="\begin{aligned}
      \pi(\vect{\theta} | \mat{y}) &amp;=&amp; \frac{L(\mat{y} | \vect{\theta}) \times \pi(\vect{\theta})}{m(\mat{y})},
    \end{aligned}"/></p>
 </div><p>where</p>
 <ul>
-<li><p class="first"><img class="math" src="../../_images/math/4c396acd5f71e49670feccfca98e7fdfdb6db635.svg" alt="L(\mat{y} | \vect{\theta})"/> is the (data) likelihood;</p>
+<li><p class="first"><img class="math" src="../../_images/math/89570834d41af7baac81532055398a0a3199b49e.svg" alt="L(\mat{y} | \vect{\theta})"/> is the (data) likelihood;</p>
 </li>
-<li><p class="first"><img class="math" src="../../_images/math/b84f44ce0a51d0ba2d1c783b08b18ad416e9165a.svg" alt="\pi(\vect{\theta})"/> is the so-called <em>prior distribution</em> of
-<img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/> (with support <img class="math" src="../../_images/math/ef75dff6b2fd64d5ec784de308bfd9161f6cc5cf.svg" alt="\Theta"/>), which encodes
-all possible <img class="math" src="../../_images/math/f9316b2c14de0052a94f2eab15f91b69f1786d35.svg" alt="\vect{\theta}"/> values weighted by their prior
+<li><p class="first"><img class="math" src="../../_images/math/e28383c8b9eff5501a33aa73ca2cdc78fdf52fa2.svg" alt="\pi(\vect{\theta})"/> is the so-called <em>prior distribution</em> of
+<img class="math" src="../../_images/math/7f8d6d830d1bda48ea6068b9801613dfe3a00263.svg" alt="\vect{\theta}"/> (with support <img class="math" src="../../_images/math/b6c981f6b7b660b56ffbe227072832d0300f0608.svg" alt="\Theta"/>), which encodes
+all possible <img class="math" src="../../_images/math/7f8d6d830d1bda48ea6068b9801613dfe3a00263.svg" alt="\vect{\theta}"/> values weighted by their prior
 probabilities, before consideration of any experimental data (this
 allows for instance to incorporate expert information or known
 physical constraints on the calibration parameter)</p>
 </li>
-<li><p class="first"><img class="math" src="../../_images/math/23ca8d22442c1b94ef9a4a597ff5d422c085cb09.svg" alt="m(\mat{y})"/> is the marginal likelihood:</p>
+<li><p class="first"><img class="math" src="../../_images/math/f70eae7c48a6b2e0944aa2a344620eac751b275e.svg" alt="m(\mat{y})"/> is the marginal likelihood:</p>
 <div class="math">
-<p><img src="../../_images/math/f0ade7c4602bfb6c4ae9a230014d90b771b5cf00.svg" alt="\begin{aligned}
+<p><img src="../../_images/math/a0e8678b38479e9685be6ac080ef2ca7b1a7f31d.svg" alt="\begin{aligned}
       m(\mat{y}) &amp;=&amp; \displaystyle\int_{\vect{\theta}\in\Theta} L(\mat{y} | \vect{\theta}) \pi(\vect{\theta}) d\vect{\theta},
     \end{aligned}"/></p>
 </div></li>
 </ul>
 <p>which is the necessary normalizing constant ensuring that the
-posterior density integrates to <img class="math" src="../../_images/math/f3d44eee68f965e0c3a97b452cb1cc2898b0cfdd.svg" alt="1"/>.</p>
+posterior density integrates to <img class="math" src="../../_images/math/3e2835c3a9472e68f379970dd9f6b88e518e8133.svg" alt="1"/>.</p>
 <p>Except in very simple cases, <a class="reference internal" href="#equation-postdistribution">(1)</a> has, in general,
 no closed form. Thus, it must be approximated, either using numerical
-integration when the parameter space dimension <img class="math" src="../../_images/math/19e86849fb4583c93e671b46533a0f1146696086.svg" alt="d_\theta"/> is low,
+integration when the parameter space dimension <img class="math" src="../../_images/math/13ae1f8a29c7011c777fed1c64a44bb94a6566a8.svg" alt="d_\theta"/> is low,
 or more generally through stochastic sampling techniques known as
 Monte-Carlo Markov-Chain (MCMC) methods. See <a class="reference internal" href="metropolis_hastings.html#metropolis-hastings"><span class="std std-ref">The Metropolis-Hastings Algorithm</span></a>.</p>
 <div class="topic">
@@ -259,7 +259,7 @@ Monte-Carlo Markov-Chain (MCMC) methods. See <a class="reference internal" href=
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/6ec36492b.
     </div>
   </body>
 </html>
