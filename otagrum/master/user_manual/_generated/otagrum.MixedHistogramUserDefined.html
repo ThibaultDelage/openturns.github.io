@@ -19,8 +19,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Utils" href="otagrum.Utils.html" />
-    <link rel="prev" title="JunctionTree" href="otagrum.JunctionTree.html" /> 
+    <link rel="next" title="JunctionTree" href="otagrum.JunctionTree.html" />
+    <link rel="prev" title="ContinuousTTest" href="otagrum.ContinuousTTest.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -29,10 +29,10 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="otagrum.Utils.html" title="Utils"
+          <a href="otagrum.JunctionTree.html" title="JunctionTree"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="otagrum.JunctionTree.html" title="JunctionTree"
+          <a href="otagrum.ContinuousTTest.html" title="ContinuousTTest"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">otagrum 0.2 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user_manual.html" accesskey="U">API</a> &#187;</li> 
@@ -55,14 +55,32 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">a</p>
+<dt><strong>ticksCollection</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of sequence of float</span></dt>
+<dd><p class="first last">ticksCollection</p>
+</dd>
+<dt><strong>kind</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of int</span></dt>
+<dd><p class="first last">0=discrete, 1=continuous</p>
+</dd>
+<dt><strong>probabilityTable</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">List of probabilities</p>
 </dd>
 </dl>
 </td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">otagrum</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ticksCollection</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kind</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">probabilityTable</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.35</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.45</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">MixedHistogramUserDefined</span><span class="p">(</span><span class="n">ticksCollection</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="n">probabilityTable</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span><span class="o">.</span><span class="n">setDescription</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span><span class="o">.</span><span class="n">getRealization</span><span class="p">()</span>
+<span class="go">class=Point name=Unnamed dimension=2 values=[2.76561,3]</span>
+</pre></div>
+</div>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -79,209 +97,215 @@
 <tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.acosh" title="otagrum.MixedHistogramUserDefined.acosh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">acosh</span></code></a>()</td>
 <td>Transform distribution by acosh function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.asin" title="otagrum.MixedHistogramUserDefined.asin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asin</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.asMixture" title="otagrum.MixedHistogramUserDefined.asMixture"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asMixture</span></code></a>()</td>
+<td>Conversion as a Mixture</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.asin" title="otagrum.MixedHistogramUserDefined.asin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asin</span></code></a>()</td>
 <td>Transform distribution by arcsine function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.asinh" title="otagrum.MixedHistogramUserDefined.asinh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asinh</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.asinh" title="otagrum.MixedHistogramUserDefined.asinh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asinh</span></code></a>()</td>
 <td>Transform distribution by asinh function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.atan" title="otagrum.MixedHistogramUserDefined.atan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atan</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.atan" title="otagrum.MixedHistogramUserDefined.atan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atan</span></code></a>()</td>
 <td>Transform distribution by arctangent function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.atanh" title="otagrum.MixedHistogramUserDefined.atanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atanh</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.atanh" title="otagrum.MixedHistogramUserDefined.atanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atanh</span></code></a>()</td>
 <td>Transform distribution by atanh function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.cbrt" title="otagrum.MixedHistogramUserDefined.cbrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cbrt</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.cbrt" title="otagrum.MixedHistogramUserDefined.cbrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cbrt</span></code></a>()</td>
 <td>Transform distribution by cubic root function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeBilateralConfidenceInterval" title="otagrum.MixedHistogramUserDefined.computeBilateralConfidenceInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeBilateralConfidenceInterval</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeBilateralConfidenceInterval" title="otagrum.MixedHistogramUserDefined.computeBilateralConfidenceInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeBilateralConfidenceInterval</span></code></a>(*args)</td>
 <td>Compute a bilateral confidence interval.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeBilateralConfidenceIntervalWithMarginalProbability" title="otagrum.MixedHistogramUserDefined.computeBilateralConfidenceIntervalWithMarginalProbability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeBilateralConfidenceIntervalWithMarginalProbability</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeBilateralConfidenceIntervalWithMarginalProbability" title="otagrum.MixedHistogramUserDefined.computeBilateralConfidenceIntervalWithMarginalProbability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeBilateralConfidenceIntervalWithMarginalProbability</span></code></a>(*args)</td>
 <td>Compute a bilateral confidence interval.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeCDF" title="otagrum.MixedHistogramUserDefined.computeCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeCDF</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeCDF" title="otagrum.MixedHistogramUserDefined.computeCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeCDF</span></code></a>(*args)</td>
 <td>Compute the cumulative distribution function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeCDFGradient" title="otagrum.MixedHistogramUserDefined.computeCDFGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeCDFGradient</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeCDFGradient" title="otagrum.MixedHistogramUserDefined.computeCDFGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeCDFGradient</span></code></a>(*args)</td>
 <td>Compute the gradient of the cumulative distribution function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeCharacteristicFunction" title="otagrum.MixedHistogramUserDefined.computeCharacteristicFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeCharacteristicFunction</span></code></a>(x)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeCharacteristicFunction" title="otagrum.MixedHistogramUserDefined.computeCharacteristicFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeCharacteristicFunction</span></code></a>(x)</td>
 <td>Compute the characteristic function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeComplementaryCDF" title="otagrum.MixedHistogramUserDefined.computeComplementaryCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeComplementaryCDF</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeComplementaryCDF" title="otagrum.MixedHistogramUserDefined.computeComplementaryCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeComplementaryCDF</span></code></a>(*args)</td>
 <td>Compute the complementary cumulative distribution function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeConditionalCDF" title="otagrum.MixedHistogramUserDefined.computeConditionalCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeConditionalCDF</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeConditionalCDF" title="otagrum.MixedHistogramUserDefined.computeConditionalCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeConditionalCDF</span></code></a>(*args)</td>
 <td>Compute the conditional cumulative distribution function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeConditionalDDF" title="otagrum.MixedHistogramUserDefined.computeConditionalDDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeConditionalDDF</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeConditionalDDF" title="otagrum.MixedHistogramUserDefined.computeConditionalDDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeConditionalDDF</span></code></a>(*args)</td>
 <td>Compute the conditional derivative density function of the last component.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeConditionalPDF" title="otagrum.MixedHistogramUserDefined.computeConditionalPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeConditionalPDF</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeConditionalPDF" title="otagrum.MixedHistogramUserDefined.computeConditionalPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeConditionalPDF</span></code></a>(*args)</td>
 <td>Compute the conditional probability density function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeConditionalQuantile" title="otagrum.MixedHistogramUserDefined.computeConditionalQuantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeConditionalQuantile</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeConditionalQuantile" title="otagrum.MixedHistogramUserDefined.computeConditionalQuantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeConditionalQuantile</span></code></a>(*args)</td>
 <td>Compute the conditional quantile function of the last component.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeDDF" title="otagrum.MixedHistogramUserDefined.computeDDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeDDF</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeDDF" title="otagrum.MixedHistogramUserDefined.computeDDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeDDF</span></code></a>(*args)</td>
 <td>Compute the derivative density function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeDensityGenerator" title="otagrum.MixedHistogramUserDefined.computeDensityGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeDensityGenerator</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeDensityGenerator" title="otagrum.MixedHistogramUserDefined.computeDensityGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeDensityGenerator</span></code></a>(*args)</td>
 <td>Compute the probability density function of the characteristic generator.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeDensityGeneratorDerivative" title="otagrum.MixedHistogramUserDefined.computeDensityGeneratorDerivative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeDensityGeneratorDerivative</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeDensityGeneratorDerivative" title="otagrum.MixedHistogramUserDefined.computeDensityGeneratorDerivative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeDensityGeneratorDerivative</span></code></a>(*args)</td>
 <td>Compute the first-order derivative of the probability density function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeDensityGeneratorSecondDerivative" title="otagrum.MixedHistogramUserDefined.computeDensityGeneratorSecondDerivative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeDensityGeneratorSecondDerivative</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeDensityGeneratorSecondDerivative" title="otagrum.MixedHistogramUserDefined.computeDensityGeneratorSecondDerivative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeDensityGeneratorSecondDerivative</span></code></a>(*args)</td>
 <td>Compute the second-order derivative of the probability density function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeEntropy" title="otagrum.MixedHistogramUserDefined.computeEntropy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeEntropy</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeEntropy" title="otagrum.MixedHistogramUserDefined.computeEntropy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeEntropy</span></code></a>()</td>
 <td>Compute the entropy of the distribution.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeGeneratingFunction" title="otagrum.MixedHistogramUserDefined.computeGeneratingFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeGeneratingFunction</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeGeneratingFunction" title="otagrum.MixedHistogramUserDefined.computeGeneratingFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeGeneratingFunction</span></code></a>(*args)</td>
 <td>Compute the probability-generating function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeInverseSurvivalFunction" title="otagrum.MixedHistogramUserDefined.computeInverseSurvivalFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeInverseSurvivalFunction</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeInverseSurvivalFunction" title="otagrum.MixedHistogramUserDefined.computeInverseSurvivalFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeInverseSurvivalFunction</span></code></a>(*args)</td>
 <td>Compute the inverse survival function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeLogCharacteristicFunction" title="otagrum.MixedHistogramUserDefined.computeLogCharacteristicFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeLogCharacteristicFunction</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeLogCharacteristicFunction" title="otagrum.MixedHistogramUserDefined.computeLogCharacteristicFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeLogCharacteristicFunction</span></code></a>(*args)</td>
 <td>Compute the logarithm of the characteristic function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeLogGeneratingFunction" title="otagrum.MixedHistogramUserDefined.computeLogGeneratingFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeLogGeneratingFunction</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeLogGeneratingFunction" title="otagrum.MixedHistogramUserDefined.computeLogGeneratingFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeLogGeneratingFunction</span></code></a>(*args)</td>
 <td>Compute the logarithm of the probability-generating function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeLogPDF" title="otagrum.MixedHistogramUserDefined.computeLogPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeLogPDF</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeLogPDF" title="otagrum.MixedHistogramUserDefined.computeLogPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeLogPDF</span></code></a>(*args)</td>
 <td>Compute the logarithm of the probability density function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeLogPDFGradient" title="otagrum.MixedHistogramUserDefined.computeLogPDFGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeLogPDFGradient</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeLogPDFGradient" title="otagrum.MixedHistogramUserDefined.computeLogPDFGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeLogPDFGradient</span></code></a>(*args)</td>
 <td>Compute the gradient of the log probability density function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeMinimumVolumeInterval" title="otagrum.MixedHistogramUserDefined.computeMinimumVolumeInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeMinimumVolumeInterval</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeMinimumVolumeInterval" title="otagrum.MixedHistogramUserDefined.computeMinimumVolumeInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeMinimumVolumeInterval</span></code></a>(*args)</td>
 <td>Compute the confidence interval with minimum volume.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeMinimumVolumeIntervalWithMarginalProbability" title="otagrum.MixedHistogramUserDefined.computeMinimumVolumeIntervalWithMarginalProbability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeMinimumVolumeIntervalWithMarginalProbability</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeMinimumVolumeIntervalWithMarginalProbability" title="otagrum.MixedHistogramUserDefined.computeMinimumVolumeIntervalWithMarginalProbability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeMinimumVolumeIntervalWithMarginalProbability</span></code></a>(*args)</td>
 <td>Compute the confidence interval with minimum volume.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeMinimumVolumeLevelSet" title="otagrum.MixedHistogramUserDefined.computeMinimumVolumeLevelSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeMinimumVolumeLevelSet</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeMinimumVolumeLevelSet" title="otagrum.MixedHistogramUserDefined.computeMinimumVolumeLevelSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeMinimumVolumeLevelSet</span></code></a>(*args)</td>
 <td>Compute the confidence domain with minimum volume.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeMinimumVolumeLevelSetWithThreshold" title="otagrum.MixedHistogramUserDefined.computeMinimumVolumeLevelSetWithThreshold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeMinimumVolumeLevelSetWithThreshold</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeMinimumVolumeLevelSetWithThreshold" title="otagrum.MixedHistogramUserDefined.computeMinimumVolumeLevelSetWithThreshold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeMinimumVolumeLevelSetWithThreshold</span></code></a>(*args)</td>
 <td>Compute the confidence domain with minimum volume.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computePDF" title="otagrum.MixedHistogramUserDefined.computePDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computePDF</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computePDF" title="otagrum.MixedHistogramUserDefined.computePDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computePDF</span></code></a>(*args)</td>
 <td>Compute the probability density function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computePDFGradient" title="otagrum.MixedHistogramUserDefined.computePDFGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computePDFGradient</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computePDFGradient" title="otagrum.MixedHistogramUserDefined.computePDFGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computePDFGradient</span></code></a>(*args)</td>
 <td>Compute the gradient of the probability density function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeProbability" title="otagrum.MixedHistogramUserDefined.computeProbability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeProbability</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeProbability" title="otagrum.MixedHistogramUserDefined.computeProbability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeProbability</span></code></a>(*args)</td>
 <td>Compute the interval probability.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeQuantile" title="otagrum.MixedHistogramUserDefined.computeQuantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeQuantile</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeQuantile" title="otagrum.MixedHistogramUserDefined.computeQuantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeQuantile</span></code></a>(*args)</td>
 <td>Compute the quantile function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeRadialDistributionCDF" title="otagrum.MixedHistogramUserDefined.computeRadialDistributionCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeRadialDistributionCDF</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeRadialDistributionCDF" title="otagrum.MixedHistogramUserDefined.computeRadialDistributionCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeRadialDistributionCDF</span></code></a>(*args)</td>
 <td>Compute the cumulative distribution function of the squared radius.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeScalarQuantile" title="otagrum.MixedHistogramUserDefined.computeScalarQuantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeScalarQuantile</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeScalarQuantile" title="otagrum.MixedHistogramUserDefined.computeScalarQuantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeScalarQuantile</span></code></a>(*args)</td>
 <td>Compute the quantile function for univariate distributions.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeSurvivalFunction" title="otagrum.MixedHistogramUserDefined.computeSurvivalFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSurvivalFunction</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeSurvivalFunction" title="otagrum.MixedHistogramUserDefined.computeSurvivalFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSurvivalFunction</span></code></a>(*args)</td>
 <td>Compute the survival function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeUnilateralConfidenceInterval" title="otagrum.MixedHistogramUserDefined.computeUnilateralConfidenceInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeUnilateralConfidenceInterval</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeUnilateralConfidenceInterval" title="otagrum.MixedHistogramUserDefined.computeUnilateralConfidenceInterval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeUnilateralConfidenceInterval</span></code></a>(*args)</td>
 <td>Compute a unilateral confidence interval.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeUnilateralConfidenceIntervalWithMarginalProbability" title="otagrum.MixedHistogramUserDefined.computeUnilateralConfidenceIntervalWithMarginalProbability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeUnilateralConfidenceIntervalWithMarginalProbability</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.computeUnilateralConfidenceIntervalWithMarginalProbability" title="otagrum.MixedHistogramUserDefined.computeUnilateralConfidenceIntervalWithMarginalProbability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeUnilateralConfidenceIntervalWithMarginalProbability</span></code></a>(*args)</td>
 <td>Compute a unilateral confidence interval.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.cos" title="otagrum.MixedHistogramUserDefined.cos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cos</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.cos" title="otagrum.MixedHistogramUserDefined.cos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cos</span></code></a>()</td>
 <td>Transform distribution by cosine function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.cosh" title="otagrum.MixedHistogramUserDefined.cosh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cosh</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.cosh" title="otagrum.MixedHistogramUserDefined.cosh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cosh</span></code></a>()</td>
 <td>Transform distribution by cosh function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawCDF" title="otagrum.MixedHistogramUserDefined.drawCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawCDF</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawCDF" title="otagrum.MixedHistogramUserDefined.drawCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawCDF</span></code></a>(*args)</td>
 <td>Draw the cumulative distribution function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawLogPDF" title="otagrum.MixedHistogramUserDefined.drawLogPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawLogPDF</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawLogPDF" title="otagrum.MixedHistogramUserDefined.drawLogPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawLogPDF</span></code></a>(*args)</td>
 <td>Draw the graph or of iso-lines of log-probability density function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawMarginal1DCDF" title="otagrum.MixedHistogramUserDefined.drawMarginal1DCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawMarginal1DCDF</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawMarginal1DCDF" title="otagrum.MixedHistogramUserDefined.drawMarginal1DCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawMarginal1DCDF</span></code></a>(*args)</td>
 <td>Draw the cumulative distribution function of a margin.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawMarginal1DLogPDF" title="otagrum.MixedHistogramUserDefined.drawMarginal1DLogPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawMarginal1DLogPDF</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawMarginal1DLogPDF" title="otagrum.MixedHistogramUserDefined.drawMarginal1DLogPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawMarginal1DLogPDF</span></code></a>(*args)</td>
 <td>Draw the log-probability density function of a margin.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawMarginal1DPDF" title="otagrum.MixedHistogramUserDefined.drawMarginal1DPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawMarginal1DPDF</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawMarginal1DPDF" title="otagrum.MixedHistogramUserDefined.drawMarginal1DPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawMarginal1DPDF</span></code></a>(*args)</td>
 <td>Draw the probability density function of a margin.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawMarginal2DCDF" title="otagrum.MixedHistogramUserDefined.drawMarginal2DCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawMarginal2DCDF</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawMarginal2DCDF" title="otagrum.MixedHistogramUserDefined.drawMarginal2DCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawMarginal2DCDF</span></code></a>(*args)</td>
 <td>Draw the cumulative distribution function of a couple of margins.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawMarginal2DLogPDF" title="otagrum.MixedHistogramUserDefined.drawMarginal2DLogPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawMarginal2DLogPDF</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawMarginal2DLogPDF" title="otagrum.MixedHistogramUserDefined.drawMarginal2DLogPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawMarginal2DLogPDF</span></code></a>(*args)</td>
 <td>Draw the log-probability density function of a couple of margins.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawMarginal2DPDF" title="otagrum.MixedHistogramUserDefined.drawMarginal2DPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawMarginal2DPDF</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawMarginal2DPDF" title="otagrum.MixedHistogramUserDefined.drawMarginal2DPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawMarginal2DPDF</span></code></a>(*args)</td>
 <td>Draw the probability density function of a couple of margins.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawPDF" title="otagrum.MixedHistogramUserDefined.drawPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawPDF</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawPDF" title="otagrum.MixedHistogramUserDefined.drawPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawPDF</span></code></a>(*args)</td>
 <td>Draw the graph or of iso-lines of probability density function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawQuantile" title="otagrum.MixedHistogramUserDefined.drawQuantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawQuantile</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.drawQuantile" title="otagrum.MixedHistogramUserDefined.drawQuantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drawQuantile</span></code></a>(*args)</td>
 <td>Draw the quantile function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.exp" title="otagrum.MixedHistogramUserDefined.exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.exp" title="otagrum.MixedHistogramUserDefined.exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp</span></code></a>()</td>
 <td>Transform distribution by exponential function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getCDFEpsilon" title="otagrum.MixedHistogramUserDefined.getCDFEpsilon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCDFEpsilon</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getCDFEpsilon" title="otagrum.MixedHistogramUserDefined.getCDFEpsilon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCDFEpsilon</span></code></a>()</td>
 <td>Accessor to the CDF computation precision.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getCenteredMoment" title="otagrum.MixedHistogramUserDefined.getCenteredMoment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCenteredMoment</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getCenteredMoment" title="otagrum.MixedHistogramUserDefined.getCenteredMoment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCenteredMoment</span></code></a>(*args)</td>
 <td>Accessor to the componentwise centered moments.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getCholesky" title="otagrum.MixedHistogramUserDefined.getCholesky"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCholesky</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getCholesky" title="otagrum.MixedHistogramUserDefined.getCholesky"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCholesky</span></code></a>()</td>
 <td>Accessor to the Cholesky factor of the covariance matrix.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getClassName" title="otagrum.MixedHistogramUserDefined.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getClassName" title="otagrum.MixedHistogramUserDefined.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getCopula" title="otagrum.MixedHistogramUserDefined.getCopula"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCopula</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getCopula" title="otagrum.MixedHistogramUserDefined.getCopula"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCopula</span></code></a>()</td>
 <td>Accessor to the copula of the distribution.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getCorrelation" title="otagrum.MixedHistogramUserDefined.getCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCorrelation</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getCorrelation" title="otagrum.MixedHistogramUserDefined.getCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCorrelation</span></code></a>()</td>
 <td><strong>(ditch me?)</strong></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getCovariance" title="otagrum.MixedHistogramUserDefined.getCovariance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCovariance</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getCovariance" title="otagrum.MixedHistogramUserDefined.getCovariance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCovariance</span></code></a>()</td>
 <td>Accessor to the covariance matrix.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getDescription" title="otagrum.MixedHistogramUserDefined.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getDescription" title="otagrum.MixedHistogramUserDefined.getDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDescription</span></code></a>()</td>
 <td>Accessor to the componentwise description.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getDimension" title="otagrum.MixedHistogramUserDefined.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getDimension" title="otagrum.MixedHistogramUserDefined.getDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDimension</span></code></a>()</td>
 <td>Accessor to the dimension of the distribution.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getDispersionIndicator" title="otagrum.MixedHistogramUserDefined.getDispersionIndicator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDispersionIndicator</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getDispersionIndicator" title="otagrum.MixedHistogramUserDefined.getDispersionIndicator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDispersionIndicator</span></code></a>()</td>
 <td>Dispersion indicator accessor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getId" title="otagrum.MixedHistogramUserDefined.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getId" title="otagrum.MixedHistogramUserDefined.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getIntegrationNodesNumber" title="otagrum.MixedHistogramUserDefined.getIntegrationNodesNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getIntegrationNodesNumber</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getIntegrationNodesNumber" title="otagrum.MixedHistogramUserDefined.getIntegrationNodesNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getIntegrationNodesNumber</span></code></a>()</td>
 <td>Accessor to the number of Gauss integration points.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getInverseCholesky" title="otagrum.MixedHistogramUserDefined.getInverseCholesky"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInverseCholesky</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getInverseCholesky" title="otagrum.MixedHistogramUserDefined.getInverseCholesky"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInverseCholesky</span></code></a>()</td>
 <td>Accessor to the inverse Cholesky factor of the covariance matrix.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getInverseIsoProbabilisticTransformation" title="otagrum.MixedHistogramUserDefined.getInverseIsoProbabilisticTransformation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInverseIsoProbabilisticTransformation</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getInverseIsoProbabilisticTransformation" title="otagrum.MixedHistogramUserDefined.getInverseIsoProbabilisticTransformation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInverseIsoProbabilisticTransformation</span></code></a>()</td>
 <td>Accessor to the inverse iso-probabilistic transformation.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getIsoProbabilisticTransformation" title="otagrum.MixedHistogramUserDefined.getIsoProbabilisticTransformation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getIsoProbabilisticTransformation</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getIsoProbabilisticTransformation" title="otagrum.MixedHistogramUserDefined.getIsoProbabilisticTransformation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getIsoProbabilisticTransformation</span></code></a>()</td>
 <td>Accessor to the iso-probabilistic transformation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getKendallTau" title="otagrum.MixedHistogramUserDefined.getKendallTau"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getKendallTau</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getKendallTau" title="otagrum.MixedHistogramUserDefined.getKendallTau"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getKendallTau</span></code></a>()</td>
 <td>Accessor to the Kendall coefficients matrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getKind" title="otagrum.MixedHistogramUserDefined.getKind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getKind</span></code></a>()</td>
+<td>Kind accessor</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getKurtosis" title="otagrum.MixedHistogramUserDefined.getKurtosis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getKurtosis</span></code></a>()</td>
 <td>Accessor to the componentwise kurtosis.</td>
@@ -325,50 +349,56 @@
 <tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getProbabilities" title="otagrum.MixedHistogramUserDefined.getProbabilities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getProbabilities</span></code></a>()</td>
 <td>Accessor to the discrete probability levels.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getRange" title="otagrum.MixedHistogramUserDefined.getRange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRange</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getProbabilityTable" title="otagrum.MixedHistogramUserDefined.getProbabilityTable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getProbabilityTable</span></code></a>()</td>
+<td>Probability table accessor</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getRange" title="otagrum.MixedHistogramUserDefined.getRange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRange</span></code></a>()</td>
 <td>Accessor to the range of the distribution.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getRealization" title="otagrum.MixedHistogramUserDefined.getRealization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRealization</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getRealization" title="otagrum.MixedHistogramUserDefined.getRealization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRealization</span></code></a>()</td>
 <td>Accessor to a pseudo-random realization from the distribution.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getRoughness" title="otagrum.MixedHistogramUserDefined.getRoughness"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRoughness</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getRoughness" title="otagrum.MixedHistogramUserDefined.getRoughness"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getRoughness</span></code></a>()</td>
 <td>Accessor to roughness of the distribution.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getSample" title="otagrum.MixedHistogramUserDefined.getSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSample</span></code></a>(size)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getSample" title="otagrum.MixedHistogramUserDefined.getSample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSample</span></code></a>(size)</td>
 <td>Accessor to a pseudo-random sample from the distribution.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getShadowedId" title="otagrum.MixedHistogramUserDefined.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getShadowedId" title="otagrum.MixedHistogramUserDefined.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getShapeMatrix" title="otagrum.MixedHistogramUserDefined.getShapeMatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShapeMatrix</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getShapeMatrix" title="otagrum.MixedHistogramUserDefined.getShapeMatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShapeMatrix</span></code></a>()</td>
 <td>Accessor to the shape matrix of the underlying copula if it is elliptical.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getShiftedMoment" title="otagrum.MixedHistogramUserDefined.getShiftedMoment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShiftedMoment</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getShiftedMoment" title="otagrum.MixedHistogramUserDefined.getShiftedMoment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShiftedMoment</span></code></a>(*args)</td>
 <td>Accessor to the componentwise shifted moments.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getSingularities" title="otagrum.MixedHistogramUserDefined.getSingularities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSingularities</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getSingularities" title="otagrum.MixedHistogramUserDefined.getSingularities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSingularities</span></code></a>()</td>
 <td>Accessor to the singularities of the PDF function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getSkewness" title="otagrum.MixedHistogramUserDefined.getSkewness"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSkewness</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getSkewness" title="otagrum.MixedHistogramUserDefined.getSkewness"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSkewness</span></code></a>()</td>
 <td>Accessor to the componentwise skewness.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getSpearmanCorrelation" title="otagrum.MixedHistogramUserDefined.getSpearmanCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSpearmanCorrelation</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getSpearmanCorrelation" title="otagrum.MixedHistogramUserDefined.getSpearmanCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSpearmanCorrelation</span></code></a>()</td>
 <td>Accessor to the Spearman correlation matrix.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getStandardDeviation" title="otagrum.MixedHistogramUserDefined.getStandardDeviation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStandardDeviation</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getStandardDeviation" title="otagrum.MixedHistogramUserDefined.getStandardDeviation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStandardDeviation</span></code></a>()</td>
 <td>Accessor to the componentwise standard deviation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getStandardDistribution" title="otagrum.MixedHistogramUserDefined.getStandardDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStandardDistribution</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getStandardDistribution" title="otagrum.MixedHistogramUserDefined.getStandardDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStandardDistribution</span></code></a>()</td>
 <td>Accessor to the standard distribution.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getStandardMoment" title="otagrum.MixedHistogramUserDefined.getStandardMoment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStandardMoment</span></code></a>(n)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getStandardMoment" title="otagrum.MixedHistogramUserDefined.getStandardMoment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStandardMoment</span></code></a>(n)</td>
 <td>Accessor to the componentwise standard moments.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getStandardRepresentative" title="otagrum.MixedHistogramUserDefined.getStandardRepresentative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStandardRepresentative</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getStandardRepresentative" title="otagrum.MixedHistogramUserDefined.getStandardRepresentative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getStandardRepresentative</span></code></a>()</td>
 <td>Accessor to the standard representative distribution in the parametric family.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getSupport" title="otagrum.MixedHistogramUserDefined.getSupport"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSupport</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getSupport" title="otagrum.MixedHistogramUserDefined.getSupport"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSupport</span></code></a>(*args)</td>
 <td>Accessor to the support of the distribution.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getTicksCollection" title="otagrum.MixedHistogramUserDefined.getTicksCollection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTicksCollection</span></code></a>()</td>
+<td>Ticks accessor</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.getVisibility" title="otagrum.MixedHistogramUserDefined.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
@@ -415,67 +445,47 @@
 <tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.setIntegrationNodesNumber" title="otagrum.MixedHistogramUserDefined.setIntegrationNodesNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setIntegrationNodesNumber</span></code></a>(*args)</td>
 <td>Accessor to the number of Gauss integration points.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.setName" title="otagrum.MixedHistogramUserDefined.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.setKind" title="otagrum.MixedHistogramUserDefined.setKind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setKind</span></code></a>(kind)</td>
+<td>Kind accessor</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.setName" title="otagrum.MixedHistogramUserDefined.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(*args)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.setParameter" title="otagrum.MixedHistogramUserDefined.setParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameter</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.setParameter" title="otagrum.MixedHistogramUserDefined.setParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameter</span></code></a>(*args)</td>
 <td>Accessor to the parameter of the distribution.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.setParametersCollection" title="otagrum.MixedHistogramUserDefined.setParametersCollection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParametersCollection</span></code></a>(*args)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.setParametersCollection" title="otagrum.MixedHistogramUserDefined.setParametersCollection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParametersCollection</span></code></a>(*args)</td>
 <td>Accessor to the parameter of the distribution.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.setProbabilityTable" title="otagrum.MixedHistogramUserDefined.setProbabilityTable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setProbabilityTable</span></code></a>(probabilityTable)</td>
+<td>Probability table accessor</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.setShadowedId" title="otagrum.MixedHistogramUserDefined.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(*args)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.setVisibility" title="otagrum.MixedHistogramUserDefined.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.setTicksCollection" title="otagrum.MixedHistogramUserDefined.setTicksCollection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTicksCollection</span></code></a>(ticksCollection)</td>
+<td>Ticks accessor</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.setVisibility" title="otagrum.MixedHistogramUserDefined.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(*args)</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.sin" title="otagrum.MixedHistogramUserDefined.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.sin" title="otagrum.MixedHistogramUserDefined.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a>()</td>
 <td>Transform distribution by sine function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.sinh" title="otagrum.MixedHistogramUserDefined.sinh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sinh</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.sinh" title="otagrum.MixedHistogramUserDefined.sinh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sinh</span></code></a>()</td>
 <td>Transform distribution by sinh function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.sqr" title="otagrum.MixedHistogramUserDefined.sqr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqr</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.sqr" title="otagrum.MixedHistogramUserDefined.sqr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqr</span></code></a>()</td>
 <td>Transform distribution by square function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.sqrt" title="otagrum.MixedHistogramUserDefined.sqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqrt</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.sqrt" title="otagrum.MixedHistogramUserDefined.sqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqrt</span></code></a>()</td>
 <td>Transform distribution by square root function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.tan" title="otagrum.MixedHistogramUserDefined.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.tan" title="otagrum.MixedHistogramUserDefined.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a>()</td>
 <td>Transform distribution by tangent function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.tanh" title="otagrum.MixedHistogramUserDefined.tanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tanh</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#otagrum.MixedHistogramUserDefined.tanh" title="otagrum.MixedHistogramUserDefined.tanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tanh</span></code></a>()</td>
 <td>Transform distribution by tanh function.</td>
-</tr>
-</tbody>
-</table>
-<table border="1" class="docutils">
-<colgroup>
-<col width="70%" />
-<col width="30%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>asMixture</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>getKind</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>getProbabilityTable</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>getTicksCollection</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>setKind</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>setProbabilityTable</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>setTicksCollection</strong></td>
-<td>&#160;</td>
 </tr>
 </tbody>
 </table>
@@ -534,6 +544,25 @@
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>dist</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Distribution.html#openturns.Distribution" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt>
 <dd><p class="first last">The transformed distribution.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otagrum.MixedHistogramUserDefined.asMixture">
+<code class="descname">asMixture</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otagrum.MixedHistogramUserDefined.asMixture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Conversion as a Mixture</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>mixture</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Mixture.html#openturns.Mixture" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Mixture</span></code></a></span></dt>
+<dd><p class="first last">Mixture distribution</p>
 </dd>
 </dl>
 </td>
@@ -2973,6 +3002,25 @@ if:</p>
 </div></dd></dl>
 
 <dl class="method">
+<dt id="otagrum.MixedHistogramUserDefined.getKind">
+<code class="descname">getKind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otagrum.MixedHistogramUserDefined.getKind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Kind accessor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>kind</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of int</span></dt>
+<dd><p class="first last">0=discrete, 1=continuous</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="otagrum.MixedHistogramUserDefined.getKurtosis">
 <code class="descname">getKurtosis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otagrum.MixedHistogramUserDefined.getKurtosis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the componentwise kurtosis.</p>
@@ -3263,6 +3311,25 @@ Available only for 1-d distributions.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>probabilities</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Point.html#openturns.Point" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
 <dd><p class="first last">The probability levels of a discrete distribution.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otagrum.MixedHistogramUserDefined.getProbabilityTable">
+<code class="descname">getProbabilityTable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otagrum.MixedHistogramUserDefined.getProbabilityTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability table accessor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>probabilityTable</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">List of probabilities</p>
 </dd>
 </dl>
 </td>
@@ -3675,6 +3742,25 @@ transformation.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="otagrum.MixedHistogramUserDefined.getTicksCollection">
+<code class="descname">getTicksCollection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otagrum.MixedHistogramUserDefined.getTicksCollection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ticks accessor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ticksCollection</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of sequence of float</span></dt>
+<dd><p class="first last">ticksCollection</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="otagrum.MixedHistogramUserDefined.getVisibility">
 <code class="descname">getVisibility</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otagrum.MixedHistogramUserDefined.getVisibility" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s visibility state.</p>
@@ -3976,6 +4062,25 @@ function is of the form:</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="otagrum.MixedHistogramUserDefined.setKind">
+<code class="descname">setKind</code><span class="sig-paren">(</span><em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#otagrum.MixedHistogramUserDefined.setKind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Kind accessor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>kind</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of int</span></dt>
+<dd><p class="first last">0=discrete, 1=continuous</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="otagrum.MixedHistogramUserDefined.setName">
 <code class="descname">setName</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otagrum.MixedHistogramUserDefined.setName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s name.</p>
@@ -4033,6 +4138,25 @@ function is of the form:</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="otagrum.MixedHistogramUserDefined.setProbabilityTable">
+<code class="descname">setProbabilityTable</code><span class="sig-paren">(</span><em>probabilityTable</em><span class="sig-paren">)</span><a class="headerlink" href="#otagrum.MixedHistogramUserDefined.setProbabilityTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Probability table accessor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>probabilityTable</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">List of probabilities</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="otagrum.MixedHistogramUserDefined.setShadowedId">
 <code class="descname">setShadowedId</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otagrum.MixedHistogramUserDefined.setShadowedId" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s shadowed id.</p>
@@ -4043,6 +4167,25 @@ function is of the form:</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
 <dd><p class="first last">Internal unique identifier.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="otagrum.MixedHistogramUserDefined.setTicksCollection">
+<code class="descname">setTicksCollection</code><span class="sig-paren">(</span><em>ticksCollection</em><span class="sig-paren">)</span><a class="headerlink" href="#otagrum.MixedHistogramUserDefined.setTicksCollection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ticks accessor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ticksCollection</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of sequence of float</span></dt>
+<dd><p class="first last">ticksCollection</p>
 </dd>
 </dl>
 </td>
@@ -4195,11 +4338,11 @@ function is of the form:</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="otagrum.JunctionTree.html"
-                        title="previous chapter">JunctionTree</a></p>
+  <p class="topless"><a href="otagrum.ContinuousTTest.html"
+                        title="previous chapter">ContinuousTTest</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="otagrum.Utils.html"
-                        title="next chapter">Utils</a></p>
+  <p class="topless"><a href="otagrum.JunctionTree.html"
+                        title="next chapter">JunctionTree</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -4230,10 +4373,10 @@ function is of the form:</p>
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="otagrum.Utils.html" title="Utils"
+          <a href="otagrum.JunctionTree.html" title="JunctionTree"
              >next</a> |</li>
         <li class="right" >
-          <a href="otagrum.JunctionTree.html" title="JunctionTree"
+          <a href="otagrum.ContinuousTTest.html" title="ContinuousTTest"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">otagrum 0.2 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../user_manual.html" >API</a> &#187;</li> 
