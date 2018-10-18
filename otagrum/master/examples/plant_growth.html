@@ -1,0 +1,502 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Plant growth &#8212; otagrum 0.2 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Examples" href="examples.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Examples"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">otagrum 0.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="examples.html" accesskey="U">Examples</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 7ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="section" id="Plant-growth">
+<h1>Plant growth<a class="headerlink" href="#Plant-growth" title="Permalink to this headline">¶</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
+<span class="kn">import</span> <span class="nn">otagrum</span>
+<span class="kn">import</span> <span class="nn">pyAgrum</span> <span class="kn">as</span> <span class="nn">gum</span>
+<span class="kn">import</span> <span class="nn">pyAgrum.lib.notebook</span> <span class="kn">as</span> <span class="nn">gnb</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Create variables</span>
+<span class="n">light</span> <span class="o">=</span> <span class="n">gum</span><span class="o">.</span><span class="n">LabelizedVariable</span><span class="p">(</span><span class="s2">&quot;Light&quot;</span><span class="p">,</span> <span class="s2">&quot;quality of light&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">moisture</span> <span class="o">=</span> <span class="n">gum</span><span class="o">.</span><span class="n">LabelizedVariable</span><span class="p">(</span><span class="s2">&quot;Moisture&quot;</span><span class="p">,</span> <span class="s2">&quot;quantity of moisture&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">height</span> <span class="o">=</span> <span class="n">gum</span><span class="o">.</span><span class="n">DiscretizedVariable</span><span class="p">(</span><span class="s2">&quot;Height&quot;</span><span class="p">,</span> <span class="s2">&quot;plant growth&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">## Create labels and ticks</span>
+
+<span class="c1"># light has 2 attributes : Dim and Bright</span>
+<span class="n">light</span><span class="o">.</span><span class="n">addLabel</span><span class="p">(</span><span class="s2">&quot;Dim&quot;</span><span class="p">)</span>
+<span class="n">light</span><span class="o">.</span><span class="n">addLabel</span><span class="p">(</span><span class="s2">&quot;Bright&quot;</span><span class="p">)</span>
+<span class="n">lightSize</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">light</span><span class="o">.</span><span class="n">labels</span><span class="p">())</span>
+
+<span class="c1"># moisture has 2 attributes : Dry and Wet</span>
+<span class="n">moisture</span><span class="o">.</span><span class="n">addLabel</span><span class="p">(</span><span class="s2">&quot;Dry&quot;</span><span class="p">)</span>
+<span class="n">moisture</span><span class="o">.</span><span class="n">addLabel</span><span class="p">(</span><span class="s2">&quot;Wet&quot;</span><span class="p">)</span>
+<span class="n">moistureSize</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">moisture</span><span class="o">.</span><span class="n">labels</span><span class="p">())</span>
+
+<span class="c1"># height is a discretized variable</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">height</span><span class="o">.</span><span class="n">addTick</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># height has a conditional probability table</span>
+<span class="c1"># We give here its conditional distributions</span>
+
+<span class="c1"># distribution when Dim and Dry</span>
+<span class="n">heightWhenDimAndDry</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">)</span>
+<span class="c1"># distribution when Dim and Wet</span>
+<span class="n">heightWhenDimAndWet</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Triangular</span><span class="p">(</span><span class="mf">15.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="mf">50.0</span><span class="p">)</span>
+<span class="c1"># distribution when Bright and Dry</span>
+<span class="n">heightWhenBrightAndDry</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Triangular</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">)</span>
+<span class="c1"># distribution when Bright and Wet</span>
+<span class="n">heightWhenBrightAndWet</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="mf">90.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">## Create the net</span>
+<span class="n">bn</span> <span class="o">=</span> <span class="n">gum</span><span class="o">.</span><span class="n">BayesNet</span><span class="p">(</span><span class="s2">&quot;Plant Growth&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add variables</span>
+<span class="n">indexLight</span>    <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">light</span><span class="p">)</span>
+<span class="n">indexMoisture</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">moisture</span><span class="p">)</span>
+<span class="n">indexHeight</span>   <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
+
+<span class="c1"># Add arcs</span>
+<span class="n">bn</span><span class="o">.</span><span class="n">addArc</span><span class="p">(</span><span class="n">indexLight</span><span class="p">,</span> <span class="n">indexMoisture</span><span class="p">)</span>
+<span class="n">bn</span><span class="o">.</span><span class="n">addArc</span><span class="p">(</span><span class="n">indexLight</span><span class="p">,</span> <span class="n">indexHeight</span><span class="p">)</span>
+<span class="n">bn</span><span class="o">.</span><span class="n">addArc</span><span class="p">(</span><span class="n">indexMoisture</span><span class="p">,</span> <span class="n">indexHeight</span><span class="p">)</span>
+<span class="n">bn</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[45]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<svg height="188pt" viewBox="0.00 0.00 120.34 188.00" width="120pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" id="graph0" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>G</title>
+<!-- Light -->
+<g class="node" id="node1">
+<title>Light</title>
+<g id="a_node1"><a xlink:title="(0) Light">
+<ellipse cx="77.8962" cy="-162" fill="#444444" rx="29.795" ry="18" stroke="#000000"/>
+<text fill="#ffffff" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="77.8962" y="-158.3">Light</text>
+</a>
+</g>
+</g>
+<!-- Moisture -->
+<g class="node" id="node2">
+<title>Moisture</title>
+<g id="a_node2"><a xlink:title="(1) Moisture">
+<ellipse cx="42.8962" cy="-90" fill="#444444" rx="42.7926" ry="18" stroke="#000000"/>
+<text fill="#ffffff" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="42.8962" y="-86.3">Moisture</text>
+</a>
+</g>
+</g>
+<!-- Light&#45;&gt;Moisture -->
+<g class="edge" id="edge1">
+<title>Light-&gt;Moisture</title>
+<g id="a_edge1"><a xlink:title="(0, 1) : ">
+<path d="M69.4237,-144.5708C65.3996,-136.2927 60.4985,-126.2104 56.0091,-116.9752" fill="none" stroke="#000000"/>
+<polygon fill="#000000" points="59.0536,-115.2324 51.5338,-107.7689 52.758,-118.2928 59.0536,-115.2324" stroke="#000000"/>
+</a>
+</g>
+</g>
+<!-- Height -->
+<g class="node" id="node3">
+<title>Height</title>
+<g id="a_node3"><a xlink:title="(2) Height">
+<ellipse cx="77.8962" cy="-18" fill="#444444" rx="34.394" ry="18" stroke="#000000"/>
+<text fill="#ffffff" font-family="Times,serif" font-size="14.00" text-anchor="middle" x="77.8962" y="-14.3">Height</text>
+</a>
+</g>
+</g>
+<!-- Light&#45;&gt;Height -->
+<g class="edge" id="edge2">
+<title>Light-&gt;Height</title>
+<g id="a_edge2"><a xlink:title="(0, 2) : ">
+<path d="M84.9629,-144.326C88.7351,-133.9346 92.9851,-120.4346 94.8962,-108 97.3267,-92.1857 97.3267,-87.8143 94.8962,-72 93.5375,-63.1598 90.9967,-53.7811 88.2859,-45.3637" fill="none" stroke="#000000"/>
+<polygon fill="#000000" points="91.5176,-43.9979 84.9629,-35.674 84.8962,-46.2687 91.5176,-43.9979" stroke="#000000"/>
+</a>
+</g>
+</g>
+<!-- Moisture&#45;&gt;Height -->
+<g class="edge" id="edge3">
+<title>Moisture-&gt;Height</title>
+<g id="a_edge3"><a xlink:title="(1, 2) : ">
+<path d="M51.5479,-72.2022C55.5744,-63.9192 60.449,-53.8915 64.905,-44.7248" fill="none" stroke="#000000"/>
+<polygon fill="#000000" points="68.1198,-46.1169 69.344,-35.593 61.8243,-43.0565 68.1198,-46.1169" stroke="#000000"/>
+</a>
+</g>
+</g>
+</g>
+</svg></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [46]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Create conditional probability tables</span>
+<span class="c1"># light conditional probability table</span>
+<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexLight</span><span class="p">)[:]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">]</span>
+
+<span class="c1"># moisture conditional probability table</span>
+<span class="c1"># We show the antecedents of moisture with the order in which they were declared</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;moisture Antecedents= &quot;</span><span class="p">,</span> <span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexMoisture</span><span class="p">)</span><span class="o">.</span><span class="n">var_names</span><span class="p">)</span>
+<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexMoisture</span><span class="p">)[{</span><span class="s1">&#39;Light&#39;</span> <span class="p">:</span> <span class="s1">&#39;Dim&#39;</span><span class="p">}]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]</span>
+<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexMoisture</span><span class="p">)[{</span><span class="s1">&#39;Light&#39;</span> <span class="p">:</span> <span class="s1">&#39;Bright&#39;</span><span class="p">}]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">]</span>
+
+<span class="c1"># We have to enter some OT distributions whithin aGrUM conditional probability tables</span>
+<span class="c1"># We show the antecedents of height with the order in which they were declared</span>
+<span class="c1"># The new class Utils from otagrum is able to marry OT distributions and Agrum conditional probability tables</span>
+<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)[{</span><span class="s1">&#39;Light&#39;</span><span class="p">:</span> <span class="s1">&#39;Dim&#39;</span><span class="p">,</span> <span class="s1">&#39;Moisture&#39;</span><span class="p">:</span> <span class="s1">&#39;Dry&#39;</span><span class="p">}]</span>   <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">Discretize</span><span class="p">(</span><span class="n">heightWhenDimAndDry</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)[{</span><span class="s1">&#39;Light&#39;</span><span class="p">:</span> <span class="s1">&#39;Bright&#39;</span><span class="p">,</span> <span class="s1">&#39;Moisture&#39;</span><span class="p">:</span> <span class="s1">&#39;Dry&#39;</span><span class="p">}]</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">Discretize</span><span class="p">(</span><span class="n">heightWhenBrightAndDry</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)[{</span><span class="s1">&#39;Light&#39;</span><span class="p">:</span> <span class="s1">&#39;Dim&#39;</span><span class="p">,</span> <span class="s1">&#39;Moisture&#39;</span><span class="p">:</span> <span class="s1">&#39;Wet&#39;</span><span class="p">}]</span>    <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">Discretize</span><span class="p">(</span><span class="n">heightWhenDimAndWet</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)[{</span><span class="s1">&#39;Light&#39;</span><span class="p">:</span> <span class="s1">&#39;Bright&#39;</span><span class="p">,</span> <span class="s1">&#39;Moisture&#39;</span><span class="p">:</span> <span class="s1">&#39;Wet&#39;</span><span class="p">}]</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">Discretize</span><span class="p">(</span><span class="n">heightWhenBrightAndWet</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+moisture Antecedents=  [&#39;Light&#39;, &#39;Moisture&#39;]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Get the distribution of the variable &quot;Height&quot;</span>
+<span class="n">hpo</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;vnames&#39;</span><span class="p">,</span> <span class="n">hpo</span><span class="o">.</span><span class="n">var_names</span><span class="p">)</span>
+<span class="c1">#pos = h_po.pos(height)</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">hpo_distribution</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">FromPotential</span><span class="p">(</span><span class="n">hpo</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;desc&#39;</span><span class="p">,</span> <span class="n">hpo_distribution</span><span class="o">.</span><span class="n">getDescription</span><span class="p">())</span>
+<span class="n">heightDistribution</span> <span class="o">=</span> <span class="n">hpo_distribution</span><span class="o">.</span><span class="n">getMarginal</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+<span class="n">heightDistribution</span><span class="o">.</span><span class="n">drawPDF</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+vnames [&#39;Moisture&#39;, &#39;Light&#39;, &#39;Height&#39;]
+desc [Height,Light,Moisture]
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[47]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_plant_growth_7_1.png" src="../_images/examples_plant_growth_7_1.png" />
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="examples.html"
+                        title="previous chapter">Examples</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/plant_growth.ipynb"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="examples.html" title="Examples"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">otagrum 0.2 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="examples.html" >Examples</a> &#187;</li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>
