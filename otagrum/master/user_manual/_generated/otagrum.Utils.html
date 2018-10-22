@@ -61,10 +61,10 @@
 <td>Discretize a continous distribution.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#otagrum.Utils.FromMarginal" title="otagrum.Utils.FromMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FromMarginal</span></code></a>(pot)</td>
-<td>Convert an 1-d probability table to distribution.</td>
+<td>Convert an 1-d probability table to a distribution.</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#otagrum.Utils.FromPotential" title="otagrum.Utils.FromPotential"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FromPotential</span></code></a>(pot)</td>
-<td>Convert an n-d probability table to distribution.</td>
+<td>Convert an n-d probability table to a distribution.</td>
 </tr>
 </tbody>
 </table>
@@ -81,7 +81,7 @@
 <p>Compute a probability table according to the domains defined
 in a discretized aGrUM variable and a continous OpenTURNS distribution.</p>
 <div class="math">
-<p><img src="../../_images/math/6501746eb3c642cf7b43bfa530a4b3e29e8e7fe0.svg" alt="p_i = \Prob{t_i &lt; X_i \leq t_i} \forall i \in [\![1, n]\!]"/></p>
+<p><img src="../../_images/math/cca6add4789400b6d72c39f091fe9afc9bc33404.svg" alt="\big\{ p_i \big\} = \big\{ \Prob{t_i &lt; X \leq t_{i+1}}, i \in \left[ 1, n \right] \big\}"/></p>
 </div><p>where <img class="math" src="../../_images/math/ead57bcaa340b0b669b2751d556651ca38efad18.svg" alt="$t_i$"/> are the aGrUM ticks, and <img class="math" src="../../_images/math/f433bd6da3773f1066ddbf35695382397a3588ee.svg" alt="$X$"/> is distributed according to the OpenTURNS distribution.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -121,7 +121,7 @@ in a discretized aGrUM variable and a continous OpenTURNS distribution.</p>
 <dl class="staticmethod">
 <dt id="otagrum.Utils.FromMarginal">
 <em class="property">static </em><code class="descname">FromMarginal</code><span class="sig-paren">(</span><em>pot</em><span class="sig-paren">)</span><a class="headerlink" href="#otagrum.Utils.FromMarginal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert an 1-d probability table to distribution.</p>
+<dd><p>Convert an 1-d probability table to a distribution.</p>
 <p>Converts an univariate aGrUM probability table to an OpenTURNS distribution,
 either <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Histogram.html#openturns.Histogram" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Histogram</span></code></a> or <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.UserDefined.html#openturns.UserDefined" title="(in OpenTURNS v.)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.UserDefined</span></code></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -159,7 +159,7 @@ either <a class="reference external" href="http://openturns.github.io/openturns/
 <dl class="staticmethod">
 <dt id="otagrum.Utils.FromPotential">
 <em class="property">static </em><code class="descname">FromPotential</code><span class="sig-paren">(</span><em>pot</em><span class="sig-paren">)</span><a class="headerlink" href="#otagrum.Utils.FromPotential" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert an n-d probability table to distribution.</p>
+<dd><p>Convert an n-d probability table to a distribution.</p>
 <p>Converts a multivariate aGrUM probability table to an OpenTURNS distribution,
 using <a class="reference internal" href="otagrum.MixedHistogramUserDefined.html#otagrum.MixedHistogramUserDefined" title="otagrum.MixedHistogramUserDefined"><code class="xref py py-class docutils literal notranslate"><span class="pre">MixedHistogramUserDefined</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
