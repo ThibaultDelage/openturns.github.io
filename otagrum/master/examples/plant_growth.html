@@ -278,7 +278,7 @@ air situations and <img class="math" src="../_images/math/40fcc8aeadd05df39fcc5b
 </ul>
 <p><img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/> is a continuous variable which has to be discretized for
 the Bayes Net use.</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [3]:
 </pre></div>
@@ -289,17 +289,24 @@ the Bayes Net use.</p>
 <span class="c1"># light has 2 attributes : Dim and Bright</span>
 <span class="n">light</span><span class="o">.</span><span class="n">addLabel</span><span class="p">(</span><span class="s2">&quot;Dim&quot;</span><span class="p">)</span>
 <span class="n">light</span><span class="o">.</span><span class="n">addLabel</span><span class="p">(</span><span class="s2">&quot;Bright&quot;</span><span class="p">)</span>
-<span class="n">lightSize</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">light</span><span class="o">.</span><span class="n">labels</span><span class="p">())</span>
 
 <span class="c1"># moisture has 2 attributes : Dry and Wet</span>
 <span class="n">moisture</span><span class="o">.</span><span class="n">addLabel</span><span class="p">(</span><span class="s2">&quot;Dry&quot;</span><span class="p">)</span>
 <span class="n">moisture</span><span class="o">.</span><span class="n">addLabel</span><span class="p">(</span><span class="s2">&quot;Wet&quot;</span><span class="p">)</span>
-<span class="n">moistureSize</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">moisture</span><span class="o">.</span><span class="n">labels</span><span class="p">())</span>
 
 <span class="c1"># height is a discretized variable</span>
-<span class="n">data</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-    <span class="n">height</span><span class="o">.</span><span class="n">addTick</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="p">[</span><span class="n">height</span><span class="o">.</span><span class="n">addTick</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
+<span class="n">height</span><span class="o">.</span><span class="n">domainSize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[3]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>14
 </pre></div>
 </div>
 </div>
@@ -473,10 +480,10 @@ follows a <img class="math" src="../_images/math/c0095e0e64a9afe3149e35d02d6d8bc
 <span class="c1"># We have to enter some OT distributions whithin aGrUM conditional probability tables</span>
 <span class="c1"># We show the antecedents of height with the order in which they were declared</span>
 <span class="c1"># The new class Utils from otagrum is able to marry OT distributions and Agrum conditional probability tables</span>
-<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)[{</span><span class="s1">&#39;Light&#39;</span><span class="p">:</span> <span class="s1">&#39;Dim&#39;</span><span class="p">,</span> <span class="s1">&#39;Moisture&#39;</span><span class="p">:</span> <span class="s1">&#39;Dry&#39;</span><span class="p">}]</span>   <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">Discretize</span><span class="p">(</span><span class="n">heightWhenDimAndDry</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)[{</span><span class="s1">&#39;Light&#39;</span><span class="p">:</span> <span class="s1">&#39;Bright&#39;</span><span class="p">,</span> <span class="s1">&#39;Moisture&#39;</span><span class="p">:</span> <span class="s1">&#39;Dry&#39;</span><span class="p">}]</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">Discretize</span><span class="p">(</span><span class="n">heightWhenBrightAndDry</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)[{</span><span class="s1">&#39;Light&#39;</span><span class="p">:</span> <span class="s1">&#39;Dim&#39;</span><span class="p">,</span> <span class="s1">&#39;Moisture&#39;</span><span class="p">:</span> <span class="s1">&#39;Wet&#39;</span><span class="p">}]</span>    <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">Discretize</span><span class="p">(</span><span class="n">heightWhenDimAndWet</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)[{</span><span class="s1">&#39;Light&#39;</span><span class="p">:</span> <span class="s1">&#39;Bright&#39;</span><span class="p">,</span> <span class="s1">&#39;Moisture&#39;</span><span class="p">:</span> <span class="s1">&#39;Wet&#39;</span><span class="p">}]</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">Discretize</span><span class="p">(</span><span class="n">heightWhenBrightAndWet</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)[{</span><span class="s1">&#39;Light&#39;</span><span class="p">:</span> <span class="s1">&#39;Dim&#39;</span><span class="p">,</span> <span class="s1">&#39;Moisture&#39;</span><span class="p">:</span> <span class="s1">&#39;Dry&#39;</span><span class="p">}]</span>   <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">Discretize</span><span class="p">(</span><span class="n">heightWhenDimAndDry</span><span class="p">,</span> <span class="n">height</span><span class="p">)[:]</span>
+<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)[{</span><span class="s1">&#39;Light&#39;</span><span class="p">:</span> <span class="s1">&#39;Bright&#39;</span><span class="p">,</span> <span class="s1">&#39;Moisture&#39;</span><span class="p">:</span> <span class="s1">&#39;Dry&#39;</span><span class="p">}]</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">Discretize</span><span class="p">(</span><span class="n">heightWhenBrightAndDry</span><span class="p">,</span> <span class="n">height</span><span class="p">)[:]</span>
+<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)[{</span><span class="s1">&#39;Light&#39;</span><span class="p">:</span> <span class="s1">&#39;Dim&#39;</span><span class="p">,</span> <span class="s1">&#39;Moisture&#39;</span><span class="p">:</span> <span class="s1">&#39;Wet&#39;</span><span class="p">}]</span>    <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">Discretize</span><span class="p">(</span><span class="n">heightWhenDimAndWet</span><span class="p">,</span> <span class="n">height</span><span class="p">)[:]</span>
+<span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)[{</span><span class="s1">&#39;Light&#39;</span><span class="p">:</span> <span class="s1">&#39;Bright&#39;</span><span class="p">,</span> <span class="s1">&#39;Moisture&#39;</span><span class="p">:</span> <span class="s1">&#39;Wet&#39;</span><span class="p">}]</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">Discretize</span><span class="p">(</span><span class="n">heightWhenBrightAndWet</span><span class="p">,</span> <span class="n">height</span><span class="p">)[:]</span>
 <span class="n">gnb</span><span class="o">.</span><span class="n">showPotential</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">cpt</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -485,7 +492,7 @@ follows a <img class="math" src="../_images/math/c0095e0e64a9afe3149e35d02d6d8bc
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<table><tr><th colspan='2'></th><th colspan='17' style='background-color:#AAAAAA'><center>Height</center></th></tr><tr><th style='background-color:#AAAAAA'><center>Light</center></th><th style='background-color:#AAAAAA'><center>Moisture</center></th><th style='background-color:#BBBBBB'><center>[0;10[</center></th><th style='background-color:#BBBBBB'><center>[10;20[</center></th><th style='background-color:#BBBBBB'><center>[20;30[</center></th><th style='background-color:#BBBBBB'><center>[30;40[</center></th><th style='background-color:#BBBBBB'><center>[40;50[</center></th><th style='background-color:#BBBBBB'><center>[50;60[</center></th><th style='background-color:#BBBBBB'><center>[60;70[</center></th><th style='background-color:#BBBBBB'><center>[70;80[</center></th><th style='background-color:#BBBBBB'><center>[80;90[</center></th><th style='background-color:#BBBBBB'><center>[90;100[</center></th><th style='background-color:#BBBBBB'><center>[100;110[</center></th><th style='background-color:#BBBBBB'><center>[110;120[</center></th><th style='background-color:#BBBBBB'><center>[120;130[</center></th><th style='background-color:#BBBBBB'><center>[130;140[</center></th><th style='background-color:#BBBBBB'><center>[140;150[</center></th><th style='background-color:#BBBBBB'><center>[150;160[</center></th><th style='background-color:#BBBBBB'><center>[160;170]</center></th></tr><tr><th style='background-color:#BBBBBB'><center>Dim</center></th><th style='background-color:#BBBBBB;' rowspan = '2'><center>Dry</center></th><td style='background-color:#bfbf64;text-align:right;'>0.5000</td><td style='background-color:#bfbf64;text-align:right;'>0.5000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td></tr><tr><th style='background-color:#BBBBBB'><center>Bright</center></th><td style='background-color:#e29b64;text-align:right;'>0.2222</td><td style='background-color:#b7c664;text-align:right;'>0.5556</td><td style='background-color:#e29b64;text-align:right;'>0.2222</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td></tr><tr><th style='background-color:#BBBBBB'><center>Dim</center></th><th style='background-color:#BBBBBB;' rowspan = '2'><center>Wet</center></th><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#f88564;text-align:right;'>0.0476</td><td style='background-color:#ceaf64;text-align:right;'>0.3810</td><td style='background-color:#c8b564;text-align:right;'>0.4286</td><td style='background-color:#ec9164;text-align:right;'>0.1429</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td></tr><tr><th style='background-color:#BBBBBB'><center>Bright</center></th><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0013</td><td style='background-color:#fc8164;text-align:right;'>0.0214</td><td style='background-color:#ed9064;text-align:right;'>0.1359</td><td style='background-color:#d3aa64;text-align:right;'>0.3413</td><td style='background-color:#d3aa64;text-align:right;'>0.3413</td><td style='background-color:#ed9064;text-align:right;'>0.1359</td><td style='background-color:#fc8164;text-align:right;'>0.0214</td><td style='background-color:#fe7f64;text-align:right;'>0.0013</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td></tr></table></div>
+<table><tr><th colspan='2'></th><th colspan='14' style='background-color:#AAAAAA'><center>Height</center></th></tr><tr><th style='background-color:#AAAAAA'><center>Light</center></th><th style='background-color:#AAAAAA'><center>Moisture</center></th><th style='background-color:#BBBBBB'><center>[0;10[</center></th><th style='background-color:#BBBBBB'><center>[10;20[</center></th><th style='background-color:#BBBBBB'><center>[20;30[</center></th><th style='background-color:#BBBBBB'><center>[30;40[</center></th><th style='background-color:#BBBBBB'><center>[40;50[</center></th><th style='background-color:#BBBBBB'><center>[50;60[</center></th><th style='background-color:#BBBBBB'><center>[60;70[</center></th><th style='background-color:#BBBBBB'><center>[70;80[</center></th><th style='background-color:#BBBBBB'><center>[80;90[</center></th><th style='background-color:#BBBBBB'><center>[90;100[</center></th><th style='background-color:#BBBBBB'><center>[100;110[</center></th><th style='background-color:#BBBBBB'><center>[110;120[</center></th><th style='background-color:#BBBBBB'><center>[120;130[</center></th><th style='background-color:#BBBBBB'><center>[130;140]</center></th></tr><tr><th style='background-color:#BBBBBB'><center>Dim</center></th><th style='background-color:#BBBBBB;' rowspan = '2'><center>Dry</center></th><td style='background-color:#bfbf64;text-align:right;'>0.5000</td><td style='background-color:#bfbf64;text-align:right;'>0.5000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td></tr><tr><th style='background-color:#BBBBBB'><center>Bright</center></th><td style='background-color:#e29b64;text-align:right;'>0.2222</td><td style='background-color:#b7c664;text-align:right;'>0.5556</td><td style='background-color:#e29b64;text-align:right;'>0.2222</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td></tr><tr><th style='background-color:#BBBBBB'><center>Dim</center></th><th style='background-color:#BBBBBB;' rowspan = '2'><center>Wet</center></th><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#f88564;text-align:right;'>0.0476</td><td style='background-color:#ceaf64;text-align:right;'>0.3810</td><td style='background-color:#c8b564;text-align:right;'>0.4286</td><td style='background-color:#ec9164;text-align:right;'>0.1429</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td></tr><tr><th style='background-color:#BBBBBB'><center>Bright</center></th><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0013</td><td style='background-color:#fc8164;text-align:right;'>0.0214</td><td style='background-color:#ed9064;text-align:right;'>0.1359</td><td style='background-color:#d3aa64;text-align:right;'>0.3413</td><td style='background-color:#d3aa64;text-align:right;'>0.3413</td><td style='background-color:#ed9064;text-align:right;'>0.1359</td><td style='background-color:#fc8164;text-align:right;'>0.0214</td><td style='background-color:#fe7f64;text-align:right;'>0.0013</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td></tr></table></div>
 </div>
 <p>We can study the plant growth variability in different situations like:</p>
 <ul class="simple">
@@ -500,16 +507,14 @@ net: <img class="math" src="../_images/math/95d9e309663368f4472bc3ce36da40f6ebf9
 </ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [20]:
+<span></span>In [8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Variability of the plant growth on my balcony</span>
 
 <span class="n">ie</span> <span class="o">=</span> <span class="n">gum</span><span class="o">.</span><span class="n">LazyPropagation</span><span class="p">(</span><span class="n">bn</span><span class="p">)</span>
-<span class="n">h_pot</span> <span class="o">=</span> <span class="n">ie</span><span class="o">.</span><span class="n">posterior</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)</span>
-
-<span class="n">h_dist</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">FromPotential</span><span class="p">(</span><span class="n">h_pot</span><span class="p">)</span>
+<span class="n">h_dist</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">FromMarginal</span><span class="p">(</span><span class="n">ie</span><span class="o">.</span><span class="n">posterior</span><span class="p">(</span><span class="s2">&quot;Height&quot;</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Probability (height &gt; 40cm) = &quot;</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">h_dist</span><span class="o">.</span><span class="n">computeCDF</span><span class="p">(</span><span class="mf">40.0</span><span class="p">))</span>
 <span class="n">h_dist</span><span class="o">.</span><span class="n">drawPDF</span><span class="p">()</span>
 </pre></div>
@@ -520,12 +525,12 @@ net: <img class="math" src="../_images/math/95d9e309663368f4472bc3ce36da40f6ebf9
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Probability (height &gt; 40cm) =  0.328571342575957
+Probability (height &gt; 40cm) =  0.32857134257593246
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[20]:
+<span></span>Out[8]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -534,7 +539,7 @@ Probability (height &gt; 40cm) =  0.328571342575957
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [24]:
+<span></span>In [9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -543,8 +548,7 @@ Probability (height &gt; 40cm) =  0.328571342575957
 <span class="n">ie</span> <span class="o">=</span> <span class="n">gum</span><span class="o">.</span><span class="n">LazyPropagation</span><span class="p">(</span><span class="n">bn</span><span class="p">)</span>
 <span class="n">ie</span><span class="o">.</span><span class="n">setEvidence</span><span class="p">({</span><span class="s1">&#39;Light&#39;</span><span class="p">:</span><span class="s1">&#39;Dim&#39;</span><span class="p">})</span>
 
-<span class="n">h_pot</span> <span class="o">=</span> <span class="n">ie</span><span class="o">.</span><span class="n">posterior</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)</span>
-<span class="n">h_dist_dim</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">FromPotential</span><span class="p">(</span><span class="n">h_pot</span><span class="p">)</span>
+<span class="n">h_dist_dim</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">FromMarginal</span><span class="p">(</span><span class="n">ie</span><span class="o">.</span><span class="n">posterior</span><span class="p">(</span><span class="s2">&quot;Height&quot;</span><span class="p">))</span>
 <span class="n">h_dist_dim</span><span class="o">.</span><span class="n">setDescription</span><span class="p">([</span><span class="s1">&#39;Height|Light=Dim&#39;</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Probability (height &gt; 40cm)|Light=Dim = &quot;</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">h_dist_dim</span><span class="o">.</span><span class="n">computeCDF</span><span class="p">(</span><span class="mf">40.0</span><span class="p">))</span>
 <span class="n">h_dist_dim</span><span class="o">.</span><span class="n">drawPDF</span><span class="p">()</span>
@@ -561,7 +565,7 @@ Probability (height &gt; 40cm)|Light=Dim =  0.11428571428571421
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[24]:
+<span></span>Out[9]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -570,17 +574,16 @@ Probability (height &gt; 40cm)|Light=Dim =  0.11428571428571421
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [45]:
+<span></span>In [10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Variability of the plant growth in my cellar</span>
+<span></span><span class="c1"># Variability of the plant growth when the atmosphere is very wet</span>
 
 <span class="n">ie</span> <span class="o">=</span> <span class="n">gum</span><span class="o">.</span><span class="n">LazyPropagation</span><span class="p">(</span><span class="n">bn</span><span class="p">)</span>
-<span class="c1">#ie.setEvidence({&#39;Moisture&#39;:&#39;Wet&#39;})</span>
+<span class="n">ie</span><span class="o">.</span><span class="n">setEvidence</span><span class="p">({</span><span class="s1">&#39;Moisture&#39;</span><span class="p">:</span><span class="s1">&#39;Wet&#39;</span><span class="p">})</span>
 
-<span class="n">h_pot</span> <span class="o">=</span> <span class="n">ie</span><span class="o">.</span><span class="n">posterior</span><span class="p">(</span><span class="n">indexHeight</span><span class="p">)</span>
-<span class="n">h_dist_wet</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">FromPotential</span><span class="p">(</span><span class="n">h_pot</span><span class="p">)</span>
+<span class="n">h_dist_wet</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">FromMarginal</span><span class="p">(</span><span class="n">ie</span><span class="o">.</span><span class="n">posterior</span><span class="p">(</span><span class="s2">&quot;Height&quot;</span><span class="p">))</span>
 <span class="n">h_dist_wet</span><span class="o">.</span><span class="n">setDescription</span><span class="p">([</span><span class="s1">&#39;Height|Moisture=Wet&#39;</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Probability (height &gt; 40cm)|Moisture=Wet = &quot;</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">h_dist_wet</span><span class="o">.</span><span class="n">computeCDF</span><span class="p">(</span><span class="mf">40.0</span><span class="p">))</span>
 <span class="n">h_dist_wet</span><span class="o">.</span><span class="n">drawPDF</span><span class="p">()</span>
@@ -592,12 +595,12 @@ Probability (height &gt; 40cm)|Light=Dim =  0.11428571428571421
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Probability (height &gt; 40cm)|Moisture=Wet =  0.328571342575957
+Probability (height &gt; 40cm)|Moisture=Wet =  0.6571426851518646
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[45]:
+<span></span>Out[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -606,14 +609,13 @@ Probability (height &gt; 40cm)|Moisture=Wet =  0.328571342575957
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [46]:
+<span></span>In [11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Get the distribution of the variable &quot;Light&quot;</span>
 
-<span class="n">l_pot</span> <span class="o">=</span> <span class="n">ie</span><span class="o">.</span><span class="n">posterior</span><span class="p">(</span><span class="n">indexLight</span><span class="p">)</span>
-<span class="n">l_dist_wet</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">FromPotential</span><span class="p">(</span><span class="n">l_pot</span><span class="p">)</span>
+<span class="n">l_dist_wet</span> <span class="o">=</span> <span class="n">otagrum</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">FromPotential</span><span class="p">(</span><span class="n">ie</span><span class="o">.</span><span class="n">posterior</span><span class="p">(</span><span class="s2">&quot;Light&quot;</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">l_dist_wet</span><span class="p">)</span>
 <span class="n">l_dist_wet</span><span class="o">.</span><span class="n">drawPDF</span><span class="p">()</span>
 </pre></div>
@@ -624,12 +626,12 @@ Probability (height &gt; 40cm)|Moisture=Wet =  0.328571342575957
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-UserDefined({x = [0], p = 0.25}, {x = [1], p = 0.75})
+UserDefined({x = [0], p = 0.4}, {x = [1], p = 0.6})
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[46]:
+<span></span>Out[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
