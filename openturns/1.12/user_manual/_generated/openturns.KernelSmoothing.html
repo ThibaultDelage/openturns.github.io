@@ -100,7 +100,7 @@
 <dl class="class">
 <dt id="openturns.KernelSmoothing">
 <em class="property">class </em><code class="descname">KernelSmoothing</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.KernelSmoothing" title="Permalink to this definition">¶</a></dt>
-<dd><p>Non parametric fitting technique with kernel smoothing.</p>
+<dd><p>Non parametric continuous distribution estimation by kernel smoothing.</p>
 <p>Refer to <a class="reference internal" href="../../theory/data_analysis/kernel_smoothing.html#kernel-smoothing"><span class="std std-ref">Kernel smoothing</span></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -126,8 +126,14 @@ By default, the correction is not provided.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The bining mecanism creates a regular grid of <em>binNumber</em> intervals: all the data falling in the same interval are regrouped and replaced by the central point of the interval, weighted by the number of data within the interval.</p>
-<p>When applied to multivariate samples, the kernel is the kernel product of the univariate distribution specified in the constructor.</p>
+<p>The binning mecanism creates a regular grid of <em>binNumber</em> intervals in each
+dimension, then the unit weight of each point is linearly affected to the vertices
+of the bin containing the point. See <a class="reference internal" href="../../bibliography.html#wand1994" id="id1">[Wand1994]</a> for the details.</p>
+<p>The boundary correction is available only in one dimension, and it is done using
+the mirroring technique. See the notes of the <em>setBoundingOption</em> method for the
+details.</p>
+<p>When applied to multivariate samples, the kernel is the kernel product of the
+univariate distribution specified in the constructor.</p>
 <p class="rubric">Examples</p>
 <p>Fit a distribution on data thanks to the kernel smoothing technique:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
@@ -166,59 +172,83 @@ By default, the correction is not provided.</p>
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.build" title="openturns.KernelSmoothing.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>(*args)</td>
 <td>Fit a kernel smoothing distribution on data.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.buildEstimator" title="openturns.KernelSmoothing.buildEstimator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildEstimator</span></code></a>(*args)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.buildAsKernelMixture" title="openturns.KernelSmoothing.buildAsKernelMixture"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildAsKernelMixture</span></code></a>(sample,&nbsp;bandwidth)</td>
+<td>Fit a kernel smoothing distribution on data.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.buildAsMixture" title="openturns.KernelSmoothing.buildAsMixture"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildAsMixture</span></code></a>(sample,&nbsp;bandwidth)</td>
+<td>Fit a kernel smoothing distribution on data.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.buildAsTruncatedDistribution" title="openturns.KernelSmoothing.buildAsTruncatedDistribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildAsTruncatedDistribution</span></code></a>(sample,&nbsp;bandwidth)</td>
+<td>Fit a kernel smoothing distribution on data.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.buildEstimator" title="openturns.KernelSmoothing.buildEstimator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buildEstimator</span></code></a>(*args)</td>
 <td>Build the distribution and the parameter distribution.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.computeMixedBandwidth" title="openturns.KernelSmoothing.computeMixedBandwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeMixedBandwidth</span></code></a>(sample)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.computeMixedBandwidth" title="openturns.KernelSmoothing.computeMixedBandwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeMixedBandwidth</span></code></a>(sample)</td>
 <td>Compute the bandwith according to a mixed rule.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.computePluginBandwidth" title="openturns.KernelSmoothing.computePluginBandwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computePluginBandwidth</span></code></a>(sample)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.computePluginBandwidth" title="openturns.KernelSmoothing.computePluginBandwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computePluginBandwidth</span></code></a>(sample)</td>
 <td>Compute the bandwith according to the plugin rule.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.computeSilvermanBandwidth" title="openturns.KernelSmoothing.computeSilvermanBandwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSilvermanBandwidth</span></code></a>(sample)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.computeSilvermanBandwidth" title="openturns.KernelSmoothing.computeSilvermanBandwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSilvermanBandwidth</span></code></a>(sample)</td>
 <td>Compute the bandwith according to the Silverman rule.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.getBandwidth" title="openturns.KernelSmoothing.getBandwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBandwidth</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.getBandwidth" title="openturns.KernelSmoothing.getBandwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBandwidth</span></code></a>()</td>
 <td>Accessor to the bandwith used in the kernel smoothing.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.getBootstrapSize" title="openturns.KernelSmoothing.getBootstrapSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBootstrapSize</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.getBootstrapSize" title="openturns.KernelSmoothing.getBootstrapSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getBootstrapSize</span></code></a>()</td>
 <td>Accessor to the bootstrap size.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.getClassName" title="openturns.KernelSmoothing.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.getClassName" title="openturns.KernelSmoothing.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.getId" title="openturns.KernelSmoothing.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.getId" title="openturns.KernelSmoothing.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.getKernel" title="openturns.KernelSmoothing.getKernel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getKernel</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.getKernel" title="openturns.KernelSmoothing.getKernel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getKernel</span></code></a>()</td>
 <td>Accessor to kernel used in the kernel smoothing.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.getName" title="openturns.KernelSmoothing.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.getName" title="openturns.KernelSmoothing.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.getShadowedId" title="openturns.KernelSmoothing.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.getShadowedId" title="openturns.KernelSmoothing.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.getVisibility" title="openturns.KernelSmoothing.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.getVisibility" title="openturns.KernelSmoothing.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.hasName" title="openturns.KernelSmoothing.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.hasName" title="openturns.KernelSmoothing.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.hasVisibleName" title="openturns.KernelSmoothing.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.hasVisibleName" title="openturns.KernelSmoothing.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.setBootstrapSize" title="openturns.KernelSmoothing.setBootstrapSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBootstrapSize</span></code></a>(bootstrapSize)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.setAutomaticLowerBound" title="openturns.KernelSmoothing.setAutomaticLowerBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAutomaticLowerBound</span></code></a>(automaticLowerBound)</td>
+<td>Accessor to the flag for an automatic selection of lower bound.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.setAutomaticUpperBound" title="openturns.KernelSmoothing.setAutomaticUpperBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAutomaticUpperBound</span></code></a>(automaticUpperBound)</td>
+<td>Accessor to the flag for an automatic selection of upper bound.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.setBootstrapSize" title="openturns.KernelSmoothing.setBootstrapSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBootstrapSize</span></code></a>(bootstrapSize)</td>
 <td>Accessor to the bootstrap size.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.setBoundaryCorrection" title="openturns.KernelSmoothing.setBoundaryCorrection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBoundaryCorrection</span></code></a>(boundaryCorrection)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.setBoundaryCorrection" title="openturns.KernelSmoothing.setBoundaryCorrection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBoundaryCorrection</span></code></a>(boundaryCorrection)</td>
 <td>Accessor to the boundary correction flag.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.setName" title="openturns.KernelSmoothing.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.setBoundingOption" title="openturns.KernelSmoothing.setBoundingOption"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setBoundingOption</span></code></a>(boundingOption)</td>
+<td>Accessor to the boundary correction option.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.setLowerBound" title="openturns.KernelSmoothing.setLowerBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setLowerBound</span></code></a>(lowerBound)</td>
+<td>Accessor to the lower bound for boundary correction.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.setName" title="openturns.KernelSmoothing.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.setShadowedId" title="openturns.KernelSmoothing.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.setShadowedId" title="openturns.KernelSmoothing.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.KernelSmoothing.setUpperBound" title="openturns.KernelSmoothing.setUpperBound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setUpperBound</span></code></a>(upperBound)</td>
+<td>Accessor to the upper bound for boundary correction.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.KernelSmoothing.setVisibility" title="openturns.KernelSmoothing.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
@@ -259,14 +289,19 @@ By default, the correction is not provided.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>According to the dimension of the data and the specified treatments, the type of the resulting distribution differs:</p>
+<p>According to the dimension of the data and the specified treatments, the resulting distribution differs.</p>
 <ul>
-<li><p class="first">In dimension 1:</p>
+<li><p class="first">If the sample is constant, a <a class="reference internal" href="openturns.Dirac.html#openturns.Dirac" title="openturns.Dirac"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dirac</span></code></a> distribution is built.</p>
+</li>
+<li><p class="first">If dimension &gt; 2 or if no treatment has been asked for, a <a class="reference internal" href="openturns.KernelMixture.html#openturns.KernelMixture" title="openturns.KernelMixture"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelMixture</span></code></a> is built by calling <em>buildAsKernelMixture</em>.</p>
+</li>
+<li><p class="first">If dimension = 1 and a boundary treatment has been asked for, a <a class="reference internal" href="openturns.TruncatedDistribution.html#openturns.TruncatedDistribution" title="openturns.TruncatedDistribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">TruncatedDistribution</span></code></a> is built by calling <em>buildAsTruncatedDistribution</em></p>
+</li>
+<li><p class="first">If dimension = 1 or 2 and no boundary treatment has been asked for, but a binning treatment has been asked for,</p>
 <blockquote>
 <div><ul class="simple">
-<li>if only the bining mecanism is activated, a <a class="reference internal" href="openturns.Mixture.html#openturns.Mixture" title="openturns.Mixture"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mixture</span></code></a> is produced (all the weights differ).</li>
-<li>if only the boundary correction is activated, a <a class="reference internal" href="openturns.TruncatedDistribution.html#openturns.TruncatedDistribution" title="openturns.TruncatedDistribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">TruncatedDistribution</span></code></a> is produced: the truncation of a <a class="reference internal" href="openturns.KernelMixture.html#openturns.KernelMixture" title="openturns.KernelMixture"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelMixture</span></code></a>  (all the weights are identical).</li>
-<li>if the bining mecanism and the boundary correction is activated, a <a class="reference internal" href="openturns.TruncatedDistribution.html#openturns.TruncatedDistribution" title="openturns.TruncatedDistribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">TruncatedDistribution</span></code></a> is produced: the truncation of a <a class="reference internal" href="openturns.Mixture.html#openturns.Mixture" title="openturns.Mixture"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mixture</span></code></a> (all the weights differ).</li>
+<li>If the sample size is greater than the bin number, then a <a class="reference internal" href="openturns.Mixture.html#openturns.Mixture" title="openturns.Mixture"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mixture</span></code></a> is built by calling <em>buildAsMixture</em></li>
+<li>Otherwise a <a class="reference internal" href="openturns.KernelMixture.html#openturns.KernelMixture" title="openturns.KernelMixture"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelMixture</span></code></a> is built by calling <em>buildAsKernelMixture</em></li>
 </ul>
 </div></blockquote>
 </li>
@@ -287,6 +322,120 @@ By default, the correction is not provided.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">fittedDistWithCorr</span><span class="o">.</span><span class="n">drawPDF</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">setColors</span><span class="p">([</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">setLegends</span><span class="p">([</span><span class="s1">&#39;Exp dist&#39;</span><span class="p">,</span> <span class="s1">&#39;No boundary corr&#39;</span><span class="p">,</span> <span class="s1">&#39;Boundary corr&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.KernelSmoothing.buildAsKernelMixture">
+<code class="descname">buildAsKernelMixture</code><span class="sig-paren">(</span><em>sample</em>, <em>bandwidth</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.KernelSmoothing.buildAsKernelMixture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit a kernel smoothing distribution on data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
+<dd><p class="first last">Data on which the distribution is fitted. Any dimension.</p>
+</dd>
+<dt><strong>bandwidth</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a>, optional</span></dt>
+<dd><p class="first last">Contains the bandwith in each direction.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fittdDist</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.KernelMixture.html#openturns.KernelMixture" title="openturns.KernelMixture"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelMixture</span></code></a></span></dt>
+<dd><p class="first last">The fitted distribution.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>It builds a <img class="math" src="../../_images/math/b575259551cdff49afb35a5e9255fee7d1ed7ea0.svg" alt="~openturns.KernelMixture"/> using the given data and bandwidth regardless of the binning or boundary treatment flags.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Exponential</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">smoother</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">KernelSmoothing</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kernelMixture</span> <span class="o">=</span> <span class="n">smoother</span><span class="o">.</span><span class="n">buildAsKernelMixture</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.KernelSmoothing.buildAsMixture">
+<code class="descname">buildAsMixture</code><span class="sig-paren">(</span><em>sample</em>, <em>bandwidth</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.KernelSmoothing.buildAsMixture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit a kernel smoothing distribution on data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
+<dd><p class="first last">Data on which the distribution is fitted. Any dimension.</p>
+</dd>
+<dt><strong>bandwidth</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a>, optional</span></dt>
+<dd><p class="first last">Contains the bandwith in each direction.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fittdDist</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.KernelMixture.html#openturns.KernelMixture" title="openturns.KernelMixture"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelMixture</span></code></a></span></dt>
+<dd><p class="first last">The fitted distribution.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>It builds a <img class="math" src="../../_images/math/6e6acae35304b995011b14a8399c6169731a6b8c.svg" alt="~openturns.Mixture"/> using the given bandwidth and a binning of the given data regardless of the bin number, the data size, the binning flag or boundary treatment flags. This method is available only for 1D or 2D samples.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Exponential</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">smoother</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">KernelSmoothing</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(),</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mixture</span> <span class="o">=</span> <span class="n">smoother</span><span class="o">.</span><span class="n">buildAsMixture</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.KernelSmoothing.buildAsTruncatedDistribution">
+<code class="descname">buildAsTruncatedDistribution</code><span class="sig-paren">(</span><em>sample</em>, <em>bandwidth</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.KernelSmoothing.buildAsTruncatedDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit a kernel smoothing distribution on data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>sample</strong> <span class="classifier-delimiter">:</span> <span class="classifier">2-d sequence of float</span></dt>
+<dd><p class="first last">Data on which the distribution is fitted. Any dimension.</p>
+</dd>
+<dt><strong>bandwidth</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a>, optional</span></dt>
+<dd><p class="first last">Contains the bandwith in each direction.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>fittdDist</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.KernelMixture.html#openturns.KernelMixture" title="openturns.KernelMixture"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelMixture</span></code></a></span></dt>
+<dd><p class="first last">The fitted distribution.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>It builds a <img class="math" src="../../_images/math/fcfbfb7580c62faaaff5f24c1ea219dfcaba0031.svg" alt="~openturns.TruncatedDistribution"/> using the given bandwidth and the given data regardless of the boundary treatment flags. A binning is done if asked for and if the sample size is greater than the bin number. Then, the corresponding <a class="reference internal" href="openturns.KernelMixture.html#openturns.KernelMixture" title="openturns.KernelMixture"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelMixture</span></code></a> if no binning, <a class="reference internal" href="openturns.Mixture.html#openturns.Mixture" title="openturns.Mixture"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mixture</span></code></a> otherwise, is truncated to the range of the sample.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Exponential</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">smoother</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">KernelSmoothing</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(),</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">truncated</span> <span class="o">=</span> <span class="n">smoother</span><span class="o">.</span><span class="n">buildAsTruncatedDistribution</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">])</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -603,6 +752,44 @@ By default, the correction is not provided.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.KernelSmoothing.setAutomaticLowerBound">
+<code class="descname">setAutomaticLowerBound</code><span class="sig-paren">(</span><em>automaticLowerBound</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.KernelSmoothing.setAutomaticLowerBound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the flag for an automatic selection of lower bound.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>automaticLowerBound</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Flag to tell if the user-defined lower bound has to be taken into account (value <em>False</em>) or if the minimum of the given sample has to be used (value <em>True</em>).</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.KernelSmoothing.setAutomaticUpperBound">
+<code class="descname">setAutomaticUpperBound</code><span class="sig-paren">(</span><em>automaticUpperBound</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.KernelSmoothing.setAutomaticUpperBound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the flag for an automatic selection of upper bound.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>automaticUpperBound</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Flag to tell if the user-defined upper bound has to be taken into account (value <em>False</em>) or if the maximum of the given sample has to be used (value <em>True</em>).</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.KernelSmoothing.setBootstrapSize">
 <code class="descname">setBootstrapSize</code><span class="sig-paren">(</span><em>bootstrapSize</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.KernelSmoothing.setBootstrapSize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the bootstrap size.</p>
@@ -641,6 +828,63 @@ By default, the correction is not provided.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="openturns.KernelSmoothing.setBoundingOption">
+<code class="descname">setBoundingOption</code><span class="sig-paren">(</span><em>boundingOption</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.KernelSmoothing.setBoundingOption" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the boundary correction option.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>boundingOption</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Select the boundary correction option, see notes.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The possible values for the bounding option are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>KernelSmoothing.NONE  or 0: no boundary correction</li>
+<li>KernelSmoothing.LOWER or 1: apply the boundary correction to the lower bound</li>
+<li>KernelSmoothing.UPPER or 2: apply the boundary correction to the upper bound</li>
+<li>KernelSmoothing.BOTH  or 3: apply the boundary correction to both bounds</li>
+</ul>
+</div></blockquote>
+<p>It applies only to 1D samples. Each bound can be defined by the user or computed
+automatically from the sample, see <em>setLowerBound</em>, <em>setUpperBound</em>,
+<em>setAutomaticLowerBound</em>, <em>setAutomaticUpperBound</em>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.KernelSmoothing.setLowerBound">
+<code class="descname">setLowerBound</code><span class="sig-paren">(</span><em>lowerBound</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.KernelSmoothing.setLowerBound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the lower bound for boundary correction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>lowerBound</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">A user-defined lower bound to take into account for boundary correction.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>This method automatically sets the <em>automaticLowerBound</em> flag to <em>False</em>.
+The given value will be taken into account only if <em>boundingOption</em> is set to
+either 1 or 3. If the algorithm is applied to a sample with a minimum value
+less than the user-defined lower bound and the <em>automaticLowerBound</em> is set to
+<em>False</em>, then an exception it raised.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="openturns.KernelSmoothing.setName">
 <code class="descname">setName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.KernelSmoothing.setName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the object’s name.</p>
@@ -676,6 +920,31 @@ By default, the correction is not provided.</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.KernelSmoothing.setUpperBound">
+<code class="descname">setUpperBound</code><span class="sig-paren">(</span><em>upperBound</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.KernelSmoothing.setUpperBound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the upper bound for boundary correction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>upperBound</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">A user-defined lower bound to take into account for boundary correction.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>This method automatically sets the <em>automaticLowerBound</em> flag to <em>False</em>.
+The given value will be taken into account only if <em>boundingOption</em> is set to
+either 1 or 3. If the algorithm is applied to a sample with a minimum value
+less than the user-defined lower bound and the <em>automaticLowerBound</em> is set to
+<em>False</em>, then an exception it raised.</p>
 </dd></dl>
 
 <dl class="method">
