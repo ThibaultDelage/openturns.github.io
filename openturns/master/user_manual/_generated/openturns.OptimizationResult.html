@@ -339,7 +339,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>absoluteErrorHistory</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">Value of the absolute error at each iteration of the solver.</p>
+<dd><p class="first last">Value of the absolute error at each function evaluation.</p>
 </dd>
 </dl>
 </td>
@@ -377,7 +377,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>constraintError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Constraint error, defined by <img class="math" src="../../_images/math/f075a94c1e54bb0fd1ad49c620138c1ee842f54d.svg" alt="\gamma_n=\|g(\vect{x}_n)\|_{\infty}"/> where <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c2015b0.svg" alt="\vect{x}_n"/> is the current approximation of the optimum and <img class="math" src="../../_images/math/f487d47f3f53fc6c6a3567ec99bf8077018c38b7.svg" alt="g"/> is the function that gather all the equality and inequality constraints.</p>
+<dd><p class="first last">Constraint error, defined by <img class="math" src="../../_images/math/f075a94c1e54bb0fd1ad49c620138c1ee842f54d.svg" alt="\gamma_n=\|g(\vect{x}_n)\|_{\infty}"/> where <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c2015b0.svg" alt="\vect{x}_n"/> is the current approximation of the optimum and <img class="math" src="../../_images/math/f487d47f3f53fc6c6a3567ec99bf8077018c38b7.svg" alt="g"/> is the function that gathers all the equality and inequality constraints (violated values only).</p>
 </dd>
 </dl>
 </td>
@@ -396,7 +396,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>constraintErrorHistory</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">Value of the constrainte error at each iteration of the solver.</p>
+<dd><p class="first last">Value of the constraint error at each function evaluation.</p>
 </dd>
 </dl>
 </td>
@@ -626,7 +626,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>relativeErrorHistory</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">Value of the relative error at each iteration of the solver.</p>
+<dd><p class="first last">Value of the relative error at each function evaluation.</p>
 </dd>
 </dl>
 </td>
@@ -645,7 +645,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>residualError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Residual error, defined by <img class="math" src="../../_images/math/683a4f65078328c00a6b959b6fbc5dc560f0caf6.svg" alt="\eta^r_n=\|\nabla\cL{\vect{x}_n}\|_{\infty}"/> where <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c2015b0.svg" alt="\vect{x}_n"/> is the current approximation of the optimum and <img class="math" src="../../_images/math/e3eee6420051982cb2ce914c9c45f151804073c4.svg" alt="\cL"/> is the Lagrangian of the problem.</p>
+<dd><p class="first last">Relative error, defined by <img class="math" src="../../_images/math/e4d52484412b0aeaf46478b0563861b8312ae66e.svg" alt="\epsilon^r_n=\frac{\|f(\vect{x}_{n+1})-f(\vect{x}_{n})\|}{\|f(\vect{x}_{n+1})\|}"/> if <img class="math" src="../../_images/math/b8fff91c2188b2121264ec113402bd0d176187b5.svg" alt="\|f(\vect{x}_{n+1})\|\neq 0"/>, else <img class="math" src="../../_images/math/4d05b478fdf93651e0b673b765259c447ef9ff51.svg" alt="\epsilon^r_n=-1"/>.</p>
 </dd>
 </dl>
 </td>
@@ -664,7 +664,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>residualErrorHistory</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">Value of the residual error at each iteration of the solver.</p>
+<dd><p class="first last">Value of the residual error at each function evaluation.</p>
 </dd>
 </dl>
 </td>
@@ -959,7 +959,7 @@
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/b069dbc76.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/1ea7f3ffe.
     </div>
   </body>
 </html>
