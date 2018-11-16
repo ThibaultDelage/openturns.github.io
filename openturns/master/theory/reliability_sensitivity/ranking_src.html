@@ -17,7 +17,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Uncertainty ranking: PCC" href="ranking_pcc.html" />
+    <link rel="next" title="Uncertainty ranking: SRRC" href="ranking_srrc.html" />
     <link rel="prev" title="Uncertainty ranking: Spearman’s correlation" href="ranking_spearman.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
@@ -48,7 +48,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="ranking_pcc.html" title="Uncertainty ranking: PCC"
+          <a href="ranking_srrc.html" title="Uncertainty ranking: SRRC"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="ranking_spearman.html" title="Uncertainty ranking: Spearman’s correlation"
@@ -65,8 +65,8 @@
   <p class="topless"><a href="ranking_spearman.html"
                         title="previous chapter">Uncertainty ranking: Spearman’s correlation</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="ranking_pcc.html"
-                        title="next chapter">Uncertainty ranking: PCC</a></p>
+  <p class="topless"><a href="ranking_srrc.html"
+                        title="next chapter">Uncertainty ranking: SRRC</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -99,8 +99,8 @@
 variable <img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050341880ed592b66.svg" alt="Y^j"/> which is being studied for uncertainty. Here we
 attempt to measure linear relationships that exist between <img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050341880ed592b66.svg" alt="Y^j"/>
 and the different components <img class="math" src="../../_images/math/9ca2297a9208cc5df7c70101c052869f6e010295.svg" alt="X^i"/>.</p>
-<p>The principle of the multiple linear regression model (see for more
-details) consists of attempting to find the function that links the
+<p>The principle of the multiple linear regression model consists in
+attempting to find the function that links the
 variable <img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050341880ed592b66.svg" alt="Y^j"/> to the <img class="math" src="../../_images/math/28878678a69034f7b4b48e695def87508f976cc8.svg" alt="n_x"/> variables
 <img class="math" src="../../_images/math/32584a70698b41ea0804c1b76e07a62cbc351ba3.svg" alt="X^1,\ldots,X^{n_X}"/> by means of a linear model:</p>
 <div class="math">
@@ -110,9 +110,9 @@ and standard deviation <img class="math" src="../../_images/math/5bed5c2aa5b7ef9
 input variables <img class="math" src="../../_images/math/9ca2297a9208cc5df7c70101c052869f6e010295.svg" alt="X^i"/>. If the random variables
 <img class="math" src="../../_images/math/32584a70698b41ea0804c1b76e07a62cbc351ba3.svg" alt="X^1,\ldots,X^{n_X}"/> are independent and with finite variance
 <img class="math" src="../../_images/math/d34e60ee1ca2fba48c6aa4b08c7c3da519262784.svg" alt="\Var{X^k} = (\sigma_k)^2"/>, the variance of <img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050341880ed592b66.svg" alt="Y^j"/> can be
-written as follows:</p>
+estimated as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/d4f626f38d2a2da6b9a02cfd71fca38d3cf833b1.svg" alt="\Var{Y^j} = \sum_{i=1}^n (a_i^j)^2 \Var{X^i} + (\sigma_{\varepsilon}^j)^2"/></p>
+<p><img src="../../_images/math/753975b6e95b4a1a5508213d1fdaf9bb9fb61142.svg" alt="\Var{Y^j} = \sum_{i=1}^n (a_i^j)^2 \Var{X^i}"/></p>
 </div><p>The estimators for the regression coefficients
 <img class="math" src="../../_images/math/20ce88bf7fbdb3a62b26ee0080361616cbbf1883.svg" alt="a_0^j,\ldots,a_{n_X}^j"/>, and the standard deviation
 <img class="math" src="../../_images/math/6e6756df4f8f86ca0714b4626ba2243b3695530c.svg" alt="\sigma^j"/> are obtained from a sample of
@@ -124,7 +124,7 @@ variance of <img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050
 <p><img src="../../_images/math/cf9468ff0e6b8a4101faaaf9c9831b0d419dc71d.svg" alt="C^j_k = \frac{\displaystyle (a_k^j)^2  \Var{X^k}}{ \Var{Y^j}}"/></p>
 </div><p>which is estimated by:</p>
 <div class="math">
-<p><img src="../../_images/math/9025325351c9646e102c43dd18a0b9dc8c538b7d.svg" alt="\widehat{C}^j_k = \frac{\displaystyle (\widehat{a}_k^j)^2 \widehat{\sigma}_k^2}{\displaystyle \sum_{i=1}^{n_X} (a_i^j)^2 \widehat{\sigma}_i^2 + (\widehat{\sigma}_{\varepsilon}^j)^2}"/></p>
+<p><img src="../../_images/math/1ec10c5103fba740a099ec9035529d59b49b08c3.svg" alt="\widehat{C}^j_k = \frac{\displaystyle (\widehat{a}_k^j)^2 \widehat{\sigma}_k^2}{\displaystyle \sum_{i=1}^{n_X} (a_i^j)^2 \widehat{\sigma}_i^2}"/></p>
 </div><p>where <img class="math" src="../../_images/math/b3a70e43f91ec408930e40f9d31ea94a2fc3f427.svg" alt="\widehat{\sigma}_i"/> describes the empirical standard
 deviation of the sample of the input variables. This estimated
 contribution is by definition between 0 and 1. The closer it is to 1,
@@ -169,7 +169,7 @@ variance quadratic which uses the term importance factor.</p>
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="ranking_pcc.html" title="Uncertainty ranking: PCC"
+          <a href="ranking_srrc.html" title="Uncertainty ranking: SRRC"
              >next</a> |</li>
         <li class="right" >
           <a href="ranking_spearman.html" title="Uncertainty ranking: Spearman’s correlation"
@@ -183,7 +183,7 @@ variance quadratic which uses the term importance factor.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/ed38e2a72.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/ea19b0d92.
     </div>
   </body>
 </html>
