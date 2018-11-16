@@ -49,6 +49,12 @@
 <dt id="otagrum.JunctionTreeBernsteinCopula">
 <em class="property">class </em><code class="descclassname">otagrum.</code><code class="descname">JunctionTreeBernsteinCopula</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#otagrum.JunctionTreeBernsteinCopula" title="Permalink to this definition">¶</a></dt>
 <dd><p>JunctionTreeBernsteinCopula distribution</p>
+<dl class="docutils">
+<dt>Available constructors:</dt>
+<dd><p class="first">JunctionTreeBernsteinCopula(<em>junctionTree, copulaSample, binNumber, isCopulaSample</em>)</p>
+<p class="last">JunctionTreeBernsteinCopula(<em>cliquesCollection, separatorsCollection, binNumber, isCopulaSample</em>)</p>
+</dd>
+</dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -96,6 +102,13 @@ It is based on a Bernstein estimation of each sub-copulas of the model.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pdf</span> <span class="o">=</span> <span class="n">copula</span><span class="o">.</span><span class="n">computePDF</span><span class="p">(</span><span class="n">realization</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Or, using the JunctionTree constructor:
+&gt;&gt;&gt; import pyAgrum as gum
+&gt;&gt;&gt; bn = gum.BayesNet.fastPrototype(‘0-&gt;1-&gt;2-&gt;3;1-&gt;4-&gt;3;4-&gt;5;6-&gt;5;7-&gt;5’)
+&gt;&gt;&gt; ie = gum.LazyPropagation(bn)
+&gt;&gt;&gt; jtagr = ie.junctionTree()
+&gt;&gt;&gt; jt = otagrum.JunctionTree(jtagr, bn.names())
+&gt;&gt;&gt; copula = otagrum.JunctionTreeBernsteinCopula(jt, sample, binNumber, False)</p>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
