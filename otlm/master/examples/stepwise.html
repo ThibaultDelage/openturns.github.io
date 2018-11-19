@@ -65,7 +65,7 @@
 <span class="c1"># Build a model Y~(X1+X2+X3+X4)^3+I(Xi)^2+I(Xi)^3</span>
 <span class="n">dim</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">getDimension</span><span class="p">()</span>
 <span class="n">enumerateFunction</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">EnumerateFunction</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
-<span class="n">factory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">OrthogonalProductPolynomialFactory</span><span class="p">([</span><span class="n">otlm</span><span class="o">.</span><span class="n">MonomialFactory</span><span class="p">()]</span><span class="o">*</span><span class="n">dim</span><span class="p">,</span> <span class="n">enumerateFunction</span><span class="p">)</span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">TensorizedUniVariateFunctionFactory</span><span class="p">([</span><span class="n">ot</span><span class="o">.</span><span class="n">MonomialFunctionFactory</span><span class="p">()]</span><span class="o">*</span><span class="n">dim</span><span class="p">,</span> <span class="n">enumerateFunction</span><span class="p">)</span>
 
 <span class="c1"># Build &#39;interactions&#39; as a list of list [a1,a2,a3,a4], and we will generate tensorized</span>
 <span class="c1"># polynomials x1^a1*x2^a2*x3^a3*x4^a4.</span>
