@@ -120,7 +120,7 @@ If the random variables <img class="math" src="../../_images/math/cbf85dbfab0605
 <img class="math" src="../../_images/math/f44a9140ae1567edaf37be70dee54a3806420b46.svg" alt="\Var{rX^k} = (\sigma_k)^2"/>, the variance of <img class="math" src="../../_images/math/509745ea72469c9ef6e940df15ed7789a2ec9835.svg" alt="rY^j"/> can be
 estimated as follows:</p>
 <div class="math">
-<p><img src="../../_images/math/3e27e691b069b7ccc204875c5d6df4e13c193d8a.svg" alt="\Var{rY^j} = \sum_{i=1}^n (a_i^j)^2 \Var{rX^i}"/></p>
+<p><img src="../../_images/math/7f48a2bbbc73a2dc92e9536c68084ec8a063646a.svg" alt="\Var{rY^j} = \sum_{i=1}^n (a_i^j)^2 \Var{rX^i} + (\sigma_{\varepsilon}^j)^2 = (\sigma^j)^2"/></p>
 </div><p>The estimators for the regression coefficients
 <img class="math" src="../../_images/math/20ce88bf7fbdb3a62b26ee0080361616cbbf1883.svg" alt="a_0^j,\ldots,a_{n_X}^j"/>, and the standard deviation
 <img class="math" src="../../_images/math/6e6756df4f8f86ca0714b4626ba2243b3695530c.svg" alt="\sigma^j"/> are obtained from a sample of <img class="math" src="../../_images/math/95061502278f9b91f204d0c701ed6955978fac82.svg" alt="(Y^j,X^1,\ldots,X^{n_X})"/>.
@@ -131,13 +131,10 @@ Uncertainty ranking by linear regression ranks the <img class="math" src="../../
 <p><img src="../../_images/math/4dcbcddbee2abf68ebecd90bac2dde7a18a07a64.svg" alt="C^j_k = \frac{\displaystyle (a_k^j)^2  \Var{rX^k}}{\Var{Y^j}}"/></p>
 </div><p>which is estimated by:</p>
 <div class="math">
-<p><img src="../../_images/math/1ec10c5103fba740a099ec9035529d59b49b08c3.svg" alt="\widehat{C}^j_k = \frac{\displaystyle (\widehat{a}_k^j)^2 \widehat{\sigma}_k^2}{\displaystyle \sum_{i=1}^{n_X} (a_i^j)^2 \widehat{\sigma}_i^2}"/></p>
+<p><img src="../../_images/math/944647d887f5f4e88202d39b439b2d79dc8c7660.svg" alt="\widehat{C}^j_k = \frac{\displaystyle (\widehat{a}_k^j)^2 \widehat{\sigma}_k^2}{\displaystyle (\widehat{\sigma^j})^2}"/></p>
 </div><p>where <img class="math" src="../../_images/math/b3a70e43f91ec408930e40f9d31ea94a2fc3f427.svg" alt="\widehat{\sigma}_i"/> describes the empirical standard deviation
-of the sample of the input variables. As we consider rank marginals, the marginal
-standard deviation is the same for all the input/output variables. Thus estimation simplifies:</p>
-<div class="math">
-<p><img src="../../_images/math/77751f7e586f87ac7d400f157507b4472b771cb9.svg" alt="\widehat{C}^j_k = \frac{\displaystyle (\widehat{a}_k^j)^2}{\displaystyle \sum_{i=1}^{n_X} (a_i^j)^2 }"/></p>
-</div><p>This estimated contribution is by definition between 0 and 1. The closer it is to 1,
+of the sample of the input variables. This estimated
+contribution is by definition between 0 and 1. The closer it is to 1,
 the greater the impact the variable <img class="math" src="../../_images/math/9ca2297a9208cc5df7c70101c052869f6e010295.svg" alt="X^i"/> has on the dispersion of <img class="math" src="../../_images/math/9cf341afc67b984ec6107aa050341880ed592b66.svg" alt="Y^j"/>.</p>
 <p>The contribution to the variance <img class="math" src="../../_images/math/c6889eafb1c3ef461ef035ad012c75536a40c6f6.svg" alt="C_i"/> is sometimes described in
 the literature as the “importance factor”, because of the similarity
@@ -192,7 +189,7 @@ variance quadratic which uses the term importance factor.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/4d6b9d39f.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/09cee7dc2.
     </div>
   </body>
 </html>
