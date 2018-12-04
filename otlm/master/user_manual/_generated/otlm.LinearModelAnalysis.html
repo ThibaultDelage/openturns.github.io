@@ -167,7 +167,7 @@ This number can be changed by modifying the ResourceMap key
 <td>Performs Anderson-Darling test to check Gaussian assumption of the model (null hypothesis).</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getNormalityTestResultChiSquared" title="otlm.LinearModelAnalysis.getNormalityTestResultChiSquared"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNormalityTestResultChiSquared</span></code></a>()</td>
-<td>Performs Pearson Chi-2 statistical test to check Gaussian assumption of the model</td>
+<td>Performs the Chi-Square statistical test to check Gaussian assumption of the model</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#otlm.LinearModelAnalysis.getNormalityTestResultKolmogorovSmirnov" title="otlm.LinearModelAnalysis.getNormalityTestResultKolmogorovSmirnov"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNormalityTestResultKolmogorovSmirnov</span></code></a>()</td>
 <td>Performs Kolmogorov test to check Gaussian assumption of the model (null hypothesis).</td>
@@ -327,7 +327,7 @@ This number can be changed by modifying the ResourceMap key
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>adjustedRSquared</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumericalScalar</span></code></span></dt>
+<dt><strong>adjustedRSquared</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd></dd>
 </dl>
 </td>
@@ -490,7 +490,7 @@ This number can be changed by modifying the ResourceMap key
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>fisherPValue</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumericalScalar</span></code></span></dt>
+<dt><strong>fisherPValue</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd></dd>
 </dl>
 </td>
@@ -508,7 +508,7 @@ This number can be changed by modifying the ResourceMap key
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>fisherScore</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumericalScalar</span></code></span></dt>
+<dt><strong>fisherScore</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd></dd>
 </dl>
 </td>
@@ -581,7 +581,7 @@ This number can be changed by modifying the ResourceMap key
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>linearModelResult</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearModelResult</span></code></span></dt>
+<dt><strong>linearModelResult</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="otlm.LinearModelResult.html#otlm.LinearModelResult" title="otlm.LinearModelResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearModelResult</span></code></a></span></dt>
 <dd><p class="first last">The  linear model result which had been passed to the constructor.</p>
 </dd>
 </dl>
@@ -635,7 +635,7 @@ It is accepted when p-value is low.</p>
 <dl class="method">
 <dt id="otlm.LinearModelAnalysis.getNormalityTestResultChiSquared">
 <code class="descname">getNormalityTestResultChiSquared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otlm.LinearModelAnalysis.getNormalityTestResultChiSquared" title="Permalink to this definition">¶</a></dt>
-<dd><p>Performs Pearson Chi-2 statistical test to check Gaussian assumption of the model</p>
+<dd><p>Performs the Chi-Square statistical test to check Gaussian assumption of the model</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -650,27 +650,10 @@ It is accepted when p-value is low.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>The Chi-Square test is a goodness of fit test which objective is to check the normality assumption (null hypothesis) of residuals (and thus the model).
-It is accepted when p-value is low.</p>
-<p>From a dataset <img class="math" src="../../_images/math/7b6f5b1d50c92e9e5d28c0ac226ddc09dbb328db.svg" alt="\epsilon=(\epsilon_1,...,\epsilon_k)"/> of size <img class="math" src="../../_images/math/8f4408114890b13b6581b4b843f42e79a65e6026.svg" alt="k"/> (residual set), we define <img class="math" src="../../_images/math/267da13b38d352c5a41f57479e90b8191e4a032a.svg" alt="nClasses"/> classes
-where <img class="math" src="../../_images/math/9dbd0bb398e1b1df47b09ffb74b5d13befac310c.svg" alt="nClasses := 2\ k^{\frac{2}{5}}"/>.</p>
-<p>Under the normality hypothesis, we compute cumulative function of the <img class="math" src="../../_images/math/1d4fb4b23e6113b430a00d3091a84736a35dcced.svg" alt="\epsilon"/> set (mean and standard
-deviation of the underlying normal distribution derived from the dataset). The interval <img class="math" src="../../_images/math/e4dc380d93b724aed5234b5b149c829af88a993d.svg" alt="[0, 1]"/> is then splitted
-onto <img class="math" src="../../_images/math/267da13b38d352c5a41f57479e90b8191e4a032a.svg" alt="nClasses"/> intervals.</p>
-<p>For the Chi-Square test, two major elements are to be considered:</p>
-<blockquote>
-<div><ul class="simple">
-<li><img class="math" src="../../_images/math/6e57caeeda0cb0df4da78c976edf2d64146fd8b5.svg" alt="C_{i}"/> is the number of counted observations in the class <img class="math" src="../../_images/math/38caed9f1ca123135271cd7d911e8588015432ed.svg" alt="i"/></li>
-<li><img class="math" src="../../_images/math/806272fc83e0c9dfda20ccf28604be01af9b6160.svg" alt="E_{i}"/> is the number of expected observations in the class <img class="math" src="../../_images/math/38caed9f1ca123135271cd7d911e8588015432ed.svg" alt="i"/></li>
-</ul>
-</div></blockquote>
-<p>Using the cumulative information, we count number of elements in each class (<img class="math" src="../../_images/math/6e57caeeda0cb0df4da78c976edf2d64146fd8b5.svg" alt="C_{i}"/>).
-Also, under the null hypothesis, the different classes are equiprobable ( <img class="math" src="../../_images/math/bf3876a3836172cc177773fac88511a88f233ccb.svg" alt="E_{i}\ =\ E\ =\frac{k}{nClasses}"/>.</p>
-<p>From the previous values per class, we compute the Pearson test statistic <img class="math" src="../../_images/math/c5870bd48f2bf081e48d3da7fc1f291779982ce0.svg" alt="P=\sum_{i=1}^{nClasses} \frac{C_{i} - E_{i})^{2}}{E_{i}}"/>.</p>
-<p>Finally, the p-value is computed thanks to a chi-square distribution with <img class="math" src="../../_images/math/b12763247ff52acb69c30755be9a77741b3de3f0.svg" alt="dof"/> degrees of freedom, where
-<img class="math" src="../../_images/math/b12763247ff52acb69c30755be9a77741b3de3f0.svg" alt="dof"/> is adjusted thanks to the boolean ResourceMap key (<code class="docutils literal notranslate"><span class="pre">LinearModelAnalysis-ChiSquareAdjust</span></code>).
-If key is set to <em>True</em>, degree of freedom is <img class="math" src="../../_images/math/c66dc371c2646b43415f2920f72db6a3a252b164.svg" alt="nClasses - 3"/>. Otherwise it is <img class="math" src="../../_images/math/30814ea0efe75f219957ceccf899569490b414d9.svg" alt="nClasses - 1"/>
-It is recommended to test with both <em>True</em> and <em>False</em> values.</p>
+<p>The Chi-Square test is a goodness of fit test which objective is to check the
+normality assumption (null hypothesis) of residuals (and thus the model).</p>
+<p>Usually, Chi-Square test applies for discrete distributions. Here we rely on
+the <code class="xref py py-class docutils literal notranslate"><span class="pre">FittingTest_ChiSquared</span></code> to check the normality.</p>
 </dd></dl>
 
 <dl class="method">
@@ -704,7 +687,7 @@ It is accepted when p-value is low.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>rSquared</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumericalScalar</span></code></span></dt>
+<dt><strong>rSquared</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
 <dd></dd>
 </dl>
 </td>
