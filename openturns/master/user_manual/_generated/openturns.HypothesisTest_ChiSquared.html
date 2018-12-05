@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="HypothesisTest_FullPearson" href="openturns.HypothesisTest_FullPearson.html" />
-    <link rel="prev" title="HypothesisTest_Smirnov" href="openturns.HypothesisTest_Smirnov.html" />
+    <link rel="prev" title="VisualTest_DrawQQplot" href="openturns.VisualTest_DrawQQplot.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -52,7 +52,7 @@
           <a href="openturns.HypothesisTest_FullPearson.html" title="HypothesisTest_FullPearson"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="openturns.HypothesisTest_Smirnov.html" title="HypothesisTest_Smirnov"
+          <a href="openturns.VisualTest_DrawQQplot.html" title="VisualTest_DrawQQplot"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
@@ -63,8 +63,8 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="openturns.HypothesisTest_Smirnov.html"
-                        title="previous chapter">HypothesisTest_Smirnov</a></p>
+  <p class="topless"><a href="openturns.VisualTest_DrawQQplot.html"
+                        title="previous chapter">VisualTest_DrawQQplot</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="openturns.HypothesisTest_FullPearson.html"
                         title="next chapter">HypothesisTest_FullPearson</a></p>
@@ -138,12 +138,12 @@
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ot</span><span class="o">.</span><span class="n">RandomGenerator</span><span class="o">.</span><span class="n">SetSeed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">distCol</span> <span class="o">=</span> <span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">(),</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">distCol</span> <span class="o">=</span> <span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">Poisson</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">ot</span><span class="o">.</span><span class="n">Binomial</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComposedDistribution</span><span class="p">(</span><span class="n">distCol</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">test_result</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">HypothesisTest</span><span class="o">.</span><span class="n">ChiSquared</span><span class="p">(</span><span class="n">sample</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">sample</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">test_result</span><span class="p">)</span>
-<span class="go">class=TestResult name=Unnamed type=TwoSampleChiSquared binaryQualityMeasure=true p-value threshold=0.05 p-value=0.237197 description=[]</span>
+<span class="go">class=TestResult name=Unnamed type=ChiSquared binaryQualityMeasure=true p-value threshold=0.05 p-value=0.855945 description=[]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -166,7 +166,7 @@
           <a href="openturns.HypothesisTest_FullPearson.html" title="HypothesisTest_FullPearson"
              >next</a> |</li>
         <li class="right" >
-          <a href="openturns.HypothesisTest_Smirnov.html" title="HypothesisTest_Smirnov"
+          <a href="openturns.VisualTest_DrawQQplot.html" title="VisualTest_DrawQQplot"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">OpenTURNS  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../contents.html" >Contents</a> &#187;</li>
@@ -177,7 +177,7 @@
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/09cee7dc2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/09d5e1001.
     </div>
   </body>
 </html>
