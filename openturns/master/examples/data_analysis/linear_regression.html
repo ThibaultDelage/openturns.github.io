@@ -296,7 +296,7 @@ two gaussian samples).</li>
 <span></span>In [1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 </pre></div>
@@ -307,7 +307,7 @@ two gaussian samples).</li>
 <span></span>In [2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Generate X,Y samples</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">Xsample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Triangular</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
@@ -320,7 +320,7 @@ two gaussian samples).</li>
 <span></span>In [3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Generate a particular scalar sampleX</span>
 <span class="n">particularXSample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Triangular</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
 </pre></div>
@@ -331,9 +331,9 @@ two gaussian samples).</li>
 <span></span>In [4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create the linear model from Y,X samples</span>
-<span class="n">linearRegressionModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LinearModelFactory</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">)</span>
+<span class="n">linearRegressionModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LinearModelFactory</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">)</span>
 
 <span class="c1"># Get the coefficients ai</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;coefficients of the linear regression model = &quot;</span><span class="p">,</span> <span class="n">linearRegressionModel</span><span class="o">.</span><span class="n">getRegression</span><span class="p">())</span>
@@ -350,8 +350,8 @@ two gaussian samples).</li>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 coefficients of the linear regression model =  [0.592409,2.98159]
-confidence intervals of the coefficients =  [0.470224, 0.714594]
-[2.95996, 3.00321]
+confidence intervals of the coefficients =  [0.714594, 0.470224]
+[3.00321, 2.95996]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -359,7 +359,7 @@ confidence intervals of the coefficients =  [0.470224, 0.714594]
 <span></span>In [5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Validate the model with a visual test</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">VisualTest</span><span class="o">.</span><span class="n">DrawLinearModel</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span> <span class="n">linearRegressionModel</span><span class="p">)</span>
 </pre></div>
@@ -379,7 +379,7 @@ confidence intervals of the coefficients =  [0.470224, 0.714594]
 <span></span>In [6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Draw the graph of the residual values</span>
 <span class="n">ot</span><span class="o">.</span><span class="n">VisualTest</span><span class="o">.</span><span class="n">DrawLinearModelResidual</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span> <span class="n">linearRegressionModel</span><span class="p">)</span>
 </pre></div>
@@ -399,9 +399,10 @@ confidence intervals of the coefficients =  [0.470224, 0.714594]
 <span></span>In [7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Check the nullity of the regression linear model coefficients</span>
-<span class="n">resultLinearModelFisher</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LinearModelTest</span><span class="o">.</span><span class="n">LinearModelFisher</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span> <span class="n">linearRegressionModel</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">)</span>
+<span class="n">resultLinearModelFisher</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LinearModelTest</span><span class="o">.</span><span class="n">LinearModelFisher</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span>
+                                                               <span class="n">linearRegressionModel</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Test Success ? &quot;</span><span class="p">,</span> <span class="n">resultLinearModelFisher</span><span class="o">.</span><span class="n">getBinaryQualityMeasure</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;p-value of the LinearModelFisher Test = &quot;</span><span class="p">,</span> <span class="n">resultLinearModelFisher</span><span class="o">.</span><span class="n">getPValue</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;p-value threshold = &quot;</span><span class="p">,</span> <span class="n">resultLinearModelFisher</span><span class="o">.</span><span class="n">getThreshold</span><span class="p">())</span>
@@ -415,7 +416,7 @@ confidence intervals of the coefficients =  [0.470224, 0.714594]
 <div class="highlight"><pre>
 Test Success ?  False
 p-value of the LinearModelFisher Test =  1.0
-p-value threshold =  0.09999999999999998
+p-value threshold =  0.1
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -423,9 +424,10 @@ p-value threshold =  0.09999999999999998
 <span></span>In [8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Check, under the hypothesis of a gaussian sample, if the mean of the residual is equal to zero</span>
-<span class="n">resultLinearModelResidualMean</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LinearModelTest</span><span class="o">.</span><span class="n">LinearModelResidualMean</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span> <span class="n">linearRegressionModel</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">)</span>
+<span class="n">resultLinearModelResidualMean</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LinearModelTest</span><span class="o">.</span><span class="n">LinearModelResidualMean</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span>
+                                                                           <span class="n">linearRegressionModel</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Test Success ? &quot;</span><span class="p">,</span> <span class="n">resultLinearModelResidualMean</span><span class="o">.</span><span class="n">getBinaryQualityMeasure</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;p-value of the LinearModelResidualMean Test = &quot;</span><span class="p">,</span> <span class="n">resultLinearModelResidualMean</span><span class="o">.</span><span class="n">getPValue</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;p-value threshold = &quot;</span><span class="p">,</span> <span class="n">resultLinearModelResidualMean</span><span class="o">.</span><span class="n">getThreshold</span><span class="p">())</span>
@@ -438,8 +440,8 @@ p-value threshold =  0.09999999999999998
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Test Success ?  True
-p-value of the LinearModelResidualMean Test =  0.9999999999989642
-p-value threshold =  0.09999999999999998
+p-value of the LinearModelResidualMean Test =  1.0
+p-value threshold =  0.1
 </pre></div></div>
 </div>
 </div>
@@ -471,7 +473,7 @@ p-value threshold =  0.09999999999999998
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/09d5e1001.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/426a33e4a.
     </div>
   </body>
 </html>

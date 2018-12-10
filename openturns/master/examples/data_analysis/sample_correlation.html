@@ -295,55 +295,11 @@ output sample Y and the corresponding inputs using various estimators:</p>
 </pre></div>
 </div>
 </div>
-<p>We define here a <code class="docutils literal notranslate"><span class="pre">plot</span></code> function. It helps to draw correlation
-coefficients.</p>
-<p>Indeed, the correlation coefficients do not necessarly sum to 1. Also
-they might be negative. Thus using <code class="docutils literal notranslate"><span class="pre">pie</span></code> plots is of non sense.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [2]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">plot_correlation_indices</span><span class="p">(</span><span class="n">correlation_indices</span><span class="p">,</span> <span class="n">input_description</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s2">&quot;Coefficients&quot;</span><span class="p">):</span>
-
-    <span class="n">dimension</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_description</span><span class="p">)</span>
-    <span class="n">graph</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="s2">&quot;inputs&quot;</span><span class="p">,</span> <span class="s2">&quot;coefficient value&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Define cloud</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">):</span>
-        <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mf">1.0</span>
-        <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">correlation_indices</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-
-    <span class="n">cloud</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Cloud</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;circle&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="p">)</span>
-    <span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cloud</span><span class="p">)</span>
-
-    <span class="c1"># Set Text Description</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">):</span>
-        <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">+</span> <span class="n">dimension</span> <span class="o">/</span> <span class="mf">20.0</span><span class="p">;</span>
-        <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">correlation_indices</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-
-    <span class="n">text</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">input_description</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">)</span>
-    <span class="n">text</span><span class="o">.</span><span class="n">setColor</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-    <span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
-    <span class="c1"># Set bounding box</span>
-    <span class="n">lowerBound</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">dimension</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">]</span>
-    <span class="n">descriptionMargin</span> <span class="o">=</span> <span class="mf">1.6</span> <span class="o">*</span> <span class="p">(</span><span class="n">dimension</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">dimension</span> <span class="o">+</span> <span class="mf">2.0</span><span class="p">)</span>
-    <span class="n">upperBound</span> <span class="o">=</span> <span class="p">[</span><span class="n">dimension</span> <span class="o">+</span> <span class="n">descriptionMargin</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">]</span>
-    <span class="n">graph</span><span class="o">.</span><span class="n">setBoundingBox</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Interval</span><span class="p">(</span><span class="n">lowerBound</span><span class="p">,</span> <span class="n">upperBound</span><span class="p">))</span>
-
-    <span class="n">graph</span><span class="o">.</span><span class="n">setLegendPosition</span><span class="p">(</span><span class="s2">&quot;topright&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">graph</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
 <p>To illustrate the usage of the method mentionned above, we define a set
 of X/Y data using the ususal <code class="docutils literal notranslate"><span class="pre">Ishigami</span></code> use-case.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [3]:
+<span></span>In [2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -366,7 +322,7 @@ of X/Y data using the ususal <code class="docutils literal notranslate"><span cl
 <p>We compute here <code class="docutils literal notranslate"><span class="pre">PCC</span></code> coefficients using the <code class="docutils literal notranslate"><span class="pre">CorrelationAnalysis</span></code></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [4]:
+<span></span>In [3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -385,21 +341,21 @@ of X/Y data using the ususal <code class="docutils literal notranslate"><span cl
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [5]:
+<span></span>In [4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_correlation_indices</span><span class="p">(</span><span class="n">pcc_indices</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s2">&quot;PCC coefficients&quot;</span><span class="p">,</span> <span class="s2">&quot;pcc&quot;</span><span class="p">)</span>
+<span></span><span class="n">ot</span><span class="o">.</span><span class="n">SobolIndicesAlgorithm</span><span class="o">.</span><span class="n">DrawCorrelationCoefficients</span><span class="p">(</span><span class="n">pcc_indices</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s2">&quot;PCC coefficients&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[5]:
+<span></span>Out[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_data_analysis_sample_correlation_10_0.png" src="../../_images/examples_data_analysis_sample_correlation_10_0.png" />
+<img alt="../../_images/examples_data_analysis_sample_correlation_8_0.png" src="../../_images/examples_data_analysis_sample_correlation_8_0.png" />
 </div>
 </div>
 </div>
@@ -408,7 +364,7 @@ of X/Y data using the ususal <code class="docutils literal notranslate"><span cl
 <p>We compute here <code class="docutils literal notranslate"><span class="pre">PRCC</span></code> coefficients using the <code class="docutils literal notranslate"><span class="pre">CorrelationAnalysis</span></code></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [6]:
+<span></span>In [5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -427,21 +383,21 @@ of X/Y data using the ususal <code class="docutils literal notranslate"><span cl
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [7]:
+<span></span>In [6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_correlation_indices</span><span class="p">(</span><span class="n">prcc_indices</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s2">&quot;PRCC coefficients&quot;</span><span class="p">,</span> <span class="s2">&quot;prcc&quot;</span><span class="p">)</span>
+<span></span><span class="n">ot</span><span class="o">.</span><span class="n">SobolIndicesAlgorithm</span><span class="o">.</span><span class="n">DrawCorrelationCoefficients</span><span class="p">(</span><span class="n">prcc_indices</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s2">&quot;PRCC coefficients&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[7]:
+<span></span>Out[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_data_analysis_sample_correlation_13_0.png" src="../../_images/examples_data_analysis_sample_correlation_13_0.png" />
+<img alt="../../_images/examples_data_analysis_sample_correlation_11_0.png" src="../../_images/examples_data_analysis_sample_correlation_11_0.png" />
 </div>
 </div>
 </div>
@@ -450,7 +406,7 @@ of X/Y data using the ususal <code class="docutils literal notranslate"><span cl
 <p>We compute here <code class="docutils literal notranslate"><span class="pre">SRC</span></code> coefficients using the <code class="docutils literal notranslate"><span class="pre">CorrelationAnalysis</span></code></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [8]:
+<span></span>In [7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -469,21 +425,21 @@ of X/Y data using the ususal <code class="docutils literal notranslate"><span cl
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [9]:
+<span></span>In [8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ot</span><span class="o">.</span><span class="n">SaltelliSensitivityAlgorithm</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">src_indices</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;SRC coefficients&#39;</span><span class="p">)</span>
+<span></span><span class="n">ot</span><span class="o">.</span><span class="n">SobolIndicesAlgorithm</span><span class="o">.</span><span class="n">DrawCorrelationCoefficients</span><span class="p">(</span><span class="n">src_indices</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;SRC coefficients&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[9]:
+<span></span>Out[8]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_data_analysis_sample_correlation_16_0.png" src="../../_images/examples_data_analysis_sample_correlation_16_0.png" />
+<img alt="../../_images/examples_data_analysis_sample_correlation_14_0.png" src="../../_images/examples_data_analysis_sample_correlation_14_0.png" />
 </div>
 </div>
 </div>
@@ -492,7 +448,7 @@ of X/Y data using the ususal <code class="docutils literal notranslate"><span cl
 <p>We compute here <code class="docutils literal notranslate"><span class="pre">SRRC</span></code> coefficients using the <code class="docutils literal notranslate"><span class="pre">CorrelationAnalysis</span></code></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [10]:
+<span></span>In [9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -511,21 +467,21 @@ of X/Y data using the ususal <code class="docutils literal notranslate"><span cl
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [11]:
+<span></span>In [10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ot</span><span class="o">.</span><span class="n">SaltelliSensitivityAlgorithm</span><span class="o">.</span><span class="n">DrawImportanceFactors</span><span class="p">(</span><span class="n">srrc_indices</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;SRRC coefficients&#39;</span><span class="p">)</span>
+<span></span><span class="n">ot</span><span class="o">.</span><span class="n">SobolIndicesAlgorithm</span><span class="o">.</span><span class="n">DrawCorrelationCoefficients</span><span class="p">(</span><span class="n">srrc_indices</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s1">&#39;SRRC coefficients&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[11]:
+<span></span>Out[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_data_analysis_sample_correlation_19_0.png" src="../../_images/examples_data_analysis_sample_correlation_19_0.png" />
+<img alt="../../_images/examples_data_analysis_sample_correlation_17_0.png" src="../../_images/examples_data_analysis_sample_correlation_17_0.png" />
 </div>
 </div>
 </div>
@@ -535,7 +491,7 @@ of X/Y data using the ususal <code class="docutils literal notranslate"><span cl
 <code class="docutils literal notranslate"><span class="pre">CorrelationAnalysis</span></code></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [12]:
+<span></span>In [11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -554,21 +510,23 @@ of X/Y data using the ususal <code class="docutils literal notranslate"><span cl
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [13]:
+<span></span>In [12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_correlation_indices</span><span class="p">(</span><span class="n">pearson_correlation</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s2">&quot;Pearson correlation coefficients&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$\rho$&quot;</span><span class="p">)</span>
+<span></span><span class="n">ot</span><span class="o">.</span><span class="n">SobolIndicesAlgorithm</span><span class="o">.</span><span class="n">DrawCorrelationCoefficients</span><span class="p">(</span><span class="n">pearson_correlation</span><span class="p">,</span>
+                                                     <span class="n">input_names</span><span class="p">,</span>
+                                                     <span class="s2">&quot;Pearson correlation coefficients&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[13]:
+<span></span>Out[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_data_analysis_sample_correlation_22_0.png" src="../../_images/examples_data_analysis_sample_correlation_22_0.png" />
+<img alt="../../_images/examples_data_analysis_sample_correlation_20_0.png" src="../../_images/examples_data_analysis_sample_correlation_20_0.png" />
 </div>
 </div>
 </div>
@@ -578,7 +536,7 @@ of X/Y data using the ususal <code class="docutils literal notranslate"><span cl
 <code class="docutils literal notranslate"><span class="pre">CorrelationAnalysis</span></code></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [14]:
+<span></span>In [13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
@@ -597,21 +555,23 @@ of X/Y data using the ususal <code class="docutils literal notranslate"><span cl
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [15]:
+<span></span>In [14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_correlation_indices</span><span class="p">(</span><span class="n">spearman_correlation</span><span class="p">,</span> <span class="n">input_names</span><span class="p">,</span> <span class="s2">&quot;Spearman correlation coefficients&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$\rho_S$&quot;</span><span class="p">)</span>
+<span></span><span class="n">ot</span><span class="o">.</span><span class="n">SobolIndicesAlgorithm</span><span class="o">.</span><span class="n">DrawCorrelationCoefficients</span><span class="p">(</span><span class="n">spearman_correlation</span><span class="p">,</span>
+                                                     <span class="n">input_names</span><span class="p">,</span>
+                                                     <span class="s2">&quot;Spearman correlation coefficients&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[15]:
+<span></span>Out[14]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/examples_data_analysis_sample_correlation_25_0.png" src="../../_images/examples_data_analysis_sample_correlation_25_0.png" />
+<img alt="../../_images/examples_data_analysis_sample_correlation_23_0.png" src="../../_images/examples_data_analysis_sample_correlation_23_0.png" />
 </div>
 </div>
 </div>
@@ -644,7 +604,7 @@ of X/Y data using the ususal <code class="docutils literal notranslate"><span cl
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/09d5e1001.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/426a33e4a.
     </div>
   </body>
 </html>
