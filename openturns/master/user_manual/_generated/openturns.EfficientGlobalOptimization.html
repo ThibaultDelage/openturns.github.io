@@ -553,7 +553,9 @@ and <img class="math" src="../../_images/math/680b60505e1e467f8bf21ebb5bb03363cb
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>maximumAbsoluteError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed absolute error.</p>
+<dd><p class="first last">Maximum allowed absolute error, where the absolute error is defined by
+<img class="math" src="../../_images/math/a2816f69e369c5637df13fb75b9f54ae5db8a6d6.svg" alt="\epsilon^a_n=\|\vect{x}_{n+1}-\vect{x}_n\|_{\infty}"/> where <img class="math" src="../../_images/math/8b10410351d6ce8b9951464dad26800e3a424946.svg" alt="\vect{x}_{n+1}"/>
+and <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c2015b0.svg" alt="\vect{x}_n"/> are two consecutive approximations of the optimum.</p>
 </dd>
 </dl>
 </td>
@@ -572,7 +574,8 @@ and <img class="math" src="../../_images/math/680b60505e1e467f8bf21ebb5bb03363cb
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>maximumConstraintError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed constraint error.</p>
+<dd><p class="first last">Maximum allowed constraint error, where the constraint error is defined by
+<img class="math" src="../../_images/math/f075a94c1e54bb0fd1ad49c620138c1ee842f54d.svg" alt="\gamma_n=\|g(\vect{x}_n)\|_{\infty}"/> where <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c2015b0.svg" alt="\vect{x}_n"/> is the current approximation of the optimum and <img class="math" src="../../_images/math/f487d47f3f53fc6c6a3567ec99bf8077018c38b7.svg" alt="g"/> is the function that gathers all the equality and inequality constraints (violated values only)</p>
 </dd>
 </dl>
 </td>
@@ -629,7 +632,9 @@ and <img class="math" src="../../_images/math/680b60505e1e467f8bf21ebb5bb03363cb
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>maximumRelativeError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed relative error.</p>
+<dd><p class="first last">Maximum allowed relative error, where the relative error is defined by
+<img class="math" src="../../_images/math/a8071324b860cb89937edb28236a8087303dcc2b.svg" alt="\epsilon^r_n=\epsilon^a_n/\|\vect{x}_{n+1}\|_{\infty}"/>
+if <img class="math" src="../../_images/math/d4f9afb99edd1e81538da8e4b10870eb6add7098.svg" alt="\|\vect{x}_{n+1}\|_{\infty}\neq 0"/>, else <img class="math" src="../../_images/math/4d05b478fdf93651e0b673b765259c447ef9ff51.svg" alt="\epsilon^r_n=-1"/>.</p>
 </dd>
 </dl>
 </td>
@@ -648,7 +653,9 @@ and <img class="math" src="../../_images/math/680b60505e1e467f8bf21ebb5bb03363cb
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>maximumResidualError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed residual error.</p>
+<dd><p class="first last">Maximum allowed residual error, where the residual error is defined by
+<img class="math" src="../../_images/math/e4d52484412b0aeaf46478b0563861b8312ae66e.svg" alt="\epsilon^r_n=\frac{\|f(\vect{x}_{n+1})-f(\vect{x}_{n})\|}{\|f(\vect{x}_{n+1})\|}"/>
+if <img class="math" src="../../_images/math/b8fff91c2188b2121264ec113402bd0d176187b5.svg" alt="\|f(\vect{x}_{n+1})\|\neq 0"/>, else <img class="math" src="../../_images/math/4d05b478fdf93651e0b673b765259c447ef9ff51.svg" alt="\epsilon^r_n=-1"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1009,7 +1016,9 @@ and <img class="math" src="../../_images/math/680b60505e1e467f8bf21ebb5bb03363cb
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>maximumAbsoluteError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed absolute error.</p>
+<dd><p class="first last">Maximum allowed absolute error, where the absolute error is defined by
+<img class="math" src="../../_images/math/a2816f69e369c5637df13fb75b9f54ae5db8a6d6.svg" alt="\epsilon^a_n=\|\vect{x}_{n+1}-\vect{x}_n\|_{\infty}"/> where <img class="math" src="../../_images/math/8b10410351d6ce8b9951464dad26800e3a424946.svg" alt="\vect{x}_{n+1}"/>
+and <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c2015b0.svg" alt="\vect{x}_n"/> are two consecutive approximations of the optimum.</p>
 </dd>
 </dl>
 </td>
@@ -1028,7 +1037,8 @@ and <img class="math" src="../../_images/math/680b60505e1e467f8bf21ebb5bb03363cb
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>maximumConstraintError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed constraint error.</p>
+<dd><p class="first last">Maximum allowed constraint error, where the constraint error is defined by
+<img class="math" src="../../_images/math/f075a94c1e54bb0fd1ad49c620138c1ee842f54d.svg" alt="\gamma_n=\|g(\vect{x}_n)\|_{\infty}"/> where <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c2015b0.svg" alt="\vect{x}_n"/> is the current approximation of the optimum and <img class="math" src="../../_images/math/f487d47f3f53fc6c6a3567ec99bf8077018c38b7.svg" alt="g"/> is the function that gathers all the equality and inequality constraints (violated values only)</p>
 </dd>
 </dl>
 </td>
@@ -1085,7 +1095,9 @@ and <img class="math" src="../../_images/math/680b60505e1e467f8bf21ebb5bb03363cb
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>maximumRelativeError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed relative error.</p>
+<dd><p class="first last">Maximum allowed relative error, where the relative error is defined by
+<img class="math" src="../../_images/math/a8071324b860cb89937edb28236a8087303dcc2b.svg" alt="\epsilon^r_n=\epsilon^a_n/\|\vect{x}_{n+1}\|_{\infty}"/>
+if <img class="math" src="../../_images/math/d4f9afb99edd1e81538da8e4b10870eb6add7098.svg" alt="\|\vect{x}_{n+1}\|_{\infty}\neq 0"/>, else <img class="math" src="../../_images/math/4d05b478fdf93651e0b673b765259c447ef9ff51.svg" alt="\epsilon^r_n=-1"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1103,8 +1115,9 @@ and <img class="math" src="../../_images/math/680b60505e1e467f8bf21ebb5bb03363cb
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>maximumResidualError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed residual error.</p>
+<dt><strong>Maximum allowed residual error, where the residual error is defined by</strong></dt>
+<dd><p class="first last"><img class="math" src="../../_images/math/e4d52484412b0aeaf46478b0563861b8312ae66e.svg" alt="\epsilon^r_n=\frac{\|f(\vect{x}_{n+1})-f(\vect{x}_{n})\|}{\|f(\vect{x}_{n+1})\|}"/>
+if <img class="math" src="../../_images/math/b8fff91c2188b2121264ec113402bd0d176187b5.svg" alt="\|f(\vect{x}_{n+1})\|\neq 0"/>, else <img class="math" src="../../_images/math/4d05b478fdf93651e0b673b765259c447ef9ff51.svg" alt="\epsilon^r_n=-1"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1263,6 +1276,7 @@ The default number can be tweaked with the
 <dt id="openturns.EfficientGlobalOptimization.setProgressCallback">
 <code class="descname">setProgressCallback</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.EfficientGlobalOptimization.setProgressCallback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set up a progress callback.</p>
+<p>Can be used to programmatically report the progress of an optimization.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1276,8 +1290,21 @@ The default number can be tweaked with the
 </tr>
 </tbody>
 </table>
-<p class="rubric">Notes</p>
-<p>May not be implemented by all solvers, refer to the solver documentation.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rosenbrock</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;(1-x1)^2+100*(x2-x1^2)^2&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">problem</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">OptimizationProblem</span><span class="p">(</span><span class="n">rosenbrock</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">OptimizationAlgorithm</span><span class="p">(</span><span class="n">problem</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span><span class="o">.</span><span class="n">setStartingPoint</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span><span class="o">.</span><span class="n">setMaximumResidualError</span><span class="p">(</span><span class="mf">1.e-3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span><span class="o">.</span><span class="n">setMaximumIterationNumber</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">report_progress</span><span class="p">(</span><span class="n">progress</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;-- progress=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">progress</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span><span class="o">.</span><span class="n">setProgressCallback</span><span class="p">(</span><span class="n">report_progress</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1341,6 +1368,7 @@ The default number can be tweaked with the
 <dt id="openturns.EfficientGlobalOptimization.setStopCallback">
 <code class="descname">setStopCallback</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.EfficientGlobalOptimization.setStopCallback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set up a stop callback.</p>
+<p>Can be used to programmatically stop an optimization.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1354,8 +1382,20 @@ The default number can be tweaked with the
 </tr>
 </tbody>
 </table>
-<p class="rubric">Notes</p>
-<p>May not be implemented by all solvers, refer to the solver documentation.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rosenbrock</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;(1-x1)^2+100*(x2-x1^2)^2&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">problem</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">OptimizationProblem</span><span class="p">(</span><span class="n">rosenbrock</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">OptimizationAlgorithm</span><span class="p">(</span><span class="n">problem</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span><span class="o">.</span><span class="n">setStartingPoint</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span><span class="o">.</span><span class="n">setMaximumResidualError</span><span class="p">(</span><span class="mf">1.e-3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span><span class="o">.</span><span class="n">setMaximumIterationNumber</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">ask_stop</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span><span class="o">.</span><span class="n">setStopCallback</span><span class="p">(</span><span class="n">ask_stop</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solver</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1433,7 +1473,7 @@ The default number can be tweaked with the
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/afcb18121.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/95ee67e99.
     </div>
   </body>
 </html>
