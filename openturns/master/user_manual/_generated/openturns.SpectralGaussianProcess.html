@@ -104,9 +104,8 @@
 <em class="property">class </em><code class="descname">SpectralGaussianProcess</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.SpectralGaussianProcess" title="Permalink to this definition">¶</a></dt>
 <dd><p>Spectral Gaussian process.</p>
 <dl class="docutils">
-<dt>Available constructors:</dt>
-<dd><p class="first">SpectralGaussianProcess(<em>spectralModel, timeGrid</em>)</p>
-<p class="last">SpectralGaussianProcess(<em>spectralModel, maxFreq, N</em>)</p>
+<dt>Available constructors:</dt><dd><p>SpectralGaussianProcess(<em>spectralModel, timeGrid</em>)</p>
+<p>SpectralGaussianProcess(<em>spectralModel, maxFreq, N</em>)</p>
 </dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
@@ -114,17 +113,13 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>timeGrid</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></span></dt>
-<dd><p class="first last">The time grid associated to the process.
+<dt><strong>timeGrid</strong><span class="classifier"><a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></span></dt><dd><p>The time grid associated to the process.
 The algorithm is only implemented when the mesh is a regular grid.</p>
 </dd>
-<dt><strong>spectralModel</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.SpectralModel.html#openturns.SpectralModel" title="openturns.SpectralModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpectralModel</span></code></a></span></dt>
-<dd></dd>
-<dt><strong>maxFreq</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Equal to the maximal frequency minus <img class="math" src="../../_images/math/bef48d65d00acf105cc910a027b95533f4af42d2.svg" alt="\Delta f"/>.</p>
+<dt><strong>spectralModel</strong><span class="classifier"><a class="reference internal" href="openturns.SpectralModel.html#openturns.SpectralModel" title="openturns.SpectralModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpectralModel</span></code></a></span></dt><dd></dd>
+<dt><strong>maxFreq</strong><span class="classifier">float</span></dt><dd><p>Equal to the maximal frequency minus <img class="math" src="../../_images/math/bef48d65d00acf105cc910a027b95533f4af42d2.svg" alt="\Delta f"/>.</p>
 </dd>
-<dt><strong>N</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The number of points in the frequency grid, which is equal to the number of
+<dt><strong>N</strong><span class="classifier">float</span></dt><dd><p>The number of points in the frequency grid, which is equal to the number of
 time stamps of the time grid.</p>
 </dd>
 </dl>
@@ -167,8 +162,7 @@ and stored in order to be used for each call of the <em>getRealization</em> meth
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
-<dt><a class="reference internal" href="#openturns.SpectralGaussianProcess.thisown" title="openturns.SpectralGaussianProcess.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
-<dd><p class="first last">The membership flag</p>
+<dt><a class="reference internal" href="#openturns.SpectralGaussianProcess.thisown" title="openturns.SpectralGaussianProcess.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt><dd><p>The membership flag</p>
 </dd>
 </dl>
 </td>
@@ -315,8 +309,7 @@ and stored in order to be used for each call of the <em>getRealization</em> meth
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+<dt><strong>class_name</strong><span class="classifier">str</span></dt><dd><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
 </dd>
 </dl>
 </td>
@@ -334,9 +327,8 @@ and stored in order to be used for each call of the <em>getRealization</em> meth
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>realization</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
-<dd><p class="first">According to the process, the continuous realizations are built:</p>
-<ul class="last simple">
+<dt><strong>realization</strong><span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt><dd><p>According to the process, the continuous realizations are built:</p>
+<ul class="simple">
 <li>either using a dedicated functional model if it exists: e.g. a functional
 basis process.</li>
 <li>or using an interpolation from a discrete realization of the process on
@@ -362,8 +354,7 @@ the process).</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>cov_model</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></span></dt>
-<dd><p class="first last">Covariance model, if any.</p>
+<dt><strong>cov_model</strong><span class="classifier"><a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></span></dt><dd><p>Covariance model, if any.</p>
 </dd>
 </dl>
 </td>
@@ -381,8 +372,7 @@ the process).</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>description</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></span></dt>
-<dd><p class="first last">Description of the process.</p>
+<dt><strong>description</strong><span class="classifier"><a class="reference internal" href="openturns.Description.html#openturns.Description" title="openturns.Description"><code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code></a></span></dt><dd><p>Description of the process.</p>
 </dd>
 </dl>
 </td>
@@ -400,8 +390,7 @@ the process).</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>fftAlgo</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.FFT.html#openturns.FFT" title="openturns.FFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFT</span></code></a></span></dt>
-<dd><p class="first last">FFT algorithm used to generate realizations of the spectral Gaussian process.
+<dt><strong>fftAlgo</strong><span class="classifier"><a class="reference internal" href="openturns.FFT.html#openturns.FFT" title="openturns.FFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFT</span></code></a></span></dt><dd><p>FFT algorithm used to generate realizations of the spectral Gaussian process.
 By default, it is the <a class="reference internal" href="openturns.KissFFT.html#openturns.KissFFT" title="openturns.KissFFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">KissFFT</span></code></a> algorithm.</p>
 </dd>
 </dl>
@@ -420,8 +409,7 @@ By default, it is the <a class="reference internal" href="openturns.KissFFT.html
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>freqGrid</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></span></dt>
-<dd><p class="first last">The frequency grid used to discretize the spectral model.</p>
+<dt><strong>freqGrid</strong><span class="classifier"><a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></span></dt><dd><p>The frequency grid used to discretize the spectral model.</p>
 </dd>
 </dl>
 </td>
@@ -439,8 +427,7 @@ By default, it is the <a class="reference internal" href="openturns.KissFFT.html
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>freqStep</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The frequency step <img class="math" src="../../_images/math/bef48d65d00acf105cc910a027b95533f4af42d2.svg" alt="\Delta f"/> used to discretize the spectral model.</p>
+<dt><strong>freqStep</strong><span class="classifier">float</span></dt><dd><p>The frequency step <img class="math" src="../../_images/math/bef48d65d00acf105cc910a027b95533f4af42d2.svg" alt="\Delta f"/> used to discretize the spectral model.</p>
 </dd>
 </dl>
 </td>
@@ -458,18 +445,15 @@ By default, it is the <a class="reference internal" href="openturns.KissFFT.html
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>stepNumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/e7f019bb38e5f2b79da3957eb98d219975516b4f.svg" alt="N \geq 0"/></span></dt>
-<dd><p class="first last">Number of future steps.</p>
+<dt><strong>stepNumber</strong><span class="classifier">int, <img class="math" src="../../_images/math/e7f019bb38e5f2b79da3957eb98d219975516b4f.svg" alt="N \geq 0"/></span></dt><dd><p>Number of future steps.</p>
 </dd>
-<dt><strong>size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/9c6a0f491d7bd5c900da2f9461d37e2e350c4740.svg" alt="size \geq 0"/>, optional</span></dt>
-<dd><p class="first last">Number of futures needed. Default is 1.</p>
+<dt><strong>size</strong><span class="classifier">int, <img class="math" src="../../_images/math/9c6a0f491d7bd5c900da2f9461d37e2e350c4740.svg" alt="size \geq 0"/>, optional</span></dt><dd><p>Number of futures needed. Default is 1.</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>prediction</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a> or <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSeries</span></code></a></span></dt>
-<dd><p class="first last"><img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> future iterations of the process.
+<dt><strong>prediction</strong><span class="classifier"><a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a> or <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSeries</span></code></a></span></dt><dd><p><img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> future iterations of the process.
 If <img class="math" src="../../_images/math/1aa8aad951f83ec795a41c8faa186dacc52b8228.svg" alt="size = 1"/>, <em>prediction</em> is a <a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSeries</span></code></a>.
 Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a>.</p>
 </dd>
@@ -489,8 +473,7 @@ Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.h
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Internal unique identifier.</p>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>Internal unique identifier.</p>
 </dd>
 </dl>
 </td>
@@ -508,8 +491,7 @@ Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.h
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Dimension of the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/>: <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/>.</p>
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>Dimension of the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/>: <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/>.</p>
 </dd>
 </dl>
 </td>
@@ -527,15 +509,13 @@ Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.h
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>k</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int or list of ints <img class="math" src="../../_images/math/9dab5e747eac3e606b0e3d618ec845f76e72d35c.svg" alt="0 \leq k &lt; d"/></span></dt>
-<dd><p class="first last">Index of the marginal(s) needed.</p>
+<dt><strong>k</strong><span class="classifier">int or list of ints <img class="math" src="../../_images/math/9dab5e747eac3e606b0e3d618ec845f76e72d35c.svg" alt="0 \leq k &lt; d"/></span></dt><dd><p>Index of the marginal(s) needed.</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>marginals</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Process.html#openturns.Process" title="openturns.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a></span></dt>
-<dd><p class="first last">Process defined with marginal(s) of the random process.</p>
+<dt><strong>marginals</strong><span class="classifier"><a class="reference internal" href="openturns.Process.html#openturns.Process" title="openturns.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a></span></dt><dd><p>Process defined with marginal(s) of the random process.</p>
 </dd>
 </dl>
 </td>
@@ -553,8 +533,7 @@ Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.h
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>freqMax</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The maximal frequency used in the computation: <img class="math" src="../../_images/math/55f8abba9937cd96e87c122c4a6b2de0e224337d.svg" alt="(1-1/N)fmax = fmax - \Delta f"/>.</p>
+<dt><strong>freqMax</strong><span class="classifier">float</span></dt><dd><p>The maximal frequency used in the computation: <img class="math" src="../../_images/math/55f8abba9937cd96e87c122c4a6b2de0e224337d.svg" alt="(1-1/N)fmax = fmax - \Delta f"/>.</p>
 </dd>
 </dl>
 </td>
@@ -572,8 +551,7 @@ Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.h
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>mesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
-<dd><p class="first last">Mesh over which the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/> is discretized.</p>
+<dt><strong>mesh</strong><span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt><dd><p>Mesh over which the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/> is discretized.</p>
 </dd>
 </dl>
 </td>
@@ -591,8 +569,7 @@ Otherwise, it is a <a class="reference internal" href="openturns.ProcessSample.h
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>freqGrid</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></span></dt>
-<dd><p class="first last">The number <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> of points in the frequency grid, which is equal to the
+<dt><strong>freqGrid</strong><span class="classifier"><a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></span></dt><dd><p>The number <img class="math" src="../../_images/math/e5fa696008624bbb4544f764ae5cd7c73d4c7450.svg" alt="N"/> of points in the frequency grid, which is equal to the
 number of time stamps of the time grid.</p>
 </dd>
 </dl>
@@ -611,8 +588,7 @@ number of time stamps of the time grid.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The name of the object.</p>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the object.</p>
 </dd>
 </dl>
 </td>
@@ -630,8 +606,7 @@ number of time stamps of the time grid.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>d</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Dimension of the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/>.</p>
+<dt><strong>d</strong><span class="classifier">int</span></dt><dd><p>Dimension of the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/>.</p>
 </dd>
 </dl>
 </td>
@@ -649,8 +624,7 @@ number of time stamps of the time grid.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>realization</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Field.html#openturns.Field" title="openturns.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></span></dt>
-<dd><p class="first last">Contains a mesh over which the process is discretized and the values of the
+<dt><strong>realization</strong><span class="classifier"><a class="reference internal" href="openturns.Field.html#openturns.Field" title="openturns.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></a></span></dt><dd><p>Contains a mesh over which the process is discretized and the values of the
 process at the vertices of the mesh.</p>
 </dd>
 </dl>
@@ -669,15 +643,13 @@ process at the vertices of the mesh.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>n</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int, <img class="math" src="../../_images/math/1a13735264424681d43b78e82d1e77aa7380d1e3.svg" alt="n \geq 0"/></span></dt>
-<dd><p class="first last">Number of realizations of the process needed.</p>
+<dt><strong>n</strong><span class="classifier">int, <img class="math" src="../../_images/math/1a13735264424681d43b78e82d1e77aa7380d1e3.svg" alt="n \geq 0"/></span></dt><dd><p>Number of realizations of the process needed.</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>processSample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a></span></dt>
-<dd><p class="first last"><img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/> realizations of the random process. A process sample is a
+<dt><strong>processSample</strong><span class="classifier"><a class="reference internal" href="openturns.ProcessSample.html#openturns.ProcessSample" title="openturns.ProcessSample"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessSample</span></code></a></span></dt><dd><p><img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/> realizations of the random process. A process sample is a
 collection of fields which share the same mesh <img class="math" src="../../_images/math/c33c2cb85d5c5072d1448d2ab9f97d82dcaeddf1.svg" alt="\cM \in \Rset^n"/>.</p>
 </dd>
 </dl>
@@ -696,8 +668,7 @@ collection of fields which share the same mesh <img class="math" src="../../_ima
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Internal unique identifier.</p>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>Internal unique identifier.</p>
 </dd>
 </dl>
 </td>
@@ -715,8 +686,7 @@ collection of fields which share the same mesh <img class="math" src="../../_ima
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>specMod</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.SpectralModel.html#openturns.SpectralModel" title="openturns.SpectralModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpectralModel</span></code></a></span></dt>
-<dd><p class="first last">The spectral model defining the process.</p>
+<dt><strong>specMod</strong><span class="classifier"><a class="reference internal" href="openturns.SpectralModel.html#openturns.SpectralModel" title="openturns.SpectralModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpectralModel</span></code></a></span></dt><dd><p>The spectral model defining the process.</p>
 </dd>
 </dl>
 </td>
@@ -734,8 +704,7 @@ collection of fields which share the same mesh <img class="math" src="../../_ima
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>timeGrid</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></span></dt>
-<dd><p class="first last">Time grid of a process when the mesh associated to the
+<dt><strong>timeGrid</strong><span class="classifier"><a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></span></dt><dd><p>Time grid of a process when the mesh associated to the
 process can be interpreted as a <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a>. We check
 if the vertices of the mesh are scalar and are regularly spaced in
 <img class="math" src="../../_images/math/96a966ab4ed01ac508b4289f06ae3725d39ddd3a.svg" alt="\Rset"/> but we don’t check if the connectivity of the mesh is conform
@@ -758,8 +727,7 @@ instants).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>trend</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.TrendTransform.html#openturns.TrendTransform" title="openturns.TrendTransform"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrendTransform</span></code></a></span></dt>
-<dd><p class="first last">Trend, if any.</p>
+<dt><strong>trend</strong><span class="classifier"><a class="reference internal" href="openturns.TrendTransform.html#openturns.TrendTransform" title="openturns.TrendTransform"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrendTransform</span></code></a></span></dt><dd><p>Trend, if any.</p>
 </dd>
 </dl>
 </td>
@@ -777,8 +745,7 @@ instants).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Visibility flag.</p>
+<dt><strong>visible</strong><span class="classifier">bool</span></dt><dd><p>Visibility flag.</p>
 </dd>
 </dl>
 </td>
@@ -796,8 +763,7 @@ instants).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>hasName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">True if the name is not empty.</p>
+<dt><strong>hasName</strong><span class="classifier">bool</span></dt><dd><p>True if the name is not empty.</p>
 </dd>
 </dl>
 </td>
@@ -815,8 +781,7 @@ instants).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>hasVisibleName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">True if the name is not empty and not the default one.</p>
+<dt><strong>hasVisibleName</strong><span class="classifier">bool</span></dt><dd><p>True if the name is not empty and not the default one.</p>
 </dd>
 </dl>
 </td>
@@ -834,8 +799,7 @@ instants).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>isComposite</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last"><em>True</em> if the process is composite (built upon a function and a process).</p>
+<dt><strong>isComposite</strong><span class="classifier">bool</span></dt><dd><p><em>True</em> if the process is composite (built upon a function and a process).</p>
 </dd>
 </dl>
 </td>
@@ -853,8 +817,7 @@ instants).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>isNormal</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last"><em>True</em> if the process is normal.</p>
+<dt><strong>isNormal</strong><span class="classifier">bool</span></dt><dd><p><em>True</em> if the process is normal.</p>
 </dd>
 </dl>
 </td>
@@ -896,8 +859,7 @@ covariance function <img class="math" src="../../_images/math/97c414cf4f2016be97
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>isStationary</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last"><em>True</em> if the process is stationary.</p>
+<dt><strong>isStationary</strong><span class="classifier">bool</span></dt><dd><p><em>True</em> if the process is stationary.</p>
 </dd>
 </dl>
 </td>
@@ -923,8 +885,7 @@ translation: <img class="math" src="../../_images/math/c8e1f70b208858a8120e51ee5
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>description</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of str</span></dt>
-<dd><p class="first last">Description of the process.</p>
+<dt><strong>description</strong><span class="classifier">sequence of str</span></dt><dd><p>Description of the process.</p>
 </dd>
 </dl>
 </td>
@@ -942,8 +903,7 @@ translation: <img class="math" src="../../_images/math/c8e1f70b208858a8120e51ee5
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>fftAlgo</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.FFT.html#openturns.FFT" title="openturns.FFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFT</span></code></a></span></dt>
-<dd><p class="first last">FFT algorithm that will be used to generate realizations of the spectral
+<dt><strong>fftAlgo</strong><span class="classifier"><a class="reference internal" href="openturns.FFT.html#openturns.FFT" title="openturns.FFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">FFT</span></code></a></span></dt><dd><p>FFT algorithm that will be used to generate realizations of the spectral
 Gaussian process. The <a class="reference internal" href="openturns.KissFFT.html#openturns.KissFFT" title="openturns.KissFFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">KissFFT</span></code></a> is provided.
 More efficient implementations are provided by the <em>openturns-fftw</em> module.</p>
 </dd>
@@ -963,8 +923,7 @@ More efficient implementations are provided by the <em>openturns-fftw</em> modul
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>mesh</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt>
-<dd><p class="first last">Mesh over which the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/> is discretized.</p>
+<dt><strong>mesh</strong><span class="classifier"><a class="reference internal" href="openturns.Mesh.html#openturns.Mesh" title="openturns.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></span></dt><dd><p>Mesh over which the domain <img class="math" src="../../_images/math/e15ffd36f0301d5e0d4af8e1f95a62129993fcc6.svg" alt="\cD"/> is discretized.</p>
 </dd>
 </dl>
 </td>
@@ -982,8 +941,7 @@ More efficient implementations are provided by the <em>openturns-fftw</em> modul
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The name of the object.</p>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the object.</p>
 </dd>
 </dl>
 </td>
@@ -1001,8 +959,7 @@ More efficient implementations are provided by the <em>openturns-fftw</em> modul
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Internal unique identifier.</p>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>Internal unique identifier.</p>
 </dd>
 </dl>
 </td>
@@ -1020,8 +977,7 @@ More efficient implementations are provided by the <em>openturns-fftw</em> modul
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>timeGrid</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></span></dt>
-<dd><p class="first last">Time grid of observation of the process when the mesh associated to the
+<dt><strong>timeGrid</strong><span class="classifier"><a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a></span></dt><dd><p>Time grid of observation of the process when the mesh associated to the
 process can be interpreted as a <a class="reference internal" href="openturns.RegularGrid.html#openturns.RegularGrid" title="openturns.RegularGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularGrid</span></code></a>. We check
 if the vertices of the mesh are scalar and are regularly spaced in
 <img class="math" src="../../_images/math/96a966ab4ed01ac508b4289f06ae3725d39ddd3a.svg" alt="\Rset"/> but we don’t check if the connectivity of the mesh is conform
@@ -1044,8 +1000,7 @@ instants).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Visibility flag.</p>
+<dt><strong>visible</strong><span class="classifier">bool</span></dt><dd><p>Visibility flag.</p>
 </dd>
 </dl>
 </td>
@@ -1091,7 +1046,7 @@ instants).</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/7c4edbe09.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/a9346d73f.
     </div>
   </body>
 </html>

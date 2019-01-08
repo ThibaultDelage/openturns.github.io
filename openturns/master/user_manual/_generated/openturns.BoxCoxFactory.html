@@ -126,8 +126,7 @@ The objective is to estimate the most likely surrogate model (general linear mod
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
-<dt><a class="reference internal" href="#openturns.BoxCoxFactory.thisown" title="openturns.BoxCoxFactory.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
-<dd><p class="first last">The membership flag</p>
+<dt><a class="reference internal" href="#openturns.BoxCoxFactory.thisown" title="openturns.BoxCoxFactory.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt><dd><p>The membership flag</p>
 </dd>
 </dl>
 </td>
@@ -201,15 +200,14 @@ The objective is to estimate the most likely surrogate model (general linear mod
 <code class="descname">build</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.BoxCoxFactory.build" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate the Box Cox transformation.</p>
 <dl class="docutils">
-<dt>Available usages:</dt>
-<dd><p class="first">build(<em>myTimeSeries</em>)</p>
+<dt>Available usages:</dt><dd><p>build(<em>myTimeSeries</em>)</p>
 <p>build(<em>myTimeSeries, shift</em>)</p>
 <p>build(<em>myTimeSeries, shift, likelihoodGraph</em>)</p>
 <p>build(<em>mySample</em>)</p>
 <p>build(<em>mySample, shift</em>)</p>
 <p>build(<em>mySample, shift, likelihoodGraph</em>)</p>
 <p>build(<em>inputSample, outputSample, covarianceModel, basis, shift, generalLinearModelResult</em>)</p>
-<p class="last">build(<em>inputSample, outputSample, covarianceModel, shift, generalLinearModelResult</em>)</p>
+<p>build(<em>inputSample, outputSample, covarianceModel, shift, generalLinearModelResult</em>)</p>
 </dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
@@ -217,44 +215,34 @@ The objective is to estimate the most likely surrogate model (general linear mod
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>myTimeSeries</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSeries</span></code></a></span></dt>
-<dd><p class="first last">One realization of a  process.</p>
+<dt><strong>myTimeSeries</strong><span class="classifier"><a class="reference internal" href="openturns.TimeSeries.html#openturns.TimeSeries" title="openturns.TimeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSeries</span></code></a></span></dt><dd><p>One realization of a  process.</p>
 </dd>
-<dt><strong>mySample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">A set of <em>iid</em> values.</p>
+<dt><strong>mySample</strong><span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>A set of <em>iid</em> values.</p>
 </dd>
-<dt><strong>shift</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">It ensures that when shifted, the data are all positive.
+<dt><strong>shift</strong><span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>It ensures that when shifted, the data are all positive.
 By default the opposite of the min vector of the data is used if some data are negative.</p>
 </dd>
-<dt><strong>likelihoodGraph</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></span></dt>
-<dd><p class="first last">An empty graph that is fulfilled later with the log-likelihood of the mapped variables with respect to the <img class="math" src="../../_images/math/a1a5f37cf9dd449cfccf4d1fd078579b7aebc9f0.svg" alt="lambda"/> parameter for each component.</p>
+<dt><strong>likelihoodGraph</strong><span class="classifier"><a class="reference internal" href="openturns.Graph.html#openturns.Graph" title="openturns.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a></span></dt><dd><p>An empty graph that is fulfilled later with the log-likelihood of the mapped variables with respect to the <img class="math" src="../../_images/math/a1a5f37cf9dd449cfccf4d1fd078579b7aebc9f0.svg" alt="lambda"/> parameter for each component.</p>
 </dd>
-<dt><strong>inputSample, outputSample</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a> or 2d-array</span></dt>
-<dd><p class="first last">The input and output samples of a model evaluated apart.</p>
+<dt><strong>inputSample, outputSample</strong><span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a> or 2d-array</span></dt><dd><p>The input and output samples of a model evaluated apart.</p>
 </dd>
-<dt><strong>basis</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></span></dt>
-<dd><p class="first last">Functional basis to estimate the trend.
+<dt><strong>basis</strong><span class="classifier"><a class="reference internal" href="openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></span></dt><dd><p>Functional basis to estimate the trend.
 If the output dimension is greater than 1, the same basis is used for all marginals.</p>
 </dd>
-<dt><strong>multivariateBasis</strong> <span class="classifier-delimiter">:</span> <span class="classifier">collection of <a class="reference internal" href="openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></span></dt>
-<dd><p class="first last">Collection of functional basis: one basis for each marginal output.
+<dt><strong>multivariateBasis</strong><span class="classifier">collection of <a class="reference internal" href="openturns.Basis.html#openturns.Basis" title="openturns.Basis"><code class="xref py py-class docutils literal notranslate"><span class="pre">Basis</span></code></a></span></dt><dd><p>Collection of functional basis: one basis for each marginal output.
 If the trend is not estimated, the collection must be empty.</p>
 </dd>
-<dt><strong>covarianceModel</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></span></dt>
-<dd><p class="first last">Covariance model.
+<dt><strong>covarianceModel</strong><span class="classifier"><a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></span></dt><dd><p>Covariance model.
 Should have input dimension equal to input sample’s dimension and dimension equal to output sample’s dimension.
 See note for some particular applications.</p>
 </dd>
-<dt><strong>generalLinearModelResult</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../response_surface/_generated/openturns.GeneralLinearModelResult.html#openturns.GeneralLinearModelResult" title="openturns.GeneralLinearModelResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralLinearModelResult</span></code></a></span></dt>
-<dd><p class="first last">Empty structure that contains results of general linear model algorithm.</p>
+<dt><strong>generalLinearModelResult</strong><span class="classifier"><a class="reference internal" href="../response_surface/_generated/openturns.GeneralLinearModelResult.html#openturns.GeneralLinearModelResult" title="openturns.GeneralLinearModelResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeneralLinearModelResult</span></code></a></span></dt><dd><p>Empty structure that contains results of general linear model algorithm.</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>myBoxCoxTransform</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.BoxCoxTransform.html#openturns.BoxCoxTransform" title="openturns.BoxCoxTransform"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoxCoxTransform</span></code></a></span></dt>
-<dd><p class="first last">The estimated Box Cox transformation.</p>
+<dt><strong>myBoxCoxTransform</strong><span class="classifier"><a class="reference internal" href="openturns.BoxCoxTransform.html#openturns.BoxCoxTransform" title="openturns.BoxCoxTransform"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoxCoxTransform</span></code></a></span></dt><dd><p>The estimated Box Cox transformation.</p>
 </dd>
 </dl>
 </td>
@@ -394,8 +382,7 @@ The parameter <img class="math" src="../../_images/math/4aa32da5961a9b588ebdf550
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+<dt><strong>class_name</strong><span class="classifier">str</span></dt><dd><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
 </dd>
 </dl>
 </td>
@@ -413,8 +400,7 @@ The parameter <img class="math" src="../../_images/math/4aa32da5961a9b588ebdf550
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Internal unique identifier.</p>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>Internal unique identifier.</p>
 </dd>
 </dl>
 </td>
@@ -432,8 +418,7 @@ The parameter <img class="math" src="../../_images/math/4aa32da5961a9b588ebdf550
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The name of the object.</p>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the object.</p>
 </dd>
 </dl>
 </td>
@@ -451,8 +436,7 @@ The parameter <img class="math" src="../../_images/math/4aa32da5961a9b588ebdf550
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Internal unique identifier.</p>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>Internal unique identifier.</p>
 </dd>
 </dl>
 </td>
@@ -470,8 +454,7 @@ The parameter <img class="math" src="../../_images/math/4aa32da5961a9b588ebdf550
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Visibility flag.</p>
+<dt><strong>visible</strong><span class="classifier">bool</span></dt><dd><p>Visibility flag.</p>
 </dd>
 </dl>
 </td>
@@ -489,8 +472,7 @@ The parameter <img class="math" src="../../_images/math/4aa32da5961a9b588ebdf550
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>hasName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">True if the name is not empty.</p>
+<dt><strong>hasName</strong><span class="classifier">bool</span></dt><dd><p>True if the name is not empty.</p>
 </dd>
 </dl>
 </td>
@@ -508,8 +490,7 @@ The parameter <img class="math" src="../../_images/math/4aa32da5961a9b588ebdf550
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>hasVisibleName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">True if the name is not empty and not the default one.</p>
+<dt><strong>hasVisibleName</strong><span class="classifier">bool</span></dt><dd><p>True if the name is not empty and not the default one.</p>
 </dd>
 </dl>
 </td>
@@ -527,8 +508,7 @@ The parameter <img class="math" src="../../_images/math/4aa32da5961a9b588ebdf550
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The name of the object.</p>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the object.</p>
 </dd>
 </dl>
 </td>
@@ -546,8 +526,7 @@ The parameter <img class="math" src="../../_images/math/4aa32da5961a9b588ebdf550
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Internal unique identifier.</p>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>Internal unique identifier.</p>
 </dd>
 </dl>
 </td>
@@ -565,8 +544,7 @@ The parameter <img class="math" src="../../_images/math/4aa32da5961a9b588ebdf550
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Visibility flag.</p>
+<dt><strong>visible</strong><span class="classifier">bool</span></dt><dd><p>Visibility flag.</p>
 </dd>
 </dl>
 </td>
@@ -612,7 +590,7 @@ The parameter <img class="math" src="../../_images/math/4aa32da5961a9b588ebdf550
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/7c4edbe09.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/a9346d73f.
     </div>
   </body>
 </html>

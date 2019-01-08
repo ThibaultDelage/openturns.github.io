@@ -109,20 +109,17 @@ variance.
 Then the new point is evaluated using the original model and the metamodel is
 relearnt on the extended design of experiment.</p>
 <dl class="docutils">
-<dt>Available constructors:</dt>
-<dd>EfficientGlobalOptimization(<em>problem, krigingResult</em>)</dd>
+<dt>Available constructors:</dt><dd>EfficientGlobalOptimization(<em>problem, krigingResult</em>)</dd>
 </dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>problem</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></span></dt>
-<dd><p class="first last">The optimization problem to solve
+<dt><strong>problem</strong><span class="classifier"><a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></span></dt><dd><p>The optimization problem to solve
 optionally, a 2nd objective marginal can be used as noise</p>
 </dd>
-<dt><strong>krigingResult</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="../response_surface/_generated/openturns.KrigingResult.html#openturns.KrigingResult" title="openturns.KrigingResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">KrigingResult</span></code></a></span></dt>
-<dd><p class="first last">The result of the meta-model on the first design of experiment</p>
+<dt><strong>krigingResult</strong><span class="classifier"><a class="reference internal" href="../response_surface/_generated/openturns.KrigingResult.html#openturns.KrigingResult" title="openturns.KrigingResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">KrigingResult</span></code></a></span></dt><dd><p>The result of the meta-model on the first design of experiment</p>
 </dd>
 </dl>
 </td>
@@ -196,8 +193,7 @@ This behavior can be overridden by using another solver with <a class="reference
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
-<dt><a class="reference internal" href="#openturns.EfficientGlobalOptimization.thisown" title="openturns.EfficientGlobalOptimization.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt>
-<dd><p class="first last">The membership flag</p>
+<dt><a class="reference internal" href="#openturns.EfficientGlobalOptimization.thisown" title="openturns.EfficientGlobalOptimization.thisown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">thisown</span></code></a></dt><dd><p>The membership flag</p>
 </dd>
 </dl>
 </td>
@@ -381,15 +377,13 @@ This behavior can be overridden by using another solver with <a class="reference
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
-<dd><p class="first last">Point at which the Lagrange multipliers are computed.</p>
+<dt><strong>x</strong><span class="classifier">sequence of float</span></dt><dd><p>Point at which the Lagrange multipliers are computed.</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>lagrangeMultiplier</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
-<dd><p class="first last">Lagrange multipliers of the problem at the given point.</p>
+<dt><strong>lagrangeMultiplier</strong><span class="classifier">sequence of float</span></dt><dd><p>Lagrange multipliers of the problem at the given point.</p>
 </dd>
 </dl>
 </td>
@@ -402,8 +396,7 @@ This behavior can be overridden by using another solver with <a class="reference
 <p><img src="../../_images/math/7efaeb7fed33aea09cd34333184864fa806cc1d8.svg" alt="\cL(\vect{x}, \vect{\lambda}_{eq}, \vect{\lambda}_{\ell}, \vect{\lambda}_{u}, \vect{\lambda}_{ineq}) = J(\vect{x}) + \Tr{\vect{\lambda}}_{eq} g(\vect{x}) + \Tr{\vect{\lambda}}_{\ell} (\vect{x}-\vect{\ell})^{+} + \Tr{\vect{\lambda}}_{u} (\vect{u}-\vect{x})^{+} + \Tr{\vect{\lambda}}_{ineq}  h^{+}(\vect{x})"/></p>
 </div><p>where <img class="math" src="../../_images/math/e18b19774aac8d709d49fbbdbc4f828d63c9270c.svg" alt="\vect{\alpha}^{+}=(\max(0,\alpha_1),\hdots,\max(0,\alpha_n))"/>.</p>
 <dl class="docutils">
-<dt>The Lagrange multipliers are stored as <img class="math" src="../../_images/math/2d2e97bd67f35e658ae6b8f68c3fb6c57e8feb4c.svg" alt="(\vect{\lambda}_{eq}, \vect{\lambda}_{\ell}, \vect{\lambda}_{u}, \vect{\lambda}_{ineq})"/>, where:</dt>
-<dd><ul class="first last simple">
+<dt>The Lagrange multipliers are stored as <img class="math" src="../../_images/math/2d2e97bd67f35e658ae6b8f68c3fb6c57e8feb4c.svg" alt="(\vect{\lambda}_{eq}, \vect{\lambda}_{\ell}, \vect{\lambda}_{u}, \vect{\lambda}_{ineq})"/>, where:</dt><dd><ul class="simple">
 <li><img class="math" src="../../_images/math/e2ccc310a1cf6b5ce0889fc6225d0ca63fc1823b.svg" alt="\vect{\lambda}_{eq}"/> is of dimension 0 if there is no equality
 constraint, else of dimension the dimension of <img class="math" src="../../_images/math/a3385fc7211e1577deff15ff240997f0545ae42b.svg" alt="g(\vect{x})"/> ie the number of scalar equality constraints</li>
 <li><img class="math" src="../../_images/math/b11b2320a18b9102306b9234b9f86de1d66392b5.svg" alt="\vect{\lambda}_{\ell}"/> and <img class="math" src="../../_images/math/edf173aa84dc31e96814fe51d73dc39fec00fd8c.svg" alt="\vect{\lambda}_{u}"/> are of dimension 0 if there is no bound constraint, else of dimension of <img class="math" src="../../_images/math/fbb3eda62de652737a946e0ab194aac246375d90.svg" alt="\vect{x}"/></li>
@@ -429,8 +422,7 @@ constraint, else of dimension the dimension of <img class="math" src="../../_ima
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>c</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Used to define a quantile of the kriging prediction at the design points.
+<dt><strong>c</strong><span class="classifier">float</span></dt><dd><p>Used to define a quantile of the kriging prediction at the design points.
 <img class="math" src="../../_images/math/a46929bf58feee6a5bab2873ffc211b9ea43adb6.svg" alt="u(x)=m_K(x)+c*s_K(x)"/></p>
 </dd>
 </dl>
@@ -449,8 +441,7 @@ constraint, else of dimension the dimension of <img class="math" src="../../_ima
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>class_name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The object class name (<cite>object.__class__.__name__</cite>).</p>
+<dt><strong>class_name</strong><span class="classifier">str</span></dt><dd><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
 </dd>
 </dl>
 </td>
@@ -471,8 +462,7 @@ and the EGO formulation is not adapted anymore.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>b</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Used to define a stopping criterion on the minimum correlation length:
+<dt><strong>b</strong><span class="classifier">float</span></dt><dd><p>Used to define a stopping criterion on the minimum correlation length:
 <img class="math" src="../../_images/math/74f96422715c972bbfb8661dced30d5c1457117b.svg" alt="\theta_i &lt; \frac{\Delta_i^{min}}{b}"/>
 with <img class="math" src="../../_images/math/247c1f6c8f2853bb78a80cdb73c73434aedc90a6.svg" alt="\Delta^{min}"/> the minimum distance between design points.</p>
 </dd>
@@ -492,8 +482,7 @@ with <img class="math" src="../../_images/math/247c1f6c8f2853bb78a80cdb73c73434a
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>ei</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">The expected improvement optimal values.</p>
+<dt><strong>ei</strong><span class="classifier"><a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt><dd><p>The expected improvement optimal values.</p>
 </dd>
 </dl>
 </td>
@@ -511,8 +500,7 @@ with <img class="math" src="../../_images/math/247c1f6c8f2853bb78a80cdb73c73434a
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Internal unique identifier.</p>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>Internal unique identifier.</p>
 </dd>
 </dl>
 </td>
@@ -530,8 +518,7 @@ with <img class="math" src="../../_images/math/247c1f6c8f2853bb78a80cdb73c73434a
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Used to define a stopping criterion on the improvement criterion:
+<dt><strong>a</strong><span class="classifier">float</span></dt><dd><p>Used to define a stopping criterion on the improvement criterion:
 <img class="math" src="../../_images/math/e68cf3a4b2c467fcc021417ebbfbdf47088793a9.svg" alt="I_{max} &lt; \alpha |Y_{min}|"/>
 with <img class="math" src="../../_images/math/f47d88408a168a1780ca22233147c2f342cf0b69.svg" alt="I_{max}"/> the current maximum of the improvement
 and <img class="math" src="../../_images/math/680b60505e1e467f8bf21ebb5bb03363cb25f99a.svg" alt="Y_{min}"/> the current optimum.</p>
@@ -552,8 +539,7 @@ and <img class="math" src="../../_images/math/680b60505e1e467f8bf21ebb5bb03363cb
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>maximumAbsoluteError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed absolute error, where the absolute error is defined by
+<dt><strong>maximumAbsoluteError</strong><span class="classifier">float</span></dt><dd><p>Maximum allowed absolute error, where the absolute error is defined by
 <img class="math" src="../../_images/math/a2816f69e369c5637df13fb75b9f54ae5db8a6d6.svg" alt="\epsilon^a_n=\|\vect{x}_{n+1}-\vect{x}_n\|_{\infty}"/> where <img class="math" src="../../_images/math/8b10410351d6ce8b9951464dad26800e3a424946.svg" alt="\vect{x}_{n+1}"/>
 and <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c2015b0.svg" alt="\vect{x}_n"/> are two consecutive approximations of the optimum.</p>
 </dd>
@@ -573,8 +559,7 @@ and <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>maximumConstraintError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed constraint error, where the constraint error is defined by
+<dt><strong>maximumConstraintError</strong><span class="classifier">float</span></dt><dd><p>Maximum allowed constraint error, where the constraint error is defined by
 <img class="math" src="../../_images/math/f075a94c1e54bb0fd1ad49c620138c1ee842f54d.svg" alt="\gamma_n=\|g(\vect{x}_n)\|_{\infty}"/> where <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c2015b0.svg" alt="\vect{x}_n"/> is the current approximation of the optimum and <img class="math" src="../../_images/math/f487d47f3f53fc6c6a3567ec99bf8077018c38b7.svg" alt="g"/> is the function that gathers all the equality and inequality constraints (violated values only)</p>
 </dd>
 </dl>
@@ -593,8 +578,7 @@ and <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>N</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Maximum allowed number of evaluations.</p>
+<dt><strong>N</strong><span class="classifier">int</span></dt><dd><p>Maximum allowed number of evaluations.</p>
 </dd>
 </dl>
 </td>
@@ -612,8 +596,7 @@ and <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>N</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Maximum allowed number of iterations.</p>
+<dt><strong>N</strong><span class="classifier">int</span></dt><dd><p>Maximum allowed number of iterations.</p>
 </dd>
 </dl>
 </td>
@@ -631,8 +614,7 @@ and <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>maximumRelativeError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed relative error, where the relative error is defined by
+<dt><strong>maximumRelativeError</strong><span class="classifier">float</span></dt><dd><p>Maximum allowed relative error, where the relative error is defined by
 <img class="math" src="../../_images/math/a8071324b860cb89937edb28236a8087303dcc2b.svg" alt="\epsilon^r_n=\epsilon^a_n/\|\vect{x}_{n+1}\|_{\infty}"/>
 if <img class="math" src="../../_images/math/d4f9afb99edd1e81538da8e4b10870eb6add7098.svg" alt="\|\vect{x}_{n+1}\|_{\infty}\neq 0"/>, else <img class="math" src="../../_images/math/4d05b478fdf93651e0b673b765259c447ef9ff51.svg" alt="\epsilon^r_n=-1"/>.</p>
 </dd>
@@ -652,8 +634,7 @@ if <img class="math" src="../../_images/math/d4f9afb99edd1e81538da8e4b10870eb6ad
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>maximumResidualError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed residual error, where the residual error is defined by
+<dt><strong>maximumResidualError</strong><span class="classifier">float</span></dt><dd><p>Maximum allowed residual error, where the residual error is defined by
 <img class="math" src="../../_images/math/e4d52484412b0aeaf46478b0563861b8312ae66e.svg" alt="\epsilon^r_n=\frac{\|f(\vect{x}_{n+1})-f(\vect{x}_{n})\|}{\|f(\vect{x}_{n+1})\|}"/>
 if <img class="math" src="../../_images/math/b8fff91c2188b2121264ec113402bd0d176187b5.svg" alt="\|f(\vect{x}_{n+1})\|\neq 0"/>, else <img class="math" src="../../_images/math/4d05b478fdf93651e0b673b765259c447ef9ff51.svg" alt="\epsilon^r_n=-1"/>.</p>
 </dd>
@@ -673,8 +654,7 @@ if <img class="math" src="../../_images/math/b8fff91c2188b2121264ec113402bd0d176
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>multiStartExperimentSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The size of the Monte Carlo design from which to select the best starting
+<dt><strong>multiStartExperimentSize</strong><span class="classifier">int</span></dt><dd><p>The size of the Monte Carlo design from which to select the best starting
 points.</p>
 </dd>
 </dl>
@@ -693,8 +673,7 @@ points.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>multiStartNumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of starting points for the criterion optimization.</p>
+<dt><strong>multiStartNumber</strong><span class="classifier">int</span></dt><dd><p>The number of starting points for the criterion optimization.</p>
 </dd>
 </dl>
 </td>
@@ -712,8 +691,7 @@ points.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The name of the object.</p>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the object.</p>
 </dd>
 </dl>
 </td>
@@ -731,8 +709,7 @@ points.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>noiseVariance</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
-<dd><p class="first last">The noise variance <img class="math" src="../../_images/math/b27e6f96349784a93d09d3daa8115a12a01431aa.svg" alt="\sigma^2_{\epsilon}(x)"/> used for the AEI
+<dt><strong>noiseVariance</strong><span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt><dd><p>The noise variance <img class="math" src="../../_images/math/b27e6f96349784a93d09d3daa8115a12a01431aa.svg" alt="\sigma^2_{\epsilon}(x)"/> used for the AEI
 criterion optimization only.
 Of same input dimension than the objective and 1-d output.</p>
 </dd>
@@ -752,8 +729,7 @@ Of same input dimension than the objective and 1-d output.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>solver</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationSolver</span></code></span></dt>
-<dd><p class="first last">The solver used to optimize the expected improvement</p>
+<dt><strong>solver</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationSolver</span></code></span></dt><dd><p>The solver used to optimize the expected improvement</p>
 </dd>
 </dl>
 </td>
@@ -771,8 +747,7 @@ Of same input dimension than the objective and 1-d output.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>period</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of iterations between covariance parameters re-learn.
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The number of iterations between covariance parameters re-learn.
 Default is 1 (each iteration). Can be set to 0 (never).</p>
 </dd>
 </dl>
@@ -791,8 +766,7 @@ Default is 1 (each iteration). Can be set to 0 (never).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>problem</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></span></dt>
-<dd><p class="first last">Optimization problem.</p>
+<dt><strong>problem</strong><span class="classifier"><a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></span></dt><dd><p>Optimization problem.</p>
 </dd>
 </dl>
 </td>
@@ -810,8 +784,7 @@ Default is 1 (each iteration). Can be set to 0 (never).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>result</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.OptimizationResult.html#openturns.OptimizationResult" title="openturns.OptimizationResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></span></dt>
-<dd><p class="first last">Result class.</p>
+<dt><strong>result</strong><span class="classifier"><a class="reference internal" href="openturns.OptimizationResult.html#openturns.OptimizationResult" title="openturns.OptimizationResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></span></dt><dd><p>Result class.</p>
 </dd>
 </dl>
 </td>
@@ -829,8 +802,7 @@ Default is 1 (each iteration). Can be set to 0 (never).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Internal unique identifier.</p>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>Internal unique identifier.</p>
 </dd>
 </dl>
 </td>
@@ -848,8 +820,7 @@ Default is 1 (each iteration). Can be set to 0 (never).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>startingPoint</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Starting point.</p>
+<dt><strong>startingPoint</strong><span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Starting point.</p>
 </dd>
 </dl>
 </td>
@@ -867,8 +838,7 @@ Default is 1 (each iteration). Can be set to 0 (never).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Verbosity flag state.</p>
+<dt><strong>verbose</strong><span class="classifier">bool</span></dt><dd><p>Verbosity flag state.</p>
 </dd>
 </dl>
 </td>
@@ -886,8 +856,7 @@ Default is 1 (each iteration). Can be set to 0 (never).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Visibility flag.</p>
+<dt><strong>visible</strong><span class="classifier">bool</span></dt><dd><p>Visibility flag.</p>
 </dd>
 </dl>
 </td>
@@ -905,8 +874,7 @@ Default is 1 (each iteration). Can be set to 0 (never).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>hasName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">True if the name is not empty.</p>
+<dt><strong>hasName</strong><span class="classifier">bool</span></dt><dd><p>True if the name is not empty.</p>
 </dd>
 </dl>
 </td>
@@ -924,8 +892,7 @@ Default is 1 (each iteration). Can be set to 0 (never).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>hasVisibleName</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">True if the name is not empty and not the default one.</p>
+<dt><strong>hasVisibleName</strong><span class="classifier">bool</span></dt><dd><p>True if the name is not empty and not the default one.</p>
 </dd>
 </dl>
 </td>
@@ -949,8 +916,7 @@ Default is 1 (each iteration). Can be set to 0 (never).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>c</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Used to define a quantile of the kriging prediction at the design points.
+<dt><strong>c</strong><span class="classifier">float</span></dt><dd><p>Used to define a quantile of the kriging prediction at the design points.
 <img class="math" src="../../_images/math/a46929bf58feee6a5bab2873ffc211b9ea43adb6.svg" alt="u(x)=m_K(x)+c*s_K(x)"/></p>
 </dd>
 </dl>
@@ -972,8 +938,7 @@ and the EGO formulation is not adapted anymore.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>b</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Used to define a stopping criterion on the minimum correlation length:
+<dt><strong>b</strong><span class="classifier">float</span></dt><dd><p>Used to define a stopping criterion on the minimum correlation length:
 <img class="math" src="../../_images/math/74f96422715c972bbfb8661dced30d5c1457117b.svg" alt="\theta_i &lt; \frac{\Delta_i^{min}}{b}"/>
 with <img class="math" src="../../_images/math/247c1f6c8f2853bb78a80cdb73c73434aedc90a6.svg" alt="\Delta^{min}"/> the minimum distance between design points.</p>
 </dd>
@@ -993,8 +958,7 @@ with <img class="math" src="../../_images/math/247c1f6c8f2853bb78a80cdb73c73434a
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>a</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Used to define a stopping criterion on the improvement criterion:
+<dt><strong>a</strong><span class="classifier">float</span></dt><dd><p>Used to define a stopping criterion on the improvement criterion:
 <img class="math" src="../../_images/math/e68cf3a4b2c467fcc021417ebbfbdf47088793a9.svg" alt="I_{max} &lt; \alpha |Y_{min}|"/>
 with <img class="math" src="../../_images/math/f47d88408a168a1780ca22233147c2f342cf0b69.svg" alt="I_{max}"/> the current maximum of the improvement
 and <img class="math" src="../../_images/math/680b60505e1e467f8bf21ebb5bb03363cb25f99a.svg" alt="Y_{min}"/> the current optimum.</p>
@@ -1015,8 +979,7 @@ and <img class="math" src="../../_images/math/680b60505e1e467f8bf21ebb5bb03363cb
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>maximumAbsoluteError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed absolute error, where the absolute error is defined by
+<dt><strong>maximumAbsoluteError</strong><span class="classifier">float</span></dt><dd><p>Maximum allowed absolute error, where the absolute error is defined by
 <img class="math" src="../../_images/math/a2816f69e369c5637df13fb75b9f54ae5db8a6d6.svg" alt="\epsilon^a_n=\|\vect{x}_{n+1}-\vect{x}_n\|_{\infty}"/> where <img class="math" src="../../_images/math/8b10410351d6ce8b9951464dad26800e3a424946.svg" alt="\vect{x}_{n+1}"/>
 and <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c2015b0.svg" alt="\vect{x}_n"/> are two consecutive approximations of the optimum.</p>
 </dd>
@@ -1036,8 +999,7 @@ and <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>maximumConstraintError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed constraint error, where the constraint error is defined by
+<dt><strong>maximumConstraintError</strong><span class="classifier">float</span></dt><dd><p>Maximum allowed constraint error, where the constraint error is defined by
 <img class="math" src="../../_images/math/f075a94c1e54bb0fd1ad49c620138c1ee842f54d.svg" alt="\gamma_n=\|g(\vect{x}_n)\|_{\infty}"/> where <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c2015b0.svg" alt="\vect{x}_n"/> is the current approximation of the optimum and <img class="math" src="../../_images/math/f487d47f3f53fc6c6a3567ec99bf8077018c38b7.svg" alt="g"/> is the function that gathers all the equality and inequality constraints (violated values only)</p>
 </dd>
 </dl>
@@ -1056,8 +1018,7 @@ and <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>N</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Maximum allowed number of evaluations.</p>
+<dt><strong>N</strong><span class="classifier">int</span></dt><dd><p>Maximum allowed number of evaluations.</p>
 </dd>
 </dl>
 </td>
@@ -1075,8 +1036,7 @@ and <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>N</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Maximum allowed number of iterations.</p>
+<dt><strong>N</strong><span class="classifier">int</span></dt><dd><p>Maximum allowed number of iterations.</p>
 </dd>
 </dl>
 </td>
@@ -1094,8 +1054,7 @@ and <img class="math" src="../../_images/math/364cb1dfb93ae565acb242d50b4618ab6c
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>maximumRelativeError</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximum allowed relative error, where the relative error is defined by
+<dt><strong>maximumRelativeError</strong><span class="classifier">float</span></dt><dd><p>Maximum allowed relative error, where the relative error is defined by
 <img class="math" src="../../_images/math/a8071324b860cb89937edb28236a8087303dcc2b.svg" alt="\epsilon^r_n=\epsilon^a_n/\|\vect{x}_{n+1}\|_{\infty}"/>
 if <img class="math" src="../../_images/math/d4f9afb99edd1e81538da8e4b10870eb6add7098.svg" alt="\|\vect{x}_{n+1}\|_{\infty}\neq 0"/>, else <img class="math" src="../../_images/math/4d05b478fdf93651e0b673b765259c447ef9ff51.svg" alt="\epsilon^r_n=-1"/>.</p>
 </dd>
@@ -1115,8 +1074,7 @@ if <img class="math" src="../../_images/math/d4f9afb99edd1e81538da8e4b10870eb6ad
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>Maximum allowed residual error, where the residual error is defined by</strong></dt>
-<dd><p class="first last"><img class="math" src="../../_images/math/e4d52484412b0aeaf46478b0563861b8312ae66e.svg" alt="\epsilon^r_n=\frac{\|f(\vect{x}_{n+1})-f(\vect{x}_{n})\|}{\|f(\vect{x}_{n+1})\|}"/>
+<dt><strong>Maximum allowed residual error, where the residual error is defined by</strong></dt><dd><p><img class="math" src="../../_images/math/e4d52484412b0aeaf46478b0563861b8312ae66e.svg" alt="\epsilon^r_n=\frac{\|f(\vect{x}_{n+1})-f(\vect{x}_{n})\|}{\|f(\vect{x}_{n+1})\|}"/>
 if <img class="math" src="../../_images/math/b8fff91c2188b2121264ec113402bd0d176187b5.svg" alt="\|f(\vect{x}_{n+1})\|\neq 0"/>, else <img class="math" src="../../_images/math/4d05b478fdf93651e0b673b765259c447ef9ff51.svg" alt="\epsilon^r_n=-1"/>.</p>
 </dd>
 </dl>
@@ -1135,8 +1093,7 @@ if <img class="math" src="../../_images/math/b8fff91c2188b2121264ec113402bd0d176
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>multiStartExperimentSize</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The size of the Monte Carlo design from which to select the best starting
+<dt><strong>multiStartExperimentSize</strong><span class="classifier">int</span></dt><dd><p>The size of the Monte Carlo design from which to select the best starting
 points.
 The default number can be tweaked with the
 <cite>EfficientGlobalOptimization-DefaultMultiStartExperimentSize</cite> key from
@@ -1158,8 +1115,7 @@ The default number can be tweaked with the
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>multiStartNumber</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of starting points for the criterion optimization.
+<dt><strong>multiStartNumber</strong><span class="classifier">int</span></dt><dd><p>The number of starting points for the criterion optimization.
 The default number can be tweaked with the
 <cite>EfficientGlobalOptimization-DefaultMultiStartNumber</cite> key from
 <a class="reference internal" href="openturns.ResourceMap.html#openturns.ResourceMap" title="openturns.ResourceMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResourceMap</span></code></a>.</p>
@@ -1180,8 +1136,7 @@ The default number can be tweaked with the
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>name</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The name of the object.</p>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the object.</p>
 </dd>
 </dl>
 </td>
@@ -1199,8 +1154,7 @@ The default number can be tweaked with the
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>noiseVariance</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt>
-<dd><p class="first last">The noise variance <img class="math" src="../../_images/math/b27e6f96349784a93d09d3daa8115a12a01431aa.svg" alt="\sigma^2_{\epsilon}(x)"/> used for the AEI
+<dt><strong>noiseVariance</strong><span class="classifier"><a class="reference internal" href="openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt><dd><p>The noise variance <img class="math" src="../../_images/math/b27e6f96349784a93d09d3daa8115a12a01431aa.svg" alt="\sigma^2_{\epsilon}(x)"/> used for the AEI
 criterion optimization only.
 Of same input dimension than the objective and 1-d output.</p>
 </dd>
@@ -1220,8 +1174,7 @@ Of same input dimension than the objective and 1-d output.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>solver</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationSolver</span></code></span></dt>
-<dd><p class="first last">The solver used to optimize the expected improvement</p>
+<dt><strong>solver</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationSolver</span></code></span></dt><dd><p>The solver used to optimize the expected improvement</p>
 </dd>
 </dl>
 </td>
@@ -1239,8 +1192,7 @@ Of same input dimension than the objective and 1-d output.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>period</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of iterations between covariance parameters re-learn.
+<dt><strong>period</strong><span class="classifier">int</span></dt><dd><p>The number of iterations between covariance parameters re-learn.
 Default is 1 (each iteration). Can be set to 0 (never).
 The default number can be tweaked with the
 <cite>EfficientGlobalOptimization-DefaultParameterEstimationPeriod</cite> key from
@@ -1262,8 +1214,7 @@ The default number can be tweaked with the
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>problem</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></span></dt>
-<dd><p class="first last">Optimization problem.</p>
+<dt><strong>problem</strong><span class="classifier"><a class="reference internal" href="openturns.OptimizationProblem.html#openturns.OptimizationProblem" title="openturns.OptimizationProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationProblem</span></code></a></span></dt><dd><p>Optimization problem.</p>
 </dd>
 </dl>
 </td>
@@ -1282,8 +1233,7 @@ The default number can be tweaked with the
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>callback</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable</span></dt>
-<dd><p class="first last">Takes a float as argument as percentage of progress.</p>
+<dt><strong>callback</strong><span class="classifier">callable</span></dt><dd><p>Takes a float as argument as percentage of progress.</p>
 </dd>
 </dl>
 </td>
@@ -1316,8 +1266,7 @@ The default number can be tweaked with the
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>result</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.OptimizationResult.html#openturns.OptimizationResult" title="openturns.OptimizationResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></span></dt>
-<dd><p class="first last">Result class.</p>
+<dt><strong>result</strong><span class="classifier"><a class="reference internal" href="openturns.OptimizationResult.html#openturns.OptimizationResult" title="openturns.OptimizationResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></a></span></dt><dd><p>Result class.</p>
 </dd>
 </dl>
 </td>
@@ -1335,8 +1284,7 @@ The default number can be tweaked with the
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>id</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Internal unique identifier.</p>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>Internal unique identifier.</p>
 </dd>
 </dl>
 </td>
@@ -1354,8 +1302,7 @@ The default number can be tweaked with the
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>startingPoint</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Starting point.</p>
+<dt><strong>startingPoint</strong><span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt><dd><p>Starting point.</p>
 </dd>
 </dl>
 </td>
@@ -1374,8 +1321,7 @@ The default number can be tweaked with the
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>callback</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable</span></dt>
-<dd><p class="first last">Returns an int deciding whether to stop or continue.</p>
+<dt><strong>callback</strong><span class="classifier">callable</span></dt><dd><p>Returns an int deciding whether to stop or continue.</p>
 </dd>
 </dl>
 </td>
@@ -1407,8 +1353,7 @@ The default number can be tweaked with the
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Verbosity flag state.</p>
+<dt><strong>verbose</strong><span class="classifier">bool</span></dt><dd><p>Verbosity flag state.</p>
 </dd>
 </dl>
 </td>
@@ -1426,8 +1371,7 @@ The default number can be tweaked with the
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>visible</strong> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Visibility flag.</p>
+<dt><strong>visible</strong><span class="classifier">bool</span></dt><dd><p>Visibility flag.</p>
 </dd>
 </dl>
 </td>
@@ -1473,7 +1417,7 @@ The default number can be tweaked with the
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/7c4edbe09.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/a9346d73f.
     </div>
   </body>
 </html>
