@@ -331,9 +331,9 @@ the <img class="math" src="../../_images/math/cc77800da6204658c83f0461856b451a47
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Lambda</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquareComplexMatrix</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">getDimension</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">eigen_values</span><span class="o">.</span><span class="n">getSize</span><span class="p">()):</span>
 <span class="gp">... </span>    <span class="n">Lambda</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">eigen_values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="k">import</span> <span class="n">inv</span> <span class="c1"># SquareComplexMatrix does not implement solveLinearSystem</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Phi</span><span class="p">,</span> <span class="n">Lambda</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">Phi</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">Lambda</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_array_almost_equal</span><span class="p">(</span><span class="n">Phi</span> <span class="o">*</span> <span class="n">Lambda</span> <span class="o">*</span> <span class="n">inv</span><span class="p">(</span><span class="n">Phi</span><span class="p">),</span> <span class="n">M</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># from scipy.linalg import inv # SquareComplexMatrix does not implement solveLinearSystem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Phi, Lambda = np.matrix(Phi), np.matrix(Lambda)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># np.testing.assert_array_almost_equal(Phi * Lambda * inv(Phi), M)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -946,7 +946,7 @@ for vectors.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/fa003c62b.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/951ed0773.
     </div>
   </body>
 </html>
