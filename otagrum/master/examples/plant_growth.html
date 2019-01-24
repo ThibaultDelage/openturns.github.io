@@ -15,6 +15,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -98,18 +99,18 @@ div.nblast {
 
 /* input prompt */
 div.nbinput div.prompt pre {
-    color: #303F9F;
+    color: #307FC1;
 }
 
 /* output prompt */
 div.nboutput div.prompt pre {
-    color: #D84315;
+    color: #BF5B3D;
 }
 
 /* all prompts */
 div.nbinput div.prompt,
 div.nboutput div.prompt {
-    min-width: 7ex;
+    min-width: 4ex;
     padding-top: 0.4em;
     padding-right: 0.4em;
     text-align: right;
@@ -149,9 +150,9 @@ div.nboutput div.output_area {
 
 /* input area */
 div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
+    border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f7f7f7;
+    background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
@@ -159,7 +160,7 @@ div.nboutput div[class*=MathJax] {
     text-align: left !important;
 }
 
-/* override sphinx.ext.pngmath center alignment in output cells */
+/* override sphinx.ext.imgmath center alignment in output cells */
 div.nboutput div.math p {
     text-align: left;
 }
@@ -208,24 +209,50 @@ div.nboutput div.output_area.stderr {
 
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 </style>
 <div class="section" id="Plant-growth">
 <h1>Plant growth<a class="headerlink" href="#Plant-growth" title="Permalink to this headline">¶</a></h1>
-<p>The study presented in that section focuses on the growth of particular
-plant (not specified). The objective is to predict which height will be
-reached by the plant … for example in order to evaluate the risk that
-the plant might require un greater jag on the balcony …</p>
-<p>The problem is that we have no data on the height usually reached by
-this kind of plant, which prohibits any use of statistics tools … So
-… what ? Yet we have the following information:</p>
+<p>The study presented in that section focuses on the growth of particular plant (not specified). The objective is to predict which height will be reached by the plant … for example in order to evaluate the risk that the plant might require un greater jag on the balcony …</p>
+<p>The problem is that we have no data on the height usually reached by this kind of plant, which prohibits any use of statistics tools … So … what ? Yet we have the following information:</p>
 <ul class="simple">
-<li>we know the influence of the quality of the light and the influence
-of the air moisture rate on the plant growth,</li>
-<li>we can quantify the quality of the light we have at home and also the
-air moisture rate where the plant lives.</li>
+<li>we know the influence of the quality of the light and the influence of the air moisture rate on the plant growth,</li>
+<li>we can quantify the quality of the light we have at home and also the air moisture rate where the plant lives.</li>
 </ul>
-<p>…. so we can model the plant growth thanks to a Bayes net and then
-have access to the variability of its final height!</p>
+<p>…. so we can model the plant growth thanks to a Bayes net and then have access to the variability of its final height!</p>
 <p>Let us imagine (for the example purpose):</p>
 <ul class="simple">
 <li>Some meteorological data (tropical place?):</li>
@@ -233,18 +260,11 @@ have access to the variability of its final height!</p>
 <li>in the darkness, the air is moist 8 times out of 10,</li>
 <li>in plain light, the air is dry 6 times out of 10.</li>
 <li>Some remembrance of biology trainings:</li>
-<li>in plain light, if the air is moist, the plant is very happy: it
-grows 90cm on average with a variation of <img class="math" src="../_images/math/9e0c2f2f4f6c80309d1f2e6bd4f2d38979889e01.svg" alt="\pm"/> 10 cm. If the
-air is too dry, it will not grow more than 30 cm but we reasonnably
-can expect about a 15 cm growth.</li>
-<li>in the darkness, if the air is too dry, the plant suffers: it will
-not grow more than 20 cm and might die as well! If the air is moist,
-it will usually grow about 30 cm, at least 15cm but not more than 50
-cm.</li>
+<li>in plain light, if the air is moist, the plant is very happy: it grows 90cm on average with a variation of <img class="math" src="../_images/math/9e0c2f2f4f6c80309d1f2e6bd4f2d38979889e01.svg" alt="\pm"/> 10 cm. If the air is too dry, it will not grow more than 30 cm but we reasonnably can expect about a 15 cm growth.</li>
+<li>in the darkness, if the air is too dry, the plant suffers: it will not grow more than 20 cm and might die as well! If the air is moist, it will usually grow about 30 cm, at least 15cm but not more than 50 cm.</li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -256,11 +276,9 @@ cm.</li>
 </pre></div>
 </div>
 </div>
-<p>We have to build the Bayes Net now. There are 3 variables that will be
-named : <img class="math" src="../_images/math/f5066a2a83d1cf5107f62d95d43d5352863cf38a.svg" alt="Light"/>, <img class="math" src="../_images/math/8a1798be017de1ea481fe1433b8a7314eb0b97ca.svg" alt="Moisture"/> and <img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/>.</p>
+<p>We have to build the Bayes Net now. There are 3 variables that will be named : <img class="math" src="../_images/math/f5066a2a83d1cf5107f62d95d43d5352863cf38a.svg" alt="Light"/>, <img class="math" src="../_images/math/8a1798be017de1ea481fe1433b8a7314eb0b97ca.svg" alt="Moisture"/> and <img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -271,19 +289,14 @@ named : <img class="math" src="../_images/math/f5066a2a83d1cf5107f62d95d43d53528
 </pre></div>
 </div>
 </div>
-<p>Both variables <img class="math" src="../_images/math/f5066a2a83d1cf5107f62d95d43d5352863cf38a.svg" alt="Light"/> and <img class="math" src="../_images/math/8a1798be017de1ea481fe1433b8a7314eb0b97ca.svg" alt="Moisture"/> are categorical
-variables whith the following attributes:</p>
+<p>Both variables <img class="math" src="../_images/math/f5066a2a83d1cf5107f62d95d43d5352863cf38a.svg" alt="Light"/> and <img class="math" src="../_images/math/8a1798be017de1ea481fe1433b8a7314eb0b97ca.svg" alt="Moisture"/> are categorical variables whith the following attributes:</p>
 <ul class="simple">
-<li><img class="math" src="../_images/math/f5066a2a83d1cf5107f62d95d43d5352863cf38a.svg" alt="Light"/> has 2 attributes: <img class="math" src="../_images/math/f63c9ad9c1255aa3cd5276fed67ed2a18f4a43ce.svg" alt="Dim"/> which refers to the
-darkness and <img class="math" src="../_images/math/fcaab50381e9268052026f800ff6d9f045646ef0.svg" alt="Bright"/> which refers to plain light situations,</li>
-<li><img class="math" src="../_images/math/8a1798be017de1ea481fe1433b8a7314eb0b97ca.svg" alt="Moisture"/> has 2 attributes: <img class="math" src="../_images/math/5e113bad0794cba04f738fefbf8ea993766df7f8.svg" alt="Dry"/> which refers to dry
-air situations and <img class="math" src="../_images/math/40fcc8aeadd05df39fcc5b2401abbe3fe300baab.svg" alt="Wet"/> which refers to wet air situations.</li>
+<li><img class="math" src="../_images/math/f5066a2a83d1cf5107f62d95d43d5352863cf38a.svg" alt="Light"/> has 2 attributes: <img class="math" src="../_images/math/f63c9ad9c1255aa3cd5276fed67ed2a18f4a43ce.svg" alt="Dim"/> which refers to the darkness and <img class="math" src="../_images/math/fcaab50381e9268052026f800ff6d9f045646ef0.svg" alt="Bright"/> which refers to plain light situations,</li>
+<li><img class="math" src="../_images/math/8a1798be017de1ea481fe1433b8a7314eb0b97ca.svg" alt="Moisture"/> has 2 attributes: <img class="math" src="../_images/math/5e113bad0794cba04f738fefbf8ea993766df7f8.svg" alt="Dry"/> which refers to dry air situations and <img class="math" src="../_images/math/40fcc8aeadd05df39fcc5b2401abbe3fe300baab.svg" alt="Wet"/> which refers to wet air situations.</li>
 </ul>
-<p><img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/> is a continuous variable which has to be discretized for
-the Bayes Net use.</p>
+<p><img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/> is a continuous variable which has to be discretized for the Bayes Net use.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -304,8 +317,7 @@ the Bayes Net use.</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -313,11 +325,9 @@ the Bayes Net use.</p>
 </pre></div>
 </div>
 </div>
-<p>Furthermore, there are several influence links : <img class="math" src="../_images/math/f5066a2a83d1cf5107f62d95d43d5352863cf38a.svg" alt="Light"/> on
-<img class="math" src="../_images/math/8a1798be017de1ea481fe1433b8a7314eb0b97ca.svg" alt="Moisture"/>, <img class="math" src="../_images/math/fee182d66660ecd9742a46d43bb3a9a4acdeb975.svg" alt="(Light,Moisture)"/> on <img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/>.</p>
+<p>Furthermore, there are several influence links : <img class="math" src="../_images/math/f5066a2a83d1cf5107f62d95d43d5352863cf38a.svg" alt="Light"/> on <img class="math" src="../_images/math/8a1798be017de1ea481fe1433b8a7314eb0b97ca.svg" alt="Moisture"/>, <img class="math" src="../_images/math/fee182d66660ecd9742a46d43bb3a9a4acdeb975.svg" alt="(Light,Moisture)"/> on <img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/>.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -338,11 +348,10 @@ the Bayes Net use.</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="output_area docutils container">
+<div class="output_area rendered_html docutils container">
 <svg height="188pt" viewBox="0.00 0.00 120.34 188.00" width="120pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g class="graph" id="graph0" transform="scale(1 1) rotate(0) translate(4 184)">
 <title>G</title>
@@ -410,8 +419,7 @@ the Bayes Net use.</p>
 <li><img class="math" src="../_images/math/90e96e43439c8d65bc657b51a039dc4a6f0642d1.svg" alt="Light=Bright"/> with a probability of 0.75.</li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -425,17 +433,12 @@ the Bayes Net use.</p>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area docutils container">
+<div class="output_area rendered_html docutils container">
 <table><tr style='background-color:#AAAAAA'><th colspan='2'><center>Light</center></th></tr><tr><th style='background-color:#BBBBBB'><center>Dim</center></th><th style='background-color:#BBBBBB'><center>Bright</center></th></tr><tr><td style='background-color:#df9f64;text-align:right;'>0.2500</td><td style='background-color:#9fdf64;text-align:right;'>0.7500</td></tr></table></div>
 </div>
-<p>The influence of <img class="math" src="../_images/math/f5066a2a83d1cf5107f62d95d43d5352863cf38a.svg" alt="Light"/> on <img class="math" src="../_images/math/8a1798be017de1ea481fe1433b8a7314eb0b97ca.svg" alt="Moisture"/> is modelized by: -
-when <img class="math" src="../_images/math/77721de56b41805a83e40f58366f6daeaad32331.svg" alt="Light=Dim"/> then <img class="math" src="../_images/math/628885fc5822acf641121f33bca4f410fcd26b82.svg" alt="Moisture=Dry"/> with a probability of
-0.2 and <img class="math" src="../_images/math/95d9e309663368f4472bc3ce36da40f6ebf90615.svg" alt="Moisture=Wet"/> with a probability of 0.8, - when
-<img class="math" src="../_images/math/90e96e43439c8d65bc657b51a039dc4a6f0642d1.svg" alt="Light=Bright"/> then <img class="math" src="../_images/math/628885fc5822acf641121f33bca4f410fcd26b82.svg" alt="Moisture=Dry"/> with a probability of 0.6
-and <img class="math" src="../_images/math/95d9e309663368f4472bc3ce36da40f6ebf90615.svg" alt="Moisture=Wet"/> with a probability of 0.4.</p>
+<p>The influence of <img class="math" src="../_images/math/f5066a2a83d1cf5107f62d95d43d5352863cf38a.svg" alt="Light"/> on <img class="math" src="../_images/math/8a1798be017de1ea481fe1433b8a7314eb0b97ca.svg" alt="Moisture"/> is modelized by: - when <img class="math" src="../_images/math/77721de56b41805a83e40f58366f6daeaad32331.svg" alt="Light=Dim"/> then <img class="math" src="../_images/math/628885fc5822acf641121f33bca4f410fcd26b82.svg" alt="Moisture=Dry"/> with a probability of 0.2 and <img class="math" src="../_images/math/95d9e309663368f4472bc3ce36da40f6ebf90615.svg" alt="Moisture=Wet"/> with a probability of 0.8, - when <img class="math" src="../_images/math/90e96e43439c8d65bc657b51a039dc4a6f0642d1.svg" alt="Light=Bright"/> then <img class="math" src="../_images/math/628885fc5822acf641121f33bca4f410fcd26b82.svg" alt="Moisture=Dry"/> with a probability of 0.6 and <img class="math" src="../_images/math/95d9e309663368f4472bc3ce36da40f6ebf90615.svg" alt="Moisture=Wet"/> with a probability of 0.4.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -450,21 +453,13 @@ and <img class="math" src="../_images/math/95d9e309663368f4472bc3ce36da40f6ebf90
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area docutils container">
+<div class="output_area rendered_html docutils container">
 <table><tr><th colspan='1'></th><th colspan='2' style='background-color:#AAAAAA'><center>Moisture</center></th></tr><tr><th style='background-color:#AAAAAA'><center>Light</center></th><th style='background-color:#BBBBBB'><center>Dry</center></th><th style='background-color:#BBBBBB'><center>Wet</center></th></tr><tr><th style='background-color:#BBBBBB'><center>Dim</center></th><td style='background-color:#e59864;text-align:right;'>0.2000</td><td style='background-color:#98e564;text-align:right;'>0.8000</td></tr><tr><th style='background-color:#BBBBBB'><center>Bright</center></th><td style='background-color:#b2cb64;text-align:right;'>0.6000</td><td style='background-color:#cbb264;text-align:right;'>0.4000</td></tr></table></div>
 </div>
-<p>The influence of <img class="math" src="../_images/math/4a1c9864a516d98bda2590ee240f5029bca2599a.svg" alt="(Light, Moisture)"/> on <img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/> is
-modelized by: - when <img class="math" src="../_images/math/77721de56b41805a83e40f58366f6daeaad32331.svg" alt="Light=Dim"/> and <img class="math" src="../_images/math/628885fc5822acf641121f33bca4f410fcd26b82.svg" alt="Moisture=Dry"/> then
-<img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/> follows a <img class="math" src="../_images/math/1c7ef1ce25b9a0f2327d360910fd637d3a341514.svg" alt="Uniform(min=0, max=20)"/> distribution, -
-when <img class="math" src="../_images/math/77721de56b41805a83e40f58366f6daeaad32331.svg" alt="Light=Dim"/> and <img class="math" src="../_images/math/95d9e309663368f4472bc3ce36da40f6ebf90615.svg" alt="Moisture=Wet"/> then <img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/>
-follows a <img class="math" src="../_images/math/c526792af3e4593aeb23ada6b4295ebc95c0980e.svg" alt="Triangular(min=15, mod=30, max=50)"/> distribution, -
-when <img class="math" src="../_images/math/90e96e43439c8d65bc657b51a039dc4a6f0642d1.svg" alt="Light=Bright"/> and <img class="math" src="../_images/math/628885fc5822acf641121f33bca4f410fcd26b82.svg" alt="Moisture=Dry"/> then <img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/>
-follows a <img class="math" src="../_images/math/021c50bc3da99d0931f66597233023b64d1d1a21.svg" alt="Triangular(min=0, mod=15, max=30)"/> distribution, - when
-<img class="math" src="../_images/math/90e96e43439c8d65bc657b51a039dc4a6f0642d1.svg" alt="Light=Bright"/> and <img class="math" src="../_images/math/95d9e309663368f4472bc3ce36da40f6ebf90615.svg" alt="Moisture=Wet"/> then <img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/>
-follows a <img class="math" src="../_images/math/c0095e0e64a9afe3149e35d02d6d8bc191eb5fa4.svg" alt="Normal(\mu=90, \sigma=10)"/> distribution.</p>
+<p>The influence of <img class="math" src="../_images/math/4a1c9864a516d98bda2590ee240f5029bca2599a.svg" alt="(Light, Moisture)"/> on <img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/> is modelized by: - when <img class="math" src="../_images/math/77721de56b41805a83e40f58366f6daeaad32331.svg" alt="Light=Dim"/> and <img class="math" src="../_images/math/628885fc5822acf641121f33bca4f410fcd26b82.svg" alt="Moisture=Dry"/> then <img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/> follows a <img class="math" src="../_images/math/1c7ef1ce25b9a0f2327d360910fd637d3a341514.svg" alt="Uniform(min=0, max=20)"/> distribution, - when <img class="math" src="../_images/math/77721de56b41805a83e40f58366f6daeaad32331.svg" alt="Light=Dim"/> and <img class="math" src="../_images/math/95d9e309663368f4472bc3ce36da40f6ebf90615.svg" alt="Moisture=Wet"/> then <img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/> follows a <img class="math" src="../_images/math/c526792af3e4593aeb23ada6b4295ebc95c0980e.svg" alt="Triangular(min=15, mod=30, max=50)"/> distribution, - when <img class="math" src="../_images/math/90e96e43439c8d65bc657b51a039dc4a6f0642d1.svg" alt="Light=Bright"/> and <img class="math" src="../_images/math/628885fc5822acf641121f33bca4f410fcd26b82.svg" alt="Moisture=Dry"/> then <img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/> follows a <img class="math" src="../_images/math/021c50bc3da99d0931f66597233023b64d1d1a21.svg" alt="Triangular(min=0, mod=15, max=30)"/> distribution, - when
+<img class="math" src="../_images/math/90e96e43439c8d65bc657b51a039dc4a6f0642d1.svg" alt="Light=Bright"/> and <img class="math" src="../_images/math/95d9e309663368f4472bc3ce36da40f6ebf90615.svg" alt="Moisture=Wet"/> then <img class="math" src="../_images/math/0e0a925f15bc1a8104e9a6771e1826ead0fcd217.svg" alt="Height"/> follows a <img class="math" src="../_images/math/c0095e0e64a9afe3149e35d02d6d8bc191eb5fa4.svg" alt="Normal(\mu=90, \sigma=10)"/> distribution.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -494,23 +489,17 @@ follows a <img class="math" src="../_images/math/c0095e0e64a9afe3149e35d02d6d8bc
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area docutils container">
+<div class="output_area rendered_html docutils container">
 <table><tr><th colspan='2'></th><th colspan='14' style='background-color:#AAAAAA'><center>Height</center></th></tr><tr><th style='background-color:#AAAAAA'><center>Light</center></th><th style='background-color:#AAAAAA'><center>Moisture</center></th><th style='background-color:#BBBBBB'><center>[0;10[</center></th><th style='background-color:#BBBBBB'><center>[10;20[</center></th><th style='background-color:#BBBBBB'><center>[20;30[</center></th><th style='background-color:#BBBBBB'><center>[30;40[</center></th><th style='background-color:#BBBBBB'><center>[40;50[</center></th><th style='background-color:#BBBBBB'><center>[50;60[</center></th><th style='background-color:#BBBBBB'><center>[60;70[</center></th><th style='background-color:#BBBBBB'><center>[70;80[</center></th><th style='background-color:#BBBBBB'><center>[80;90[</center></th><th style='background-color:#BBBBBB'><center>[90;100[</center></th><th style='background-color:#BBBBBB'><center>[100;110[</center></th><th style='background-color:#BBBBBB'><center>[110;120[</center></th><th style='background-color:#BBBBBB'><center>[120;130[</center></th><th style='background-color:#BBBBBB'><center>[130;140]</center></th></tr><tr><th style='background-color:#BBBBBB'><center>Dim</center></th><th style='background-color:#BBBBBB;' rowspan = '2'><center>Dry</center></th><td style='background-color:#bfbf64;text-align:right;'>0.5000</td><td style='background-color:#bfbf64;text-align:right;'>0.5000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td></tr><tr><th style='background-color:#BBBBBB'><center>Bright</center></th><td style='background-color:#e29b64;text-align:right;'>0.2222</td><td style='background-color:#b7c664;text-align:right;'>0.5556</td><td style='background-color:#e29b64;text-align:right;'>0.2222</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td></tr><tr><th style='background-color:#BBBBBB'><center>Dim</center></th><th style='background-color:#BBBBBB;' rowspan = '2'><center>Wet</center></th><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#f88564;text-align:right;'>0.0476</td><td style='background-color:#ceaf64;text-align:right;'>0.3810</td><td style='background-color:#c8b564;text-align:right;'>0.4286</td><td style='background-color:#ec9164;text-align:right;'>0.1429</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td><td style='background-color:#ff7f64;text-align:right;'>0.0000</td></tr><tr><th style='background-color:#BBBBBB'><center>Bright</center></th><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td><td style='background-color:#fe7f64;text-align:right;'>0.0013</td><td style='background-color:#fc8164;text-align:right;'>0.0214</td><td style='background-color:#ed9064;text-align:right;'>0.1359</td><td style='background-color:#d3aa64;text-align:right;'>0.3413</td><td style='background-color:#d3aa64;text-align:right;'>0.3413</td><td style='background-color:#ed9064;text-align:right;'>0.1359</td><td style='background-color:#fc8164;text-align:right;'>0.0214</td><td style='background-color:#fe7f64;text-align:right;'>0.0013</td><td style='background-color:#fe7f64;text-align:right;'>0.0000</td></tr></table></div>
 </div>
 <p>We can study the plant growth variability in different situations like:</p>
 <ul class="simple">
-<li>I put my plant on my balcony; in that situation, I set none evidence
-inside the Bayes net.</li>
-<li>I put my plant in a place where it is dark all time (in my cellar?);
-in that situation, I set one evidence inside the Bayes net:
-<img class="math" src="../_images/math/77721de56b41805a83e40f58366f6daeaad32331.svg" alt="Light=Dim"/>.</li>
-<li>I put my plant in a place where it is moist all time (in my
-bathroom?); in that situation, I set one evidence inside the Bayes
-net: <img class="math" src="../_images/math/95d9e309663368f4472bc3ce36da40f6ebf90615.svg" alt="Moisture=Wet"/>.</li>
+<li>I put my plant on my balcony; in that situation, I set none evidence inside the Bayes net.</li>
+<li>I put my plant in a place where it is dark all time (in my cellar?); in that situation, I set one evidence inside the Bayes net: <img class="math" src="../_images/math/77721de56b41805a83e40f58366f6daeaad32331.svg" alt="Light=Dim"/>.</li>
+<li>I put my plant in a place where it is moist all time (in my bathroom?); in that situation, I set one evidence inside the Bayes net: <img class="math" src="../_images/math/95d9e309663368f4472bc3ce36da40f6ebf90615.svg" alt="Moisture=Wet"/>.</li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -532,8 +521,7 @@ Probability (height &gt; 40cm) =  0.32857134257593246
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -541,8 +529,7 @@ Probability (height &gt; 40cm) =  0.32857134257593246
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -567,8 +554,7 @@ Probability (height &gt; 40cm)|Light=Dim =  0.11428571428571421
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -576,8 +562,7 @@ Probability (height &gt; 40cm)|Light=Dim =  0.11428571428571421
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -602,8 +587,7 @@ Probability (height &gt; 40cm)|Moisture=Wet =  0.6571426851518646
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -611,8 +595,7 @@ Probability (height &gt; 40cm)|Moisture=Wet =  0.6571426851518646
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -633,8 +616,7 @@ UserDefined({x = [0], p = 0.4}, {x = [1], p = 0.6})
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -642,8 +624,7 @@ UserDefined({x = [0], p = 0.4}, {x = [1], p = 0.6})
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
