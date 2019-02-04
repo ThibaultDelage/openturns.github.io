@@ -36,8 +36,10 @@ if (!Scorer) {
 
     // query found in title
     title: 15,
+    partialTitle: 7,
     // query found in terms
-    term: 5
+    term: 5,
+    partialTerm: 2
   };
 }
 
@@ -389,6 +391,19 @@ var Search = {
         {files: terms[word], score: Scorer.term},
         {files: titleterms[word], score: Scorer.title}
       ];
+      // add support for partial matches
+      if (word.length > 2) {
+        for (var w in terms) {
+          if (w.match(word) && !terms[word]) {
+            _o.push({files: terms[w], score: Scorer.partialTerm})
+          }
+        }
+        for (var w in titleterms) {
+          if (w.match(word) && !titleterms[word]) {
+              _o.push({files: titleterms[w], score: Scorer.partialTitle})
+          }
+        }
+      }
 
       // no match but word was a required one
       if ($u.every(_o, function(o){return o.files === undefined;})) {
@@ -428,8 +443,12 @@ var Search = {
       var valid = true;
 
       // check if all requirements are matched
-      if (fileMap[file].length != searchterms.length)
-          continue;
+      var filteredTermCount = // as search terms with length < 3 are discarded: ignore
+        searchterms.filter(function(term){return term.length > 2}).length
+      if (
+        fileMap[file].length != searchterms.length &&
+        fileMap[file].length != filteredTermCount
+      ) continue;
 
       // ensure that none of the excluded terms is in the search result
       for (i = 0; i < excluded.length; i++) {
