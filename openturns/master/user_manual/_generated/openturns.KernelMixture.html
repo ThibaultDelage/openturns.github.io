@@ -31,7 +31,7 @@
     <li><a href="../../install.html">Get it</a></li>
     <li><a href="../../contents.html">Doc</a></li>
     <li><a href="https://github.com/openturns">Code</a></li>
-    <li><a href="http://trac.openturns.org">Bugs</a></li>
+    <li><a href="https://github.com/openturns/openturns/issues">Bugs</a></li>
   </ul>
   <a href="../../index.html">
     <h1>
@@ -136,12 +136,11 @@ distribution.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">kernel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bandwith</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">myKernelMixture</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">KernelMixture</span><span class="p">(</span><span class="n">kernel</span><span class="p">,</span> <span class="n">bandwith</span><span class="p">,</span> <span class="n">sample</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">KernelMixture</span><span class="p">(</span><span class="n">kernel</span><span class="p">,</span> <span class="n">bandwith</span><span class="p">,</span> <span class="n">sample</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>See the pdf:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span> <span class="o">=</span> <span class="n">myKernelMixture</span><span class="o">.</span><span class="n">drawPDF</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">setLegends</span><span class="p">([</span><span class="s1">&#39;KernelMixture&#39;</span><span class="p">])</span>
+<p>Draw a sample:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -4174,7 +4173,7 @@ function is of the form:</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/30c78e87d.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/2b6d257cb.
     </div>
   </body>
 </html>

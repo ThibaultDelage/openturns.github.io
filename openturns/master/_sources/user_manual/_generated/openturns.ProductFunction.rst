@@ -1,6 +1,9 @@
 ProductFunction
 =========================
 
+.. plot:: pyplots/ProductFunction.py
+    :include-source: False
+
 .. currentmodule:: openturns
 
 .. autoclass:: ProductFunction
@@ -8,4 +11,3 @@ ProductFunction
    
    .. automethod:: __init__
    
-

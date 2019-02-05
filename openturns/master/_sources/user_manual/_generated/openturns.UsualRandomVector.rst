@@ -1,6 +1,9 @@
 UsualRandomVector
 ===========================
 
+.. plot:: pyplots/UsualRandomVector.py
+    :include-source: False
+
 .. currentmodule:: openturns
 
 .. autoclass:: UsualRandomVector
@@ -8,4 +11,3 @@ UsualRandomVector
    
    .. automethod:: __init__
    
-

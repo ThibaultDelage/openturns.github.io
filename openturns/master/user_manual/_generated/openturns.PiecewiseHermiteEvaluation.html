@@ -31,7 +31,7 @@
     <li><a href="../../install.html">Get it</a></li>
     <li><a href="../../contents.html">Doc</a></li>
     <li><a href="https://github.com/openturns">Code</a></li>
-    <li><a href="http://trac.openturns.org">Bugs</a></li>
+    <li><a href="https://github.com/openturns/openturns/issues">Bugs</a></li>
   </ul>
   <a href="../../index.html">
     <h1>
@@ -98,7 +98,38 @@
 <dl class="class">
 <dt id="openturns.PiecewiseHermiteEvaluation">
 <em class="property">class </em><code class="descname">PiecewiseHermiteEvaluation</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.PiecewiseHermiteEvaluation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Proxy of C++ OT::PiecewiseHermiteEvaluation.</p>
+<dd><p>Piecewise Hermite interpolation evaluation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>locations</strong><span class="classifier">sequence of float</span></dt><dd><p>Locations</p>
+</dd>
+<dt><strong>values</strong><span class="classifier">1-d or 2-d sequence of float</span></dt><dd><p>Values at each location</p>
+</dd>
+<dt><strong>derivatives</strong><span class="classifier">1-d or 2-d sequence of float</span></dt><dd><p>Derivatives at each location</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="openturns.PiecewiseLinearEvaluation.html#openturns.PiecewiseLinearEvaluation" title="openturns.PiecewiseLinearEvaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PiecewiseLinearEvaluation</span></code></a></p>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">locations</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">derivatives</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluation</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">PiecewiseHermiteEvaluation</span><span class="p">(</span><span class="n">locations</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">derivatives</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">evaluation</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">([</span><span class="mf">2.5</span><span class="p">]))</span>
+<span class="go">[1.5]</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -912,7 +943,7 @@ and <img class="math" src="../../_images/math/1e9b9cb6d72748a01687025b766ea2bbdc
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/30c78e87d.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/2b6d257cb.
     </div>
   </body>
 </html>

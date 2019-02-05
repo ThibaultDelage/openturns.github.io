@@ -1,6 +1,9 @@
 TensorApproximationAlgorithm
 ======================================
 
+.. plot:: pyplots/TensorApproximationAlgorithm.py
+    :include-source: False
+
 .. currentmodule:: openturns
 
 .. autoclass:: TensorApproximationAlgorithm
@@ -8,4 +11,3 @@ TensorApproximationAlgorithm
    
    .. automethod:: __init__
    
-

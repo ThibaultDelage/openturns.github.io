@@ -31,7 +31,7 @@
     <li><a href="../../install.html">Get it</a></li>
     <li><a href="../../contents.html">Doc</a></li>
     <li><a href="https://github.com/openturns">Code</a></li>
-    <li><a href="http://trac.openturns.org">Bugs</a></li>
+    <li><a href="https://github.com/openturns/openturns/issues">Bugs</a></li>
   </ul>
   <a href="../../index.html">
     <h1>
@@ -95,10 +95,33 @@
             
   <div class="section" id="usualrandomvector">
 <h1>UsualRandomVector<a class="headerlink" href="#usualrandomvector" title="Permalink to this headline">¶</a></h1>
+<p>(<a class="reference external" href="../../pyplots/UsualRandomVector.py">Source code</a>, <a class="reference external" href="../../pyplots/UsualRandomVector.png">png</a>, <a class="reference external" href="../../pyplots/UsualRandomVector.hires.png">hires.png</a>, <a class="reference external" href="../../pyplots/UsualRandomVector.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="../../_images/UsualRandomVector.png" src="../../_images/UsualRandomVector.png" />
+</div>
 <dl class="class">
 <dt id="openturns.UsualRandomVector">
 <em class="property">class </em><code class="descname">UsualRandomVector</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.UsualRandomVector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Proxy of C++ OT::UsualRandomVector.</p>
+<dd><p>Random Vector from a distribution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>X</strong><span class="classifier"><a class="reference internal" href="openturns.Distribution.html#openturns.Distribution" title="openturns.Distribution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Distribution</span></code></a></span></dt><dd><p>Distribution of X.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">RandomVector</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">())</span>
+</pre></div>
+</div>
+<p># Draw a sample
+&gt;&gt;&gt; sample = X.getSample(5)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -875,7 +898,7 @@ event and 0 else).</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/30c78e87d.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/2b6d257cb.
     </div>
   </body>
 </html>

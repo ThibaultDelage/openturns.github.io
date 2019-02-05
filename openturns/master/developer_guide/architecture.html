@@ -31,7 +31,7 @@
     <li><a href="../install.html">Get it</a></li>
     <li><a href="../contents.html">Doc</a></li>
     <li><a href="https://github.com/openturns">Code</a></li>
-    <li><a href="http://trac.openturns.org">Bugs</a></li>
+    <li><a href="https://github.com/openturns/openturns/issues">Bugs</a></li>
   </ul>
   <a href="../index.html">
     <h1>
@@ -77,8 +77,9 @@
 <li><a class="reference internal" href="#target-platforms">Target platforms</a></li>
 <li><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li><a class="reference internal" href="#compilation-infrastructure">Compilation infrastructure</a></li>
+<li><a class="reference internal" href="#version-control">Version control</a></li>
+<li><a class="reference internal" href="#continuous-integration">Continuous integration</a></li>
 <li><a class="reference internal" href="#packaging">Packaging</a></li>
-<li><a class="reference internal" href="#autobuilder">Autobuilder</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#design-patterns">Design patterns</a><ul>
@@ -405,44 +406,42 @@ may be used.</p>
 </div>
 <div class="section" id="compilation-infrastructure">
 <h3>Compilation infrastructure<a class="headerlink" href="#compilation-infrastructure" title="Permalink to this headline">¶</a></h3>
-<p>The historic autotools compilation infrastructure was replaced by CMake.
-CMake is a lot faster, and the resulting infrastructure is easier to
-maintain. It covers:</p>
+<p>The compilation infrastructure uses CMake, it covers:</p>
 <ul class="simple">
 <li>The detection and configuration aspects of the platform;</li>
 <li>The dependency management of the sources;</li>
 <li>The generation of parallel makefiles;</li>
 <li>The regression tests.</li>
 </ul>
-<p>CMake could also provide a way to compile the Windows version using
-Microsoft compilers.</p>
+</div>
+<div class="section" id="version-control">
+<h3>Version control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h3>
+<p>The project uses Git version-control system.
+The code repositories are hosted on GitHub (<a class="reference external" href="https://github.com/openturns/">https://github.com/openturns/</a>).</p>
+</div>
+<div class="section" id="continuous-integration">
+<h3>Continuous integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h3>
+<p>The git code repository is monitored for changes by automated builds,
+allowing developers to detect problems early.</p>
+<p>Each pull-request on the GitHub code repository triggers continuous integration
+jobs for the different target platforms to be run on several free
+continuous integration services:</p>
+<ul class="simple">
+<li>CircleCI (<a class="reference external" href="https://circleci.com/">https://circleci.com/</a>) for Linux</li>
+<li>Travis (<a class="reference external" href="https://travis-ci.org/">https://travis-ci.org/</a>) for macOS</li>
+<li>AppVeyor (<a class="reference external" href="https://www.appveyor.com/">https://www.appveyor.com/</a>) for Windows</li>
+</ul>
+<p>Each of these jobs checks that the library can be successfully compiled and
+that all unit tests pass. All jobs passing is one of the necessary conditions
+for the code to be integrated.</p>
 </div>
 <div class="section" id="packaging">
 <h3>Packaging<a class="headerlink" href="#packaging" title="Permalink to this headline">¶</a></h3>
 <p>The team officially provides binaries for the Debian operating system,
 and Windows. Note that is officially supported in Debian: it can be
-installed easily from the debian software repositories. Experimental
-packages may be available for some RPM-based distributions such as
+installed easily from the debian software repositories. Packages
+are also available for some RPM-based distributions such as
 Fedora, CentOS and openSUSE.</p>
-</div>
-<div class="section" id="autobuilder">
-<h3>Autobuilder<a class="headerlink" href="#autobuilder" title="Permalink to this headline">¶</a></h3>
-<p>The project provides developers a continuous integration environment.
-It consists in an daemon monitoring the version control software for
-changes. It assumes new code to be involved in regression test. Also
-developers should regularly commit to the code base to ensure the origin
-of a problem is quickly detected.</p>
-<p>The autobuilder is triggered at each pull-request.</p>
-<p>The current test environment consists of the build on each of these
-platforms:</p>
-<ul class="simple">
-<li>debian 6 x86_64</li>
-<li>debian 6 i686</li>
-<li>mingw-w64 i686 (wine)</li>
-</ul>
-<p>The result of the autobuilder made public to anyone registered to the
-mailing list <code class="docutils literal notranslate"><span class="pre">commits&#64;openturns.org</span></code>. A summary of each build is
-provided by mail with links to the logs stored on the server.</p>
 </div>
 </div>
 <div class="section" id="design-patterns">
@@ -557,19 +556,9 @@ the object.</p>
 <div class="figure">
 <img alt="Composite structure." src="../_images/composite.png" />
 </div>
-<p>Figure [fig:composite_tree] shows an example of tree modeled by the
-Composite. The Composite objects make up the tree nodes whereas the
-leaves can be any concrete object deriving from Component.</p>
-<div class="figure">
-<img alt="Example of tree modeled by the Composite." src="../_images/composite_tree.png" />
-</div>
-<p>The Composite pattern is an essential element of the design model for
-the &nbsp;platform. It can be used to model numerical function composition,
-random vector composition, etc. It can be found in several aspects of
-the modeling brick. Any related objects tree structure can rely on the
-Composite pattern with benefit. For example, the classes
-ComposedDistribution, CompositeRandomVector,
-ComposedFunction follow this pattern.</p>
+<p>The Composite pattern is an essential element of the design model for the platform.
+It can be found in several modeling bricks, such as function composition (ComposedFunction)
+random vector composition (CompositeRandomVector), joint distributions (ComposedDistribution), etc.</p>
 </div>
 </div>
 </div>
@@ -600,7 +589,7 @@ ComposedFunction follow this pattern.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/30c78e87d.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/2b6d257cb.
     </div>
   </body>
 </html>

@@ -1,6 +1,9 @@
 CompositeRandomVector
 ===============================
 
+.. plot:: pyplots/CompositeRandomVector.py
+    :include-source: False
+
 .. currentmodule:: openturns
 
 .. autoclass:: CompositeRandomVector
@@ -8,4 +11,3 @@ CompositeRandomVector
    
    .. automethod:: __init__
    
-

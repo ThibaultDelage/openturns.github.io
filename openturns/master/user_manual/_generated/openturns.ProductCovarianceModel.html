@@ -31,7 +31,7 @@
     <li><a href="../../install.html">Get it</a></li>
     <li><a href="../../contents.html">Doc</a></li>
     <li><a href="https://github.com/openturns">Code</a></li>
-    <li><a href="http://trac.openturns.org">Bugs</a></li>
+    <li><a href="https://github.com/openturns/openturns/issues">Bugs</a></li>
   </ul>
   <a href="../../index.html">
     <h1>
@@ -142,7 +142,7 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">scale2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cov1</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ExponentialModel</span><span class="p">(</span><span class="n">scale1</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cov2</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ExponentialModel</span><span class="p">(</span><span class="n">scale2</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">myCovarianceModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ProductCovarianceModel</span><span class="p">([</span><span class="n">cov1</span><span class="p">,</span> <span class="n">cov2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">covarianceModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ProductCovarianceModel</span><span class="p">([</span><span class="n">cov1</span><span class="p">,</span> <span class="n">cov2</span><span class="p">])</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -200,106 +200,98 @@
 <tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getClassName" title="openturns.ProductCovarianceModel.getClassName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getClassName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getFullParameter" title="openturns.ProductCovarianceModel.getFullParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFullParameter</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getCollection" title="openturns.ProductCovarianceModel.getCollection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCollection</span></code></a>()</td>
+<td>Covariance model collection accessor.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getFullParameter" title="openturns.ProductCovarianceModel.getFullParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFullParameter</span></code></a>()</td>
 <td>Get the full parameters of the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getFullParameterDescription" title="openturns.ProductCovarianceModel.getFullParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFullParameterDescription</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getFullParameterDescription" title="openturns.ProductCovarianceModel.getFullParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFullParameterDescription</span></code></a>()</td>
 <td>Get the description full parameters of the covariance function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getId" title="openturns.ProductCovarianceModel.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getId" title="openturns.ProductCovarianceModel.getId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getId</span></code></a>()</td>
 <td>Accessor to the object’s id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getInputDimension" title="openturns.ProductCovarianceModel.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getInputDimension" title="openturns.ProductCovarianceModel.getInputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getInputDimension</span></code></a>()</td>
 <td>Get the input dimension <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/> of the covariance function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getMarginal" title="openturns.ProductCovarianceModel.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(index)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getMarginal" title="openturns.ProductCovarianceModel.getMarginal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMarginal</span></code></a>(index)</td>
 <td>Get the ith marginal of the model.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getName" title="openturns.ProductCovarianceModel.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getName" title="openturns.ProductCovarianceModel.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getNuggetFactor" title="openturns.ProductCovarianceModel.getNuggetFactor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNuggetFactor</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getNuggetFactor" title="openturns.ProductCovarianceModel.getNuggetFactor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNuggetFactor</span></code></a>()</td>
 <td>Accessor to the nugget factor.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getOutputCorrelation" title="openturns.ProductCovarianceModel.getOutputCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputCorrelation</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getOutputCorrelation" title="openturns.ProductCovarianceModel.getOutputCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputCorrelation</span></code></a>()</td>
 <td>Get the spatial correlation matrix <img class="math" src="../../_images/math/f21101e77d9a7fb409f426488c93c28b06bd6f3a.svg" alt="\mat{R}"/> of the covariance function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getOutputDimension" title="openturns.ProductCovarianceModel.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getOutputDimension" title="openturns.ProductCovarianceModel.getOutputDimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getOutputDimension</span></code></a>()</td>
 <td>Get the dimension <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/> of the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getParameter" title="openturns.ProductCovarianceModel.getParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameter</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getParameter" title="openturns.ProductCovarianceModel.getParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameter</span></code></a>()</td>
 <td>Get the parameters of the covariance function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getParameterDescription" title="openturns.ProductCovarianceModel.getParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDescription</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getParameterDescription" title="openturns.ProductCovarianceModel.getParameterDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getParameterDescription</span></code></a>()</td>
 <td>Get the description of the covariance function parameters.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getScale" title="openturns.ProductCovarianceModel.getScale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getScale</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getScale" title="openturns.ProductCovarianceModel.getScale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getScale</span></code></a>()</td>
 <td>Get the scale parameter <img class="math" src="../../_images/math/7f8d6d830d1bda48ea6068b9801613dfe3a00263.svg" alt="\vect{\theta}"/> of the covariance function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getShadowedId" title="openturns.ProductCovarianceModel.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getShadowedId" title="openturns.ProductCovarianceModel.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getVisibility" title="openturns.ProductCovarianceModel.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.getVisibility" title="openturns.ProductCovarianceModel.getVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVisibility</span></code></a>()</td>
 <td>Accessor to the object’s visibility state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.hasName" title="openturns.ProductCovarianceModel.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.hasName" title="openturns.ProductCovarianceModel.hasName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasName</span></code></a>()</td>
 <td>Test if the object is named.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.hasVisibleName" title="openturns.ProductCovarianceModel.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.hasVisibleName" title="openturns.ProductCovarianceModel.hasVisibleName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasVisibleName</span></code></a>()</td>
 <td>Test if the object has a distinguishable name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.isDiagonal" title="openturns.ProductCovarianceModel.isDiagonal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isDiagonal</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.isDiagonal" title="openturns.ProductCovarianceModel.isDiagonal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isDiagonal</span></code></a>()</td>
 <td>Test whether the model is diagonal or not.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.isStationary" title="openturns.ProductCovarianceModel.isStationary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isStationary</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.isStationary" title="openturns.ProductCovarianceModel.isStationary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isStationary</span></code></a>()</td>
 <td>Test whether the model is stationary or not.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.parameterGradient" title="openturns.ProductCovarianceModel.parameterGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameterGradient</span></code></a>(s,&nbsp;t)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.parameterGradient" title="openturns.ProductCovarianceModel.parameterGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameterGradient</span></code></a>(s,&nbsp;t)</td>
 <td>Compute the gradient according to the parameters.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.partialGradient" title="openturns.ProductCovarianceModel.partialGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partialGradient</span></code></a>(s,&nbsp;t)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.partialGradient" title="openturns.ProductCovarianceModel.partialGradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partialGradient</span></code></a>(s,&nbsp;t)</td>
 <td>Compute the gradient of the covariance function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setActiveParameter" title="openturns.ProductCovarianceModel.setActiveParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setActiveParameter</span></code></a>(active)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setActiveParameter" title="openturns.ProductCovarianceModel.setActiveParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setActiveParameter</span></code></a>(active)</td>
 <td>Accessor to the active parameter set.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setAmplitude" title="openturns.ProductCovarianceModel.setAmplitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAmplitude</span></code></a>(amplitude)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setAmplitude" title="openturns.ProductCovarianceModel.setAmplitude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAmplitude</span></code></a>(amplitude)</td>
 <td>Set the amplitude parameter <img class="math" src="../../_images/math/d11b42ec6be2dbdf534b034a16ae0734bacab9b6.svg" alt="\vect{\sigma}"/> of the covariance function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setFullParameter" title="openturns.ProductCovarianceModel.setFullParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setFullParameter</span></code></a>(parameter)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setFullParameter" title="openturns.ProductCovarianceModel.setFullParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setFullParameter</span></code></a>(parameter)</td>
 <td>Set the full parameters of the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setName" title="openturns.ProductCovarianceModel.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setName" title="openturns.ProductCovarianceModel.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(name)</td>
 <td>Accessor to the object’s name.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setNuggetFactor" title="openturns.ProductCovarianceModel.setNuggetFactor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setNuggetFactor</span></code></a>(nuggetFactor)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setNuggetFactor" title="openturns.ProductCovarianceModel.setNuggetFactor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setNuggetFactor</span></code></a>(nuggetFactor)</td>
 <td>Set the nugget factor for the regularization.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setOutputCorrelation" title="openturns.ProductCovarianceModel.setOutputCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOutputCorrelation</span></code></a>(correlation)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setOutputCorrelation" title="openturns.ProductCovarianceModel.setOutputCorrelation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setOutputCorrelation</span></code></a>(correlation)</td>
 <td>Set the spatial correlation matrix <img class="math" src="../../_images/math/f21101e77d9a7fb409f426488c93c28b06bd6f3a.svg" alt="\mat{R}"/> of the covariance function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setParameter" title="openturns.ProductCovarianceModel.setParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameter</span></code></a>(parameter)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setParameter" title="openturns.ProductCovarianceModel.setParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setParameter</span></code></a>(parameter)</td>
 <td>Set the parameters of the covariance function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setScale" title="openturns.ProductCovarianceModel.setScale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setScale</span></code></a>(scale)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setScale" title="openturns.ProductCovarianceModel.setScale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setScale</span></code></a>(scale)</td>
 <td>Set the scale parameter <img class="math" src="../../_images/math/7f8d6d830d1bda48ea6068b9801613dfe3a00263.svg" alt="\vect{\theta}"/> of the covariance function.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setShadowedId" title="openturns.ProductCovarianceModel.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setShadowedId" title="openturns.ProductCovarianceModel.setShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setShadowedId</span></code></a>(id)</td>
 <td>Accessor to the object’s shadowed id.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setVisibility" title="openturns.ProductCovarianceModel.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.ProductCovarianceModel.setVisibility" title="openturns.ProductCovarianceModel.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</td>
 <td>Accessor to the object’s visibility state.</td>
-</tr>
-</tbody>
-</table>
-<table border="1" class="docutils">
-<colgroup>
-<col width="63%" />
-<col width="37%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>getCollection</strong></td>
-<td>&#160;</td>
 </tr>
 </tbody>
 </table>
@@ -608,6 +600,23 @@ function.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>class_name</strong><span class="classifier">str</span></dt><dd><p>The object class name (<cite>object.__class__.__name__</cite>).</p>
 </dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.ProductCovarianceModel.getCollection">
+<code class="descname">getCollection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.ProductCovarianceModel.getCollection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Covariance model collection accessor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>coll</strong><span class="classifier">sequence of <a class="reference internal" href="openturns.CovarianceModel.html#openturns.CovarianceModel" title="openturns.CovarianceModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CovarianceModel</span></code></a></span></dt><dd></dd>
 </dl>
 </td>
 </tr>
@@ -1242,7 +1251,7 @@ Its size must be equal to the input dimension of the covariance function.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/30c78e87d.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/2b6d257cb.
     </div>
   </body>
 </html>

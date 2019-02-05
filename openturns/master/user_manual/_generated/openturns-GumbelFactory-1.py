@@ -15,8 +15,8 @@ if dimension <= 2:
         cloud.setColor('blue')
         cloud.setPointStyle('fcircle')
         pdf_graph.add(cloud)
+        pdf_graph.setTitle(str(distribution))
         fig = plt.figure(figsize=(10, 4))
-        plt.suptitle(str(distribution))
         pdf_axis = fig.add_subplot(111)
         View(pdf_graph, figure=fig, axes=[pdf_axis], add_legend=False)
     else:
@@ -27,7 +27,7 @@ if dimension <= 2:
         cloud.setColor('red')
         cloud.setPointStyle('fcircle')
         pdf_graph.add(cloud)
+        pdf_graph.setTitle(str(distribution))
         fig = plt.figure(figsize=(10, 4))
-        plt.suptitle(str(distribution))
         pdf_axis = fig.add_subplot(111)
         View(pdf_graph, figure=fig, axes=[pdf_axis], add_legend=False, square_axes=True)

@@ -31,7 +31,7 @@
     <li><a href="../../../install.html">Get it</a></li>
     <li><a href="../../../contents.html">Doc</a></li>
     <li><a href="https://github.com/openturns">Code</a></li>
-    <li><a href="http://trac.openturns.org">Bugs</a></li>
+    <li><a href="https://github.com/openturns/openturns/issues">Bugs</a></li>
   </ul>
   <a href="../../../index.html">
     <h1>
@@ -96,6 +96,10 @@
             
   <div class="section" id="tensorapproximationalgorithm">
 <h1>TensorApproximationAlgorithm<a class="headerlink" href="#tensorapproximationalgorithm" title="Permalink to this headline">¶</a></h1>
+<p>(<a class="reference external" href="../../../pyplots/TensorApproximationAlgorithm.py">Source code</a>, <a class="reference external" href="../../../pyplots/TensorApproximationAlgorithm.png">png</a>, <a class="reference external" href="../../../pyplots/TensorApproximationAlgorithm.hires.png">hires.png</a>, <a class="reference external" href="../../../pyplots/TensorApproximationAlgorithm.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="../../../_images/TensorApproximationAlgorithm.png" src="../../../_images/TensorApproximationAlgorithm.png" />
+</div>
 <dl class="class">
 <dt id="openturns.TensorApproximationAlgorithm">
 <em class="property">class </em><code class="descname">TensorApproximationAlgorithm</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.TensorApproximationAlgorithm" title="Permalink to this definition">¶</a></dt>
@@ -147,23 +151,24 @@ of the coefficients in the basis of the j-th component:</p>
 <cite>TensorApproximationAlgorithm-DecompositionMethod</cite>.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define the model</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dim</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x*sin(x)&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create the input distribution</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComposedDistribution</span><span class="p">([</span><span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">()]</span><span class="o">*</span><span class="n">dim</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">factoryCollection</span> <span class="o">=</span> <span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">FourierSeriesFactory</span><span class="p">()]</span> <span class="o">*</span> <span class="n">dim</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x*sin(x)&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uniform</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ComposedDistribution</span><span class="p">([</span><span class="n">uniform</span><span class="p">]</span><span class="o">*</span><span class="n">dim</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">factoryCollection</span> <span class="o">=</span> <span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">OrthogonalUniVariateFunctionFamily</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">OrthogonalUniVariatePolynomialFunctionFactory</span><span class="p">(</span><span class="n">ot</span><span class="o">.</span><span class="n">StandardDistributionPolynomialFactory</span><span class="p">(</span><span class="n">uniform</span><span class="p">)))]</span> <span class="o">*</span> <span class="n">dim</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">functionFactory</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">OrthogonalProductFunctionFactory</span><span class="p">(</span><span class="n">factoryCollection</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">size</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Y</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sampleX</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">8.0</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sampleY</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">sampleX</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nk</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">*</span> <span class="n">dim</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">maxRank</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">algo</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">TensorApproximationAlgorithm</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">distribution</span><span class="p">,</span> <span class="n">functionFactory</span><span class="p">,</span> <span class="n">nk</span><span class="p">,</span> <span class="n">maxRank</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">algo</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">TensorApproximationAlgorithm</span><span class="p">(</span><span class="n">sampleX</span><span class="p">,</span> <span class="n">sampleY</span><span class="p">,</span> <span class="n">distribution</span><span class="p">,</span> <span class="n">functionFactory</span><span class="p">,</span> <span class="n">nk</span><span class="p">,</span> <span class="n">maxRank</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">algo</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>Get the resulting meta model:</p>
+<p>result = algo.getResult()
+metamodel = result.getMetaModel()</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -685,7 +690,7 @@ algorithm used for the rank-1 approximation.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/30c78e87d.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/2b6d257cb.
     </div>
   </body>
 </html>

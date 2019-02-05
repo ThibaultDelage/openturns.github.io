@@ -1,6 +1,9 @@
 GeneralLinearModelAlgorithm
 =====================================
 
+.. plot:: pyplots/GeneralLinearModelAlgorithm.py
+    :include-source: False
+
 .. currentmodule:: openturns
 
 .. autoclass:: GeneralLinearModelAlgorithm
@@ -8,4 +11,3 @@ GeneralLinearModelAlgorithm
    
    .. automethod:: __init__
    
-

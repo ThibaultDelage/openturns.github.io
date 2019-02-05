@@ -31,7 +31,7 @@
     <li><a href="../../../install.html">Get it</a></li>
     <li><a href="../../../contents.html">Doc</a></li>
     <li><a href="https://github.com/openturns">Code</a></li>
-    <li><a href="http://trac.openturns.org">Bugs</a></li>
+    <li><a href="https://github.com/openturns/openturns/issues">Bugs</a></li>
   </ul>
   <a href="../../../index.html">
     <h1>
@@ -96,6 +96,10 @@
             
   <div class="section" id="krigingalgorithm">
 <h1>KrigingAlgorithm<a class="headerlink" href="#krigingalgorithm" title="Permalink to this headline">¶</a></h1>
+<p>(<a class="reference external" href="../../../pyplots/KrigingAlgorithm.py">Source code</a>, <a class="reference external" href="../../../pyplots/KrigingAlgorithm.png">png</a>, <a class="reference external" href="../../../pyplots/KrigingAlgorithm.hires.png">hires.png</a>, <a class="reference external" href="../../../pyplots/KrigingAlgorithm.pdf">pdf</a>)</p>
+<div class="figure">
+<img alt="../../../_images/KrigingAlgorithm.png" src="../../../_images/KrigingAlgorithm.png" />
+</div>
 <dl class="class">
 <dt id="openturns.KrigingAlgorithm">
 <em class="property">class </em><code class="descname">KrigingAlgorithm</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.KrigingAlgorithm" title="Permalink to this definition">¶</a></dt>
@@ -161,17 +165,16 @@ with <a class="reference internal" href="#openturns.KrigingAlgorithm.setNoise" t
 </div><p class="rubric">Examples</p>
 <p>Create the model <img class="math" src="../../../_images/math/7b0d1be73123c3888c6c1c088f4296dd00dcdca2.svg" alt="\cM: \Rset \mapsto \Rset"/> and the samples:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># use of Hmat implementation</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># ot.ResourceMap.Set(&#39;KrigingAlgorithm-LinearAlgebra&#39;, &#39;HMAT&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x * sin(x)&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inputSample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Sample</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">8.0</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">outputSample</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">inputSample</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>  <span class="p">[</span><span class="s1">&#39;x * sin(x)&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sampleX</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">8.0</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sampleY</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">sampleX</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Create the algorithm:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">basis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">ConstantBasisFactory</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">covarianceModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquaredExponential</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">algo</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">KrigingAlgorithm</span><span class="p">(</span><span class="n">inputSample</span><span class="p">,</span> <span class="n">outputSample</span><span class="p">,</span> <span class="n">covarianceModel</span><span class="p">,</span> <span class="n">basis</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">basis</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Basis</span><span class="p">([</span><span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]),</span> <span class="n">ot</span><span class="o">.</span><span class="n">SymbolicFunction</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;x^2&#39;</span><span class="p">])])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">covarianceModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">SquaredExponential</span><span class="p">([</span><span class="mf">1.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">covarianceModel</span><span class="o">.</span><span class="n">setActiveParameter</span><span class="p">([])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">algo</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">KrigingAlgorithm</span><span class="p">(</span><span class="n">sampleX</span><span class="p">,</span> <span class="n">sampleY</span><span class="p">,</span> <span class="n">covarianceModel</span><span class="p">,</span> <span class="n">basis</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">algo</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -803,7 +806,7 @@ particularly <a class="reference internal" href="openturns.GeneralLinearModelAlg
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/30c78e87d.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.0+/2b6d257cb.
     </div>
   </body>
 </html>
