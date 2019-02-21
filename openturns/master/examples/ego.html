@@ -154,18 +154,18 @@ div.nblast {
 
 /* input prompt */
 div.nbinput div.prompt pre {
-    color: #303F9F;
+    color: #307FC1;
 }
 
 /* output prompt */
 div.nboutput div.prompt pre {
-    color: #D84315;
+    color: #BF5B3D;
 }
 
 /* all prompts */
 div.nbinput div.prompt,
 div.nboutput div.prompt {
-    min-width: 9ex;
+    min-width: 7ex;
     padding-top: 0.4em;
     padding-right: 0.4em;
     text-align: right;
@@ -205,9 +205,9 @@ div.nboutput div.output_area {
 
 /* input area */
 div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
+    border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f7f7f7;
+    background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
@@ -215,7 +215,7 @@ div.nboutput div[class*=MathJax] {
     text-align: left !important;
 }
 
-/* override sphinx.ext.pngmath center alignment in output cells */
+/* override sphinx.ext.imgmath center alignment in output cells */
 div.nboutput div.math p {
     text-align: left;
 }
@@ -264,12 +264,45 @@ div.nboutput div.output_area.stderr {
 
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 </style>
 <div class="section" id="EGO-algorithm-usage-examples">
 <h1>EGO algorithm usage examples<a class="headerlink" href="#EGO-algorithm-usage-examples" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-none notranslate"><div class="highlight"><pre>
@@ -285,15 +318,10 @@ ot.TBB.Disable()
 </pre></div>
 </div>
 </div>
-<p>The EGO algorithm [jones1998]_ is an adaptative optimization method
-based on kriging.</p>
-<p>An initial design of experiment is used to build a first metamodel. At
-each iteration a new point that maximizes a criterion is chosen as
-optimizer candidate.</p>
-<p>The criterion uses a tradeoff between the metamodel value and the
-conditional variance.</p>
-<p>Then the new point is evaluated using the original model and the
-metamodel is relearnt on the extended design of experiment.</p>
+<p>The EGO algorithm [jones1998]_ is an adaptative optimization method based on kriging.</p>
+<p>An initial design of experiment is used to build a first metamodel. At each iteration a new point that maximizes a criterion is chosen as optimizer candidate.</p>
+<p>The criterion uses a tradeoff between the metamodel value and the conditional variance.</p>
+<p>Then the new point is evaluated using the original model and the metamodel is relearnt on the extended design of experiment.</p>
 <div class="section" id="E.I.-formulation:-Ackley-test-case">
 <h2>E.I. formulation: Ackley test-case<a class="headerlink" href="#E.I.-formulation:-Ackley-test-case" title="Permalink to this headline">¶</a></h2>
 <div class="math">
@@ -301,8 +329,7 @@ metamodel is relearnt on the extended design of experiment.</p>
 </div><div class="math">
 <p><img src="../_images/math/4401a8c157b3353fc0e21369bfebe51e77b3ee15.svg" alt="dimension = d, x \in [-15,15^d], a=20, b=0.2, c=2\pi, \hat{x}=(0,0,...,0), f_{min} = 0"/></p>
 </div><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-none notranslate"><div class="highlight"><pre>
@@ -385,8 +412,7 @@ iteration= 15
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -403,14 +429,12 @@ iteration= 15
 <p><img src="../_images/math/526f5f7631c9dbd6b8d00ee4ae8645d33eec071e.svg" alt="f(x_1, x_2) = g \circ  t(x_1, x_2)"/></p>
 </div><div class="math">
 <p><img src="../_images/math/8a95ab74d1da9764279418ba75d3826c42abe3c9.svg" alt="dimension = 2, x \in [0, 1]^2, \hat{x}=(0.123895, 0.818329),(0.542773, 0.151666),(0.961652, 0.165000), f_{min} = -1.04741"/></p>
-</div><p>This time the AEI formulation is used, the objective output should be
-2-d with the noise variance.</p>
+</div><p>This time the AEI formulation is used, the objective output should be 2-d with the noise variance.</p>
 <p>Here we assume a constant noise variance:</p>
 <div class="math">
 <p><img src="../_images/math/ae251b72d943809b26942c3f0ea53ff6a461a226.svg" alt="\sigma_{\epsilon} = 0.96"/></p>
 </div><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-none notranslate"><div class="highlight"><pre>
@@ -468,8 +492,7 @@ iteration= 7
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-none notranslate"><div class="highlight"><pre>
@@ -506,7 +529,7 @@ iteration= 7
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/5958e9e84.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/ce1bc890a.
     </div>
   </body>
 </html>

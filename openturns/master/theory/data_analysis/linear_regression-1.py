@@ -12,8 +12,7 @@ sampleY = f(sample)
 sampleX = sample.getMarginal(0)
 sampleX.setName('X')
 # Fit this linear model
-factory = ot.LinearModelFactory()
-regressionModel = factory.build(sampleX, sampleY, 0.9)
+regressionModel = ot.LinearModelAlgorithm(sampleX, sampleY).getResult()
 # Test the linear model fitting
 graph = ot.VisualTest.DrawLinearModel(sampleX, sampleY, regressionModel)
 cloud = graph.getDrawable(0)

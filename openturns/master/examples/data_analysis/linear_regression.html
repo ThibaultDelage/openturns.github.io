@@ -146,18 +146,18 @@ div.nblast {
 
 /* input prompt */
 div.nbinput div.prompt pre {
-    color: #303F9F;
+    color: #307FC1;
 }
 
 /* output prompt */
 div.nboutput div.prompt pre {
-    color: #D84315;
+    color: #BF5B3D;
 }
 
 /* all prompts */
 div.nbinput div.prompt,
 div.nboutput div.prompt {
-    min-width: 9ex;
+    min-width: 7ex;
     padding-top: 0.4em;
     padding-right: 0.4em;
     text-align: right;
@@ -197,9 +197,9 @@ div.nboutput div.output_area {
 
 /* input area */
 div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
+    border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f7f7f7;
+    background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
@@ -207,7 +207,7 @@ div.nboutput div[class*=MathJax] {
     text-align: left !important;
 }
 
-/* override sphinx.ext.pngmath center alignment in output cells */
+/* override sphinx.ext.imgmath center alignment in output cells */
 div.nboutput div.math p {
     text-align: left;
 }
@@ -256,56 +256,74 @@ div.nboutput div.output_area.stderr {
 
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 </style>
 <div class="section" id="Build-and-validate-a-linear-model">
 <h1>Build and validate a linear model<a class="headerlink" href="#Build-and-validate-a-linear-model" title="Permalink to this headline">¶</a></h1>
-<p>In this example we are going to build a linear regression model and
-validate it numerically and graphically.</p>
-<p>The linear model between links a scalar variable <img class="math" src="../../_images/math/007c922d3728af255acfd18d1e9c360ae028d713.svg" alt="Y"/> and to an
-n-dimensional one <img class="math" src="../../_images/math/19886e721900b31285c302968edff3264e1e29d1.svg" alt="\underline{X} = (X_i)_{i \leq n}"/>, as follows:</p>
+<p>In this example we are going to build a linear regression model and validate it numerically and graphically.</p>
+<p>The linear model between links a scalar variable <img class="math" src="../../_images/math/007c922d3728af255acfd18d1e9c360ae028d713.svg" alt="Y"/> and to an n-dimensional one <img class="math" src="../../_images/math/19886e721900b31285c302968edff3264e1e29d1.svg" alt="\underline{X} = (X_i)_{i \leq n}"/>, as follows:</p>
 <div class="math">
 <p><img src="../../_images/math/b2beffb8249aaced26b3cf5317cbc057b03a5aec.svg" alt="\tilde{Y} = a_0 + \sum_{i=1}^n a_i X_i + \varepsilon"/></p>
-</div><p>where <img class="math" src="../../_images/math/7577704132ba6c834286572d9525182a131c8616.svg" alt="\varepsilon"/> is the residual, supposed to follow the
-Normal(0.0, 1.0) distribution.</p>
-<p>The linear model may be validated graphically if <img class="math" src="../../_images/math/22d5e65c3ee58dbe2e8e28435a23e4abb739702b.svg" alt="\underline{X}"/>
-is of dimension 1, by drawing on the same graph the cloud $(X_i, Y_i).</p>
+</div><p>where <img class="math" src="../../_images/math/7577704132ba6c834286572d9525182a131c8616.svg" alt="\varepsilon"/> is the residual, supposed to follow the Normal(0.0, 1.0) distribution.</p>
+<p>The linear model may be validated graphically if <img class="math" src="../../_images/math/22d5e65c3ee58dbe2e8e28435a23e4abb739702b.svg" alt="\underline{X}"/> is of dimension 1, by drawing on the same graph the cloud $(X_i, Y_i).</p>
 <p>The linear model also be validate numerically with several tests:</p>
 <ul class="simple">
-<li><p>LinearModelFisher: tests the nullity of the regression linear model
-coefficients (Fisher distribution used),</p></li>
-<li><p>LinearModelResidualMean: tests, under the hypothesis of a gaussian
-sample, if the mean of the residual is equal to zero. It is based on
-the Student test (equality of mean for two gaussian samples).</p></li>
+<li><p>LinearModelFisher: tests the nullity of the regression linear model coefficients (Fisher distribution used),</p></li>
+<li><p>LinearModelResidualMean: tests, under the hypothesis of a gaussian sample, if the mean of the residual is equal to zero. It is based on the Student test (equality of mean for two gaussian samples).</p></li>
 </ul>
-<p>The hypothesis on the residuals (centered gaussian distribution) may be
-validated:</p>
+<p>The hypothesis on the residuals (centered gaussian distribution) may be validated:</p>
 <ul class="simple">
-<li><p>graphically if <img class="math" src="../../_images/math/22d5e65c3ee58dbe2e8e28435a23e4abb739702b.svg" alt="\underline{X}"/> is of dimension 1, by drawing
-the residual couples (<img class="math" src="../../_images/math/8d39ecc5155156273bb65e27a4905b1909d5ac6d.svg" alt="\varepsilon_i, \varepsilon_{i+1}"/>),
-where the residual <img class="math" src="../../_images/math/300884b2aca640afef3684a53c4caa02403e9404.svg" alt="\varepsilon_i"/> is evaluated on the samples
-<img class="math" src="../../_images/math/bca4758e0f910a17ee7a21e6cb1605cc7dfde6f7.svg" alt="(X, Y)"/>.</p></li>
-<li><p>numerically with the LinearModelResidualMean Test which tests, under
-the hypothesis of a gaussian sample, if the mean of the residual is
-equal to zero. It is based on the Student test (equality of mean for
-two gaussian samples).</p></li>
+<li><p>graphically if <img class="math" src="../../_images/math/22d5e65c3ee58dbe2e8e28435a23e4abb739702b.svg" alt="\underline{X}"/> is of dimension 1, by drawing the residual couples (<img class="math" src="../../_images/math/8d39ecc5155156273bb65e27a4905b1909d5ac6d.svg" alt="\varepsilon_i, \varepsilon_{i+1}"/>), where the residual <img class="math" src="../../_images/math/300884b2aca640afef3684a53c4caa02403e9404.svg" alt="\varepsilon_i"/> is evaluated on the samples <img class="math" src="../../_images/math/bca4758e0f910a17ee7a21e6cb1605cc7dfde6f7.svg" alt="(X, Y)"/>.</p></li>
+<li><p>numerically with the LinearModelResidualMean Test which tests, under the hypothesis of a gaussian sample, if the mean of the residual is equal to zero. It is based on the Student test (equality of mean for two gaussian samples).</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">openturns</span> <span class="kn">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Generate X,Y samples</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">Xsample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Triangular</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
@@ -314,30 +332,28 @@ two gaussian samples).</p></li>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Generate a particular scalar sampleX</span>
 <span class="n">particularXSample</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Triangular</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Create the linear model from Y,X samples</span>
-<span class="n">linearRegressionModel</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LinearModelFactory</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LinearModelAlgorithm</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">)</span><span class="o">.</span><span class="n">getResult</span><span class="p">()</span>
 
 <span class="c1"># Get the coefficients ai</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;coefficients of the linear regression model = &quot;</span><span class="p">,</span> <span class="n">linearRegressionModel</span><span class="o">.</span><span class="n">getRegression</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;coefficients of the linear regression model = &quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">getTrendCoefficients</span><span class="p">())</span>
 
 <span class="c1"># Get the confidence intervals of the ai coefficients</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;confidence intervals of the coefficients = &quot;</span><span class="p">,</span> <span class="n">linearRegressionModel</span><span class="o">.</span><span class="n">getConfidenceIntervals</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;confidence intervals of the coefficients = &quot;</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">LinearModelAnalysis</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="o">.</span><span class="n">getCoefficientsConfidenceInterval</span><span class="p">(</span><span class="mf">0.9</span><span class="p">))</span>
 
 </pre></div>
 </div>
@@ -348,24 +364,22 @@ two gaussian samples).</p></li>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 coefficients of the linear regression model =  [0.592409,2.98159]
-confidence intervals of the coefficients =  [0.714594, 0.470224]
-[3.00321, 2.95996]
+confidence intervals of the coefficients =  [0.435545, 0.749274]
+[2.95382, 3.00935]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Validate the model with a visual test</span>
-<span class="n">ot</span><span class="o">.</span><span class="n">VisualTest</span><span class="o">.</span><span class="n">DrawLinearModel</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span> <span class="n">linearRegressionModel</span><span class="p">)</span>
+<span class="n">ot</span><span class="o">.</span><span class="n">VisualTest</span><span class="o">.</span><span class="n">DrawLinearModel</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -373,19 +387,17 @@ confidence intervals of the coefficients =  [0.714594, 0.470224]
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Draw the graph of the residual values</span>
-<span class="n">ot</span><span class="o">.</span><span class="n">VisualTest</span><span class="o">.</span><span class="n">DrawLinearModelResidual</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span> <span class="n">linearRegressionModel</span><span class="p">)</span>
+<span class="n">ot</span><span class="o">.</span><span class="n">VisualTest</span><span class="o">.</span><span class="n">DrawLinearModelResidual</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -393,14 +405,13 @@ confidence intervals of the coefficients =  [0.714594, 0.470224]
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Check the nullity of the regression linear model coefficients</span>
 <span class="n">resultLinearModelFisher</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LinearModelTest</span><span class="o">.</span><span class="n">LinearModelFisher</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span>
-                                                               <span class="n">linearRegressionModel</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">)</span>
+                                                               <span class="n">result</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Test Success ? &quot;</span><span class="p">,</span> <span class="n">resultLinearModelFisher</span><span class="o">.</span><span class="n">getBinaryQualityMeasure</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;p-value of the LinearModelFisher Test = &quot;</span><span class="p">,</span> <span class="n">resultLinearModelFisher</span><span class="o">.</span><span class="n">getPValue</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;p-value threshold = &quot;</span><span class="p">,</span> <span class="n">resultLinearModelFisher</span><span class="o">.</span><span class="n">getThreshold</span><span class="p">())</span>
@@ -413,19 +424,18 @@ confidence intervals of the coefficients =  [0.714594, 0.470224]
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Test Success ?  False
-p-value of the LinearModelFisher Test =  1.0
+p-value of the LinearModelFisher Test =  2.162231915736612e-08
 p-value threshold =  0.1
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython2 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Check, under the hypothesis of a gaussian sample, if the mean of the residual is equal to zero</span>
 <span class="n">resultLinearModelResidualMean</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LinearModelTest</span><span class="o">.</span><span class="n">LinearModelResidualMean</span><span class="p">(</span><span class="n">Xsample</span><span class="p">,</span> <span class="n">Ysample</span><span class="p">,</span>
-                                                                           <span class="n">linearRegressionModel</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">)</span>
+                                                                           <span class="n">result</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Test Success ? &quot;</span><span class="p">,</span> <span class="n">resultLinearModelResidualMean</span><span class="o">.</span><span class="n">getBinaryQualityMeasure</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;p-value of the LinearModelResidualMean Test = &quot;</span><span class="p">,</span> <span class="n">resultLinearModelResidualMean</span><span class="o">.</span><span class="n">getPValue</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;p-value threshold = &quot;</span><span class="p">,</span> <span class="n">resultLinearModelResidualMean</span><span class="o">.</span><span class="n">getThreshold</span><span class="p">())</span>
@@ -438,7 +448,7 @@ p-value threshold =  0.1
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Test Success ?  True
-p-value of the LinearModelResidualMean Test =  1.0
+p-value of the LinearModelResidualMean Test =  0.9999999999998775
 p-value threshold =  0.1
 </pre></div></div>
 </div>
@@ -471,7 +481,7 @@ p-value threshold =  0.1
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/5958e9e84.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/ce1bc890a.
     </div>
   </body>
 </html>

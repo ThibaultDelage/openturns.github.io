@@ -146,18 +146,18 @@ div.nblast {
 
 /* input prompt */
 div.nbinput div.prompt pre {
-    color: #303F9F;
+    color: #307FC1;
 }
 
 /* output prompt */
 div.nboutput div.prompt pre {
-    color: #D84315;
+    color: #BF5B3D;
 }
 
 /* all prompts */
 div.nbinput div.prompt,
 div.nboutput div.prompt {
-    min-width: 9ex;
+    min-width: 7ex;
     padding-top: 0.4em;
     padding-right: 0.4em;
     text-align: right;
@@ -197,9 +197,9 @@ div.nboutput div.output_area {
 
 /* input area */
 div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
+    border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f7f7f7;
+    background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
@@ -207,7 +207,7 @@ div.nboutput div[class*=MathJax] {
     text-align: left !important;
 }
 
-/* override sphinx.ext.pngmath center alignment in output cells */
+/* override sphinx.ext.imgmath center alignment in output cells */
 div.nboutput div.math p {
     text-align: left;
 }
@@ -256,28 +256,49 @@ div.nboutput div.output_area.stderr {
 
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 </style>
 <div class="section" id="Creation-of-a-mesh">
 <h1>Creation of a mesh<a class="headerlink" href="#Creation-of-a-mesh" title="Permalink to this headline">¶</a></h1>
-<p>In this example we will demonstrate how to create a mesh
-<img class="math" src="../../_images/math/f42b888f157f5bec3a8d9f972d957c85ce63aec0.svg" alt="\mathcal{M}"/> associated to a domain
-<img class="math" src="../../_images/math/260ab8fdac7fd61a045bea85d07050f92c62f8d0.svg" alt="\mathcal{D} \in \mathbb{R}^n"/>.</p>
-<p>A mesh is defined from vertices in <img class="math" src="../../_images/math/2faac05dfbf7333cc5eb6961689ce2681e0645cd.svg" alt="\mathbb{R}^n"/> and a topology
-that connects the vertices: the simplices. The simplex
-<img class="math" src="../../_images/math/caed0dc9d47acab7a5e8decc63102794d4852ded.svg" alt="Indices([i_1,\dots, i_{n+1}])"/> relies the vertices of index
-<img class="math" src="../../_images/math/b0c66d01861e1b1cb02699093bb42e62be2da121.svg" alt="(i_1,\dots, i_{n+1})"/> in <img class="math" src="../../_images/math/1194099083c92a6f85888f4578f5252491b1f83c.svg" alt="\mathbb{N}^n"/>. In dimension 1, a
-simplex is an interval <img class="math" src="../../_images/math/785ad361d365f4edcadfc9ac9d00c905f12e2e56.svg" alt="Indices([i_1,i_2])"/>; in dimension 2, it is
-a triangle <img class="math" src="../../_images/math/87bff65a1dc8e0676e298ece33c5fd172e519f1d.svg" alt="Indices([i_1,i_2, i_3])"/>.</p>
-<p>The library enables to easily create a mesh which is a box of dimension
-<img class="math" src="../../_images/math/4a8b9e80bce9c93eb506330d8c97754b274a99f1.svg" alt="d=1"/> or <img class="math" src="../../_images/math/c1338ad6ce7bd6ab02d8d48aa7f8a791f4ef5f62.svg" alt="d=2"/> regularly meshed in all its directions,
-thanks to the object IntervalMesher.</p>
-<p>Consider <img class="math" src="../../_images/math/a2f63923505d5f47f0418029f6213c0b750abdb7.svg" alt="X: \Omega \times \mathcal{D} \rightarrow \mathbb{R}^d"/> a
-multivariate stochastic process of dimension <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/>, where
-<img class="math" src="../../_images/math/260ab8fdac7fd61a045bea85d07050f92c62f8d0.svg" alt="\mathcal{D} \in \mathbb{R}^n"/>. The mesh <img class="math" src="../../_images/math/f42b888f157f5bec3a8d9f972d957c85ce63aec0.svg" alt="\mathcal{M}"/> is a
-discretization of the domain <img class="math" src="../../_images/math/776044fc6c4e758d1e429893e4f6612415a301a9.svg" alt="\mathcal{D}"/>.</p>
+<p>In this example we will demonstrate how to create a mesh <img class="math" src="../../_images/math/f42b888f157f5bec3a8d9f972d957c85ce63aec0.svg" alt="\mathcal{M}"/> associated to a domain <img class="math" src="../../_images/math/260ab8fdac7fd61a045bea85d07050f92c62f8d0.svg" alt="\mathcal{D} \in \mathbb{R}^n"/>.</p>
+<p>A mesh is defined from vertices in <img class="math" src="../../_images/math/2faac05dfbf7333cc5eb6961689ce2681e0645cd.svg" alt="\mathbb{R}^n"/> and a topology that connects the vertices: the simplices. The simplex <img class="math" src="../../_images/math/caed0dc9d47acab7a5e8decc63102794d4852ded.svg" alt="Indices([i_1,\dots, i_{n+1}])"/> relies the vertices of index <img class="math" src="../../_images/math/b0c66d01861e1b1cb02699093bb42e62be2da121.svg" alt="(i_1,\dots, i_{n+1})"/> in <img class="math" src="../../_images/math/1194099083c92a6f85888f4578f5252491b1f83c.svg" alt="\mathbb{N}^n"/>. In dimension 1, a simplex is an interval <img class="math" src="../../_images/math/785ad361d365f4edcadfc9ac9d00c905f12e2e56.svg" alt="Indices([i_1,i_2])"/>; in dimension 2, it is a triangle <img class="math" src="../../_images/math/87bff65a1dc8e0676e298ece33c5fd172e519f1d.svg" alt="Indices([i_1,i_2, i_3])"/>.</p>
+<p>The library enables to easily create a mesh which is a box of dimension <img class="math" src="../../_images/math/4a8b9e80bce9c93eb506330d8c97754b274a99f1.svg" alt="d=1"/> or <img class="math" src="../../_images/math/c1338ad6ce7bd6ab02d8d48aa7f8a791f4ef5f62.svg" alt="d=2"/> regularly meshed in all its directions, thanks to the object IntervalMesher.</p>
+<p>Consider <img class="math" src="../../_images/math/a2f63923505d5f47f0418029f6213c0b750abdb7.svg" alt="X: \Omega \times \mathcal{D} \rightarrow \mathbb{R}^d"/> a multivariate stochastic process of dimension <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/>, where <img class="math" src="../../_images/math/260ab8fdac7fd61a045bea85d07050f92c62f8d0.svg" alt="\mathcal{D} \in \mathbb{R}^n"/>. The mesh <img class="math" src="../../_images/math/f42b888f157f5bec3a8d9f972d957c85ce63aec0.svg" alt="\mathcal{M}"/> is a discretization of the domain <img class="math" src="../../_images/math/776044fc6c4e758d1e429893e4f6612415a301a9.svg" alt="\mathcal{D}"/>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -288,8 +309,7 @@ discretization of the domain <img class="math" src="../../_images/math/776044fc6
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -304,16 +324,14 @@ discretization of the domain <img class="math" src="../../_images/math/776044fc6
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <img alt="../../_images/examples_probabilistic_modeling_mesh_creation_3_0.svg" src="../../_images/examples_probabilistic_modeling_mesh_creation_3_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -329,16 +347,14 @@ discretization of the domain <img class="math" src="../../_images/math/776044fc6
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <img alt="../../_images/examples_probabilistic_modeling_mesh_creation_4_0.svg" src="../../_images/examples_probabilistic_modeling_mesh_creation_4_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -361,16 +377,14 @@ discretization of the domain <img class="math" src="../../_images/math/776044fc6
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <img alt="../../_images/examples_probabilistic_modeling_mesh_creation_5_0.svg" src="../../_images/examples_probabilistic_modeling_mesh_creation_5_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -398,16 +412,14 @@ discretization of the domain <img class="math" src="../../_images/math/776044fc6
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <img alt="../../_images/examples_probabilistic_modeling_mesh_creation_6_0.svg" src="../../_images/examples_probabilistic_modeling_mesh_creation_6_0.svg" /></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -463,8 +475,7 @@ discretization of the domain <img class="math" src="../../_images/math/776044fc6
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -501,7 +512,7 @@ discretization of the domain <img class="math" src="../../_images/math/776044fc6
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/5958e9e84.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/ce1bc890a.
     </div>
   </body>
 </html>

@@ -146,18 +146,18 @@ div.nblast {
 
 /* input prompt */
 div.nbinput div.prompt pre {
-    color: #303F9F;
+    color: #307FC1;
 }
 
 /* output prompt */
 div.nboutput div.prompt pre {
-    color: #D84315;
+    color: #BF5B3D;
 }
 
 /* all prompts */
 div.nbinput div.prompt,
 div.nboutput div.prompt {
-    min-width: 9ex;
+    min-width: 7ex;
     padding-top: 0.4em;
     padding-right: 0.4em;
     text-align: right;
@@ -197,9 +197,9 @@ div.nboutput div.output_area {
 
 /* input area */
 div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
+    border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f7f7f7;
+    background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
@@ -207,7 +207,7 @@ div.nboutput div[class*=MathJax] {
     text-align: left !important;
 }
 
-/* override sphinx.ext.pngmath center alignment in output cells */
+/* override sphinx.ext.imgmath center alignment in output cells */
 div.nboutput div.math p {
     text-align: left;
 }
@@ -256,11 +256,44 @@ div.nboutput div.output_area.stderr {
 
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 </style>
 <div class="section" id="Logistic-growth-model">
 <h1>Logistic growth model<a class="headerlink" href="#Logistic-growth-model" title="Permalink to this headline">¶</a></h1>
-<p>In the following example we consider the logistic growth model that can
-be used to modelize the population growth:</p>
+<p>In the following example we consider the logistic growth model that can be used to modelize the population growth:</p>
 <div class="math">
 <p><img src="../../_images/math/a1007b11ee250d58d38b7e34f5bf6c3c0d8ee96a.svg" alt="\dot{y} = a y(t) - b y(t)^2 \hspace{5mm} \forall t \in [t_0, t_{max}] \hspace{5mm}"/></p>
 </div><p>With:</p>
@@ -272,21 +305,18 @@ be used to modelize the population growth:</p>
 <li><p><img class="math" src="../../_images/math/e5c144f828310e2806d3e4d703dd01fa57abb373.svg" alt="t_0"/> the initial time</p></li>
 <li><p><img class="math" src="../../_images/math/6ddaf6e53d0c31a1f531d696d5c00bbf51eaa044.svg" alt="t_{max}"/> the final time</p></li>
 </ul>
-<p>R. Pearl and L. Reed (1920) determined the parameters to be
-<img class="math" src="../../_images/math/066f35b6ad5a82e40a1e3b938c28c78cddeaae86.svg" alt="a=0.03134"/> and <img class="math" src="../../_images/math/20b4338ec231c82828ce31f40ede4478b357e128.svg" alt="b=1.5887\times10^{-10}"/> for the US
-population between 1790 and 1910.</p>
-<p>We’re going to use the same <img class="math" src="../../_images/math/4eaa32f8f24c73f47fec0cdaf535ba397e248b62.svg" alt="a,b"/> parameters with even more data
-until the year 2000.</p>
-<p>We will study the influence of the <img class="math" src="../../_images/math/5cc6bf411de0fb01c75c7cb24c06c1b1840f62fc.svg" alt="y_0"/>, <img class="math" src="../../_images/math/69f1be4af39fdd172c6af6b4eff109ffa69e5b80.svg" alt="a"/>, <img class="math" src="../../_images/math/7a28565e2d8a0f1b90383ada07f80ec18c374992.svg" alt="b"/>
-parameters modelized by random variables:</p>
+<ol class="upperalpha simple" start="18">
+<li><p>Pearl and L. Reed (1920) determined the parameters to be <img class="math" src="../../_images/math/066f35b6ad5a82e40a1e3b938c28c78cddeaae86.svg" alt="a=0.03134"/> and <img class="math" src="../../_images/math/20b4338ec231c82828ce31f40ede4478b357e128.svg" alt="b=1.5887\times10^{-10}"/> for the US population between 1790 and 1910.</p></li>
+</ol>
+<p>We’re going to use the same <img class="math" src="../../_images/math/4eaa32f8f24c73f47fec0cdaf535ba397e248b62.svg" alt="a,b"/> parameters with even more data until the year 2000.</p>
+<p>We will study the influence of the <img class="math" src="../../_images/math/5cc6bf411de0fb01c75c7cb24c06c1b1840f62fc.svg" alt="y_0"/>, <img class="math" src="../../_images/math/69f1be4af39fdd172c6af6b4eff109ffa69e5b80.svg" alt="a"/>, <img class="math" src="../../_images/math/7a28565e2d8a0f1b90383ada07f80ec18c374992.svg" alt="b"/> parameters modelized by random variables:</p>
 <ul class="simple">
 <li><p><img class="math" src="../../_images/math/d910bd2f15d8d823c4d1697a572643a7619f444f.svg" alt="y_0 \sim \mathcal{N}"/></p></li>
 <li><p><img class="math" src="../../_images/math/66642fc940bcae5a4b2cd56e7cc202b5110a7a1c.svg" alt="a \sim \mathcal{N}"/></p></li>
 <li><p><img class="math" src="../../_images/math/3a23cc8ce536ce349a50b6b7bda4bb2e65b8526a.svg" alt="b \sim \mathcal{N}"/></p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -297,8 +327,7 @@ parameters modelized by random variables:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -309,8 +338,7 @@ parameters modelized by random variables:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -326,8 +354,7 @@ parameters modelized by random variables:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -359,8 +386,7 @@ parameters modelized by random variables:</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -372,8 +398,7 @@ parameters modelized by random variables:</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -394,8 +419,7 @@ parameters modelized by random variables:</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -431,7 +455,7 @@ parameters modelized by random variables:</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/5958e9e84.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/ce1bc890a.
     </div>
   </body>
 </html>

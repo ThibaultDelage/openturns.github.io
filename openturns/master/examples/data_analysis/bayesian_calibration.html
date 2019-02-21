@@ -146,18 +146,18 @@ div.nblast {
 
 /* input prompt */
 div.nbinput div.prompt pre {
-    color: #303F9F;
+    color: #307FC1;
 }
 
 /* output prompt */
 div.nboutput div.prompt pre {
-    color: #D84315;
+    color: #BF5B3D;
 }
 
 /* all prompts */
 div.nbinput div.prompt,
 div.nboutput div.prompt {
-    min-width: 9ex;
+    min-width: 7ex;
     padding-top: 0.4em;
     padding-right: 0.4em;
     text-align: right;
@@ -197,9 +197,9 @@ div.nboutput div.output_area {
 
 /* input area */
 div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
+    border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f7f7f7;
+    background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
@@ -207,7 +207,7 @@ div.nboutput div[class*=MathJax] {
     text-align: left !important;
 }
 
-/* override sphinx.ext.pngmath center alignment in output cells */
+/* override sphinx.ext.imgmath center alignment in output cells */
 div.nboutput div.math p {
     text-align: left;
 }
@@ -256,68 +256,65 @@ div.nboutput div.output_area.stderr {
 
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 </style>
 <div class="section" id="Bayesian-calibration-of-a-computer-code">
 <h1>Bayesian calibration of a computer code<a class="headerlink" href="#Bayesian-calibration-of-a-computer-code" title="Permalink to this headline">¶</a></h1>
-<p>In this example we are going to compute the parameters of a computer
-model thanks to Bayesian estimation.</p>
-<p>Let us denote <img class="math" src="../../_images/math/bcdacf035a0da20234a67a2bf264a3a14f0bc727.svg" alt="\underline y = (y_1, \dots, y_n)"/> the observation
-sample,
-<img class="math" src="../../_images/math/1c01303be1b4ab44299b57a69a98c92fc91eb7a2.svg" alt="\underline z = (f(x_1|\underline{\theta}), \ldots, f(x_n|\underline{\theta}))"/>
-the model prediction, <img class="math" src="../../_images/math/fc8997709a5d90a988d3600d00636f429bb12ccd.svg" alt="p(y |z)"/> the density function of
-observation <img class="math" src="../../_images/math/681f29e6f502f2b5bd5f256789636e99499f594f.svg" alt="y"/> conditional on model prediction <img class="math" src="../../_images/math/f7f0a5088cae3d8d55c2b2cb5fca1f87e4b87dcc.svg" alt="z"/>, and
-<img class="math" src="../../_images/math/bef02629215d002af16c4e980120ee1656f0de1e.svg" alt="\underline{\theta} \in \mathbb{R}^p"/> the calibration parameters
-we wish to estimate.</p>
+<p>In this example we are going to compute the parameters of a computer model thanks to Bayesian estimation.</p>
+<p>Let us denote <img class="math" src="../../_images/math/bcdacf035a0da20234a67a2bf264a3a14f0bc727.svg" alt="\underline y = (y_1, \dots, y_n)"/> the observation sample, <img class="math" src="../../_images/math/1c01303be1b4ab44299b57a69a98c92fc91eb7a2.svg" alt="\underline z = (f(x_1|\underline{\theta}), \ldots, f(x_n|\underline{\theta}))"/> the model prediction, <img class="math" src="../../_images/math/fc8997709a5d90a988d3600d00636f429bb12ccd.svg" alt="p(y |z)"/> the density function of observation <img class="math" src="../../_images/math/681f29e6f502f2b5bd5f256789636e99499f594f.svg" alt="y"/> conditional on model prediction <img class="math" src="../../_images/math/f7f0a5088cae3d8d55c2b2cb5fca1f87e4b87dcc.svg" alt="z"/>, and <img class="math" src="../../_images/math/bef02629215d002af16c4e980120ee1656f0de1e.svg" alt="\underline{\theta} \in \mathbb{R}^p"/> the calibration parameters we wish to estimate.</p>
 <p>The posterior distribution is given by Bayes theorem:</p>
 <div class="math">
 <p><img src="../../_images/math/0df028ed4a38cb90d63a61d5bead06f81223dc82.svg" alt="\pi(\underline{\theta} | \underline y) \quad \substack{~\\[0.5em]\displaystyle\propto\\\scriptstyle\underline{\theta}} \quad L\left(\underline y | \underline{\theta}\right) \times \pi(\underline{\theta})"/></p>
-</div><p>(where
-<img class="math" src="../../_images/math/80f0ce6ce339ff77be0b36d115a4a8acdb93e74e.svg" alt="\substack{~\\[0.5em]\displaystyle\propto\\\scriptstyle\underline{\theta}}"/>
-means “proportional to”, regarded as a function of
-<img class="math" src="../../_images/math/cfd2125c60d4d164ffbb0562fcad4352ab2c7db9.svg" alt="\underline{\theta}"/>) and is approximated here by the empirical
-distribution of the sample
-<img class="math" src="../../_images/math/77e823fa40332ce9ab946766e6b9f6530c40b1a9.svg" alt="\underline{\theta}^1, \ldots, \underline{\theta}^N"/> generated by
-the Metropolis-Hastings algorithm. This means that any quantity
-characteristic of the posterior distribution (mean, variance, quantile,
-…) is approximated by its empirical counterpart.</p>
-<p>Our model (i.e. the compute code to calibrate) is a standard normal
-linear regression, where</p>
+</div><p>(where <img class="math" src="../../_images/math/80f0ce6ce339ff77be0b36d115a4a8acdb93e74e.svg" alt="\substack{~\\[0.5em]\displaystyle\propto\\\scriptstyle\underline{\theta}}"/> means “proportional to”, regarded as a function of <img class="math" src="../../_images/math/cfd2125c60d4d164ffbb0562fcad4352ab2c7db9.svg" alt="\underline{\theta}"/>) and is approximated here by the empirical distribution of the sample <img class="math" src="../../_images/math/77e823fa40332ce9ab946766e6b9f6530c40b1a9.svg" alt="\underline{\theta}^1, \ldots, \underline{\theta}^N"/> generated by the Metropolis-Hastings algorithm. This means that any quantity characteristic of the posterior distribution (mean, variance, quantile, …) is approximated by its empirical counterpart.</p>
+<p>Our model (i.e. the compute code to calibrate) is a standard normal linear regression, where</p>
 <div class="math">
 <p><img src="../../_images/math/3ae403f0425b3551b54053536936059f496820fc.svg" alt="y_i = \theta_1 + x_i \theta_2 + x_i^2 \theta_3 + \varepsilon_i"/></p>
-</div><p>where <img class="math" src="../../_images/math/2ad2592db67e72e85e3cc6ea7d5461dd3969ba08.svg" alt="\varepsilon_i \stackrel{i.i.d.}{\sim} \mathcal N(0, 1)"/> and
-we use a normal prior on <img class="math" src="../../_images/math/cfd2125c60d4d164ffbb0562fcad4352ab2c7db9.svg" alt="\underline{\theta}"/>:</p>
+</div><p>where <img class="math" src="../../_images/math/2ad2592db67e72e85e3cc6ea7d5461dd3969ba08.svg" alt="\varepsilon_i \stackrel{i.i.d.}{\sim} \mathcal N(0, 1)"/> and we use a normal prior on <img class="math" src="../../_images/math/cfd2125c60d4d164ffbb0562fcad4352ab2c7db9.svg" alt="\underline{\theta}"/>:</p>
 <div class="math">
 <p><img src="../../_images/math/d00b62d643ce116871d43bb329daa35a722d4497.svg" alt="\pi(\underline{\theta}) = \mathcal N(0 ; 100 I_3)."/></p>
-</div><p>The following objects need to be defined in order to perform Bayesian
-calibration:</p>
+</div><p>The following objects need to be defined in order to perform Bayesian calibration:</p>
 <ul class="simple">
-<li><p>The conditional density <img class="math" src="../../_images/math/daefe2fa453037632cd5e7fd5caa9582f6e2d512.svg" alt="p(y|z)"/> must be defined as a
-probability distribution</p></li>
-<li><p>The computer model must be implemented thanks to the
-ParametricFunction class. This takes a value of
-<img class="math" src="../../_images/math/cfd2125c60d4d164ffbb0562fcad4352ab2c7db9.svg" alt="\underline{\theta}"/> as input, and outputs the vector of model
-predictions <img class="math" src="../../_images/math/3d827d9c6819a624cb94eccd509edc188b082c07.svg" alt="\underline z"/>, as defined above (the vector of
-covariates <img class="math" src="../../_images/math/404094f6ecf41854e4218f7dc6b6e3d7acc40396.svg" alt="\underline x = (x_1, \ldots, x_n)"/> is treated as a
-known constant). When doing that, we have to keep in mind that
-<img class="math" src="../../_images/math/f7f0a5088cae3d8d55c2b2cb5fca1f87e4b87dcc.svg" alt="z"/> will be used as the vector of parameters corresponding to
-the distribution specified for <img class="math" src="../../_images/math/fc8997709a5d90a988d3600d00636f429bb12ccd.svg" alt="p(y |z)"/>. For instance, if
-<img class="math" src="../../_images/math/daefe2fa453037632cd5e7fd5caa9582f6e2d512.svg" alt="p(y|z)"/> is normal, this means that <img class="math" src="../../_images/math/f7f0a5088cae3d8d55c2b2cb5fca1f87e4b87dcc.svg" alt="z"/> must be a vector
-containing the mean and variance of <img class="math" src="../../_images/math/681f29e6f502f2b5bd5f256789636e99499f594f.svg" alt="y"/></p></li>
-<li><p>The prior density <img class="math" src="../../_images/math/f6a140d1f9429ae2b356de03dd48e5f6f34f265e.svg" alt="\pi(\underline{\theta})"/> encoding the set of
-possible values for the calibration parameters, each value being
-weighted by its a priori probability, reflecting the beliefs about
-the possible values of <img class="math" src="../../_images/math/cfd2125c60d4d164ffbb0562fcad4352ab2c7db9.svg" alt="\underline{\theta}"/> before
-consideration of the experimental data. Again, this is implemented as
-a probability distribution</p></li>
-<li><p>The Metropolis-Hastings algorithm that samples from the posterior
-distribution of the calibration parameters requires a vector
-<img class="math" src="../../_images/math/abf8929b12c8dcf4c47be0345eb515a21e6512d7.svg" alt="\underline{\theta}_0"/> initial values for the calibration
-parameters, as well as the proposal laws used to update each
-parameter sequentially.</p></li>
+<li><p>The conditional density <img class="math" src="../../_images/math/daefe2fa453037632cd5e7fd5caa9582f6e2d512.svg" alt="p(y|z)"/> must be defined as a probability distribution</p></li>
+<li><p>The computer model must be implemented thanks to the ParametricFunction class. This takes a value of <img class="math" src="../../_images/math/cfd2125c60d4d164ffbb0562fcad4352ab2c7db9.svg" alt="\underline{\theta}"/> as input, and outputs the vector of model predictions <img class="math" src="../../_images/math/3d827d9c6819a624cb94eccd509edc188b082c07.svg" alt="\underline z"/>, as defined above (the vector of covariates <img class="math" src="../../_images/math/404094f6ecf41854e4218f7dc6b6e3d7acc40396.svg" alt="\underline x = (x_1, \ldots, x_n)"/> is treated as a known constant). When doing that, we have to keep in mind that <img class="math" src="../../_images/math/f7f0a5088cae3d8d55c2b2cb5fca1f87e4b87dcc.svg" alt="z"/> will be used as the vector of parameters corresponding to the distribution specified for <img class="math" src="../../_images/math/fc8997709a5d90a988d3600d00636f429bb12ccd.svg" alt="p(y |z)"/>. For instance,
+if <img class="math" src="../../_images/math/daefe2fa453037632cd5e7fd5caa9582f6e2d512.svg" alt="p(y|z)"/> is normal, this means that <img class="math" src="../../_images/math/f7f0a5088cae3d8d55c2b2cb5fca1f87e4b87dcc.svg" alt="z"/> must be a vector containing the mean and variance of <img class="math" src="../../_images/math/681f29e6f502f2b5bd5f256789636e99499f594f.svg" alt="y"/></p></li>
+<li><p>The prior density <img class="math" src="../../_images/math/f6a140d1f9429ae2b356de03dd48e5f6f34f265e.svg" alt="\pi(\underline{\theta})"/> encoding the set of possible values for the calibration parameters, each value being weighted by its a priori probability, reflecting the beliefs about the possible values of <img class="math" src="../../_images/math/cfd2125c60d4d164ffbb0562fcad4352ab2c7db9.svg" alt="\underline{\theta}"/> before consideration of the experimental data. Again, this is implemented as a probability distribution</p></li>
+<li><p>The Metropolis-Hastings algorithm that samples from the posterior distribution of the calibration parameters requires a vector <img class="math" src="../../_images/math/abf8929b12c8dcf4c47be0345eb515a21e6512d7.svg" alt="\underline{\theta}_0"/> initial values for the calibration parameters, as well as the proposal laws used to update each parameter sequentially.</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -328,8 +325,7 @@ parameter sequentially.</p></li>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -348,8 +344,7 @@ parameter sequentially.</p></li>
 <li><p>Define the inputs <img class="math" src="../../_images/math/fe6ce244182b587194181405a017ad06880a0941.svg" alt="x_i"/></p></li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -361,11 +356,10 @@ parameter sequentially.</p></li>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="output_area docutils container">
+<div class="output_area rendered_html docutils container">
 <TABLE><TR><TD></TD><TH>v0</TH></TR>
 <TR><TD>0</TD><TD>-2.0</TD></TR>
 <TR><TD>1</TD><TD>-1.4444444444444444</TD></TR>
@@ -383,8 +377,7 @@ parameter sequentially.</p></li>
 <li><p>Define the vector of observations <img class="math" src="../../_images/math/c7945c1c81f12bf2bf31ef9e594eae46505824ed.svg" alt="y_i"/></p></li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -404,11 +397,10 @@ parameter sequentially.</p></li>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="output_area docutils container">
+<div class="output_area rendered_html docutils container">
 <TABLE><TR><TD></TD><TH>v0</TH></TR>
 <TR><TD>0</TD><TD>-9.50794871493506</TD></TR>
 <TR><TD>1</TD><TD>-3.83296694500105</TD></TR>
@@ -423,12 +415,10 @@ parameter sequentially.</p></li>
 </TABLE></div>
 </div>
 <ul class="simple">
-<li><p>Define the vector of parameters matching each observation
-<img class="math" src="../../_images/math/884d874b5bc994c4a09196d4714580657fe9ac9a.svg" alt="\theta^i"/></p></li>
+<li><p>Define the vector of parameters matching each observation <img class="math" src="../../_images/math/884d874b5bc994c4a09196d4714580657fe9ac9a.svg" alt="\theta^i"/></p></li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -441,11 +431,10 @@ parameter sequentially.</p></li>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="output_area docutils container">
+<div class="output_area rendered_html docutils container">
 <TABLE><TR><TD></TD><TH>v0</TH><TH>v1</TH><TH>v2</TH></TR>
 <TR><TD>0</TD><TD>1.0</TD><TD>-2.0</TD><TD>4.0</TD></TR>
 <TR><TD>1</TD><TD>1.0</TD><TD>-1.4444444444444444</TD><TD>2.0864197530864197</TD></TR>
@@ -460,14 +449,10 @@ parameter sequentially.</p></li>
 </TABLE></div>
 </div>
 <ul class="simple">
-<li><p>Define the parametric model <img class="math" src="../../_images/math/e4b2ef5e0afd2eb4c38ea21a213c75a9a81a4a0a.svg" alt="z = f(x,\theta)"/> that associates
-each observation <img class="math" src="../../_images/math/fe6ce244182b587194181405a017ad06880a0941.svg" alt="x_i"/> and values of the parameters
-<img class="math" src="../../_images/math/edb82bf7e86049f4f78fa66e4858983fe781f6bb.svg" alt="\theta_i"/> to the parameters of the distribution of the
-corresponding observation: here <img class="math" src="../../_images/math/e7b8be039b7e1fa41cde93be8c801a9fdd1f0519.svg" alt="z=(\mu, \sigma)"/></p></li>
+<li><p>Define the parametric model <img class="math" src="../../_images/math/e4b2ef5e0afd2eb4c38ea21a213c75a9a81a4a0a.svg" alt="z = f(x,\theta)"/> that associates each observation <img class="math" src="../../_images/math/fe6ce244182b587194181405a017ad06880a0941.svg" alt="x_i"/> and values of the parameters <img class="math" src="../../_images/math/edb82bf7e86049f4f78fa66e4858983fe781f6bb.svg" alt="\theta_i"/> to the parameters of the distribution of the corresponding observation: here <img class="math" src="../../_images/math/e7b8be039b7e1fa41cde93be8c801a9fdd1f0519.svg" alt="z=(\mu, \sigma)"/></p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -479,15 +464,11 @@ corresponding observation: here <img class="math" src="../../_images/math/e7b8be
 </div>
 </div>
 <ul class="simple">
-<li><p>Define the distribution of observations
-<img class="math" src="../../_images/math/4f536933a842477c5a68df95cc6fea942d1093af.svg" alt="\underline{y} | \underline{z}"/> conditional on model
-predictions</p></li>
+<li><p>Define the distribution of observations <img class="math" src="../../_images/math/4f536933a842477c5a68df95cc6fea942d1093af.svg" alt="\underline{y} | \underline{z}"/> conditional on model predictions</p></li>
 </ul>
-<p>Note that its parameter dimension is the one of <img class="math" src="../../_images/math/8936a7dd0a4884fb593a49c879600c8289887349.svg" alt="\underline{z}"/>,
-so the model must be adjusted accordingly</p>
+<p>Note that its parameter dimension is the one of <img class="math" src="../../_images/math/8936a7dd0a4884fb593a49c879600c8289887349.svg" alt="\underline{z}"/>, so the model must be adjusted accordingly</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -497,21 +478,18 @@ so the model must be adjusted accordingly</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="output_area docutils container">
+<div class="output_area rendered_html docutils container">
 <p>Normal(mu = 0, sigma = 1)<br>
 </p></div>
 </div>
 <ul class="simple">
-<li><p>Define the the prior distribution <img class="math" src="../../_images/math/f6a140d1f9429ae2b356de03dd48e5f6f34f265e.svg" alt="\pi(\underline{\theta})"/> of
-the parameter <img class="math" src="../../_images/math/cfd2125c60d4d164ffbb0562fcad4352ab2c7db9.svg" alt="\underline{\theta}"/></p></li>
+<li><p>Define the the prior distribution <img class="math" src="../../_images/math/f6a140d1f9429ae2b356de03dd48e5f6f34f265e.svg" alt="\pi(\underline{\theta})"/> of the parameter <img class="math" src="../../_images/math/cfd2125c60d4d164ffbb0562fcad4352ab2c7db9.svg" alt="\underline{\theta}"/></p></li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -528,19 +506,17 @@ the parameter <img class="math" src="../../_images/math/cfd2125c60d4d164ffbb0562
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="output_area docutils container">
+<div class="output_area rendered_html docutils container">
 <p>Normal(mu = [0,0,0], sigma = [10,10,10], R = [[ 1 0 0 ]<br>
  [ 0 1 0 ]<br>
  [ 0 0 1 ]])<br>
 </p></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -560,8 +536,7 @@ the parameter <img class="math" src="../../_images/math/cfd2125c60d4d164ffbb0562
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -598,8 +573,7 @@ acceptance rate= [0.455417,0.292583,0.13425]
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -611,8 +585,7 @@ acceptance rate= [0.455417,0.292583,0.13425]
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -629,8 +602,7 @@ acceptance rate= [0.455417,0.292583,0.13425]
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -665,7 +637,7 @@ acceptance rate= [0.455417,0.292583,0.13425]
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/5958e9e84.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/ce1bc890a.
     </div>
   </body>
 </html>

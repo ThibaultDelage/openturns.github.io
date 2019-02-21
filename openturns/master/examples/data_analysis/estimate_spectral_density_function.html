@@ -146,18 +146,18 @@ div.nblast {
 
 /* input prompt */
 div.nbinput div.prompt pre {
-    color: #303F9F;
+    color: #307FC1;
 }
 
 /* output prompt */
 div.nboutput div.prompt pre {
-    color: #D84315;
+    color: #BF5B3D;
 }
 
 /* all prompts */
 div.nbinput div.prompt,
 div.nboutput div.prompt {
-    min-width: 9ex;
+    min-width: 7ex;
     padding-top: 0.4em;
     padding-right: 0.4em;
     text-align: right;
@@ -197,9 +197,9 @@ div.nboutput div.output_area {
 
 /* input area */
 div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
+    border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f7f7f7;
+    background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
@@ -207,7 +207,7 @@ div.nboutput div[class*=MathJax] {
     text-align: left !important;
 }
 
-/* override sphinx.ext.pngmath center alignment in output cells */
+/* override sphinx.ext.imgmath center alignment in output cells */
 div.nboutput div.math p {
     text-align: left;
 }
@@ -256,22 +256,48 @@ div.nboutput div.output_area.stderr {
 
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 </style>
 <div class="section" id="Estimate-a-spectral-density-function">
 <h1>Estimate a spectral density function<a class="headerlink" href="#Estimate-a-spectral-density-function" title="Permalink to this headline">¶</a></h1>
-<p>The objective of this example is to estimate the spectral density
-function <img class="math" src="../../_images/math/c9df0c233058c94ab9e206a203ed43bed402d9fd.svg" alt="S"/> from data, which can be a sample of time series or
-one time series.</p>
-<p>The following example illustrates the case where the available data is a
-sample of <img class="math" src="../../_images/math/e655afe69439cbc60447c09078827a5c34a83e1b.svg" alt="10^3"/> realizations of the process, defined on the time
-grid <img class="math" src="../../_images/math/77002ddb969ab50ba2a2ac26f18a1a57ed53ed72.svg" alt="[0, 102.3]"/>, discretized every <img class="math" src="../../_images/math/d4fbcf8fa0483666ba27ef35fa86e4b27389b157.svg" alt="\Delta t = 0.1"/>. The
-spectral model of the process is the Cauchy model parameterized by
-<img class="math" src="../../_images/math/9b5002a84d1b4b1361ae5a3f71dd4cee1edf546a.svg" alt="\underline{\lambda}=(5)"/> and <img class="math" src="../../_images/math/562821dda9178709deb51445e50eb4b61d5b55df.svg" alt="\underline{a}=(3)"/>.</p>
-<p>The figure draws the graph of the real spectral model and its estimation
-from the sample of time series.</p>
+<p>The objective of this example is to estimate the spectral density function <img class="math" src="../../_images/math/c9df0c233058c94ab9e206a203ed43bed402d9fd.svg" alt="S"/> from data, which can be a sample of time series or one time series.</p>
+<p>The following example illustrates the case where the available data is a sample of <img class="math" src="../../_images/math/e655afe69439cbc60447c09078827a5c34a83e1b.svg" alt="10^3"/> realizations of the process, defined on the time grid <img class="math" src="../../_images/math/77002ddb969ab50ba2a2ac26f18a1a57ed53ed72.svg" alt="[0, 102.3]"/>, discretized every <img class="math" src="../../_images/math/d4fbcf8fa0483666ba27ef35fa86e4b27389b157.svg" alt="\Delta t = 0.1"/>. The spectral model of the process is the Cauchy model parameterized by <img class="math" src="../../_images/math/9b5002a84d1b4b1361ae5a3f71dd4cee1edf546a.svg" alt="\underline{\lambda}=(5)"/> and <img class="math" src="../../_images/math/562821dda9178709deb51445e50eb4b61d5b55df.svg" alt="\underline{a}=(3)"/>.</p>
+<p>The figure draws the graph of the real spectral model and its estimation from the sample of time series.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -281,8 +307,7 @@ from the sample of time series.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -309,8 +334,7 @@ from the sample of time series.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -322,8 +346,7 @@ from the sample of time series.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -334,8 +357,7 @@ from the sample of time series.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -345,8 +367,7 @@ from the sample of time series.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -356,8 +377,7 @@ from the sample of time series.</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -394,8 +414,7 @@ from the sample of time series.</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -431,7 +450,7 @@ from the sample of time series.</p>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/5958e9e84.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/ce1bc890a.
     </div>
   </body>
 </html>
