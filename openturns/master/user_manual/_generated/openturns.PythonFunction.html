@@ -117,9 +117,7 @@ Default is None (uses finite-difference).</p>
 Default is None (uses finite-difference).</p>
 </dd>
 <dt><strong>n_cpus</strong><span class="classifier">integer</span></dt><dd><p>Number of cpus on which func should be distributed using multiprocessing.
-If -1, it uses all the cpus available. If 1, it does nothing. If n_cpus
-and func_sample are both given as arguments, n_cpus will be ignored and
-samples will be handled by func_sample.
+If -1, it uses all the cpus available. If 1, it does nothing.
 Default is None.</p>
 </dd>
 <dt><strong>copy</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, input sample is converted into a Python 2-d sequence before calling
@@ -137,8 +135,7 @@ Default is False.</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>Notice that if func_sample is provided, n_cpus is ignored. Note also that
-if PythonFunction is distributed (n_cpus &gt; 1), the traceback of a raised
+<p>Note that if PythonFunction is distributed (n_cpus &gt; 1), the traceback of a raised
 exception by a func call is lost due to the way multiprocessing dispatches
 and handles func calls. This can be solved by temporarily deactivating
 n_cpus during the development of the wrapper or by manually handling the
@@ -986,7 +983,7 @@ and <img class="math" src="../../_images/math/1e9b9cb6d72748a01687025b766ea2bbdc
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/c3047bf2f.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/0accd3db4.
     </div>
   </body>
 </html>
