@@ -4,6 +4,11 @@ from openturns.viewer import View
 if ot.GaussianProcess().__class__.__name__ == 'Process':
     # default to Gaussian for the interface class
     process = ot.GaussianProcess()
+elif ot.GaussianProcess().__class__.__name__ == 'DiscreteMarkovChain':
+    process = ot.GaussianProcess()
+    process.setTransitionMatrix(ot.SquareMatrix([[0.0,0.5,0.5],[0.7,0.0,0.3],[0.8,0.0,0.2]]))
+    origin = 0
+    process.setOrigin(origin)
 else:
     process = ot.GaussianProcess()
 process.setTimeGrid(ot.RegularGrid(0.0, 0.02, 50))
