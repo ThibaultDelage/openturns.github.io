@@ -171,7 +171,7 @@ input parameters is required, as well as the corresponding model evaluations
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">+=</span> <span class="p">[[</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.25</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span><span class="o">-</span><span class="mf">0.25</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span><span class="o">-</span><span class="mf">0.25</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myLeastSquares</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">LinearLeastSquares</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">myFunc</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myLeastSquares</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">responseSurface</span> <span class="o">=</span> <span class="n">myLeastSquares</span><span class="o">.</span><span class="n">getResponseSurface</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">responseSurface</span> <span class="o">=</span> <span class="n">myLeastSquares</span><span class="o">.</span><span class="n">getMetaModel</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">responseSurface</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">]))</span>
 <span class="go">[0.854471,1.06031]</span>
 </pre></div>
@@ -212,11 +212,11 @@ input parameters is required, as well as the corresponding model evaluations
 <tr class="row-odd"><td><p><a class="reference internal" href="#openturns.LinearLeastSquares.getLinear" title="openturns.LinearLeastSquares.getLinear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLinear</span></code></a>()</p></td>
 <td><p>Get the linear matrix of the approximation.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#openturns.LinearLeastSquares.getName" title="openturns.LinearLeastSquares.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</p></td>
-<td><p>Accessor to the object’s name.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#openturns.LinearLeastSquares.getResponseSurface" title="openturns.LinearLeastSquares.getResponseSurface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getResponseSurface</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#openturns.LinearLeastSquares.getMetaModel" title="openturns.LinearLeastSquares.getMetaModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMetaModel</span></code></a>()</p></td>
 <td><p>Get an approximation of the function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#openturns.LinearLeastSquares.getName" title="openturns.LinearLeastSquares.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName</span></code></a>()</p></td>
+<td><p>Accessor to the object’s name.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#openturns.LinearLeastSquares.getShadowedId" title="openturns.LinearLeastSquares.getShadowedId"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShadowedId</span></code></a>()</p></td>
 <td><p>Accessor to the object’s shadowed id.</p></td>
@@ -244,6 +244,17 @@ input parameters is required, as well as the corresponding model evaluations
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#openturns.LinearLeastSquares.setVisibility" title="openturns.LinearLeastSquares.setVisibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setVisibility</span></code></a>(visible)</p></td>
 <td><p>Accessor to the object’s visibility state.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 69%" />
+<col style="width: 31%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>getResponseSurface</strong></p></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -347,13 +358,13 @@ such as: <img class="math" src="../../../_images/math/a2920b5e985f3306af3167967d
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.LinearLeastSquares.getName">
-<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.LinearLeastSquares.getName" title="Permalink to this definition">¶</a></dt>
-<dd><p>Accessor to the object’s name.</p>
-<dl class="field-list simple">
+<dt id="openturns.LinearLeastSquares.getMetaModel">
+<code class="descname">getMetaModel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.LinearLeastSquares.getMetaModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an approximation of the function.</p>
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the object.</p>
+<dd class="field-odd"><dl>
+<dt><strong>approximation</strong><span class="classifier"><a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt><dd><p>An approximation of the function <img class="math" src="../../../_images/math/962b9c7896d68050c28006820718e08af192b141.svg" alt="h"/> by Linear Least Squares.</p>
 </dd>
 </dl>
 </dd>
@@ -361,13 +372,13 @@ such as: <img class="math" src="../../../_images/math/a2920b5e985f3306af3167967d
 </dd></dl>
 
 <dl class="method">
-<dt id="openturns.LinearLeastSquares.getResponseSurface">
-<code class="descname">getResponseSurface</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.LinearLeastSquares.getResponseSurface" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get an approximation of the function.</p>
-<dl class="field-list">
+<dt id="openturns.LinearLeastSquares.getName">
+<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#openturns.LinearLeastSquares.getName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the object’s name.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl>
-<dt><strong>approximation</strong><span class="classifier"><a class="reference internal" href="../../_generated/openturns.Function.html#openturns.Function" title="openturns.Function"><code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></a></span></dt><dd><p>An approximation of the function <img class="math" src="../../../_images/math/962b9c7896d68050c28006820718e08af192b141.svg" alt="h"/> by Linear Least Squares.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>The name of the object.</p>
 </dd>
 </dl>
 </dd>
@@ -524,7 +535,7 @@ such as: <img class="math" src="../../../_images/math/a2920b5e985f3306af3167967d
     <div class="footer" role="contentinfo">
         &#169; Copyright 2005-2018 Airbus-EDF-IMACS-Phimeca.
       Last updated on Jan 01, 2018.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/08da04f33.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.0+/d0802a1b1.
     </div>
   </body>
 </html>

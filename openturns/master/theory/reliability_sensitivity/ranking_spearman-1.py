@@ -27,7 +27,7 @@ y.add(y2)
 # Quadratic model
 algo = ot.QuadraticLeastSquares(x, y)
 algo.run()
-quadratic = algo.getResponseSurface()
+quadratic = algo.getMetaModel()
 
 graph = ot.Graph("Null Spearman coefficient", "u", "v", True, "")
 graph.add(cloud1)

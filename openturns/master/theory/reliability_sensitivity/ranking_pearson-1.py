@@ -19,7 +19,7 @@ y.add(y2)
 # Linear model
 algo = ot.LinearLeastSquares(x, y)
 algo.run()
-linear = algo.getResponseSurface()
+linear = algo.getMetaModel()
 
 graph = ot.Graph('Null Pearson coefficient', 'u', 'v', True, '')
 cloud1 = ot.Cloud(x1, y1)
