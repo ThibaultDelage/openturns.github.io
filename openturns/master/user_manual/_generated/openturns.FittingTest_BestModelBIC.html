@@ -121,6 +121,9 @@
 criterion.
 This may raise a warning if the best model does not perform well.</p>
 </dd>
+<dt><strong>best_bic</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The Bayesian information criterion with the best model.</p>
+</dd>
 </dl>
 </td>
 </tr>
@@ -136,7 +139,7 @@ This may raise a warning if the best model does not perform well.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">distribution</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">Normal</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">getSample</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tested_distributions</span> <span class="o">=</span> <span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">ExponentialFactory</span><span class="p">(),</span> <span class="n">ot</span><span class="o">.</span><span class="n">NormalFactory</span><span class="p">()]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">best_model</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FittingTest</span><span class="o">.</span><span class="n">BestModelBIC</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">tested_distributions</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">best_model</span><span class="p">,</span> <span class="n">best_bic</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">FittingTest</span><span class="o">.</span><span class="n">BestModelBIC</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">tested_distributions</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">best_model</span><span class="p">)</span>
 <span class="go">Normal(mu = -0.0944924, sigma = 0.989808)</span>
 </pre></div>
