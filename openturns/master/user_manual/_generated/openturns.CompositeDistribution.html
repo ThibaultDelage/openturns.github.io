@@ -315,6 +315,18 @@ which probability density function is <img class="math" src="../../_images/math/
 <tr class="row-odd"><td><a class="reference internal" href="#openturns.CompositeDistribution.computeScalarQuantile" title="openturns.CompositeDistribution.computeScalarQuantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeScalarQuantile</span></code></a>(prob[,&nbsp;tail])</td>
 <td>Compute the quantile function for univariate distributions.</td>
 </tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.CompositeDistribution.computeSequentialConditionalCDF" title="openturns.CompositeDistribution.computeSequentialConditionalCDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSequentialConditionalCDF</span></code></a>(x)</td>
+<td>Compute the sequential conditional cumulative distribution functions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.CompositeDistribution.computeSequentialConditionalDDF" title="openturns.CompositeDistribution.computeSequentialConditionalDDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSequentialConditionalDDF</span></code></a>(x)</td>
+<td>Compute the sequential conditional derivative density function.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#openturns.CompositeDistribution.computeSequentialConditionalPDF" title="openturns.CompositeDistribution.computeSequentialConditionalPDF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSequentialConditionalPDF</span></code></a>(x)</td>
+<td>Compute the sequential conditional probability density function.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#openturns.CompositeDistribution.computeSequentialConditionalQuantile" title="openturns.CompositeDistribution.computeSequentialConditionalQuantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSequentialConditionalQuantile</span></code></a>(q)</td>
+<td>Compute the conditional quantile function of the last component.</td>
+</tr>
 <tr class="row-even"><td><a class="reference internal" href="#openturns.CompositeDistribution.computeSurvivalFunction" title="openturns.CompositeDistribution.computeSurvivalFunction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">computeSurvivalFunction</span></code></a>(*args)</td>
 <td>Compute the survival function.</td>
 </tr>
@@ -790,8 +802,8 @@ which probability density function is <img class="math" src="../../_images/math/
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> with density function <cite>p</cite>.</p>
-<p>The bilateral confidence interval <img class="math" src="../../_images/math/1e98ba05437b95da2976c8b8cca75acaa265ed60.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/6d693706d6b596ee0801eb3e0c49ad626ba054bd.svg" alt="I^*_{\alpha} = [a_1, b_1] \times \dots \times [a_d, b_d]"/> where <img class="math" src="../../_images/math/ae0fa3c4ee21807d2209d5a676b90c1f8804b46b.svg" alt="a_i = F_i^{-1}((1-\beta)/2)"/> and <img class="math" src="../../_images/math/6599bc4e45af27d38da0d216a76b68cd093989ea.svg" alt="b_i = F_i^{-1}((1+\beta)/2)"/> for all <cite>i</cite> and which verifies <img class="math" src="../../_images/math/1d8d6ce4f55fc68f2e77f9555657a91ebf4f5fd1.svg" alt="\mu(I^*_{\alpha}) = \alpha"/>.</p>
+<p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> with density function <img class="math" src="../../_images/math/0a51f74fdb12efb40f2b40e8036cbf0f13c8d667.svg" alt="p"/>.</p>
+<p>The bilateral confidence interval <img class="math" src="../../_images/math/1e98ba05437b95da2976c8b8cca75acaa265ed60.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/6d693706d6b596ee0801eb3e0c49ad626ba054bd.svg" alt="I^*_{\alpha} = [a_1, b_1] \times \dots \times [a_d, b_d]"/> where <img class="math" src="../../_images/math/ae0fa3c4ee21807d2209d5a676b90c1f8804b46b.svg" alt="a_i = F_i^{-1}((1-\beta)/2)"/> and <img class="math" src="../../_images/math/6599bc4e45af27d38da0d216a76b68cd093989ea.svg" alt="b_i = F_i^{-1}((1+\beta)/2)"/> for all <img class="math" src="../../_images/math/c47ea0eab9f0f521327c38ece8a0d25e433bbbb2.svg" alt="i"/> and which verifies <img class="math" src="../../_images/math/1d8d6ce4f55fc68f2e77f9555657a91ebf4f5fd1.svg" alt="\mu(I^*_{\alpha}) = \alpha"/>.</p>
 <p class="rubric">Examples</p>
 <p>Create a sample from a Normal distribution:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
@@ -873,7 +885,7 @@ which probability density function is <img class="math" src="../../_images/math/
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>F</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">CDF value(s) at input(s) <cite>X</cite>.</p>
+<dd><p class="first last">CDF value(s) at input(s) <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>.</p>
 </dd>
 </dl>
 </td>
@@ -905,7 +917,7 @@ which probability density function is <img class="math" src="../../_images/math/
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>dFdtheta</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
 <dd><p class="first last">Partial derivatives of the CDF with respect to the distribution
-parameters at input <cite>X</cite>.</p>
+parameters at input <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>.</p>
 </dd>
 </dl>
 </td>
@@ -931,7 +943,7 @@ parameters at input <cite>X</cite>.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>phi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">complex</span></dt>
-<dd><p class="first last">Characteristic function value at input <cite>t</cite>.</p>
+<dd><p class="first last">Characteristic function value at input <img class="math" src="../../_images/math/eb169b6b0e185fc9abf4111d16ceb787a940d013.svg" alt="t"/>.</p>
 </dd>
 </dl>
 </td>
@@ -945,7 +957,7 @@ parameters at input <cite>X</cite>.</p>
             \quad t \in \Rset"/></p>
 </div><p>OpenTURNS features a generic implementation of the characteristic function for
 all its univariate distributions (both continuous and discrete). This default
-implementation might be time consuming, especially as the modulus of <cite>t</cite> gets
+implementation might be time consuming, especially as the modulus of <img class="math" src="../../_images/math/eb169b6b0e185fc9abf4111d16ceb787a940d013.svg" alt="t"/> gets
 high. Only some univariate distributions benefit from dedicated more efficient
 implementations.</p>
 </dd></dl>
@@ -967,7 +979,7 @@ implementations.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>C</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Complementary CDF value(s) at input(s) <cite>X</cite>.</p>
+<dd><p class="first last">Complementary CDF value(s) at input(s) <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1009,7 +1021,7 @@ distributions).</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>F</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, sequence of float</span></dt>
-<dd><p class="first last">Conditional CDF value(s) at input <cite>Xn</cite>, <cite>Xcond</cite>.</p>
+<dd><p class="first last">Conditional CDF value(s) at input <img class="math" src="../../_images/math/5d7df21868a0ce7ec3cc41e059b4826a041a1d04.svg" alt="X_n"/>, <img class="math" src="../../_images/math/014df2bd1fbe8f1816d6ae69f758ef133d303f53.svg" alt="X_{cond}"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1046,7 +1058,7 @@ respect to the other fixed components is defined as follows:</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>d</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Conditional DDF value at input <cite>Xn</cite>, <cite>Xcond</cite>.</p>
+<dd><p class="first last">Conditional DDF value at input <img class="math" src="../../_images/math/5d7df21868a0ce7ec3cc41e059b4826a041a1d04.svg" alt="X_n"/>, <img class="math" src="../../_images/math/014df2bd1fbe8f1816d6ae69f758ef133d303f53.svg" alt="X_{cond}"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1080,7 +1092,7 @@ respect to the other fixed components is defined as follows:</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>F</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, sequence of float</span></dt>
-<dd><p class="first last">Conditional PDF value(s) at input <cite>Xn</cite>, <cite>Xcond</cite>.</p>
+<dd><p class="first last">Conditional PDF value(s) at input <img class="math" src="../../_images/math/5d7df21868a0ce7ec3cc41e059b4826a041a1d04.svg" alt="X_n"/>, <img class="math" src="../../_images/math/014df2bd1fbe8f1816d6ae69f758ef133d303f53.svg" alt="X_{cond}"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1114,7 +1126,7 @@ respect to the other fixed components is defined as follows:</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>X1</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Conditional quantile at input <cite>p</cite>, <cite>Xcond</cite>.</p>
+<dd><p class="first last">Conditional quantile at input <img class="math" src="../../_images/math/0a51f74fdb12efb40f2b40e8036cbf0f13c8d667.svg" alt="p"/>, <img class="math" src="../../_images/math/014df2bd1fbe8f1816d6ae69f758ef133d303f53.svg" alt="X_{cond}"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1144,7 +1156,7 @@ respect to the other fixed components is defined as follows:</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>d</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a>, <a class="reference internal" href="openturns.Sample.html#openturns.Sample" title="openturns.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a></span></dt>
-<dd><p class="first last">DDF value(s) at input(s) <cite>X</cite>.</p>
+<dd><p class="first last">DDF value(s) at input(s) <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1179,7 +1191,7 @@ function with respect to <img class="math" src="../../_images/math/fbb3eda62de65
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Density generator value at input <cite>X</cite>.</p>
+<dd><p class="first last">Density generator value at input <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1221,7 +1233,7 @@ rewrites:</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Density generator first-order derivative value at input <cite>X</cite>.</p>
+<dd><p class="first last">Density generator first-order derivative value at input <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1254,7 +1266,7 @@ rewrites:</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>p</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Density generator second-order derivative value at input <cite>X</cite>.</p>
+<dd><p class="first last">Density generator second-order derivative value at input <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1313,7 +1325,7 @@ density function</em> of <img class="math" src="../../_images/math/f42d6d904ce64
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>g</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Probability-generating function value at input <cite>X</cite>.</p>
+<dd><p class="first last">Probability-generating function value at input <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1382,7 +1394,7 @@ this method for univariate distributions only.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>phi</strong> <span class="classifier-delimiter">:</span> <span class="classifier">complex</span></dt>
-<dd><p class="first last">Logarithm of the characteristic function value at input <cite>t</cite>.</p>
+<dd><p class="first last">Logarithm of the characteristic function value at input <img class="math" src="../../_images/math/eb169b6b0e185fc9abf4111d16ceb787a940d013.svg" alt="t"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1396,7 +1408,7 @@ this method for univariate distributions only.</p>
 <p class="rubric">Notes</p>
 <p>OpenTURNS features a generic implementation of the characteristic function for
 all its univariate distributions (both continuous and discrete). This default
-implementation might be time consuming, especially as the modulus of <cite>t</cite> gets
+implementation might be time consuming, especially as the modulus of <img class="math" src="../../_images/math/eb169b6b0e185fc9abf4111d16ceb787a940d013.svg" alt="t"/> gets
 high. Only some univariate distributions benefit from dedicated more efficient
 implementations.</p>
 </dd></dl>
@@ -1418,7 +1430,7 @@ implementations.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>lg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Logarithm of the probability-generating function value at input <cite>X</cite>.</p>
+<dd><p class="first last">Logarithm of the probability-generating function value at input <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1451,7 +1463,7 @@ this method for univariate distributions only.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Logarithm of the PDF value(s) at input(s) <cite>X</cite>.</p>
+<dd><p class="first last">Logarithm of the PDF value(s) at input(s) <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1478,7 +1490,7 @@ this method for univariate distributions only.</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>dfdtheta</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
 <dd><p class="first last">Partial derivatives of the logPDF with respect to the distribution
-parameters at input <cite>X</cite>.</p>
+parameters at input <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1512,9 +1524,9 @@ parameters at input <cite>X</cite>.</p>
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> with density function <cite>p</cite>.</p>
+<p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> with density function <img class="math" src="../../_images/math/0a51f74fdb12efb40f2b40e8036cbf0f13c8d667.svg" alt="p"/>.</p>
 <p>The minimum volume confidence interval <img class="math" src="../../_images/math/1e98ba05437b95da2976c8b8cca75acaa265ed60.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/6d693706d6b596ee0801eb3e0c49ad626ba054bd.svg" alt="I^*_{\alpha} = [a_1, b_1] \times \dots \times [a_d, b_d]"/> where <img class="math" src="../../_images/math/004aa802cb3b8d07fdb0cbfee0acc8586c7b935f.svg" alt="[a_i, b_i]   = \argmin_{I \in \Rset \, | \, \mu_i(I) = \beta} \lambda_i(I)"/> and <img class="math" src="../../_images/math/0e066beec0b0b3680d85abea80afc4750e830121.svg" alt="\mu(I^*_{\alpha})  =  \alpha"/> with <img class="math" src="../../_images/math/d9f42c58a6b23b8de25e0f85eb45f31c2f872979.svg" alt="\lambda"/> is the Lebesgue measure on <img class="math" src="../../_images/math/c09c205cbba607b4d5951cf884dd1d369e9d0be2.svg" alt="\Rset^d"/>.</p>
-<p>This problem resorts to solving  <cite>d</cite> univariate non linear equations: for a fixed value <img class="math" src="../../_images/math/6cd04136b3bbd07d788c38ddbf25c2466dc04fe1.svg" alt="\beta"/>, we find each intervals <img class="math" src="../../_images/math/2fcb4ba1234177ad59a3df99eda599f1ee8da8e2.svg" alt="[a_i, b_i]"/> such that:</p>
+<p>This problem resorts to solving <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/> univariate non linear equations: for a fixed value <img class="math" src="../../_images/math/6cd04136b3bbd07d788c38ddbf25c2466dc04fe1.svg" alt="\beta"/>, we find each intervals <img class="math" src="../../_images/math/2fcb4ba1234177ad59a3df99eda599f1ee8da8e2.svg" alt="[a_i, b_i]"/> such that:</p>
 <div class="math">
 <p><img src="../../_images/math/bc606293975e4db219a35395ced6bfd4a590a2ad.svg" alt="\begin{eqnarray*}
 F_i(b_i) - F_i(a_i) &amp; = &amp; \beta \\
@@ -1523,7 +1535,7 @@ p_i(b_i) &amp; = &amp; p_i(a_i)
 </div><p>which consists of finding the bound <img class="math" src="../../_images/math/b4667011c5aaf80be81b428b007ed826bad54806.svg" alt="a_i"/> such that:</p>
 <div class="math">
 <p><img src="../../_images/math/c04d162800d00864e9d6ede52c7580f5f20596fc.svg" alt="p_i(a_i) =  p_i(F_i^{-1}(\beta + F_i(a_i)))"/></p>
-</div><p>To find <img class="math" src="../../_images/math/6cd04136b3bbd07d788c38ddbf25c2466dc04fe1.svg" alt="\beta"/>, we use the Brent algorithm:  <img class="math" src="../../_images/math/8b237feb0c5d9f1a3a1e966fa604a1a0d792ae3d.svg" alt="\mu([\vect{a}(\beta); \vect{b}(\beta)] = g(\beta) = \alpha"/> with <cite>g</cite> a non linear function.</p>
+</div><p>To find <img class="math" src="../../_images/math/6cd04136b3bbd07d788c38ddbf25c2466dc04fe1.svg" alt="\beta"/>, we use the Brent algorithm:  <img class="math" src="../../_images/math/8b237feb0c5d9f1a3a1e966fa604a1a0d792ae3d.svg" alt="\mu([\vect{a}(\beta); \vect{b}(\beta)] = g(\beta) = \alpha"/> with <img class="math" src="../../_images/math/f487d47f3f53fc6c6a3567ec99bf8077018c38b7.svg" alt="g"/> a non linear function.</p>
 <p class="rubric">Examples</p>
 <p>Create a sample from a Normal distribution:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
@@ -1615,7 +1627,7 @@ p_i(b_i) &amp; = &amp; p_i(a_i)
 </tbody>
 </table>
 <p class="rubric">Notes</p>
-<p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> with density function <cite>p</cite>.</p>
+<p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/> with density function <img class="math" src="../../_images/math/0a51f74fdb12efb40f2b40e8036cbf0f13c8d667.svg" alt="p"/>.</p>
 <p>The minimum volume confidence domain <img class="math" src="../../_images/math/b86ae095daca1c44399fefb5bafd11894b1c8339.svg" alt="A^*_{\alpha}"/> is the set of minimum volume and which measure is at least <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/>. It is defined by:</p>
 <div class="math">
 <p><img src="../../_images/math/1d09d1579e4a5c9b2cd7af28a2ba20025ce9fdbd.svg" alt="A^*_{\alpha} = \argmin_{A \in \Rset^d\, | \, \mu(A) \geq \alpha} \lambda(A)"/></p>
@@ -1708,7 +1720,7 @@ p_i(b_i) &amp; = &amp; p_i(a_i)
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>f</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float, <a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">PDF value(s) at input(s) <cite>X</cite>.</p>
+<dd><p class="first last">PDF value(s) at input(s) <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1741,7 +1753,7 @@ p_i(b_i) &amp; = &amp; p_i(a_i)
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>dfdtheta</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
 <dd><p class="first last">Partial derivatives of the PDF with respect to the distribution
-parameters at input <cite>X</cite>.</p>
+parameters at input <img class="math" src="../../_images/math/588cdf447d64d8624db08e22b28d298a01544e9c.svg" alt="X"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1805,7 +1817,7 @@ and <img class="math" src="../../_images/math/026532f243150af94fa400645c373b40fe
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Quantile at probability level <cite>p</cite>.</p>
+<dd><p class="first last">Quantile at probability level <img class="math" src="../../_images/math/0a51f74fdb12efb40f2b40e8036cbf0f13c8d667.svg" alt="p"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1839,7 +1851,7 @@ distributions only).</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>F</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">CDF value at input <cite>r2</cite>.</p>
+<dd><p class="first last">CDF value at input <img class="math" src="../../_images/math/af09388ac38baa174d43f3d9b9e38a1daef43bad.svg" alt="r^2"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1870,7 +1882,7 @@ distributed components:</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Quantile at probability level <cite>p</cite>.</p>
+<dd><p class="first last">Quantile at probability level <img class="math" src="../../_images/math/0a51f74fdb12efb40f2b40e8036cbf0f13c8d667.svg" alt="p"/>.</p>
 </dd>
 </dl>
 </td>
@@ -1887,6 +1899,130 @@ function:</p>
 <div class="math">
 <p><img src="../../_images/math/56a38720c0abe98635f5fd32ee3daca3959af7b6.svg" alt="Q_X(p) = F_X^{-1}(p), \quad p \in [0; 1]"/></p>
 </div></dd></dl>
+
+<dl class="method">
+<dt id="openturns.CompositeDistribution.computeSequentialConditionalCDF">
+<code class="descname">computeSequentialConditionalCDF</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.CompositeDistribution.computeSequentialConditionalCDF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the sequential conditional cumulative distribution functions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, with size <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/></span></dt>
+<dd><p class="first last">Values to be taken sequentially as argument and conditioning part of the CDF.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>F</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">Conditional CDF values at input.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The sequential conditional cumulative distribution function is defined as follows:</p>
+<div class="math">
+<p><img src="../../_images/math/66a8ccb41896a4dbfcdcbf9feee1f641db23455e.svg" alt="F^{seq}_{X_1,\ldots,X_d}(x_1,\ldots,x_d) = \left(\Prob{X_n \leq x_n \mid X_1=x_1, \ldots, X_{n-1}=x_{n-1}}\right)_{i=1,\ldots,d}"/></p>
+</div><p>ie its <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/>-th component is the conditional CDF of <img class="math" src="../../_images/math/5d7df21868a0ce7ec3cc41e059b4826a041a1d04.svg" alt="X_n"/> at <img class="math" src="../../_images/math/d5c80c7dd61b544e519a065250c69bfe57154d03.svg" alt="x_n"/> given that <img class="math" src="../../_images/math/a037e28357ad42602864a1833199e435be653ac3.svg" alt="X_1=x_1,\ldots,X_{n-1}=x_{n-1}"/>. For <img class="math" src="../../_images/math/acdba29e78bb7682f9756fa18291fd1c1534478c.svg" alt="n=1"/> it reduces to <img class="math" src="../../_images/math/37039422a8f124d42b8c40f49535542540df7f40.svg" alt="\Prob{X_1 \leq x_1}"/>, ie the CDF of the first component at <img class="math" src="../../_images/math/5471da299d5749c1925e1577b341f8d014093d7b.svg" alt="x_1"/>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.CompositeDistribution.computeSequentialConditionalDDF">
+<code class="descname">computeSequentialConditionalDDF</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.CompositeDistribution.computeSequentialConditionalDDF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the sequential conditional derivative density function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, with size <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/></span></dt>
+<dd><p class="first last">Values to be taken sequentially as argument and conditioning part of the DDF.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>ddf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">Conditional DDF values at input.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The sequential conditional derivative density function is defined as follows:</p>
+<div class="math">
+<p><img src="../../_images/math/af2a4df0edc0d9a8106070a734d2afd2bc9aec78.svg" alt="ddf^{seq}_{X_1,\ldots,X_d}(x_1,\ldots,x_d) = \left(\dfrac{d^2}{d\,x_n^2}\Prob{X_n \leq x_n \mid X_1=x_1, \ldots, X_{n-1}=x_{n-1}}\right)_{i=1,\ldots,d}"/></p>
+</div><p>ie its <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/>-th component is the conditional DDF of <img class="math" src="../../_images/math/5d7df21868a0ce7ec3cc41e059b4826a041a1d04.svg" alt="X_n"/> at <img class="math" src="../../_images/math/d5c80c7dd61b544e519a065250c69bfe57154d03.svg" alt="x_n"/> given that <img class="math" src="../../_images/math/a037e28357ad42602864a1833199e435be653ac3.svg" alt="X_1=x_1,\ldots,X_{n-1}=x_{n-1}"/>. For <img class="math" src="../../_images/math/acdba29e78bb7682f9756fa18291fd1c1534478c.svg" alt="n=1"/> it reduces to <img class="math" src="../../_images/math/2522ed9766a7684cf0c10288a0484e0512f14378.svg" alt="\dfrac{d^2}{d\,x_1^2}\Prob{X_1 \leq x_1}"/>, ie the DDF of the first component at <img class="math" src="../../_images/math/5471da299d5749c1925e1577b341f8d014093d7b.svg" alt="x_1"/>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.CompositeDistribution.computeSequentialConditionalPDF">
+<code class="descname">computeSequentialConditionalPDF</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.CompositeDistribution.computeSequentialConditionalPDF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the sequential conditional probability density function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float, with size <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/></span></dt>
+<dd><p class="first last">Values to be taken sequentially as argument and conditioning part of the PDF.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pdf</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">Conditional PDF values at input.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The sequential conditional density function is defined as follows:</p>
+<div class="math">
+<p><img src="../../_images/math/1aa8c946b80d7fca3043f62f1a49d91e177000e6.svg" alt="pdf^{seq}_{X_1,\ldots,X_d}(x_1,\ldots,x_d) = \left(\dfrac{d}{d\,x_n}\Prob{X_n \leq x_n \mid X_1=x_1, \ldots, X_{n-1}=x_{n-1}}\right)_{i=1,\ldots,d}"/></p>
+</div><p>ie its <img class="math" src="../../_images/math/6fb2b89b4e2a226a36018528a6aa0265cb2f8946.svg" alt="n"/>-th component is the conditional PDF of <img class="math" src="../../_images/math/5d7df21868a0ce7ec3cc41e059b4826a041a1d04.svg" alt="X_n"/> at <img class="math" src="../../_images/math/d5c80c7dd61b544e519a065250c69bfe57154d03.svg" alt="x_n"/> given that <img class="math" src="../../_images/math/a037e28357ad42602864a1833199e435be653ac3.svg" alt="X_1=x_1,\ldots,X_{n-1}=x_{n-1}"/>. For <img class="math" src="../../_images/math/acdba29e78bb7682f9756fa18291fd1c1534478c.svg" alt="n=1"/> it reduces to <img class="math" src="../../_images/math/b21c3138f8d5ce14c1dad50324b615a65fe022f8.svg" alt="\dfrac{d}{d\,x_1}\Prob{X_1 \leq x_1}"/>, ie the PDF of the first component at <img class="math" src="../../_images/math/5471da299d5749c1925e1577b341f8d014093d7b.svg" alt="x_1"/>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="openturns.CompositeDistribution.computeSequentialConditionalQuantile">
+<code class="descname">computeSequentialConditionalQuantile</code><span class="sig-paren">(</span><em>q</em><span class="sig-paren">)</span><a class="headerlink" href="#openturns.CompositeDistribution.computeSequentialConditionalQuantile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the conditional quantile function of the last component.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>q</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float in <img class="math" src="../../_images/math/08769b4acee704b2c98db6232e2baf02be937a91.svg" alt="[0,1]"/>, with size <img class="math" src="../../_images/math/7858bee94e5b7a103dd7f1dfcc179252e1647f16.svg" alt="d"/></span></dt>
+<dd><p class="first last">Values to be taken sequentially as the argument of the conditional quantile.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>Q</strong> <span class="classifier-delimiter">:</span> <span class="classifier">sequence of float</span></dt>
+<dd><p class="first last">Conditional quantiles values at input.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The sequential conditional quantile function is defined as follows:</p>
+<div class="math">
+<p><img src="../../_images/math/609a538993e28407941f50b8c8a78da2349881e3.svg" alt="Q^{seq}_{X_1,\ldots,X_d}(q_1,\ldots,q_d) = \left(F^{-1}(q_n|X_1=x_1,\ldots,X_{n-1}=x_{n_1}\right)_{i=1,\ldots,d}"/></p>
+</div><p>where <img class="math" src="../../_images/math/95dabeaaaef652ac91c98a430a2f61431a612ca5.svg" alt="x_1,\ldots,x_{n-1}"/> are defined recursively as <img class="math" src="../../_images/math/08bb95cec76c9c15f8a6198601f609e74c15aba9.svg" alt="x_1=F_1^{-1}(q_1)"/> and given <img class="math" src="../../_images/math/fa6f984782d935d9e7d49a0e6d365d99e6b3f500.svg" alt="(x_i)_{i=1,\ldots,n-1}"/>, <img class="math" src="../../_images/math/b35cd3cd73aeb013919d27ca029ca3814ecd02e9.svg" alt="x_n=F^{-1}(q_n|X_1=x_1,\ldots,X_{n-1}=x_{n_1})"/>: the conditioning part is the set of already computed conditional quantiles.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="openturns.CompositeDistribution.computeSurvivalFunction">
@@ -1959,9 +2095,9 @@ Default value is <cite>False</cite>.</p>
 </table>
 <p class="rubric">Notes</p>
 <p>We consider an absolutely continuous measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/>.</p>
-<p>The left unilateral confidence interval <img class="math" src="../../_images/math/1e98ba05437b95da2976c8b8cca75acaa265ed60.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/f0fddbd8b6fa6f34596edf7c21b8f7032fae96fc.svg" alt="I^*_{\alpha} = ]-\infty, b_1] \times \dots \times ]-\infty, b_d]"/> where <img class="math" src="../../_images/math/51bf6d9367976d396da802fc50b657bf1acdc3de.svg" alt="b_i = F_i^{-1}(\beta)"/> for all <cite>i</cite> and which verifies <img class="math" src="../../_images/math/1d8d6ce4f55fc68f2e77f9555657a91ebf4f5fd1.svg" alt="\mu(I^*_{\alpha}) = \alpha"/>. 
+<p>The left unilateral confidence interval <img class="math" src="../../_images/math/1e98ba05437b95da2976c8b8cca75acaa265ed60.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/f0fddbd8b6fa6f34596edf7c21b8f7032fae96fc.svg" alt="I^*_{\alpha} = ]-\infty, b_1] \times \dots \times ]-\infty, b_d]"/> where <img class="math" src="../../_images/math/51bf6d9367976d396da802fc50b657bf1acdc3de.svg" alt="b_i = F_i^{-1}(\beta)"/> for all <img class="math" src="../../_images/math/c47ea0eab9f0f521327c38ece8a0d25e433bbbb2.svg" alt="i"/> and which verifies <img class="math" src="../../_images/math/1d8d6ce4f55fc68f2e77f9555657a91ebf4f5fd1.svg" alt="\mu(I^*_{\alpha}) = \alpha"/>. 
 It means that <img class="math" src="../../_images/math/f03012197dcd50ba31524fabd715413c2fb9d6e4.svg" alt="\vect{b}"/> is the quantile of level <img class="math" src="../../_images/math/76b5e485f3e9e29ec4dde654fb6b9d110213a6f5.svg" alt="\alpha"/> of the measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/>, with iso-quantile components.</p>
-<p>The right unilateral confidence interval <img class="math" src="../../_images/math/1e98ba05437b95da2976c8b8cca75acaa265ed60.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/47abf9954c9ded8f979a686e47dd46265a1adaa9.svg" alt="I^*_{\alpha} = ]a_1; +\infty[ \times \dots \times ]a_d; +\infty["/> where <img class="math" src="../../_images/math/021db717fa902ef2dd5aaefefd5d91f973594c9a.svg" alt="a_i = F_i^{-1}(1-\beta)"/> for all <cite>i</cite> and which verifies <img class="math" src="../../_images/math/1d8d6ce4f55fc68f2e77f9555657a91ebf4f5fd1.svg" alt="\mu(I^*_{\alpha}) = \alpha"/>. 
+<p>The right unilateral confidence interval <img class="math" src="../../_images/math/1e98ba05437b95da2976c8b8cca75acaa265ed60.svg" alt="I^*_{\alpha}"/> is the cartesian product <img class="math" src="../../_images/math/47abf9954c9ded8f979a686e47dd46265a1adaa9.svg" alt="I^*_{\alpha} = ]a_1; +\infty[ \times \dots \times ]a_d; +\infty["/> where <img class="math" src="../../_images/math/021db717fa902ef2dd5aaefefd5d91f973594c9a.svg" alt="a_i = F_i^{-1}(1-\beta)"/> for all <img class="math" src="../../_images/math/c47ea0eab9f0f521327c38ece8a0d25e433bbbb2.svg" alt="i"/> and which verifies <img class="math" src="../../_images/math/1d8d6ce4f55fc68f2e77f9555657a91ebf4f5fd1.svg" alt="\mu(I^*_{\alpha}) = \alpha"/>. 
 It means that <img class="math" src="../../_images/math/4a362bc56f4a0219f2358f1e2e3852b88b76cd66.svg" alt="S_{\mu}^{-1}(\vect{a}) = \alpha"/> with iso-quantile components, where <img class="math" src="../../_images/math/e67ec5d351c1afbf9198ab19b7d191864d2ea466.svg" alt="S_{\mu}"/> is the survival function of the measure <img class="math" src="../../_images/math/45576b802583810c78ee6c2cefc853b9ba0bf6c6.svg" alt="\mu"/>.</p>
 <p class="rubric">Examples</p>
 <p>Create a sample from a Normal distribution:</p>
@@ -3234,7 +3370,7 @@ if:</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Componentwise moment of order <cite>k</cite>.</p>
+<dd><p class="first last">Componentwise moment of order <img class="math" src="../../_images/math/a3d2afe19489776a703d7832f19a676d23032d92.svg" alt="k"/>.</p>
 </dd>
 </dl>
 </td>
@@ -3770,7 +3906,7 @@ transformation.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>m</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><a class="reference internal" href="openturns.Point.html#openturns.Point" title="openturns.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></span></dt>
-<dd><p class="first last">Componentwise standard moment of order <cite>k</cite>.</p>
+<dd><p class="first last">Componentwise standard moment of order <img class="math" src="../../_images/math/a3d2afe19489776a703d7832f19a676d23032d92.svg" alt="k"/>.</p>
 </dd>
 </dl>
 </td>
